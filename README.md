@@ -1,7 +1,9 @@
 <h1 align="center">Dumpgame</h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
 
-<p>The development of Dumpgame started in November 2021 but ended in December 2024, leaving the project unfinished. An update with almost a year worth of new content since the latest release was lost.
+In November 2021, I opened GameMaker for the first time  and created a new project called "Fuckergamers" and I Died. profound
+
+<p>Dumpgame started in November 2021 but ended in December 2024, leaving the project unfinished. An update with almost a year worth of new content since the latest release was lost.
 fuck you
 Almost two years later, in June 2026, we decided to finish the incomplete </p>
 
