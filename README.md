@@ -9,11 +9,15 @@
 leaving the project unfinished. An update with almost a year worth of new content since the latest release was lost.
 Almost two years later, in June 2026, we decided to finish the incomplete
 
-<h2>Special thanks</h2>
-<p>We made Dumpgame not just for ourselves, but specially for our friends who supported us throughout the entire development of the game:</p>
+<h2>Extended credits</h2>
+<ul>
+<li>dsansthedsans 〜 Programming, Art, Story, Characters, </li>
+<li>migel8022</li> 〜 Soundtrack, Concept Art for Broken Clock
+</ul>
+<p>And our friends, who supported us throughout the entire development of the game:</p>
 <ul>
 <li>Mawri 〜 Concept art for Armsguy and Trashguy, two of the most important characters of the game</li>
-<li>Comunista 〜 Concept art for MEE6, the second most important character of the game, and quality assurance</li>
+<li>Comunista 〜 Concept Art for MEE6, the second most important character of the game, and Quality Assurance</li>
 <li></li>
 </ul>
 
