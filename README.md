@@ -9,13 +9,13 @@
 leaving the project unfinished. An update with almost a year worth of new content since the latest release was lost.
 Almost two years later, in June 2026, we decided to finish the incomplete
 
-<h3>Special thanks</h3>
-<p>We made Dumpgame not just for ourselves, but specially for our friends at Dumpster Friends, a Discord server, who supported us throughout the entire development of the game:</p>
+<h2>Special thanks</h2>
+<p>We made Dumpgame not just for ourselves, but specially for our friends who supported us throughout the entire development of the game:</p>
+<ul>
+<li>Mawri 〜 Concept art for Armsguy and Trashguy, two of the most important characters of the game</li>
+<li>Comunista 〜 Concept art for MEE6, the second most important character of the game, and quality assurance</li>
+<li></li>
+</ul>
 
 
-Mawri 〜 Concept art for several enemies like Armsguy and Trashguy, two of the most important characters of the game
-Comunista 〜 Quality assurance and art support
-sam06tanb 〜 Official site #2
-Baba 〜 Programming support
-Nugget 〜 Easter egg support
 Dumpgame was the first and last dump-related game dedicated to Dumpster Friends. Any other dump-related game only pay homage to Dumpgame and are not associated with the Discord server.
