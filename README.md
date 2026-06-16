@@ -1,13 +1,14 @@
 <h1 align="center">Dumpgame</h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
 
-In November 14, 2021, I opened GameMaker for the first time, made a new project called "dump game" (as in "dumpster video game") and started the almost four-year long development of Dumpgame. I had never made a game before, had no programming knowledge and I hadn't planned literally anything.
+<h3>Development history</h3>
+<p>On November 14, 2021, I opened GameMaker for the first time, made a new project called "dump game" (as in "dumpster video game") and started the three-year long development of Dumpgame. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything. I wanted to make an UNDERTALE fangame where my friends at Dumpster Friends, a Discord server, were characters the player would have to fight.
+
+Three years and a month later, in December 2024, I gave up on Dumpgame. Not only
 
 <p>Dumpgame started in November 2021 but ended in December 2024, leaving the project unfinished. An update with almost a year worth of new content since the latest release was lost.
 fuck you
 Almost two years later, in June 2026, we decided to finish the incomplete </p>
-
-Development began in November 2021 but ended in December 2024, leaving the project unfinished.
 
 Special thanks
 We made Dumpgame not just for ourselves, but especially for our friends at Dumpster Friends, a Discord server, who supported us throughout the entire development of the game:
