@@ -11,15 +11,9 @@ Almost two years later, in June 2026, we decided to finish the incomplete
 
 <h2>Extended credits</h2>
 <ul>
-<li>dsansthedsans 〜 Programming, Art, Story, Characters, </li>
-<li>migel8022</li> 〜 Soundtrack, Concept Art for Broken Clock
-</ul>
-<p>And our friends, who supported us throughout the entire development of the game:</p>
-<ul>
-<li>Mawri 〜 Concept art for Armsguy and Trashguy, two of the most important characters of the game</li>
-<li>Comunista 〜 Concept Art for MEE6, the second most important character of the game, and Quality Assurance</li>
+<li>dsansthedsans 〜 Programming, Art, Concept Art, Writing, Level Design, Translation</li>
+<li>migel8022 〜 Soundtrack, Sound Design, Concept Artist for Broken Clock, Quality Assurance</li>
+<li>Mawri 〜 Concept Art for Armsguy and Trashguy (two of the most important characters of the game)</li>
+<li>Comunista 〜 Concept Art for MEE6 (the second most important character of the game), Quality Assurance</li>
 <li></li>
 </ul>
-
-
-Dumpgame was the first and last dump-related game dedicated to Dumpster Friends. Any other dump-related game only pay homage to Dumpgame and are not associated with the Discord server.
