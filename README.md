@@ -9,11 +9,26 @@
 leaving the project unfinished. An update with almost a year worth of new content since the latest release was lost.
 Almost two years later, in June 2026, we decided to finish the incomplete
 
-<h2>Extended credits</h2>
-<ul>
-<li>dsansthedsans 〜 Programming, Art, Concept Art, Writing, Level Design, Translation</li>
-<li>migel8022 〜 Soundtrack, Sound Design, Concept Artist for Broken Clock, Quality Assurance</li>
-<li>Mawri 〜 Concept Art for Armsguy and Trashguy (two of the most important characters of the game)</li>
-<li>Comunista 〜 Concept Art for MEE6 (the second most important character of the game), Quality Assurance</li>
-<li></li>
-</ul>
+<h2>Credits</h2>
+    <ul>
+      <li>dsansthedsans 〜 Programmer, Artist, Animator, Writer, Translator, Localization</li>
+      <li>migel8022 〜 Composer, Sound Designer, Concept Artist for Broken Clock</li>
+    </ul>
+  <h4>Contributors & Testers</h4>
+    <ul>
+      <li>Mawri 〜 Concept Artist for Armsguy and Trashguy (two of the most important characters of the game)</li>
+      <li>☭Comunista☭ 〜 Concept Artist for MEE6 (the second most important character of the game)</li>
+      <li>fer10tanb 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</li>
+      <li>Nugget 〜 Accidental Easter Egg Assistance</li>
+    </ul>
+  <h4>Special Thanks</h4>
+    <ul>
+      <li>Toby Fox</li>
+      <li>Temmie Chang</li>
+      <li>Tophat Interactive</li>
+      <li>Arsi "Hakita" Patala</li>
+      <li>Playdead</li>
+      <li>Peyton Burnham</li>
+      <li>HybridTeacher</li>
+      <li>Mãe Gamer</li>
+    </ul>
