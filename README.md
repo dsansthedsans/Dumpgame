@@ -1,7 +1,9 @@
 <h1 align="center">Dumpgame</h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
 
-Dumpgame is a canceled UNDERTALE fangame created in Brazil mostly by one person, me, dsans, taking around 3000 hours. Its amazing soundtrack of over 50 pieces was made by migel8022. Dumpgame was the first game I ever made and our biggest inspiration for years.
+<p></p>
+
+Dumpgame was created mostly by only one person, me, dsans, taking around 3000 hours. Its amazing soundtrack of over 50 pieces was made by migel8022. Dumpgame was the first game I ever made and our biggest inspiration for years.
 
 Development began in November 2021 but ended in December 2024, leaving the project unfinished.
 
