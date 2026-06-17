@@ -20,6 +20,8 @@ leaving the project unfinished. An update with almost a year worth of new conten
 <blockquote>No, not really.</blockquote>
 <h3>Is Dumpgame associated with UNDERTALE or Toby Fox?</h3>
 <blockquote>No.</blockquote>
+<h3>Is Dumpgame or any other dump-related game still associated with Dumpster Friends?</h3>
+<blockquote>No, not anymore. Any other dump-related game like Yume Danpu only pay homage to Dumpgame, not the Discord server.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, nothing related to Dumpgame is AI-generated, not even this README.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
