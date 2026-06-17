@@ -2,21 +2,22 @@
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
 <br>
 <h2>Behind the Scenes</h2>
-<p>On November 14, 2021, I opened GameMaker for the first time, made a new project called "dump game" (as in "dumpster video game") and started the three-year long development of Dumpgame. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything. My one and only goal was to make an UNDERTALE fangame where my friends at Dumpster Friends, a Discord server, were characters the player would have to fight.
+<p>On November 14, 2021, I opened GameMaker for the first time, made a new project with a name made up on the spot, and started the three-year long development of "dump game" <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.
+<p>My one and only goal was to make an UNDERTALE fangame where my friends at <b>Dumpster Friends</b>, a Discord server, were characters the player could fight.</p>
 <br>
-<p>Three years and a month later, in December 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but the reason I created Dumpgame in the first place was gone. My friend group had split up.</p
+<p>Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but the reason I created Dumpgame in the first place was gone.</p
+<p>Then, on June 14, 2026, almost two years after </p>
 
 leaving the project unfinished. An update with almost a year worth of new content since the latest release was lost.
-Almost two years later, in June 2026, we decided to finish the incomplete
 
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
 <blockquote>No, not since December 2024. Go to "Behind the Scenes" for more details.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
-<blockquote>Yes, it was supposed to be four times longer.</blockquote>
+<blockquote>Yes, very. The full game would've been four times longer.</blockquote>
 <h3>Does Dumpgame have an ending?</h3>
-<blockquote>No, you just won't be able to progress at some point.</blockquote>
+<blockquote>No, not really.</blockquote>
 <h3>Is Dumpgame associated with UNDERTALE or Toby Fox?</h3>
 <blockquote>No.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
@@ -24,7 +25,7 @@ Almost two years later, in June 2026, we decided to finish the incomplete
 <h3>Is Dumpgame a virus?</h3>
 <blockquote>Will you trust me if I say no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank">VirusTotal</a>, reliable security vendors like Google, Microsoft, Avast, Bitdefender, Malwarebytes, Kaspersky, AVG and ESET won't flag the file as malicious.</blockquote>
 <h3>Why "Dumpgame"?</h3>
-<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. Go to "Behind the Scenes" for more details.</blockquote>
+<blockquote>Dumpgame is named after <b>Dumpster Friends</b>, a Discord server. More details on "Behind the Scenes".</blockquote>
 <h3>Why open-source?</h3>
 <blockquote>A shark plushie asked me to. I'm not sure why, though.</blockquote>
 <h3>Why Brazil?</h3>
@@ -58,4 +59,5 @@ Almost two years later, in June 2026, we decided to finish the incomplete
 <li>Peyton Burnham</li>
 <li>HybridTeacher</li>
 <li>Mãe Gamer</li>
+<li>pedrotopdosgames123</li>
 </ul>
