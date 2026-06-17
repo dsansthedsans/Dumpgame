@@ -15,19 +15,19 @@
 leaving the project unfinished. An update with almost a year worth of new content since the latest release was lost.
 <h2><br>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
-<blockquote>No, not since December 2024. More details on <a href="https://github.com/dsansthedsans/Dumpgame#behind-the-scenes">"Behind the Scenes"</a>.</blockquote>
+<blockquote>No, not since December 2024. More details on <a href="https://github.com/dsansthedsans/Dumpgame#behind-the-scenes"><b>"Behind the Scenes"</b></a>.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
 <blockquote>Yes, very. The full game would've been four times longer.</blockquote>
 <h3>Is Dumpgame associated with UNDERTALE or Toby Fox?</h3>
 <blockquote>No.</blockquote>
 <h3>Is Dumpgame still associated with Dumpster Friends?</h3>
-<blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu">Yume Danpu</a> only pay homage to Dumpgame, not the Discord server.</blockquote>
+<blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, nothing related to Dumpgame is AI-generated, not even this README.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
-<blockquote>Will you trust me if I say no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank">VirusTotal</a>, reliable security vendors like Google, Microsoft, Avast, Bitdefender, Malwarebytes, Kaspersky, AVG and ESET won't flag the file as malicious.</blockquote>
+<blockquote>Will you trust me if I say no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>VirusTotal</b></a>, reliable security vendors like Google, Microsoft, Avast, Bitdefender, Malwarebytes, Kaspersky, AVG and ESET won't flag the file as malicious.</blockquote>
 <h3>Why "Dumpgame"?</h3>
-<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#behind-the-scenes">"Behind the Scenes"</a>.</blockquote>
+<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#behind-the-scenes">"<b>Behind the Scenes</b>"</a>.</blockquote>
 <h3>Why open-source?</h3>
 <blockquote>A shark plushie asked me to. I'm not sure why, though. Besides, the code is TERRIBLE. No sane individual would subject themselves to the torture of forking Dumpgame.</blockquote>
 <h3>Why Brazil?</h3>
@@ -37,8 +37,8 @@ leaving the project unfinished. An update with almost a year worth of new conten
 <br>
 <h2>Credits</h2>
 <ul>
-  <li>dsansthedsans<i> 〜 Programmer, Artist, Animator, Writer, Translator, Localization</i></li>
-  <li>migel8022<i> 〜 Composer, Sound Designer, Concept Artist for Broken Clock</i></li>
+  <li>dsansthedsans<i> 〜 Programmer, Artist, Concept Artist, Animator, Writer, Designer, Localization</i></li>
+  <li>migel8022<i> 〜 Composer, Sound Designer, Concept Artist for Broken Clock, Tester</i></li>
 </ul>
 <h4>Contributors & Testers</h4>
 <ul>
@@ -46,6 +46,7 @@ leaving the project unfinished. An update with almost a year worth of new conten
   <li>☭Comunista☭<i> 〜 Concept Artist for MEE6 (the second most important character of the game)</i></li>
   <li>fer10tanb<i> 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</i></li>
   <li>NuggetFrango<i> 〜 Accidental Easter Egg Assistance</i></li>
+  <li>Babakinha<i> 〜 Programming Assistance</i></li>
 </ul>
 <h4>Special Thanks</h4>
 <ul>
@@ -53,12 +54,12 @@ leaving the project unfinished. An update with almost a year worth of new conten
   <li>Temmie Chang</li>
   <li>Tophat Interactive</li>
   <li>Arsi "Hakita" Patala</li>
+  <li>Markus Persson</li>
   <li>Playdead</li>
   <li>YoYo Games</li>
   <li>Image-Line Software</li>
-  <li>Anis Belkacem</li>
-  <li>reCAPTCHA Inc.</li>
   <li>Peyton Burnham</li>
+  <li>Anis Belkacem</li>
   <li>HybridTeacher</li>
   <li>Mãe Gamer</li>
   <li>pedrotopdosgames123</li>
