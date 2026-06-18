@@ -1,9 +1,9 @@
 <h1 align="center"><img src="README-logo.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
 <p align="center">
-  <img src="https://img.shields.io/badge/status-cancelled-FA5C5C" alt="Status">
-  <img src="https://img.shields.io/badge/version-1.5.0--demo-1E993B" alt="Version">
-  <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=1E993B" alt="License">
+  <img src="https://img.shields.io/badge/status-cancelled-white?labelColor=40ff6d" alt="Status">
+  <img src="https://img.shields.io/badge/version-1.5.0--demo-white?labelColor=40ff6d" alt="Version">
+  <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="License">
   <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/Itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
