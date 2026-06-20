@@ -1,4 +1,4 @@
-<h1>README UNDER CONSTRUCTION !!!!!! </h1>
+<h1>README UNDER CONSTRUCTION !!!!!!</h1>
 <br>
 <h1 align="center"><img src="README-ASSETS/LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
@@ -9,6 +9,11 @@
   <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/Itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
+
+> [!WARNING]
+> Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
+> <br><br><i>"the source code for undertale is literally just a bunch of rubber bands and tape stuck to a paper saying 'DETERMINATION'."</i><br>— Toby Fox
+
 <br>
 <h2>Behind the Scenes</h2>
 <p>On November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
@@ -35,7 +40,7 @@
 <h3>Why "Dumpgame"?</h3>
 <blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#behind-the-scenes">"<b>Behind the Scenes</b>"</a>.</blockquote>
 <h3>Why open-source?</h3>
-<blockquote>A shark plushie asked me to. I'm not sure why, though. Besides, the code is TERRIBLE. No sane individual would subject themselves to the torture of forking Dumpgame.</blockquote>
+<blockquote>A shark plushie asked me to. I'm not sure why, though.</blockquote>
 <h3>Why Brazil?</h3>
 <blockquote>I'd also like to know.</blockquote>
 <h3>Why GameMaker?</h3>
@@ -49,7 +54,7 @@
 <h4>Contributors & Testers</h4>
 <ul>
   <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy (two of the most important characters of the game)</i></li>
-  <li>☭Comunista☭<i> 〜 Concept Artist for MEE6 (the second most important character of the game)</i></li>
+  <li>☭Comunista☭<i> 〜 Concept Artist for MEE6 (the most important non-player character of the game)</i></li>
   <li>fer10tanb<i> 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</i></li>
   <li>NuggetFrango<i> 〜 Accidental Easter Egg Assistance</i></li>
   <li>Babakinha<i> 〜 Programming Assistance</i></li>
