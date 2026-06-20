@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"unused_mus_caverns_geno",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":219.42857,
+  "exportDir":"",
+  "name":"unused_mus_caverns_geno",
+  "parent":{
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"unused_mus_caverns_geno.mp3",
+  "volume":1.0,
+}

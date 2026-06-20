@@ -1,0 +1,84 @@
+
+algumas das coisas que eu JÁ FIZ nos últimos dias para a PRE-DEMO 1.5
+
+tem MUITAS mais coisas (a maioria pequenas) que eu AINDA VOU FAZER.
+
+// Principal
+- Novo sistema de save, com três slots que realmente salva o jogo se tu fechar ele (e com uma mensagem aleatória dentro do arquivo!)
+- Novo sistema de salvar as configurações e conquistas separadamente dos saves
+- Novas telas explicando os controles durante o jogo, porque teve alguém que resetou o save pra ver se dava pra abandonar o MEE6 porque ele não sabia como que pulava texto
+- Novas opções nas configurações, como de pular toda a animação de início do menu principal e as opções do "Fun Mode"
+- Três novas conquistas, duas do genocida e uma de um *boss secreto*
+- Novo sistema de correr parecido com o de DELTARUNE (mas o jogador não anda que nem uma tartaruga)
+
+// Outros
+- Arte dos Corredores melhorada
+- Arte do Carlinhos melhorada (NÃO é a dele do mal)
+- Novo som de voltar nas opções
+- Sistema de áudio e música refeito por inteiro
+- Sistema e aparência do menu principal melhorado
+- Sistema do jogador e de cutscene melhorado
+- Sistema do inventário refeito
+- Sistema do menu do jogador (inventário, stats) melhorado
+- Sistema da iniciação do jogo refeito
+- Sistema de transição de quarto melhorado
+- Sistema do Discord Rich Presence melhorado
+- Sistema do MEE6 melhorado, agora é MUITO mais fácil de usar em cutscenes
+- Sistema de pausar o jogo refeito
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hey there @CRAZYCAT, welcome to the world of Dumpster Friends!
+My name is MEE6. I am a ROBOT made to help new members like you!
+
+Hm. I feel that you are uncertain of your current situation.
+You are in Corridors, one of the three main areas of Dumpster Friends.
+This area is where new members complete puzzles to confirm they are suitable to join this world.
+There is a problem, however. Corridors has been abandoned for a long time.
+Even though there is an exit, it is difficult to get there.
+Apart from the fact that there are several puzzles that I cannot solve, ...
+... there are also a large amount of monsters ready to attack.
+And now, I am afraid that you are here stuck with me.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

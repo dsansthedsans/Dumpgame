@@ -1,0 +1,38 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"tl_corridors_menu",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"tl_corridors_menu",
+  "out_columns":20,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"[!] rooms",
+    "path":"folders/[!] rooms.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_tl_corridors_menu",
+    "path":"sprites/spr_tl_corridors_menu/spr_tl_corridors_menu.yy",
+  },
+  "spriteNoExport":true,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":40,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":40,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":400,
+}

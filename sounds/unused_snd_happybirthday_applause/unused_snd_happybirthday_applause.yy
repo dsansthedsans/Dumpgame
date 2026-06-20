@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"unused_snd_happybirthday_applause",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":6.488526,
+  "exportDir":"",
+  "name":"unused_snd_happybirthday_applause",
+  "parent":{
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"unused_snd_happybirthday_applause.ogg",
+  "volume":1.0,
+}
