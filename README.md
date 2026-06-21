@@ -1,4 +1,4 @@
-<h1>README UNDER CONSTRUCTION !!!!!!</h1>
+<h1>README UNDER CONSTRUCTION !!!!!!<br>ALSO the download of 1.5.0-demo will be available SOON</h1>
 <br>
 <h1 align="center"><img src="README-ASSETS/LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
@@ -15,18 +15,20 @@
 > <br><br><i>"the source code for undertale is literally just a bunch of rubber bands and tape stuck to a paper saying 'DETERMINATION'."</i><br>— Toby Fox
 
 <br>
-<h2>Behind the Scenes</h2>
-<p>On November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
+<h2>Development History</h2>
+<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
 <br>
 <p align="center"><img src="README-ASSETS/SCREEN_0.png" alt="Screenshot of Dumpgame in early development" height=355></p>
 <br>
-<p>My one and only goal was to make an UNDERTALE fangame where my friends at <b>Dumpster Friends</b>, a Discord server, were characters the player would have to fight.</p>
-<p>Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart.</p>
-<p>Then, on June 14, 2026, almost two years after. leaving the project unfinished. An update with almost a year worth of new content since the latest release st.</p>
+<p>Still, all I could think about at the time was making an UNDERTALE fangame where me and my friends in <b>Dumpster Friends</b>, a Discord server, were characters the player would be able to fight. Actually, that was a dream of mine long before I even met them. I was seven years old when I first discovered UNDERTALE through <a href="https://www.youtube.com/watch?v=AjFijrXaxkg">an animation of Sans's battle</a>.  </p>
+<br>
+<p align="center"><img src="README-ASSETS/SCREEN_1.png" height="295"><img src="README-ASSETS/SCREEN_2.png" height="295"></p>
+<p align="center"><img src="README-ASSETS/EVENT-MEE6.gif" height="295"></p>
+<p>UNUSED AS OF NOEW: I watched a couple tutorials on YouTube more specifically peyton burhnham. Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart. Then, on June 14, 2026, almost two years after. leaving the project unfinished. An update with almost a year worth of new content since the latest release st.</p>
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
-<blockquote>No, not since December 2024. More details on <a href="https://github.com/dsansthedsans/Dumpgame#behind-the-scenes"><b>"Behind the Scenes"</b></a>.</blockquote>
+<blockquote>No, not since December 2024. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>"Development History"</b></a>.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
 <blockquote>Yes, very. The full game would've been four times longer.</blockquote>
 <h3>Is Dumpgame associated with UNDERTALE or Toby Fox?</h3>
@@ -38,7 +40,7 @@
 <h3>Is Dumpgame a virus?</h3>
 <blockquote>Will you trust me if I say no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>VirusTotal</b></a>, reliable security vendors like Google, Microsoft, Avast, Bitdefender, Malwarebytes, Kaspersky, AVG and ESET won't flag the file as malicious.</blockquote>
 <h3>Why "Dumpgame"?</h3>
-<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#behind-the-scenes">"<b>Behind the Scenes</b>"</a>.</blockquote>
+<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">"<b>Development History</b>"</a>.</blockquote>
 <h3>Why open-source?</h3>
 <blockquote>A shark plushie asked me to. I'm not sure why, though.</blockquote>
 <h3>Why Brazil?</h3>
