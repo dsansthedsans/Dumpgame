@@ -46,8 +46,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Writer",
-    "path":"folders/Writer.yy",
+    "name":"[!] sprites",
+    "path":"folders/[!] sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

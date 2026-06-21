@@ -30,7 +30,7 @@ if (dmg <= 0)
 
 }
 
-if (controller.enemy_type[target] == -2000) || (controller.enemy_type[target] == 6) || (controller.enemy_type[target] == 1000) // Toilet, Broken Clock
+if (controller.enemy_type[target] == 2000) || (controller.enemy_type[target] == 6) || (controller.enemy_type[target] == 1000) // Toilet, Broken Clock
 	myy = 220;
 
 x = 0;

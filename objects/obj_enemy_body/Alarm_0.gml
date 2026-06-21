@@ -1,8 +1,8 @@
 /// @descr get type
 
-if (type == -2000) // Toilet
+if (type == 2000) // Toilet
 {
-	sprite_index = spr_toilet;
+	sprite_index = unused_spr_enemy_toilet;
 }
 if (type == -1000) // Sans
 {

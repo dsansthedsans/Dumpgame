@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_settings",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

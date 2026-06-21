@@ -9,8 +9,8 @@
   "name":"obj_genofeeling_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "parentObjectId":null,
   "persistent":false,

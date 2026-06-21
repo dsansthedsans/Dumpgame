@@ -10,8 +10,8 @@
   "name":"obj_overworld_heart",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overworld \"Battle\"",
-    "path":"folders/Overworld \"Battle\".yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

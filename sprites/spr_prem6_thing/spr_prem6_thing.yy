@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Pre MEE6",
-    "path":"folders/Sprites/Pre MEE6.yy",
+    "name":"[!] sprites",
+    "path":"folders/[!] sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

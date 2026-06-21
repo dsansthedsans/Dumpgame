@@ -6,8 +6,8 @@
   "name":"obj_walk_block",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

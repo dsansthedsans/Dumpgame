@@ -35,8 +35,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Rhonhey",
-    "path":"folders/Battle/Enemy/Rhonhey.yy",
+    "name":"enemies",
+    "path":"folders/[!] sprites/battle/enemies.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -5,7 +5,7 @@ if (exists(obj_battle_knife) == 0)
 	if (dmg > 0)
 	{
 		var _snd = snd_enemy_hit;
-		if (controller.enemy_type[target] == -2000)
+		if (controller.enemy_type[target] == 2000)
 			_snd = snd_bump;
 		audio_play(_snd, 0, VOLUME_SOUND);
 	}

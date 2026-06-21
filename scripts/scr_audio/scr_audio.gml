@@ -1,13 +1,31 @@
 
 function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 {
+	var _asset = _audio;
+	if (audio_sound_get_asset(_asset) != undefined)
+		_asset = audio_sound_get_asset(_asset);
 	if (_volume_type == VOLUME_SOUND)
+	{
 		_volume *= 1.5;
-	if (_audio == snd_txt_m6)
-		_volume *= 0.7;
-	if (_audio == snd_txt_gabee) || (_audio == snd_txt_dsans)
-		_volume /= 5;
-	_volume = (_volume * global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
+		if (_asset == snd_txt_m6)
+			_volume *= 0.7;
+		if (_asset == snd_heartpulse1) || (_asset == snd_heartpulse2)
+			_volume *= 0.75;
+		if (_asset == snd_explosion1)
+			_volume = 0.75;
+		if (_asset == snd_ambient_wind)
+			_volume *= 0.35;
+		if (_asset == snd_txt_gabee) || (_asset == snd_txt_dsans)
+			_volume /= 5;
+	}
+	else if (_volume_type == VOLUME_MUSIC)
+	{
+		if (_asset == mus_corridors)
+			_volume *= 0.8;
+		if (_asset == mus_chase_intro) || (_asset == mus_chase_loop)
+			_volume *= 1;
+	}
+	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)
 		audio_sound_gain(_audio, 0, 0);
 	audio_sound_gain(_audio, _volume, (_time * 1000));

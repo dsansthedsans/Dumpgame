@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"unused_mus_battle_toilet",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":17.454557,
+  "exportDir":"",
+  "name":"unused_mus_battle_toilet",
+  "parent":{
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"unused_mus_battle_toilet.ogg",
+  "volume":1.0,
+}

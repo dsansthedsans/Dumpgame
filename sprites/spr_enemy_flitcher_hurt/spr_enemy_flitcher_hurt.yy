@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Flitcher",
-    "path":"folders/Battle/Enemy/Flitcher.yy",
+    "name":"enemies",
+    "path":"folders/[!] sprites/battle/enemies.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

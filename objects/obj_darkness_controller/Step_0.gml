@@ -9,21 +9,10 @@ if (type == 1)
 	val = lerp(val, _val, 0.2);
 	chara.image_blend = make_color_hsv(0, 0, val);
 }
-
-
-
-
-
-
-
-
-
-
-/*
-if (type == 1)
+if (type == 2)
 {
 	var _length = 1;
-	if (global.flag[2] == 1 && exists(obj_sidechara) == 1)
+	if (global.flag[2] == 1 && exists(obj_party) == 1)
 		_length = 2;
 	for (var i = 0; i < _length; i++)
 	{
@@ -42,10 +31,10 @@ if (type == 1)
 		}
 	
 		var _dist = 0;
-		if (_y > 120 && _y < 180)
+		if (_y >= 120 && _y < 160 + 5)
 		{
 			if (_x >= 75)
-				_dist = ((_x - 75) / 1);
+				_dist = ((_x - 75) / 0.75);
 			_value = (255 - _dist);
 		}
 		else
@@ -68,5 +57,20 @@ if (type == 1)
 			m6_curcolor = _color;
 		}
 	}
+}
+
+
+
+
+
+
+
+
+
+
+/*
+if (type == 1)
+{
+	
 }
 */

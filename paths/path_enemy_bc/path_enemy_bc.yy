@@ -5,8 +5,8 @@
   "kind":1,
   "name":"path_enemy_bc",
   "parent":{
-    "name":"Broken Clock",
-    "path":"folders/Battle/Enemy/Broken Clock.yy",
+    "name":"[!] misc",
+    "path":"folders/[!] misc.yy",
   },
   "points":[
     {"speed":250.0,"x":288.0,"y":224.0,},

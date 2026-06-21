@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_chara",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"[!] scripts",
+    "path":"folders/[!] scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

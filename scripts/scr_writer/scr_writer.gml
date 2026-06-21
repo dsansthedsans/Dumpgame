@@ -1031,12 +1031,6 @@ function TEXT()
 		msg[1] = "* (...)";
 		msg[2] = "* (Doesn't seem to be working.)";
 	}
-	if (text == "room_subwayview")
-	{
-		msg[0] = "* (It's a long dark subway tunnel.)";
-		msg[1] = "* (Distant flickering lamps are lighting it.)";
-		msg[2] = "* (You don't want to jump because you can't see the rail on the bottom of the tunnel.)";
-	}
 	
 	// room_corridors_17
 	if (text == "npc_armsguy_exitfirst")
@@ -1132,7 +1126,7 @@ function TEXT()
 			msg[2] = "* Before we continue,^1 I have a question for you.";
 			msg[3] = "* You do remember how :YBATTLES;D work,^2 correct?";
 			msg[4] = "* ...";
-			msg[5] = "* No!^2 Nothing!^2&* I just wanted to confirm.";
+			msg[5] = "* No!^1 Nothing!^2&* I just wanted to know.";
 			msg_face[0] = spr_dialogface_m6_neutral;
 			msg_face[5] = spr_dialogface_m6_pleased;
 		}
@@ -1142,9 +1136,9 @@ function TEXT()
 			msg[1] = "* I lied.";
 			msg[2] = "* There is a reason I questioned your memory.";
 			msg[3] = "* You see,^1 I may have not been as hone()";
-			msg_face[0] = spr_dialogface_m6_tense;
+			msg_face[0] = spr_dialogface_m6_neutralTense;
 			msg_face[1] = spr_dialogface_m6_default;
-			msg_face[2] = spr_dialogface_m6_tense_default;
+			msg_face[2] = spr_dialogface_m6_defaultTense;
 			msg_face[3] = spr_dialogface_m6_default;
 		}
 		msg_sound[0] = snd_txt_m6;
@@ -1434,8 +1428,7 @@ function TEXT()
 			if (text == "battle_bubble_bc0") // normal
 			{
 				var _geno = enemy.geno;
-				var _round = controller.battle_round;
-				_round = clamp(_round, 0, 7);
+				var _round = clamp(controller.battle_round, 0, 7);
 				if (controller.enemy_spare[enemy.myself] >= 100)
 					_round = 7;
 				
@@ -1488,6 +1481,8 @@ function TEXT()
 				_groupname = "eyecrush_flitcher";
 			if (_group == 12)
 				_groupname = "rhonhey";
+			if (_group == 2000)
+				_groupname = "toilet";
 			
 			var _type = 0;
 			while (_type == 0)
@@ -1524,6 +1519,11 @@ function TEXT()
 			{
 				_name = "rhonhey";
 				_max = 4;
+			}
+			if (_type == 2000)
+			{
+				_name = "toilet";
+				_max = 0;
 			}
 			
 			if (controller.battle_round == 0) // first
@@ -1926,17 +1926,12 @@ function TEXT()
 					if (text == "battle_act_bc3")
 					{
 						var _page = 0;
-						if (_convince == 0)
-						{
-							msg[_page] = get_text("battle_act_result_bc_3_0_" + string(_geno));
-							_page += 1;
-						}	
-						msg[_page] = get_text("battle_act_result_bc_3_1_" + string(_geno));
+						msg[_page] = get_text($"battle_act_result_bc_3_{_page}_" + string(_geno));
 						_page += 1;
 					
 						question[_page] = "";
-						question_option[1] = get_text("battle_act_result_bc_3_2_" + string(_convince) + "_1_0");
-						question_option[2] = get_text("battle_act_result_bc_3_2_" + string(_convince) + "_2_0");
+						question_option[1] = get_text($"battle_act_result_bc_3_{_page}_" + string(_convince) + "_1");
+						question_option[2] = get_text($"battle_act_result_bc_3_{_page}_" + string(_convince) + "_2");
 					
 						if (question_result[_page] != 0)
 						{
@@ -1946,10 +1941,11 @@ function TEXT()
 							|| (_convince == 1 && _result == 1)
 							|| (_convince == 2 && _result == 2)
 							|| (_convince == 3 && _result == 1)
+							|| (_convince == 4 && _result == 1)
 							{
 								_right = 1;
 								audio_play(snd_battle_mercy_sucess, 0, 0)
-								controller.enemy_spare[enemy.myself] += 25;
+								controller.enemy_spare[enemy.myself] += 20;
 								enemy.convince += 1;
 							}
 							else
@@ -1959,16 +1955,12 @@ function TEXT()
 							for (var i = 0; i < 99; i++)
 							{
 								var _curmsg = get_text("battle_bubble_bc_convince_" + string(_convince) + "_" + string(_right) +  "_" + string(i));
-								if (_curmsg != undefined)
+								if (is_undefined(_curmsg) == false)
 									msg[(i + _page)] = _curmsg;
 								else
 								{
-									var _id = "";
-									if (_convince == 0 && _right == 1)
-										_id = get_text("battle_act_result_bc_3_3_0");
-									if (_convince >= 0 && _right == 0)
-										_id = get_text("battle_act_result_bc_3_3_1");
-									if (_id != "")
+									var _id = get_text($"battle_act_result_bc_3_2_{_right}");
+									if (is_undefined(_id) == false && (_right == 1 && _convince > 0) == false)
 									{
 										var _lastpage = (i + _page);
 										msg[_lastpage] = _id;
@@ -1976,7 +1968,6 @@ function TEXT()
 										msg_sound[_lastpage] = snd_txt1;
 										msg_format[_lastpage] = "battlebox";
 									}
-								
 									break;
 								}
 							}

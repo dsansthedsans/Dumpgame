@@ -215,8 +215,8 @@
   "maintainGms1Font":false,
   "name":"fnt_mars_18",
   "parent":{
-    "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "name":"[!] fonts",
+    "path":"folders/[!] fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

@@ -27,14 +27,7 @@ if (type == 1)
 	draw_set_alpha(0.59);
 	draw_rectangle(200, 400, room_width, 599, 0);
 }
-
-draw_set_alpha(1);
-
-
-
-
-/*
-if (type == 1)
+if (type == 2)
 {
 	// draw top and bottom darkness
 	draw_set_color(c_black);
@@ -79,9 +72,16 @@ if (type == 1)
 	draw_set_alpha(0.5);
 	if (chara.y > 120 && chara.y < 165)
 		draw_rectangle((chara.x - 1), chara.y, (chara.x + 40), (chara.y - 4), 0);
-	if (global.flag[2] == 1 && exists(obj_sidechara) == 1 && m6.y > 120 && m6.y < 165)
+	if (global.flag[2] == 1 && exists(obj_party) == 1 && m6.y > 120 && m6.y < 165)
 		draw_rectangle((m6.x - 2), m6.y, (m6.x + 25), (m6.y - 4), 0);
 }
+
+draw_set_alpha(1);
+
+
+
+
+/*
 if (type == 2)
 {
 	draw_set_color(c_black);

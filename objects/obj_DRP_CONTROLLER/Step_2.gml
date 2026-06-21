@@ -100,7 +100,7 @@ if (ready == 1)
 		{
 			details = "Game Over";
 			state = "";
-			thatwriter = obj_gameover_controller.thiswriter;
+			thatwriter = obj_over_controller.thiswriter;
 			if (exists(thatwriter) == 1)
 			{
 			

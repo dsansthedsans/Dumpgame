@@ -10,8 +10,8 @@
   "name":"obj_mus_resumer",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":null,
   "persistent":true,

@@ -11,8 +11,8 @@
   "name":"obj_intro_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_intro_image",
-    "path":"sprites/spr_intro_image/spr_intro_image.yy",
+    "name":"unused_spr_intro_image_1",
+    "path":"sprites/unused_spr_intro_image_1/unused_spr_intro_image_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

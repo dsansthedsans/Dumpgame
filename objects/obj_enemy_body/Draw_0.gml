@@ -3,7 +3,7 @@ if (active == 1)
 {
 	draw_set_alpha(image_alpha);
 
-	if (type == -2000) // Toilet
+	if (type == 2000) // Toilet
 	{
 		draw_self();	
 	}

@@ -15,7 +15,7 @@ delay = 0;
 siner = 0;
 dmg = 2;
 
-if (type == -2000)
+if (type == 2000)
 {
 	delay = 60;
 	outside_box = 1;

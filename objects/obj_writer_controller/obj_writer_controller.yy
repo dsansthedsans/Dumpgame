@@ -16,8 +16,8 @@
   "name":"obj_writer_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Writer",
-    "path":"folders/Writer.yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

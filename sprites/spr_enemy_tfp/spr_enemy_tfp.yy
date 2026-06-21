@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"TROLLFACE PRIME",
-    "path":"folders/Battle/Enemy/TROLLFACE PRIME.yy",
+    "name":"enemies",
+    "path":"folders/[!] sprites/battle/enemies.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Broken Clock",
-    "path":"folders/Battle/Enemy/Broken Clock.yy",
+    "name":"enemies",
+    "path":"folders/[!] sprites/battle/enemies.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

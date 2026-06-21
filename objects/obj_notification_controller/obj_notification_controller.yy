@@ -11,8 +11,8 @@
   "name":"obj_notification_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":null,
   "persistent":true,

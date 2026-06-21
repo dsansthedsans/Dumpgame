@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Armsguy",
-    "path":"folders/Battle/Enemy/Armsguy.yy",
+    "name":"enemies",
+    "path":"folders/[!] sprites/battle/enemies.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

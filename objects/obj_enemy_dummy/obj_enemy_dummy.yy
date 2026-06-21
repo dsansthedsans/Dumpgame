@@ -10,8 +10,8 @@
   "name":"obj_enemy_dummy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemy",
-    "path":"folders/Battle/Enemy.yy",
+    "name":"enemies",
+    "path":"folders/[!] objects/battle/enemies.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -9,8 +9,8 @@
   "name":"obj_border_block",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "parentObjectId":{
     "name":"obj_solidinteract_parent",

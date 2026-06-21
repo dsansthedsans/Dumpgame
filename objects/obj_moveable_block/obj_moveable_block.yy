@@ -8,8 +8,8 @@
   "name":"obj_moveable_block",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solidinteract_parent",

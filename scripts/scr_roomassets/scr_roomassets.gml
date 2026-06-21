@@ -221,10 +221,6 @@ function room_interact()
 		// broken button
 		if (x == 140 && y == 60)
 			text = "room_subwaybutton";
-			
-		// view
-		if (x == 160 && y == 80)
-			text = "room_subwayview";
 	}
 	if (room == room_corridors_17)
 	{
@@ -969,6 +965,11 @@ function room_nonsolid()
 			image_alpha = 0.5;
 			depth = 525;
 		}
+	}
+	if (room == room_corridors_16_B)
+	{
+		sprite_index = spr_overworld_corridorssinglebrick;
+		depth = -bbox_bottom;
 	}
 	if (room == room_corridors_18 && x == 3360)
 	{

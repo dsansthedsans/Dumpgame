@@ -6,8 +6,8 @@
   "name":"obj_solidinteract_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":{
     "name":"obj_interact_block",

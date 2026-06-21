@@ -8,8 +8,8 @@
   "name":"obj_solid_stairs_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

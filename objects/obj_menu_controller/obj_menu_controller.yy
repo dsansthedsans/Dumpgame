@@ -17,8 +17,8 @@
   "name":"obj_menu_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"main menu + game over",
-    "path":"folders/[!] objects/main menu + game over.yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

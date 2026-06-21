@@ -10,8 +10,8 @@
   "name":"obj_droppeditem",
   "overriddenProperties":[],
   "parent":{
-    "name":"Instances",
-    "path":"folders/Instances.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -101,21 +101,29 @@ if (room == room_corridors_12) // bc events
 		music_set(0, mus_bc_prebattle);
 	}
 }
+if (room == room_corridors_16)
+	music_set(1, -1);
+if (room == room_corridors_16_B)
+{
+	music_set(0, -1);
+	music_set(1, snd_ambient_wind, , 2, , 0.5);
+	global.music_volumetype[1] = VOLUME_SOUND;
+}
+if (room == room_corridors_17)
+	music_set(1, -1);
 if (room == room_corridors_18) // gabee's chase
 {
 	global.music[0] = -1;
-	global.music[1] = -1;
-	if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con < 9)
-	{
-		music_set(1, snd_ambient_wind, 0.5, 3, 1, 0.5, 1, 1);
-		global.music_volumetype[1] = VOLUME_SOUND;
-	}
+	music_set(1, snd_ambient_wind, , 2, , 0.5);
+	global.music_volumetype[1] = VOLUME_SOUND;
+	if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 9)
+		music_set(1, -1);
 	if (global.flag[60] == 1 && global.flag[61] == 0)
 	{
-		music_set(0, mus_chase_intro, 1.75, 0, 0, 1, 0, 0);
+		music_set(0, mus_chase_intro, 1, 0, 0, 1, 0, 0);
 		if (music_old[0] == mus_chase_intro && audio_playing(mus_chase_intro) == false) || (music_old[0] == mus_chase_loop)
 		{
-			music_set(0, mus_chase_loop, 1.75, 0, 0, 1, 1, 0);
+			music_set(0, mus_chase_loop, 1, 0, 0, 1, 1, 0);
 			if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 45)
 			{
 				global.music_pitch[0] = music_pitch_old[0];
@@ -134,13 +142,13 @@ if (room == room_crazycat)
 
 if (room == room_caverns_3) // cavernas
 {
-	music_set(0, mus_caverns, 1, 0.5, 1, 1, 1, 0.5);
+	music_set(0, mus_cavern, 1, 0.5, 1, 1, 1, 0.5);
 	if (global.chara_murder >= 3)
 	{
 		global.music[0] = mus_caverns_geno;
 		//global.music_pitch[0] = 1.1;
 	}
-	music_set(1, snd_ambient_water, 1, 0.5, 1, 1, 1, 0.5);	
+	music_set(1, snd_ambient_water, , 0.5);	
 }
 
 if (exists(obj_chara_pause) == 1)
@@ -161,15 +169,14 @@ if (exists(obj_battle_quicker) == 1) || (room == room_battle)
 	if (global.music[3] == -1)
 	{
 		for (var i = 0; i < (global.music_length - 1); i++)
-		{
 			music_paused[i] =true;
-		}
 	}
-	
 	if (room == room_battle)
 	{
 		controller = obj_battle_controller;
 		music_set(3, controller.battle_music, 1, 0, 0, 1, 1, 0.5);
+		if (controller.battle_won == 1 && controller.battle_group != 0) || (controller.fleeing == 1) || (controller.battle_group == 6 && controller.enemy_spare[0] >= 100) || (controller.battle_group == 2000 && controller.enemy_obj[0].flushed == 1)
+			music_set(3, -1);
 	}
 }
 else
@@ -329,7 +336,7 @@ if (exists(obj_battle_quicker) == 0) || (_stop_music_on_quicker == 0)
 	{
 		global.music[MUSIC_NORMAL] = -1;
 	
-		var _controller = obj_gameover_controller;
+		var _controller = obj_over_controller;
 		if (exists(_controller) == 1 && _controller.con == 9)
 		{
 			global.music[MUSIC_NORMAL] = mus_gameover;

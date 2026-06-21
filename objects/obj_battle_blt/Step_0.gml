@@ -1,7 +1,7 @@
 
 if (active == 1)
 {
-	if (type == -2000) // Toilet
+	if (type == 2000) // Toilet
 	{
 		image_alpha += 0.1;
 		

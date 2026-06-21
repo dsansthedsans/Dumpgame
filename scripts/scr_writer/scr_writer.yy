@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_writer",
   "parent":{
-    "name":"Writer",
-    "path":"folders/Writer.yy",
+    "name":"[!] scripts",
+    "path":"folders/[!] scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

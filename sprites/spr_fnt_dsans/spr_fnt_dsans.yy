@@ -130,8 +130,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "name":"[!] fonts",
+    "path":"folders/[!] fonts.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

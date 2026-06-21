@@ -74,8 +74,8 @@
   "optionsFile":"options.json",
   "packageId":"",
   "parent":{
-    "name":"Extensions",
-    "path":"folders/Fonts/Extensions.yy",
+    "name":"[!] misc",
+    "path":"folders/[!] misc.yy",
   },
   "productId":"",
   "resourceType":"GMExtension",

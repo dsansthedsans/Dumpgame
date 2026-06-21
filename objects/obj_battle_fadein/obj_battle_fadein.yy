@@ -9,8 +9,8 @@
   "name":"obj_battle_fadein",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Battle.yy",
+    "name":"battle",
+    "path":"folders/[!] objects/battle.yy",
   },
   "parentObjectId":null,
   "persistent":false,

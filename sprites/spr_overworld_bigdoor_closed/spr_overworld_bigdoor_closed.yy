@@ -44,8 +44,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Overworld",
-    "path":"folders/Sprites/Overworld.yy",
+    "name":"[!] sprites",
+    "path":"folders/[!] sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

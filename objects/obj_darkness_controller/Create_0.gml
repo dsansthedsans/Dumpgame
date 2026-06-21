@@ -1,19 +1,26 @@
 
+depth = -90;
 image_alpha = 0;
 chara = obj_chara;
+m6 = obj_party;
 
 type = 0;
 if (room == room_corridors_1_5)
-	type = 1;
-
-if (type == 1)
 {
-	depth = -90;
+	type = 1;
 	val = 255;
 }
-
-
-
+else if (room == room_corridors_16_B)
+{
+	type = 2;
+	chara_curcolor = 255;
+	chara_colorvalue = 120;
+	if (global.flag[2] == 1)
+	{
+		m6_curcolor = 255;
+		m6_colorvalue = 120;
+	}
+}
 
 
 

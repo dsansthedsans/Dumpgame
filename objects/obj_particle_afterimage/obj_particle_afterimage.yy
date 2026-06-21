@@ -8,8 +8,8 @@
   "name":"obj_particle_afterimage",
   "overriddenProperties":[],
   "parent":{
-    "name":"Particles",
-    "path":"folders/Instances/Particles.yy",
+    "name":"[!] objects",
+    "path":"folders/[!] objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

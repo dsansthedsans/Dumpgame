@@ -57,20 +57,6 @@ function battle_setupgroup()
 		battle_bg = spr_battle_bg_caverns;
 	battle_music = mus_battle1;
 	
-	if (battle_group == -2000) // Toilet
-	{
-		battle_bg = -1;
-		battle_music = mus_battle_toilet;
-		
-		enemy_type[0] = -2000;
-		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_toilet);
-	}
-	if (battle_group == -1000) // Sans
-	{
-		enemy_type[0] = -1000;
-		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_sans);
-	}
-	
 	if (battle_group == -4) // Test
 	{
 		
@@ -141,7 +127,7 @@ function battle_setupgroup()
 	{
 		battle_flee = 0;
 		battle_music = mus_battle_bc;
-		
+		battle_bg = spr_battle_bg_bc;
 		enemy_type[0] = 6;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + sprite_get_width(spr_enemy_bc_body)), (room_height / 2), "Instances", obj_enemy_bc);
 	}
@@ -202,6 +188,14 @@ function battle_setupgroup()
 		enemy_type[0] = 1000;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_tfp);
 	}
+	
+	if (battle_group == 2000) // Toilet
+	{
+		battle_bg = -1;
+		battle_music = unused_mus_battle_toilet;
+		enemy_type[0] = 2000;
+		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", unused_obj_enemy_toilet);
+	}
 }
 function battle_enemy()
 {
@@ -213,7 +207,7 @@ function battle_enemy()
 			enemy_obj[i].hpwidth = 100;
 			enemy_obj[i].hurtsound = snd_enemy_hurt1;
 		
-			if (enemy_type[i] == -2000) // Toilet
+			if (enemy_type[i] == 2000) // Toilet
 			{
 				enemy_name[i] = "Toilet";
 				enemy_curhp[i] = 1000;
@@ -371,7 +365,7 @@ function battle_getattack()
 	{
 		enemy_attack[i]	= irandom(1);
 		
-		if (enemy_type[i] == -2000) // Toilet
+		if (enemy_type[i] == 2000) // Toilet
 		{
 			enemy_attack[i] = 0;
 			battle_turntime = 600;
@@ -456,19 +450,6 @@ function battle_getattack()
 function battle_attack()
 {
 	// vars: time (1), amt (0), stage (0), delay (999), siner (0), controller and box_ (myself, enemy (type), attack)
-	
-	if (enemy == -2000) // Toilet
-	{
-		if (attack == 0)
-		{
-			var _x = controller.enemy_obj[myself].orig_x;
-			var _y = controller.enemy_obj[myself].y + (controller.enemy_obj[myself].sprite_height / 2);
-			create(_x, _y, obj_battle_blt);
-			thisobj.type = -2000;
-			time = 30;
-		}
-	}
-	
 	if (enemy == -1) || (enemy == -10) // test
 	{
 		if (attack == 0)
@@ -777,6 +758,18 @@ function battle_attack()
 		if (attack == 0)
 		{
 				
+		}
+	}
+	
+	if (enemy == 2000) // Toilet
+	{
+		if (attack == 0)
+		{
+			var _x = controller.enemy_obj[myself].orig_x;
+			var _y = controller.enemy_obj[myself].y + (controller.enemy_obj[myself].sprite_height / 2);
+			create(_x, _y, obj_battle_blt);
+			thisobj.type = 2000;
+			time = 30;
 		}
 	}
 	

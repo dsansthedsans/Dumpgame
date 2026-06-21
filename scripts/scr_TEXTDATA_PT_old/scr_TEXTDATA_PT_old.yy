@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_TEXTDATA_PT_old",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
