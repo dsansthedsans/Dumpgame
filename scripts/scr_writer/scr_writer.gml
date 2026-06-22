@@ -77,15 +77,6 @@ function TEXT()
 		}
 	}
 	
-	if (text == "dumpkill_start")
-	{
-		msg[0] = "STATUS UPDATE:\\^4 &!&!HUMAN ID:\\                CARLINHOS^4 &!LOCATION:\\     APPROACHING DUMPSTER^4 &!CURRENT OBJECTIVE:\\   FIND A WEAPON^4 &!&!;RMANKIND IS DEAD.^4 &!TRASH IS FUEL.^4 &!DUMPSTER IS FULL.";
-		msg_type[0] = "dumpkill";
-		msg_skip[0] = 0;
-		msg_next[0] = 0;
-		msg_sound[0] = snd_txt2;
-	}
-	
 	// intro
 	if (text == "intro")
 	{
@@ -592,10 +583,7 @@ function TEXT()
 				global.flag[45] = 1;
 			}
 			else if (_result == 2)
-			{
 				msg[7] = get_text("npc_armsguy_lost_0_2_0");
-				msg[8] = get_text("npc_armsguy_lost_0_2_1");
-			}
 		}
 		else
 		{
@@ -909,19 +897,17 @@ function TEXT()
 	{
 		if (global.flag[49] == 0)
 		{
-			msg[0] = "* You Must Be The New Member The Guys Were Talking About.";
-			msg[1] = "* I Saw The Fight You Had With Broken Clock.^1&* Pretty Epic Actually.";
-			msg[2] = "* He's One Of The Nicest Guys I've Ever Met.";
-			msg[3] = "* Well,^1 He Got Kinda Mad After What Happened To Him,^1 But He's Alright Now.";
+			msg[0] = "* You The New Member The Guys Were Talking About.";
+			msg[1] = "* I Saw Your Fight With Broken Clock.^1&* Pretty Epic Actually.";
+			msg[2] = "* He One Of The Coolest Guys Here.";
+			msg[3] = "* He Got Kinda Mad After The Invasion,^1 But He Still Cool.";
 			global.flag[49] = 1;
 		}
 		else
 		{
-			msg[0] = "* He Used To Hangout With The Other Humans All The Time.";
-			msg[1] = "* And He Loved The Idea Of Presenting The Server To&New Members.";
-			msg[2] = "* The Humans Even Built That Room Just For Him,^1 That He'd Go When Someone Appeared.";
-			msg[3] = "* That Was All Before The Invasion,^1 Obviously.";
-			msg[4] = "* Now He Basically Just Lives In That Pile Of Bricks.";
+			msg[0] = "* He Was With The Humans All The Time.";
+			msg[1] = "* That Was Before The Invasion Obviously.";
+			msg[2] = "* Now He Just Be In That Brick Pile.";
 		}
 		msg_talker[0] = obj_chara.mycol;
 	}
@@ -1037,19 +1023,19 @@ function TEXT()
 	{
 		if (global.flag[57] == 0)
 		{
-			msg[0] = "* You're The New Member?^1&* That's Cool.";
-			msg[1] = "* But You're Near The End,^1 Though.";
-			msg[2] = "* This Is The Last Room That's Minimally Livable.";
-			msg[3] = "* The Next One Is Where The Showdown Happened,^1 So&It's All Destroyed.";
-			msg[4] = "* ... What Showdown?";
-			msg[5] = "* The One After The Invasion.^1&* Between The New Members And The Administrators.";
+			msg[0] = "* You The New Member?^1&* That Cool.";
+			msg[1] = "* The First Since The Invasion!";
+			msg[2] = "* It A Shame You Leaving.^1&* The Exit Right Up There.";
+			msg[3] = "* How You Getting Through The Corridor??";
 			global.flag[57] = 1;
 		}
 		else
 		{
-			msg[0] = "* I'm Surprised That Mee6 Didn't Tell You About This.";
-			msg[1] = "* Actually,^1 Why Is He With You?";
-			msg[2] = "* Wasn't He Supposed To&Be Confined?";
+			msg[0] = "* ... You Know Nothing About It?";
+			msg[1] = "* The Corridor Up There Destroyed Because Of The Battle.";
+			msg[2] = "* The Battle Between The New Members And The Administrators.";
+			msg[3] = "* Mee6 Didn't Tell You That?^3&* Actually Why He Here??";
+			msg[4] = "* Shouldn't He Be Locked Up??";
 		}
 		msg_talker[0] = obj_chara.mycol;
 	}
@@ -1072,39 +1058,20 @@ function TEXT()
 		msg[0] = "* Can't Talk Right Now.^1&* I'm Gyming.";	
 	if (text == "npc_flitcher_exit")
 	{
-		var i = irandom_range(1, 100);
-		
-		if (i == 1)
+		if (irandom_range(1, 5) == 1)
 		{
 			msg[0] = "* I Slightly Dislike You.";
+			msg_font[0] = global.fnt_dsans;
+			msg_talker[0] = obj_chara.mycol;
 			global.flag[66] = 0.5;
 		}
 		else
 		{
 			msg[0] = "* (You wave to Flitcher.)";
 			msg[1] = "* (He waves back at you.)";
-			msg[2] = "* (How did he wave back at you if he has no hands at all?)";
+			msg[2] = "* (How did he wave back if he has no hands at all?)";
 			msg[3] = "* (This is the weirdest mystery of All Time.)";	
 		}
-		
-		/*
-		dislike = irandom_range(1, 100);
-		
-		if (dislike != 1) || (dislike == 1 && global.flag[66] == 1)
-		{
-			msg[0] = "* (You wave to Flitcher.)";
-			msg[1] = "* (He waves back at you.)";
-			msg[2] = "* (How did he wave back at you if he has no hands at all?)";
-			msg[3] = "* (This is the weirdest mystery of All Time.)";
-			dislike = 0;
-		}
-		
-		if (dislike == 1 && global.flag[66] == 0)
-		{
-			msg[0] = "* I Slightly Dislike You.";
-			global.flag[66] = 1;
-		}
-		*/
 	}
 	
 	// room_corridors_18

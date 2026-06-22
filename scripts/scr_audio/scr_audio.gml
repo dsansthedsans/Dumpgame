@@ -63,7 +63,7 @@ function audio_paused(_audio)
 	return audio_is_paused(argument0);	
 }
 
-function music_set(_pos, _music, _gain_volume = 1, _gain_time = 0, _gain_fadein = 0, _pitch = 1, _loop = 1, _fade_out_time = 0.5)
+function music_set(_pos, _music, _gain_volume = 1, _gain_time = 0, _gain_fadein = 0, _pitch = 1, _loop = 1, _fade_out_time = 1)
 {
 	var i = _pos;
 	global.music[i] = _music;

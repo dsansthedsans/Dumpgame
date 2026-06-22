@@ -54,9 +54,8 @@ msg_talker[0] = -2;
 msg_format[0] = "textbox";
 msg_autoskip[0] = 0;
 
-playsnd = 0;
+playsnd = 1;
 filesaved = 0;
-dumpkill_linejump = 0;
 
 // get text and new values
 TEXT();

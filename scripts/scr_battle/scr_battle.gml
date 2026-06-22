@@ -17,6 +17,8 @@ function battle_getgroup()
 	if (global.chara_world == WORLD_CORRIDORS) // corridors
 	{
 		battle_group = choose(irandom_range(2, 5), irandom_range(7, 11));
+		if (global.flag[37] == 1 && global.flag[39] == 1)
+			battle_group = irandom_range(7, 11);
 		if (global.flag[18] == 0.5) || (global.world_curpopulation[global.chara_world] == 1)
 			battle_group = 2;
 		if (global.battle_nextgroup == 0)
@@ -127,7 +129,6 @@ function battle_setupgroup()
 	{
 		battle_flee = 0;
 		battle_music = mus_battle_bc;
-		battle_bg = spr_battle_bg_bc;
 		enemy_type[0] = 6;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + sprite_get_width(spr_enemy_bc_body)), (room_height / 2), "Instances", obj_enemy_bc);
 	}

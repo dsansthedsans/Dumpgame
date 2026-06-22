@@ -159,18 +159,18 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "world_name_caverns",	"Caverns");
 	
 	// rooms
-	ds_map_add(global.textdata_en, "room_corridors_1",			"The Room of the New Members");
+	ds_map_add(global.textdata_en, "room_corridors_1",			"Room of the New Members");
 	ds_map_add(global.textdata_en, "room_corridors_1_5",		"First Corridor");
 	ds_map_add(global.textdata_en, "room_corridors_2",			"MEE6's Room");
 	ds_map_add(global.textdata_en, "room_corridors_3",			"Entrance"); // Save
 	ds_map_add(global.textdata_en, "room_corridors_3_5",		"Dummy Training Room");
 	ds_map_add(global.textdata_en, "room_corridors_4",			"Grass Pathway"); // Save
 	ds_map_add(global.textdata_en, "room_corridors_5",			"CAPTCHA (Stage 1)");
-	ds_map_add(global.textdata_en, "room_corridors_5_A",		"CAPTCHA (Stage 1 - Puzzle 1)");
-	ds_map_add(global.textdata_en, "room_corridors_5_B",		"CAPTCHA (Stage 1 - Puzzle 2)");
+	ds_map_add(global.textdata_en, "room_corridors_5_A",		"CAPTCHA (Stage 1, Puzzle 1)");
+	ds_map_add(global.textdata_en, "room_corridors_5_B",		"CAPTCHA (Stage 1, Puzzle 2)");
 	ds_map_add(global.textdata_en, "room_corridors_6",			"CAPTCHA's Reward (Stage 1)");
 	ds_map_add(global.textdata_en, "room_corridors_7",			"Relaxing Corridor");
-	ds_map_add(global.textdata_en, "room_corridors_8",			"Mouse Hole"); // Save
+	ds_map_add(global.textdata_en, "room_corridors_8",			"Rat Hole"); // Save
 	ds_map_add(global.textdata_en, "room_corridors_9",			"CAPTCHA (Stage 2)");
 	ds_map_add(global.textdata_en, "room_corridors_10",			"CATPCHA's Reward (Stage 2)");
 	ds_map_add(global.textdata_en, "room_corridors_11",			"Relaxing Pathway"); // Save
@@ -178,13 +178,13 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_corridors_13",			"Rocks Pathway"); // Save
 	ds_map_add(global.textdata_en, "room_corridors_14",			"CAPTCHA (Last Stage)");
 	ds_map_add(global.textdata_en, "room_corridors_15",			"CAPTCHA's Reward (Last Stage)");
-	ds_map_add(global.textdata_en, "room_corridors_16",			"Checkpoint"); // Save
-	ds_map_add(global.textdata_en, "room_corridors_16_A",		"Caverns' Entrance");
-	ds_map_add(global.textdata_en, "room_corridors_16_B",		"Corridors' Subway Entrance");
+	ds_map_add(global.textdata_en, "room_corridors_16",			"Cross Checkpoint"); // Save
+	ds_map_add(global.textdata_en, "room_corridors_16_A",		"Caverns's Entrance");
+	ds_map_add(global.textdata_en, "room_corridors_16_B",		"Corridors's Subway Entrance");
 	ds_map_add(global.textdata_en, "room_corridors_17",			"Last Pathway");
 	ds_map_add(global.textdata_en, "room_corridors_18",			"Final Corridor");
 	ds_map_add(global.textdata_en, "room_caverns_1",			"Rock Bottom");
-	ds_map_add(global.textdata_en, "room_caverns_2",			"I Hope You Like the Darkness Because This is Just the Beginning");
+	ds_map_add(global.textdata_en, "room_caverns_2",			"I Hope You Like the Darkness Because This is Just the Beginning (Actually It's the End)");
 	ds_map_add(global.textdata_en, "room_caverns_3",			"Tall Pillars"); // Save
 	
 	ds_map_add(global.textdata_en, "room_corridors_4_5",		"Rules");
@@ -433,19 +433,20 @@ function TEXTDATA_EN()
 	
 	// room_corridors_4	
 	ds_map_add(global.textdata_en, "npc_armsguy1_0_0", "* Are You A New Member?");
-	ds_map_add(global.textdata_en, "npc_armsguy1_0_1", "* Awesome.^1 &* I'm Armsguy,^1 A Monster.");
+	ds_map_add(global.textdata_en, "npc_armsguy1_0_1", "* Awesome.^1&* I'm An Armsguy.^1&* Call Me Armsguy.");
 	ds_map_add(global.textdata_en, "npc_armsguy1_0_2", "* ... Why I'm The Only Armsguy Not Attacking You?");
-	ds_map_add(global.textdata_en, "npc_armsguy1_0_3", "* There's No Such Reason.^1&* You're A Kid.^1&* How Harmful Can You Be?");
-	ds_map_add(global.textdata_en, "npc_armsguy1_0_4", "* Unless You Kill Another Monster.^1&* Then I'll Run.");
+	ds_map_add(global.textdata_en, "npc_armsguy1_0_3", "* Simple.^1&* There's No Reason To.");
+	ds_map_add(global.textdata_en, "npc_armsguy1_0_4", "* You're A Kid.^1&* How Dangerous Could You Be?");
+	//ds_map_add(global.textdata_en, "npc_armsguy1_0_4", "* Unless You Kill Another Monster.^1&* Then I'll Run.");
 		ds_map_add(global.textdata_en, "npc_armsguy1_1_0", "* Try Befriending The Other Monsters.");
-		ds_map_add(global.textdata_en, "npc_armsguy1_1_1", "* They're Just Attacking You Because They're Scared.");
+		ds_map_add(global.textdata_en, "npc_armsguy1_1_1", "* They're Attacking You Just Because They're Scared.");
 		ds_map_add(global.textdata_en, "npc_armsguy1_1_2", "* If You Show You Won't Hurt Them,^1 You're Fine.");
 	
 	// room_corridors_4_5
 	ds_map_add(global.textdata_en, "room_rulesbook_0", "* (It's an old book.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_1", "* (The title of the&book is \"Rules\".)");
-	ds_map_add(global.textdata_en, "room_rulesbook_2", "* (Some pages are ripped off and others are full of drawings.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_3", "* (Someone kept drawing the same smiley face a hundred times.)");
+	ds_map_add(global.textdata_en, "room_rulesbook_1", "* (Some pages are ripped off and others are full of drawings.)");
+	ds_map_add(global.textdata_en, "room_rulesbook_2", "* (Someone drew the same smiley face a hundred times.)");
+	ds_map_add(global.textdata_en, "room_rulesbook_3", "* (The title of the&book is \"Server Rules\".)");
 	
 	// obj_event_m6_precaptcha1
 	ds_map_add(global.textdata_en, "event_m6_precaptcha1_0", "* This is the door that has made stay here for all of this time.");
@@ -516,38 +517,37 @@ function TEXTDATA_EN()
 	
 	// room_corridors_8
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_0", "* Hey,^1 You.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_1", "* You're A New Member,^1 Right?");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_1", "* You A New Member Right?");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_2", "* Can You Help Me With Something?");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_3", "* My Buddy Got Stuck In The Middle Of Captcha's Stage 2.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_4", "* I'm Here Because He Asked Me To Look For Help.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_5", "* I'll Give You A Reward For It.^1&* Don't Worry.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_3", "* My Buddy Stuck In The Middle Of Captcha 2.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_4", "* He Tell Me To Look For Help.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_5", "* I Give You A Reward For It.^1&* Don't Worry.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_6", "* (Do you want to help Armsguy?)");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_6_1", "Yes");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_6_2", "No");
 	
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_1_0", "* Sweet.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_1_1", "* I'll Be Waiting For You Guys Right Here.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_1_2", "* I'm Too Afraid Of Heights To Get Near Those Puzzles.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_1_0", "* Cool!");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_1_1", "* I Be Waiting Here.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_1_2", "* I Too Afraid Of Heights To Go There.");
 	
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_2_0", "* That's Alright.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_2_1", "* I'll Look For Someone Else.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_2_0", "* Okay.");
 	
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_0_0", "* Do You Even Know Where The Captcha's Second Stage Is?");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_0_1", "* It's Right Up There.^1&* After That Door With Pillars.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_0_0", "* You Even Know Where Captcha 2 Is?");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_0_1", "* It Right Up There.^1&* After That Pillars.");
 	
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_0", "* Thank You,^1 Human.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_1", "* As I Promised,^1 I'll Give You A Reward.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_0", "* Thank You Human!");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_1", "* As Promised,^1 I Give You A Reward.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_0__", "* Hey,^1 Human.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_1__", "* You Helped My Friend.^1&* You Deserve A Reward.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_2", "* I'm Not Sure If You'll Use This,^1 But I Found It Around Here.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_3", "* It's Like A Knife,^1 But Weirder.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_1__", "* You Helped My Friend.^1&* I Give You Reward.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_2", "* I Don't Know You Use This,^1 But I Found It Around Here.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_3", "* It Like A Knife,^1 But Weirder.");
 	
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_4_0", "* Here.^1&* It's All Yours.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_4_0", "* Here.^1&* All Yours.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_0", "* (You got the :YKunai;D.)");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_6_0", "* Hope You Enjoy It.");
 	
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_4_1", "* Wait,^1 You Don't Have Space To Take It?");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_1", "* Get Rid Of Some Stuff Then I'll Give You The Reward.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_4_1", "* You Have No Space?");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_1", "* Get Rid Of Something And I Give You Reward.");
 	
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_2_0", "* What?^1&* Didn't Like It?");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_2_1", "* ...^2 Sorry.");
@@ -732,24 +732,24 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_act_result_armsguy_2", "* (You punch Armsguy's face pretending to use your full strength.)");
 
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_0", "+F1Let Me Be Slimy.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_1", "+F1Punch Me In The Face.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_1", "+F1Punch Me In The Face!");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_2", "+F1Use Your Strength In Me.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_3", "+F1You Are Never Gonna Be Strong As Me.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_3", "+F1You Never Be Strong As Me.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_4", "+F1You Should Go To The Gym.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_5", "+F1What?^1&\"Leg day\"?");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_6", "+F1I Am Stronger.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_5", "+F1What?^1&\"Leg Day\"?");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_6", "+F1I Stronger Than You.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_7", "+F1Wanna Break Your Legs?");
 	
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_8", "+F1Thank You So Much.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_8", "+F1Thanks So Much!");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_9", "+F1I Believe In Your Potential.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_10", "+F1You're Good.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_10", "+F1You Good.");
 	
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_0", "+F1Hey,^1 Back Off.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_1", "+F1Take Your Hands Off Me.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_2", "+F1Don't Touch&My Arms.");
 		
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_0", "+F1Ouch.^1 Keep Going.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_1", "+F1That's How&You Do It.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_0", "+F1Ouch!^1 Keep Going.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_1", "+F1That How&You Do It.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_2", "+F1Congrats,^1 I Loved It.");
 	
 	// Trashguy battle
@@ -838,8 +838,8 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_main_bc_3", "* Broken Clock has nothing to lose besides his life.");
 	ds_map_add(global.textdata_en, "battle_main_bc_4", "* Broken Clock is breaking laws of time and space.");
 	ds_map_add(global.textdata_en, "battle_main_bc_5", "* Even Broken Clock is right twice a day.");
-	ds_map_add(global.textdata_en, "battle_main_bc_6", "* Time clearly didn't heal all wounds.");
-	ds_map_add(global.textdata_en, "battle_main_bc_7", "* Time flies when you're having fun.");
+	ds_map_add(global.textdata_en, "battle_main_bc_6", "* Time clearly doesn't heal all wounds.");
+	ds_map_add(global.textdata_en, "battle_main_bc_7", "* Time really does fly when you're having fun.");
 	ds_map_add(global.textdata_en, "battle_main_bc_8", "* Broken Clock is a broken clock.");
 	//ds_map_add(global.textdata_en, "battle_main_bc_", "* Broken Clock is breaking bad.");
 	//ds_map_add(global.textdata_en, "battle_main_bc_", "* Broken Clock is clocked in.");
@@ -876,7 +876,7 @@ function TEXTDATA_EN()
 
 			ds_map_add(global.textdata_en, "battle_act_result_bc_3_2_1", "* (Broken Clock's anger seems to have decreased...)");			
 	
-	ds_map_add(global.textdata_en, "battle_act_result_bc_convinced", "* (It just doesn't really matter anymore.)");
+	ds_map_add(global.textdata_en, "battle_act_result_bc_convinced", "* (It doesn't really matter anymore.)");
 	
 	ds_map_add(global.textdata_en, "battle_bubble_bc_0_0_0", "YOU KNOW WHAT I HATE THE MOST?");
 	ds_map_add(global.textdata_en, "battle_bubble_bc_0_1_0", "YOU.^1 HUMANS.^1&ALL OF YOU.");

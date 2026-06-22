@@ -4,7 +4,7 @@ var _bonusy = 0;
 event_user(0);
 
 // draw format-based stuff
-if ((msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg_format[page] == "textbox_top") && msg_type[page] != "dumpkill")
+if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg_format[page] == "textbox_top")
 {
 	_bonusx = camera_get_view_x(view_camera[0]);
 	_bonusy = camera_get_view_y(view_camera[0]);
@@ -119,7 +119,6 @@ if (msg_format[page] == "bubble")
 shaking = 0;
 floating = 0;
 myfloat += 0.175;
-dumpkill_linejump = 0;
 for (var c = 1; c < (text_length + 1); c++)
 {
 	var _candraw = 1;
@@ -351,10 +350,6 @@ for (var c = 1; c < (text_length + 1); c++)
 		var _floatx = (sin((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 		var _floaty = (cos((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 	}
-	
-	// draw letter
-	if (_jumpedline == 1)
-		dumpkill_linejump += 1;
 	
 	if (_candraw == 1)
 	{

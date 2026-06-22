@@ -50,7 +50,7 @@ if (dancing == 1)
 
 if (eating == 1)
 {
-	sprite_index = spr_bird_eat;
+	sprite_index = spr_particle_bird_eat;
 	if (eat_delay <= 0)
 	{
 		if (eat_stage == 0)
@@ -79,7 +79,7 @@ else
 
 if (flying == 1)
 {
-	sprite_index = spr_bird_fly;
+	sprite_index = spr_particle_bird_fly;
 	if (fly_delay <= 0)
 	{
 		if (fly_stage == 0)

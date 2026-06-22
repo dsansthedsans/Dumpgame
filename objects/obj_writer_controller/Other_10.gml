@@ -49,12 +49,6 @@ if (msg_format[page] == "textbox") || (msg_format[page] == "textbox_bottom") || 
 	if (msg_type[page] == "notawake")
 		text_y = 120;
 	
-	if (msg_type[page] == "dumpkill")
-	{
-		text_x = 26;
-		text_y = (120 - ((letter_yspace / 2) * (dumpkill_linejump + 1)));
-		text_xend = 640;
-	}
 	if (msg_type[page] == "endingreal")
 	{
 		textbox_color = c_red;

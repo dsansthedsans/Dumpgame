@@ -54,37 +54,22 @@ if (room == room_corridors_1) // corredores
 			global.music[0] = mus_nobody;
 		else
 			music_set(1, snd_ambient_birds, 1, _gain_time, 1, 1, 1, _fadeouttime);
-		
-		/*
-		thatwriter = obj_writer_controller;
-		if (exists(thatwriter) == 1 && global.flag[66] == 0.5)
-		{
-			music_paused[0] = 1;
-			global.flag[66] = 0.75;
-		}
-		if (global.flag[66] == 0.75 && exists(thatwriter) == 0)
-		{
-			music_paused[0] = 0;
-			global.flag[66] = 1;	
-		}
-		music_paused[1] = music_paused[0];
-		*/
 	}
 }
 if (room == room_corridors_1_5)
 {
 	global.music[0] = -1;
-	music_set(1, snd_ambient_wind, 0.75, 3, 1, 0.25, 1, 0.5);
+	music_set(1, snd_ambient_wind, 0.75, 3, 1, 0.25, 1, 1);
 }
 if (room == room_corridors_2)
 {
 	global.music[0] = -1;
 	if (global.flag[1] == 0.5)
-		music_set(0, mus_m6, 1, 0, 0, 1, 1, 1);
+		music_set(0, mus_m6);
 }
 if (room >= room_corridors_3)
 {	
-	music_set(0, mus_corridors, 1, 0.5, 1, 1, 1, 0.5);
+	music_set(0, mus_corridors);
 	if (global.chara_murder >= 2)
 	{
 		global.music[0] = mus_corridors_geno;
@@ -106,15 +91,29 @@ if (room == room_corridors_16)
 if (room == room_corridors_16_B)
 {
 	music_set(0, -1);
-	music_set(1, snd_ambient_wind, , 2, , 0.5);
+	music_fadeouttime_old[0] = 3;
+	music_set(1, snd_ambient_wind, , 3, 1, 0.35, , 1);
 	global.music_volumetype[1] = VOLUME_SOUND;
 }
 if (room == room_corridors_17)
+{
 	music_set(1, -1);
+	if (exists(obj_writer_controller) == 1 && global.flag[66] == 0.5)
+	{
+		music_paused[0] = 1;
+		global.flag[66] = 0.75;
+	}
+	if (global.flag[66] == 0.75 && exists(obj_writer_controller) == 0)
+	{
+		music_paused[0] = 0;
+		global.flag[66] = 1;	
+	}
+	music_paused[1] = music_paused[0];
+}
 if (room == room_corridors_18) // gabee's chase
 {
 	global.music[0] = -1;
-	music_set(1, snd_ambient_wind, , 2, , 0.5);
+	music_set(1, snd_ambient_wind, , 3, 1, 0.35);
 	global.music_volumetype[1] = VOLUME_SOUND;
 	if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 9)
 		music_set(1, -1);
@@ -176,15 +175,15 @@ if (exists(obj_battle_quicker) == 1) || (room == room_battle)
 		controller = obj_battle_controller;
 		music_set(3, controller.battle_music, 1, 0, 0, 1, 1, 0.5);
 		if (controller.battle_won == 1 && controller.battle_group != 0) || (controller.fleeing == 1) || (controller.battle_group == 6 && controller.enemy_spare[0] >= 100) || (controller.battle_group == 2000 && controller.enemy_obj[0].flushed == 1)
-			music_set(3, -1);
+			music_set(3, -2);
 	}
 }
 else
 {
-	if (global.music[3] != -1)
+	if (global.music[3] == -2)
 	{
 		for (var i = 0; i < (global.music_length - 1); i++)
-			audio_resume(music_audio[i]);
+			music_paused[i]= false;
 	}
 	global.music[3] = -1;
 }
@@ -201,7 +200,7 @@ for (var i = 0; i < global.music_length; i++)
 		audio_resume(music_audio[i]);
 
 	// parar música
-	if (((global.music[i] == -1) || (global.music[i] != music_old[i] && music_old[i] != -1)) && music_audio[i] != -1)
+	if (((global.music[i] <= -1) || (global.music[i] != music_old[i] && music_old[i] > -1)) && music_audio[i] > -1)
 	{
 		audio_gain(music_audio_old[i], 0, music_fadeouttime_old[i], 0, music_volumetype_old[i]);
 		
@@ -217,7 +216,7 @@ for (var i = 0; i < global.music_length; i++)
 	}
 
 	// tocar música
-	if (global.music[i] != -1 && music_playing[i] == 0)
+	if (global.music[i] > -1 && music_playing[i] == 0)
 	{
 		audio_play(global.music[i], global.music_loop[i], global.music_volumetype[i], global.music_gain_volume[i], global.music_gain_time[i], global.music_gain_fadein[i], global.music_pitch[i]);
 		music_audio[i] = thisaudio;
