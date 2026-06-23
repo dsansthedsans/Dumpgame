@@ -564,9 +564,6 @@ function chara_world_name(_world)
 
 function chara_murder()
 {
-	var _curpop = global.world_curpopulation[global.chara_world];
-	var _maxpop = global.world_maxpopulation[global.chara_world];
-	
 	// matou metade dos monstros dos corredores
 	if (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2) && global.chara_murder == 0)
 		global.chara_murder = 1;

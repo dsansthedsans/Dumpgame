@@ -44,7 +44,7 @@ if (text_length <= (string_length(msg[page]) - 1))
 	if (_playsnd == 1 && msg_sound[page] > -1)
 	{
 		var _snd = msg_sound[page];
-		if (playsnd == 1) || (_snd == snd_txt_m6) //(_snd != snd_txt_dsans && _snd != snd_txt_gabee) || ((_snd == snd_txt_dsans || _snd == snd_txt_gabee) && playsnd == 1)
+		if (_snd != snd_txt_dsans && _snd != snd_txt_gabee) || ((_snd == snd_txt_dsans || _snd == snd_txt_gabee) && playsnd == 1)
 			audio_play(msg_sound[page], 0, VOLUME_SOUND);
 		playsnd = !playsnd;
 			

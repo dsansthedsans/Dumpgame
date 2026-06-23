@@ -19,7 +19,7 @@ if (global.chara_cutscene == 0 && global.chara_open_menu == 1)
 		chara_change(-1, 0, 0, -1, 1, 0, -1);
 		create(0, 0, obj_chara_menu);
 	}
-	else if (exists(obj_chara_menu) == 1 && ((press_ctrl == 1) || (press_shift == 1 && obj_chara_menu.lvl == 0)) && obj_chara_menu.thiswriter == -1)
+	else if (exists(obj_chara_menu) == 1 && ((press_ctrl == 1) || (press_shift == 1 && obj_chara_menu.lvl == 0)) && obj_chara_menu.thiswriter == -1 && obj_chara_menu.changed == 0)
 	{
 		audio_play(snd_option_return, 0, VOLUME_SOUND);
 		chara_change(-1, 1, 1, -1, 1, 1, -1);

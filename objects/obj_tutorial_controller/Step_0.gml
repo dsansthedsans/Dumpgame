@@ -11,7 +11,7 @@ if (con == 1)
 }
 if (con == 2 && delay <= 0)
 {
-	alpha = 0;
-	audio_play(snd_option_return, 0, VOLUME_SOUND);
-	destroy(id);
+	alpha = lerp(alpha, 0, alpha_amt);
+	if (alpha <= 0.01)
+		destroy(id);
 }

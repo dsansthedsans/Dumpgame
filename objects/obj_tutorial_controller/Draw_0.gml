@@ -48,38 +48,4 @@ for (var z = 0; z < 2; z++)
 		}
 	}
 }
-
-
-
-
-/*
-		draw_set_font(fnt_main);
-		draw_set_alpha(alpha);
-		draw_set_color(_color);
-		draw_set_valign(fa_top);
-		draw_set_halign(fa_left);
-		var _x = (160 - (string_width(text_visible[z]) / 2) + _xadd - 8);
-		var _y = (240 - 40 + (20 * z));
-		if (_draw == 1)
-		{
-			draw_text(_x, _y, string_char_at(text[z], i));
-			_xadd += 8;
-		}
-		*/
-
-
-
-
-
-
-
-
-/*
-draw_set_font(fnt_main_spaced);
-draw_set_alpha(alpha);
-draw_set_valign(fa_bottom);
-draw_set_halign(fa_center);
-draw_text_outline_ext(160, (240 - 20), text, c_white, -1, (320 - 40), 1, c_black);
-*/
-
 draw_set_alpha(1);

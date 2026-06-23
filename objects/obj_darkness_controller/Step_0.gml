@@ -3,9 +3,10 @@ if (type == 1)
 {
 	var _val = 255;
 	var _y = (chara.y - 2);
-	if (chara.x >= 220 && _y >= 400 && _y <= 599)
-		_val = (255 * 0.59);
-	
+	if (chara.x >= 210 && ((_y >= 360 && _y <= 400) || (_y >= 600 && _y <= 660)))
+		_val = (255 * (1 - (0.6 * ((chara.x - 210) / 100))));
+	if (chara.x >= 210 && _y >= 400 && _y <= 599)
+		_val = (255 * 0.4);
 	val = lerp(val, _val, 0.2);
 	chara.image_blend = make_color_hsv(0, 0, val);
 }

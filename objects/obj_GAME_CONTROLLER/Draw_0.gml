@@ -86,7 +86,8 @@ if (global.indebug == 1 && exists(obj_chara) == 1)
 	
 	// desenhar informações
 	var _str_chara = 
-	"chara_run:  " + string(global.chara_run)
+	"savefile_selected:  " + string(global.savefile_selected)
+	+ "\nchara_run:  " + string(global.chara_run)
 	+ "\nchara_move:  " + string(global.chara_move)
 	+ "\nchara_interact:  " + string(global.chara_interact)
 	+ "\nchara_cutscene:  " + string(global.chara_cutscene)

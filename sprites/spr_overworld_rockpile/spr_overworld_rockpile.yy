@@ -12,19 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"40c13f05-968b-4a15-a7dd-251323473475","name":"40c13f05-968b-4a15-a7dd-251323473475","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ab6ab113-f9dd-41a9-85d4-09bfca4424e7","name":"ab6ab113-f9dd-41a9-85d4-09bfca4424e7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"6ff93d87-7646-4ad9-bb84-dfd07fcb856f","name":"6ff93d87-7646-4ad9-bb84-dfd07fcb856f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"e8906dcb-4481-4d03-b24a-ee358067392c","name":"e8906dcb-4481-4d03-b24a-ee358067392c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"eb4613e2-68e8-43ae-901f-9311a9abc459","name":"eb4613e2-68e8-43ae-901f-9311a9abc459","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"688ea6a2-569b-4911-bba0-f48de5191226","name":"688ea6a2-569b-4911-bba0-f48de5191226","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"dacdf17b-a9eb-4698-bacd-447438be8ace","name":"dacdf17b-a9eb-4698-bacd-447438be8ace","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"7520e6f5-5978-4127-820c-5a7e5b6a57b7","name":"7520e6f5-5978-4127-820c-5a7e5b6a57b7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"8fceb08a-0356-4686-a158-4082994e6b64","name":"8fceb08a-0356-4686-a158-4082994e6b64","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"6101353f-1928-4736-b555-b40438455325","name":"6101353f-1928-4736-b555-b40438455325","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"a1c1a34b-cc90-4ef4-8df0-78c440ae6393","name":"a1c1a34b-cc90-4ef4-8df0-78c440ae6393","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"d6f507a5-a4de-4279-a296-154f4a98efa2","name":"d6f507a5-a4de-4279-a296-154f4a98efa2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"c7109103-f7c1-4d7d-b92a-0ec10e90fca8","name":"c7109103-f7c1-4d7d-b92a-0ec10e90fca8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"a7549943-24a3-43cb-9663-3889755d7efa","name":"a7549943-24a3-43cb-9663-3889755d7efa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":20,
   "gridY":20,
@@ -61,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":13.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -81,44 +70,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"40c13f05-968b-4a15-a7dd-251323473475","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"853bf6be-a98e-4c85-ba69-eb6e755becce","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ab6ab113-f9dd-41a9-85d4-09bfca4424e7","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a107e008-734b-4444-afca-f06f3888ea96","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6ff93d87-7646-4ad9-bb84-dfd07fcb856f","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c09a54ef-db78-4802-a4e6-e8fa5011c1fc","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e8906dcb-4481-4d03-b24a-ee358067392c","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"f668ee05-c70c-41ff-b2a9-1c30b229a9ba","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"eb4613e2-68e8-43ae-901f-9311a9abc459","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"5fbb0f5c-637a-459f-a2ec-dc1dcddda1f3","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"688ea6a2-569b-4911-bba0-f48de5191226","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"82aff345-607c-47b7-9200-3f6fe7ca9c9d","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dacdf17b-a9eb-4698-bacd-447438be8ace","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e0891879-7f63-43e8-87e5-e32ea39df707","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7520e6f5-5978-4127-820c-5a7e5b6a57b7","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e0a8f98f-ff9b-462c-9171-6d59a0451bfc","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8fceb08a-0356-4686-a158-4082994e6b64","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"2cfebc9f-9b66-4204-acfa-b3d8a522ad5d","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6101353f-1928-4736-b555-b40438455325","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"eea38625-297e-4a46-817e-a8fbecfb7f23","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a1c1a34b-cc90-4ef4-8df0-78c440ae6393","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"dfa44c9e-13a9-46fd-a1e7-b1b73f81cdbd","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d6f507a5-a4de-4279-a296-154f4a98efa2","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"be1dc223-80a4-404b-90c6-70b1b274ef8c","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c7109103-f7c1-4d7d-b92a-0ec10e90fca8","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"10c7db77-9d31-41ca-960c-c2ec9b1916ab","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a7549943-24a3-43cb-9663-3889755d7efa","path":"sprites/spr_overworld_rockpile/spr_overworld_rockpile.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8f2078ad-9e10-4987-b36a-da5b6384d118","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

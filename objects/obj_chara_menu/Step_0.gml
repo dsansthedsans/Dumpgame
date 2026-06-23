@@ -5,6 +5,7 @@ press_u = key("up_press");
 press_d = key("down_press");
 press_enter = key("enter_press");
 press_shift = key("shift_press");
+changed = 0;
 
 
 // movimento
@@ -104,6 +105,7 @@ if (press_shift == 1 && thiswriter == -1)
 			option_pos_old = 0;
 			lvl = 1;	
 		}
+		changed = 1;
 	}
 }
 

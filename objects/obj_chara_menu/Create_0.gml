@@ -75,7 +75,7 @@ for (var i = 0; i < option_length[2]; i++)
 item_pos = 0;
 
 thiswriter = -1;
-
+changed = 0;
 
 
 

@@ -6,8 +6,7 @@ if (type == 1)
 	{
 		for (var i = 0; i < 100; i++)
 		{
-			var _x = (200 + i);
-			
+			var _x = (210 + i);
 			var _y = 300;
 			var _h = 100;
 			if (z == 1)
@@ -15,17 +14,12 @@ if (type == 1)
 				_y = 600;
 				_h = 60;
 			}
-			
-			var _alpha = (0 + (0.01 * i));
-			_alpha = clamp(_alpha, 0, 0.59);
-			
-			draw_set_alpha(_alpha);
+			draw_set_alpha(clamp((0.01 * i), 0, 0.6));
 			draw_rectangle(_x, _y, _x, (_y + _h - 1), 0);
 		}
 	}
-	
-	draw_set_alpha(0.59);
-	draw_rectangle(200, 400, room_width, 599, 0);
+	draw_set_alpha(0.6);
+	draw_rectangle(210, 400, room_width, 599, 0);
 }
 if (type == 2)
 {

@@ -297,11 +297,12 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "savepoint_0", "* [This save system is temporary.]");
 	ds_map_add(global.textdata_en, "savepoint_1", "* [Once you quit the game you will you lose all progress.]");
 	ds_map_add(global.textdata_en, "savepoint_2", "* [You won't lose progress by returning to the Menu.]");
-	ds_map_add(global.textdata_en, "savepoint_3", "* (Your HP has been fully restored.)");
-	ds_map_add(global.textdata_en, "savepoint_4", "");
-	ds_map_add(global.textdata_en, "savepoint_4_1", "Save");
-	ds_map_add(global.textdata_en, "savepoint_4_2", "Back");
-	ds_map_add(global.textdata_en, "savepoint_5", "File saved.");
+	
+	ds_map_add(global.textdata_en, "savepoint_def0", "* (Your HP has been fully restored.)");
+	ds_map_add(global.textdata_en, "savepoint_def1", "");
+	ds_map_add(global.textdata_en, "savepoint_def1_1", "Save");
+	ds_map_add(global.textdata_en, "savepoint_def1_2", "Back");
+	ds_map_add(global.textdata_en, "savepoint_def2", "File saved.");
 	
 	// border
 	ds_map_add(global.textdata_en, "border_0", "* (This eletrical border gives you the feeling the PRE-DEMO ended.)");
@@ -692,23 +693,24 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_act_dummy_1", "Talk");
 	ds_map_add(global.textdata_en, "battle_act_dummy_2", "Scream");
 	
-	ds_map_add(global.textdata_en, "battle_act_result_dummy_0_0", "* Dummy - [0 ATK | 0 DEF]^1 &* A dummy with an appearance&of a cat.");
+	ds_map_add(global.textdata_en, "battle_act_result_dummy_0_0", "* Dummy - [0 ATK | 0 DEF]^1 &* A dummy that looks like a cat.");
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_0_1", "* Their body is made out of cloth and artificial fur.");
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_0_2", "* Even though they don't have much to say,^1 they're a great listener.");
 	
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_0", "* (You try to talk with Dummy,^1 but you couldn't think of any conversation topics...)");
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_0", "* (You have a passing conversation about ");
-	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_1_0", "video games");
-	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_1_1", "skeletons");
-	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_1_2", "apples");
+	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_1_0", "butterscotch pies");
+	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_1_1", "hot dogs");
+	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_1_2", "instant noodles");
+	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_1_3", "abandoned quiches");
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_0_2", "&with Dummy.)");
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_1_1_1", "* (The blush on their face seems to get redder...)");
 	
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_0", "* (You loudly scream to Dummy's face.)");
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_1", "* (Tears flows down out of their eyes.)");
-	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_2_0", "* That is the wrong option.");
-	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_2_1", "* You are an interesting person.");
-	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_2_2", "* I knew your kind was&know to be excessive,^1 but nothing near this.");
+	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_2_0", "* That was the wrong option.");
+	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_2_1", "* You are an interesting individual.");
+	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_2_2", "* I knew your kind was&known to be excessive,^1 but nothing near this.");
 	ds_map_add(global.textdata_en, "battle_act_result_dummy_2_2_3", "* ...");
 
 	// Armsguy battle
@@ -799,6 +801,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_main_flitcher_1", "* Flitcher is moving his tongue unconsciously.");
 	ds_map_add(global.textdata_en, "battle_main_flitcher_2", "* Flitcher is daydreaming.");
 	ds_map_add(global.textdata_en, "battle_main_flitcher_3", "* Flitcher doesn't really know why he's here.");
+	ds_map_add(global.textdata_en, "battle_main_flitcher_4", "* Flitcher is just there.");
 	
 	ds_map_add(global.textdata_en, "battle_act_flitcher_1", "Talk");
 	ds_map_add(global.textdata_en, "battle_act_flitcher_2", "Wave");

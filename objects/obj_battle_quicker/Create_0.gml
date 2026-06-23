@@ -21,24 +21,6 @@ nobody = 0;
 if (global.battle_nextgroup == 1) || (global.world_curpopulation[global.chara_world] <= 0 && global.battle_nextgroup == 0)
 	nobody = 1;
 
-/*
-for (var i = 0; i < global.music_length; i++)
-{
-	var m = global.music[i];
-	var _curpop = global.world_curpopulation[global.chara_world];
-	var _maxpop = global.world_maxpopulation[global.chara_world];
-	
-	if (m != mus_corridors_geno && m != mus_nobody) || ((m == mus_corridors_geno || m == mus_nobody) && nobody == 0)//(m != mus_nobody && ((m != mus_corridors_geno) || (m == mus_corridors_geno && global.battle_nextgroup != 0)))
-	{
-		audio_pause(m);
-		
-		// stop music before "but nobody came"
-		if (m == mus_corridors && _curpop <= 0 && global.flag[22] == 0)
-			audio_stop(m);
-	}
-}
-*/
-
 audio_stop(snd_victory);
 audio_stop(snd_option_movehold);
 audio_stop(snd_impact);

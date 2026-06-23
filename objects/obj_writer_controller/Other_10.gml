@@ -45,17 +45,9 @@ if (msg_format[page] == "textbox") || (msg_format[page] == "textbox_bottom") || 
 		text_y = 68;
 		letter_yspace = 20.5;
 	}
-	
 	if (msg_type[page] == "notawake")
 		text_y = 120;
 	
-	if (msg_type[page] == "endingreal")
-	{
-		textbox_color = c_red;
-		for (var i = 0; i < 2; i++)
-			text_color[i] = c_red;
-	}
-
 	// change text_x if there's face
 	if (msg_face[page] > -1)
 		text_x = (16 + 11 + sprite_get_width(msg_face[page]) + 8);

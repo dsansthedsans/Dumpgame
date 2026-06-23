@@ -54,7 +54,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 	}
 	
 	// desenhar informações do jogador no ponto de save
-	if (msg_type[page] == "savepointt")
+	if (msg_type[page] == "savepoint")
 	{
 		draw_set_font(fnt_main);
 		draw_set_alpha(1);
@@ -63,12 +63,11 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 			_color = c_yellow;
 		draw_set_color(_color);
 		
-		var _name = global.file_chara_name;
-		var _lvl = global.file_chara_lvl;
-		world = global.file_chara_world;
-		var _world = chara_getworld_name();
-		mode = 1;
-		var _room = chara_getroom_name();
+		savefile_read(global.savefile_selected);
+		var _name = savefile_name;
+		var _lvl = savefile_lvl;
+		var _world = chara_world_name(savefile_world);
+		var _room = chara_room_name(savefile_room);
 		if (_name == "")
 		{
 			_name = "[-----]";
@@ -100,7 +99,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		draw_set_valign(fa_bottom);
 		draw_set_halign(fa_center);
 		if (filesaved == 1)
-			draw_text(_middlex, _savedy, get_text("savepoint_5"));
+			draw_text(_middlex, _savedy, get_text("savepoint_def2"));
 	}
 }
 if (msg_format[page] == "battlebox")

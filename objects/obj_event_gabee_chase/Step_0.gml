@@ -415,7 +415,7 @@ if (con == 54)
 if (con == 55)
 {
 	chara.image_blend = make_color_hsv(color_get_hue(c_white), color_get_saturation(c_white), characolorvalue);
-	characolorvalue -= 2;
+	characolorvalue -= 4;
 	if (audio_sound_get_track_position(thisaudio) >= 3)
 	{
 		global.flag[61] = 1;

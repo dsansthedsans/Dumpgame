@@ -7,8 +7,12 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 	if (_volume_type == VOLUME_SOUND)
 	{
 		_volume *= 1.5;
+		if (_asset == snd_step1) || (_asset == snd_step2)
+			_volume /= 2;
 		if (_asset == snd_txt_m6)
 			_volume *= 0.7;
+		if (_asset == snd_surprise)
+			_volume /= 2;
 		if (_asset == snd_heartpulse1) || (_asset == snd_heartpulse2)
 			_volume *= 0.75;
 		if (_asset == snd_explosion1)
@@ -23,7 +27,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == mus_corridors)
 			_volume *= 0.8;
 		if (_asset == mus_chase_intro) || (_asset == mus_chase_loop)
-			_volume *= 1;
+			_volume *= 1.25;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)

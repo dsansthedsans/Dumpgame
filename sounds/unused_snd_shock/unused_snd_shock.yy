@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_shock",
+  "%Name":"unused_snd_shock",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":0.87800455,
   "exportDir":"",
-  "name":"snd_shock",
+  "name":"unused_snd_shock",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_shock.wav",
+  "soundFile":"unused_snd_shock.wav",
   "volume":1.0,
 }

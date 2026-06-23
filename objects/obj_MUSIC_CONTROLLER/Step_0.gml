@@ -64,6 +64,7 @@ if (room == room_corridors_1_5)
 if (room == room_corridors_2)
 {
 	global.music[0] = -1;
+	music_set(1, -1);
 	if (global.flag[1] == 0.5)
 		music_set(0, mus_m6);
 }
@@ -91,8 +92,8 @@ if (room == room_corridors_16)
 if (room == room_corridors_16_B)
 {
 	music_set(0, -1);
-	music_fadeouttime_old[0] = 3;
-	music_set(1, snd_ambient_wind, , 3, 1, 0.35, , 1);
+	music_fadeouttime_old[0] = 5;
+	music_set(1, snd_ambient_wind, , 2.5, 1, 0.5, , 1);
 	global.music_volumetype[1] = VOLUME_SOUND;
 }
 if (room == room_corridors_17)
@@ -113,7 +114,8 @@ if (room == room_corridors_17)
 if (room == room_corridors_18) // gabee's chase
 {
 	global.music[0] = -1;
-	music_set(1, snd_ambient_wind, , 3, 1, 0.35);
+	music_fadeouttime_old[0] = 5;
+	music_set(1, snd_ambient_wind, , 2.5, 1, 0.75, , 2.5);
 	global.music_volumetype[1] = VOLUME_SOUND;
 	if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 9)
 		music_set(1, -1);
@@ -122,7 +124,7 @@ if (room == room_corridors_18) // gabee's chase
 		music_set(0, mus_chase_intro, 1, 0, 0, 1, 0, 0);
 		if (music_old[0] == mus_chase_intro && audio_playing(mus_chase_intro) == false) || (music_old[0] == mus_chase_loop)
 		{
-			music_set(0, mus_chase_loop, 1, 0, 0, 1, 1, 0);
+			music_set(0, mus_chase_loop, 1, 0, 0, 1.1, 1, 0);
 			if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 45)
 			{
 				global.music_pitch[0] = music_pitch_old[0];
@@ -205,8 +207,10 @@ for (var i = 0; i < global.music_length; i++)
 		audio_gain(music_audio_old[i], 0, music_fadeouttime_old[i], 0, music_volumetype_old[i]);
 		
 		var z = 0;
-		while (music_fadingaudio[z] != -1)
+		while (music_fadingaudio[z] != -1 && z < global.music_length)
+		{
 			z += 1;
+		}
 		music_fadingaudio[z] = music_audio_old[i];
 		
 		music_playing[i] = 0;

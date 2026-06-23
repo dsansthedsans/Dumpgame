@@ -1,9 +1,8 @@
 
 // folhas das árvores
-solidobj = obj_overworld_solid;
-for (var i = 0; i < instance_number(solidobj); i++)
+for (var i = 0; i < instance_number(obj_overworld_solid); i++)
 {
-	treeobj = instance_find(solidobj, i);
+	treeobj = instance_find(obj_overworld_solid, i);
 	if (treeobj.leaf_fall == 1 && treeobj.leaf_create == 1)
 	{
 		var _x = (treeobj.x + 30 + choose(irandom_range(-11, -20), irandom_range(11, 20)));

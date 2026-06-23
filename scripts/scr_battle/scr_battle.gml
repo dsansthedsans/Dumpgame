@@ -35,7 +35,7 @@ function battle_getgroup()
 	
 	// debug
 	if (global.indebug == 1)
-		battle_group = 6;
+		battle_group = 0;
 	
 	// override battlegroup with nextgroup
 	if (global.battle_nextgroup != 0)
@@ -812,7 +812,6 @@ function battle_attack()
 		}
 	}
 	*/
-	debug("normaltime: " + string(normaltime));
 }
 function battle_sparecloud(_instance)
 {

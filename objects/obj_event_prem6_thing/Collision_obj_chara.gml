@@ -27,15 +27,10 @@ if (global.chara_move == 1 && global.chara_cutscene == 0)
 		
 	if (sound > 0)
 	{
-		audio_play(snd_step1, 0, VOLUME_SOUND);
-		
 		var _pitch = 0.5;
 		if (sound == 2)
 			_pitch = 0.75;
-		else
-			audio_gain(thisaudio, 0, 1.5, 0, VOLUME_SOUND);
-		audio_pitch(thisaudio, _pitch);
-		
-		sound = 0;	
+		audio_play(snd_step1, 0, VOLUME_SOUND, 2, , , _pitch);
+		sound = 0;
 	}
 }

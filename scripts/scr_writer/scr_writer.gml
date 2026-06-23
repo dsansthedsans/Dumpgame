@@ -150,7 +150,7 @@ function TEXT()
 	if (text == "room_rockpile_0")
 		msg[0] = "* (It's a pile of rocks.)";
 	if (text == "room_rockpile_1")
-		msg[0] = "* (Oh my god!)^2&* (It's a pile of rocks.)";
+		msg[0] = "* (Oh,^3 my God!^1 It can't be!)^2&* (It's a pile of rocks.)";
 	
 	// obj_event_m6_start
 	if (text == "event_m6_start_0") || (text == "event_m6_start_1") || (text == "event_m6_start_2") || (text == "event_m6_start_3") || (text == "event_m6_start_4")
@@ -192,7 +192,11 @@ function TEXT()
 		msg_talker[0] = obj_marker;
 		
 		if (_idnum == 0)
+		{
 			msg_face[0] = spr_dialogface_m6_neutral;
+			msg_face[2] = spr_dialogface_m6_neutralTense;
+			msg_face[3] = spr_dialogface_m6_neutral;
+		}
 		else if (_idnum == 1)
 		{
 			msg_face[0] = spr_dialogface_m6_default;
@@ -242,20 +246,24 @@ function TEXT()
 	// save point
 	if (text == "savepoint")
 	{
-		msg[0] = "* (Seeing the dusty gray stairs and the colorful flowers in the grass, ...)";
-		msg[1] = "* (... you realize that this is just the beginning to something big.)";
-		msg[2] = "* (And that you probably shouldn't have left home.)";
-		msg[3] = "* (Your HP has been fully restored.)";
-		
-		question[4] = get_text("savepoint_4");
-		question_option[1] = get_text("savepoint_4_1");
-		question_option[2] = get_text("savepoint_4_2");
-		msg_type[4] = "savepoint";
-		
-		if (question_result[4] == 1)
+		var p = 0;
+		if (room == room_corridors_2)
 		{
-			msg[5] = "";
-			msg_type[5] = "savepoint";
+			msg[0] = "* (Seeing the dusty gray stairs and the colorful flowers in the grass, ...)";
+			msg[1] = "* (... you realize that this is just the beginning to something big.)";
+			msg[2] = "* (And that you probably shouldn't have left home.)";
+			p = 3;
+		}
+		
+		msg[p] = get_text("savepoint_def0");
+		question[p+1] = get_text("savepoint_def1");
+		question_option[1] = get_text("savepoint_def1_1");
+		question_option[2] = get_text("savepoint_def1_2");
+		msg_type[p+1] = "savepoint";
+		if (question_result[p+1] == 1)
+		{
+			msg[p+2] = "";
+			msg_type[p+2] = "savepoint";
 			filesaved = 1;
 		}
 		
@@ -1055,7 +1063,7 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 	}
 	if (text == "npc_armsguy_exitlifting")
-		msg[0] = "* Can't Talk Right Now.^1&* I'm Gyming.";	
+		msg[0] = "* Can't Talk Right Now.^1&* I Gyming.";	
 	if (text == "npc_flitcher_exit")
 	{
 		if (irandom_range(1, 5) == 1)
@@ -1451,9 +1459,14 @@ function TEXT()
 			if (_group == 2000)
 				_groupname = "toilet";
 			
-			var _type = 0;
-			while (_type == 0)
-				_type = controller.enemy_type[irandom(2)];
+			var _enemylist = [];
+			for (var e = 0; e < controller.enemy_length; e++)
+			{
+				if (controller.enemy_type[e] != 0)
+					array_push(_enemylist, controller.enemy_type[e]);
+			}
+			debug(_enemylist);
+			_type = _enemylist[irandom(array_length(_enemylist) - 1)];
 			
 			var _max = 0;
 			var _name = "";
@@ -1470,7 +1483,7 @@ function TEXT()
 			if (_type == 4)
 			{
 				_name = "flitcher";
-				_max = 3;
+				_max = 4;
 			}
 			if (_type == 5)
 			{
@@ -1499,6 +1512,7 @@ function TEXT()
 			{
 				var _num = irandom(_max);
 				msg[0] = get_text("battle_main_" + string(_name) + "_" + string(_num));
+				debug("battle_main_" + string(_name) + "_" + string(_num));
 			}
 			if (msg[0] == undefined)
 				msg[0] = "* Salenis";
@@ -1763,10 +1777,7 @@ function TEXT()
 					msg[0] = get_text("battle_act_result_dummy_1_0");
 				else
 				{
-					var _word0 = get_text("battle_act_result_dummy_1_1_0_1_0");
-					var _word1 = get_text("battle_act_result_dummy_1_1_0_1_1");
-					var _word2 = get_text("battle_act_result_dummy_1_1_0_1_2");
-					msg[0] = string(get_text("battle_act_result_dummy_1_1_0_0")) + string(choose(_word0, _word1, _word2)) + string(get_text("battle_act_result_dummy_1_1_0_2"));
+					msg[0] = $"{get_text("battle_act_result_dummy_1_1_0_0")}{get_text("battle_act_result_dummy_1_1_0_1_" + string(irandom(3)))}";
 					msg[1] = get_text("battle_act_result_dummy_1_1_1");
 				}
 			}
@@ -1780,6 +1791,8 @@ function TEXT()
 					_screamed = clamp(_screamed, 0, 3);
 					msg[2] = get_text("battle_act_result_dummy_2_2_" + string(_screamed));
 					msg_face[2] = spr_dialogface_m6_sassy;
+					if (_screamed == 3)
+						msg_face[2] = spr_dialogface_m6_angry;
 					msg_sound[2] = snd_txt_m6;
 				}
 			}

@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"corridors",
-    "path":"folders/[!] objects/events/corridors.yy",
+    "path":"folders/[!] objects/events/caverns/corridors.yy",
   },
   "parentObjectId":{
     "name":"obj_event_parent",
