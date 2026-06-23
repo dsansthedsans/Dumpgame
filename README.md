@@ -20,8 +20,9 @@
 <br>
 <p align="center"><img src="README-ASSETS/TEST-SNOWDIN.png" height=355 alt="Screenshot of Dumpgame in early development"></p>
 <br>
-<p>I HATE WRITING THIS Still, I couldn't stop thinking about making an UNDERTALE fangame starring me and my friends as characters the player could fight. The game would ... at Dumpster Friends, our Discord server.</p>
-<p>I REALLY HATE WRITING THIS !!!!!!!!!!!!!!!!!!!!!!!Still, all I could think about was making an UNDERTALE fangame where me and my friends in <b>Dumpster Friends</b>, a Discord server, were characters the player would be able to fight. So, I watched a couple GameMaker tutorials on YouTube <i>(more specifically almost all of <a href="https://www.youtube.com/@peytonburnham4316/playlists">those by Peyton Burnham</a>)</i> and within a month and a half I made  </p>
+<p>I wanted to make an UNDERTALE fangame set in Dumpster Friends, a Discord server, that had me and my friends as characters the player could fight.</p>
+<br>
+<p>I STILL HATE WRITITNF THIS !So, I watched a couple GameMaker tutorials on YouTube <i>(more specifically almost all of <a href="https://www.youtube.com/@peytonburnham4316/playlists">those by Peyton Burnham</a>)</i> and within a month and a half I made  </p>
 <br>
 <p align="center"><img src="README-ASSETS/EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/WRITER-SAVE.png" height="295"></p>
 <p><b>UNUSED TEXT AS OF NOEW:</b> I watched a couple tutorials on YouTube more specifically peyton burhnham. Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart. Then, on June 14, 2026, almost two years after. leaving the project unfinished. An update with almost a year worth of new content since the latest release st. Actually, that was a dream of mine long before I even met them. I was seven years old when I first discovered UNDERTALE through <a href="https://www.youtube.com/watch?v=AjFijrXaxkg">an animation of Sans's battle</a>.</p>
