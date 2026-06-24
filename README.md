@@ -16,16 +16,25 @@
 
 <br>
 <h2>Development History</h2>
-<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
+<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
+<p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
 <br>
-<p align="center"><img src="README-ASSETS/TEST-SNOWDIN.png" height=355 alt="Screenshot of Dumpgame in early development"></p>
+<p align="center"><img src="README-ASSETS/TEST-SNOWDIN.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
 <br>
-<p>I wanted to make an UNDERTALE fangame set in Dumpster Friends, a Discord server, that had me and my friends as characters the player could fight.</p>
+<p>spin me right round baby right round like a record baby round round round round<br>forthenext couple of months i'd watch tutorials. fort night</p>
 <br>
-<p>I STILL HATE WRITITNF THIS !So, I watched a couple GameMaker tutorials on YouTube <i>(more specifically almost all of <a href="https://www.youtube.com/@peytonburnham4316/playlists">those by Peyton Burnham</a>)</i> and within a month and a half I made  </p>
-<br>
+<p align="center"><img src="README-ASSETS/MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu">
 <p align="center"><img src="README-ASSETS/EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/WRITER-SAVE.png" height="295"></p>
-<p><b>UNUSED TEXT AS OF NOEW:</b> I watched a couple tutorials on YouTube more specifically peyton burhnham. Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart. Then, on June 14, 2026, almost two years after. leaving the project unfinished. An update with almost a year worth of new content since the latest release st. Actually, that was a dream of mine long before I even met them. I was seven years old when I first discovered UNDERTALE through <a href="https://www.youtube.com/watch?v=AjFijrXaxkg">an animation of Sans's battle</a>.</p>
+<p align="center"><img src="README-ASSETS/BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's battle">
+<br>
+UNUSED TEXT AS OF NOW:
+So, after almost two months of watching GameMaker tutorials by Peyton Burnham on YouTube, I finally began to understand what all those strange words meant.
+So, I watched a couple GameMaker tutorials on YouTube <i>(more specifically almost all of those by Peyton Burnham)</i> and within a month and a half I made
+Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart.
+Then, on June 14, 2026, almost two years after.
+leaving the project unfinished.
+An update with almost a year worth of new content since the latest release.
+Actually, that was a dream of mine long before I even met them. I was seven years old when I first discovered UNDERTALE through <a href="https://www.youtube.com/watch?v=AjFijrXaxkg">an animation of Sans's battle</a>.
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
