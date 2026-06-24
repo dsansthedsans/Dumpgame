@@ -21,15 +21,14 @@
 <br>
 <p align="center"><img src="README-ASSETS/TEST-SNOWDIN.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
 <br>
-<p>spin me right round baby right round like a record baby round round round round<br>forthenext couple of months i'd watch tutorials. fort night</p>
+<p>For the next few months I'd watch multiple GameMaker tutorials by Peyton Burnham on YouTube, in particular his "How to Make an RPG" and "Branching Dialog System" series.</p>
 <br>
 <p align="center"><img src="README-ASSETS/MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu">
 <p align="center"><img src="README-ASSETS/EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/WRITER-SAVE.png" height="295"></p>
 <p align="center"><img src="README-ASSETS/BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's battle">
 <br>
 UNUSED TEXT AS OF NOW:
-So, after almost two months of watching GameMaker tutorials by Peyton Burnham on YouTube, I finally began to understand what all those strange words meant.
-So, I watched a couple GameMaker tutorials on YouTube <i>(more specifically almost all of those by Peyton Burnham)</i> and within a month and a half I made
+I finally began to understand what all those strange words I was writing meant.
 Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart.
 Then, on June 14, 2026, almost two years after.
 leaving the project unfinished.
