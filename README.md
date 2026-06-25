@@ -1,4 +1,4 @@
-<h1>README UNDER CONSTRUCTION !!!!!!<br>ALSO the download of 1.5.0-demo will be available SOON.........................................</h1>
+<h1>README UNDER CONSTRUCTION !!!!!!<br>ALSO the download of 1.5.0-demo will be available SOON........................................</h1>
 <br>
 <h1 align="center"><img src="README-ASSETS/LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
@@ -21,19 +21,17 @@
 <br>
 <p align="center"><img src="README-ASSETS/TEST-SNOWDIN.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
 <br>
-<p>For the next few months I'd watch multiple GameMaker tutorials by Peyton Burnham on YouTube, in particular his "How to Make an RPG" and "Branching Dialog System" series.</p>
+<p>For the next few months I watched multiple GameMaker tutorials by <a href="https://www.youtube.com/@peytonburnham4316">Peyton Burnham on YouTube</a>, particularly his <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzySnBUlQLhq2VJXRLi66gFf">"How to Make an RPG"</a> and <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzzWFPozdX-HEjJFqjdIXQfF">"Branching Dialog System"</a> series. Without him, Dumpgame's code would've been significantly worse.</p>
 <br>
 <p align="center"><img src="README-ASSETS/MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu">
 <p align="center"><img src="README-ASSETS/EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/WRITER-SAVE.png" height="295"></p>
 <p align="center"><img src="README-ASSETS/BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's battle">
 <br>
 UNUSED TEXT AS OF NOW:
-I finally began to understand what all those strange words I was writing meant.
 Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart.
 Then, on June 14, 2026, almost two years after.
 leaving the project unfinished.
 An update with almost a year worth of new content since the latest release.
-Actually, that was a dream of mine long before I even met them. I was seven years old when I first discovered UNDERTALE through <a href="https://www.youtube.com/watch?v=AjFijrXaxkg">an animation of Sans's battle</a>.
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
@@ -55,7 +53,7 @@ Actually, that was a dream of mine long before I even met them. I was seven year
 <h3>Why Brazil?</h3>
 <blockquote>I'd also like to know.</blockquote>
 <h3>Why GameMaker?</h3>
-<blockquote>UNDERTALE and DELTARUNE were also made on GameMaker.</blockquote>
+<blockquote>I searched for "make a game" on Google and clicked the first link I could find, no questions asked. (Lie)</blockquote>
 <br>
 <h2>Credits</h2>
 <ul>
@@ -87,12 +85,3 @@ Actually, that was a dream of mine long before I even met them. I was seven year
   <li>pedrotopdosgames123</li>
 </ul>
 <br>
-<h2>gobblydedook</h2>
-<br>
-<ul><ul><ul>
-  Hello
-  Dear little James
-  <br><br>
-  i havemt finished wiritnng this yet. Leave me abone. !!! Huge you !!
-  <p align="right">Noticedanythingthatclearlywasn'tsupposedtohappen</p>
-</ul></ul></ul>
