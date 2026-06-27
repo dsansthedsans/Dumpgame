@@ -33,9 +33,9 @@ convince = 0;
 bubbledelay = 0;
 fightattempt = 0;
 
-skip = 0;
+skip = 1;
 if (skip == 1)
 {
-	convince = 4;
+	convince = 5;
 	controller.enemy_spare[myself] = 100;
 }

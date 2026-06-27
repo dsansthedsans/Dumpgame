@@ -30,8 +30,6 @@ if (con == 3 && bc.vspeed == 0)
 	bc.x = round(bc.x);
 	bc.y = round(bc.y);
 	bc.friction = 0;
-	for (var i = 0; i < brickamount; i++)
-		destroy(brick[i]);
 	aftercon = 2;
 	con = 4;
 	//if (global.flag_skipboss == 1)
@@ -165,12 +163,15 @@ if (altcon == 12)
 	destroy(chara_surprise);
 	altcon = 0;
 }
-if (con == 13 && exists(thiswriter) == 0)
+if (con == 13)
 {
-	global.flag[37] = 0.75;
-	audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
-	alarm[2] = 80;
-	con = 14;
+	if (exists(thiswriter) == 0)
+	{
+		global.flag[37] = 0.75;
+		audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
+		alarm[2] = 80;
+		con = 14;
+	}
 }
 if (con == 15)
 {

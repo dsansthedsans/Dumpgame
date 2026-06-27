@@ -84,7 +84,7 @@ if (room == room_corridors_12) // bc events
 		global.music[0] = -1;
 	if (global.flag[37] == 0.5)
 	{
-		music_set(0, mus_bc_prebattle);
+		music_set(0, mus_bc_prebattle, , , , , , 0);
 	}
 }
 if (room == room_corridors_16)
@@ -177,7 +177,11 @@ if (exists(obj_battle_quicker) == 1) || (room == room_battle)
 		controller = obj_battle_controller;
 		music_set(3, controller.battle_music, 1, 0, 0, 1, 1, 0.5);
 		if (controller.battle_won == 1 && controller.battle_group != 0) || (controller.fleeing == 1) || (controller.battle_group == 6 && controller.enemy_spare[0] >= 100) || (controller.battle_group == 2000 && controller.enemy_obj[0].flushed == 1)
+		{
 			music_set(3, -2);
+			if (controller.battle_group == 6 && controller.enemy_spare[0] >= 100)
+				music_fadeouttime_old[0] = 3;
+		}
 	}
 }
 else

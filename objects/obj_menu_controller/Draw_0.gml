@@ -2,83 +2,38 @@
 // jogar (continuar)
 if (global.menu_lvl == 5)
 {
+	draw_sprite_stretched_ext(spr_menu_optbg, 0, -10, -10, (10 + room_width + 10), (10 + room_height + 10), c_white, 0.5);
+	
 	savefile_read(play_save);
-	
-	var _bg_x = (room_width / 2);
-	var _bg_y = 0;
-	var _bg_sc = 2;
-	
-	var _bg = spr_menu_continue_bg;
-	var _bg_h = (sprite_get_height(_bg) * _bg_sc);
-	var _bg_y_center = (_bg_y + (_bg_h / 2));
-	
-	// fundo
-	draw_sprite_stretched_ext(spr_menu_optbg, 0, -10, -10, (10 + room_width + 10), (10 + room_height + 10), c_white, 1);
-	draw_sprite_ext(spr_menu_continue_bg, savefile_world, _bg_x, _bg_y, _bg_sc, _bg_sc, 0, c_white, alpha);
-	
-	// personagens - corredores
-	if (savefile_world == WORLD_CORRIDORS)
+	if ((continueback_surface != -1 && surface_exists(continueback_surface) == 1) == false)
+		continueback_surface = surface_create(320, 240);
+	surface_set_target(continueback_surface);
+	draw_tilemap(layer_tilemap_get_id("Tiles_0_0"), 0, 0);
+	draw_tilemap(layer_tilemap_get_id("Tiles_0_1"), 0, 0);
+	draw_tilemap(layer_tilemap_get_id("Tiles_0_2"), 0, 0);
+	var _assets = layer_get_all_elements("Assets_0_0");
+	for (var a = 0; a < array_length(_assets); a++)
 	{
-		// mee6
-		if (savefile_flag[2] == 1)
-			draw_sprite_ext(spr_m6_d, 0, _bg_x, _bg_y_center, _bg_sc, _bg_sc, 0, c_white, alpha);
-			
-		// dummy
-		if (savefile_flag[6] == 0 && savefile_flag[7] == 0)
+		var _asset_sprite = layer_sprite_get_sprite(_assets[a]);
+		var _asset_x = layer_sprite_get_x(_assets[a]);
+		var _asset_y = layer_sprite_get_y(_assets[a]);
+		if (_asset_sprite == spr_mainchara_armor_candybowl && savefile_armor != ITEM_BOWL)
+		|| (_asset_sprite == spr_m6_d && (savefile_flag[2] == false || savefile_armor == ITEM_BOWL))
+		|| (_asset_sprite == spr_m6_sit && (savefile_flag[2] == false || savefile_armor != ITEM_BOWL))
+		|| (_asset_sprite == spr_npc_dummy && (savefile_flag[6] == false || savefile_flag[7] == false))
+		|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && savefile_flag[48] == false)
+		|| (_asset_sprite == spr_npc_bc && (savefile_flag[38] == true || savefile_flag[39] == false))
+			continue;
+		if (_asset_sprite == spr_npc_bc)
 		{
-			var _x = 160;
-			var _y = 260;
-			
-			draw_sprite_ext(spr_npc_dummy, 0, _x, _y, _bg_sc, _bg_sc, 0, c_white, alpha);
+			continueback_bcsiner += 0.1/2;
+			_asset_y += (sin(continueback_bcsiner) * 5);
 		}
-			
-		// armsguy e trashguy (kunai)
-		if (savefile_flag[48] == 1)
-		{
-			var _x = 500;
-			var _y = 280;
-			
-			draw_sprite_ext(spr_npc_trashguy, 0, (_x - 40), (_y - 20), 2, 2, 0, c_white, alpha);
-			draw_sprite_ext(spr_npc_armsguy, 0, _x, _y, 2, 2, 0, c_white, alpha);
-		}
-		
-		
+		draw_sprite_ext(_asset_sprite, layer_sprite_get_index(_assets[a]), _asset_x, _asset_y, layer_sprite_get_xscale(_assets[a]), layer_sprite_get_yscale(_assets[a]), layer_sprite_get_angle(_assets[a]), layer_sprite_get_blend(_assets[a]), layer_sprite_get_alpha(_assets[a]));
 	}
-	
-	
-	
-	/*
-	// draw back
-	var _back = spr_menu_continue_back;
-	var _backx = (room_width / 2);
-	var _backy = 0;
-	draw_sprite_ext(spr_menu_continue_back, global.chara_world, _backx, _backy, 2, 2, 0, c_white, menu_alpha);
-
-	//var _backw = (sprite_get_width(_back) * 2);
-	var _backh = (sprite_get_height(_back) * 2);
-	var _backycenter = (_backy + (_backh / 2));
-	
-	if (global.chara_world == WORLD_CORRIDORS)
-	{
-		// draw m6
-		if (global.flag[2] == 1)
-			draw_sprite_ext(spr_m6_d, 0, _backx, _backycenter, 2, 2, 0, c_white, menu_alpha);
-	
-		// draw armsguy
-		if (global.flag[48] == 1)
-			draw_sprite_ext(spr_npc_armsguy, 0, 220, 240, 2, 2, 0, c_white, menu_alpha);
-	
-		// draw bc
-		if (global.flag[39] == 1 && global.flag[38] == 0)
-		{
-			continueback_bcsiner += 0.1;
-			draw_sprite_ext(spr_npc_bc, 0, 440, (150 + (sin(continueback_bcsiner) * 5)), 2, 2, 0, c_white, menu_alpha);
-		}
-	}
-	*/
+	surface_reset_target();
+	draw_surface_ext(continueback_surface, 0, 0, 2, 2, 0, c_white, 1);
 }
-
-
 
 // fundo das opções
 if (global.menu_lvl >= 0)

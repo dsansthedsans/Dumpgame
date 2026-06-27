@@ -242,19 +242,25 @@ function TEXT()
 		for (var i = 0; i < 3; i++)
 			msg[i] = get_text("room_m6_papers_" + string(i));
 	}
-		
+	if (text == "room_m6_brokenwall")
+	{
+		msg[0] = get_text("room_m6_brokenwall_0");
+		msg[1] = get_text("room_m6_brokenwall_1");
+		msg_format[0] = "textbox_bottom";
+		achievement_add(ACHIEVEMENT_M6TOY);
+	}
+	
 	// save point
 	if (text == "savepoint")
 	{
 		var p = 0;
-		if (room == room_corridors_2)
+		if (room == room_corridors_3)
 		{
 			msg[0] = "* (Seeing the dusty gray stairs and the colorful flowers in the grass, ...)";
 			msg[1] = "* (... you realize that this is just the beginning to something big.)";
 			msg[2] = "* (And that you probably shouldn't have left home.)";
 			p = 3;
 		}
-		
 		msg[p] = get_text("savepoint_def0");
 		question[p+1] = get_text("savepoint_def1");
 		question_option[1] = get_text("savepoint_def1_1");
@@ -266,39 +272,10 @@ function TEXT()
 			msg_type[p+2] = "savepoint";
 			filesaved = 1;
 		}
-		
-		/*
-		for (var i = 0; i < 4; i++)
-		{
-			var _curmsg = get_text("savepoint_" + string(i))
-			if (_curmsg != undefined)
-				msg[i] = get_text("savepoint_" + string(i))
-		}
-		question[4] = get_text("savepoint_4");
-		question_option[1] = get_text("savepoint_4_1");
-		question_option[2] = get_text("savepoint_4_2");
-		msg_type[4] = "savepoint";
-			
-		if (question_result[4] == 1)
-		{
-			global.chara_saveroom = room;
-			TEMPFILE_SAVE();
-			filesaved = 1;
-			msg[5] = "";
-			msg_type[5] = "savepoint";
-		}
-		*/
 	}
 		
 	// room_corridors_3
-	if (text == "room_m6_brokenwall")
-	{
-		msg[0] = get_text("room_m6_brokenwall_0");
-		msg[1] = get_text("room_m6_brokenwall_1");
-		msg_format[0] = "textbox_bottom";
-		
-		achievement_add(ACHIEVEMENT_M6TOY);
-	}
+	
 	if (text == "room_deadlamp")
 		msg[0] = get_text("room_deadlamp");
 		
@@ -1075,7 +1052,7 @@ function TEXT()
 	{
 		if (irandom_range(1, 5) == 1)
 		{
-			msg[0] = "* I Slightly Dislike You.";
+			msg[0] = "* I Slightly Dislike You";
 			msg_font[0] = global.fnt_dsans;
 			msg_talker[0] = obj_chara.mycol;
 			global.flag[66] = 0.5;

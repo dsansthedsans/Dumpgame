@@ -13,6 +13,8 @@ name_block[3] = 1;
 name_block[4] = 1;
 name_block[5] = 0;
 name_block[6] = 1;
+name_block[7] = 1;
+name_block[8] = 0;
 
 
 // checar nome

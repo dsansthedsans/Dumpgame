@@ -44,7 +44,7 @@ function room_interact()
 	if (r == room_corridors_2)
 	{
 		// banner
-		if (x == 85 && y == 100)
+		if (x == 90 && y == 105)
 			text = "room_m6_banner";
 		
 		// poster
@@ -54,12 +54,14 @@ function room_interact()
 		// papers
 		if (x == 120 && y == 140)
 			text = "room_m6_papers";
+		
+		// mini6
+		if (x == 80 && y == 60)
+			text = "room_m6_brokenwall";
 	}
 	if (r == room_corridors_3)
 	{
-		// mini6
-		if (x == 260 && y == 260)
-			text = "room_m6_brokenwall";
+		
 		
 		// dead lamp
 		if (x == 80 && y == 80)
@@ -311,7 +313,7 @@ function room_solid()
 			sprite_index = spr_overworld_lamp;
 		
 		// banner
-		if (x == 85 && y == 30)
+		if (x == 90 && y == 35)
 			sprite_index = spr_overworld_m6_banner;
 		
 		// poster
@@ -944,9 +946,12 @@ function room_nonsolid()
 		image_index = 1;
 		depth = 0;
 	}
-	if (room == room_corridors_2 && x == 120 && y == 140)
+	if (room == room_corridors_2)
 	{
-		sprite_index = spr_overworld_m6_papers;
+		if (x == 80 && y == 60)
+			sprite_index = spr_overworld_m6_mini;
+		if (x == 120 && y == 140)
+			sprite_index = spr_overworld_m6_papers;
 		depth = 0;
 	}
 	if (room == room_corridors_12)

@@ -131,10 +131,10 @@ if (active == 1)
 			var _mult = 0.75;
 			if (controller.enemy_spare[myself] >= 100)
 			{
-				_slow = 1;
-				_mult = 0.65;
+				_slow = 2;
+				_mult = 0.5;
 				if (shock_alpha > 0)
-					shock_alpha -= 0.025;
+					shock_alpha -= 0.025/2;
 			}
 			siner += 0.1;
 			vspeed = (sin(siner / (_slow + 1)) * _mult);
@@ -222,13 +222,13 @@ if (active == 1)
 					{
 						for (var i = 0; i < part_length; i++)
 						{
-							var _rd = 3;
+							var _rd = 5;
 							var _x = (x + irandom_range(-_rd, _rd));
-							var _y = (controller.box_y - (controller.box_h / 2) + irandom_range(-_rd, _rd));
+							var _y = (controller.box_y - (controller.box_h / 2) + 40 + irandom(_rd));
 							marker(_x, _y, spr_enemy_bc_part, 1, 1.5, 1.5, 0, irandom(7), irandom(360), c_white, (depth + 1));
 							part[i] = thismarker;
 							part[i].gravity = 0.075;
-							part[i].vspeed = random_range(-6, -4);
+							part[i].vspeed = random_range(-7, -5);
 							part[i].hspeed = random_range(-2, 2);
 							part[i].angleamt = choose(-1.5, 1.5);
 						}

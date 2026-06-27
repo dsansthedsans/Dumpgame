@@ -3,9 +3,10 @@
   "%Name":"tile_corridors",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":0,
-    "SerialiseWidth":0,
-    "TileSerialiseData":[],
+    "SerialiseHeight":8,
+    "SerialiseWidth":5,
+    "TileCompressedData":[-40,0,],
+    "TileDataFormat":1,
   },
   "name":"tile_corridors",
   "out_columns":20,

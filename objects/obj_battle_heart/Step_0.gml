@@ -5,7 +5,6 @@ press_u = key("up_hold");
 press_d = key("down_hold");
 press_shift = key("shift_hold");
 
-debug(string(exists(obj_battle_controller)) + string($"   ||| {room_get_name(room)}  ||  ") + string("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"));
 if (controller.heart_move == 1) // movement
 {
 	curspeed = wspeed;

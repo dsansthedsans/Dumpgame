@@ -1,14 +1,23 @@
 
 if (type == 1)
 {
-	var _val = 255;
-	var _y = (chara.y - 2);
-	if (chara.x >= 210 && ((_y >= 360 && _y <= 400) || (_y >= 600 && _y <= 660)))
-		_val = (255 * (1 - (0.6 * ((chara.x - 210) / 100))));
-	if (chara.x >= 210 && _y >= 400 && _y <= 599)
-		_val = (255 * 0.4);
-	val = lerp(val, _val, 0.2);
-	chara.image_blend = make_color_hsv(0, 0, val);
+	for (var i = 0; i < (1 + (global.flag[2] == 1 && global.party[0] != -1 && exists(global.party[0]) == true)); i++)
+	{
+		var _obj = chara;
+		var _val = "val";
+		if (i == 1)
+		{
+			_obj = m6;
+			_val = "m6_val";
+		}
+		var _valNew = 255;
+		if (_obj.x >= 210 && ((_obj.y-2 >= 360 && _obj.y-2 <= 400) || (_obj.y-2 >= 600 && _obj.y-2 <= 660)))
+			_valNew = (255 * (1 - (0.6 * ((_obj.x - 210) / 100))));
+		if (_obj.x >= 210 && _obj.y-2 >= 400 && _obj.y-2 <= 599)
+			_valNew = (255 * 0.4);
+		variable_instance_set(id, _val, lerp(variable_instance_get(id, _val), _valNew, 0.35));
+		_obj.image_blend = make_color_hsv(0, 0, variable_instance_get(id, _val));
+	}
 }
 if (type == 2)
 {

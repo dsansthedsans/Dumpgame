@@ -43,7 +43,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0)
 		{
 			marker(bcx, bcy, spr_npc_bc_brick, 1, 1, 1, 0, 0, irandom(360), c_white, 550);
 			brick[i] = thismarker;
-			brick[i].gravity = 0.1;
+			brick[i].gravity = 0.075;
 			brick[i].hspeed = (random_range(-1.5, 1.5) / 2);
 			if (brick[i].hspeed == 0)
 				brick[i].hspeed = (choose(-1, 1) / 2);

@@ -49,7 +49,7 @@ if (type == 6) // Broken Clock
 		line_side[i] = choose(-1, 1);
 	}
 	
-	part_length = 15;
+	part_length = 20;
 	explosion_alpha = 1;
 	
 	if (enemy.skip == 1)

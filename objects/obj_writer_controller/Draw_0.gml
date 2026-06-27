@@ -39,7 +39,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 	if (msg_talker[page] > -1)
 	{
 		if (writing == 1)
-			msg_talker[page].image_speed = (0.2 * writing);
+			msg_talker[page].image_speed = 0.2 + (0.15 / 2);
 		else
 		{
 			msg_talker[page].image_speed = 0;
@@ -64,16 +64,16 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		draw_set_color(_color);
 		
 		savefile_read(global.savefile_selected);
-		var _name = savefile_name;
-		var _lvl = savefile_lvl;
-		var _world = chara_world_name(savefile_world);
-		var _room = chara_room_name(savefile_room);
-		if (_name == "")
+		var _name = "[-----]";
+		var _lvl = "[-]"
+		var _world = "[---------]"
+		var _room = "[-------]";
+		if (thisfile != -1)
 		{
-			_name = "[-----]";
-			_lvl = "[-]"
-			_world = "[---------]"
-			_room = "[-------]";
+			_name = savefile_name;
+			_lvl = savefile_lvl;
+			_world = chara_world_name(savefile_world);
+			_room = chara_room_name(savefile_room);
 		}
 		
 		var _hspace = 17;

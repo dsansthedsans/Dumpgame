@@ -93,6 +93,7 @@ particle_delay = 0;
 leftnamer = 0;
 fadingout = 0;
 play_namey = 0;
+continueback_surface = -1;
 continueback_bcsiner = 0;
 continueback_armsindex = 0;
 if (global.fastmenu > 0)

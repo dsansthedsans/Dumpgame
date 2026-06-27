@@ -32,15 +32,20 @@ if (truescale < 0.5 && truescale > 0) || (truescale <= 0)
 image_xscale = apparentscale;
 image_yscale = apparentscale;
 
+sound_pitch = 1;
+
 // custom
 if (controller.enemy_type[target] == 6)
 {
 	x = enemy.body.x;
 	y = enemy.body.y;
-	image_speed = 1;
-	image_xscale = 1.6;
-	image_yscale = 1.6;
+	image_speed = 0.75;
+	image_xscale = 1.8;
+	image_yscale = 1.8;
+	sound_pitch = 0.75;
 }
+
+audio_play(snd_battle_knife_hit, 0, VOLUME_SOUND, , , , sound_pitch);
 
 // other
 /*

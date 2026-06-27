@@ -460,7 +460,7 @@ function draw_self_border()
 	}
 }
 
-function draw_section_name(_alpha)
+function draw_chapter_name(_alpha)
 {
 	var _name = "SALENIS";
 	var _number = 0;
@@ -481,12 +481,11 @@ function draw_section_name(_alpha)
 		_number = 3;
 	}
 	*/
-	
 	draw_set_alpha(argument0);
 	draw_set_font(fnt_main_spaced);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), "SECTION " + string(_number) + ":\n" + string(_name), c_white, 1, c_black);
+	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), "CHAPTER " + string(_number) + ":\n" + string(_name), c_white, 1, c_black);
 }
 
 function debug(_string)

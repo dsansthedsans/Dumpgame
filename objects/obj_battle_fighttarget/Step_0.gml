@@ -15,7 +15,6 @@ if (controller.press_enter == 1 && speed != 0)
 	xfactor = (postx / 320);
 	dmg = round(dmg * (xfactor * 3));
 	dmg = clamp(dmg, 0, 999999999999999999);
-	audio_play(snd_battle_knife_hit, 0, VOLUME_SOUND);
 	create(-20, -20, obj_battle_knife);
 }
 else if (side == -1 && x >= (controller.box_x + (controller.box_w / 2) - sprite_width)) || (side == 1 && x <= (controller.box_x - (controller.box_w / 2) + sprite_width))
