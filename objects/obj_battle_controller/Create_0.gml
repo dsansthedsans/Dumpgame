@@ -73,8 +73,8 @@ box_defaulth = box_h;
 box_borderw = 5;
 
 // heart
-create(-20, -20, obj_battle_heart);
-heart = obj_battle_heart;
+heart = create(-20, -20, obj_battle_heart);
+heart.controller = id;
 heart_move = 0;
 heart_nextx = box_nextx;
 heart_nexty = box_nexty;
@@ -123,7 +123,8 @@ level_maxbarcolor[1] = #B24A00//#CC6600;
 
 create(0, 0, obj_battle_bg);
 create(-20, -20, obj_battle_fadein);
-writer("battle_main", -1, -1);
+if ((enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0) == false)
+	writer("battle_main", -1, -1);
 screenpos(0, 0);
 
 // custom

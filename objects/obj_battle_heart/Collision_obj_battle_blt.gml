@@ -21,5 +21,8 @@ if (invtime <= 0 && controller.fleeing == 0 && other.active == 1) // take damage
 		invtime = 60;
 	}
 	if (other.destroy_on_impact == 1)
+	{
+		debug("IMPOSIVVELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
 		destroy(other);
+	}
 }

@@ -13,14 +13,11 @@ function battle()
 }
 function battle_getgroup()
 {	
-	// normal group
 	if (global.chara_world == WORLD_CORRIDORS) // corridors
 	{
-		battle_group = choose(irandom_range(2, 5), irandom_range(7, 11));
-		if (global.flag[37] == 1 && global.flag[39] == 1)
+		battle_group = irandom_range(2, 5);
+		if (global.flag[37] == 1 && global.flag[39] == 1 && global.world_curpopulation[global.chara_world] > 1)
 			battle_group = irandom_range(7, 11);
-		if (global.flag[18] == 0.5) || (global.world_curpopulation[global.chara_world] == 1)
-			battle_group = 2;
 		if (global.battle_nextgroup == 0)
 			global.flag[18] = 1;
 	}
@@ -28,19 +25,14 @@ function battle_getgroup()
 	{
 		battle_group = 12;
 	}
-	
-	// but nobody came
-	if (global.world_curpopulation[global.chara_world] <= 0)
+	if (global.world_curpopulation[global.chara_world] <= 0) // but nobody came
 		battle_group = 0;
-	
-	// debug
-	if (global.indebug == 1)
-		battle_group = 0;
-	
-	// override battlegroup with nextgroup
-	if (global.battle_nextgroup != 0)
+	if (global.battle_nextgroup != 0) // override battlegroup with nextgroup
 		battle_group = global.battle_nextgroup;
 	global.battle_nextgroup = 0;
+	
+	//if (global.indebug == true)
+		battle_group = 0;
 }
 function battle_setupgroup()
 {
@@ -91,7 +83,7 @@ function battle_setupgroup()
 	
 	if (battle_group == 0) // But nobody came.
 	{
-		battle_bg = -1;
+		//battle_bg = -1;
 		battle_music = -1;
 		global.flag[22] = 1;
 	}

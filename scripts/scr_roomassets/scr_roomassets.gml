@@ -4,7 +4,7 @@ function room_interact()
 	var r = room;
 	
 	// save point
-	if (r == room_corridors_3 && x == 150 && y == 270) || (r == room_corridors_4 && x == 660 && y == 120) ||  (room == room_corridors_8 && x == 90 && y == 325) || (room == room_corridors_11 && x == 130 && y == 120) || (room == room_corridors_13 && x == 370 && y == 160) || (room == room_corridors_16 && x == 170 && y == 200) || (room == room_caverns_3 && x == 150 && y == 225)
+	if (r == room_corridors_3 && x == 150 && y == 270) || (r == room_corridors_4 && x == 150 && y == 185) ||  (room == room_corridors_8 && x == 90 && y == 325) || (room == room_corridors_11 && x == 130 && y == 120) || (room == room_corridors_13 && x == 370 && y == 160) || (room == room_corridors_16 && x == 170 && y == 200) || (room == room_caverns_3 && x == 150 && y == 225)
 	{
 		text = "savepoint";
 		result = 0.1;
@@ -77,7 +77,7 @@ function room_interact()
 	if (r == room_corridors_4)
 	{
 		// armsguy npc
-		if (x == 755 && y == 110)
+		if (x == 750 && y == 130)
 		{
 			text = "npc_armsguy1";
 			sprite_index = spr_npc_armsguy;
@@ -85,7 +85,7 @@ function room_interact()
 				destroy(id);
 		}
 	}
-	if (room == room_corridors_4_5 && x == 150 && y == 130)
+	if (r == room_corridors_4_5 && x == 150 && y == 125)
 		text = "room_rulesbook";
 	if (room == room_corridors_5 && x == 60 && y == 60)
 		text = "room_captcha_mainsign_1";
@@ -112,12 +112,12 @@ function room_interact()
 	}
 	if (room == room_corridors_8) // lost npcs
 	{
-		// mouse hole
+		// rat hole
 		if (x == 220 && y == 280)
 			result = 3;	
 		
 		// armsguy npc (lost)
-		if (x == 195 && y == 150)
+		if (x == 190 && y == 350)
 		{
 			text = "npc_armsguy_lost";
 			sprite_index = spr_npc_armsguy;
@@ -126,7 +126,7 @@ function room_interact()
 		}
 		
 		// trashguy npc 2 (lost)
-		if (x == 230 && y == 155)
+		if (x == 215 && y == 360)
 		{
 			text = "npc_trashguy_lost2";
 			sprite_index = spr_npc_trashguy;
@@ -325,17 +325,30 @@ function room_solid()
 	if (room == room_corridors_3)
 	{
 		// lamp
-		if (x == 80 && y == 420) || (x == 220 && y == 420) || (x == 150 && y == 240) || (x == 80 && y == 60) || (x == 220 && y == 60)
+		if (x == 80 && y == 420) || (x == 220 && y == 420) || (x == 150 && y == 240) || (x == 70 && y == 60) || (x == 230 && y == 60)
 		{
 			sprite_index = spr_overworld_lamp;
 		
-			if (x == 80 && y == 60)
+			if (x == 70 && y == 60)
 				image_index = 2;
 		}
 		
 		// pillar door
-		if (x == 110 && y == 5)
+		if (x == 110 && y == 10)
 			sprite_index = spr_overworld_pillardoor;
+		
+		// pilar
+		if (x == 50 && y == 240) || (x == 250 && y == 240) || (x == 85 && y == 230)
+		{
+			sprite_index = spr_overworld_pillar;
+			if (x == 50)
+				image_index = 1;
+			if (x == 85 && y == 230)
+			{
+				image_index = 4;
+				image_xscale = -1;
+			}
+		}
 	}
 	if (room == room_corridors_3_5)
 	{
@@ -344,7 +357,7 @@ function room_solid()
 			sprite_index = spr_overworld_lamp;	
 	
 		// pillar door
-		if (x == 110 && y == -15)
+		if (x == 110 && y == -10)
 			sprite_index = spr_overworld_pillardoor;
 		
 		// door
@@ -354,29 +367,34 @@ function room_solid()
 	if (room == room_corridors_4)
 	{
 		// lamp
-		if (x == 180 && y == 160) || (x == 300 && y == 160) || (x == 400 && y == 100) || (x == 520 && y == 100) || (x == 660 && y == 40) || (x == 760 && y == 40)
+		if (x == 280 && y == 160) || (x == 400 && y == 100) || (x == 520 && y == 100) || (x == 650 && y == 40) || (x == 770 && y == 70)
 		{
 			sprite_index = spr_overworld_lamp;
-			if (x == 660 && y == 40)
+			if (x == 770 && y == 70)
+				image_index = 1;
+			if (x == 400 && y == 100)
 				image_index = 2;
 		}
 		
 		// tree
-		if (x == 380 && y == 110) || (x == 480 && y == 90) || (x == 480 && y == 210) || (x == 620 && y == 30) || (x == 740 && y == 150)
+		if (x == 380 && y == 110) || (x == 480 && y == 90) || (x == 480 && y == 210) || (x == 630 && y == 40) || (x == 740 && y == 150)
 		{
 			sprite_index = spr_overworld_tree;	
 			leaf_fall = 1;
 		}
 		
+		if (x == 110 && y == 130) || (x == 190 && y == 130)
+			sprite_index = spr_overworld_pillar;
+		
 	}
 	if (room == room_corridors_4_5)
 	{
 		// lamp
-		if (x == 90 && y == 40) || (x == 210 && y == 40)
+		if (x == 85 && y == 40) || (x == 215 && y == 40)
 			sprite_index = spr_overworld_lamp;
 		
 		// book pillar
-		if (x == 150 && y == 90)
+		if (x == 150 && y == 85)
 		{
 			sprite_index = spr_overworld_pillar;
 			image_index = 7;

@@ -129,6 +129,7 @@ function key_name(_key)
 function create(_x, _y, _instance)
 {
 	thisobj = instance_create_layer(argument0, argument1, "Instances", argument2);
+	return thisobj;
 }
 function exists(_instance)
 {

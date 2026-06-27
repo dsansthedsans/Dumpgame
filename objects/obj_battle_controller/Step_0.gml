@@ -26,18 +26,20 @@ if (enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0)
 			heart.y = -20;
 			battle_won = 1;
 			writer("battle_won", -1, -1);
-			if (exists(global.writer_old) == 1)
+			if (global.writer_old != -1 && exists(global.writer_old) == 1)
 				destroy(global.writer_old);
 		}
 		else if (exists(global.writer) == 0)
+		{
 			alarm[0] = 1;
+		}
 	}
 }
 
 // normal
 if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl != 3.1) // fight, act, item and mercy (movement, return, writer setup)
 {
-	if (exists(global.writer_old) == 1)
+	if (global.writer_old != -1 && exists(global.writer_old) == 1)
 		destroy(global.writer_old);
 	
 	// movement
@@ -212,8 +214,8 @@ if (battle_lvl == 4.0 && press_enter == 1) // mercy (select)
 			if (enemy_type[i] != 0 && enemy_spare[i] >= 100)
 				enemy_obj[i].spared = 1;
 		}
-		
-		destroy(global.writer);
+		if (global.writer != -1)
+			destroy(global.writer);
 		audio_play(snd_option_select, 0, VOLUME_SOUND);
 		button_select = 0;
 		heart.x = -20;
@@ -237,14 +239,14 @@ if (battle_lvl == 4.0 && press_enter == 1) // mercy (select)
 	
 	press_enter = 0;
 }
-else if (battle_lvl == 4.1)
+else if (battle_lvl == 4.1 && global.writer_old != -1)
 	destroy(global.writer_old);
 
 if (battle_lvl == 3.1) // used item
 {
-	if (exists(global.writer_old) == 1)
+	if (global.writer_old != -1 && exists(global.writer_old) == 1)
 		destroy(global.writer_old);
-	if (exists(global.writer) == 0)
+	if (global.writer != -1 && exists(global.writer) == 0)
 	{
 		battle_useditem = 1;
 		battle_lvl = 10;
@@ -262,7 +264,8 @@ if (battle_lvl == 3.0 && press_enter == 1) // item (select)
 
 if (battle_lvl == 2.1 && press_enter == 1) // act 2 (select)
 {
-	destroy(global.writer);
+	if (global.writer != -1)
+		destroy(global.writer);
 	audio_play(snd_option_select, 0, VOLUME_SOUND);
 	level_heard = level_pos;
 	button_select = 0;
@@ -286,7 +289,8 @@ if (battle_lvl == 2.0 && press_enter == 1) // act 1 (select)
 
 if (battle_lvl == 1.0 && press_enter == 1) // fight (select)
 {
-	destroy(global.writer);
+	if (global.writer != -1)
+		destroy(global.writer);
 	enemy_target = level_pos;
 	create(-20, -20, obj_battle_fighttarget);
 	create(box_x, box_y, obj_battle_fightbar);
@@ -300,10 +304,10 @@ if (battle_lvl == 1.0 && press_enter == 1) // fight (select)
 
 if (battle_lvl == 0) // main
 {
-	if (exists(global.writer_old) == 1 && global.writer_old != -1)
+	if (global.writer_old != -1 && exists(global.writer_old) == 1)
 		destroy(global.writer_old);
 	
-	if (global.writer.msg_next[global.writer.page] == 0)
+	if (global.writer != -1 && exists(global.writer) == true && global.writer.msg_next[global.writer.page] == 0)
 	{
 		button_select = 1;
 		

@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_toilet_flush_______",
+  "%Name":"unused_snd_toilet_flush",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":2.1115646,
   "exportDir":"",
-  "name":"snd_toilet_flush_______",
+  "name":"unused_snd_toilet_flush",
   "parent":{
-    "name":"Dumpgame_51",
-    "path":"Dumpgame_51.yyp",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_toilet_flush_______.wav",
+  "soundFile":"unused_snd_toilet_flush.wav",
   "volume":1.0,
 }

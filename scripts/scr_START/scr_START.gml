@@ -665,7 +665,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		load_time = 1;
 		
-		var _rm = room_corridors_1_5;
+		var _rm = room_corridors_3;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -681,7 +681,7 @@ function CHANGE_GAME()
 				_lvl = 1;
 			if (_rm == room_corridors_3)
 				_lvl = 2;
-			if (_rm == room_corridors_4)
+			if (_rm == room_corridors_4) || (_rm == room_corridors_4_5)
 				_lvl = 3;
 			if (_rm == room_corridors_7) || (_rm == room_corridors_8) || (_rm == room_corridors_9)
 				_lvl = 4;
@@ -736,6 +736,8 @@ function CHANGE_GAME()
 				global.flag[18] = 1; // entered in a encounter battle
 				global.flag[40] = 1; // opened door after dummy
 				global.achievement[ACHIEVEMENT_M6TOY] = 1;
+				
+				global.flag[8] = 1; // finished MEE6's pre-CAPTCHA.1 event
 			}
 			if (_lvl >= 4)
 			{

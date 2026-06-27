@@ -46,8 +46,6 @@ function party_change(_index, _movetype, _movetype_targetside)
 	var i = argument0;
 	global.party[i].movetype = argument1;
 	global.party[i].targetside = argument2;
-	if (argument1 == -1)
-		party_stop(i);
 }
 
 function party_facing(_index, _face)

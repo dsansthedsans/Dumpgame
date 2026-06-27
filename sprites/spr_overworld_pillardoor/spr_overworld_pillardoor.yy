@@ -3,18 +3,16 @@
   "%Name":"spr_overworld_pillardoor",
   "bboxMode":0,
   "bbox_bottom":99,
-  "bbox_left":4,
-  "bbox_right":95,
-  "bbox_top":16,
+  "bbox_left":6,
+  "bbox_right":93,
+  "bbox_top":26,
   "collisionKind":4,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"d30cb23d-e961-4d7c-946c-ee97b12b0e86","name":"d30cb23d-e961-4d7c-946c-ee97b12b0e86","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"19b80a78-783e-4eba-9de4-fbc2a8175721","name":"19b80a78-783e-4eba-9de4-fbc2a8175721","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"91b91650-280f-4e8b-b1fd-7565313a35f3","name":"91b91650-280f-4e8b-b1fd-7565313a35f3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f5c2a31f-2300-4bc9-aaae-b412d2d67375","name":"f5c2a31f-2300-4bc9-aaae-b412d2d67375","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -51,7 +49,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":3.0,
+    "length":1.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -71,14 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d30cb23d-e961-4d7c-946c-ee97b12b0e86","path":"sprites/spr_overworld_pillardoor/spr_overworld_pillardoor.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4b150b94-42ff-471c-bbb3-57f439506284","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"19b80a78-783e-4eba-9de4-fbc2a8175721","path":"sprites/spr_overworld_pillardoor/spr_overworld_pillardoor.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0bdef71c-2aab-46a9-b672-31cfa828205d","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"91b91650-280f-4e8b-b1fd-7565313a35f3","path":"sprites/spr_overworld_pillardoor/spr_overworld_pillardoor.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"f4fdf56a-aeb7-4310-b9c1-7fcb5a7e78a5","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f5c2a31f-2300-4bc9-aaae-b412d2d67375","path":"sprites/spr_overworld_pillardoor/spr_overworld_pillardoor.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"65657b33-9a79-4767-a7c8-15ec38fb9471","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

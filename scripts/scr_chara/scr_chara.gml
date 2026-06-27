@@ -289,7 +289,7 @@ function chara_room()
 			rm = room_corridors_5;
 			
 		// general
-		if (room == room_corridors_2)  || (room == room_corridors_3) || (room == room_corridors_4) || (room == room_corridors_6) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_16)
+		if (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_4) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_16)
 		{
 			xx = 160;
 			yy = 80;	
@@ -303,7 +303,7 @@ function chara_room()
 			if (room == room_corridors_9 && global.flag[31] == 1 && global.flag[48] == 1)
 				global.flag[46] = 1;
 		}
-		if (room == room_corridors_5)
+		if (room == room_corridors_4_5)
 		{
 			xx = 720;
 			yy = 80;	

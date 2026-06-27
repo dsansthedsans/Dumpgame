@@ -418,12 +418,20 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 	}
 	
+	// room_corridors_4_5
+	if (text == "room_rulesbook")
+	{
+		for (var m = 0; m < 4; m++)
+			msg[m] = get_text($"room_rulesbook_{m}");
+	}
+	
 	// obj_event_m6_precaptcha1
 	if (text == "event_m6_precaptcha1")
 	{
 		for (var i = 0; i < 4; i++)
 			msg[i] = get_text("event_m6_precaptcha1_" + string(i));
 		msg_face[0] = spr_dialogface_m6_neutral;
+		msg_face[1] = spr_dialogface_m6_neutralTense;
 		msg_face[2] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_txt_m6;
 		msg_format[0] = "textbox_bottom";
@@ -432,14 +440,14 @@ function TEXT()
 	// room_corridors_5
 	if (text == "room_captcha_mainsign_1")
 	{
-		for (var i = 0; i < 6; i++)
+		for (var i = 0; i < 4; i++)
 			msg[i] = get_text("room_captcha_mainsign_1_" + string(i));
 	}
 		
 	// room_corridors_5_A, room_corridors_5_B
 	if (text == "room_captcha_guidesign_1")
 	{
-		for (var i = 0; i < 5; i++)
+		for (var i = 0; i < 3; i++)
 			msg[i] = get_text("room_captcha_guidesign_1_" + string(i));
 	}
 		
@@ -449,8 +457,12 @@ function TEXT()
 		for (var i = 0; i < 5; i++)
 			msg[i] = get_text("event_m6_postcaptcha1_" + string(i));
 		msg_face[0] = spr_dialogface_m6_default;
+		msg_face[1] = spr_dialogface_m6_pleased;
+		msg_face[2] = spr_dialogface_m6_default;
+		msg_face[2] = spr_dialogface_m6_defaultTense;
+		msg_face[2] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_txt_m6;
-		msg_talker[0] = global.side[0];
+		msg_talker[0] = global.party[0];
 		msg_format[0] = "textbox_bottom";
 	}
 		
@@ -465,8 +477,7 @@ function TEXT()
 		{
 			var _start = get_text("room_candybowl_0_0_0") + get_text("room_candybowl_0_0_1");
 			var _middle = "";
-			var _end = "";
-				
+			var _end = "";	
 			if (_candyamt > 1)
 			{
 				_middle = get_text("room_candybowl_0_0_3");
@@ -477,12 +488,10 @@ function TEXT()
 				_middle = get_text("room_candybowl_0_0_2");
 				_end = get_text("room_candybowl_0_0_4");
 			}
-				
 			msg[0] = string(_start) + string(_middle) + string(_candyamt) + string(_end);
 			question[1] = get_text("room_candybowl_0_1");
 			question_option[1] = get_text("room_candybowl_0_1_1");
 			question_option[2] = get_text("room_candybowl_0_1_2");
-				
 			if (question_result[1] == 1)
 			{			
 				if (_lastslot == -1)
@@ -492,9 +501,9 @@ function TEXT()
 					if (_candyamt == 3)
 					{
 						var _start = get_text("room_candybowl_0_4_0");
-						var _firstkey = keybind_name(global.keybind[04]);
+						var _firstkey = key_name(global.keybind[04]);
 						var _middle = get_text("room_candybowl_0_4_1");
-						var _secondkey = keybind_name(global.keybind[05]);
+						var _secondkey = key_name(global.keybind[05]);
 						var _end = get_text("room_candybowl_0_4_2");
 						msg[4] = string(_start) + string_upper(_firstkey) + string(_middle) + string_upper(_secondkey) + string(_end);
 					}
@@ -546,7 +555,7 @@ function TEXT()
 	}
 	if (text == "room_candysign")
 	{
-		for (var i = 0; i < 3; i++)
+		for (var i = 0; i < 1; i++)
 			msg[i] = get_text("room_candysign_" + string(i));
 	}
 		
@@ -567,31 +576,30 @@ function TEXT()
 				var _curmsg = get_text("npc_armsguy_lost_0_0_" + string(i));
 				if (_curmsg != undefined)
 				{
-					if (i != 6)
+					if (i != 5)
 						msg[i] = _curmsg;
 					else
 					{
 						question[i] = _curmsg;
-						question_option[1] = get_text("npc_armsguy_lost_0_0_6_1");
-						question_option[2] = get_text("npc_armsguy_lost_0_0_6_2");
+						question_option[1] = get_text($"npc_armsguy_lost_0_0_{i}_1");
+						question_option[2] = get_text($"npc_armsguy_lost_0_0_{i}_2");
+						break;
 					}
 				}
-				else
-					break;
 			}
 				
-			msg_talker[6] = -1;
-			msg_talker[7] = obj_chara.mycol;
+			msg_talker[i] = -1;
+			msg_talker[i+1] = obj_chara.mycol;
 			
-			var _result = question_result[6];
+			var _result = question_result[i];
 			if (_result == 1)
 			{
-				for (var i = 0; i < 3; i++)
-					msg[(i + 7)] = get_text("npc_armsguy_lost_0_1_" + string(i));
+				for (var b = 0; b < 2; b++)
+					msg[i+1+b] = get_text("npc_armsguy_lost_0_1_" + string(b));
 				global.flag[45] = 1;
 			}
 			else if (_result == 2)
-				msg[7] = get_text("npc_armsguy_lost_0_2_0");
+				msg[i+1] = get_text("npc_armsguy_lost_0_2_0");
 		}
 		else
 		{
@@ -712,7 +720,6 @@ function TEXT()
 	{
 		msg[0] = get_text("event_m6_precaptcha2_0");
 		msg[1] = get_text("event_m6_precaptcha2_1");
-		msg[2] = get_text("event_m6_precaptcha2_2");
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_txt_m6;
 		msg_format[0] = "textbox_bottom";
@@ -721,12 +728,12 @@ function TEXT()
 	// room_corridors_9
 	if (text == "room_captcha_mainsign_2")
 	{
-		for (var i = 0; i < 4; i++)
+		for (var i = 0; i < 2; i++)
 			msg[i] = get_text("room_captcha_mainsign_2_" + string(i));
 	}
 	if (text == "room_captcha_guidesign_2")
 	{
-		for (var i = 0; i < 4; i++)
+		for (var i = 0; i < 1; i++)
 			msg[i] = get_text("room_captcha_guidesign_2_" + string(i));
 	}
 	if (text == "npc_trashguy_lost1")
@@ -1465,7 +1472,7 @@ function TEXT()
 				if (controller.enemy_type[e] != 0)
 					array_push(_enemylist, controller.enemy_type[e]);
 			}
-			debug(_enemylist);
+			debug(string(_group) + "||||||||||" + string(_enemylist));
 			_type = _enemylist[irandom(array_length(_enemylist) - 1)];
 			
 			var _max = 0;
@@ -1552,8 +1559,9 @@ function TEXT()
 					_custom = 2;
 				if (controller.enemy_type[_enemy1] == 7 && controller.enemy_obj[_enemy1].punched == 1 && controller.enemy_obj[_enemy1].terrorized == 1)
 					_custom = 3;
+				if (controller.enemy_type[_enemy1] == 6 && controller.enemy_obj[_enemy1].convince >= 5)
+					_custom = 4;
 				msg[0] = "* " + string(name[_enemy1]) + get_text("battle_main_sparing_0_" + string(_custom));
-				
 				if (_amt == 2)
 					msg[0] = "* " + string(name[_enemy1]) + get_text("battle_main_sparing_1_0") + string(name[_enemy2]) + get_text("battle_main_sparing_1_1");
 				else if (_amt == 3)
@@ -1777,7 +1785,7 @@ function TEXT()
 					msg[0] = get_text("battle_act_result_dummy_1_0");
 				else
 				{
-					msg[0] = $"{get_text("battle_act_result_dummy_1_1_0_0")}{get_text("battle_act_result_dummy_1_1_0_1_" + string(irandom(3)))}";
+					msg[0] = $"{get_text("battle_act_result_dummy_1_1_0_0")}{get_text("battle_act_result_dummy_1_1_0_1_" + string(irandom(3)))}{get_text("battle_act_result_dummy_1_1_0_2")}";
 					msg[1] = get_text("battle_act_result_dummy_1_1_1");
 				}
 			}

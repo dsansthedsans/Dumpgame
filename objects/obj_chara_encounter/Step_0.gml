@@ -18,6 +18,7 @@ if (r == room_corridors_1)
 || (r == room_corridors_9		&& global.flag[42] == 0)
 || (r == room_corridors_12		&& global.flag[41] == 0)
 || (r == room_corridors_14		&& global.flag[54] == 0)
+|| (r == room_corridors_16_A)
 || (r == room_corridors_16_B)
 || (r == room_corridors_17)
 || (r == room_corridors_18)
@@ -27,8 +28,6 @@ if (r == room_corridors_1)
 || (_spared_all == 1)
 	encounter = 0;
 
-encounter = 0;
-
 // calcular quantidade necessária de passos e iniciar batalha
 if (encounter == 1)
 {
@@ -36,7 +35,7 @@ if (encounter == 1)
 	var _curpop = global.world_curpopulation[global.chara_world];
 	var _maxpop = global.world_maxpopulation[global.chara_world];
 	var _killed = (_maxpop - _curpop);
-	maxsteps = (2000 - (_killed * 30));
+	maxsteps = (1000 - (_killed * 30));
 	maxsteps = clamp(maxsteps, 120, 9999);
 	
 	// iniciar batalha
@@ -56,6 +55,7 @@ if (encounter == 1)
 		{
 			destroy(thissurprise);
 			battle();
+			con = 3;
 		}
 	}
 }

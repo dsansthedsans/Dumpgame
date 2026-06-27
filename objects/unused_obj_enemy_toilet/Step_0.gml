@@ -83,7 +83,10 @@ if (active == 1)
 		{
 			writer("battle_act_toilet" + string(controller.level_heard), -1, -1);
 			if (controller.level_heard == 1)
+			{
 				flushed = 1;
+				audio_play(unused_snd_toilet_flush, , VOLUME_SOUND);
+			}
 			usedact = 1;
 		}
 		else if (usedact == 1 && exists(thiswriter) == 0 && controller.enemy_target == myself)

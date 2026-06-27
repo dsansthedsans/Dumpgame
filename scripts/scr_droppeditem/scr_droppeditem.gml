@@ -1,4 +1,3 @@
-
 function droppeditem_add(_item)
 {
 	var i = 0;
@@ -14,7 +13,6 @@ function droppeditem_add(_item)
 	thisobj.type = argument0;
 	thisobj.pos = i;
 }
-
 function droppeditem_createall()
 {
 	for (var i = 0; i < global.droppeditem_length; i++)
@@ -26,7 +24,6 @@ function droppeditem_createall()
 		}
 	}
 }
-
 function droppeditem_remove()
 {
 	global.item[global.item_last] = global.droppeditem[pos];
@@ -37,20 +34,3 @@ function droppeditem_remove()
 	global.droppeditem_y[pos] = -20;
 	global.droppeditem_room[pos] = -1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

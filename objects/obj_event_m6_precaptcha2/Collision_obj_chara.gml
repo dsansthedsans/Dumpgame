@@ -15,7 +15,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0)
 		obj_party.image_index = 1;
 		
 		cam_y = obj_GAME_CONTROLLER.cam_y;
-		cam_spd = 1;
+		cam_spd = 2;
 		cam_targety[0] = 610;
 		cam_targety[1] = 740;
 		
