@@ -21,7 +21,7 @@
 <br>
 <p align="center"><img src="README-ASSETS/TEST-SNOWDIN.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
 <br>
-<p>For the next few months I watched multiple GameMaker tutorials by <a href="https://www.youtube.com/@peytonburnham4316">Peyton Burnham on YouTube</a>, particularly his <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzySnBUlQLhq2VJXRLi66gFf">"How to Make an RPG"</a> and <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzzWFPozdX-HEjJFqjdIXQfF">"Branching Dialog System"</a> series. Without him, Dumpgame's code would've been significantly worse.</p>
+<p>Between November 2021 and February 2022, I watched multiple of <a href="https://www.youtube.com/@peytonburnham4316">Peyton Burnham's GameMaker tutorials (particularly his <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzySnBUlQLhq2VJXRLi66gFf">"How to Make an RPG"</a> and <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzzWFPozdX-HEjJFqjdIXQfF">"Branching Dialog System"</a> series). Without him, Dumpgame's code would've been significantly worse.</p>
 <br>
 <p align="center"><img src="README-ASSETS/MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu">
 <p align="center"><img src="README-ASSETS/EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/WRITER-SAVE.png" height="295"></p>
