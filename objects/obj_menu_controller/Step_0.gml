@@ -29,7 +29,7 @@ if (startcon == 5)
 	warning_alpha -= 0.05;
 	if (warning_alpha <= 0)
 	{
-		alarm[2] = 120;
+		alarm[2] = 180;
 		startcon = 6;
 	}
 }

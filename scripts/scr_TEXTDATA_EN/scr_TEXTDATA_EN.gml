@@ -6,7 +6,7 @@ function TEXTDATA_EN()
 	
 	// start
 	ds_map_add(global.textdata_en, "start",	"A game by dsans\nand migel8022");
-	ds_map_add(global.textdata_en, "warning", "Dumpgame is unaffiliated\nwith Toby Fox.");
+	ds_map_add(global.textdata_en, "warning", "This game is unaffiliated\nwith Toby Fox.");
 	
 	
 	// menu
@@ -121,26 +121,28 @@ function TEXTDATA_EN()
 	
 	// conquistas
 	ds_map_add(global.textdata_en, "achievement_name_0",		"MINI6");
-	ds_map_add(global.textdata_en, "achievement_name_1",		"Strawberry Helmet");
-	ds_map_add(global.textdata_en, "achievement_name_2",		"Ninja Cosplay");
-	ds_map_add(global.textdata_en, "achievement_name_3",		"Stage 1: Enthusiasm");
-	ds_map_add(global.textdata_en, "achievement_name_4",		"Ran Out of Time");
+	ds_map_add(global.textdata_en, "achievement_desc_0",			"Find the MEE6 toy that's hidden somewhere in the Corridors");
+	ds_map_add(global.textdata_en, "achievement_name_1",		"Fashion Statement");
+	ds_map_add(global.textdata_en, "achievement_desc_1",			"Get the armor that smells like strawberry");
+	ds_map_add(global.textdata_en, "achievement_name_2",		"Cutting Edge");
+	ds_map_add(global.textdata_en, "achievement_desc_2",			"Get a weapon by completing a monster's request");
+	ds_map_add(global.textdata_en, "achievement_name_3",		"Local Celebrity");
+	ds_map_add(global.textdata_en, "achievement_desc_3",			"Spare every monster from Corridors");
+	ds_map_add(global.textdata_en, "achievement_name_3",		"Judgement Day");
+	ds_map_add(global.textdata_en, "achievement_desc_3",			"Kill every monster\nfrom Corridors before fighting Broken Clock");
+	ds_map_add(global.textdata_en, "achievement_name_4",		"Against the Clock");
+	ds_map_add(global.textdata_en, "achievement_desc_4",			"Defeat Broken Clock");
 	ds_map_add(global.textdata_en, "achievement_name_5",		"Puzzle Master");
-	ds_map_add(global.textdata_en, "achievement_name_6",		"Stage 2: Satisfaction");
+	ds_map_add(global.textdata_en, "achievement_desc_5",			"Complete CAPTCHA's last stage in under 30 seconds");
+	//ds_map_add(global.textdata_en, "achievement_name_6",		"");
+	//ds_map_add(global.textdata_en, "achievement_desc_6",			"Kill every monster from Caverns before reaching its exit");
 	ds_map_add(global.textdata_en, "achievement_name_7",		"Not The Real One");
+	ds_map_add(global.textdata_en, "achievement_desc_7",			"Battle a monster sent by a greater force");
 	ds_map_add(global.textdata_en, "achievement_name_8",		"The Real One");
-	ds_map_add(global.textdata_en, "achievement_name_9",		"Here We Go Again");
+	ds_map_add(global.textdata_en, "achievement_desc_8",			"Find and defeat the forgotten creature\nof this world");
+	//ds_map_add(global.textdata_en, "achievement_name_9",		"A Great Partner");
+	//ds_map_add(global.textdata_en, "achievement_desc_9",			"Erase a save file");
 	
-	ds_map_add(global.textdata_en, "achievement_desc_0",		"Find the MEE6 toy that's hidden somewhere in the Corridors");
-	ds_map_add(global.textdata_en, "achievement_desc_1",		"Get the armor that smells like strawberry");
-	ds_map_add(global.textdata_en, "achievement_desc_2",		"Get a weapon used by ninjas by completing a monster's request");
-	ds_map_add(global.textdata_en, "achievement_desc_3",		"Kill every monster\nfrom Corridors before challenging Broken Clock");
-	ds_map_add(global.textdata_en, "achievement_desc_4",		"Defeat Broken Clock");
-	ds_map_add(global.textdata_en, "achievement_desc_5",		"Complete CAPTCHA's last stage in under 30 seconds");
-	ds_map_add(global.textdata_en, "achievement_desc_6",		"Kill every monster from Caverns before reaching its exit");
-	ds_map_add(global.textdata_en, "achievement_desc_7",		"Battle a monster sent by a greater force");
-	ds_map_add(global.textdata_en, "achievement_desc_8",		"Find and defeat the forgotten creature\nof this world");
-	ds_map_add(global.textdata_en, "achievement_desc_9",		"Reset a save file for the first time");
 	
 	/*	ESTÁGIOS GENOCIDA
 	estágio 1: entusiasmo	(corredores) (corredores achados)

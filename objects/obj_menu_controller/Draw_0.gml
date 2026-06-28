@@ -2,7 +2,7 @@
 // jogar (continuar)
 if (global.menu_lvl == 5)
 {
-	draw_sprite_stretched_ext(spr_menu_optbg, 0, -10, -10, (10 + room_width + 10), (10 + room_height + 10), c_white, 0.5);
+	draw_sprite_stretched_ext(spr_menu_optbg, 0, -10, -10, (10 + room_width + 10), (10 + room_height + 10), c_white, 0.25);
 	
 	savefile_read(play_save);
 	if ((continueback_surface != -1 && surface_exists(continueback_surface) == 1) == false)
@@ -31,7 +31,7 @@ if (global.menu_lvl == 5)
 			if (_asset_sprite == spr_npc_bc)
 			{
 				continueback_bcsiner += 0.1;
-				_asset_y += (sin(continueback_bcsiner) * 5);
+				_asset_y += (sin(continueback_bcsiner) * 0.25)*2;
 			}
 		}
 		draw_sprite_ext(_asset_sprite, layer_sprite_get_index(_assets[a]), _asset_x, _asset_y, layer_sprite_get_xscale(_assets[a]), layer_sprite_get_yscale(_assets[a]), layer_sprite_get_angle(_assets[a]), layer_sprite_get_blend(_assets[a]), layer_sprite_get_alpha(_assets[a]));

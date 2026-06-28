@@ -3,7 +3,7 @@ function START_GAME()
 {		
 	randomize();
 	display_gui_fix();
-	load_time = 240//irandom_range(180, 240);
+	load_time = 180//irandom_range(180, 240);
 	
 	global.game_version = "v1.5.0-demo";
 	global.game_startroom[0] = room_menu;
@@ -660,12 +660,12 @@ function start_achievements()
 function CHANGE_GAME()
 {
 	var _change = 1;
-	if (_change == 0)
+	if (_change == 1)
 	{
 		global.chara_name = "CRAZYCAT";
 		load_time = 1;
 		
-		var _rm = room_caverns_1;
+		var _rm = room_corridors_16;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -830,215 +830,6 @@ function CHANGE_GAME()
 		}
 	}	
 }
-
-/*
-function start_pause()
-{
-	// mensagem do dia
-	m[0] = "";
-	var i = 0;
-
-		// personagens de jogos
-	m[i++] = "\"Hehehew\" - Baldi";
-	m[i++] = "\"erererererererer\" - Sans";
-	m[i++] = "\"human... i remember you're genocides\" - Sans";
-	m[i++] = "\"Looks feminine enough\" - Shadow";
-	m[i++] = "\"Do you know who's beautiful? Read the first word\" - Sonic";
-
-		// personagens de filmes/séries
-	m[i++] = "\"I ate a cat\" - Darth Vader";
-	m[i++] = "\"If you design you are making\" - Spongebob";
-	m[i++] = "\"I guess I have to spend FNaF at Freddy's\" - Mike";
-	m[i++] = "\"August 12 2036 the heat death of the universe\" - Squidward";
-	
-		// pessoas reais
-	m[i++] = "\"Minecraft\" - Bill Gates";
-	m[i++] = "\"Fucking hell\" - Paul McCartney";
-	m[i++] = "\"Free will is a smith\" - Will Smith";
-	m[i++] = "\"Aria Math Minecraft OST\" - jschlatt";
-	m[i++] = "\"You should LOVE yourself NOW!\" - LTG";
-	m[i++] = "\"Hello Peter, welcome to Fortnite\" - Donald Trump";
-	
-	global.charapause_msg = m[irandom(array_length(m) - 1)];
-}
-*/
-
-
-
-// temporary save file
-/*
-function TEMPFILE_SAVE()
-{
-	// global.file_ = global.
-	
-	global.file_chara_name = global.chara_name;
-	global.file_chara_lvl = global.chara_lvl;
-	global.file_chara_exp = global.chara_exp;
-	global.file_chara_money = global.chara_money;
-	global.file_chara_weapon = global.chara_weapon;
-	global.file_chara_armor = global.chara_armor;
-	global.file_chara_murder = global.chara_murder;
-	global.file_chara_kills = global.chara_kills;
-	global.file_chara_spares = global.chara_spares;
-	global.file_chara_heals = global.chara_heals;
-	global.file_chara_deaths = global.chara_deaths;
-	global.file_chara_world = global.chara_world;
-	global.file_chara_saveroom = global.chara_saveroom;
-	global.file_chara_fun = global.chara_fun;
-	
-	global.file_lang = global.lang;
-	global.file_fullscreen = global.fullscreen;
-	global.file_visualeff = global.visualeff;
-	global.file_autorun = global.autorun;
-	global.file_showfps = global.showfps;
-	global.file_showsw = global.showsw;
-	global.file_hidenotif = global.hidenotif;
-	global.file_discordrpc_enabled = global.discordrpc_enabled;
-	global.file_bloodgore = global.bloodgore;
-	for (var i = 0; i < 3; i++)
-		global.file_volume[i] = global.volume[i];
-	
-	for (var i = 0; i < global.item_length; i++)
-		global.file_item[i] = global.item[i];
-	
-	for (var i = 0; i < array_length(global.keybind); i++)
-		global.file_keybind[i] = global.keybind[i];
-	
-	for (var i = 0; i < array_length(global.flag); i++)
-		global.file_flag[i] = global.flag[i];
-	
-	for (var i = 0; i < array_length(global.world_curpopulation); i++)
-	{
-		global.file_world_curpopulation[i] = global.world_curpopulation[i];
-		global.file_world_maxpopulation[i] = global.world_maxpopulation[i];
-		global.file_world_sparedpopulation[i] = global.world_sparedpopulation[i];	
-	}
-	
-	for (var i = 0; i < array_length(global.achievement); i++)
-		global.file_achievement[i] = global.achievement[i];
-	
-	///////////////////
-	for (var i = 0; i < global.droppeditem_maxlength; i++)
-	{
-		global.file_droppeditem[i] = global.droppeditem[i];
-		global.file_droppeditem_x[i] = global.droppeditem_x[i];
-		global.file_droppeditem_y[i] = global.droppeditem_y[i];
-		global.file_droppeditem_room[i] = global.droppeditem_room[i];
-		global.file_droppeditem_name[i] = global.droppeditem_name[i];
-		global.file_droppeditem_exists[i] = global.droppeditem_exists[i];
-	}
-	///////////////////
-}
-/*
-function TEMPFILE_LOAD()
-{
-	global.chara_name = global.file_chara_name
-	global.chara_lvl = global.file_chara_lvl
-	global.chara_exp = global.file_chara_exp
-	global.chara_money = global.file_chara_money
-	global.chara_weapon = global.file_chara_weapon
-	global.chara_armor = global.file_chara_armor
-	global.chara_murder = global.file_chara_murder;
-	global.chara_kills = global.file_chara_kills
-	global.chara_spares = global.file_chara_spares
-	global.chara_heals = global.file_chara_heals
-	global.chara_deaths = global.file_chara_deaths
-	global.chara_world = global.file_chara_world
-	global.chara_saveroom = global.file_chara_saveroom;
-	global.chara_fun = global.file_chara_fun;
-	
-	global.lang = global.file_lang;
-	global.fullscreen = global.file_fullscreen;
-	global.visualeff = global.file_visualeff;
-	global.autorun = global.file_autorun;
-	global.showfps = global.file_showfps;
-	global.showsw = global.file_showsw;
-	global.hidenotif = global.file_hidenotif;
-	global.discordrpc_enabled = global.file_discordrpc_enabled;
-	global.bloodgore = global.file_bloodgore;
-	for (var i = 0; i < 3; i++)
-		global.volume[i] = global.file_volume[i];
-	
-	for (var i = 0; i < global.item_length; i++)
-		global.item[i] = global.file_item[i];
-	
-	for (var i = 0; i < array_length(global.file_keybind); i++)
-		global.keybind[i] = global.file_keybind[i];
-	
-	for (var i = 0; i < array_length(global.file_flag); i++)
-		global.flag[i] = global.file_flag[i];
-	
-	for (var i = 0; i < array_length(global.file_world_curpopulation); i++)
-	{
-		global.world_curpopulation[i] = global.file_world_curpopulation[i];
-		global.world_maxpopulation[i] = global.file_world_maxpopulation[i];
-		global.world_sparedpopulation[i] = global.file_world_sparedpopulation[i];	
-	}
-	
-	for (var i = 0; i < array_length(global.file_achievement); i++)
-		global.achievement[i] = global.file_achievement[i];
-	
-	///////////////////
-	for (var i = 0; i < global.droppeditem_maxlength; i++)
-	{
-		global.droppeditem[i] = global.file_droppeditem[i];
-		global.droppeditem_x[i] = global.file_droppeditem_x[i];
-		global.droppeditem_y[i] = global.file_droppeditem_y[i];
-		global.droppeditem_room[i] = global.file_droppeditem_room[i];
-		global.droppeditem_name[i] = global.file_droppeditem_name[i];
-		global.droppeditem_exists[i] = global.file_droppeditem_exists[i];
-	
-	///////////////////
-
-	if (global.chara_name != "")
-		global.hasfile = 1;
-}
-/*
-function TEMPFILE_RESET()
-{
-	global.chara_move = 1;
-	global.chara_facing = DOWN;
-	global.chara_cutscene = 0;
-	
-	global.chara_exp = 0;
-	global.chara_money = 0;
-	global.chara_weapon = ITEM_STICK;
-	global.chara_armor = ITEM_BANDAGE;
-	global.chara_murder = 0;
-	global.chara_kills = 0;
-	global.chara_spares = 0;
-	global.chara_heals = 0;
-	global.chara_deaths = 0;
-	global.chara_world = WORLD_CORRIDORS;
-	global.chara_saveroom = 0;
-	
-	for (var i = 0; i < global.item_length; i++)
-		global.item[i] = -1;
-		
-	FLAGS_START();
-		
-	global.world_curpopulation[WORLD_CORRIDORS] = 16;
-	global.world_maxpopulation[WORLD_CORRIDORS] = 16;
-	global.world_sparedpopulation[WORLD_CORRIDORS] = 0;
-	
-	for (var i = 0; i < global.droppeditem_maxlength; i++)
-	{
-		global.droppeditem[i] = 0;
-		global.droppeditem_x[i] = -20;
-		global.droppeditem_y[i] = -20;
-		global.droppeditem_room[i] = 0;
-		global.droppeditem_name[i] = "Salenis";
-		global.droppeditem_exists[i] = 0;
-	}
-	
-	sidechara_start();
-}
-*/
-
-// debug
-
-
-
 
 
 

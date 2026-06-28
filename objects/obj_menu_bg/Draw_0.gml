@@ -1,7 +1,7 @@
 
 // ácido
 acid_siner += 0.05;
-var _acid_y = (sin(acid_siner) * 25);
+var _acid_y = ((sin(acid_siner) * 25) * global.visualeff);
 var _acid_c0 = c_black;
 var _acid_c1_amt = (0.75 + (_acid_y / 150));
 var _acid_c1 = merge_color(c_white, global.c_dump, _acid_c1_amt);
