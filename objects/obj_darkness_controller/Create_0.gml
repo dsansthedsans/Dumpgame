@@ -19,40 +19,18 @@ else if (room == room_corridors_16_B)
 	m6_curcolor = 255;
 	m6_colorvalue = 120;
 }
-
-
-
-
-
-
-
-/*
-if (room == room_corridors_16_B)
-	type = 1;
 else if (room == room_caverns_1)
-	type = 2;
-else if (room == room_caverns_2)
-	type = 3;
-else if (room == room_caverns_3)
-	type = 4;
-	*/
-
-/*
-if (type == 1)
 {
-	depth = -90;
-	chara_curcolor = 255;
-	chara_colorvalue = 120;
-
-	if (global.flag[2] == 1)
-	{
-		m6 = obj_sidechara;
-		m6_curcolor = 255;
-		m6_colorvalue = 120;
-	}
-}
-if (type == 2)
+	type = 3;
 	depth = -200;
-if (type == 3) || (type == 4)
+}
+else if (room == room_caverns_2)
+{
+	type = 4;
 	depth = -2000;
-*/
+}
+else if (room == room_caverns_3)
+{
+	type = 5;
+	depth = -2000;
+}

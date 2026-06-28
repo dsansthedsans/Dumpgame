@@ -10,8 +10,8 @@ if (con == 2)
 }
 if (aftercon == 2)
 {
-	section_alpha -= 0.005;
-	if (section_alpha <= 0)
+	chapter_alpha -= 0.005;
+	if (chapter_alpha <= 0)
 		aftercon = 0;
 }
 if (con == 4)
@@ -34,7 +34,7 @@ if (con == 10)
 }
 if (con == 12)
 {
-	global.chara_facing = DOWN;
+	chara_facing(DOWN);
 	chara.y -= 10;
 	with (chara)
 		shakeobj_small();
@@ -45,9 +45,6 @@ if (con == 12)
 if (con == 13 && exists(shaker) == 0)
 {
 	global.flag[62] = 1;
-	global.chara_move = 1;
-	global.chara_interact = 1;
-	global.chara_cutscene = 0;
-	global.chara_cameramove = 1;
-	destroy(id);	
+	chara_change(-1, 1, 1, 0, 1, 1, 1);
+	destroy(id);
 }

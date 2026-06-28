@@ -9,8 +9,8 @@
   "name":"obj_event_firstsave_caverns",
   "overriddenProperties":[],
   "parent":{
-    "name":"caverns",
-    "path":"folders/[!] objects/events/caverns.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":{
     "name":"obj_event_parent",

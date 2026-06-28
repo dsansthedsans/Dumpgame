@@ -14,7 +14,7 @@ if (global.savefile_selected != -1)
 	start_maininfo();
 
 
-global.menu_lvl = -1;
+global.menu_lvl = 0;
 lvl = @"
 		0 = Title
 		1 = Select file
@@ -31,8 +31,7 @@ startcon = 0;
 startalpha = 1;
 
 
-warning_text[0] = "Dumpgame is unaffiliated\nwith Toby Fox.\n\nThis game contains blood.\nIt can be deactivated\nin the settings.\n\nDumpgame also contains swearing.\nYou can't disable that.\nAt least for now.";
-warning_text[1] = "Press [" + string_upper(key_name(global.keybind[04])) + " or " + string_upper(key_name(global.keybind[05])) + "] to continue.";
+warning_text = get_text("warning");
 warning_alpha = 0;
 
 
@@ -54,8 +53,6 @@ title_spr[5] = spr_menu_title_a;
 title_spr[6] = spr_menu_title_m2;
 title_spr[7] = spr_menu_title_e;
 title_length = 0;
-
-
 dumpgaem = irandom_range(1, 100);
 if (dumpgaem == 1)
 {

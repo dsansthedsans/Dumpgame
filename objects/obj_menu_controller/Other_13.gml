@@ -15,6 +15,9 @@ name_block[5] = 0;
 name_block[6] = 1;
 name_block[7] = 1;
 name_block[8] = 0;
+name_block[9] = 0;
+name_block[10] = 0;
+name_block[11] = 0;
 
 
 // checar nome

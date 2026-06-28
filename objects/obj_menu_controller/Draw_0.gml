@@ -8,31 +8,41 @@ if (global.menu_lvl == 5)
 	if ((continueback_surface != -1 && surface_exists(continueback_surface) == 1) == false)
 		continueback_surface = surface_create(320, 240);
 	surface_set_target(continueback_surface);
-	draw_tilemap(layer_tilemap_get_id("Tiles_0_0"), 0, 0);
-	draw_tilemap(layer_tilemap_get_id("Tiles_0_1"), 0, 0);
-	draw_tilemap(layer_tilemap_get_id("Tiles_0_2"), 0, 0);
-	var _assets = layer_get_all_elements("Assets_0_0");
+	draw_clear_alpha(c_black, 0);
+	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile_world}_0"), 0, 0);
+	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile_world}_1"), 0, 0);
+	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile_world}_2"), 0, 0);
+	var _assets = layer_get_all_elements($"Assets_{savefile_world}_0");
 	for (var a = 0; a < array_length(_assets); a++)
 	{
 		var _asset_sprite = layer_sprite_get_sprite(_assets[a]);
 		var _asset_x = layer_sprite_get_x(_assets[a]);
 		var _asset_y = layer_sprite_get_y(_assets[a]);
 		if (_asset_sprite == spr_mainchara_armor_candybowl && savefile_armor != ITEM_BOWL)
-		|| (_asset_sprite == spr_m6_d && (savefile_flag[2] == false || savefile_armor == ITEM_BOWL))
-		|| (_asset_sprite == spr_m6_sit && (savefile_flag[2] == false || savefile_armor != ITEM_BOWL))
-		|| (_asset_sprite == spr_npc_dummy && (savefile_flag[6] == false || savefile_flag[7] == false))
-		|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && savefile_flag[48] == false)
-		|| (_asset_sprite == spr_npc_bc && (savefile_flag[38] == true || savefile_flag[39] == false))
 			continue;
-		if (_asset_sprite == spr_npc_bc)
+		if (savefile_world == WORLD_CORRIDORS)
 		{
-			continueback_bcsiner += 0.1/2;
-			_asset_y += (sin(continueback_bcsiner) * 5);
+			if (_asset_sprite == spr_m6_d && (savefile_flag[2] == false || savefile_armor == ITEM_BOWL))
+			|| (_asset_sprite == spr_m6_sit && (savefile_flag[2] == false || savefile_armor != ITEM_BOWL))
+			|| (_asset_sprite == spr_npc_dummy && (savefile_flag[6] == false || savefile_flag[7] == false))
+			|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && savefile_flag[48] == false)
+			|| (_asset_sprite == spr_npc_bc && (savefile_flag[38] == true || savefile_flag[39] == false))
+				continue;
+			if (_asset_sprite == spr_npc_bc)
+			{
+				continueback_bcsiner += 0.1;
+				_asset_y += (sin(continueback_bcsiner) * 5);
+			}
 		}
 		draw_sprite_ext(_asset_sprite, layer_sprite_get_index(_assets[a]), _asset_x, _asset_y, layer_sprite_get_xscale(_assets[a]), layer_sprite_get_yscale(_assets[a]), layer_sprite_get_angle(_assets[a]), layer_sprite_get_blend(_assets[a]), layer_sprite_get_alpha(_assets[a]));
 	}
 	surface_reset_target();
 	draw_surface_ext(continueback_surface, 0, 0, 2, 2, 0, c_white, 1);
+}
+else if (continueback_surface != -1 && surface_exists(continueback_surface) == 1)
+{
+	surface_free(continueback_surface);
+	continueback_surface = -1;
 }
 
 // fundo das opções
@@ -473,13 +483,9 @@ if (global.menu_lvl <= 0)
 	draw_set_font(fnt_main_spaced_big);
 	draw_set_halign(fa_center);
 	
-	var _pressy = (room_height - (room_height / 14));
-	draw_set_valign(fa_bottom);
-	draw_text_outline_ext(_basex, _pressy, warning_text[1], c_red, 35, 999, 1, c_maroon);
-	
-	var _mainy = ((_pressy / 2) - (string_height(warning_text[1]) / 2));
+	var _mainy = room_height / 2
 	draw_set_valign(fa_middle);
-	draw_text_outline_ext(_basex, _mainy, warning_text[0], c_white, 35, 999, 1, c_dkgrey);
+	draw_text_outline_ext(_basex, _mainy, warning_text, c_white, 35, 999, 1, c_dkgrey);
 	
 	if (keyboard_check(vk_alt) == 0) // esconder hud
 	{
@@ -497,7 +503,7 @@ if (global.menu_lvl <= 0)
 		draw_text(5, (room_height - 2), global.game_version);
 	
 		draw_set_halign(fa_right);
-		draw_text((room_width - 5), (room_height - 2), "HOLD [ALT] TO HIDE THE HUD");
+		draw_text((room_width - 5), (room_height - 2), get_text("menu_hidehud"));
 	}
 }
 

@@ -462,30 +462,17 @@ function draw_self_border()
 
 function draw_chapter_name(_alpha)
 {
-	var _name = "SALENIS";
-	var _number = 0;
-	if (room == room_corridors_1)
-	{
-		_name = "THE LOST CORRIDORS";
-		_number = 1;
-	}
-	if (room == room_caverns_1)
-	{
-		_name = "ROCK BOTTOM";
-		_number = 2;
-	}
-	/*
-	if (room == room_precity_centralcity)
-	{
-		_name = "CIVILIZED CHAOS";
-		_number = 3;
-	}
-	*/
-	draw_set_alpha(argument0);
-	draw_set_font(fnt_main_spaced);
+	var _number = get_text($"chapter_number_{global.chara_world}");
+	if (is_undefined(_number))
+		_number = "X";
+	var _name = get_text($"chapter_name_{global.chara_world}");
+	if (is_undefined(_name))
+		_name = "SALENIS";
+	draw_set_alpha(_alpha);
+	draw_set_font(fnt_main_spaced_big);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), "CHAPTER " + string(_number) + ":\n" + string(_name), c_white, 1, c_black);
+	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), $"{get_text("chapter_main")} {_number}:\n{_name}", c_white, 1, c_black);
 }
 
 function debug(_string)

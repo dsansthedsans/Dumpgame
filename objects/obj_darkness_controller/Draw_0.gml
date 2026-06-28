@@ -69,14 +69,7 @@ if (type == 2)
 	if (global.flag[2] == 1 && exists(obj_party) == 1 && m6.y > 120 && m6.y < 165)
 		draw_rectangle((m6.x - 2), m6.y, (m6.x + 25), (m6.y - 4), 0);
 }
-
-draw_set_alpha(1);
-
-
-
-
-/*
-if (type == 2)
+if (type == 3)
 {
 	draw_set_color(c_black);
 	for (var i = 0; i < 100; i++)
@@ -105,7 +98,7 @@ if (type == 2)
 		draw_rectangle(_x, -20, _x, 260, 0);
 	}
 }
-if (type == 3)
+if (type == 4)
 {
 	draw_set_color(c_black);
 	for (var i = 0; i < 60; i++)
@@ -121,11 +114,11 @@ if (type == 3)
 	draw_rectangle(0, 400, 260, 459, 0);
 	draw_rectangle(60, 0, room_width, 399, 0);
 }
-if (type == 4)
+if (type == 5)
 {
 	draw_set_alpha(0.5);
 	draw_set_color(c_black);
 	
 	draw_rectangle(0, 0, room_width, room_height, 0);
 }
-*/
+draw_set_alpha(1);

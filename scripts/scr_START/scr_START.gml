@@ -3,7 +3,7 @@ function START_GAME()
 {		
 	randomize();
 	display_gui_fix();
-	load_time = irandom_range(180, 240);
+	load_time = 240//irandom_range(180, 240);
 	
 	global.game_version = "v1.5.0-demo";
 	global.game_startroom[0] = room_menu;
@@ -660,12 +660,12 @@ function start_achievements()
 function CHANGE_GAME()
 {
 	var _change = 1;
-	if (_change == 1)
+	if (_change == 0)
 	{
 		global.chara_name = "CRAZYCAT";
 		load_time = 1;
 		
-		var _rm = room_corridors_13;
+		var _rm = room_caverns_1;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -821,7 +821,6 @@ function CHANGE_GAME()
 				global.flag[59] = 1;
 				global.flag[60] = 1;
 				global.flag[61] = 1;
-				global.chara_world = WORLD_CAVERNS;
 			}
 			if (_lvl >= 10)
 			{

@@ -133,6 +133,21 @@ if (room == room_corridors_18) // gabee's chase
 		}
 	}
 }
+if (room == room_caverns_1)
+{
+	music_set(0, snd_titleimpact, , 2.5, 1, 0.35, , 5);
+	music_set(1, snd_ambient_wind, , 2.5, 1, 0.35, , 5);
+}
+if (room == room_caverns_2)
+{
+	music_set(0, -1);
+	music_set(1, -1);
+}
+if (room == room_caverns_3) // cavernas
+{
+	music_set(0, mus_cave, , , 0, , , );
+	music_set(1, snd_ambient_water, , , , , , 2.5);	
+}
 if (room == room_crazycat)
 {
 	global.music[0] = -1;
@@ -141,16 +156,7 @@ if (room == room_crazycat)
 		music_set(0, mus_crazycat, 1, 0, 0, 1, 1, 0);
 }
 
-if (room == room_caverns_3) // cavernas
-{
-	music_set(0, mus_cavern, 1, 0.5, 1, 1, 1, 0.5);
-	if (global.chara_murder >= 3)
-	{
-		global.music[0] = mus_caverns_geno;
-		//global.music_pitch[0] = 1.1;
-	}
-	music_set(1, snd_ambient_water, , 0.5);	
-}
+
 
 if (exists(obj_chara_pause) == 1)
 {

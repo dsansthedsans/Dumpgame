@@ -20,12 +20,10 @@ if (startcon == 2)
 	warning_alpha += 0.05;
 	if (warning_alpha >= 1)
 	{
-		alarm[2] = 5;
-		startcon = 3;
+		alarm[2] = 180;
+		startcon = 4;
 	}
 }
-if (startcon == 4 && press_enter == 1)
-	startcon = 5;
 if (startcon == 5)
 {
 	warning_alpha -= 0.05;
@@ -63,12 +61,10 @@ if (startcon == 25)
 }
 if (startcon == 27)
 {
-	global.menu_lvl = 0;
-	var _spd = 0.1;
+	var _spd = 0.075;
 	alpha = lerp(alpha, 1, _spd);
 	title_y = lerp(title_y, 70, _spd);
 	startalpha = lerp(startalpha, 0, _spd);
-	
 	var _ydist = abs(title_y - 70);
 	if (_ydist < 1)
 	{

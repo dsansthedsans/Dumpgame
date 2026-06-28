@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"spr_overworld_corridorsbricks",
   "bboxMode":0,
-  "bbox_bottom":59,
+  "bbox_bottom":60,
   "bbox_left":1,
   "bbox_right":59,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":60,
+  "height":61,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"b93abfc1-7980-4472-818a-c09766ee6b91","blendMode":0,"displayName":"default","isLocked":false,"name":"b93abfc1-7980-4472-818a-c09766ee6b91","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

@@ -5,9 +5,12 @@ function TEXTDATA_EN()
 	// ds_map_add(global.textdata_en, "", "");
 	
 	// start
-	ds_map_add(global.textdata_en, "start",	"Loading...");
+	ds_map_add(global.textdata_en, "start",	"A game by dsans\nand migel8022");
+	ds_map_add(global.textdata_en, "warning", "Dumpgame is unaffiliated\nwith Toby Fox.");
+	
 	
 	// menu
+	ds_map_add(global.textdata_en, "menu_hidehud", "hold [ALT] to hide menu");
 	ds_map_add(global.textdata_en, "menu_0_0",	"Play");
 	ds_map_add(global.textdata_en, "menu_0_1",	"Settings");
 	ds_map_add(global.textdata_en, "menu_0_2",	"Achievements");
@@ -92,7 +95,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"menu_name_0",		"Dumpgame");
 	ds_map_add(global.textdata_en, $"menu_namemsg_0",		"<3");
 	ds_map_add(global.textdata_en, $"menu_name_1",		"Fuckgame");
-	ds_map_add(global.textdata_en, $"menu_namemsg_1",		"...?");
+	ds_map_add(global.textdata_en, $"menu_namemsg_1",		"</3");
 	ds_map_add(global.textdata_en, $"menu_name_2",		"Carlinhos");
 	ds_map_add(global.textdata_en, $"menu_namemsg_2",		"The true name.");
 	ds_map_add(global.textdata_en, $"menu_name_3",		"MEE6");
@@ -106,7 +109,15 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"menu_name_7",		"BrokenClock");
 	ds_map_add(global.textdata_en, $"menu_namemsg_7",		"AND I THOUGHT YOU COULDN'T MAKE IT WORSE.");
 	ds_map_add(global.textdata_en, $"menu_name_8",		"BrokenCock");
-	ds_map_add(global.textdata_en, $"menu_namemsg_8",		"...?");
+	ds_map_add(global.textdata_en, $"menu_namemsg_8",		"...WHAT?");
+	ds_map_add(global.textdata_en, $"menu_name_9",		"CrazyCat");
+	ds_map_add(global.textdata_en, $"menu_namemsg_9",		":)");
+	ds_map_add(global.textdata_en, $"menu_name_10",		"dsans");
+	ds_map_add(global.textdata_en, $"menu_namemsg_10",		"Zero shits given.");
+	ds_map_add(global.textdata_en, $"menu_name_11",		"migel");
+	ds_map_add(global.textdata_en, $"menu_namemsg_11",		"No Judgement");
+	ds_map_add(global.textdata_en, $"menu_name_12",		"migel8022");
+	ds_map_add(global.textdata_en, $"menu_namemsg_12",		"No Judgement");
 	
 	// conquistas
 	ds_map_add(global.textdata_en, "achievement_name_0",		"MINI6");
@@ -196,8 +207,12 @@ function TEXTDATA_EN()
 	
 	// chapters
 	ds_map_add(global.textdata_en, "chapter_main", "CHAPTER");
-	ds_map_add(global.textdata_en, "chapter_name_0", "THE FALLEN ANGEL");
-	ds_map_add(global.textdata_en, "chapter_name_1", "ROCK BOTTOM");
+	ds_map_add(global.textdata_en, "chapter_number_0", "I"); //corirdors
+	ds_map_add(global.textdata_en, "chapter_number_1", "II"); //caverns
+	ds_map_add(global.textdata_en, "chapter_number_2", "III"); //centralcity
+	ds_map_add(global.textdata_en, "chapter_name_0", "FALLEN ANGEL"); //corirdors
+	ds_map_add(global.textdata_en, "chapter_name_1", "ROCK BOTTOM"); //caverns
+	ds_map_add(global.textdata_en, "chapter_name_2", "CIVILIZED CHAOS"); //centralcity
 	
 	// items
 	ds_map_add(global.textdata_en, "item_name_none",		"(Empty)");
