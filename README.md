@@ -16,22 +16,31 @@
 
 <br>
 <h2>Development History</h2>
-<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
+<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, then started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
 <p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
 <br>
-<p align="center"><img src="README-ASSETS/TEST-SNOWDIN.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
+<p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
 <br>
-<p>Between November 2021 and February 2022, I watched multiple of <a href="https://www.youtube.com/@peytonburnham4316">Peyton Burnham's GameMaker tutorials (particularly his <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzySnBUlQLhq2VJXRLi66gFf">"How to Make an RPG"</a> and <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzzWFPozdX-HEjJFqjdIXQfF">"Branching Dialog System"</a> series). Without him, Dumpgame's code would've been significantly worse.</p>
+<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". The game was ugly, stiff, confusing and barely functional.</p>
 <br>
-<p align="center"><img src="README-ASSETS/MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu">
-<p align="center"><img src="README-ASSETS/EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/WRITER-SAVE.png" height="295"></p>
-<p align="center"><img src="README-ASSETS/BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's battle">
+<p align="center"><img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
+<p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295"></p>
+<p align="center"><img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's battle"></p>
+<br>
+<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until May that year, ...</p>
+<br>
+<p align="center"><img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
+<p align="center"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6's cutscene"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's battle"></p>
+<br>
+<p></p>
 <br>
 UNUSED TEXT AS OF NOW:
 Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart.
 Then, on June 14, 2026, almost two years after.
 leaving the project unfinished.
 An update with almost a year worth of new content since the latest release.
+It simply wasn't juicy enough.
+I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog Systems" series. Without him, Dumpgame's code would've been significantly worse.
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
