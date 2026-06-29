@@ -3,16 +3,17 @@
   "%Name":"spr_overworld_corridorsbricks",
   "bboxMode":0,
   "bbox_bottom":60,
-  "bbox_left":1,
+  "bbox_left":0,
   "bbox_right":59,
   "bbox_top":0,
-  "collisionKind":1,
+  "collisionKind":4,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"741a85f3-8a55-4528-8c95-3ee9602f0040","name":"741a85f3-8a55-4528-8c95-3ee9602f0040","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7cd82775-8068-43ed-bc37-a5f1934e44b3","name":"7cd82775-8068-43ed-bc37-a5f1934e44b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -50,7 +51,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -72,6 +73,9 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"741a85f3-8a55-4528-8c95-3ee9602f0040","path":"sprites/spr_overworld_corridorsbricks/spr_overworld_corridorsbricks.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"22dbc886-e91c-4c5c-a6f4-ef95fbd0e7d6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7cd82775-8068-43ed-bc37-a5f1934e44b3","path":"sprites/spr_overworld_corridorsbricks/spr_overworld_corridorsbricks.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"cc0e1a77-1b50-4bde-b274-2f090976c225","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

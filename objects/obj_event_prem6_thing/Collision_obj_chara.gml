@@ -30,7 +30,8 @@ if (global.chara_move == 1 && global.chara_cutscene == 0)
 		var _pitch = 0.5;
 		if (sound == 2)
 			_pitch = 0.75;
-		audio_play(snd_step1, 0, VOLUME_SOUND, 2, , , _pitch);
+		audio_play(snd_step1, 0, VOLUME_SOUND, 1, , , _pitch);
+		audio_play(snd_step2, 0, VOLUME_SOUND, 1, , , _pitch);
 		sound = 0;
 	}
 }

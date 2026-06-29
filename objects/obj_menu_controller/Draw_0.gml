@@ -2,7 +2,7 @@
 // jogar (continuar)
 if (global.menu_lvl == 5)
 {
-	draw_sprite_stretched_ext(spr_menu_optbg, 0, -10, -10, (10 + room_width + 10), (10 + room_height + 10), c_white, 0.25);
+	draw_sprite_stretched_ext(spr_menu_optbg, 0, -10, -10, (10 + room_width + 10), (10 + room_height + 10), c_white, 0.75);
 	
 	savefile_read(play_save);
 	if ((continueback_surface != -1 && surface_exists(continueback_surface) == 1) == false)

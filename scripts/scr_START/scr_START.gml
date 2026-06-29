@@ -390,6 +390,8 @@ function start_flags()
 	global.flag[65] = 0; // tutorial - correr
 	
 	global.flag[66] = 0; // Pre M6 - thing 1
+	
+	global.flag[67] = 0; // rules book smiley face amount
 }
 function start_music()
 {
@@ -467,7 +469,7 @@ function start_settings()
 	#macro VOLUME_MASTER 0
 	#macro VOLUME_MUSIC 1
 	#macro VOLUME_SOUND 2
-	global.volume[VOLUME_MASTER] = 1;
+	global.volume[VOLUME_MASTER] = 0.5;
 	global.volume[VOLUME_MUSIC] = 1;
 	global.volume[VOLUME_SOUND] = 1;
 	
@@ -549,7 +551,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		load_time = 1;
 		
-		var _rm = room_corridors_3;
+		var _rm = room_corridors_4_5;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -563,7 +565,7 @@ function CHANGE_GAME()
 			var _lvl = 0;
 			if (_rm == room_corridors_1) || (_rm == room_corridors_1_5) || (_rm == room_corridors_2)
 				_lvl = 1;
-			if (_rm == room_corridors_3)
+			if (_rm == room_corridors_3) || (_rm == room_corridors_3_5)
 				_lvl = 2;
 			if (_rm == room_corridors_4) || (_rm == room_corridors_4_5)
 				_lvl = 3;
@@ -585,7 +587,7 @@ function CHANGE_GAME()
 			// definir flags baseado de onde o jogo vai começar
 			if (_lvl >= 1)
 			{
-				global.flag[0] = 1; // finished getting up event
+				global.flag[0] = 0; // finished getting up event
 			
 				var _sublvl = 0;
 				if (_rm == room_corridors_2)
@@ -622,6 +624,7 @@ function CHANGE_GAME()
 				global.achievement[ACHIEVEMENT_M6TOY] = 1;
 				
 				global.flag[8] = 1; // finished MEE6's pre-CAPTCHA.1 event
+				global.flag[67] = 23;
 			}
 			if (_lvl >= 4)
 			{

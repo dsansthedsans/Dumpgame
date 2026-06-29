@@ -24,7 +24,7 @@ if (room == room_menu)
 		var _fadeouttime = 0;
 		if (global.menu_lvl == 5)
 			_fadeouttime = 0.5;
-		music_set(0, mus_menu, 1, 0, 0, _pitch, 1, _fadeouttime);
+		music_set(0, mus_menu, , , , _pitch, , _fadeouttime);
 		
 		// ovos
 		music_paused[0] = 0;
@@ -37,40 +37,41 @@ if (room == room_intro)
 	global.music[0] = -1;
 	controller = obj_intro_controller;
 	if (controller.active == 1)
-		music_set(0, mus_intro, 1, 0, 0, 1, 0, 0.5);
+		music_set(0, mus_intro);
 }
 
 if (room == room_corridors_1) // corredores
 {
-	global.music[0] = -1;
+	music_set(0, -1);
+	music_set(1, -1);
 	if (global.flag[0] >= 0.5)
 	{
-		var _gain_time = 7;
+		var _gain_time = 5;
 		if (global.flag[0] == 1)
 			_gain_time = 0.5;
-		var _fadeouttime = 3;
-		music_set(0, mus_start, 1, _gain_time, 1, 1, 1, _fadeouttime);
+		var _fadeouttime = 5;
+		music_set(0, mus_start, , _gain_time, 1, 1, 1, _fadeouttime);
 		if (global.chara_murder >= 2)
 			global.music[0] = mus_nobody;
 		else
-			music_set(1, snd_ambient_birds, 1, _gain_time, 1, 1, 1, _fadeouttime);
+			music_set(1, snd_ambient_birds, , _gain_time, 1, 1, 1, _fadeouttime);
 	}
 }
-if (room == room_corridors_1_5)
+if (room == room_corridors_1_5) || (room == room_corridors_2)
 {
 	global.music[0] = -1;
-	music_set(1, snd_ambient_wind, 0.75, 3, 1, 0.25, 1, 1);
-}
-if (room == room_corridors_2)
-{
-	global.music[0] = -1;
-	music_set(1, -1);
-	if (global.flag[1] == 0.5)
-		music_set(0, mus_m6);
+	music_set(1, snd_ambient_wind, 0.75, 5, 1, 0.5, 1, 2.5);
+	if (room == room_corridors_2 && global.flag[1] >= 0.5 && global.flag[1] < 1)
+	{
+		music_set(1, -1);
+		if (global.flag[1] == 0.75)
+			music_set(0, mus_m6);
+	}
 }
 if (room >= room_corridors_3)
 {	
-	music_set(0, mus_corridors);
+	music_set(0, mus_corridors, 1);
+	music_set(1, -1);
 	if (global.chara_murder >= 2)
 	{
 		global.music[0] = mus_corridors_geno;
@@ -121,10 +122,10 @@ if (room == room_corridors_18) // gabee's chase
 		music_set(1, -1);
 	if (global.flag[60] == 1 && global.flag[61] == 0)
 	{
-		music_set(0, mus_chase_intro, 1, 0, 0, 1, 0, 0);
+		music_set(0, mus_chase_intro);
 		if (music_old[0] == mus_chase_intro && audio_playing(mus_chase_intro) == false) || (music_old[0] == mus_chase_loop)
 		{
-			music_set(0, mus_chase_loop, 1, 0, 0, 1.1, 1, 0);
+			music_set(0, mus_chase_loop);
 			if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 45)
 			{
 				global.music_pitch[0] = music_pitch_old[0];
@@ -153,7 +154,7 @@ if (room == room_crazycat)
 	global.music[0] = -1;
 	global.music[1] = -1;
 	if (instance_exists(obj_crazycat) == true && obj_crazycat.cat_dancing == 1)
-		music_set(0, mus_crazycat, 1, 0, 0, 1, 1, 0);
+		music_set(0, mus_crazycat);
 }
 
 

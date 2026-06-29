@@ -122,17 +122,19 @@ function TEXTDATA_EN()
 	// conquistas
 	ds_map_add(global.textdata_en, "achievement_name_0",		"MINI6");
 	ds_map_add(global.textdata_en, "achievement_desc_0",			"Find the MEE6 toy that's hidden somewhere in the Corridors");
+	ds_map_add(global.textdata_en, "achievement_name_3",		"Unbelievable");
+	ds_map_add(global.textdata_en, "achievement_desc_3",			"Draw a smiley face.");
 	ds_map_add(global.textdata_en, "achievement_name_1",		"Fashion Statement");
 	ds_map_add(global.textdata_en, "achievement_desc_1",			"Get the armor that smells like strawberry");
 	ds_map_add(global.textdata_en, "achievement_name_2",		"");
 	ds_map_add(global.textdata_en, "achievement_desc_2",			"Get a weapon by completing a monster's request");
 	ds_map_add(global.textdata_en, "achievement_name_3",		"Local Celebrity");
-	ds_map_add(global.textdata_en, "achievement_desc_3",			"Spare every monster from Corridors");
+	ds_map_add(global.textdata_en, "achievement_desc_3",			"Spare every monster from the Corridors");
 	ds_map_add(global.textdata_en, "achievement_name_3",		"Judgement Day");
-	ds_map_add(global.textdata_en, "achievement_desc_3",			"Kill every monster\nfrom Corridors before fighting Broken Clock");
+	ds_map_add(global.textdata_en, "achievement_desc_3",			"Kill every monster from the Corridors before Broken Clock");
 	ds_map_add(global.textdata_en, "achievement_name_4",		"Out of Time");
 	ds_map_add(global.textdata_en, "achievement_desc_4",			"Defeat Broken Clock");
-	ds_map_add(global.textdata_en, "achievement_name_5",		"Puzzle Master");
+	ds_map_add(global.textdata_en, "achievement_name_5",		"");
 	ds_map_add(global.textdata_en, "achievement_desc_5",			"Complete CAPTCHA's last stage in under 30 seconds");
 	//ds_map_add(global.textdata_en, "achievement_name_6",		"");
 	//ds_map_add(global.textdata_en, "achievement_desc_6",			"Kill every monster from Caverns before reaching its exit");
@@ -324,7 +326,7 @@ function TEXTDATA_EN()
 	// room_corridors_1
 	ds_map_add(global.textdata_en, "room_lamp_0","* (It's a lamp.)");
 	ds_map_add(global.textdata_en, "room_lamp_1","* (Its light comes from a strange-looking blue fire.)");
-	ds_map_add(global.textdata_en, "room_brokenlamp", "* (This lamp appears to have been forcefully thrown against the floor.)");
+	ds_map_add(global.textdata_en, "room_brokenlamp", "* (This lamp appears to have been forcefully thrown&against the floor.)");
 	
 	// obj_event_m6_start	
 	ds_map_add(global.textdata_en, "event_m6_start_0_0", "* Are you a new member?");
@@ -351,7 +353,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "event_m6_start_3_1", "* If we go together,^1 we could reach the end of :RCORRIDORS;D.");
 	ds_map_add(global.textdata_en, "event_m6_start_3_2", "* My knowledge and your strength together could ease our adventure.");
 	ds_map_add(global.textdata_en, "event_m6_start_3_3", "* The exit would take us to this world's city,^1 a safe and populated area.");
-	ds_map_add(global.textdata_en, "event_m6_start_3_4", "* And from there,^1 you can leave this world if you want.");
+	ds_map_add(global.textdata_en, "event_m6_start_3_4", "* And from there,^1 you can leave this world.");
 	ds_map_add(global.textdata_en, "event_m6_start_3_5", "* So now I ask you,^1&new member.");
 	ds_map_add(global.textdata_en, "event_m6_start_3_6", "* May I please follow you in your adventure?");
 	ds_map_add(global.textdata_en, "event_m6_start_3_7", "* You are my only chance to leave this place.");
@@ -443,7 +445,7 @@ function TEXTDATA_EN()
 	// room_corridors_4_5
 	ds_map_add(global.textdata_en, "room_rulesbook_0", "* (It's a book titled&\"Server Rules\".)");
 	ds_map_add(global.textdata_en, "room_rulesbook_1", "* (Some pages are ripped off and others are full of drawings.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_1", "* (There's a pen attached to the pillar with a chain.)");
+	ds_map_add(global.textdata_en, "room_rulesbook_2", "* (There's a pen attached to the pillar with a chain.)");
 	ds_map_add(global.textdata_en, "room_rulesbook_3.0", "* (Draw a smiley face?)");
 	ds_map_add(global.textdata_en, "room_rulesbook_3.1_0", "* (Draw a ");
 	ds_map_add(global.textdata_en, "room_rulesbook_3.1_1", "nd smiley face?)");
@@ -452,51 +454,49 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_rulesbook_3_1", "Yes");
 	ds_map_add(global.textdata_en, "room_rulesbook_3_2", "No");
 	ds_map_add(global.textdata_en, "room_rulesbook_4.0", "* (You drew a smiley face.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_4.1", "* (You drew another smiley face.)");
+	ds_map_add(global.textdata_en, "room_rulesbook_4.1", "* (You drew another&smiley face.)");
 	var i = 0;
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* ()");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You feel like you've lived your whole life just for&this moment...)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You feel like you've fulfilled your life purpose...)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You feel like the world has become a better place...)");
 	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You feel the smiley faces looking right back at you.)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You have become the fastest writer in the world.)"); // Reference to https://www.youtube.com/watch?v=iyV3Une0n_Y
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You have become the fastest drawer in the world.)"); // Reference to https://www.youtube.com/watch?v=IqzMUn90tMg
 	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You show no signs of stopping.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You don't know what you're getting into.)");
 	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 is visibly confused by your persistence.)");
 	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 is wondering if he should intervene or not.)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 is scared you'll draw a smiley face on him too.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 would intervene if he wasn't scared of you drawing on his face too.)");
 	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 has begun to question his own life choices.)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 has put himself in Sleep mode.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 has grown tired of&you and put himself in&Sleep mode.)");
 	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You have successfully given yourself a headache.)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It's a migraine,^3 actually.)^1&* (It might be a tumor.)"); // Reference to https://www.youtube.com/watch?v=t_FRWUPcR7Y&t=38s
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Not only your head hurts,^1 but you can't feel your hand anymore.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It's a migraine,^3 actually.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It might be a tumor.)"); // Reference to https://www.youtube.com/watch?v=t_FRWUPcR7Y&t=38s
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Not only your head hurts,^3&but you can't feel your&hand anymore.)");
 	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It's getting progressively harder to draw as your hand loses blood flow.)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (\"What am I doing?\",^1 you ask yourself.)^2&* (You couldn't think of an answer.)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (\"Why am I doing this?\",^1 you ask yourself.)^2&* (You'd rather not know the answer.)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because you're bored?)^2&* (Is it because you're crazy?)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because it's funny?)^2&* (Is it because you're torturing yourself?)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because you want to see far dialogue goes...?)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It's not worth it,^1 you know.)^2&* (Nothing will come from this.)^2&* (No one will be impressed.)");
-	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Don’t you realize you're only wasting your own time?)");
-
-	
 	/*
-ds_map_add(global.textdata_en, "room_rulesbook_2", "* (One page in particular is full of smiley faces.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_3", "* (Someone drew the same smiley face a hundred times.)");
-		ds_map_add(global.textdata_en, "room_rulesbook_3_0", "* (You contributed with ");
-		ds_map_add(global.textdata_en, "room_rulesbook_3_1", " smiley face.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_4_0", "* (Draw a smiley face?)");
-	ds_map_add(global.textdata_en, "room_rulesbook_4_1", "* (Draw another smiley face?)");
-	ds_map_add(global.textdata_en, "room_rulesbook_4__1", "Yes");
-	ds_map_add(global.textdata_en, "room_rulesbook_4__2", "No");
-	ds_map_add(global.textdata_en, "room_rulesbook_5", "* (You drew a smiley face.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_5_0", "* (You drew another smiley face.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_6.0", "* (The world has become a better place.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_6.1", "* (You show no signs of stopping.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_6.1", "* (MEE6 looks visibly confused by your persistance.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (\"What am I doing?\",^3 you ask yourself.^1 You couldn't think of an answer.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (\"Why am I doing this?\",^3 you ask yourself.^1 You'd rather not know the answer.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (\"When will I stop?\",^3 you ask yourself.^1 You wish you knew the answer.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because you're bored?)^1&* (Is it because you're crazy?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because it's funny?)^1&* (Is it because you're torturing yourself?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because you want to see far dialogue goes...?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It's not worth it,^1 you know.)^1&* (No one will be impressed.)");//^1&* (Nothing will come from this.)
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (No one will congratulate you or be proud of you.)^1&* (No one will care.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Of all things you could be doing,^3 why would you pick this?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Don't you realize you're wasting your own time?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Don't you see that you like to waste your own time?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Don't you have anything better to do?)"); // Reference to Flowey Undertale
+	*/
+	/*
+	ds_map_add(global.textdata_en, "room_rulesbook_", "* (Someone drew the same smiley face a hundred times.)");
+	ds_map_add(global.textdata_en, "room_rulesbook_", "* (One page in particular is full of smiley faces.)");
 	*/
 	
 	// obj_event_m6_precaptcha1
 	ds_map_add(global.textdata_en, "event_m6_precaptcha1_0", "* This is the door that has made stay here for all of this time.");
-	ds_map_add(global.textdata_en, "event_m6_precaptcha1_1", "* I have never understood the reason why the puzzles are so difficult.");
-	ds_map_add(global.textdata_en, "event_m6_precaptcha1_2", "* In any way,^1 I believe you should read that sign next to the door.");
-	ds_map_add(global.textdata_en, "event_m6_precaptcha1_3", "* It may help you understand on how to open the door!");
+	ds_map_add(global.textdata_en, "event_m6_precaptcha1_1", "* I have never understood the reason behind the puzzles' difficulty.");
+	ds_map_add(global.textdata_en, "event_m6_precaptcha1_2", "* In any way,^1 I believe you should read the sign next to the door.");
+	ds_map_add(global.textdata_en, "event_m6_precaptcha1_3", "* It may help you find the answer to the puzzles!");
 	
 	// room_corridors_5
 	ds_map_add(global.textdata_en, "room_captcha_mainsign_1_0", "* \"reCAPTCHA\\:  Stage 1\"");
@@ -718,32 +718,30 @@ ds_map_add(global.textdata_en, "room_rulesbook_2", "* (One page in particular is
 	// Dummy battle
 	ds_map_add(global.textdata_en, "battle_main_dummy_0_0", "* Here we are!");
 	ds_map_add(global.textdata_en, "battle_main_dummy_0_1", "* Do you see those four buttons in the bottom?");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_2", "* Each one of them has its own function.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_3", "* You will have to use them to interact with the opponent.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_4", "* Your ;USOUL;D,^1 depicted with a :Rheart;D,^1 marks your position.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_5", "* In a :YBATTLE;D,^1 there are two ways to win.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_6", "* The first way is by&:YFIGHTING;D the enemy&to death.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_7", "* Try attacking the&dummy by using&the button :Y[FIGHT];D.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_8", "* After you use the button,^1 the opponent's turn will begin.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_9", "* You will have to dodge&a series of bullets.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_10", "* You can dodge by controlling your ;USOUL;D.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_0_11", "* Try using the button \\:Y[FIGHT];D!");
+	ds_map_add(global.textdata_en, "battle_main_dummy_0_2", "* You can use them to interact with the opponent.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_0_3", "* Try attacking the&dummy by using&the button :U[FIGHT];D.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_0_4", "* After you use the button,^1 the opponent's turn will begin.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_0_5", "* You will have to dodge&a series of bullets.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_0_6", "* MEE6 wants you to use \\:U[FIGHT];D.");
 	
 	ds_map_add(global.textdata_en, "battle_main_dummy_2_0", "* That was great!");
-	ds_map_add(global.textdata_en, "battle_main_dummy_2_1", "* The other way to end&a :YBATTLE;D is by :YSPARING;D&the opponent.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_2_2", "* However,^1 you can only&:YSPARE;D the opponent if&it likes you.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_2_3", "* You can make it like you by :YACTING;D in a certain way.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_2_4", "* Try using the button&:Y[ACT];D then :YCHECK;D the opponent.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_2_5", "* The :YCHECK;D option tells you the main data about the enemy.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_2_6", "* Basically,^1 you can only make it like you if know what it likes.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_2_7", "* Try using :Y[ACT];D -> :YCHECK;D!");
+	ds_map_add(global.textdata_en, "battle_main_dummy_2_1", "* Now,^1 try using the button :U[ACT];D to :Y[Check];D the opponent.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_2_2", "* The :Y[Check];D option provides more details about the enemy.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_2_3", "* It will be easier to make it like you if you know what it likes.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_2_4", "* MEE6 wants you to use :Y[Check];D.");
 	
-	ds_map_add(global.textdata_en, "battle_main_dummy_4_0", "* Now that you have used&:YCHECK;D,^1 you have to make it like you.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_4_1", "* You can make it like you by using the other options in :Y[ACT];D.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_4_2", "* You have to interact with it based on&what it likes.");
-	ds_map_add(global.textdata_en, "battle_main_dummy_4_3", "* Try using :Y[ACT];D -> :Y???;D");
+	ds_map_add(global.textdata_en, "battle_main_dummy_4_0", "* Now that have used :Y[Check];D,^1 you know how to make it like you.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_4_1", "* Use the other options in :U[ACT];D based on what the enemy likes.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_4_2", "* MEE6 wants you to use :Y[???];D.");
 	
-	ds_map_add(global.textdata_en, "battle_main_dummy_6_0", "* There you go!");
+	ds_map_add(global.textdata_en, "battle_main_dummy_6_0", "* There you go!^1&* The opponent's name is now :Yyellow;D.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_6_1", "* That means you can :Y[Spare];D the enemy and win the battle!");
+	ds_map_add(global.textdata_en, "battle_main_dummy_6_2", "* Before doing that,^1 I should tell you about :U[ITEM];D.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_6_3", "* The :U[ITEM];D button allows you to use items from your inventory.");
+	ds_map_add(global.textdata_en, "battle_main_dummy_6_4", "* MEE6 wants you to use :U[ITEM];D.");
+	
+	
+	/*
 	ds_map_add(global.textdata_en, "battle_main_dummy_6_1", "* You may see the enemy's name is now :Yyellow;D.");
 	ds_map_add(global.textdata_en, "battle_main_dummy_6_2", "* That is because you can now :YSPARE;D the opponent!");
 	ds_map_add(global.textdata_en, "battle_main_dummy_6_3", "* If you :YSPARE;D the enemy,^1 this :YBATTLE;D will end.");
@@ -754,6 +752,7 @@ ds_map_add(global.textdata_en, "room_rulesbook_2", "* (One page in particular is
 	ds_map_add(global.textdata_en, "battle_main_dummy_6_8", "* But do not forget to use it when necessary.");
 	ds_map_add(global.textdata_en, "battle_main_dummy_6_9", "* Now use :Y[MERCY];D and&:YSPARE;D the enemy to&win this :YBATTLE;D!");
 	ds_map_add(global.textdata_en, "battle_main_dummy_6_10", "* Try using :Y[MERCY];D -> :YSPARE;D!");
+	*/
 	
 	ds_map_add(global.textdata_en, "battle_enemyname_dummy", "Dummy");
 	

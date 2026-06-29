@@ -108,6 +108,7 @@ if (scarefly == 1)
 	if (scarefly_stage == 0)
 	{
 		audio_play(snd_bird_startfly, 0, VOLUME_SOUND);
+		audio_pitch(thisaudio, 1.35);
 		scarefly_stage = 1;
 		spdx = 0;
 		spdy = 0;

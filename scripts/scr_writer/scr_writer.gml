@@ -24,6 +24,17 @@ function get_text(_id)
 
 function TEXT()
 {	
+	/*
+	RAT NPC
+	TEXT_SPEED 1
+	* Hello.
+	* Hello Hello.
+	*/
+	
+	
+	
+	
+	
 	if (text == "test0")
 	{
 		msg[0] = "* (You feel a calming tranquility.^1 You're filled with determination...)";
@@ -218,6 +229,8 @@ function TEXT()
 			{
 				msg_face[9] = spr_dialogface_m6_sassy;
 				msg_face[10] = spr_dialogface_m6_default;
+				msg_skip[9] = false;
+				msg_skip[10] = true;
 			}
 			msg_sound[9] = snd_txt_m6;
 			msg_talker[9] = obj_marker;
@@ -398,8 +411,22 @@ function TEXT()
 	// room_corridors_4_5
 	if (text == "room_rulesbook")
 	{
-		for (var m = 0; m < 4; m++)
+		for (var m = 0; m < 3; m++)
 			msg[m] = get_text($"room_rulesbook_{m}");
+		question[m] = get_text($"room_rulesbook_{m}.0");
+		debug(string(global.flag[67]) + ("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! AUSDHASDUASHUDSUAHDUSAHDSAHJDSAKDSAJHDC"))
+		if (global.flag[67] > 0)
+			question[m] = $"{get_text("room_rulesbook_" + string(m) + ".1_0")}{(global.flag[67] + 1)}{get_text("room_rulesbook_" + string(m) + ".1_" + string(clamp(global.flag[67], 1, 3)))}"
+		question_option[1] = get_text($"room_rulesbook_{m}_1");
+		question_option[2] = get_text($"room_rulesbook_{m}_2");
+		if (question_result[m] == 1)
+		{
+			msg[m+1] = get_text($"room_rulesbook_{m+1}.{(global.flag[67] > 0)}");
+			msg[m+2] = get_text($"room_rulesbook_{m+2}-{global.flag[67]}");
+			if (global.flag[67] > 0)
+				msg_skip[m+2] = false;
+			global.flag[67] += 1;
+		}
 	}
 	
 	// obj_event_m6_precaptcha1
@@ -1549,15 +1576,13 @@ function TEXT()
 			if (controller.battle_group == 1) // Dummy
 			{
 				var _enemy = controller.enemy_obj[0];
-				
-				var _finalpage = 11;
+				var _finalpage = 6;
 				if (_enemy.stage == 2) || (_enemy.stage == 3)
-					_finalpage = 7;
+					_finalpage = 4;
 				else if (_enemy.stage == 4) || (_enemy.stage == 5)
-					_finalpage = 3;
+					_finalpage = 2;
 				else if (_enemy.stage == 6) || (_enemy.stage == 7)
-					_finalpage = 10;
-				
+					_finalpage = 4;
 				if ((_enemy.stage / 2) == round(_enemy.stage / 2))
 				{
 					// get dialog

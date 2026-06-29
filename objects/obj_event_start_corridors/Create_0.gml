@@ -9,8 +9,7 @@ if (global.flag[0] == 0)
 	chara = obj_chara;
 	screenpos(0, (chara.y - (chara.sprite_height / 2) - 120));
 	chara.y += 10;
-		
-	getuptime = 180;
+	getuptime = (60 * 5);
 	fade_alpha = 1;
 	section_alpha = 1;
 		
@@ -18,7 +17,7 @@ if (global.flag[0] == 0)
 	depth = -9999;
 	alarm[5] = 210;
 	aftercon = 1;
-	alarm[2] = 180;
+	alarm[2] = (getuptime / 2);
 	con = 1;
 	
 	/*

@@ -1,6 +1,6 @@
 
 // dummy door
-if (room == room_corridors_3_5 && x == 140 && y == 0 && global.flag[40] == 1)
+if (room == room_corridors_3_5 && x == 140 && y == 5 && global.flag[40] == 1)
 	sprite_index = spr_overworld_bigdoor_open;
 
 // candy bowl pillar

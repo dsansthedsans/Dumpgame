@@ -472,7 +472,7 @@ function draw_chapter_name(_alpha)
 	draw_set_font(fnt_main_spaced);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), $"{get_text("chapter_main")} {_number}:\n{_name}", c_white, 1, c_black);
+	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), $"{get_text("chapter_main")} {_number}:\n{_name}", c_white, 0.5, c_dkgrey);
 }
 
 function debug(_string)

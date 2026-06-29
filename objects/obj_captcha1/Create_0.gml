@@ -132,10 +132,10 @@ for (var w = 0; w < 3; w++)
 		}
 		
 		// create buttons
-		mybutton_basex = 80;
+		mybutton_basex = 90;
 		if (room == room_corridors_5_B)
-			mybutton_basex = 120;
-		mybutton_basey = 100;
+			mybutton_basex = 130;
+		mybutton_basey = 102;
 		
 		mybutton_x[w] = (mybutton_basex + (20 * w));
 		mybutton_y[h] = (mybutton_basey + (15 * h));
@@ -158,10 +158,10 @@ for (var w = 0; w < 3; w++)
 
 
 // create reset button
-resetbutton_x = 180;
+resetbutton_x = 170;
 if (room == room_corridors_5_B)
-	resetbutton_x = 220;
-resetbutton_y = 104;
+	resetbutton_x = 210;
+resetbutton_y = (mybutton_basey + 15);
 resetbutton_obj = instance_create_layer(resetbutton_x, resetbutton_y, "Instances", obj_overworld_nonsolid);
 resetbutton_pressed = 0;
 with (resetbutton_obj)

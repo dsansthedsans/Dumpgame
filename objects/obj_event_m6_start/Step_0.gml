@@ -22,7 +22,6 @@ if (con == 3)
 {
 	if (exists(thissurprise) == 1)
 		destroy(thissurprise);
-	
 	m6.vspeed = 0.9;
 	if (m6.y >= 119)
 	{
@@ -49,6 +48,7 @@ if (con == 6)
 }
 if (con == 7 && exists(thiswriter) == 0)
 {
+	global.flag[1] = 0.5;
 	alarm[2] = 45;
 	con = 8;
 }
@@ -83,13 +83,13 @@ if (con == 14)
 }
 if (con == 16)
 {
-	global.flag[1] = 0.5;
+	global.flag[1] = 0.75;
 	writer("event_m6_start_1", -1, -1);
 	con = 18;
 }
 if (con == 18 && exists(thiswriter) == 0)
 {
-	global.flag[1] = 0;
+	global.flag[1] = 0.5;
 	alarm[3] = 60;
 	con = 18.5;
 }
@@ -143,7 +143,7 @@ if (con == 26)
 	if (exists(thiswriter) == 1)
 	{
 		if (thiswriter.page >= (8 + thiswriter.question_result[8]) && thiswriter.question_result[8] > 0)
-			global.flag[1] = 0.5;
+			global.flag[1] = 0.75;
 	}
 	else
 	{
@@ -188,10 +188,6 @@ if (con == 32)
 }
 if (con == 33 && exists(thiswriter) == 0)
 {	
-	//party_create(m6.x, m6.y, "m6");
-	//party_change(0, 0, 0, LEFT, RIGHT);
-	//party_facing(0, UP);
-	
 	party_create(m6.x, m6.y, "m6", LEFT);
 	global.flag[2] = 1;
 	
