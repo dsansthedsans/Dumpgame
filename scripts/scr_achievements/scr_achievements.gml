@@ -2,26 +2,30 @@
 function achievements_write()
 {
 	var _file_name = "achievements.txt";
-	var _file = file_text_open_write(working_directory + string(_file_name));
-	
-	file_text_write_string(_file, "[Did you know that if you turn all the zeros into ones you'll have all of the achievements? Yeah, I bet you already knew that.]")
-	file_text_writeln(_file);
-	
-	file_text_writeln(_file);
-	for (var i = 0; i < global.achievement_total; i++)
+	var _file = file_text_open_write(global.game_directory + string(_file_name));
+	if (_file != -1)
 	{
-		file_text_write_real(_file, global.achievement[i]);
+		file_text_write_string(_file, "[Did you know that if you turn all the zeros into ones you'll have all of the achievements? Yeah, I bet you already knew that.]")
 		file_text_writeln(_file);
+		file_text_writeln(_file);
+		for (var i = 0; i < global.achievement_total; i++)
+		{
+			file_text_write_real(_file, global.achievement[i]);
+			file_text_writeln(_file);
+		}
+		file_text_close(_file);
 	}
-	
-	file_text_close(_file);
+	else
+		debug("!!!!!!!!!!!!!!!!!!!!!!!!!! HELP MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+
 }
 
 function achievements_read()
 {
 	var _file_name = "achievements.txt";
-	var _file = file_text_open_read(working_directory + string(_file_name));
-	
+	var _file = file_text_open_read(global.game_directory + string(_file_name));
+	if (_file != -1)
+	{
 	file_text_readln(_file);
 	
 	file_text_readln(_file);
@@ -32,6 +36,10 @@ function achievements_read()
 	}
 	
 	file_text_close(_file);	
+	}
+	else
+		debug("!!!!!!!!!!!!!!!!!!!!!!!!!! HELP MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+
 }
 
 function achievement_add(_id)

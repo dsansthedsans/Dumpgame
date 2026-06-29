@@ -143,7 +143,7 @@ function TEXT()
 		msg[0] = get_text("room_lamp_0");
 		msg[1] = get_text("room_lamp_1");
 	}
-	if (text == "room_pillar") || (text == "room_brokenlamp")
+	if (text == "room_brokenlamp")
 		msg[0] = get_text(text);
 	
 	// room_corridors_1_5

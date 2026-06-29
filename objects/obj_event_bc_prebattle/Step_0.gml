@@ -159,7 +159,6 @@ if (con == 12)
 if (altcon == 12)
 {
 	global.chara_facing = UP;
-	//global.chara_cutscene = 1;
 	destroy(chara_surprise);
 	altcon = 0;
 }
@@ -247,5 +246,10 @@ if (con >= 1)
 if (aftercon == 2)
 {
 	bcsiner += 0.1;
-	bc.vspeed = (sin(bcsiner) * 0.25);	
+	bc.vspeed = (sin(bcsiner) * 0.5);	
+}
+if (con > 0 && exists(bc) == true)
+{
+bc.x = (round(bc.x * 10) / 10);
+bc.y = (round(bc.y * 10) / 10);
 }

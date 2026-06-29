@@ -6,9 +6,12 @@ function START_GAME()
 	load_time = 180//irandom_range(180, 240);
 	
 	global.game_version = "v1.5.0-demo";
+	global.game_directory = $"{working_directory}{global.game_version}\\";
+	if (directory_exists(global.game_directory) == false)
+		directory_create(global.game_directory);
+	
 	global.game_startroom[0] = room_menu;
 	global.game_startroom[1] = room_corridors_1 //room_intro;
-	
 	TEXTDATA_EN();
 	TEXTDATA_PT();
 	start_maininfo();
@@ -470,132 +473,13 @@ function start_settings()
 	
 	start_controls();
 	
-	if (file_exists("settings.txt") == 0)
+	if (file_exists($"{global.game_directory}settings.txt") == 0)
 		settings_write();
 	else
 		settings_read();
 }
 function start_savefile()
 {
-	m[0] = "";
-	
-	// mensagens aleatórias
-	var i = 0;
-		// UNDERTALE/DELTARUNE
-	m[i++] = "Despite everything, it's still you.";
-	m[i++] = "You should be smiling, too. Aren't you excited? Aren't you happy? You're going to be free.";
-	m[i++] = "Have you ever thought about a world where everything is exactly the same, except you don't exist?";
-	m[i++] = "You felt your sins crawling on your back."
-	m[i++] = "TAKE A GOD DAMN VACATION STRAIGHT TO HELL";
-	m[i++] = "I'VE ALWAYS BEEN A MAN OF THE [PIPIS]. A REAL [PIPIS] PERSON!";
-	m[i++] = "I can't go to hell. I'm all out of vacation days.";
-	m[i++] = "NOW'S YOUR CHANCE TO BE A [[BIG SHOT]]!!"
-	m[i++] = "... can anyone hear me? Help...";
-	m[i++] = "Dark. Darker. Yet darker.";
-	m[i++] = "[Hyperlink blocked]";
-	m[i++] = "Potassium"
-	m[i++] = "Ribbit."
-	m[i++] = "But nobody came.";
-	m[i++] = "Big boner down the lane";
-	m[i++] = "Sans is Ness";
-	m[i++] = "NOW I OWN THE BLACK"
-	m[i++] = "my child you are breaking my heart"
-	m[i++] = "human... i remember you're genocides.";
-	m[i++] = "I'm Wing Gaster! The royal scientist .";
-	m[i++] = "Hey kid, do you want a weiner in your mouth?";
-		
-		// ULTRAKILL
-	m[i++] = "dont do that then";
-	m[i++] = "Ahh... Free at last.";
-	m[i++] = "Machine, turn back now.";
-	m[i++] = "yeah well get good asshole";
-	m[i++] = "Something wicked this way comes.";
-	m[i++] = "I'm gonna fucking poison you! ... What?";
-	m[i++] = "May your woes be many, and your days few.";
-	m[i++] = "A visitor? Hmm... Indeed, I have slept long enough.";
-	
-		// Dumpster Friends
-	m[i++] = "OI ANINHA"
-	m[i++] = "oi jovem";
-	m[i++] = "limpeza anal";
-	m[i++] = "PIROCA GAMES";
-	m[i++] = "manda o argüivo";
-	m[i++] = "O REI CHEGOU !!!";
-	m[i++] = "garry's mod Fuckgame";
-	m[i++] = "garry's game Fuckmod";
-	m[i++] = "BIZALOUCA MANDA DALVE";
-	m[i++] = "J'SUIS PAS CONTENT !!!";
-	m[i++] = "I slightly dislike you."; // https://youtu.be/RyXEATaM8Sc?t=42
-	m[i++] = "Profession is FL Studio 20";
-	m[i++] = "Profession is GameMaker Studio 2";
-	m[i++] = "CARALHO PORRA PORRA CARALHO";
-	m[i++] = "Cara voce GOSTA do meu SETUP ?";
-	m[i++] = "Everybody Loves Somebody Sometime";
-	m[i++] = "romp spip, beto bomial e bob bazmal";
-	m[i++] = "I wish someone would make a mod. Garry:";
-	m[i++] = "olá, olá. o cara. o cara volta. bom dia.";
-	m[i++] = "https://www.youtube.com/watch?v=z-2_OstpR5c";
-	m[i++] = "PLAP PLAP PLAP GET BOMIAL GET BOMIAL GET BOMIAL";
-	m[i++] = "the joker 2019 segurando placa escrito \"dumpgame\"";
-	m[i++] = "\"incrível\" como Dsans diria, se estivesse conosco..";
-	m[i++] = "Aninha! É a minha namorada instantânea! Você estragou ela!";
-	m[i++] = "Nossa, Como Eu Queria Fazer Uma Copoia De Meu Arquivo. Dsans:";
-	m[i++] = "Dsans, Por que Tem Tantos Vídeos De Femboys Nos Seus Recomendados Do YouTube ?";
-	m[i++] = "Carambolas... Essas mensagens aleatórias são bem... estranhas e ao mesmo tempo, esquisitas...";
-	
-		// Jerma985
-	m[i++] = "#LootGet"
-	m[i++] = "LIFE IS PAIN I HATE";
-	m[i++] = "The Giant Enemy Spider";
-	m[i++] = "There's blood in the box.";
-	m[i++] = "What's the baseball stream?";
-	m[i++] = "Rats, rats, we are the rats.";
-	m[i++] = "You missed that one, try another!";
-	m[i++] = "Do I eat ass? That's the question?";
-	m[i++] = "I've been waiting all week to do this one.";
-
-		// Bob Esponja
-	m[i++] = "I'm a goofy goober!";
-	m[i++] = "Don't touch me, I'm sterile.";
-	m[i++] = "Maybe it's the way you're dressed.";
-	m[i++] = "Do you want to take a hike with me?";
-	m[i++] = "Manager?! This is the greatest day of my life!";
-	m[i++] = "I order the food, you cook the food, then the customer gets the food. We do that for forty years, and then we die.";
-
-		// aleatórios
-	m[i++] = "5:18:48:05"; // Portal 2 Rádio 10 horas
-	m[i++] = "AudioJungle";
-	m[i++] = "You're too slow!"; // Sonic
-	m[i++] = "Die, potato, die."; // asdfmovie
-	m[i++] = "you are an idiot!"; // youareanidiot.cc
-	m[i++] = "Do you like waffles?"; // Do You Like Waffles
-	m[i++] = "Live long and prosper."; // Star Trek
-	m[i++] = "Connection terminated."; // Five Nights at Freddy's
-	m[i++] = "I can put you back together."; // Five Nights at Freddy's
-	m[i++] = "Tell me the duck story."; // Duck Story
-	m[i++] = "The truth is out there."; // Arquivo X
-	m[i++] = "Trains rights, or something."; // comenta´rio
-	m[i++] = "Green is not a creative color."; // Don't Hug me I'm Scared 1
-	m[i++] = "Hey, Apple! Apple! Hey! Hey, Apple!"; // Annoying Orange
-	m[i++] = "O melhor meme do mundo é o Trollface."; // Trollface é o melhor meme do mundo
-	m[i++] = "She sells sea shells on the seashore."; // Money Game 2
-	m[i++] = "I find your lack of faith disturbing."; // Darth Vader
-	m[i++] = "OBJECTS THAT I HAVE SHOVED UP MY ARSE";
-	m[i++] = "Gettin' Freaky on a Friday Night Yeah"; // FNF
-	m[i++] = "That's a pretty fucked up looking dog."; // penguinz0
-	m[i++] = "https://www.youtube.com/watch?v=APHcYegE6ns";
-	m[i++] = "Já procurou alguma vez um hotel na internet?"; // Trivago
-	m[i++] = "Throw the switch on and off. Don't forget off."; // Mission: Impossible III
-	m[i++] = "Ew, brother ew, what's that? What's that brother?"; // https://youtu.be/zAJirE10O2g?t=3136
-	m[i++] = "God. I guess I was probably returning video tapes."; // American Psycho
-	m[i++] = "Face it. The prophecies were wrong. Someone ratted us out."; // Jesus's Betrayal: How It Really Went Down
-	m[i++] = "Tonight's the night. And it's going to happen again and again."; // Dexter
-	m[i++] = "I want mommy! I want milk! I want to be held! I want to be comforted!";
-	m[i++] = "Sorry. There's a reason they call it the white board. It's not my rule."; // House M.D.
-	m[i++] = "DUDE those ANIMALS are so FUCKING FUNNY they make wanna MERGE without LOOKING"; // Family Guy
-
-	for (var i = 0; i < array_length(m); i++)
-		global.savefile_msg[i] = m[i];
 	global.savefile_selected = -1;
 }
 function start_achievements()
@@ -629,7 +513,7 @@ function start_achievements()
 		}	
 	}
 	
-	if (file_exists("achievements.txt") == 0)
+	if (file_exists($"{global.game_directory}achievements.txt") == 0)
 		achievements_write();
 	else
 		achievements_read();
@@ -665,7 +549,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		load_time = 1;
 		
-		var _rm = room_corridors_16;
+		var _rm = room_corridors_3;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)

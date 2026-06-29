@@ -31,7 +31,7 @@ if (global.menu_lvl == 5)
 			if (_asset_sprite == spr_npc_bc)
 			{
 				continueback_bcsiner += 0.1;
-				_asset_y += (sin(continueback_bcsiner) * 0.25)*2;
+				_asset_y += (sin(continueback_bcsiner) * 0.5)*10
 			}
 		}
 		draw_sprite_ext(_asset_sprite, layer_sprite_get_index(_assets[a]), _asset_x, _asset_y, layer_sprite_get_xscale(_assets[a]), layer_sprite_get_yscale(_assets[a]), layer_sprite_get_angle(_assets[a]), layer_sprite_get_blend(_assets[a]), layer_sprite_get_alpha(_assets[a]));
@@ -390,7 +390,7 @@ if (global.menu_lvl == 1)
 		// texto
 		mode = 1;
 		var _di = 19;
-		if (file_exists("savefile" + string(i - 1) + ".txt") == 1) // save existe
+		if (file_exists($"{global.game_directory}savefile" + string(i - 1) + ".txt") == 1) // save existe
 		{
 			savefile_read(i - 1);
 			var _name = savefile_name;

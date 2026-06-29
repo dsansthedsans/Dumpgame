@@ -180,7 +180,7 @@ if (move == 1)
 			{
 				play_save = (option_pos - 1);
 				global.menu_lvl = 7;
-				if (file_exists("savefile" + string(play_save) + ".txt") == 1) // continuar
+				if (file_exists($"{global.game_directory}savefile" + string(play_save) + ".txt") == 1) // continuar
 					global.menu_lvl = 5;
 				option_pos = 0;
 				audio_play(snd_option_select, 0, VOLUME_SOUND);

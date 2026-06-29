@@ -33,7 +33,7 @@ convince = 0;
 bubbledelay = 0;
 fightattempt = 0;
 
-skip = 1;
+skip = 0;
 if (skip == 1)
 {
 	convince = 5;

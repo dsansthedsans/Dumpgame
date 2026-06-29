@@ -35,7 +35,7 @@ image_yscale = apparentscale;
 sound_pitch = 1;
 
 // custom
-if (controller.enemy_type[target] == 6)
+if (controller.enemy_type[target] == 6 && controller.enemy_spare[target] >= 100)
 {
 	x = enemy.body.x;
 	y = enemy.body.y;

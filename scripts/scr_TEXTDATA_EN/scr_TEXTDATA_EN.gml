@@ -124,13 +124,13 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "achievement_desc_0",			"Find the MEE6 toy that's hidden somewhere in the Corridors");
 	ds_map_add(global.textdata_en, "achievement_name_1",		"Fashion Statement");
 	ds_map_add(global.textdata_en, "achievement_desc_1",			"Get the armor that smells like strawberry");
-	ds_map_add(global.textdata_en, "achievement_name_2",		"Cutting Edge");
+	ds_map_add(global.textdata_en, "achievement_name_2",		"");
 	ds_map_add(global.textdata_en, "achievement_desc_2",			"Get a weapon by completing a monster's request");
 	ds_map_add(global.textdata_en, "achievement_name_3",		"Local Celebrity");
 	ds_map_add(global.textdata_en, "achievement_desc_3",			"Spare every monster from Corridors");
 	ds_map_add(global.textdata_en, "achievement_name_3",		"Judgement Day");
 	ds_map_add(global.textdata_en, "achievement_desc_3",			"Kill every monster\nfrom Corridors before fighting Broken Clock");
-	ds_map_add(global.textdata_en, "achievement_name_4",		"Against the Clock");
+	ds_map_add(global.textdata_en, "achievement_name_4",		"Out of Time");
 	ds_map_add(global.textdata_en, "achievement_desc_4",			"Defeat Broken Clock");
 	ds_map_add(global.textdata_en, "achievement_name_5",		"Puzzle Master");
 	ds_map_add(global.textdata_en, "achievement_desc_5",			"Complete CAPTCHA's last stage in under 30 seconds");
@@ -324,7 +324,6 @@ function TEXTDATA_EN()
 	// room_corridors_1
 	ds_map_add(global.textdata_en, "room_lamp_0","* (It's a lamp.)");
 	ds_map_add(global.textdata_en, "room_lamp_1","* (Its light comes from a strange-looking blue fire.)");
-	ds_map_add(global.textdata_en, "room_pillar","* (It's a pillar.)");
 	ds_map_add(global.textdata_en, "room_brokenlamp", "* (This lamp appears to have been forcefully thrown against the floor.)");
 	
 	// obj_event_m6_start	
@@ -379,10 +378,10 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_m6_papers_1", "* (There's a license&agreement in it.)");
 	ds_map_add(global.textdata_en, "room_m6_papers_2", "* (You decide not to read.)");
 	
-	// room_corridors_3
 	ds_map_add(global.textdata_en, "room_m6_brokenwall_0", "* (There's an ant-sized toy&of MEE6 inside the crack&of this wall.)");
 	ds_map_add(global.textdata_en, "room_m6_brokenwall_1", "* (Strangely,^1 the toy is depicting MEE6 as a&tall robot.)");
 	
+	// room_corridors_3
 	ds_map_add(global.textdata_en, "room_deadlamp", "* (The light of this lamp seems to be deactivated.)");
 	
 	// obj_event_m6_predummy
@@ -442,19 +441,43 @@ function TEXTDATA_EN()
 		ds_map_add(global.textdata_en, "npc_armsguy1_1_2", "* If You Show You Won't Hurt Them,^1 You Fine.");
 	
 	// room_corridors_4_5
-	ds_map_add(global.textdata_en, "room_rulesbook_0", "* (It's a book titled \"Server Rules\".)");
+	ds_map_add(global.textdata_en, "room_rulesbook_0", "* (It's a book titled&\"Server Rules\".)");
 	ds_map_add(global.textdata_en, "room_rulesbook_1", "* (Some pages are ripped off and others are full of drawings.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_2", "* (One page in particular is full of smiley faces.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_3", "* (Draw a smiley face?)");
+	ds_map_add(global.textdata_en, "room_rulesbook_1", "* (There's a pen attached to the pillar with a chain.)");
+	ds_map_add(global.textdata_en, "room_rulesbook_3.0", "* (Draw a smiley face?)");
+	ds_map_add(global.textdata_en, "room_rulesbook_3.1_0", "* (Draw a ");
+	ds_map_add(global.textdata_en, "room_rulesbook_3.1_1", "nd smiley face?)");
+	ds_map_add(global.textdata_en, "room_rulesbook_3.1_2", "rd smiley face?)");
+	ds_map_add(global.textdata_en, "room_rulesbook_3.1_3", "th smiley face?)");
 	ds_map_add(global.textdata_en, "room_rulesbook_3_1", "Yes");
 	ds_map_add(global.textdata_en, "room_rulesbook_3_2", "No");
-	ds_map_add(global.textdata_en, "room_rulesbook_4_0", "* (You drew  smiley face.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_4_1", "^1&* (You've  ");
-	ds_map_add(global.textdata_en, "room_rulesbook_4_2", " smiley faces so far.)");
-	ds_map_add(global.textdata_en, "room_rulesbook_5", "* (You)");
+	ds_map_add(global.textdata_en, "room_rulesbook_4.0", "* (You drew a smiley face.)");
+	ds_map_add(global.textdata_en, "room_rulesbook_4.1", "* (You drew another smiley face.)");
+	var i = 0;
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* ()");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You feel the smiley faces looking right back at you.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You have become the fastest writer in the world.)"); // Reference to https://www.youtube.com/watch?v=iyV3Une0n_Y
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You show no signs of stopping.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 is visibly confused by your persistence.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 is wondering if he should intervene or not.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 is scared you'll draw a smiley face on him too.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 has begun to question his own life choices.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (MEE6 has put himself in Sleep mode.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (You have successfully given yourself a headache.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It's a migraine,^3 actually.)^1&* (It might be a tumor.)"); // Reference to https://www.youtube.com/watch?v=t_FRWUPcR7Y&t=38s
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Not only your head hurts,^1 but you can't feel your hand anymore.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It's getting progressively harder to draw as your hand loses blood flow.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (\"What am I doing?\",^1 you ask yourself.)^2&* (You couldn't think of an answer.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (\"Why am I doing this?\",^1 you ask yourself.)^2&* (You'd rather not know the answer.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because you're bored?)^2&* (Is it because you're crazy?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because it's funny?)^2&* (Is it because you're torturing yourself?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Is it because you want to see far dialogue goes...?)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (It's not worth it,^1 you know.)^2&* (Nothing will come from this.)^2&* (No one will be impressed.)");
+	ds_map_add(global.textdata_en, $"room_rulesbook_5-{i++}", "* (Don’t you realize you're only wasting your own time?)");
 
 	
 	/*
+ds_map_add(global.textdata_en, "room_rulesbook_2", "* (One page in particular is full of smiley faces.)");
 	ds_map_add(global.textdata_en, "room_rulesbook_3", "* (Someone drew the same smiley face a hundred times.)");
 		ds_map_add(global.textdata_en, "room_rulesbook_3_0", "* (You contributed with ");
 		ds_map_add(global.textdata_en, "room_rulesbook_3_1", " smiley face.)");
@@ -618,7 +641,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "event_bc_prebattle_1_0", "* FINALLY,^1 JUST THE TWO OF US.");
 	ds_map_add(global.textdata_en, "event_bc_prebattle_1_1", "* YOU THINK YOU CAN JUST PASS BY ME AND IGNORE MY EXISTENCE?!");
 	ds_map_add(global.textdata_en, "event_bc_prebattle_1_2", "* ABSOLUTELY NO WAY,^1 BUDDY.^3&* NOT AFTER EVERYTHING YOU HUMANS DID TO ME.");
-	ds_map_add(global.textdata_en, "event_bc_prebattle_1_3", "* I'VE BEEN WAITING RIGHT HERE FOR MONTHS,^3 COUNTING THE SECONDS DOWN UNTIL THIS DAY.");
+	ds_map_add(global.textdata_en, "event_bc_prebattle_1_3", "* I'VE BEEN WAITING RIGHT HERE FOR MONTHS,^3 COUNTING THE SECONDS DOWN UNTIL THIS DAY...");
 	ds_map_add(global.textdata_en, "event_bc_prebattle_1_4", "* THE DAY I'D FINALLY GET MY REVENGE.");
 	ds_map_add(global.textdata_en, "event_bc_prebattle_1_5", "* AND NOW'S THE TIME TO MAKE IT HAPPEN...!");
 	/*

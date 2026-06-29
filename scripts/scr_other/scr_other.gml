@@ -469,7 +469,7 @@ function draw_chapter_name(_alpha)
 	if (is_undefined(_name))
 		_name = "SALENIS";
 	draw_set_alpha(_alpha);
-	draw_set_font(fnt_main_spaced_big);
+	draw_set_font(fnt_main_spaced);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
 	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), $"{get_text("chapter_main")} {_number}:\n{_name}", c_white, 1, c_black);
