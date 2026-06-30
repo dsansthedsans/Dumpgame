@@ -53,6 +53,7 @@ function audio_play(_audio, _loop = false, _volume_type = VOLUME_MASTER, _gain =
 	thisaudio = audio_play_sound(_audio, 80, _loop);
 	audio_gain(thisaudio, _gain, _gain_time, _gain_fadein, _volume_type);
 	audio_pitch(thisaudio, _pitch);
+	return thisaudio;
 }
 function audio_stop(_audio)
 {	

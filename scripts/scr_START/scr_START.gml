@@ -211,6 +211,8 @@ function start_chara()
 	global.chara_pause_game = 1;
 	global.chara_camera_move = 1;
 	
+	global.chara_steps = 0;
+	global.chara_encounter = 0;
 	global.battle_nextgroup = 0;
 	global.battle_heart_x = 0;
 	global.battle_heart_y = 0;
@@ -551,7 +553,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		load_time = 1;
 		
-		var _rm = room_corridors_4_5;
+		var _rm = room_corridors_13;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -569,6 +571,8 @@ function CHANGE_GAME()
 				_lvl = 2;
 			if (_rm == room_corridors_4) || (_rm == room_corridors_4_5)
 				_lvl = 3;
+			if (_rm == room_corridors_6)
+				_lvl = 3.5;
 			if (_rm == room_corridors_7) || (_rm == room_corridors_8) || (_rm == room_corridors_9)
 				_lvl = 4;
 			if (_rm == room_corridors_11) || (_rm == unused_room_happybirthday)
@@ -590,7 +594,7 @@ function CHANGE_GAME()
 				global.flag[0] = 0; // finished getting up event
 			
 				var _sublvl = 0;
-				if (_rm == room_corridors_2)
+				if (_rm >= room_corridors_2)
 					_sublvl = 1;
 				if (_sublvl == 1)
 				{
@@ -622,27 +626,25 @@ function CHANGE_GAME()
 				global.flag[18] = 1; // entered in a encounter battle
 				global.flag[40] = 1; // opened door after dummy
 				global.achievement[ACHIEVEMENT_M6TOY] = 1;
-				
-				global.flag[8] = 1; // finished MEE6's pre-CAPTCHA.1 event
-				global.flag[67] = 23;
 			}
-			if (_lvl >= 4)
+			if (_lvl >= 3.5)
 			{
 				global.flag[8] = 1; // finished MEE6's pre-CAPTCHA.1 event
 				global.flag[11] = 1; // completed CAPTCHA.1 - puzzle 1
 				global.flag[14] = 1; // completed CAPTCHA.1 - puzzle 2
 				global.flag[15] = 1; // completed CAPTCHA.1
 				global.flag[16] = 1; // finished MEE6's post-CAPTCHA.1 event
+			}
+			if (_lvl >= 4)
+			{
 				global.flag[19] = 0; // amount of candy in the candy bowl (room_corridors_6)
 				global.flag[20] = 1; // took the candy bowl
 				global.flag[21] = 1; // interacted with candy bowl
-		
 				global.item[0] = ITEM_CANDY;
 				global.item[1] = ITEM_CANDY;
 				global.item[2] = ITEM_CANDY;
 				global.item[3] = ITEM_BANDAGE;
 				global.chara_armor = ITEM_BOWL;
-			
 				global.achievement[ACHIEVEMENT_SBHELMET] = 1;
 			}
 			if (_lvl >= 5)

@@ -284,18 +284,20 @@ if (global.chara_move == 1)
 		moving = 1;
 		
 		// geração de passos
-		var _amt = 1;
-		if (running == 1)
+		if (global.chara_encounter == 1)
 		{
-			_amt += 1;
-			if (rspeed_pos == 1)
+			var _amt = 1;
+			if (running == 1)
+			{
 				_amt += 1;
+				if (rspeed_pos == 1)
+					_amt += 1;
+			}
+			if (friskdance > 1)
+				_amt *= 2;
+			global.chara_steps += _amt;
+			global.chara_steps = clamp(global.chara_steps, 0, 9999);
 		}
-		if (friskdance > 1)
-			_amt *= 2;
-		steps += _amt;
-		steps = clamp(steps, 0, 9999);
-		//debug("--- obj_chara | steps amt: " + string(_amt));
 	}
 	else // parado
 	{

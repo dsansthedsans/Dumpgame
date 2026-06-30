@@ -246,7 +246,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "item_name_helmet_serious",		"Helmet");
 	
 	ds_map_add(global.textdata_en, "item_desc_stick",		"* Broomstick - [0 ATK]^1&* It feels it's about to break.");
-	ds_map_add(global.textdata_en, "item_desc_bandage",		"* Bandage - [0 DEF]^1&* There's a pink-colored character in it.");
+	ds_map_add(global.textdata_en, "item_desc_bandage",		"* Bandage - [0 DEF]^1&* There's a blonde woman in pink on it.");
 	ds_map_add(global.textdata_en, "item_desc_candy",		"* Cheap Candy - [HEALS 7 HP]^1&* Tastes like strawberry.");
 	ds_map_add(global.textdata_en, "item_desc_bowl",		"* Candy Bowl - [3 DEF]^1&* Smells like rotten strawberry.");
 	ds_map_add(global.textdata_en, "item_desc_choco",		"* Chocolate Bar - [HEALS 12 HP]^1&* It's a lactose free chocolate.");
@@ -526,35 +526,37 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_candybowl_0_0_1", "^1&* (There ");
 	ds_map_add(global.textdata_en, "room_candybowl_0_0_2", "is ");
 	ds_map_add(global.textdata_en, "room_candybowl_0_0_3", "are ");
-	ds_map_add(global.textdata_en, "room_candybowl_0_0_4", " candy&in the bowl.)");
-	ds_map_add(global.textdata_en, "room_candybowl_0_0_5", " candies&in the bowl.)");
+	ds_map_add(global.textdata_en, "room_candybowl_0_0_4", " candy in it.)");
+	ds_map_add(global.textdata_en, "room_candybowl_0_0_5", " candies in it.)");
 	ds_map_add(global.textdata_en, "room_candybowl_0_1", "* (Take a candy?)");
 	ds_map_add(global.textdata_en, "room_candybowl_0_1_1", "Yes");
 	ds_map_add(global.textdata_en, "room_candybowl_0_1_2", "No");
-	ds_map_add(global.textdata_en, "room_candybowl_0_2", "* (You took a candy from the bowl.)");
-	ds_map_add(global.textdata_en, "room_candybowl_0_3", "* (You got a :YCheap Candy;D.)");
-	ds_map_add(global.textdata_en, "room_candybowl_0_4_0", "* (Press :Y[");
-	ds_map_add(global.textdata_en, "room_candybowl_0_4_1", " or ");
-	ds_map_add(global.textdata_en, "room_candybowl_0_4_2", "];D to open the menu.)");
-	ds_map_add(global.textdata_en, "room_candybowl_1_0", "* (It was a candy bowl.)");
-	ds_map_add(global.textdata_en, "room_candybowl_1_1", "* (But you took all the candy.)");
-	ds_map_add(global.textdata_en, "room_candybowl_1_2", "* (Actually,^1 you could take the bowl and use it as armor.)");
+	ds_map_add(global.textdata_en, "room_candybowl_0_2", "* (You took a candy.)^3&* (You got the :YCheap Candy;D.)");
+	ds_map_add(global.textdata_en, "room_candybowl_0_3_0", "* (Press :Y[");
+	ds_map_add(global.textdata_en, "room_candybowl_0_3_1", " or ");
+	ds_map_add(global.textdata_en, "room_candybowl_0_3_2", "];D to open your inventory.)");
+	ds_map_add(global.textdata_en, "room_candybowl_1_0", "* (It's an empty bowl.)");
+	ds_map_add(global.textdata_en, "room_candybowl_1_1", "* (The bowl was full of candy before you took all of it.)");
+	ds_map_add(global.textdata_en, "room_candybowl_1_2", "* (By the way,^3 you can take the bowl and use it as armor.)");
 	ds_map_add(global.textdata_en, "room_candybowl_1_3", "* (Take the bowl?)");
 	ds_map_add(global.textdata_en, "room_candybowl_1_3_1", "Yes");
 	ds_map_add(global.textdata_en, "room_candybowl_1_3_2", "No");
-	ds_map_add(global.textdata_en, "room_candybowl_1_4", "* (You took the bowl.)");
-	ds_map_add(global.textdata_en, "room_candybowl_1_5", "* (You got the :YCandy Bowl;D.)");
+	ds_map_add(global.textdata_en, "room_candybowl_1_4", "* (You took the bowl.)^3&* (You got the :YCandy Bowl;D.)");
 	ds_map_add(global.textdata_en, "room_candybowl_2", "* (Your inventory is full.)");
+	ds_map_add(global.textdata_en, "room_candybowl_3_0", "* (It's a small pillar.)");
+	ds_map_add(global.textdata_en, "room_candybowl_3_1", "* (The pillar had a candy bowl on it before you took both the candies and the bowl.)");
+	ds_map_add(global.textdata_en, "room_candybowl_3_2", "* (By the way,^3 you can take the pillar and use it as...^1 Wait.)^3&* (No,^1 that's wrong.)");
+	ds_map_add(global.textdata_en, "room_candybowl_3_3", "* (You can't take the pillar.)^1&* (Sorry!)");
 	
 	ds_map_add(global.textdata_en, "room_candysign_0", "* \"Thank you for completing stage one of reCAPTCHA's verification.\"");
 	
 	// room_corridors_7
-	ds_map_add(global.textdata_en, "room_relaxsign_0", "* \"Hey!^1 Getting tired with all the walking?\"");
-	ds_map_add(global.textdata_en, "room_relaxsign_1", "* \"If you want,^1 you can relax in here as much as you like.\"");
-	ds_map_add(global.textdata_en, "room_relaxsign_2", "* \"Then,^1 after you're rested,^1 you can continue!\"");
+	ds_map_add(global.textdata_en, "room_relaxsign_0", "* \"Hey!\"^1&* \"Getting tired with all the walking and reading?\"");
+	ds_map_add(global.textdata_en, "room_relaxsign_1", "* \"Why not take a break?\"^3&* \"Make yourself comfortable!\"");
+	ds_map_add(global.textdata_en, "room_relaxsign_2", "* \"Signed,^1 your local&Dumpster Friend\"");
 	
 	ds_map_add(global.textdata_en, "npc_trashguy_0_0", "* (It's a normal trashcan.)");
-	ds_map_add(global.textdata_en, "npc_trashguy_0_1", "* (Actually,^1 it's a gruesome creature pretending to be a normal trashcan.)");
+	ds_map_add(global.textdata_en, "npc_trashguy_0_1", "* (Actually,^3 it's a gruesome hungry creature impersonating the average garbage can.)");
 	ds_map_add(global.textdata_en, "npc_trashguy_0_2", "* (Life really takes some wild turns sometimes...!)");
 	
 	// room_corridors_8
@@ -832,7 +834,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_act_trashguy_1", "Empty");
 	ds_map_add(global.textdata_en, "battle_act_trashguy_2", "Kick");
 	
-	ds_map_add(global.textdata_en, "battle_act_result_trashguy_0_0", "* Trashguy - [6 ATK | 7 DEF]^1 &* An mysterious entity living inside a trashcan.");
+	ds_map_add(global.textdata_en, "battle_act_result_trashguy_0_0", "* Trashguy - [6 ATK | 7 DEF]^1 &* A mysterious entity living inside a trashcan.");
 	ds_map_add(global.textdata_en, "battle_act_result_trashguy_0_1", "* Hates trash and it's smell.^3 &* Too scared to live outside a trashcan.");
 	ds_map_add(global.textdata_en, "battle_act_result_trashguy_1_0", "* (You take the trash from Trashguy's trashcan out.)");
 	ds_map_add(global.textdata_en, "battle_act_result_trashguy_1_1", "* (Trashguy's trashcan already is empty.)");
@@ -874,7 +876,7 @@ function TEXTDATA_EN()
 	
 	ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_0", "* Flitcher - [4 ATK | 6 DEF]^1&* This monster doesn't really know what's happening.");
 	ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_1", "* His body is made out of a thin and moist skin,^1 along with scales in some areas.");
-	ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_2", "* He hates eye contact and any type of conversation that envolves talking.");
+	ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_2", "* He hates eye contact and any  that envolves talking.");
 	ds_map_add(global.textdata_en, "battle_act_result_flitcher_1", "* (You talk to Flitcher.)^1&* (He seems scared.)");
 	ds_map_add(global.textdata_en, "battle_act_result_flitcher_2", "* (You wave to Flitcher.)^1&* (He seems happy.)");
 	
@@ -890,7 +892,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_act_eyecrush_1", "Hypnotize");
 	ds_map_add(global.textdata_en, "battle_act_eyecrush_2", "Dance");
 	
-	ds_map_add(global.textdata_en, "battle_act_result_eyecrush_0_0", "* Eyecrush - [6 ATK | 0 DEF]^1 &* A big human eye with six red legs.");
+	ds_map_add(global.textdata_en, "battle_act_result_eyecrush_0_0", "* Eyecrush - [6 ATK | 0 DEF]^1 &* This monster is a big human eye with six red legs.");
 	ds_map_add(global.textdata_en, "battle_act_result_eyecrush_0_1", "* Their inability to verbally communicate makes difficult&to know their interests.");
 	ds_map_add(global.textdata_en, "battle_act_result_eyecrush_1_0", "* (You did something mysterious and hypnotized Eyecrush.)");
 	ds_map_add(global.textdata_en, "battle_act_result_eyecrush_1_1", "* (This effect lasts for one turn.)");

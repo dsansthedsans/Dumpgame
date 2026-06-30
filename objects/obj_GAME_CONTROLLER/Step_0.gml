@@ -1,6 +1,7 @@
 
 if (active == 1)
 {
+	item_organize();
 	chara_inwhat();
 	chara_world();
 	chara_stats();

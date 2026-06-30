@@ -501,15 +501,14 @@ function TEXT()
 				if (_lastslot == -1)
 				{
 					msg[2] = get_text("room_candybowl_0_2");
-					msg[3] = get_text("room_candybowl_0_3");
 					if (_candyamt == 3)
 					{
-						var _start = get_text("room_candybowl_0_4_0");
-						var _firstkey = key_name(global.keybind[04]);
-						var _middle = get_text("room_candybowl_0_4_1");
-						var _secondkey = key_name(global.keybind[05]);
-						var _end = get_text("room_candybowl_0_4_2");
-						msg[4] = string(_start) + string_upper(_firstkey) + string(_middle) + string_upper(_secondkey) + string(_end);
+						var _start = get_text("room_candybowl_0_3_0");
+						var _firstkey = key_name(global.keybind[10]);
+						var _middle = get_text("room_candybowl_0_3_1");
+						var _secondkey = key_name(global.keybind[11]);
+						var _end = get_text("room_candybowl_0_3_2");
+						msg[3] = string(_start) + string_upper(_firstkey) + string(_middle) + string_upper(_secondkey) + string(_end);
 					}
 					global.flag[19] -= 1;
 					global.item[global.item_last] = ITEM_CANDY;
@@ -521,7 +520,7 @@ function TEXT()
 		}
 			
 		// take bowl
-		else
+		else if (global.flag[20] == false)
 		{
 			for (var i = 0; i < 3; i++)
 				msg[i] = get_text("room_candybowl_1_" + string(i));
@@ -529,7 +528,6 @@ function TEXT()
 			question_option[1] = get_text("room_candybowl_1_3_1");
 			question_option[2] = get_text("room_candybowl_1_3_2");
 			
-			msg_format[0] = "textbox_bottom";
 			if (global.flag[21] == 0)
 				msg_skip[0] = 0;
 			global.flag[21] = 1;
@@ -539,7 +537,6 @@ function TEXT()
 				if (_lastslot == -1)
 				{
 					msg[4] = get_text("room_candybowl_1_4");
-					msg[5] = get_text("room_candybowl_1_5");
 					msg_skip[4] = 1;
 					global.flag[20] = 1;
 					global.item[global.item_last] = ITEM_BOWL;
@@ -553,8 +550,12 @@ function TEXT()
 				}
 				else
 					msg[4] = get_text("room_candybowl_2");
-				msg_format[4] = "textbox_bottom";
 			}
+		}
+		else
+		{
+			for (var i = 0; i < 4; i++)
+				msg[i] = get_text($"room_candybowl_3_{i}");
 		}
 	}
 	if (text == "room_candysign")

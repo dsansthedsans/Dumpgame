@@ -185,3 +185,7 @@ if (room == room_corridors_5_A && global.flag[11] == 1) || (room == room_corrido
 	mywrite = myword;
 	buttons_press = 0;
 }
+
+victorysound = -1;
+victorypitch = 0.75;
+peachy = 0;

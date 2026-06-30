@@ -74,7 +74,9 @@ if (victory_delay <= 0)
 		global.flag[15] = 1;
 		global.chara_move = 1;
 		shakescreen(0, 5);
-		audio_play(snd_bluh, 0, 0);	
+		audio_play(snd_bluh, 0, 0);
+		if (audio_playing(victorysound) == true)
+			audio_stop(victorysound);
 	}
 	if (victory == 0.1)
 	{
@@ -83,12 +85,18 @@ if (victory_delay <= 0)
 			global.flag[11] = 1;
 		else
 			global.flag[14] = 1;
-		
-		audio_play(snd_victory, 0, 0);
+		victorysound = audio_play(snd_victory, 0, 0);
+		if (room == room_corridors_5_B)
+		{
+			audio_pitch(victorysound, victorypitch);
+			peachy = 1;
+		}
 		if (global.flag[11] == 1 && global.flag[14] == 1)
 		{
 			victory = 0.2;
-			victory_delay = 60;
+			victory_delay = 45;
+			if (room == room_corridors_5_B)
+				victory_delay *= 2;
 		}
 		else
 		{
@@ -106,3 +114,9 @@ if (victory_delay <= 0)
 }
 else
 	victory_delay -= 1;
+
+if (victorysound != -1 && audio_playing(victorysound) == true && room == room_corridors_5_B)
+{
+	victorypitch = lerp(victorypitch, 0.25, 0.01);
+	audio_pitch(victorysound, victorypitch);
+}

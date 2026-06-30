@@ -17,7 +17,7 @@ yscale = image_yscale;
 // velocidade de movimento e de imagem
 wspeed = 1.5;
 rspeed[0] = 2.5;
-rspeed[1] = 2.5;
+rspeed[1] = 3;
 rspeed_party = (rspeed[1] + (rspeed[1] - rspeed[0]));
 rspeed_pos = 0;
 curspeed = wspeed;
@@ -29,7 +29,6 @@ rimgspeed_party = ((rspeed_party / 10) + 0.05);
 curimgspeed = wimgspeed;
 
 // variáveis de suporte
-steps = 0;
 stepplay = 1;
 stepsound = 0;
 afktime = 0;
@@ -41,6 +40,8 @@ running = 0;
 friskdance = 1;
 inwater = 0;
 
+maxsteps = 9999;
+battlecon = 0;
+
 event_user(0);
-create(-20, -20, obj_chara_encounter);
 global.chara_room = room;

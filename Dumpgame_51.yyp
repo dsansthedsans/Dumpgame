@@ -74,7 +74,6 @@
     {"id":{"name":"obj_captcha2","path":"objects/obj_captcha2/obj_captcha2.yy",},},
     {"id":{"name":"obj_captcha3_timer","path":"objects/obj_captcha3_timer/obj_captcha3_timer.yy",},},
     {"id":{"name":"obj_captcha3","path":"objects/obj_captcha3/obj_captcha3.yy",},},
-    {"id":{"name":"obj_chara_encounter","path":"objects/obj_chara_encounter/obj_chara_encounter.yy",},},
     {"id":{"name":"obj_chara_menu","path":"objects/obj_chara_menu/obj_chara_menu.yy",},},
     {"id":{"name":"obj_chara_pause","path":"objects/obj_chara_pause/obj_chara_pause.yy",},},
     {"id":{"name":"obj_chara","path":"objects/obj_chara/obj_chara.yy",},},

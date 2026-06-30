@@ -96,9 +96,9 @@ if (global.indebug == 1 && exists(obj_chara) == 1)
 	+ "\nchara_camera_move:  " + string(global.chara_camera_move);
 	
 	var _str_encounter = 
-	"steps:  " + string(obj_chara.steps)
-	+ "\nmaxsteps:  " + string(obj_chara_encounter.maxsteps)
-	+ "\nencounter:  " + string(obj_chara_encounter.encounter);
+	"chara_steps:  " + string(global.chara_steps)
+	+ "\nmaxsteps:  " + string(obj_chara.maxsteps)
+	+ "\nchara_encounter:  " + string(global.chara_encounter);
 	
 	var _str = string(_str_chara) + "\n\n" + string(_str_encounter);
 	draw_set_alpha(0.75);

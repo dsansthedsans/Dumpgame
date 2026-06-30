@@ -17,7 +17,7 @@
     "name":"obj_solid_parent",
     "path":"objects/obj_solid_parent/obj_solid_parent.yy",
   },
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -38,7 +38,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"spr_overworld_lamp",
     "path":"sprites/spr_overworld_lamp/spr_overworld_lamp.yy",

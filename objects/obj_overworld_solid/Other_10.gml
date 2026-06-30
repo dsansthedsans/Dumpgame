@@ -1,2 +1,2 @@
 
-leaf_delay = random_range(60, (60 * 10));
+leaf_delay = random_range(60, (60 * 7.5));
