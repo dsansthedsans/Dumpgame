@@ -231,10 +231,7 @@ function chara_room()
 	
 		// custom position and/or room
 		if (room == room_corridors_2)
-		{
-			yy = 590;
 			global.flag[3] = 1;
-		}
 		if (room == room_corridors_3_5)
 		{
 			xx = 160;
@@ -293,7 +290,7 @@ function chara_room()
 		{
 			xx = 160;
 			yy = 100;
-			if (room == room_corridors_1_5) || (room == room_corridors_3_5)
+			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9)
 				yy += 20;
 			if (room == room_corridors_4_5)
 				xx = 720;

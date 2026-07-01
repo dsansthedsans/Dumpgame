@@ -34,7 +34,7 @@ for (var i = 0; i < 3; i++)
 			bridge_y[i] = _targety;
 			puzzle_complete[i] = 1;
 			shakescreen(2, 2);
-			audio_play(snd_impact, 0, 0);
+			audio_play(snd_impact, 0, VOLUME_SOUND);
 			audio_stop(snd_option_movehold);
 			destroy(bridge_wall[i]);
 		}

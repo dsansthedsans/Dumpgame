@@ -19,7 +19,6 @@ function START_GAME()
 	start_party();
 	start_writer();
 	start_settings();
-	start_savefile();
 	start_achievements();
 	
 	global.c_dump = #32FF62;
@@ -336,11 +335,11 @@ function start_flags()
 	global.flag[24] = 0; // talked with Armsguy in room_corridors_8
 	
 	global.flag[25] = 60; // CAPTCHA STAGE 2: first moveable x position
-	global.flag[26] = 700; // CAPTCHA STAGE 2: first moveable y position
+	global.flag[26] = 720; // CAPTCHA STAGE 2: first moveable y position
 	global.flag[27] = 140; // CAPTCHA STAGE 2: second moveable x position
-	global.flag[28] = 520; // CAPTCHA STAGE 2: second moveable y position
+	global.flag[28] = 540; // CAPTCHA STAGE 2: second moveable y position
 	global.flag[29] = 140; // CAPTCHA STAGE 2: third moveable x position
-	global.flag[30] = 340; // CAPTCHA STAGE 2: third moveable y position
+	global.flag[30] = 360; // CAPTCHA STAGE 2: third moveable y position
 	global.flag[31] = 0; // completed first puzzle in CAPTCHA.2
 	global.flag[32] = 0; // completed second puzzle in CAPTCHA.2
 	global.flag[33] = 0; // completed third puzzle in CAPTCHA.2
@@ -553,7 +552,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		load_time = 1;
 		
-		var _rm = room_corridors_13;
+		var _rm = room_corridors_10;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -575,6 +574,8 @@ function CHANGE_GAME()
 				_lvl = 3.5;
 			if (_rm == room_corridors_7) || (_rm == room_corridors_8) || (_rm == room_corridors_9)
 				_lvl = 4;
+			if (_rm == room_corridors_10)
+				_lvl = 4.5;
 			if (_rm == room_corridors_11) || (_rm == unused_room_happybirthday)
 				_lvl = 5;
 			if (_rm == room_corridors_13)
@@ -647,7 +648,7 @@ function CHANGE_GAME()
 				global.chara_armor = ITEM_BOWL;
 				global.achievement[ACHIEVEMENT_SBHELMET] = 1;
 			}
-			if (_lvl >= 5)
+			if (_lvl >= 4.5)
 			{
 				global.flag[24] = 1; // talked with Armsguy in room_corridors_8
 				global.flag[31] = 1; // completed first puzzle in CAPTCHA.2
@@ -655,18 +656,18 @@ function CHANGE_GAME()
 				global.flag[33] = 1; // completed third puzzle in CAPTCHA.2
 				global.flag[34] = 1; // completed CAPTCHA.2
 				global.flag[35] = 1; // finished MEE6's pre-CAPTCHA.2 event
-				global.flag[36] = 1; // took chocolate from CAPTCHA's STAGE 2 reward
-				global.flag[42] = 1; // finished MEE6's post-CAPTCHA.2 event
+				global.flag[42] = 1; // finished MEE6's post-CAPTCHA.2 event			
 				global.flag[45] = 1; // talked to armsguy before CAPTCHA 2
-				global.flag[46] = 1; // left room_corridors_9 after completing CAPTCHA 2 and talking to trashguy
 				global.flag[47] = 1; // got reward from armsguy
 				global.flag[48] = 1; // talked to trashguy
-		
 				global.item[4] = ITEM_STICK;
-				global.item[5] = ITEM_CHOCO;
 				global.chara_weapon = ITEM_KUNAI;
-			
 				global.achievement[ACHIEVEMENT_MONSTNINJA] = 1;
+			}
+			if (_lvl >= 5)
+			{
+				global.flag[36] = 1; // took chocolate from CAPTCHA's STAGE 2 reward	
+				global.item[5] = ITEM_CHOCO;
 			}	
 			if (_lvl >= 6)
 			{

@@ -79,10 +79,10 @@ if (mytype == 0 && achievement_id != -1) // achievement
 	
 	box_outcolor = c_yellow;
 	if (achievement_snd != -1)
-		audio_play(achievement_snd, 0, 0);
+		audio_play(achievement_snd, 0, VOLUME_SOUND);
 }
 else if (mytype == 1) // message
-	audio_play(snd_notification_message, 0, 0);	
+	audio_play(snd_notification_message, 0, VOLUME_SOUND);	
 else
 {
 	global.notification[myself] = 0;

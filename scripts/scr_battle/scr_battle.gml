@@ -504,7 +504,7 @@ function battle_attack()
 			thisobj.myself = myself;
 			
 			shakeobj(_enemy.body, 3, 3, 0.25);
-			audio_play(snd_bump, 0, 0);
+			audio_play(snd_bump, 0, VOLUME_SOUND);
 			
 			time = (irandom_range(15, 25) + normaltime);
 		}

@@ -81,6 +81,7 @@
     {"name":"obj_event_m6_postcaptcha3","order":14,"path":"objects/obj_event_m6_postcaptcha3/obj_event_m6_postcaptcha3.yy",},
     {"name":"obj_event_m6_postdummy","order":6,"path":"objects/obj_event_m6_postdummy/obj_event_m6_postdummy.yy",},
     {"name":"obj_event_m6_precaptcha1","order":7,"path":"objects/obj_event_m6_precaptcha1/obj_event_m6_precaptcha1.yy",},
+    {"name":"obj_event_m6_precaptcha2_1","order":16,"path":"objects/obj_event_m6_precaptcha2_1/obj_event_m6_precaptcha2_1.yy",},
     {"name":"obj_event_m6_precaptcha2","order":8,"path":"objects/obj_event_m6_precaptcha2/obj_event_m6_precaptcha2.yy",},
     {"name":"obj_event_m6_precaptcha3","order":15,"path":"objects/obj_event_m6_precaptcha3/obj_event_m6_precaptcha3.yy",},
     {"name":"obj_event_m6_predummy","order":9,"path":"objects/obj_event_m6_predummy/obj_event_m6_predummy.yy",},

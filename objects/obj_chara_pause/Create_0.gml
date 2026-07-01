@@ -47,23 +47,4 @@ for (var i = 0; i < 2; i++)
 warning_option_pos = 0;
 
 
-// mensagem do dia
-/*
-draw_set_font(fnt_mars_6);
-msg = global.charapause_msg;
-msg_title = get_text("charapause_msg_title");
-
-msg_line_x[0, 0] = (bg_x[0] + 2);
-msg_line_x[0, 1] = (msg_line_x[0, 0] + 10)
-
-msg_line_x[1, 0] = (msg_line_x[0, 1] + 5 + string_width(msg_title) + 2);
-msg_line_x[1, 1] = (bg_x[0] + bg_w[0] - 2);
-
-msg_line_y = (bg_y[0] + bg_h[0] - bg_h[1] + 3);
-*/
-
-
-
-
-
 

@@ -214,7 +214,7 @@ if (type == 6.0) // Broken Clock
 	image_yscale = 1;
 	sprite_index = spr_battle_blt_shock;
 	outside_box = 1;
-	audio_play(snd_shock_blt, 0, 0);
+	audio_play(snd_shock_blt, 0, VOLUME_SOUND);
 }
 if (type == 6.1)
 {
@@ -236,7 +236,7 @@ if (type == 6.1)
 	
 	playsnd = 1;
 	angleamt = choose(1, -1);
-	audio_play(snd_blt_launch, 0, 0);
+	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
 	
 	pospos = 0;
 	for (var i = 0; i < 1000; i++)
@@ -322,7 +322,7 @@ if (type == 6.24)
 	fadeout = 0;
 	outside_box = 1;
 	destroy_on_impact = 0;
-	audio_play(snd_explosion2, 0, 0);
+	audio_play(snd_explosion2, 0, VOLUME_SOUND);
 	shakescreen(5, 5);
 }
 

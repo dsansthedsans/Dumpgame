@@ -19,7 +19,7 @@ if (hurt == 1 && hurt_time < 60)
 		create(-20, -20, obj_battle_dmgwriter);
 	}
 	if (hurt_time == 20)
-		audio_play_sound(hurtsound, 0, 0);
+		audio_play_sound(hurtsound, 0, VOLUME_SOUND);
 	
 	x = normal_x;
 	y = normal_y;
@@ -62,7 +62,7 @@ if (spared == 1)
 	image_alpha = 0.5;
 	destroy(body);
 	battle_sparecloud(id);
-	audio_play(snd_battle_spared, 0, 0);
+	audio_play(snd_battle_spared, 0, VOLUME_SOUND);
 	controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 	controller.enemy_type[myself] = 0;
 	spared = 0;

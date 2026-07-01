@@ -19,7 +19,7 @@ if (con == 4)
 	chara.image_index = 1;
 	with (chara)
 		shakeobj_small();
-	audio_play(snd_bump, 0, 0);
+	audio_play(snd_bump, 0, VOLUME_SOUND);
 	alarm[2] = getuptime;
 	con = 9;
 }
@@ -28,7 +28,7 @@ if (con == 10)
 	chara.image_index = 2;
 	with (chara)
 		shakeobj_small();
-	audio_play(snd_bump, 0, 0);
+	audio_play(snd_bump, 0, VOLUME_SOUND);
 	alarm[2] = getuptime;
 	con = 11;
 }
@@ -39,7 +39,7 @@ if (con == 12)
 	with (chara)
 		shakeobj_small();
 	shaker = chara.shaker;
-	audio_play(snd_bump, 0, 0);
+	audio_play(snd_bump, 0, VOLUME_SOUND);
 	con = 13;
 }
 if (con == 13 && exists(shaker) == 0)

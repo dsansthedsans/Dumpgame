@@ -53,7 +53,7 @@ if (global.chara_menu == 1)
 			if (_pos < 0)
 				_pos = (_length - 1);
 			if (_key0 == 1) || (_key1 == 1)
-				audio_play(snd_option_move, 0, 0);
+				audio_play(snd_option_move, 0, VOLUME_SOUND);
 				
 			heart_posx = _heart_targetx;
 			heart_posy = _heart_targety;
@@ -70,7 +70,7 @@ if (global.chara_menu == 1)
 		if (global.charamenu_lvl != 2 && press_enter == 1 && press_shift == 0)
 		{
 			var _cancheck = 1;
-			audio_play(snd_option_select, 0, 0);	
+			audio_play(snd_option_select, 0, VOLUME_SOUND);	
 	
 			// main
 			if (global.charamenu_lvl == 0 && _cancheck == 1)
@@ -150,7 +150,7 @@ if (global.chara_menu == 1)
 				}
 			}		
 		
-			audio_play(snd_option_return, 0, 0);
+			audio_play(snd_option_return, 0, VOLUME_SOUND);
 			press_shift = 0;
 		}
 	}
@@ -167,7 +167,7 @@ if (global.chara_menu == 1)
 	// close
 	if ((press_ctrl == 1 || press_shift == 1) && global.charamenu_lvl == 0 && global.charamenu_move == 1)
 	{
-		audio_play(snd_option_return, 0, 0);
+		audio_play(snd_option_return, 0, VOLUME_SOUND);
 		global.chara_interact = 1;
 		global.chara_menu = 0;
 		global.chara_move = 1;
@@ -182,7 +182,7 @@ else
 	// open
 	if (press_ctrl == 1 && global.chara_move == 1 && global.chara_cutscene == 0 && global.chara_openmenu == 1 && instance_exists(obj_chara) == 1 && obj_chara.isafk == 0)
 	{
-		audio_play(snd_option_move, 0, 0);
+		audio_play(snd_option_move, 0, VOLUME_SOUND);
 		chara_stop();
 		global.chara_interact = 0;
 		global.chara_move = 0;
@@ -197,7 +197,7 @@ if (encounter == 1 && encountered == 0 && global.chara_encounter >= maxsteps && 
 	global.chara_move = 0;
 	global.chara_encounter = 0;
 	surprise(obj_chara);
-	audio_play(snd_surprise, 0, 0);
+	audio_play(snd_surprise, 0, VOLUME_SOUND);
 	chara_stop();
 	alarm[1] = 45;
 	encountered = 1;
@@ -229,7 +229,7 @@ if (global.chara_pause == 1)
 		if (_pos < 0)
 			_pos = (_length - 1);
 		if (_pos != _oldpos)
-			audio_play(snd_option_move, 0, 0);
+			audio_play(snd_option_move, 0, VOLUME_SOUND);
 		if (pause_warning == 0)
 			pause_option_pos = _pos;
 		else
@@ -242,7 +242,7 @@ if (global.chara_pause == 1)
 		audio_resume_all();
 		sprite_delete(surfacespr);
 		instance_activate_all();
-		audio_play(snd_option_return, 0, 0);
+		audio_play(snd_option_return, 0, VOLUME_SOUND);
 		global.chara_pause = 0;
 		global.chara_move = 1;
 		pause_option_pos = 0;
@@ -273,14 +273,14 @@ if (global.chara_pause == 1)
 		{
 			pause_warning = 1;
 			pause_warning_pos = 0;
-			audio_play(snd_option_select, 0, 0);
+			audio_play(snd_option_select, 0, VOLUME_SOUND);
 		}
 		else
 		{
 			if (pause_warning_pos == 0)
 			{
 				pause_warning = 0;
-				audio_play(snd_option_return, 0, 0);
+				audio_play(snd_option_return, 0, VOLUME_SOUND);
 			}
 			else
 			{
@@ -292,7 +292,7 @@ if (global.chara_pause == 1)
 					surfacespr = -1;
 					instance_activate_all();
 					audio_stop_all();
-					audio_play(snd_option_select, 0, 0);
+					audio_play(snd_option_select, 0, VOLUME_SOUND);
 					room_go(room_menu, -1, -1);
 				}
 				else
@@ -321,7 +321,7 @@ else
 		instance_activate_object(obj_notification_controller)
 		
 		audio_pause_all();
-		audio_play(snd_option_move, 0, 0);
+		audio_play(snd_option_move, 0, VOLUME_SOUND);
 		audio_resume(snd_notification_message);
 		audio_resume(snd_notification_achievement);
 	}

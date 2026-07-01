@@ -18,7 +18,7 @@ if (global.flag[62] == 0)
 	getuptime = 150;
 	fade_alpha = 1;
 	chapter_alpha = 1;
-	audio_play(snd_titleimpact, 0, 0);
+	audio_play(snd_titleimpact, 0, VOLUME_SOUND);
 	depth = -9999;
 	alarm[5] = 210;
 	aftercon = 1;

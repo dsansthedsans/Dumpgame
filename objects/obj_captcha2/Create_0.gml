@@ -1,15 +1,15 @@
 
-depth = 450;
+depth = 0;
 
 event_user(0);
 moveable_targetx[0] = 140;
-moveable_targety[0] = 660;
+moveable_targety[0] = 680;
 
 moveable_targetx[1] = 60;
-moveable_targety[1] = 500;
+moveable_targety[1] = 520;
 
 moveable_targetx[2] = 80;
-moveable_targety[2] = 340;
+moveable_targety[2] = 360;
 
 for (var i = 0; i < 3; i++)
 {
@@ -17,7 +17,7 @@ for (var i = 0; i < 3; i++)
 	
 	// bridge setup
 	bridge_x[i] = 200;
-	bridge_y[i] = (640 - (180 * i));
+	bridge_y[i] = (660 - (180 * i));
 	orig_bridge_y[i] = bridge_y[i];
 	if (puzzle_complete[i] == 1)
 	{

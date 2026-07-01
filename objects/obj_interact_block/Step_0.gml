@@ -8,7 +8,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 		if (result == 4)
 		{
 			sprite_index = spr_npc_trashguy;
-			audio_play(snd_bump, 0, 0);
+			audio_play(snd_bump, 0, VOLUME_SOUND);
 			shakeobj_small();
 			chara_change(-1, 0, 0, 1, 0, 0, 0);
 		}
@@ -28,7 +28,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 			con = 5;
 			x += 9;
 			sprite_index = spr_npc_trashguy_closedfall;
-			audio_play(snd_bump, 0, 0);
+			audio_play(snd_bump, 0, VOLUME_SOUND);
 			shakeobj_small();
 			alarm[2] = 60;
 			angle_amt = 1;
@@ -44,7 +44,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 		{
 			image_angle = 0;
 			sprite_index = spr_npc_trashguy_closedroll;
-			audio_play(snd_screenshake, 0, 0);
+			audio_play(snd_screenshake, 0, VOLUME_SOUND);
 			shakescreen(3, 3);
 			con = 7;
 			alarm[2] = 80;
@@ -158,7 +158,7 @@ else if (result == 1) // Bench
 		_xx = clamp(_xx, 0, (room_width - 320));
 		_yy = clamp(_yy, 0, (room_height - 240));
 		screenpos(_xx, _yy);
-		audio_play(snd_cutesit, 0, 0);
+		audio_play(snd_cutesit, 0, VOLUME_SOUND);
 		alarm[2] = 30;
 		con = 2;
 	}
@@ -184,7 +184,7 @@ else if (result == 1) // Bench
 				m6.yscale = 0.9;
 				party_change(0, 0, -1);
 			}
-			audio_play(snd_cutegetup, 0, 0);
+			audio_play(snd_cutegetup, 0, VOLUME_SOUND);
 			con = 0;
 		}
 	}
@@ -195,7 +195,7 @@ else if (result == 3) // mouse hole
 	{
 		var _audio = choose(snd_npc_rat_0a, snd_npc_rat_1e, snd_npc_rat_2o);
 		if (audio_playing(_audio) == 0 && global.chara_murder < 2)
-			audio_play(_audio, 0, 0, , , , 2);
+			audio_play(_audio, 0, VOLUME_SOUND, , , , 2);
 		chara_change(-1, 1, 1, -1, 1, 1, 1);
 		con = 0;
 	}
@@ -250,7 +250,7 @@ else if (result == 2) // moveble
 		}
 		else
 		{
-			audio_play(snd_heartpulse1, 0, 0);
+			audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 			chara_change(-1, 0, 0, -1, 0, 0, 0)
 			con = 2;
 		}

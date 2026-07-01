@@ -95,7 +95,7 @@ if (type == 3)
 		
 		// right
 		var _x = (270 + i);
-		draw_rectangle(_x, -20, _x, 260, 0);
+		draw_rectangle(_x, -20, _x, 260, VOLUME_SOUND);
 	}
 }
 if (type == 4)

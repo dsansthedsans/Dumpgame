@@ -288,7 +288,11 @@ function TEXT()
 	}
 		
 	// room_corridors_3
-	
+	if (text == "room_stairssign")
+	{
+		for (var m = 0; m < 4; m++)
+			msg[m] = get_text($"room_stairssign_{m}");
+	}
 	if (text == "room_deadlamp")
 		msg[0] = get_text("room_deadlamp");
 		
@@ -344,13 +348,11 @@ function TEXT()
 		if (global.flag[6] == 0 && global.flag[7] == 0)
 		{
 			msg[0] = get_text("npc_dummy_0");
-			
 			if (global.flag[4] == 1 && global.flag[5] == 1)
 			{
 				question[1] = get_text("npc_dummy_1");
 				question_option[1] = get_text("npc_dummy_1_1");
 				question_option[2] = get_text("npc_dummy_1_2");
-			
 				if (question_result[1] == 1)
 				{
 					global.battle_nextgroup = 1;
@@ -361,10 +363,8 @@ function TEXT()
 		}
 		else
 		{
-			var _msg = irandom_range(1, 100);
-			if (_msg != 100)
-				msg[0] = "* (......)";
-			else
+			msg[0] = "* (......)";
+			if (irandom_range(1, 100) == 100)
 				msg[0] = "* (.....!)";
 			if (global.chara_murder >= 2)
 				msg[0] = get_text("npc_dummy_2");
@@ -512,7 +512,7 @@ function TEXT()
 					}
 					global.flag[19] -= 1;
 					global.item[global.item_last] = ITEM_CANDY;
-					audio_play(snd_item, 0, 0);
+					audio_play(snd_item, 0, VOLUME_SOUND);
 				}
 				else
 					msg[2] = get_text("room_candybowl_2");
@@ -540,7 +540,7 @@ function TEXT()
 					msg_skip[4] = 1;
 					global.flag[20] = 1;
 					global.item[global.item_last] = ITEM_BOWL;
-					audio_play(snd_item, 0, 0);
+					audio_play(snd_item, 0, VOLUME_SOUND);
 						
 					if (global.achievement[ACHIEVEMENT_SBHELMET] == 0)
 					{
@@ -574,7 +574,7 @@ function TEXT()
 	// room_corridors_8
 	if (text == "npc_armsguy_lost")
 	{
-		if (global.flag[45] == 0 && global.flag[46] == 0)
+		if (global.flag[45] == 0 && global.flag[48] == 0)
 		{
 			for (var i = 0; i < 99; i++)
 			{
@@ -592,10 +592,8 @@ function TEXT()
 					}
 				}
 			}
-				
 			msg_talker[i] = -1;
 			msg_talker[i+1] = obj_chara.mycol;
-			
 			var _result = question_result[i];
 			if (_result == 1)
 			{
@@ -608,7 +606,7 @@ function TEXT()
 		}
 		else
 		{
-			if (global.flag[46] == 0)
+			if (global.flag[48] == 0)
 			{
 				msg[0] = get_text("npc_armsguy_lost_1_0_0");
 				msg[1] = get_text("npc_armsguy_lost_1_0_1");
@@ -763,25 +761,27 @@ function TEXT()
 	if (text == "room_chocobowl")
 	{
 		msg[0] = get_text("room_chocobowl_0");
-		msg[1] = get_text("room_chocobowl_1");
-		msg[2] = get_text("room_chocobowl_2");
-		question[3] = get_text("room_chocobowl_3");
-		question_option[1] = get_text("room_chocobowl_3_1");
-		question_option[2] = get_text("room_chocobowl_3_2");
-		
-		if (question_result[3] == 1)
+		if (global.flag[36] == 0)
 		{
-			if (global.item[global.item_last] == -1)
+			msg[1] = get_text("room_chocobowl_1");
+			question[2] = get_text("room_chocobowl_2");
+			question_option[1] = get_text("room_chocobowl_2_1");
+			question_option[2] = get_text("room_chocobowl_2_2");
+			if (question_result[2] == 1)
 			{
-				msg[4] = get_text("room_chocobowl_4_0");
-				msg[5] = get_text("room_chocobowl_5_0");
-				global.flag[36] = 1;
-				global.item[global.item_last] = ITEM_CHOCO;
-				audio_play(snd_item, 0, 0);
+				if (global.item[global.item_last] == -1)
+				{
+					msg[3] = get_text("room_chocobowl_3_0");
+					global.flag[36] = 1;
+					global.item[global.item_last] = ITEM_CHOCO;
+					audio_play(snd_item, 0, VOLUME_SOUND);
+				}
+				else
+					msg[3] = get_text("room_chocobowl_3_1");
 			}
-			else
-				msg[4] = get_text("room_chocobowl_4_1");
 		}
+		else if (global.chara_armor == ITEM_BOWL)
+			msg[0] = get_text("room_chocobowl_4");
 	}
 		
 	// room_corridors_11
@@ -1715,7 +1715,7 @@ function TEXT()
 					if (lvlup == 1)
 					{
 						lvlup = get_text("battle_won_2");
-						audio_play(snd_lvlup, 0, 0);
+						audio_play(snd_lvlup, 0, VOLUME_SOUND);
 						debug("level up");
 					}
 				}
@@ -1734,8 +1734,17 @@ function TEXT()
 		
 		if (text == "battle_fleeing")
 		{
-			msg[0] = "   * Fleeing...";
-			msg_autoskip[0] = 1;	
+			var _msgAmount = 0;
+			for (var m = 0; m < 99; m++)
+			{
+				if (get_text($"battle_flee_{m}") == undefined)
+				{
+					_msgAmount = m;
+					break;
+				}
+			}
+			msg[0] = $"   {get_text("battle_flee_" + string(irandom(_msgAmount - 1)))}";
+			msg_autoskip[0] = 1;
 		}
 		
 		// act
@@ -1935,12 +1944,12 @@ function TEXT()
 							|| (_convince == 4 && _result == 1)
 							{
 								_right = 1;
-								audio_play(snd_battle_mercy_sucess, 0, 0)
+								audio_play(snd_battle_mercy_sucess, 0, VOLUME_SOUND)
 								controller.enemy_spare[enemy.myself] += 20;
 								enemy.convince += 1;
 							}
 							else
-								audio_play(snd_battle_mercy_fail, 0, 0)
+								audio_play(snd_battle_mercy_fail, 0, VOLUME_SOUND)
 						
 							_page += 1;
 							for (var i = 0; i < 99; i++)

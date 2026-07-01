@@ -13,7 +13,7 @@ if (active == 1)
 		{
 			if (con == 2)
 			{
-				audio_play(unused_snd_blt_whip_throw, 0, 0);
+				audio_play(unused_snd_blt_whip_throw, 0, VOLUME_SOUND);
 				audio_pitch(thisaudio, 0.5);
 			}
 			con = 3;
@@ -29,7 +29,7 @@ if (active == 1)
 							with (other)
 							{
 								con = 4;
-								audio_play(unused_snd_blt_whip_take, 0, 0);
+								audio_play(unused_snd_blt_whip_take, 0, VOLUME_SOUND);
 							}
 						}
 					}

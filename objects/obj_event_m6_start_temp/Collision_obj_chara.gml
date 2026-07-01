@@ -5,7 +5,7 @@ if (global.chara_move == 1 && global.chara_menu == 0 && global.chara_cutscene ==
 	{
 		global.flag[1] = 1;
 		global.flag[2] = 1;
-		audio_play(snd_notification_achievement_old, 0, 0);
+		audio_play(snd_notification_achievement_old, 0, VOLUME_SOUND);
 		side_create(obj_chara.x, obj_chara.y, "m6");
 		instance_destroy();
 	}

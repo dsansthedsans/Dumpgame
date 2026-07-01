@@ -29,7 +29,7 @@ if (active == 1)
 		hurt_time += 1;
 		if (controller.enemy_spare[myself] >= 100)
 		{
-			audio_play(hurtsound, 0, 0);
+			audio_play(hurtsound, 0, VOLUME_SOUND);
 			body.movement = 5;
 			hurt_time = 60;
 		}
@@ -70,7 +70,7 @@ if (active == 1)
 		image_alpha = 0.5;
 		destroy(body);
 		battle_sparecloud(id);
-		audio_play(snd_battle_spared, 0, 0);
+		audio_play(snd_battle_spared, 0, VOLUME_SOUND);
 		global.chara_spares += 1;
 		global.world_sparedpopulation[global.chara_world] += 1;
 		controller.battle_mnyreward += controller.enemy_reward_mny[myself];

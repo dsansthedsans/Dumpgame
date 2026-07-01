@@ -99,7 +99,7 @@ if (con == 15)
 }
 if (con == 16 && exists(thiswriter) == 0)
 {
-	audio_play(snd_blt_launch, 0, 0);
+	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
 	for (var i = 0; i < 6; i++)
 		bullet[i] = -1;
 	for (var i = 0; i < 3; i++)
@@ -131,7 +131,7 @@ if (con == 18)
 		destroy(bullet[i]);
 		bullet[i] = -1;
 	}
-	audio_play(snd_bigcut, 0, 0);
+	audio_play(snd_bigcut, 0, VOLUME_SOUND);
 	shakescreen(3, 3);
 	con = 19;
 }
@@ -151,7 +151,7 @@ if (con == 19)
 		m6.sprite_index = spr_m6_broken;
 		with (m6)
 			shakeobj_small();
-		audio_play(snd_screenshake, 0, 0);
+		audio_play(snd_screenshake, 0, VOLUME_SOUND);
 		shakescreen(5, 5);
 		
 		create((m6.x - 10), (m6.y - 15), obj_solid_block);
@@ -187,7 +187,7 @@ if (con >= 21 && con % 2 == 1 && con <= 31)
 	}
 	num += 1;
 	
-	audio_play(snd_blt_appear, 0, 0);
+	audio_play(snd_blt_appear, 0, VOLUME_SOUND);
 	alarm[2] = 6;
 	con += 1;
 }
@@ -200,7 +200,7 @@ if (con == 35)
 {
 	for (var i = 0; i < 6; i++)
 		bullet[i].speed = 6;
-	audio_play(snd_blt_launch, 0, 0);
+	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
 	con = 36;
 }
 if (con == 36)
@@ -214,20 +214,20 @@ if (con == 36)
 		chara.speed = -3;
 		chara.friction = 0.12;
 		global.chara_facing = SIT;
-		audio_play(snd_grab, 0, 0);
+		audio_play(snd_grab, 0, VOLUME_SOUND);
 		alarm[4] = 60;
 		con = 36.25;
 	}
 }
 if (con == 36.5)
 {
-	audio_play(snd_eyeflash, 0, 0);
+	audio_play(snd_eyeflash, 0, VOLUME_SOUND);
 	alarm[4] = 45;
 	con = 36.75;
 }
 if (con == 37)
 {
-	audio_play(snd_jump, 0, 0);
+	audio_play(snd_jump, 0, VOLUME_SOUND);
 	audio_pitch(thisaudio, 0.8);
 	eyes_jumpsnd = thisaudio;
 	global.flag[60] = 1;
@@ -239,7 +239,7 @@ if (con == 38)
 	global.chara_facing = DOWN;
 	with (chara)
 		shakeobj_small();
-	audio_play(snd_bump, 0, 0);
+	audio_play(snd_bump, 0, VOLUME_SOUND);
 	cam_y = obj_GAME_CONTROLLER.cam_y;
 	alarm[2] = 15;
 	con = 39;
@@ -282,7 +282,7 @@ if (con == 41)
 		create((chara.x - 130), (200 + irandom_range(-30, 30)), obj_overworld_blt);
 		thisobj.type = 1.0;
 		audio_stop(snd_blt_appear);
-		audio_play(snd_blt_appear, 0, 0);
+		audio_play(snd_blt_appear, 0, VOLUME_SOUND);
 		bullet_delay[0] = 30;
 	}
 	else
@@ -303,7 +303,7 @@ if (con == 41)
 			create(-20, (_y + (_yspace * i)), obj_overworld_blt);
 			thisobj.type = 1.1;
 		}
-		audio_play(snd_blt_appear, 0, 0);
+		audio_play(snd_blt_appear, 0, VOLUME_SOUND);
 		bullet_format += 1;
 		if (bullet_format >= 2)
 			bullet_format = 0;

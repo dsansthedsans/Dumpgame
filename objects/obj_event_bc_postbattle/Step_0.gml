@@ -146,7 +146,7 @@ if (con == 38)
 	else if (global.chara_murder == 2)
 		_snd = snd_murder_cancel;
 	if (_snd != -1)
-		audio_play(_snd, 0, 0);
+		audio_play(_snd, 0, VOLUME_SOUND);
 	
 	destroy(m6);
 	if (global.flag[38] == 0)

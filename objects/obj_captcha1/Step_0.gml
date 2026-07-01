@@ -15,7 +15,7 @@ for (var w = 0; w < 3; w++)
 					{
 						image_index = 1;
 						audio_stop(snd_heartpulse1);
-						audio_play(snd_heartpulse1, 0, 0);
+						audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 						with (parent)
 						{
 							mywrite += myletter[w, h];
@@ -34,7 +34,7 @@ for (var w = 0; w < 3; w++)
 					parent.mywrite = "";
 					parent.resetbutton_pressed = 1;
 					audio_stop(snd_heartpulse1);
-					audio_play(snd_heartpulse1, 0, 0);
+					audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 					for (var i = 0; i < 3; i++)
 					{	
 						for (var z = 0; z < 3; z++)
@@ -74,7 +74,7 @@ if (victory_delay <= 0)
 		global.flag[15] = 1;
 		global.chara_move = 1;
 		shakescreen(0, 5);
-		audio_play(snd_bluh, 0, 0);
+		audio_play(snd_bluh, 0, VOLUME_SOUND);
 		if (audio_playing(victorysound) == true)
 			audio_stop(victorysound);
 	}
@@ -85,7 +85,7 @@ if (victory_delay <= 0)
 			global.flag[11] = 1;
 		else
 			global.flag[14] = 1;
-		victorysound = audio_play(snd_victory, 0, 0);
+		victorysound = audio_play(snd_victory, 0, VOLUME_SOUND);
 		if (room == room_corridors_5_B)
 		{
 			audio_pitch(victorysound, victorypitch);

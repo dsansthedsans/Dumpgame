@@ -108,7 +108,7 @@ if (con == 15)
 if (con == 16 && exists(thiswriter) == 0)
 {
 	global.side_facing[0] = UP;
-	audio_play(snd_blt_launch, 0, 0);
+	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
 	for (var i = 0; i < 6; i++)
 		bullet[i] = -1;
 	for (var i = 0; i < 3; i++)
@@ -138,7 +138,7 @@ if (con == 18)
 		destroy(bullet[i]);
 		bullet[i] = -1;
 	}
-	audio_play(snd_bigcut, 0, 0);
+	audio_play(snd_bigcut, 0, VOLUME_SOUND);
 	shakescreen(3, 3);
 	con = 19;
 }
@@ -148,7 +148,7 @@ if (con == 19)
 	if (m6.y >= 240)
 	{
 		m6.y = 240;
-		audio_play(snd_screenshake, 0, 0);
+		audio_play(snd_screenshake, 0, VOLUME_SOUND);
 		shakescreen(5, 5);
 		alarm[2] = 45;
 		con = 20;

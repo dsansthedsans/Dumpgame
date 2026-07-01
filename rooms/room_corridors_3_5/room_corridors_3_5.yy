@@ -56,7 +56,7 @@
         {"$GMRInstance":"v4","%Name":"inst_1DD4CC04","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1DD4CC04","objectId":{"name":"obj_overworld_solid","path":"objects/obj_overworld_solid/obj_overworld_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":110.0,"y":-10.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
-          -55,-2147483648,2,0,117,-10,-2147483648,2,154,136,-5,-2147483648,3,0,134,155,-6,-2147483648,10,116,117,
+          -55,-2147483648,-2,0,-10,-2147483648,2,154,136,-5,-2147483648,3,0,134,155,-6,-2147483648,10,116,117,
           -2147483648,-2147483648,97,-2147483648,268435554,-2147483648,276,134,-6,-2147483648,1,136,-8,-2147483648,
           1,296,-6,-2147483648,2,0,256,-6,-2147483648,1,268435573,-7,-2147483648,3,296,-2147483648,98,-6,-2147483648,
           1,94,-6,-2147483648,2,96,0,-4,-2147483648,4,268435553,-2147483648,0,114,-6,-2147483648,-3,0,-2,-2147483648,

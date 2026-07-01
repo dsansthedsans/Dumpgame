@@ -15,7 +15,7 @@ if (stage == 1)
 				{
 					image_index = 1;
 					audio_stop(snd_heartpulse1);
-					audio_play(snd_heartpulse1, 0, 0);
+					audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 					other.puzzle_curword += other.button_letter[hh, vv];
 					other.button_pressed[hh, vv] = 1;
 				}
@@ -31,7 +31,7 @@ if (stage == 1)
 			if (pressed == 0)
 			{
 				image_index = 3;
-				audio_play(snd_heartpulse1, 0, 0);
+				audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 				for (var h = 0; h < 4; h++)
 				{
 					for (var v = 0; v < 4; v++)
@@ -68,7 +68,7 @@ if (stage == 3)
 	// check victory
 	if (moveable.x == 220 && moveable.y == 740)
 	{
-		audio_play(snd_victory, 0, 0);
+		audio_play(snd_victory, 0, VOLUME_SOUND);
 		moveable.canmove = 0;
 		delay = 60;
 		stage = 4;
@@ -154,7 +154,7 @@ if (stage == 5)
 									c3_p(2, 1);		
 								}
 							}
-							audio_play(snd_heartpulse1, 0, 0);
+							audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 						}
 						pressed = 1;
 					}
@@ -168,7 +168,7 @@ if (stage == 5)
 				_green += 1;
 			if (_green == 9)
 			{
-				audio_play(snd_victory, 0, 0);
+				audio_play(snd_victory, 0, VOLUME_SOUND);
 				plate_reset.canpress = 0;
 				plate_reset.image_index = 3;
 				plate_finished = 1;
@@ -188,7 +188,7 @@ if (stage == 5)
 				if (pressed == 0)
 				{
 					image_index = 3;
-					audio_play(snd_heartpulse1, 0, 0);
+					audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 					for (var h = 0; h < 3; h++)
 					{
 						for (v = 0; v < 3; v++)
@@ -227,7 +227,7 @@ if (stage == 2)
 	if (delay <= 0)
 	{
 		door[1].sprite_index = spr_overworld_bigdoor_open;
-		audio_play(snd_bluh, 0, 0);
+		audio_play(snd_bluh, 0, VOLUME_SOUND);
 		shakescreen(3, 3);
 		stage = 3;
 	}
@@ -239,7 +239,7 @@ if (stage == 4)
 	if (delay <= 0)
 	{
 		door[2].sprite_index = spr_overworld_bigdoor_open;
-		audio_play(snd_bluh, 0, 0);
+		audio_play(snd_bluh, 0, VOLUME_SOUND);
 		shakescreen(3, 3);
 		stage = 5;
 	}
@@ -251,7 +251,7 @@ if (stage == 6)
 	if (delay <= 0)
 	{
 		door[3].sprite_index = spr_overworld_bigdoor_open;
-		audio_play(snd_bluh, 0, 0);
+		audio_play(snd_bluh, 0, VOLUME_SOUND);
 		shakescreen(3, 3);
 		stage = 7;
 	}

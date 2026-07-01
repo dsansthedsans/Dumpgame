@@ -47,7 +47,7 @@ if (msg[page] != "%%%") || (question[page] != "%%%")
 	// custom
 	if (text == "npc_armsguy_lost" && global.flag[47] == 1 && page == 5)
 	{
-		audio_play(snd_item, 0, 0);
+		audio_play(snd_item, 0, VOLUME_SOUND);
 		if (global.achievement[ACHIEVEMENT_MONSTNINJA] == 0)
 		{
 			global.achievement[ACHIEVEMENT_MONSTNINJA] = 1;

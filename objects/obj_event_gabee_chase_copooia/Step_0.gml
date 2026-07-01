@@ -97,7 +97,7 @@ if (con == 16 && exists(thiswriter) == 0)
 {
 	global.chara_facing = UP;
 	global.side_facing[0] = UP;
-	audio_play(snd_blt_launch, 0, 0);
+	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
 	for (var i = 0; i < 3; i++)
 	{
 		marker((m6.x - 20 + (20 * i)), (obj_GAME_CONTROLLER.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
@@ -121,7 +121,7 @@ if (con == 18)
 	global.side_facing[0] = UP_SIT;
 	for (var i = 0; i < 3; i++)
 		destroy(bullet[i]);
-	audio_play(snd_bigcut, 0, 0);
+	audio_play(snd_bigcut, 0, VOLUME_SOUND);
 	shakescreen(3, 3);
 	con = 19;
 }
@@ -131,7 +131,7 @@ if (con == 19)
 	if (m6.y >= 240)
 	{
 		m6.y = 240;
-		audio_play(snd_screenshake, 0, 0);
+		audio_play(snd_screenshake, 0, VOLUME_SOUND);
 		shakescreen(5, 5);
 		alarm[2] = 60;
 		con = 20;

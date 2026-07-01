@@ -387,7 +387,7 @@ if (con == 46)
 		with (chara)
 			shakeobj_small();
 		audio_stop(thisaudio);
-		audio_play(snd_grab, 0, 0);
+		audio_play(snd_grab, 0, VOLUME_SOUND);
 		alarm[2] = 120;
 		con = 47;
 	}
@@ -398,7 +398,7 @@ if (con >= 48 && con <= 52 && con % 2 == 0)
 	chara.image_index += (1 * (con != 48));
 	with (chara)
 		shakeobj_small();
-	audio_play(snd_bump, 0, 0);
+	audio_play(snd_bump, 0, VOLUME_SOUND);
 	alarm[2] = (60 + (15 * (con - 48)));
 	con += 1;
 }
@@ -406,8 +406,8 @@ if (con == 54)
 {
 	with (chara)
 		shakeobj_small();
-	audio_play(snd_grab, 0, 0);
-	audio_play(snd_fall, 0, 0);
+	audio_play(snd_grab, 0, VOLUME_SOUND);
+	audio_play(snd_fall, 0, VOLUME_SOUND);
 	chara.gravity = 0.1;
 	chara.sprite_index = spr_chara_r_fall;
 	con = 55;
@@ -421,7 +421,7 @@ if (con == 55)
 		global.flag[61] = 1;
 		depth = -5000;
 		audio_stop(thisaudio);
-		audio_play(snd_impact2, 0, 0);
+		audio_play(snd_impact2, 0, VOLUME_SOUND);
 		alarm[2] = 300;
 		con = 56;
 	}

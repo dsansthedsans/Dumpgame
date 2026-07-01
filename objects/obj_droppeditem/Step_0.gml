@@ -8,7 +8,7 @@ if (active == 1)
 			droppeditem_remove();
 			writer("droppeditem_pickup", -1, -1);
 			global.droppeditem_pickupname = "";
-			audio_play(snd_item, 0, 0);
+			audio_play(snd_item, 0, VOLUME_SOUND);
 			image_alpha = 0;
 		}
 		else

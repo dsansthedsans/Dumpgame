@@ -8,4 +8,4 @@ sprite_index = controller.enemy_obj[target].sprite_index;
 image_index = controller.enemy_obj[target].image_index;
 image_xscale = 2;
 image_yscale = 2;
-audio_play(snd_enemy_vaporized, 0, 0);
+audio_play(snd_enemy_vaporized, 0, VOLUME_SOUND);

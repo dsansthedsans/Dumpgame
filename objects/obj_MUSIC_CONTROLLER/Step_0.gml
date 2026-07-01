@@ -9,7 +9,6 @@ for (var i = 0; i < global.music_length; i++)
 }
 // musica id 0-2 (overworld) 3 (batalha)
 
-// definir músicas
 if (room == room_menu)
 {
 	for (var i = 0; i < global.music_length; i++)
@@ -39,7 +38,6 @@ if (room == room_intro)
 	if (controller.active == 1)
 		music_set(0, mus_intro);
 }
-
 if (room == room_corridors_1) // corredores
 {
 	music_set(0, -1);
@@ -122,7 +120,7 @@ if (room == room_corridors_18) // gabee's chase
 		music_set(1, -1);
 	if (global.flag[60] == 1 && global.flag[61] == 0)
 	{
-		music_set(0, mus_chase_intro);
+		music_set(0, mus_chase_intro, , , , , false);
 		if (music_old[0] == mus_chase_intro && audio_playing(mus_chase_intro) == false) || (music_old[0] == mus_chase_loop)
 		{
 			music_set(0, mus_chase_loop);
@@ -156,8 +154,6 @@ if (room == room_crazycat)
 	if (instance_exists(obj_crazycat) == true && obj_crazycat.cat_dancing == 1)
 		music_set(0, mus_crazycat);
 }
-
-
 
 if (exists(obj_chara_pause) == 1)
 {

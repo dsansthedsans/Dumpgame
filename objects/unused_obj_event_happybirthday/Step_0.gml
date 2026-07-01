@@ -16,21 +16,21 @@ if (con == 1)
 if (con == 2)
 {
 	if (audio_playing(snd_option_movehold) == 0)
-		audio_play(snd_option_movehold, 1, 0);
+		audio_play(snd_option_movehold, 1, VOLUME_SOUND);
 	cake.y += 1;
 	if (cake.y >= 130)
 	{
 		cake.y = 130;
 		audio_stop(snd_option_movehold);
-		audio_play(snd_item, 0, 0);
+		audio_play(snd_item, 0, VOLUME_SOUND);
 		con = 3;
 		alarm[2] = 80;
 	}
 }
 if (con == 4)
 {
-	audio_play(unused_snd_happybirthday_applause, 0, 0);
-	audio_play(unused_snd_happybirthday_cheer, 0, 0);
+	audio_play(unused_snd_happybirthday_applause, 0, VOLUME_SOUND);
+	audio_play(unused_snd_happybirthday_cheer, 0, VOLUME_SOUND);
 	con = 5;
 }
 if (con == 5)

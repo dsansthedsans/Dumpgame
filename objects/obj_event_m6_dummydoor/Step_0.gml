@@ -24,7 +24,7 @@ if (con == 6)
 {
 	global.flag[40] = 1;
 	shakescreen(4, 0);
-	audio_play(snd_impact, 0, 0);
+	audio_play(snd_impact, 0, VOLUME_SOUND);
 	alarm[2] = 80;
 	con = 7;
 }
