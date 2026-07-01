@@ -14,6 +14,7 @@ fullscreen_delaymax = 30;
 
 cam_x = 0;
 cam_y = 0;
+cam_spdJump = false;
 cam_shake_xint = 0;
 cam_shake_yint = 0;
 cam_shake_stage = 0;

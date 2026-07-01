@@ -15,6 +15,7 @@ for (var i = 0; i < 99; i++)
 paused = 0;
 
 b = 0
+dongs = 0
 
 /*
 thisold = -1;

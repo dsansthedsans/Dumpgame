@@ -10,7 +10,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 			sprite_index = spr_npc_trashguy;
 			audio_play(snd_bump, 0, VOLUME_SOUND);
 			shakeobj_small();
-			chara_change(-1, 0, 0, 1, 0, 0, 0);
+			chara_change(-1, 0, 0, 1, 0, 0, -1);
 		}
 		writer(text, -1, -1);
 		con = 2;
@@ -19,7 +19,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 	{
 		if (result != 4)
 		{
-			chara_change(-1, 1, 1, -1, 1, 1, 1);
+			chara_change(-1, 1, 1, -1, 1, 1, -1);
 			alarm[2] = 4;
 			con = 3;
 		}
@@ -133,10 +133,10 @@ else if (result == 1) // Bench
 		chara.x = (x + (sprite_width / 2));
 		chara.y = (y + 10);
 		chara.depth = -chara.bbox_bottom - 20;
-		chara.xscale = 0.9;
-		chara.yscale = 0.9;
+		chara.xscale = 0.75;
+		chara.yscale = 0.5;
 		chara_facing(SIT);
-		chara_change(-1, 0, 0, -1, 0, 0, 0)
+		chara_change(-1, 0, 0, 1, 0, 0, 1);
 		if (global.flag[2] == 1)
 		{
 			party_stop(0);
@@ -149,15 +149,10 @@ else if (result == 1) // Bench
 			m6.y = (y + 10);
 			m6.depth = -m6.bbox_bottom - 20;
 			m6.sprite_index = spr_m6_sit;
-			m6.xscale = 0.9;
-			m6.yscale = 0.9;
+			m6.xscale = 0.75;
+			m6.yscale = 0.5;
 			chara.x += 11;
 		}
-		var _xx = (x + (sprite_width / 2) - 160);
-		var _yy = (y + (sprite_height / 2) - 120);
-		_xx = clamp(_xx, 0, (room_width - 320));
-		_yy = clamp(_yy, 0, (room_height - 240));
-		screenpos(_xx, _yy);
 		audio_play(snd_cutesit, 0, VOLUME_SOUND);
 		alarm[2] = 30;
 		con = 2;
@@ -170,18 +165,18 @@ else if (result == 1) // Bench
 			chara.y = chara_oldy;
 			chara.depth = -chara.bbox_bottom;
 			chara.image_index = 0;
-			chara.xscale = 0.9;
-			chara.yscale = 0.9;
+			chara.xscale = 0.75;
+			chara.yscale = 0.5;
 			chara_facing(chara_oldfacing);
-			chara_change(-1, 1, 1, -1, 1, 1, 1);
+			chara_change(-1, 1, 1, 0, 1, 1, 1);
 			if (global.flag[2] == 1)
 			{
 				m6.x = m6_oldx;
 				m6.y = m6_oldy;
 				m6.sprite_index = m6_oldsprite;
 				m6.depth = -m6.bbox_bottom;
-				m6.xscale = 0.9;
-				m6.yscale = 0.9;
+				m6.xscale = 0.75;
+				m6.yscale = 0.5;
 				party_change(0, 0, -1);
 			}
 			audio_play(snd_cutegetup, 0, VOLUME_SOUND);
@@ -246,12 +241,12 @@ else if (result == 2) // moveble
 			con = 0;
 			mytargetx = -1;
 			mytargety = -1;
-			chara_change(-1, 1, 1, -1, 1, 1, 1);
+			chara_change(-1, 1, 1, -1, 1, 1, -1);
 		}
 		else
 		{
 			audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
-			chara_change(-1, 0, 0, -1, 0, 0, 0)
+			chara_change(-1, 0, 0, -1, 0, 0, -1)
 			con = 2;
 		}
 	}

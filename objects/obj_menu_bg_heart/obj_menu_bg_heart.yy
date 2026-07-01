@@ -8,8 +8,8 @@
   "name":"obj_menu_bg_heart",
   "overriddenProperties":[],
   "parent":{
-    "name":"[!] objects",
-    "path":"folders/[!] objects.yy",
+    "name":"main menu + game over",
+    "path":"folders/[!] objects/main menu + game over.yy",
   },
   "parentObjectId":null,
   "persistent":false,

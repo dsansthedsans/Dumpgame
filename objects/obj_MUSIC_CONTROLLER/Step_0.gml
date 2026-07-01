@@ -38,6 +38,12 @@ if (room == room_intro)
 	if (controller.active == 1)
 		music_set(0, mus_intro);
 }
+if (room == room_gameover)
+	{
+		music_set(0, -1);
+		if (exists(obj_over_controller) == 1 && obj_over_controller.con == 9)
+			music_set(0, mus_gameover, , 0, , , , 1);
+	}
 if (room == room_corridors_1) // corredores
 {
 	music_set(0, -1);
@@ -68,7 +74,7 @@ if (room == room_corridors_1_5) || (room == room_corridors_2)
 }
 if (room >= room_corridors_3)
 {	
-	music_set(0, mus_corridors, 1);
+	music_set(0, mus_corridors, 1, , , 0.75);
 	music_set(1, -1);
 	if (global.chara_murder >= 2)
 	{
@@ -342,17 +348,7 @@ if (exists(obj_battle_quicker) == 0) || (_stop_music_on_quicker == 0)
 		global.music_gain[MUSIC_NORMAL] = 0;
 		global.music_loop[MUSIC_NORMAL] = 0;
 	}
-	if (room == room_gameover) // game over //////////////////////////////
-	{
-		global.music[MUSIC_NORMAL] = -1;
 	
-		var _controller = obj_over_controller;
-		if (exists(_controller) == 1 && _controller.con == 9)
-		{
-			global.music[MUSIC_NORMAL] = mus_gameover;
-			global.music_gain[MUSIC_NORMAL] = 0;
-		}
-	}
 	
 	if (room == room_corridors_1) // start
 	{

@@ -7,34 +7,6 @@ if (active == 1)
 	{
 		draw_self();	
 	}
-	/*
-	if (type == -1000) // Sans
-	{
-		draw_self();
-	
-		if (animation == 1)
-		{
-			head_y = 1;
-			head_delay -= 1;
-			if (head_delay <= (head_origdelay / 2))
-				head_y = 0;
-			if (head_delay <= 0)
-				head_delay = head_origdelay;
-		
-			siner += 0.6;
-		}
-		xoff = cos((siner / 6));
-		yoff = sin((siner / 3));
-	
-		body = spr_enemy_sans_body;
-		body_x = (x - 3 + xoff);
-		body_y = (y - sprite_height + (yoff / 1.5));
-		body_h = sprite_get_height(body);
-	
-		draw_sprite_ext(spr_enemy_sans_body, hurt, body_x, body_y, 2, 2, 0, c_white, 1);
-		draw_sprite_ext(spr_enemy_sans_head, hurt, body_x, (body_y - body_h - 14 + head_y), 2, 2, 0, c_white, 1);
-	}
-	*/
 	
 	if (type == -1) || (type == -10) // Test
 	{	
@@ -120,7 +92,10 @@ if (active == 1)
 						if (controller.enemy_attack[myself] == 0)
 							movement = 4;
 						if (controller.enemy_attack[myself] == 3)
+						{
 							movement = 6;
+							otherimage = 1;
+						}
 					}	
 				}
 			}
@@ -138,6 +113,11 @@ if (active == 1)
 			}
 			siner += 0.1;
 			vspeed = (sin(siner / (_slow + 1)) * _mult);
+			if (enemy.thiswriter != 0 && exists(enemy.thiswriter) == true)
+			{
+				enemy.thiswriter.bubble_x = (x + (sprite_width / 2) + 12);
+				enemy.thiswriter.bubble_y = (y + 6);
+			}
 		}
 		if (movement == 4) // movement for attack 0
 		{

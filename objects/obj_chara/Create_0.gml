@@ -28,6 +28,9 @@ rimgspeed[1] = ((rspeed[1] / 10) + 0.05);
 rimgspeed_party = ((rspeed_party / 10) + 0.05);
 curimgspeed = wimgspeed;
 
+mycol = 0;
+lastcol = 0;
+
 // variáveis de suporte
 stepplay = 1;
 stepsound = 0;

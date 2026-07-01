@@ -4,14 +4,6 @@ if (type == 2000) // Toilet
 {
 	sprite_index = unused_spr_enemy_toilet;
 }
-if (type == -1000) // Sans
-{
-	sprite_index = spr_enemy_sans_legs;
-	hurt = 0;
-	
-	head_origdelay = 33;
-	head_delay = head_origdelay;
-}
 
 if (type == -1) || (type == -10) // test
 	sprite_index = spr_enemy_test_body;

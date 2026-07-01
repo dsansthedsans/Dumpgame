@@ -210,21 +210,16 @@ function afterimage()
 function room_go(_room, _x, _y)
 {
 	if (exists(obj_room_transition) == 0)
-	{
-		trans_obj = instance_create_layer(-40, -40, "Instances", obj_room_transition);
-		trans_obj.rr = argument0;
-		trans_obj.xx = argument1;
-		trans_obj.yy = argument2;
-	}
+		trans_obj = create(-40, -40, obj_room_transition);
 	else
 	{
-		trans_obj = obj_room_transition;
-		trans_obj.rr = argument0;
-		trans_obj.xx = argument1;
-		trans_obj.yy = argument2;
+		trans_obj = instance_find(obj_room_transition, 0);
 		trans_obj.con = 1;
-		trans_obj.altcon = 1;
+		trans_obj.altcon = 0;
 	}
+	trans_obj.rr = _room;
+	trans_obj.xx = _x;
+	trans_obj.yy = _y;
 }
 
 function shakeobj(_obj, _xint, _yint, _intlower)
@@ -480,6 +475,7 @@ function debug(_string)
 	return show_debug_message(argument0);	
 }
 
+/*
 function dumpparticle_start()
 {
 	particle_pos = 0;
@@ -526,7 +522,7 @@ function dumpparticle_manage()
 			particle_delay += 1;
 			
 			
-			/*
+			//////////////////////////////////////
 			for (var i = 0; i < particle_max; i++)
 			{
 				if (particle[i] != -1 && exists(particle[i]) == 1)
@@ -545,7 +541,7 @@ function dumpparticle_manage()
 					}
 				}
 			}
-			*/
+			//////////////////////////////////////
 		}
 	}
 	
@@ -556,6 +552,7 @@ function dumpparticle_manage()
 		destroy(obj_marker);
 	}
 }
+*/
 
 function display_gui_fix()
 {	

@@ -352,15 +352,16 @@ if (global.chara_interact == 1)
 			chara_change(-1, 0, 0, -1, 0, 0, -1);
 			chara_stop();
 			mycol.con = 1;
+			lastcol = mycol;
 		}
 	}	
 	
 	// mudar de quarto
 	if (place_meeting(x, y, obj_room_parent) == 1)
 	{
+		chara_stop();
 		chara_change(-1, 0, 0, -1, 0, 0, -1);
 		chara_room();
-		chara_stop();
 	}
 }
 

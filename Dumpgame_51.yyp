@@ -20,6 +20,7 @@
     {"$GMFolder":"","%Name":"events","folderPath":"folders/[!] objects/events.yy","name":"events","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"caverns","folderPath":"folders/[!] objects/events/caverns.yy","name":"caverns","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"corridors","folderPath":"folders/[!] objects/events/corridors.yy","name":"corridors","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"main menu + game over","folderPath":"folders/[!] objects/main menu + game over.yy","name":"main menu + game over","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"[!] rooms","folderPath":"folders/[!] rooms.yy","name":"[!] rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Caverns","folderPath":"folders/[!] rooms/Caverns.yy","name":"Caverns","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Corridors","folderPath":"folders/[!] rooms/Corridors.yy","name":"Corridors","resourceType":"GMFolder","resourceVersion":"2.0",},

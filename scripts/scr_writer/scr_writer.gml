@@ -570,6 +570,10 @@ function TEXT()
 		for (var i = 0; i < 3; i++)
 			msg[i] = get_text("room_relaxsign_" + string(i));
 	}
+	if (text == "room_benchlamp")
+	{
+		msg[0] = get_text("room_benchlamp_0");
+	}
 	
 	// room_corridors_8
 	if (text == "npc_armsguy_lost")
@@ -640,10 +644,7 @@ function TEXT()
 					}
 				}
 				else
-				{
 					msg[0] = get_text("npc_armsguy_lost_1_2_0");
-					msg[1] = get_text("npc_armsguy_lost_1_2_1");
-				}
 			}
 		}
 			

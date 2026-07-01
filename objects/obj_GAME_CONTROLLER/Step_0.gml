@@ -28,7 +28,7 @@ if (active == 1)
 }
 
 // debug
-if (keyboard_check_pressed(vk_numpad7) == 1 && global.chara_name == "CRAZYCAT")
+if (keyboard_check_pressed(vk_numpad7) == 1 && string_upper(global.chara_name) == "CRAZYCAT")
 	global.indebug = !global.indebug;
 if (global.indebug == 1)
 {

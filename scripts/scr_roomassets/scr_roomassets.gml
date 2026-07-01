@@ -10,7 +10,7 @@ function room_interact()
 		result = 0.1;
 	}
 	// bench
-	if (room == room_corridors_7 && y == 100) || (room == room_corridors_11 && ((x == 130 || x == 290) && y == 95))
+	if (room == room_corridors_7 && y == 100 && x != 480) || (room == room_corridors_11 && ((x == 130 || x == 290) && y == 95))
 		result = 1;	
 	
 	// corridors
@@ -111,6 +111,8 @@ function room_interact()
 			if (global.world_curpopulation[WORLD_CORRIDORS] < global.world_maxpopulation[WORLD_CORRIDORS])
 				destroy(id);
 		}
+		if (x == 480 && y == 100)
+			text = "room_benchlamp";
 	}
 	if (room == room_corridors_8) // lost npcs
 	{
@@ -498,10 +500,10 @@ function room_solid()
 			else
 				leaf_fall = 1;
 		}
-		if (y == 60) || (y == 90)
+		if (y == 60) || (y == 92)
 		{
 			sprite_index = spr_overworld_lamp;
-			if (y == 90)
+			if (y == 92)
 				image_index = 1;
 		}
 		if (y == 80) || (y == 130)
@@ -509,6 +511,8 @@ function room_solid()
 			sprite_index = spr_overworld_bench;
 			if (y == 130)
 				image_index = 1;
+			if (x == 470 && y == 80)
+				depth = 0;
 		}
 	}
 	if (room == room_corridors_8)

@@ -1,4 +1,5 @@
 
+depth = 666;
 speed = 0;
 solid = 0;
 visible = 1;
@@ -16,5 +17,6 @@ leaf_fall = 0;
 leaf_create = 0;
 event_user(0);
 room_solid();
-depth = -bbox_bottom;
+if (depth == 666)
+	depth = -bbox_bottom;
 

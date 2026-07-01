@@ -19,6 +19,7 @@ body_ydif = 0;
 
 bubble_x = (x + (sprite_width / 2) + 12);
 bubble_y = (y + 6);
+thiswriter = 0;
 
 orig_def = controller.enemy_def[myself];
 createbubble = 0;

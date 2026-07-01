@@ -2,6 +2,7 @@
 con = 0;
 altcon = 0;
 active = 1;
+alpha = 1;
 
 bg_spd = 0.05;
 bg_alpha = 1;
@@ -47,7 +48,8 @@ mainopt_bgy = (mainopt_y - (string_height(mainopt[0]) / 2) - _vspace);
 mainopt_bgw = ((_hspace * 2) + string_width(mainopt[0]) + 160 + string_width(mainopt[2]));
 mainopt_bgh = ((_vspace * 2) + string_height(mainopt[0]));
 
-dumpparticle_start();
+//dumpparticle_start();
+create(0, 0, obj_menu_bg);
 
 depth = -1000;
 image_alpha = 0;

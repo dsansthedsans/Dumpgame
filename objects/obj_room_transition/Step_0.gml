@@ -1,10 +1,7 @@
 
 if (con == 1)
 {
-	// abaixar o alpha
 	alpha += alpha_amt;
-	
-	// ir para o próximo quarto
 	if (alpha >= 1) 
 	{
 		room_goto(rr);
@@ -13,7 +10,7 @@ if (con == 1)
 		con = 2;
 	}
 }
-else if (con == 2)
+if (con == 2)
 {
 	// definir posição e movimento do jogador
 	if (altcon == 1 && room == rr)
@@ -26,7 +23,6 @@ else if (con == 2)
 				chara.y = yy;
 			chara.depth = -chara.bbox_bottom;
 		}
-		
 		altcon = 2;
 	}
 	else if (altcon == 2)
@@ -39,11 +35,9 @@ else if (con == 2)
 	}
 	else
 		altcon += 0.1;
-	
 	// abaixar o alpha
 	if (altcon >= 2)
 		alpha -= alpha_amt;
-	
 	// terminar
 	if (alpha <= 0)
 	{

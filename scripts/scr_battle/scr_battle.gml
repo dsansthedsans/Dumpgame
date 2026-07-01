@@ -34,6 +34,8 @@ function battle_getgroup()
 	if (global.battle_nextgroup != 0) // override battlegroup with nextgroup
 		battle_group = global.battle_nextgroup;
 	global.battle_nextgroup = 0;
+	if (global.indebug == true)
+		battle_group = 6;
 }
 function battle_setupgroup()
 {

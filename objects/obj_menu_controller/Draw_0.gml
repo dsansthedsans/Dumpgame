@@ -118,7 +118,7 @@ if (global.menu_lvl == 7)
 	draw_set_valign(fa_middle);
 	var _bc = (string_width("brokenclock") / 2);
 	
-	draw_sprite_stretched(spr_menu_optbg, 0, ((room_width / 2) - _bc - 44), ((room_height / 2) - 44), (44 + (_bc * 2) + 44), 88);
+	draw_sprite_stretched(spr_menu_optbg, 0, round((room_width / 2) - _bc - 44), round((room_height / 2) - 44), round(44 + (_bc * 2) + 44), 88);
 	
 	var _underline = "___________";
 	_underline = string_copy(_underline, 0, (11 - string_length(global.chara_name)));

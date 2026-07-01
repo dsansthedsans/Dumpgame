@@ -7,6 +7,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 	_volume *= 2;
 	if (_volume_type == VOLUME_SOUND)
 	{
+		if (_asset == snd_dumpgame)
+			_volume *= 0.75;
 		if (_asset == snd_ambient_birds)
 			_volume *= 0.75;
 		if (_asset == snd_bird_startfly)
@@ -23,6 +25,12 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume = 0.75;
 		if (_asset == snd_ambient_wind)
 			_volume *= 0.5;
+		if (_asset == snd_txt_bc)
+			_volume *= 0.75;
+		if (_asset == snd_shock_blt)
+			_volume *= 0.5;
+		if (_asset == snd_explosion2)
+			_volume *= 0.25;
 		if (_asset == snd_txt_gabee) || (_asset == snd_txt_dsans)
 			_volume /= 5;
 	}

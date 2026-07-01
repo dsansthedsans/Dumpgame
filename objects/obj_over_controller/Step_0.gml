@@ -8,13 +8,12 @@ if (con == 1)
 	var _amt = 0.1;
 	heart_x = lerp(heart_x, heart_targetx, _amt);
 	heart_y = lerp(heart_y, heart_targety, _amt);
-	
 	var _dist = point_distance(heart_x, heart_y, heart_targetx, heart_targety);
 	if (_dist <= 1)
 	{
 		heart_x = heart_targetx;
 		heart_y = heart_targety;
-		alarm[2] = 80;
+		alarm[2] = round(60 * 1.25);
 		con = 2;
 	}
 }
@@ -23,8 +22,7 @@ if (con == 3)
 	heart_spr = spr_battle_heart_break;
 	audio_play(snd_heartbreak1, 0, VOLUME_SOUND);
 	event_user(0);
-	
-	alarm[2] = 100;
+	alarm[2] = round(60 * 1.25);
 	con = 4;
 }
 if (con == 5)
@@ -32,7 +30,6 @@ if (con == 5)
 	heart_alpha = 0;
 	audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
 	event_user(0);
-	
 	for (var i = 0; i < shard_amt; i++)
 	{
 		shard[i] = instance_create_layer(heart_x, heart_y, "Instances", obj_marker);
@@ -50,7 +47,6 @@ if (con == 5)
 		}
 	}
 	altcon = 1;
-	
 	alarm[2] = 60;
 	con = 6;
 }
@@ -139,4 +135,4 @@ if (altcon == 1)
 }
 
 // manage particles
-dumpparticle_manage();
+//dumpparticle_manage();
