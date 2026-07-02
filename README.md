@@ -12,7 +12,7 @@
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>Dumpgame is a short UNDERTALE fangame about a Brazilian boy who falls into a portal to a magical world full of weird monsters and oversized children.</p>
+<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. The game follows a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children in trench coats.</p>
 <br>
 
 > [!WARNING]
@@ -24,7 +24,6 @@
 <ul>
   <li>Original art, story and characters created almost entirely by one person, me, <b>dsansthedsans</b>...!</li>
   <li>An amazing soundtrack of 50+ songs fully composed and arranged by <b>migel8022</b>!</li>
-  <li>harder than undertale. this is work in progrss.</li>
 </ul>
 <br>
 <h2>Development History</h2>
