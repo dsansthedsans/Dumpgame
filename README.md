@@ -1,6 +1,6 @@
 <h1>README UNDER CONSTRUCTION !!!!!!<br>ALSO the download of 1.5.0-demo will be available SOON........................................</h1>
 <br>
-<h1 align="center"><img src="README-ASSETS/LOGO.png" alt="Dumpgame" height=250></h1>
+<h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
 <p align="center">
   <img src="https://img.shields.io/badge/status-cancelled-white?labelColor=40ff6d" alt="Status">
@@ -10,13 +10,16 @@
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
 <br>
+<p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
+<br>
+<p>Dumpgame is an UNDERTALE fangame about a Brazilian boy who falls into a portal to a magical world full of weird monsters and oversized children. It was created almost entirely by one person, me, <b>dsansthedsans</b>. Dumpgame's amazing soundtrack was fully composed and arranged by <b>migel8022</b>, who joined me at the very start. Both of us developed our skills as we made the game.</p>
+<br>
 
 > [!WARNING]
 > Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
 > <br><br><i>"the source code for undertale is literally just a bunch of rubber bands and tape stuck to a paper saying 'DETERMINATION'."</i><br>— Toby Fox
 
 <br>
-<p>Dumpgame is an UNDERTALE fangame about a Brazilian boy who falls into a portal to a magical world full of weird monsters and oversized children. It was created almost entirely by one person, me, <b>dsansthedsans</b>. Dumpgame's amazing soundtrack was fully composed and arranged by <b>migel8022</b>, who joined me at the very start. Both of us developed our skills as we made the game.</p>
 <h2>Features</h2>
 <ul>
   <li>weird monsters.</li>
