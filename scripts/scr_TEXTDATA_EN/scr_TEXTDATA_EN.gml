@@ -172,6 +172,9 @@ function TEXTDATA_EN()
 	// game over
 	ds_map_add(global.textdata_en, "gameover_0", "CONTINUE");
 	ds_map_add(global.textdata_en, "gameover_1", "GIVE UP");
+	ds_map_add(global.textdata_en, "gameover_skip_0", "press [");
+	ds_map_add(global.textdata_en, "gameover_skip_1", " or ");
+	ds_map_add(global.textdata_en, "gameover_skip_2", "] to skip");
 	
 	// worlds
 	ds_map_add(global.textdata_en, "world_name_corridors",	"Corridors");
@@ -210,7 +213,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "unused_room_happybirthday",		"Happy Birthday");
 	
 	// chapters
-	ds_map_add(global.textdata_en, "chapter_main", "CHAPTER");
+	ds_map_add(global.textdata_en, "chapter_main", "Chapter");
 	ds_map_add(global.textdata_en, "chapter_number_0", "I"); //corirdors
 	ds_map_add(global.textdata_en, "chapter_number_1", "II"); //caverns
 	ds_map_add(global.textdata_en, "chapter_number_2", "III"); //centralcity

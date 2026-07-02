@@ -10,8 +10,8 @@
   "name":"obj_event_start_caverns",
   "overriddenProperties":[],
   "parent":{
-    "name":"caverns",
-    "path":"folders/[!] objects/events/caverns.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":{
     "name":"obj_event_parent",

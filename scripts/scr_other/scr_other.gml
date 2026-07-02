@@ -455,7 +455,7 @@ function draw_self_border()
 	}
 }
 
-function draw_chapter_name(_alpha)
+function draw_chapter_name(_alpha, _outlineWidth)
 {
 	var _number = get_text($"chapter_number_{global.chara_world}");
 	if (is_undefined(_number))
@@ -467,7 +467,10 @@ function draw_chapter_name(_alpha)
 	draw_set_font(fnt_main_spaced);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), $"{get_text("chapter_main")} {_number}:\n{_name}", c_white, 0.5, c_dkgrey);
+	//draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), $"{get_text("chapter_main")} {_number}\n\n{_name}", c_white, _outlineWidth, c_dkgrey);
+	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120 - 15), $"- {get_text("chapter_main")} {_number} -", c_white, _outlineWidth, c_dkgrey);
+	draw_set_font(fnt_main_spaced_big);
+	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120 + 10), $"{_name}", c_white, _outlineWidth, c_dkgrey);
 }
 
 function debug(_string)

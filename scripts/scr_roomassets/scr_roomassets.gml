@@ -104,7 +104,7 @@ function room_interact()
 	{
 		if (x == 30 && y == 95)
 			text = "room_relaxsign";
-		if (x == 300 && y == 110) // trashguy npc
+		if (x == 600 && y == 170) // trashguy npc
 		{
 			text = "npc_trashguy";
 			sprite_index = spr_npc_trashguy_closed;

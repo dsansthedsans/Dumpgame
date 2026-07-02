@@ -36,6 +36,15 @@ draw_set_alpha(bg_alpha);
 draw_set_color(c_black);
 draw_rectangle(-40, -40, (room_width + 40), (room_height + 40), 0);
 
+//skip
+skipalpha = lerp(skipalpha, (con < 9 && global.chara_deaths > 0), 0.1);
+draw_set_font(fnt_main);
+draw_set_color(c_white);
+draw_set_alpha(0.25 * skipalpha);
+draw_set_valign(fa_bottom);
+draw_set_halign(fa_center);
+draw_text((room_width / 2), (room_height - 2), $"{get_text("gameover_skip_0")}{string_upper(key_name(global.keybind[04]))}{get_text("gameover_skip_1")}{string_upper(key_name(global.keybind[05]))}{get_text("gameover_skip_2")}");
+
 // heart
 draw_sprite_ext(heart_spr, 0, heart_x, heart_y, 1, 1, 0, heart_color, heart_alpha);
 

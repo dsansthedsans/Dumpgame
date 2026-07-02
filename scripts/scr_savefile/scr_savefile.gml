@@ -132,5 +132,5 @@ function savefile_erase(_savefile)
 	var i = 0;
 	while (file_exists($"{global.game_directory}savefile" + string(z) + "_erased" + string(i) + ".txt") == 1)
 		i += 1;
-	file_rename($"{global.game_directory}savefile" + string(z) + ".txt", "savefile" + string(z) + "_erased" + string(i) + ".txt");
+	file_rename($"{global.game_directory}savefile" + string(z) + ".txt", $"{global.game_directory}savefile" + string(z) + "_erased" + string(i) + ".txt");
 }

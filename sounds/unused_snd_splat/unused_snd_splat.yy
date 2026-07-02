@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_splat",
+  "%Name":"unused_snd_splat",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":0.62403625,
   "exportDir":"",
-  "name":"snd_splat",
+  "name":"unused_snd_splat",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_splat.wav",
+  "soundFile":"unused_snd_splat.wav",
   "volume":1.0,
 }

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"[!] sprites",
-    "path":"folders/[!] sprites.yy",
+    "name":"main menu + game over",
+    "path":"folders/[!] sprites/main menu + game over.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

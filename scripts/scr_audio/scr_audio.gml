@@ -45,6 +45,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.125;
 		if (_asset == mus_battle_dummy)
 			_volume *= 1.25;
+		if (_asset == unused_mus_start)
+			_volume *= 4;
+		if (_asset == mus_cave)
+			_volume *= 1.5;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)

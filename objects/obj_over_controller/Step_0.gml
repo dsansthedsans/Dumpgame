@@ -80,23 +80,17 @@ if (con == 9) // options
 	// selection
 	if (press_enter == 1 && mainopt_pos != 1)
 	{
-		TEMPFILE_RESET();
-		TEMPFILE_LOAD();
-		global.chara_curhp = global.chara_maxhp;
+		savefile_load(global.savefile_selected);
 		global.chara_deaths += 1;
-		TEMPFILE_SAVE();
-		
-		var _rm = global.chara_saveroom;
-		if (global.chara_saveroom == 0)
-			_rm = room_corridors_1;
+		savefile_write();
+		var _room = global.chara_room;
 		if (mainopt_pos == 2)
 		{
-			_rm = room_menu;
+			_room = room_menu;
 			if (global.fastmenu == 0)
 				global.fastmenu = 0.5;
 		}
-		
-		room_go(_rm, -1, -1);
+		room_go(_room, -1, -1);
 		con = 10;
 	}
 }
@@ -111,8 +105,8 @@ else if (con < 9 && press_enter == 1) // skip
 				destroy(shard[i]);
 		}
 	}
-
-	audio_play(snd_gameover, 0, VOLUME_SOUND);
+	if (audio_playing(snd_gameover) == false)
+		audio_play(snd_gameover, 0, VOLUME_SOUND);
 	title_length = 2;
 	heart_alpha = 0;
 	bg_alpha = 0;

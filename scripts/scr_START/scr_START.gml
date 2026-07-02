@@ -717,6 +717,8 @@ function CHANGE_GAME()
 				global.flag[62] = 1;
 				global.flag[63] = 1;
 			}
+			
+			global.chara_deaths = 1;
 		}
 	}	
 }

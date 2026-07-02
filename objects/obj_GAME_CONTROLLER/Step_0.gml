@@ -35,6 +35,9 @@ if (global.indebug == 1)
 	chara = obj_chara;
 	
 	// principais
+	if (keyboard_check_pressed(vk_space) == true && room == room_loading)
+		alarm[0] = load_time;
+	
 	if (keyboard_check_pressed(ord("R")) == 1) // reiniciar jogo
 		game_restart();
 		

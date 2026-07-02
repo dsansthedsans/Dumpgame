@@ -1,7 +1,10 @@
 
 if (con == 2)
 {
-	global.flag[0] = 0.5;
+	if (room == room_corridors_1)
+		global.flag[0] = 0.5;
+	else if (room == room_caverns_1)
+		global.flag[62] = 0.5;
 	con  = 2.25;
 	alarm[4] = (getuptime / 2);
 }
@@ -16,8 +19,8 @@ if (con == 2.5)
 }
 if (aftercon == 2)
 {
-	section_alpha -= 0.005;
-	if (section_alpha <= 0)
+	chapter_alpha -= 0.0025;
+	if (chapter_alpha <= 0)
 		aftercon = 0;
 }
 if (con == 4)
@@ -63,7 +66,6 @@ if (con == 12)
 }
 if (con == 14 && exists(shaker) == 0)
 {
-	global.flag[0] = 1;
 	chara_change(-1, 1, 1, 0, 1, 1, 1);
-	destroy(id);	
+	con = -1;
 }

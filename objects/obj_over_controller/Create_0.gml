@@ -15,7 +15,7 @@ heart_color = global.c_dump;
 heart_targetx = (room_width / 2);
 heart_targety = (room_height / 1.5);
 
-title_scale = 5;
+title_scale = 1;
 title_xalign = (2 * title_scale);
 var _middlex = ((room_width / 2) + ((9 * title_scale) / 2));
 title_x[0] = (_middlex - (title_xalign / 2));
@@ -48,7 +48,8 @@ mainopt_bgy = (mainopt_y - (string_height(mainopt[0]) / 2) - _vspace);
 mainopt_bgw = ((_hspace * 2) + string_width(mainopt[0]) + 160 + string_width(mainopt[2]));
 mainopt_bgh = ((_vspace * 2) + string_height(mainopt[0]));
 
-//dumpparticle_start();
+skipalpha = 0;
+
 create(0, 0, obj_menu_bg);
 
 depth = -1000;

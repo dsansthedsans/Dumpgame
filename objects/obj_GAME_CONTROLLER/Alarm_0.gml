@@ -2,4 +2,5 @@
 
 active = 1;
 audio_stop_all();
-room_go(global.game_startroom[0], -1, -1);
+room_goto(global.game_startroom[0]);
+//room_go(global.game_startroom[0], -1, -1);

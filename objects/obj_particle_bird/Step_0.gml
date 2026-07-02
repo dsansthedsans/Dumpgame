@@ -146,7 +146,7 @@ else
 	scarefly_stage = 0;
 
 // trigger scarefly
-if (mytype == 1 && global.flag[0] < 1 && obj_event_start_corridors.con >= 4 && custom_stage == 0) 
+if (mytype == 1 && global.flag[0] < 1 && obj_event_start.con >= 4 && custom_stage == 0) 
 || (mytype >= 2 && mytype <= 5 && dancing == 1 && point_distance(x, y, chara.x, chara.y) <= scarefly_dist && chara.moving == 1)
 {
 	eating = 0;

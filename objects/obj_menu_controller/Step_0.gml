@@ -234,18 +234,16 @@ if (move == 1)
 			{
 				play_erase += 1;
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
-				
 				if (play_erase == 1)
 					option[5, 2] = string_upper(get_text("menu_5_2_erase"));
-				
 				if (play_erase == 2)
 				{
 					savefile_erase(play_save);
 					option[5, 2] = string_upper(get_text("menu_5_2"));
 					play_erase = 0;
-				
 					option_pos = (play_save + 1);
 					global.menu_lvl = 1;
+					audio_play(snd_enemy_vaporized, 0, VOLUME_SOUND);
 				}
 			}
 		}

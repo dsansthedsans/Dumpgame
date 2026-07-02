@@ -561,7 +561,7 @@ function chara_stepping()
 	|| (room == room_corridors_2)
 	|| (room == room_corridors_16_B)
 	|| (room == room_corridors_18) 
-	|| (room == room_caverns_1 && global.flag[62] == 1)
+	|| (room >= room_caverns_1)
 	|| (room >= room_caverns_2 && room <= room_caverns_3)
 	|| (inwater == 1)
 		s = 1;

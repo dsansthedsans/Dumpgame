@@ -68,41 +68,38 @@ if (active == 1)
 }
 
 // debug
-if (global.indebug == 1 && exists(obj_chara) == 1)
+if (global.indebug == 1)
 {
 	var _cx = cam_x;
 	var _cy = cam_y;
 	var _cw = 320;
 	var _ch = 240;
-	
-	
 	// desenhar título
 	draw_set_alpha(1);
 	draw_set_font(fnt_main);
 	draw_set_valign(fa_top);
 	draw_set_halign(fa_right);
 	draw_text_outline((_cx + _cw - 5), (_cy + 3), "IN DEBUG", c_orange, 1, c_black);
-	
-	
 	// desenhar informações
-	var _str_chara = 
-	"savefile_selected:  " + string(global.savefile_selected)
-	+ "\nchara_run:  " + string(global.chara_run)
-	+ "\nchara_move:  " + string(global.chara_move)
-	+ "\nchara_interact:  " + string(global.chara_interact)
-	+ "\nchara_cutscene:  " + string(global.chara_cutscene)
-	+ "\nchara_open_menu:  " + string(global.chara_open_menu)
-	+ "\nchara_pause_game:  " + string(global.chara_pause_game)
-	+ "\nchara_camera_move:  " + string(global.chara_camera_move);
-	
-	var _str_encounter = 
-	"chara_steps:  " + string(global.chara_steps)
-	+ "\nmaxsteps:  " + string(obj_chara.maxsteps)
-	+ "\nchara_encounter:  " + string(global.chara_encounter);
-	
-	var _str = string(_str_chara) + "\n\n" + string(_str_encounter);
-	draw_set_alpha(0.75);
-	draw_text_outline_transformed((_cx + _cw - 5), (_cy + 3 + string_height("ABC") + 2), _str, c_orange, 0.5, c_black, 0.5, 0.5, 0);
+	if (exists(obj_chara) == 1)
+	{
+		var _str_chara = 
+		"savefile_selected:  " + string(global.savefile_selected)
+		+ "\nchara_run:  " + string(global.chara_run)
+		+ "\nchara_move:  " + string(global.chara_move)
+		+ "\nchara_interact:  " + string(global.chara_interact)
+		+ "\nchara_cutscene:  " + string(global.chara_cutscene)
+		+ "\nchara_open_menu:  " + string(global.chara_open_menu)
+		+ "\nchara_pause_game:  " + string(global.chara_pause_game)
+		+ "\nchara_camera_move:  " + string(global.chara_camera_move);
+		var _str_encounter = 
+		"chara_steps:  " + string(global.chara_steps)
+		+ "\nmaxsteps:  " + string(obj_chara.maxsteps)
+		+ "\nchara_encounter:  " + string(global.chara_encounter);
+		var _str = string(_str_chara) + "\n\n" + string(_str_encounter);
+		draw_set_alpha(0.75);
+		draw_text_outline_transformed((_cx + _cw - 5), (_cy + 3 + string_height("ABC") + 2), _str, c_orange, 0.5, c_black, 0.5, 0.5, 0);
+	}
 }
 
 draw_set_alpha(1);
