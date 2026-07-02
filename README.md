@@ -9,11 +9,20 @@
   <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/Itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
+<br>
 
 > [!WARNING]
 > Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
 > <br><br><i>"the source code for undertale is literally just a bunch of rubber bands and tape stuck to a paper saying 'DETERMINATION'."</i><br>— Toby Fox
 
+<br>
+<p>Dumpgame is an UNDERTALE fangame about a Brazilian boy who falls into a portal to a magical world full of weird monsters and oversized children. It was created almost entirely by one person, me, <b>dsansthedsans</b>. Dumpgame's amazing soundtrack was fully composed and arranged by <b>migel8022</b>, who joined me at the very start. Both of us developed our skills as we made the game.</p>
+<h2>Features</h2>
+<ul>
+  <li>weird monsters.</li>
+  <li>oversized children.</li>
+  <li>flying lamps.</li>
+</ul>
 <br>
 <h2>Development History</h2>
 <p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, then started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
