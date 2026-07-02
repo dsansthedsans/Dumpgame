@@ -1,7 +1,7 @@
 <h1>README UNDER CONSTRUCTION !!!!!!<br>ALSO the download of 1.5.0-demo will be available SOON........................................</h1>
 <br>
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
-<h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsans and migel8022</strong></h3>
+<h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsansthedsans and migel8022</strong></h3>
 <p align="center">
   <img src="https://img.shields.io/badge/status-cancelled-white?labelColor=40ff6d" alt="Status">
   <img src="https://img.shields.io/badge/version-1.5.0--demo-white?labelColor=40ff6d" alt="Version">
@@ -12,19 +12,19 @@
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>Dumpgame is an UNDERTALE fangame about a Brazilian boy who falls into a portal to a magical world full of weird monsters and oversized children. It was created almost entirely by one person, me, <b>dsansthedsans</b>. Dumpgame's amazing soundtrack was fully composed and arranged by <b>migel8022</b>, who joined me at the very start. Both of us developed our skills as we made the game.</p>
+<p>Dumpgame is a short UNDERTALE fangame about a Brazilian boy who falls into a portal to a magical world full of weird monsters and oversized children.</p>
 <br>
 
 > [!WARNING]
-> Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
+> Dumpgame's code is TERRIBLE !!!! It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
 > <br><br><i>"the source code for undertale is literally just a bunch of rubber bands and tape stuck to a paper saying 'DETERMINATION'."</i><br>— Toby Fox
 
 <br>
 <h2>Features</h2>
 <ul>
-  <li>weird monsters.</li>
-  <li>oversized children.</li>
-  <li>flying lamps.</li>
+  <li>Original art, story and characters created almost entirely by one person, me, <b>dsansthedsans</b>...!</li>
+  <li>An amazing soundtrack of 50+ songs fully composed and arranged by <b>migel8022</b>!</li>
+  <li>harder than undertale. this is work in progrss.</li>
 </ul>
 <br>
 <h2>Development History</h2>
@@ -53,6 +53,7 @@ leaving the project unfinished.
 An update with almost a year worth of new content since the latest release.
 It simply wasn't juicy enough.
 I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog Systems" series. Without him, Dumpgame's code would've been significantly worse.
+Both of us developed our skills as we made the game.
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
@@ -83,8 +84,8 @@ I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How
 </ul>
 <h4>Contributors & Testers</h4>
 <ul>
-  <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy (two of the most important characters of the game)</i></li>
-  <li>☭Comunista☭<i> 〜 Concept Artist for MEE6 (the most important non-player character of the game)</i></li>
+  <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy (two of the most important non-player characters of the game)</i></li>
+  <li>☭Comunista☭<i> 〜 Concept Art Assistance for MEE6 (the most important non-player character of the game)</i></li>
   <li>fer10tanb<i> 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</i></li>
   <li>NuggetFrango<i> 〜 Accidental Easter Egg Assistance</i></li>
   <li>Babakinha<i> 〜 Programming Assistance</i></li>
