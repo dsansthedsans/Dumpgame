@@ -182,28 +182,28 @@ function TEXTDATA_EN()
 	
 	// rooms
 	ds_map_add(global.textdata_en, "room_corridors_1",			"Fallen Angel");
-	ds_map_add(global.textdata_en, "room_corridors_1_5",		"First Corridor");
+	ds_map_add(global.textdata_en, "room_corridors_1_5",			"First Corridor");
 	ds_map_add(global.textdata_en, "room_corridors_2",			"MEE6's Room");
 	ds_map_add(global.textdata_en, "room_corridors_3",			"Entrance");
-	ds_map_add(global.textdata_en, "room_corridors_3_5",		"Dummy Training Room");
+	ds_map_add(global.textdata_en, "room_corridors_3_5",			"Dummy Training Room");
 	ds_map_add(global.textdata_en, "room_corridors_4",			""); // Save
-	ds_map_add(global.textdata_en, "room_corridors_4_5",		"Rules Book");
+	ds_map_add(global.textdata_en, "room_corridors_4_5",			"Rules Book");
 	ds_map_add(global.textdata_en, "room_corridors_5",			"reCAPTCHA: Stage 1/3");
-	ds_map_add(global.textdata_en, "room_corridors_5_A",		"reCAPTCHA: Stage 1/3");
-	ds_map_add(global.textdata_en, "room_corridors_5_B",		"reCAPTCHA: Stage 1/3");
+	ds_map_add(global.textdata_en, "room_corridors_5_A",			"reCAPTCHA: Stage 1/3");
+	ds_map_add(global.textdata_en, "room_corridors_5_B",			"reCAPTCHA: Stage 1/3");
 	ds_map_add(global.textdata_en, "room_corridors_6",			"reCAPTCHA: Stage 1/3");
 	ds_map_add(global.textdata_en, "room_corridors_7",			"Break Corridor");
 	ds_map_add(global.textdata_en, "room_corridors_8",			"Rat Hole"); // Save
 	ds_map_add(global.textdata_en, "room_corridors_9",			"reCAPTCHA: Stage 2/3");
 	ds_map_add(global.textdata_en, "room_corridors_10",			"reCAPTCHA: Stage 2/3");
-	ds_map_add(global.textdata_en, "room_corridors_11",			""); // Save
-	ds_map_add(global.textdata_en, "room_corridors_12",			"The Clock");
+	ds_map_add(global.textdata_en, "room_corridors_11",			""); // Save // remove <-------------
+	ds_map_add(global.textdata_en, "room_corridors_12",			"Split Corridor"); // Broken Clock
 	ds_map_add(global.textdata_en, "room_corridors_13",			""); // Save
 	ds_map_add(global.textdata_en, "room_corridors_14",			"reCAPTCHA: Stage 3/3");
 	ds_map_add(global.textdata_en, "room_corridors_15",			"reCAPTCHA: Stage 3/3");
 	ds_map_add(global.textdata_en, "room_corridors_16",			"Crossed Paths"); // Save
-	ds_map_add(global.textdata_en, "room_corridors_16_A",		"Cave Entrance");
-	ds_map_add(global.textdata_en, "room_corridors_16_B",		"Subway Entrance");
+	ds_map_add(global.textdata_en, "room_corridors_16_A",			"Cave Entrance");
+	ds_map_add(global.textdata_en, "room_corridors_16_B",			"Subway Entrance");
 	ds_map_add(global.textdata_en, "room_corridors_17",			"Bridged Paths");
 	ds_map_add(global.textdata_en, "room_corridors_18",			"Last Corridor");
 	ds_map_add(global.textdata_en, "room_caverns_1",			"Rock Bottom");

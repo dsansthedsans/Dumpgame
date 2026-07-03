@@ -13,6 +13,9 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"1168aebc-71d9-45d2-a930-51a34d08a4f9","name":"1168aebc-71d9-45d2-a930-51a34d08a4f9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6ef9319f-c5a9-4666-a9a8-df07dc90c187","name":"6ef9319f-c5a9-4666-a9a8-df07dc90c187","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1221203e-346d-48ea-abf0-6272ac29ab4d","name":"1221203e-346d-48ea-abf0-6272ac29ab4d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ef626b09-767e-4acd-a85a-7b58f088bfee","name":"ef626b09-767e-4acd-a85a-7b58f088bfee","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"0c434788-b92d-4fe8-ab38-fe863cb71f80","name":"0c434788-b92d-4fe8-ab38-fe863cb71f80","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":20,
@@ -50,7 +53,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":5.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -73,8 +76,17 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1168aebc-71d9-45d2-a930-51a34d08a4f9","path":"sprites/spr_overworld_tree/spr_overworld_tree.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"b760a934-4a80-44ae-84ff-fa734834b841","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6ef9319f-c5a9-4666-a9a8-df07dc90c187","path":"sprites/spr_overworld_tree/spr_overworld_tree.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b9ad3e44-82f6-4f4d-beb4-b0751258d27f","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1221203e-346d-48ea-abf0-6272ac29ab4d","path":"sprites/spr_overworld_tree/spr_overworld_tree.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d21d14da-c1ec-4e9d-8bd1-910b2fb23fb8","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ef626b09-767e-4acd-a85a-7b58f088bfee","path":"sprites/spr_overworld_tree/spr_overworld_tree.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ac7e40f7-4909-4109-9192-19dea1033b92","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0c434788-b92d-4fe8-ab38-fe863cb71f80","path":"sprites/spr_overworld_tree/spr_overworld_tree.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7f06b9a9-1cf8-499f-a3ba-2316acee08c5","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"7f06b9a9-1cf8-499f-a3ba-2316acee08c5","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
