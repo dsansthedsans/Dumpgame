@@ -43,9 +43,9 @@ if (myid == "monstninja")
 	achievement_id = ACHIEVEMENT_MONSTNINJA;
 	mytype = 0;
 }
-if (myid == "bcwin")
+if (myid == "brockwin")
 {
-	achievement_id = ACHIEVEMENT_BCWIN;
+	achievement_id = ACHIEVEMENT_BROCKWIN;
 	mytype = 0;
 	
 	if (global.chara_murder >= 2)

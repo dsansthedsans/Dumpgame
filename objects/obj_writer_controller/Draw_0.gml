@@ -312,7 +312,6 @@ for (var c = 1; c < (text_length + 1); c++)
 	{
 		var _cur = string_char_at(msg[page], c);
 		var _next = string_char_at(msg[page], (c + 1));
-		
 		if (_cur == "p")
 			letter_xspace += 2;
 		if (_next == "i") || (_cur == "i")
@@ -349,16 +348,14 @@ for (var c = 1; c < (text_length + 1); c++)
 		var _floatx = (sin((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 		var _floaty = (cos((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 	}
-	
 	if (_candraw == 1)
 	{
 		draw_set_valign(fa_top);
 		draw_set_halign(fa_left);
 		draw_set_font(msg_font[page]);
-		
 		draw_set_alpha(alpha);
 		//draw_text_outline(round(_bonusx + text_x), round(_bonusy + text_y), string_char_at(msg[page], c), text_color[0], 1, c_black);
-		draw_text_color((round(_bonusx + text_x + shake_x[c]) + _floatx), (round(_bonusy + text_y + shake_y[c]) + _floaty), string_char_at(msg[page], c), text_color[1], text_color[1], text_color[0], text_color[0], alpha);
+		draw_text_color(((_bonusx + round(text_x + shake_x[c]) + _floatx)), (_bonusy + round(text_y + shake_y[c]) + _floaty), string_char_at(msg[page], c), text_color[1], text_color[1], text_color[0], text_color[0], alpha);
 		text_x += letter_xspace;
 	}
 }
@@ -570,7 +567,7 @@ if (question[page] != "%%%" && writing == 0)
 shake_change = !shake_change;
 draw_set_alpha(1);
 
-if (global.indebug == 1)
+if (global.indebug == 1 && global.debug_hud == true)
 {
 	draw_set_color(c_red);
 	draw_line(text_xend, 0, text_xend, 640);

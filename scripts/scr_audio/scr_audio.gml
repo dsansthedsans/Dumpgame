@@ -25,10 +25,12 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume = 0.75;
 		if (_asset == snd_ambient_wind)
 			_volume *= 0.5;
-		if (_asset == snd_txt_bc)
+		if (_asset == snd_txt_brock)
 			_volume *= 0.75;
 		if (_asset == snd_shock_blt)
 			_volume *= 0.5;
+		if (_asset == snd_blt_launch) || (_asset == snd_blt_launch_reverse)
+			_volume *= 0.75;
 		if (_asset == snd_explosion2)
 			_volume *= 0.25;
 		if (_asset == snd_txt_gabee) || (_asset == snd_txt_dsans)

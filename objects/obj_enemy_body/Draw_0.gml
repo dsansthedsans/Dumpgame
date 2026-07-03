@@ -31,8 +31,8 @@ if (active == 1)
 		// shock
 		shock_x = x;
 		shock_y = (y - (sprite_height / 2) + 8);
-		shock_index += (sprite_get_speed(spr_enemy_bc_shock) / 60);
-		draw_sprite_ext(spr_enemy_bc_shock, shock_index, shock_x, shock_y, image_xscale, image_yscale, image_angle, image_blend, shock_alpha);
+		shock_index += (sprite_get_speed(spr_enemy_brock_shock) / 60);
+		draw_sprite_ext(spr_enemy_brock_shock, shock_index, shock_x, shock_y, image_xscale, image_yscale, image_angle, image_blend, shock_alpha);
 		
 		// body
 		var _xdist = 0;
@@ -42,7 +42,7 @@ if (active == 1)
 		{
 			if (stage == 0)
 			{
-				path_start(path_enemy_bc, 0, path_action_restart, 0);
+				path_start(path_enemy_brock, 0, path_action_restart, 0);
 				otherimage = 1;
 				stage = 1;
 			}
@@ -113,11 +113,6 @@ if (active == 1)
 			}
 			siner += 0.1;
 			vspeed = (sin(siner / (_slow + 1)) * _mult);
-			if (enemy.thiswriter != 0 && exists(enemy.thiswriter) == true)
-			{
-				enemy.thiswriter.bubble_x = (x + (sprite_width / 2) + 12);
-				enemy.thiswriter.bubble_y = (y + 6);
-			}
 		}
 		if (movement == 4) // movement for attack 0
 		{
@@ -181,6 +176,11 @@ if (active == 1)
 				movement = 3;
 			}
 		}
+		if (enemy.thiswriter != 0 && exists(enemy.thiswriter) == true)
+		{
+			enemy.thiswriter.bubble_x = (x + (sprite_width / 2) + 12);
+			enemy.thiswriter.bubble_y = (y + 6);
+		}
 		
 		if (movement == 5) // death movement
 		{
@@ -189,7 +189,7 @@ if (active == 1)
 				vspeed = -4;
 				hspeed = 0.65;
 				gravity = 0.1;
-				sprite_index = spr_enemy_bc_dead;
+				sprite_index = spr_enemy_brock_dead;
 				stage = 1;
 			}
 			else if (stage == 1)
@@ -205,7 +205,7 @@ if (active == 1)
 							var _rd = 5;
 							var _x = (x + irandom_range(-_rd, _rd));
 							var _y = (controller.box_y - (controller.box_h / 2) + 40 + irandom(_rd));
-							marker(_x, _y, spr_enemy_bc_part, 1, 1.5, 1.5, 0, irandom(7), irandom(360), c_white, (depth + 1));
+							marker(_x, _y, spr_enemy_brock_part, 1, 1.5, 1.5, 0, irandom(7), irandom(360), c_white, (depth + 1));
 							part[i] = thismarker;
 							part[i].gravity = 0.075;
 							part[i].vspeed = random_range(-7, -5);
@@ -257,7 +257,7 @@ if (active == 1)
 			var _xsc = (3.5 - explosion_alpha * 1.8 + _rd);
 			var _scy = (3.8 - explosion_alpha * 2 + _rd);
 		
-			draw_sprite_ext(spr_enemy_bc_explosion, 0, x, _yy, _xsc, _scy, 0, c_white, explosion_alpha);
+			draw_sprite_ext(spr_enemy_brock_explosion, 0, x, _yy, _xsc, _scy, 0, c_white, explosion_alpha);
 		
 			explosion_alpha -= 0.0075;
 			if (explosion_alpha <= 0.05)

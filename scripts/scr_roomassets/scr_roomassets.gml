@@ -4,7 +4,7 @@ function room_interact()
 	var r = room;
 	
 	// save point
-	if (r == room_corridors_4 && x == 115 && y == 205) ||  (room == room_corridors_8 && x == 195 && y == 340) || (room == room_corridors_11 && x == 130 && y == 120) || (room == room_corridors_13 && x == 370 && y == 160) || (room == room_corridors_16 && x == 170 && y == 200) || (room == room_caverns_3 && x == 150 && y == 225)
+	if (r == room_corridors_4 && x == 115 && y == 205) ||  (room == room_corridors_8 && x == 195 && y == 340) || (room == room_corridors_11 && x == 170 && y == 90) || (room == unused_room_corridors_11 && x == 130 && y == 120) || (room == room_corridors_13 && x == 370 && y == 160) || (room == room_corridors_16 && x == 170 && y == 200) || (room == room_caverns_3 && x == 150 && y == 225)
 	{
 		text = "savepoint";
 		result = 0.1;
@@ -158,14 +158,25 @@ function room_interact()
 				destroy(id);
 		}
 	}
-	if (room == room_corridors_10 && x == 125 && y == 115)
-		text = "room_chocobowl";
+	if (room == room_corridors_10)
+	{
+		if (x == 125 && y == 115)
+			text = "room_chocobowl";
+		if (x == 140 && y == 60)
+			text = "room_chocosign";
+	}
 	if (room == room_corridors_11)
+	{
+		// sign
+		if (x == 30 && y == 95)
+			text = "room_preclocksign";
+	}
+	if (room == unused_room_corridors_11)
 	{
 		if (x == 470 && y == 175)
 			text = "room_preclocksign";
 	}
-	if (room == room_corridors_12 && x == 150 && y == 60)
+	if (room == unused_room_corridors_12 && x == 150 && y == 60)
 		text = "room_clock";
 	if (room == room_corridors_13)
 	{
@@ -180,7 +191,7 @@ function room_interact()
 		// armsguy
 		if (x == 160 && y == 370)
 		{
-			text = "npc_armsguy_postbc";
+			text = "npc_armsguy_postbrock";
 			sprite_index = spr_npc_armsguy;
 			if (global.flag[38] == 1) || (global.world_curpopulation[WORLD_CORRIDORS] <= 0)
 				destroy(id);
@@ -468,22 +479,34 @@ function room_solid()
 		if (x == -10 && y == 120) || (x == 90 && y == 60) || (x == 250 && y == 60)
 			sprite_index = spr_overworld_lamp;
 	}	
-	if (room == room_corridors_6)
+	if (room == room_corridors_6) || (room == room_corridors_10)
 	{
 		// lamp
 		if (x == 90 && y == 70) || (x == 210 && y == 40) || (x == 290 && y == 80)
 		{
 			sprite_index = spr_overworld_lamp;
-			if (x == 90 && y == 70)
+			if (room == room_corridors_6 && x == 90 && y == 70)
 				image_index = 1;
+			if (room == room_corridors_10 && x == 290 && y == 80)
+				image_index = 2;
 		}
 	
 		// pillar
-		if (x == 150 && y == 85)
+		if (x == 150 && y == 85) || (x == 140 && y == 80 && room == room_corridors_10)
 		{
 			sprite_index = spr_overworld_pillar;
 			image_index = 8;
+			if (room == room_corridors_10)
+			{
+				image_index = 3;
+				if (x == 140 && y == 80)
+					image_index = 4;
+			}
 		}
+		
+		// chocolate bowl
+		if (x == 130 && y == 120 && room == room_corridors_10)
+			sprite_index = spr_overworld_captcha_chocobowl;
 	}
 	if (room == room_corridors_7)
 	{
@@ -564,26 +587,49 @@ function room_solid()
 		if (x == 170 && y == 650)
 			sprite_index = spr_overworld_sign;
 	}
-	if (room == room_corridors_10)
+	if (room == room_corridors_11)
 	{
-		// lamp
-		if (x == 90 && y == 40) || (x == 210 && y == 40)
-			sprite_index = spr_overworld_lamp;
-
-		// pillar
-		if (x == 150 && y == 85) || (x == 140 && y == 80)
+		// sign
+		if (x == 30 && y == 95)
+			sprite_index = spr_overworld_sign;
+		// pillars
+		if (y == 40) || (y == 120) || (y == 130) || (y == 195) || (y == 210)
 		{
 			sprite_index = spr_overworld_pillar;
-			image_index = 3;
-			if (x == 140 && y == 80)
-				image_index = 4;
+			if (y == 195) || (y == 210)
+			{
+				if (x == 405)
+				{
+					image_index = 5;
+					image_xscale = -1;
+				}
+				if (x == 400)
+					image_index = 3;
+				if (x == 580)
+					image_index = 1;
+				if (x == 610)
+				{
+					image_index = 4;
+					image_xscale = -1;
+				}
+			}
 		}
-	
-		// chocolate bowl
-		if (x == 130 && y == 120)
-			sprite_index = spr_overworld_captcha_chocobowl;
+		// lamps
+		if (x == 170 && y == 60) || (x == 810 && y == 90)
+		{
+			sprite_index = spr_overworld_lamp;
+			if (x == 810 && y == 90)
+				image_index = 1;
+		}
+		// bricks
+		if (x == 525 && y == 115) || (x == 445 && y == 135) || (x == 495 && y == 135)
+		{
+			sprite_index = spr_overworld_corridorsbricks;
+			if (x == 525 && y == 115)
+				image_xscale = -1;
+		}
 	}
-	if (room == room_corridors_11)
+	if (room == unused_room_corridors_11)
 	{
 		// lamp
 		if (x == 80 && y == 40) || (x == 220 && y == 40) || (x == 320 && y == 100) || (x == 440 && y == 100)
@@ -604,7 +650,7 @@ function room_solid()
 		if (x == 470 && y == 175)
 			sprite_index = spr_overworld_sign;
 	}
-	if (room == room_corridors_12)
+	if (room == unused_room_corridors_12)
 	{
 		// lamp
 		if (x == 20 && y == 100) || (x == 290 && y == 100) || (x == 90 && y == 40) || (x == 210 && y == 40)
@@ -975,7 +1021,7 @@ function room_nonsolid()
 			sprite_index = spr_overworld_m6_papers;
 		depth = 0;
 	}
-	if (room == room_corridors_12)
+	if (room == unused_room_corridors_12)
 	{
 		// single brick
 		if (x == 100 && y == 120) || (x == 180 && y == 100)

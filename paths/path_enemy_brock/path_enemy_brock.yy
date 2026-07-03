@@ -1,0 +1,25 @@
+{
+  "$GMPath":"",
+  "%Name":"path_enemy_brock",
+  "closed":false,
+  "kind":1,
+  "name":"path_enemy_brock",
+  "parent":{
+    "name":"[!] misc",
+    "path":"folders/[!] misc.yy",
+  },
+  "points":[
+    {"speed":250.0,"x":288.0,"y":224.0,},
+    {"speed":150.0,"x":420.0,"y":183.0,},
+    {"speed":100.0,"x":470.0,"y":224.0,},
+    {"speed":100.0,"x":420.0,"y":265.0,},
+    {"speed":250.0,"x":288.0,"y":224.0,},
+    {"speed":150.0,"x":155.0,"y":183.0,},
+    {"speed":100.0,"x":110.0,"y":224.0,},
+    {"speed":100.0,"x":156.0,"y":265.0,},
+    {"speed":250.0,"x":288.0,"y":224.0,},
+  ],
+  "precision":8,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

@@ -492,7 +492,7 @@ box_h = lerp(box_h, box_nexth, _speed);
 if (abs(box_h - box_nexth) <= _dist)
 	box_h = box_nexth;
 
-if (global.indebug == 1 && battle_won == 0)
+if (global.indebug == 1 && global.debug_hud == true && battle_won == 0)
 {	
 	debug("battle_lvl: " + string(battle_lvl) + " | button_pos: " + string(button_pos) + " | level_pos: " + /*string(level_pos) + " | usedFIGHT: " + string(battle_usedfight) +*/ " | usedACT: " + string(battle_usedact)/* + " | usedITEM: " + string(battle_useditem) + " | usedMERCY: " + string(battle_usedmercy)*/);
 }

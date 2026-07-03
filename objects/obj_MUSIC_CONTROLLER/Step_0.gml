@@ -79,13 +79,13 @@ if (room >= room_corridors_3 && room < room_caverns_1)
 	if (global.chara_murder >= 2)
 		music_set(0, mus_corridors_geno)
 }
-if (room == room_corridors_12) // bc events
+if (room == unused_room_corridors_12) // bc events
 {
 	if (global.flag[37] == 0.25) || (global.flag[37] >= 0.75 && global.flag[39] == 0) || (global.flag[39] == 1 && global.flag[41] == 0)
 		global.music[0] = -1;
 	if (global.flag[37] == 0.5)
 	{
-		music_set(0, mus_bc_prebattle, , , , , , 0);
+		music_set(0, mus_brock_prebattle, , , , , , 0);
 	}
 }
 if (room == room_corridors_16)
@@ -134,7 +134,7 @@ if (room == room_corridors_18) // gabee's chase
 		}
 	}
 }
-if (room >= room_caverns_1)
+if (room >= room_caverns_1 && room <= room_caverns_3)
 {
 	music_set(0, -1);
 	music_set(1, -1);
@@ -147,7 +147,7 @@ if (room >= room_caverns_1)
 		music_set(2, snd_titleimpact, 1.5, 2.5, 1, 0.4, , 5);
 	}
 }
-if (room >= room_caverns_3) // cavernas
+if (room >= room_caverns_3 && room <= room_caverns_3) // cavernas
 {
 	music_set(0, mus_cave);
 	music_set(2, snd_ambient_water, , 2.5, 1, , , 5);	
@@ -187,6 +187,8 @@ if (exists(obj_battle_quicker) == 1) || (room == room_battle)
 	{
 		controller = obj_battle_controller;
 		music_set(3, controller.battle_music, 1, 0, 0, 1, 1, 0.5);
+		if (controller.battle_music == mus_battle_brock)
+			global.music_pitch[3] = 1.05; // 105%
 		if (controller.battle_won == 1) || (controller.fleeing == 1) || (controller.battle_group == 6 && controller.enemy_spare[0] >= 100) || (controller.battle_group == 2000 && controller.enemy_obj[0].flushed == 1)
 		{
 			music_set(3, -2);
@@ -212,14 +214,21 @@ for (var i = 0; i < global.music_length; i++)
 	{
 		// pausar música
 		if (music_paused[i] == 1 && audio_paused(music_audio[i]) == 0)
+		{
 			audio_pause(music_audio[i]);
+			debug($"--- Paused music \"{audio_get_name(audio_sound_get_asset(music_audio[i]))}\"");
+		}
 		// despausar música
 		if (music_paused[i] == 0 && audio_paused(music_audio[i]) == 1)
+		{
 			audio_resume(music_audio[i]);
+			debug($"--- Resumed music \"{audio_get_name(audio_sound_get_asset(music_audio[i]))}\"");
+		}
 	}
 	// parar música
 	if (((global.music[i] <= -1) || (global.music[i] != music_old[i] && music_old[i] > -1)) && music_audio[i] > -1)
 	{
+		debug($"--- Stopping old music \"{audio_get_name(audio_sound_get_asset(music_audio_old[i]))}\"");
 		audio_gain(music_audio_old[i], 0, music_fadeouttime_old[i], 0, music_volumetype_old[i]);
 		var z = 0;
 		while (music_fadingaudio[z] != -1 && z < global.music_length)
@@ -230,7 +239,6 @@ for (var i = 0; i < global.music_length; i++)
 		music_playing[i] = 0;
 		music_fading[i] = 1;
 		music_audio[i] = -1;
-		debug("--- Stopping old music");
 	}
 	// tocar música
 	if (global.music[i] > -1 && music_playing[i] == 0)
@@ -239,7 +247,7 @@ for (var i = 0; i < global.music_length; i++)
 		music_audio[i] = thisaudio;
 		music_playing[i] = 1;
 		music_timeplaying[i] = 0;
-		debug("--- Playing new music");
+		debug($"--- Playing new music \"{audio_get_name(global.music[i])}\"");
 	}
 	else if (music_playing[i] == true && audio_playing(music_audio[i]) == true) // definir volume e pitch
 	{
@@ -253,9 +261,9 @@ for (var i = 0; i < (global.music_length * 2); i++)
 {
 	if (music_fadingaudio[i] != -1 && audio_sound_get_gain(music_fadingaudio[i]) == 0)
 	{
+		debug($"--- Stopped old music \"{audio_get_name(audio_sound_get_asset(music_fadingaudio[i]))}\"");
 		audio_stop(music_fadingaudio[i]);
 		music_fadingaudio[i] = -1;
-		debug("--- Stopped old music");
 	}	
 }
 
@@ -414,7 +422,7 @@ if (exists(obj_battle_quicker) == 0) || (_stop_music_on_quicker == 0)
 			global.music[MUSIC_NORMAL] = -1;
 		if (global.flag[37] == 0.5)
 		{
-			global.music[MUSIC_NORMAL] = mus_bc_prebattle;
+			global.music[MUSIC_NORMAL] = mus_brock_prebattle;
 			global.music_gain[MUSIC_NORMAL] = 0;
 		}
 	}

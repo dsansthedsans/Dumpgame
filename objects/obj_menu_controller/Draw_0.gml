@@ -26,12 +26,12 @@ if (global.menu_lvl == 5)
 			|| (_asset_sprite == spr_m6_sit && (savefile_flag[2] == false || savefile_armor != ITEM_BOWL))
 			|| (_asset_sprite == spr_npc_dummy && (savefile_flag[6] == false || savefile_flag[7] == false))
 			|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && savefile_flag[48] == false)
-			|| (_asset_sprite == spr_npc_bc && (savefile_flag[38] == true || savefile_flag[39] == false))
+			|| (_asset_sprite == spr_npc_brock && (savefile_flag[38] == true || savefile_flag[39] == false))
 				continue;
-			if (_asset_sprite == spr_npc_bc)
+			if (_asset_sprite == spr_npc_brock)
 			{
-				continueback_bcsiner += 0.1;
-				_asset_y += (sin(continueback_bcsiner) * 0.5)*10
+				continueback_brocksiner += 0.1;
+				_asset_y += (sin(continueback_brocksiner) * 0.5)*10
 			}
 		}
 		draw_sprite_ext(_asset_sprite, layer_sprite_get_index(_assets[a]), _asset_x, _asset_y, layer_sprite_get_xscale(_assets[a]), layer_sprite_get_yscale(_assets[a]), layer_sprite_get_angle(_assets[a]), layer_sprite_get_blend(_assets[a]), layer_sprite_get_alpha(_assets[a]));
@@ -116,20 +116,20 @@ if (global.menu_lvl == 7)
 	
 	// nome do jogador
 	draw_set_valign(fa_middle);
-	var _bc = (string_width("brokenclock") / 2);
+	var _brock = (string_width("brokenclock") / 2);
 	
-	draw_sprite_stretched(spr_menu_optbg, 0, round((room_width / 2) - _bc - 44), round((room_height / 2) - 44), round(44 + (_bc * 2) + 44), 88);
+	draw_sprite_stretched(spr_menu_optbg, 0, round((room_width / 2) - _brock - 44), round((room_height / 2) - 44), round(44 + (_brock * 2) + 44), 88);
 	
 	var _underline = "___________";
 	_underline = string_copy(_underline, 0, (11 - string_length(global.chara_name)));
 	
 	draw_set_color(c_gray);
 	draw_set_halign(fa_right);
-	draw_text(((room_width / 2) + _bc), (room_height / 2), _underline);
+	draw_text(((room_width / 2) + _brock), (room_height / 2), _underline);
 	
 	draw_set_halign(fa_left);
 	draw_set_color(global.c_dump);
-	draw_text(((room_width / 2) - _bc), (room_height / 2), global.chara_name);
+	draw_text(((room_width / 2) - _brock), (room_height / 2), global.chara_name);
 	
 	// mensagem secreta
 	if (msg != "")

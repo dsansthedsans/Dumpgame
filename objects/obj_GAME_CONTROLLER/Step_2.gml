@@ -19,7 +19,7 @@ if (exists(chara) == 1 && global.chara_camera_move == 1)
 		cam_spdJump = false;
 	
 	// custom
-	if (room == room_corridors_11)
+	if (room == unused_room_corridors_11)
 	{
 		hstairs = obj_hstairsfloor_controller;
 		if (chara.x < 220 && !(hstairs.active == 1 && hstairs.infloor == 1))

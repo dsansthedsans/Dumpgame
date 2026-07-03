@@ -116,7 +116,7 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "room_corridors_9",		"CAPTCHA (Estágio 2)");
 	ds_map_add(global.textdata_pt, "room_corridors_10",		"Recompensa do CATPCHA (Estágio 2)");
 	ds_map_add(global.textdata_pt, "room_corridors_11",		"Caminho Relaxante");
-	ds_map_add(global.textdata_pt, "room_corridors_12",		"O Relógio");
+	ds_map_add(global.textdata_pt, "unused_room_corridors_12",		"O Relógio");
 	ds_map_add(global.textdata_pt, "room_corridors_13",		"Caminho das Pedras");
 	ds_map_add(global.textdata_pt, "room_corridors_14",		"CAPTCHA (Último Estágio)");
 	ds_map_add(global.textdata_pt, "room_corridors_15",		"Recompensa do CAPTCHA (Último Estágio)");
@@ -237,7 +237,7 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "achievement_desc_m6toy",		"Encontre o boneco escondido do MEE6");
 	ds_map_add(global.textdata_pt, "achievement_desc_sbhelmet",		"Consiga a armadura que cheira a morango");
 	ds_map_add(global.textdata_pt, "achievement_desc_corsparedall", "Poupe todos os inimigos dos Corredores");
-	ds_map_add(global.textdata_pt, "achievement_desc_bcwin",		"Derrote Broken Clock");
+	ds_map_add(global.textdata_pt, "achievement_desc_brockwin",		"Derrote Broken Clock");
 	ds_map_add(global.textdata_pt, "achievement_desc_restart",		"Resete seu arquivo salvo pela primeira vez");
 	
 	// save
@@ -528,52 +528,52 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "room_preclocksign_1", "* \"Está no próximo quarto,^1 vai dar uma olhada!\"");
 	ds_map_add(global.textdata_pt, "room_preclocksign_2", "* \"A não ser que você esteja sem tempo.\"^1&* \"Você poderia só se atrasar.\"");
 	
-	// obj_event_bc_prebattle
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_0_0", "* TU REALMENTE ACHOU QUE EU NÃO IA TE VER?");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_0_1", "* MESMO DEPOIS D()");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_0_2", "* Ei,^1 relógio estúpido!^1&* Você não pode nos prender aqui!");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_0_3", "* CALA A BOCA!!!");
+	// obj_event_brock_prebattle
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_0_0", "* TU REALMENTE ACHOU QUE EU NÃO IA TE VER?");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_0_1", "* MESMO DEPOIS D()");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_0_2", "* Ei,^1 relógio estúpido!^1&* Você não pode nos prender aqui!");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_0_3", "* CALA A BOCA!!!");
 	
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_1_0", "* FINALMENTE SÓ NÓS DOIS.");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_1_1", "* TU PENSA QUE PODE SÓ PASSAR POR MIM E IGNORAR MINHA EXISTÊNCIA?!");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_1_2", "* DEFINITIVAMENTE NÃO,^1 AMIGÃO.");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_1_3", "* NÃO DEPOIS DE TUDO QUE VOCÊS HUMANOS FIZERAM COMIGO.");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_1_4", "* VOCÊ PROVAVELMENTE TÁ SE PERGUNTANDO O QUE EU VOU&FAZER COM VOCÊ.");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_1_5", "* ENTÃO...^1&* APENAS COMO HIPÓTESE...^1&* VAMOS DIZER QUE...");
-	ds_map_add(global.textdata_pt, "event_bc_prebattle_1_6", "* VOCÊ VAI DESCOBRIR EM BREVE...!");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_1_0", "* FINALMENTE SÓ NÓS DOIS.");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_1_1", "* TU PENSA QUE PODE SÓ PASSAR POR MIM E IGNORAR MINHA EXISTÊNCIA?!");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_1_2", "* DEFINITIVAMENTE NÃO,^1 AMIGÃO.");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_1_3", "* NÃO DEPOIS DE TUDO QUE VOCÊS HUMANOS FIZERAM COMIGO.");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_1_4", "* VOCÊ PROVAVELMENTE TÁ SE PERGUNTANDO O QUE EU VOU&FAZER COM VOCÊ.");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_1_5", "* ENTÃO...^1&* APENAS COMO HIPÓTESE...^1&* VAMOS DIZER QUE...");
+	ds_map_add(global.textdata_pt, "event_brock_prebattle_1_6", "* VOCÊ VAI DESCOBRIR EM BREVE...!");
 	
-	// obj_event_bc_postbattle
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_0", "* BOM,^1 OBRIGADO AMIGÃO.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_1", "* EU NÃO QUERIA TE MATAR.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_2", "* EU ACHEI QUE TU QUERIA ME MATAR,^1 OU ALGO ASSIM.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_3", "* DE QUALQUER MANEIRA,^3 TEM ALGO QUE TU PRECISA SABER.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_4", "* DEPOIS QUE ELES INVADIRAM OS CORREDORES,^1 OS LÍDERES CRIARAM UMA REGRA.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_5", "* UMA REGRA HORRÍVEL,^1 NA VERDADE.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_6", "* ELA DIZ QUE TODO NOVO MEMBRO DEVE SER MORTO ANTES DE SAIR DOS CORREDORES.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_7", "* SE TU PISAR PERTO DA ÚLTIMA PORTA,^1 TU PROVAVELMENTE VAI LEVAR UM TIRO.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_8", "* EU VOU TENTAR FALAR COM O GABEE SOBRE TE DEIXAR IR.^1&* MAS NÃO PROMETO NADA.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_9", "* ... GABEE?^1&* ELE É O GUARDIÃO DOS CORREDORES.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_10", "* ELE É O QUE FAZ A REGRA FUNCIONAR.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_11", "* TALVEZ EU POSSA CONVENCER ELE A TE DEIXAR IR PRA CIDADE.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_12", "* E AÍ TU PODE SAIR DO SERVIDOR,^1 SE TU QUISER.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_13", "* BOM,^1 EU DEVERIA IR AGORA.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_14", "* NÃO TEM MUITA COISA PRA EU FAZER AQUI.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_15", "* FOI BOM TE CONHECER,^1 AMIGÃO.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_0_16", "* TE VEJO POR AÍ!!!!");
+	// obj_event_brock_postbattle
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_0", "* BOM,^1 OBRIGADO AMIGÃO.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_1", "* EU NÃO QUERIA TE MATAR.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_2", "* EU ACHEI QUE TU QUERIA ME MATAR,^1 OU ALGO ASSIM.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_3", "* DE QUALQUER MANEIRA,^3 TEM ALGO QUE TU PRECISA SABER.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_4", "* DEPOIS QUE ELES INVADIRAM OS CORREDORES,^1 OS LÍDERES CRIARAM UMA REGRA.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_5", "* UMA REGRA HORRÍVEL,^1 NA VERDADE.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_6", "* ELA DIZ QUE TODO NOVO MEMBRO DEVE SER MORTO ANTES DE SAIR DOS CORREDORES.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_7", "* SE TU PISAR PERTO DA ÚLTIMA PORTA,^1 TU PROVAVELMENTE VAI LEVAR UM TIRO.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_8", "* EU VOU TENTAR FALAR COM O GABEE SOBRE TE DEIXAR IR.^1&* MAS NÃO PROMETO NADA.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_9", "* ... GABEE?^1&* ELE É O GUARDIÃO DOS CORREDORES.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_10", "* ELE É O QUE FAZ A REGRA FUNCIONAR.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_11", "* TALVEZ EU POSSA CONVENCER ELE A TE DEIXAR IR PRA CIDADE.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_12", "* E AÍ TU PODE SAIR DO SERVIDOR,^1 SE TU QUISER.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_13", "* BOM,^1 EU DEVERIA IR AGORA.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_14", "* NÃO TEM MUITA COISA PRA EU FAZER AQUI.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_15", "* FOI BOM TE CONHECER,^1 AMIGÃO.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_0_16", "* TE VEJO POR AÍ!!!!");
 	
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_1_0", "* Onde está aquilo?");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_1_1", "* Para onde aquele relógio foi?");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_1_0", "* Onde está aquilo?");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_1_1", "* Para onde aquele relógio foi?");
 	
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_1_2_0", "* ... O quê?^1&* Você deixou ele ir?");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_1_3_0", "* Isso não foi muito esperto de você.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_1_4_0", "* Ele poderia voltar para matar nós dois.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_1_2_0", "* ... O quê?^1&* Você deixou ele ir?");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_1_3_0", "* Isso não foi muito esperto de você.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_1_4_0", "* Ele poderia voltar para matar nós dois.");
 	
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_1_2_1", "* ... O quê?^1&* Você matou ele?");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_1_3_1", "* Isso é uma surpresa.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_1_4_1", "* Entretanto,^1 uma aceitável,^1 sem dúvidas.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_1_2_1", "* ... O quê?^1&* Você matou ele?");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_1_3_1", "* Isso é uma surpresa.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_1_4_1", "* Entretanto,^1 uma aceitável,^1 sem dúvidas.");
 	
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_2_0_0", "* Vamos apenas continuar.");
-	ds_map_add(global.textdata_pt, "event_bc_postbattle_2_0_1", "* Bom,^1 vamos continuar!");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_2_0_0", "* Vamos apenas continuar.");
+	ds_map_add(global.textdata_pt, "event_brock_postbattle_2_0_1", "* Bom,^1 vamos continuar!");
 	
 	// pulou, aproximou, vem, entra, rastejou, veio, apareceu
 	
@@ -737,134 +737,134 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "battle_act_result_flitcher_2", "* (Você acena para Flitcher.)^1&* (Ele parece...^1 feliz?)");
 
 	// Broken Clock
-	ds_map_add(global.textdata_pt, "battle_main_bc", "* Broken Clock bloqueia seu caminho!");
+	ds_map_add(global.textdata_pt, "battle_main_brock", "* Broken Clock bloqueia seu caminho!");
 	
-	ds_map_add(global.textdata_pt, "battle_main_bc_0", "* Broken Clock está pulsando com eletricidade.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_1", "* Broken Clock está voando na arena.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_2", "* Broken Clock ainda não confia em você.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_3", "* Broken Clock não tem nada a perder além de sua vida.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_4", "* Broken Clock está de alguma maneira quebrando regras de espaço e tempo.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_5", "* Broken Clock descobriu como viajar no tempo.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_6", "* Até Broken Clock está certo duas vezes no dia.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_7", "* Broken Clock é um relógio quebrado.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_8", "* Broken Clock está esperando pela sua resposta.");
-	ds_map_add(global.textdata_pt, "battle_main_bc_9", "* Os movimentos de Broken Clock parecem estar mais lentos.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_0", "* Broken Clock está pulsando com eletricidade.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_1", "* Broken Clock está voando na arena.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_2", "* Broken Clock ainda não confia em você.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_3", "* Broken Clock não tem nada a perder além de sua vida.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_4", "* Broken Clock está de alguma maneira quebrando regras de espaço e tempo.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_5", "* Broken Clock descobriu como viajar no tempo.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_6", "* Até Broken Clock está certo duas vezes no dia.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_7", "* Broken Clock é um relógio quebrado.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_8", "* Broken Clock está esperando pela sua resposta.");
+	ds_map_add(global.textdata_pt, "battle_main_brock_9", "* Os movimentos de Broken Clock parecem estar mais lentos.");
 	
-	ds_map_add(global.textdata_pt, "battle_act_bc_1_0", "Gritar");
-	ds_map_add(global.textdata_pt, "battle_act_bc_2_0", "Falar");
-	ds_map_add(global.textdata_pt, "battle_act_bc_1_1", "Xingar");
-	ds_map_add(global.textdata_pt, "battle_act_bc_2_1", "Ameaçar");
-	ds_map_add(global.textdata_pt, "battle_act_bc_3", "Convencer");
+	ds_map_add(global.textdata_pt, "battle_act_brock_1_0", "Gritar");
+	ds_map_add(global.textdata_pt, "battle_act_brock_2_0", "Falar");
+	ds_map_add(global.textdata_pt, "battle_act_brock_1_1", "Xingar");
+	ds_map_add(global.textdata_pt, "battle_act_brock_2_1", "Ameaçar");
+	ds_map_add(global.textdata_pt, "battle_act_brock_3", "Convencer");
 	
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_0_0_0", "* Broken Clock - [10 ATK | 6 DEF]^1&* Um relógio permanentemente possuído por um fantasma.");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_0_1_0", "* Ele ainda não confia em você.^1 &* Ele está com medo e quer apenas sobreviver.");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_0_0_1", ds_map_find_value(global.textdata_pt, "battle_act_result_bc_0_0_0"));
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_0_1_1", "* Ele não pode voar para sempre.^1&* Ele vai se cansar em algum momento.");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_0_0_0", "* Broken Clock - [10 ATK | 6 DEF]^1&* Um relógio permanentemente possuído por um fantasma.");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_0_1_0", "* Ele ainda não confia em você.^1 &* Ele está com medo e quer apenas sobreviver.");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_0_0_1", ds_map_find_value(global.textdata_pt, "battle_act_result_brock_0_0_0"));
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_0_1_1", "* Ele não pode voar para sempre.^1&* Ele vai se cansar em algum momento.");
 	
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_1_0_0", "* (Você grita por ajuda,^1 implorando que alguém te escute...)");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_1_1_0", "* (Mas ninguém veio.)");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_1_0_1", "* (Você xinga Broken Clock...)");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_1_1_1", "* (Ele riu.)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_1_0_0", "* (Você grita por ajuda,^1 implorando que alguém te escute...)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_1_1_0", "* (Mas ninguém veio.)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_1_0_1", "* (Você xinga Broken Clock...)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_1_1_1", "* (Ele riu.)");
 	
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_2_0_0", "* (Você tenta falar com Broken Clock...)");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_2_1_0", "* (Ele te ignorou.)");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_2_0_1", "* (Você ameaça Broken Clock...)");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_2_1_1", ds_map_find_value(global.textdata_pt, "battle_act_result_bc_2_1_0"));
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_2_0_0", "* (Você tenta falar com Broken Clock...)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_2_1_0", "* (Ele te ignorou.)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_2_0_1", "* (Você ameaça Broken Clock...)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_2_1_1", ds_map_find_value(global.textdata_pt, "battle_act_result_brock_2_1_0"));
 	
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_3_0_0", "* (Você diz que você está perdido e que não sabe do que ele está falando.)");
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_3_0_1", "* (Você diz o que Broken Clock quer ouvir.)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_3_0_0", "* (Você diz que você está perdido e que não sabe do que ele está falando.)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_3_0_1", "* (Você diz o que Broken Clock quer ouvir.)");
 	
-	ds_map_add(global.textdata_pt, "battle_act_result_bc_convinced", "* (Isso não importa mais.)");
+	ds_map_add(global.textdata_pt, "battle_act_result_brock_convinced", "* (Isso não importa mais.)");
 
 		// bubble
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_0_0_0", "SABE O QUE EU MAIS ODEIO?");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_0_1_0", "VOCÊ.^1 HUMANOS.^1 TODOS VOCÊS.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_0_0_0", "SABE O QUE EU MAIS ODEIO?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_0_1_0", "VOCÊ.^1 HUMANOS.^1 TODOS VOCÊS.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_1_0_0", "OS HUMANOS SÃO TODOS IGUAIS.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_1_1_0", "ELES NÃO SE IMPORTAM COM NADA OU NINGUÉM.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_1_2_0", "TUDO QUE ELES QUEREM É PODER,^1 DINHEIRO,^1 FAMA&OU SEI LÁ.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_1_0_0", "OS HUMANOS SÃO TODOS IGUAIS.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_1_1_0", "ELES NÃO SE IMPORTAM COM NADA OU NINGUÉM.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_1_2_0", "TUDO QUE ELES QUEREM É PODER,^1 DINHEIRO,^1 FAMA&OU SEI LÁ.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_2_0_0", "SE EU FOSSE CHUTAR,^1 EU DIRIA QUE TU É IGUAL A ELES.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_2_1_0", "TU REALMENTE ACHA QUE EU VOU TE POUPAR DESSE JEITO?");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_2_2_0", "ASSIM,^1 SE EU QUISESSE MORRER,^1 TALVEZ.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_2_0_0", "SE EU FOSSE CHUTAR,^1 EU DIRIA QUE TU É IGUAL A ELES.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_2_1_0", "TU REALMENTE ACHA QUE EU VOU TE POUPAR DESSE JEITO?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_2_2_0", "ASSIM,^1 SE EU QUISESSE MORRER,^1 TALVEZ.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_3_0_0", "DEIXA EU TE DAR UM EXEMPLO REAL.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_3_1_0", "QUATRO NOVOS MEMBROS APARECERAM E DESTRUÍRAM OS CORREDORES.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_3_2_0", "E SE ISSO NÃO FOSSE SUFICIENTE,^1 ELES ME QUEBRARAM.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_3_3_0", "SEM UM PINGO DE REMORSO!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_3_0_0", "DEIXA EU TE DAR UM EXEMPLO REAL.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_3_1_0", "QUATRO NOVOS MEMBROS APARECERAM E DESTRUÍRAM OS CORREDORES.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_3_2_0", "E SE ISSO NÃO FOSSE SUFICIENTE,^1 ELES ME QUEBRARAM.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_3_3_0", "SEM UM PINGO DE REMORSO!");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_4_0_0", "AÍ OS LÍDERES DESSE MUNDO ABANDORAM ESSE LUGAR.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_4_1_0", "OS CORREDORES TAVAM DESTRUÍDOS E QUASE INÚTEIS.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_4_2_0", "AQUELES NOVOS MEMBROS SÓ QUEBRARAM O QUE A GENTE TINHA!");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_4_3_0", "E ENTÃO TU QUER QUE EU TE POUPE,^1 AMIGÃO?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_4_0_0", "AÍ OS LÍDERES DESSE MUNDO ABANDORAM ESSE LUGAR.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_4_1_0", "OS CORREDORES TAVAM DESTRUÍDOS E QUASE INÚTEIS.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_4_2_0", "AQUELES NOVOS MEMBROS SÓ QUEBRARAM O QUE A GENTE TINHA!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_4_3_0", "E ENTÃO TU QUER QUE EU TE POUPE,^1 AMIGÃO?");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_5_0_0", "ISSO NÃO FARIA MUITO SENTIDO,^1 NÉ?");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_5_1_0", "TU DEVERIA ESTAR FELIZ QUE EU NÃO FIZ A COISA CERTA.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_5_2_0", "PORQUE DIFERENTE DE VOCÊ,^1 EU NÃO SOU UM ASSASSINO.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_5_0_0", "ISSO NÃO FARIA MUITO SENTIDO,^1 NÉ?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_5_1_0", "TU DEVERIA ESTAR FELIZ QUE EU NÃO FIZ A COISA CERTA.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_5_2_0", "PORQUE DIFERENTE DE VOCÊ,^1 EU NÃO SOU UM ASSASSINO.");
 
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_0_0", "NA VERDADE,^1 EU TENHO UMA IDEIA.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_1_0", "EU VOU TE DAR UMA CHANCE.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_2_0", "TENTA ME CONVENCER A TE DEIXAR IR.^1&EU DUVIDO.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_3_0", "VAMOS VER SE TU TEM A ALMA PURA QUE TU DIZ TER.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_0_0", "NA VERDADE,^1 EU TENHO UMA IDEIA.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_1_0", "EU VOU TE DAR UMA CHANCE.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_2_0", "TENTA ME CONVENCER A TE DEIXAR IR.^1&EU DUVIDO.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_3_0", "VAMOS VER SE TU TEM A ALMA PURA QUE TU DIZ TER.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_fight_0_0", "QUE?^1 TU REALMENTE TENTOU ME BATER?!");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_fight_1_0", "TU É CEGO?^1&;RTU NÃO CONSEGUE ME ACERTAR ENQUANTO EU TO VOANDO;D.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_fight_2_0", "NÃO COM ESSA ARMA PODRE QUE TU TÁ USANDO.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_fight_0_0", "QUE?^1 TU REALMENTE TENTOU ME BATER?!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_fight_1_0", "TU É CEGO?^1&;RTU NÃO CONSEGUE ME ACERTAR ENQUANTO EU TO VOANDO;D.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_fight_2_0", "NÃO COM ESSA ARMA PODRE QUE TU TÁ USANDO.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince0_0_0", "ALÔ?^1 TEM ALGUÉM EM CASA?");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince0_1_0", "EU ACABEI DE FALAR QUE TU PODE TENTAR ME CONVENCER.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince0_0_0", "ALÔ?^1 TEM ALGUÉM EM CASA?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince0_1_0", "EU ACABEI DE FALAR QUE TU PODE TENTAR ME CONVENCER.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince1_0_0", "TU É LOUCO OU SÓ MUITO BURRO?!");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince1_1_0", "TU PODE TENTAR ME CONVENCER.^1 AGORA.^1&NO ;R[AGIR];D.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince1_2_0", "AÍ TALVEZ EU TE DEIXE IR.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince1_0_0", "TU É LOUCO OU SÓ MUITO BURRO?!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince1_1_0", "TU PODE TENTAR ME CONVENCER.^1 AGORA.^1&NO ;R[AGIR];D.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince1_2_0", "AÍ TALVEZ EU TE DEIXE IR.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince2_0_0", "TÁ FALANDO SÉRIO...?");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince2_1_0", "EU REALMENTE ACHEI QUE TU FOSSE UM DELES.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince2_2_0", "E QUE TU QUISESSE ME MATAR.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince2_3_0", "É...^2&ACHO QUE EU ERREI.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince2_4_0", "EU VOU TE POUPAR AGORA,^1 TÁ?");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince2_5_0", "ME DESCULPA.^1&DE VERDADE.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince2_6_0", "OUTRA COISA,^1 O&MEE6 PROVAVELMENTE TÁ VIVO.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_convince2_7_0", "TU NÃO PRECISA SE PREOCUPAR COM ELE.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince2_0_0", "TÁ FALANDO SÉRIO...?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince2_1_0", "EU REALMENTE ACHEI QUE TU FOSSE UM DELES.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince2_2_0", "E QUE TU QUISESSE ME MATAR.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince2_3_0", "É...^2&ACHO QUE EU ERREI.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince2_4_0", "EU VOU TE POUPAR AGORA,^1 TÁ?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince2_5_0", "ME DESCULPA.^1&DE VERDADE.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince2_6_0", "OUTRA COISA,^1 O&MEE6 PROVAVELMENTE TÁ VIVO.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_convince2_7_0", "TU NÃO PRECISA SE PREOCUPAR COM ELE.");
 	
 		// bubble (geno)
 	for (var i = 0; i < 2; i++)
 	{
 		for (var z = 0; z < 99; z++)
 		{
-			var _curmsg = ds_map_find_value(global.textdata_pt, "battle_bubble_bc_" + string(i) + "_" + string(z) + "_0");
+			var _curmsg = ds_map_find_value(global.textdata_pt, "battle_bubble_brock_" + string(i) + "_" + string(z) + "_0");
 			if (_curmsg != undefined)
-				ds_map_add(global.textdata_pt, "battle_bubble_bc_" + string(i) + "_" + string(z) + "_1", _curmsg);
+				ds_map_add(global.textdata_pt, "battle_bubble_brock_" + string(i) + "_" + string(z) + "_1", _curmsg);
 		}
 	}
 
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_2_0_1", "E VOCÊ É UM EXEMPLO PERFEITO DELES.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_2_1_1", "POR QUE TU IA FAZER TUDO ISSO,^1 AFINAL?");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_2_2_1", "PORQUE TU É UM PSICOPATA.^3&ESSE É O PORQUÊ.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_2_0_1", "E VOCÊ É UM EXEMPLO PERFEITO DELES.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_2_1_1", "POR QUE TU IA FAZER TUDO ISSO,^1 AFINAL?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_2_2_1", "PORQUE TU É UM PSICOPATA.^3&ESSE É O PORQUÊ.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_3_0_1", "VOCÊ É O PIOR DE TODOS ELES.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_3_1_1", "ELES NÃO IRIAM MATAR TODO MUNDO SÓ PRA SE SENTIR BEM.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_3_2_1", "MAS MESMO ASSIM,^1 AQUI ESTAMOS NÓS.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_3_0_1", "VOCÊ É O PIOR DE TODOS ELES.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_3_1_1", "ELES NÃO IRIAM MATAR TODO MUNDO SÓ PRA SE SENTIR BEM.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_3_2_1", "MAS MESMO ASSIM,^1 AQUI ESTAMOS NÓS.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_4_0_1", "EU ACHO QUE TU SÓ&É UMA ABERRAÇÃO,^1 MESMO.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_4_1_1", "NÃO SÓ UMA ABERRAÇÃO,^1 MAS UM IDIOTA TAMBÉM.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_4_2_1", "TU REALMENTE ACHA QUE ESSE GENOCÍDIO VAI FUNCIONAR?!");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_4_3_1", "É PORQUE TU AINDA NÃO CONHECEU OS HUMANOS LÁ FORA.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_4_0_1", "EU ACHO QUE TU SÓ&É UMA ABERRAÇÃO,^1 MESMO.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_4_1_1", "NÃO SÓ UMA ABERRAÇÃO,^1 MAS UM IDIOTA TAMBÉM.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_4_2_1", "TU REALMENTE ACHA QUE ESSE GENOCÍDIO VAI FUNCIONAR?!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_4_3_1", "É PORQUE TU AINDA NÃO CONHECEU OS HUMANOS LÁ FORA.");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_5_0_1", "TU AINDA TEM T-TEMPO PRA PARAR ISSO.^1 DE VERDADE.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_5_1_1", "EU POSSO ESQUECER T-TUDO ISSO E TE DEIXAR IR.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_5_2_1", "M-MAS TU NÃO VAI FAZER ISSO,^1 VAI?!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_5_0_1", "TU AINDA TEM T-TEMPO PRA PARAR ISSO.^1 DE VERDADE.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_5_1_1", "EU POSSO ESQUECER T-TUDO ISSO E TE DEIXAR IR.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_5_2_1", "M-MAS TU NÃO VAI FAZER ISSO,^1 VAI?!");
 
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_0_1", "O-OLHA...^1&E-EU NÃO QUERO TE MATAR.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_1_1", "ESPECIALMENTE S-SE EU TINHA A CHANCE DE N-NÃO TER QUE FAZER ISSO.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_2_1", "E EU TÔ MUITO C-CANSADO PRA CONTINUAR B-BATALHANDO.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_3_1", "P-POR FAVOR,^1 HUMANO.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_4_1", "SÓ ME POUPA E E-EU TE DEIXO IR.");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_6_5_1", "S-SEM RESSENTIMENTOS,^1 NÉ?");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_0_1", "O-OLHA...^1&E-EU NÃO QUERO TE MATAR.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_1_1", "ESPECIALMENTE S-SE EU TINHA A CHANCE DE N-NÃO TER QUE FAZER ISSO.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_2_1", "E EU TÔ MUITO C-CANSADO PRA CONTINUAR B-BATALHANDO.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_3_1", "P-POR FAVOR,^1 HUMANO.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_4_1", "SÓ ME POUPA E E-EU TE DEIXO IR.");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_6_5_1", "S-SEM RESSENTIMENTOS,^1 NÉ?");
 	
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_fight_0_1", "O QUÊ?!");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_fight_1_1", "TU REALMENTE ACHOU QUE SERIA FÁCIL PRA ME MATAR?!");
-	ds_map_add(global.textdata_pt, "battle_bubble_bc_fight_2_1", ";RTU NÃO PODE ME ACERTAR ENQUANDO EU TO VOANDO;D,^1 IDIOTA!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_fight_0_1", "O QUÊ?!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_fight_1_1", "TU REALMENTE ACHOU QUE SERIA FÁCIL PRA ME MATAR?!");
+	ds_map_add(global.textdata_pt, "battle_bubble_brock_fight_2_1", ";RTU NÃO PODE ME ACERTAR ENQUANDO EU TO VOANDO;D,^1 IDIOTA!");
 	
 	// Armsguy, Armsguy battle
 	ds_map_add(global.textdata_pt, "battle_main_armsguy_armsguy", "* Uma dupla de Armsguys pulou em seu caminho!");

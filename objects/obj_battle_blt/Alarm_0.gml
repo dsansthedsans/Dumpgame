@@ -257,7 +257,7 @@ if (type == 6.1)
 }
 if (type == 6.3)
 {
-	sprite_index = spr_enemy_bc_body;
+	sprite_index = spr_enemy_brock_body;
 	image_alpha = 0;
 	outside_box = 1;
 	destroy_on_impact = 0;

@@ -48,7 +48,7 @@ if (text_length <= (string_length(msg[page]) - 1))
 			audio_play(msg_sound[page], 0, VOLUME_SOUND);
 		playsnd = !playsnd;
 			
-		if (global.indebug == 1)
+		if (global.indebug == 1 && global.debug_hud == true)
 			debug("writer_sound (" + string(text_length) + ")");
 	}
 	

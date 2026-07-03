@@ -34,8 +34,6 @@ function battle_getgroup()
 	if (global.battle_nextgroup != 0) // override battlegroup with nextgroup
 		battle_group = global.battle_nextgroup;
 	global.battle_nextgroup = 0;
-	if (global.indebug == true)
-		battle_group = 6;
 }
 function battle_setupgroup()
 {
@@ -123,9 +121,9 @@ function battle_setupgroup()
 	if (battle_group == 6) // Broken Clock
 	{
 		battle_flee = 0;
-		battle_music = mus_battle_bc;
+		battle_music = mus_battle_brock;
 		enemy_type[0] = 6;
-		enemy_obj[0] = instance_create_layer((defaultx[0] + sprite_get_width(spr_enemy_bc_body)), (room_height / 2), "Instances", obj_enemy_bc);
+		enemy_obj[0] = instance_create_layer((defaultx[0] + sprite_get_width(spr_enemy_brock_body)), (room_height / 2), "Instances", obj_enemy_brock);
 	}
 	
 	if (battle_group == 7) // Armsguy, Armsguy
@@ -314,9 +312,9 @@ function battle_enemy()
 				enemy_def[i] = 1000;
 				enemy_reward_exp[i] = 15;
 				enemy_reward_mny[i] = 10;
-				enemy_act[i, 1] = get_text("battle_act_bc_1");
-				enemy_act[i, 2] = get_text("battle_act_bc_2");
-				enemy_act[i, 3] = get_text("battle_act_bc_3");
+				enemy_act[i, 1] = get_text("battle_act_brock_1");
+				enemy_act[i, 2] = get_text("battle_act_brock_2");
+				enemy_act[i, 3] = get_text("battle_act_brock_3");
 				enemy_obj[i].hurtsound = snd_enemy_hurt5;
 			}
 			
@@ -440,7 +438,7 @@ function battle_getattack()
 		heart_nextx = box_nextx;
 	if (heart_nexty == -1)
 		heart_nexty = box_nexty;
-	if (global.indebug == 1)
+	if (global.indebug == 1 && global.debug_hud == true)
 		battle_turntime = 0;
 }
 function battle_attack()

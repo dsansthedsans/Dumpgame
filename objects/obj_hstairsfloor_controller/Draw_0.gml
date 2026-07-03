@@ -61,7 +61,7 @@ if (active == 0
 		floor_x = 580;
 		floor_y = 180;
 	}
-	if (room == room_corridors_11)
+	if (room == unused_room_corridors_11)
 	{
 		wall[0, 0] = obj_solid_stairs_lu;
 		wall_x[0, 0] = 220;

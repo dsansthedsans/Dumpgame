@@ -27,6 +27,6 @@ for (var i = 0; i < 2; i++)
 {
 	text_visible[i] = string_replace_all(text[i], ";S", "");
 	text_visible[i] = string_replace_all(text_visible[i], ";D", "");
-	debug("--- obj_tutorial_controller | text[" + string(i) + "]:			" + string(text[i]));
-	debug("--- obj_tutorial_controller | text_visible[" + string(i) + "]:	" + string(text_visible[i]));
+	debug("--- [obj_tutorial_controller] text[" + string(i) + "]:			" + string(text[i]));
+	debug("--- [obj_tutorial_controller] text_visible[" + string(i) + "]:	" + string(text_visible[i]));
 }

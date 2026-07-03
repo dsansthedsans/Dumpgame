@@ -25,7 +25,7 @@ if (type >= 2 && type <= 5) // Armsguy, Trashguy, Flitcher, Eyecrush
 
 if (type == 6) // Broken Clock
 {
-	sprite_index = spr_enemy_bc_body;
+	sprite_index = spr_enemy_brock_body;
 	otherimage = 1;
 	
 	shock_x = 0;
@@ -33,7 +33,7 @@ if (type == 6) // Broken Clock
 	shock_index = 0;
 	shock_alpha = 1;
 	
-	line_spr = spr_enemy_bc_line;
+	line_spr = spr_enemy_brock_line;
 	for (var i = 0; i < 3; i++)
 	{
 		line_amt[i] = random_range(0.1, 0.5);

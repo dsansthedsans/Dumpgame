@@ -26,6 +26,7 @@ function START_GAME()
 	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- ", 0, 0);
 	global.fnt_dsans = font_add_sprite_ext(spr_fnt_dsans, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
+	global.debug_hud = false;
 	
 		// notification
 	for (var i = 0; i < 10; i++)
@@ -491,7 +492,7 @@ function start_achievements()
 	#macro ACHIEVEMENT_SBHELMET		1
 	#macro ACHIEVEMENT_MONSTNINJA	2
 	#macro ACHIEVEMENT_MONSTGENO1	3
-	#macro ACHIEVEMENT_BCWIN		4
+	#macro ACHIEVEMENT_BROCKWIN		4
 	#macro ACHIEVEMENT_PUZZLEMASTER 5
 	#macro ACHIEVEMENT_MONSTGENO2	6
 	#macro ACHIEVEMENT_NOTREALONE	7
@@ -550,9 +551,9 @@ function CHANGE_GAME()
 	if (_change == 1)
 	{
 		global.chara_name = "CRAZYCAT";
+		global.indebug = true;
 		load_time = 1;
-		
-		var _rm = room_gameover;
+		var _rm = room_corridors_11;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -592,15 +593,12 @@ function CHANGE_GAME()
 			// definir flags baseado de onde o jogo vai começar
 			if (_lvl >= 1)
 			{
-				global.flag[0] = 0; // finished getting up event
-			
-				var _sublvl = 0;
+				global.flag[0] = true; // finished getting up event
 				if (_rm >= room_corridors_2)
-					_sublvl = 1;
-				if (_sublvl == 1)
 				{
 					global.flag[64] = 1;
-					global.flag[65] = 1;	
+					global.flag[65] = 1;
+					global.flag[66] = 1;
 				}
 			}
 			if (_lvl >= 2)
@@ -608,14 +606,6 @@ function CHANGE_GAME()
 				global.flag[1] = 1; // finished first MEE6's event
 				global.flag[2] = 1; // has MEE6 as side character
 				global.flag[3] = 1; // left room_corridors_2 after MEE6's event
-			
-				var _sublvl = 0;
-				if (_sublvl == 1) // post-dummy
-				{
-					global.flag[4] = 1; // finished MEE6's pre-dummy event
-					global.flag[5] = 1; // MEE6's pre-dummy question result
-					global.flag[6] = 1; // started Dummy's battle
-				}
 			}
 			if (_lvl >= 3)
 			{
@@ -675,7 +665,7 @@ function CHANGE_GAME()
 				global.flag[39] = 1; // finished Broken Clock's event
 				global.flag[41] = 1; // left room_corridors_12 after Broken Clock's battle
 			
-				global.achievement[ACHIEVEMENT_BCWIN] = 1;
+				global.achievement[ACHIEVEMENT_BROCKWIN] = 1;
 			}
 			if (_lvl >= 7)
 			{
@@ -717,8 +707,6 @@ function CHANGE_GAME()
 				global.flag[62] = 1;
 				global.flag[63] = 1;
 			}
-			
-			global.chara_deaths = 1;
 		}
 	}	
 }
@@ -738,7 +726,7 @@ function ACHIEVEMENTS_START()
 	
 	#macro ACHIEVEMENT_M6TOY 0
 	#macro ACHIEVEMENT_CORSPAREDALL 1
-	#macro ACHIEVEMENT_BCWIN 2
+	#macro ACHIEVEMENT_BROCKWIN 2
 	#macro ACHIEVEMENT_RESTART 3
 	
 	
@@ -750,9 +738,9 @@ function ACHIEVEMENTS_START()
 	global.achievement_desc[ACHIEVEMENT_CORSPAREDALL] = get_text("achievement_desc_corsparedall");
 	global.achievement_image[ACHIEVEMENT_CORSPAREDALL] = 2;
 	
-	global.achievement_name[ACHIEVEMENT_BCWIN] = "Ran Out Of Time";
-	global.achievement_desc[ACHIEVEMENT_BCWIN] = get_text("achievement_desc_bcwin");
-	global.achievement_image[ACHIEVEMENT_BCWIN] = 1;
+	global.achievement_name[ACHIEVEMENT_BROCKWIN] = "Ran Out Of Time";
+	global.achievement_desc[ACHIEVEMENT_BROCKWIN] = get_text("achievement_desc_brockwin");
+	global.achievement_image[ACHIEVEMENT_BROCKWIN] = 1;
 	
 	global.achievement_name[ACHIEVEMENT_RESTART] = "Here We Go Again";
 	global.achievement_desc[ACHIEVEMENT_RESTART] = get_text("achievement_desc_restart");
@@ -762,7 +750,7 @@ function ACHIEVEMENTS_START()
 	#macro ACHIEVEMENT_M6TOY 0
 	#macro ACHIEVEMENT_CORALLMONST 1
 	#macro ACHIEVEMENT_CORSPAREDALL 2
-	#macro ACHIEVEMENT_BCWIN 3
+	#macro ACHIEVEMENT_BROCKWIN 3
 	#macro ACHIEVEMENT_NOTREAL 4
 	#macro ACHIEVEMENT_REALONE 5
 	#macro ACHIEVEMENT_GBWIN 6
@@ -782,9 +770,9 @@ function ACHIEVEMENTS_START()
 	global.achievement_desc[ACHIEVEMENT_CORSPAREDALL] = "Spare all the monsters from the Corridors";
 	global.achievement_image[ACHIEVEMENT_CORSPAREDALL] = 2;
 	
-	global.achievement_name[ACHIEVEMENT_BCWIN] = "Ran Out Of Time";
-	global.achievement_desc[ACHIEVEMENT_BCWIN] = "Defeat Broken Clock";
-	global.achievement_image[ACHIEVEMENT_BCWIN] = 3;
+	global.achievement_name[ACHIEVEMENT_BROCKWIN] = "Ran Out Of Time";
+	global.achievement_desc[ACHIEVEMENT_BROCKWIN] = "Defeat Broken Clock";
+	global.achievement_image[ACHIEVEMENT_BROCKWIN] = 3;
 	
 	global.achievement_name[ACHIEVEMENT_NOTREAL] = "Not The Real One";
 	global.achievement_desc[ACHIEVEMENT_NOTREAL] = "Enter in a battle with a monster sent to kill you";
@@ -1097,7 +1085,7 @@ function ACHIEVEMENTS_START()
 	#macro ACHIEVEMENT_M6TOY 0
 	#macro ACHIEVEMENT_CORALLMONST 1
 	#macro ACHIEVEMENT_CORSPAREDALL 2
-	#macro ACHIEVEMENT_BCWIN 3
+	#macro ACHIEVEMENT_BROCKWIN 3
 	#macro ACHIEVEMENT_NOTREAL 4
 	#macro ACHIEVEMENT_REALONE 5
 	#macro ACHIEVEMENT_GBWIN 6
@@ -1117,9 +1105,9 @@ function ACHIEVEMENTS_START()
 	global.achievement_desc[ACHIEVEMENT_CORSPAREDALL] = "Spare all the monsters from the Corridors";
 	global.achievement_image[ACHIEVEMENT_CORSPAREDALL] = 2;
 	
-	global.achievement_name[ACHIEVEMENT_BCWIN] = "Ran Out Of Time";
-	global.achievement_desc[ACHIEVEMENT_BCWIN] = "Defeat Broken Clock";
-	global.achievement_image[ACHIEVEMENT_BCWIN] = 3;
+	global.achievement_name[ACHIEVEMENT_BROCKWIN] = "Ran Out Of Time";
+	global.achievement_desc[ACHIEVEMENT_BROCKWIN] = "Defeat Broken Clock";
+	global.achievement_image[ACHIEVEMENT_BROCKWIN] = 3;
 	
 	global.achievement_name[ACHIEVEMENT_NOTREAL] = "Not The Real One";
 	global.achievement_desc[ACHIEVEMENT_NOTREAL] = "Enter in a battle with a monster sent to kill you";
