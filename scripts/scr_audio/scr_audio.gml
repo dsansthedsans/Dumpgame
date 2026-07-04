@@ -14,7 +14,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_bird_startfly)
 			_volume /= 2;
 		if (_asset == snd_step1) || (_asset == snd_step2)
-			_volume /= 2;
+			_volume *= 0.5;
 		if (_asset == snd_txt_m6)
 			_volume *= 0.75 + 0.125;
 		if (_asset == snd_surprise)

@@ -36,9 +36,6 @@ function settings_write()
 		file_text_write_real(_file, global.drpenabled);
 		file_text_writeln(_file);
 	
-		file_text_write_real(_file, global.bloodgore);
-		file_text_writeln(_file);
-	
 		file_text_write_real(_file, global.fastmenu);
 		file_text_writeln(_file);
 	
@@ -97,9 +94,6 @@ function settings_read()
 	file_text_readln(_file);
 	
 	global.drpenabled = file_text_read_real(_file);
-	file_text_readln(_file);
-	
-	global.bloodgore = file_text_read_real(_file);
 	file_text_readln(_file);
 	
 	global.fastmenu = file_text_read_real(_file);

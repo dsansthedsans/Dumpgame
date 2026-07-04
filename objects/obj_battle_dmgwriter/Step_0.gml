@@ -17,3 +17,5 @@ if (y > ystart)
 	vspeed = 0;
 	gravity = 0;
 }
+
+debug("i want a wife.");

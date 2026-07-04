@@ -15,11 +15,3 @@ if (drp == 1)
 }
 else
 	debug("--- obj_DRP_CONTROLLER: Failed to activate Discord RPC");
-
-
-
-/*
-drp = 0;
-failed = 0;
-alarm[0] = 60;
-*/

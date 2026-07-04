@@ -102,6 +102,7 @@ for (var i = 0; i < enemy_length; i++)
 }
 
 battle_getgroup();
+create(0, 0, obj_battle_bg);
 battle_setupgroup();
 battle_enemy();
 
@@ -121,7 +122,6 @@ level_curbarcolor[1] = c_yellow;
 level_maxbarcolor[0] = #DD2929;
 level_maxbarcolor[1] = #B24A00//#CC6600;
 
-create(0, 0, obj_battle_bg);
 create(-20, -20, obj_battle_fadein);
 if ((enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0) == false)
 	writer("battle_main", -1, -1);

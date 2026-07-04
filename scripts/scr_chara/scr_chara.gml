@@ -560,7 +560,8 @@ function chara_hp(_amt)
 }
 function chara_stepping()
 {
-	var s = 0;
+	stepplay = 1;
+	stepvolume = 1;
 	if (global.chara_murder >= 2)
 	|| (room == room_corridors_1_5)
 	|| (room == room_corridors_2)
@@ -569,9 +570,7 @@ function chara_stepping()
 	|| (room >= room_caverns_1)
 	|| (room >= room_caverns_2 && room <= room_caverns_3)
 	|| (inwater == 1)
-		s = 1;
-	
-	return s;
+		stepvolume *= 1.5;
 }
 
 // unused

@@ -465,7 +465,6 @@ function start_settings()
 	global.showsw = 0;
 	global.hidenotif = 0;
 	global.drpenabled = 1;
-	global.bloodgore = 1;
 	global.fastmenu = 0;
 	
 	#macro VOLUME_MASTER 0

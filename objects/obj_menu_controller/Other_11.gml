@@ -18,8 +18,7 @@ option_key[2, 9] = get_text("menu_key_2_" + string(global.showfps));
 option_key[2, 10] = get_text("menu_key_2_" + string(global.showsw));
 option_key[2, 11] = get_text("menu_key_2_" + string(global.hidenotif));
 option_key[2, 12] = get_text("menu_key_2_" + string(global.drpenabled));
-option_key[2, 13] = get_text("menu_key_2_" + string(global.bloodgore));
-option_key[2, 14] = get_text("menu_key_2_" + string(global.fastmenu));
+option_key[2, 13] = get_text("menu_key_2_" + string(global.fastmenu));
 
 // controles
 option_key[6, 1] = "[F10]";

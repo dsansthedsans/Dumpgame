@@ -124,6 +124,7 @@ function battle_setupgroup()
 		battle_music = mus_battle_brock;
 		enemy_type[0] = 6;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + sprite_get_width(spr_enemy_brock_body)), (room_height / 2), "Instances", obj_enemy_brock);
+		obj_battle_bg.waveSpeed /= 2;
 	}
 	
 	if (battle_group == 7) // Armsguy, Armsguy

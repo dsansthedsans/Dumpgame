@@ -132,7 +132,7 @@ if (ready == 1)
 		}
 		
 		// definir presence
-		np_setpresence_more(face_info, "Made by dsans and migel8022", 0);
+		np_setpresence_more(face_info, get_text("drp_description"), 0);
 		np_setpresence(state, details, "cover", face);		
 	}
 	else

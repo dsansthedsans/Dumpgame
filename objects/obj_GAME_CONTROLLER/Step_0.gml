@@ -34,7 +34,7 @@ if (string_ends_with(string_upper(keyboard_string), "HUNTER2") == true)
 	global.indebug = !global.indebug;
 	keyboard_string = "";
 }
-if (global.indebug == 1)
+if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 {
 	chara = obj_chara;
 	if (keyboard_check_pressed(vk_space) == true && room == room_loading)

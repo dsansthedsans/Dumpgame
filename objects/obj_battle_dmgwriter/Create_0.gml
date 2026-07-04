@@ -25,11 +25,11 @@ drawbar = 1;
 if (dmg <= 0)
 {
 	dmg = get_text("battle_fight_0");
+	if (controller.enemy_type[target] != 5 && controller.battle_group >= 7) || (controller.enemy_type[target] == 4)
+		myy = 240;
 	drawbar = 0;
 	mycolor_dmg = c_ltgrey;
-
 }
-
 if (controller.enemy_type[target] == 2000) || (controller.enemy_type[target] == 6) || (controller.enemy_type[target] == 1000) // Toilet, Broken Clock
 	myy = 220;
 

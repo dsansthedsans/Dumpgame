@@ -61,7 +61,6 @@ if (global.chara_move == 1)
 		rspeed_pos = 0;
 		if (global.chara_runtime >= 90)
 			rspeed_pos = 1;
-		
 		curspeed = rspeed[rspeed_pos];
 		curimgspeed = rimgspeed[rspeed_pos];
 	}
@@ -367,23 +366,24 @@ if (global.chara_interact == 1)
 
 
 // som de passo
-if (chara_stepping() == 1)
+chara_stepping();
+if (stepplay == 1)
 {
 	if (global.chara_facing != FALLEN && global.chara_facing != SIT && (floor(image_index) == 1 || floor(image_index) == 3))
 	{
-		if (stepplay == 1)
+		if (stepstage == 1)
 		{
 			var _snd = snd_step1;
 			if (stepsound == 1)
 				_snd = snd_step2;
-			audio_play(_snd, 0, VOLUME_SOUND);
-			stepplay = 0;
+			audio_play(_snd, 0, VOLUME_SOUND, stepvolume, , , (1 + (0.05 * (rspeed_pos + 1) * (curspeed == rspeed[rspeed_pos]))));
+			stepstage = 0;
 		}
 	}
 	else
 	{
 		stepsound = 0;
-		stepplay = 1;
+		stepstage = 1;
 	}
 }
 

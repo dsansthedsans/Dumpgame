@@ -211,8 +211,6 @@ if (move == 1)
 			if (_pos == 12)
 				global.drpenabled = !global.drpenabled;
 			if (_pos == 13)
-				global.bloodgore = !global.bloodgore;
-			if (_pos == 14)
 				global.fastmenu = !global.fastmenu;
 
 			event_user(1);

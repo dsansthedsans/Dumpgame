@@ -13,7 +13,7 @@ if (room == room_corridors_6 && x == 150 && y == 85)
 }
 
 // chocolate bowl
-if (room == room_corridors_10 && x == 130 && y == 110)
+if (room == room_corridors_10 && x == 130 && y == 120)
 	image_index = global.flag[36];
 
 

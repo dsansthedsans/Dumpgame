@@ -8,7 +8,6 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "start",	"A game by dsans\nand migel8022");
 	ds_map_add(global.textdata_en, "warning", "This game is unaffiliated\nwith Toby Fox.");
 	
-	
 	// menu
 	ds_map_add(global.textdata_en, "menu_hidehud", "hold [ALT] to hide menu");
 	ds_map_add(global.textdata_en, "menu_0_0",	"Play");
@@ -36,8 +35,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "menu_2_10",		"Show Stopwatch");
 	ds_map_add(global.textdata_en, "menu_2_11",		"Hide Notifications");
 	ds_map_add(global.textdata_en, "menu_2_12",		"Enable Discord RPC");
-	ds_map_add(global.textdata_en, "menu_2_13",		"Blood and Gore");
-	ds_map_add(global.textdata_en, "menu_2_14",		"Fast Start");
+	ds_map_add(global.textdata_en, "menu_2_13",		"Fast Start");
 	ds_map_add(global.textdata_en, "menu_key_2_0",	"No");
 	ds_map_add(global.textdata_en, "menu_key_2_1",	"Yes");
 	ds_map_add(global.textdata_en, "menu_key_2_3",	"English");
@@ -132,7 +130,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"achievement_name_{a}",		"Local Celebrity");
 	ds_map_add(global.textdata_en, $"achievement_desc_{a++}",		"Spare every monster from the Corridors");
 	ds_map_add(global.textdata_en, $"achievement_name_{a}",		"");
-	ds_map_add(global.textdata_en, $"achievement_desc_{a++}",		"Kill Dummy and every other monster in the Corridors before fighting Broken Clock");
+	ds_map_add(global.textdata_en, $"achievement_desc_{a++}",		"Kill Dummy and all monsters in the Corridors before fighting Broken Clock");
 	ds_map_add(global.textdata_en, $"achievement_name_{a}",		"Out of Time");
 	ds_map_add(global.textdata_en, $"achievement_desc_{a++}",		"Spare or kill Broken Clock");
 	ds_map_add(global.textdata_en, $"achievement_name_{a}",		"");
@@ -183,28 +181,28 @@ function TEXTDATA_EN()
 	
 	// rooms
 	ds_map_add(global.textdata_en, "room_corridors_1",			"Fallen Angel");
-	ds_map_add(global.textdata_en, "room_corridors_1_5",			"First Corridor");
+	ds_map_add(global.textdata_en, "room_corridors_1_5",		"First Corridor");
 	ds_map_add(global.textdata_en, "room_corridors_2",			"MEE6's Room");
 	ds_map_add(global.textdata_en, "room_corridors_3",			"Entrance");
-	ds_map_add(global.textdata_en, "room_corridors_3_5",			"Dummy Training Room");
+	ds_map_add(global.textdata_en, "room_corridors_3_5",		"Dummy Training Room");
 	ds_map_add(global.textdata_en, "room_corridors_4",			""); // Save
-	ds_map_add(global.textdata_en, "room_corridors_4_5",			"Rules Book");
+	ds_map_add(global.textdata_en, "room_corridors_4_5",		"Rules Book");
 	ds_map_add(global.textdata_en, "room_corridors_5",			"reCAPTCHA: Stage 1/3");
-	ds_map_add(global.textdata_en, "room_corridors_5_A",			"reCAPTCHA: Stage 1/3");
-	ds_map_add(global.textdata_en, "room_corridors_5_B",			"reCAPTCHA: Stage 1/3");
+	ds_map_add(global.textdata_en, "room_corridors_5_A",		"reCAPTCHA: Stage 1/3");
+	ds_map_add(global.textdata_en, "room_corridors_5_B",		"reCAPTCHA: Stage 1/3");
 	ds_map_add(global.textdata_en, "room_corridors_6",			"reCAPTCHA: Stage 1/3");
 	ds_map_add(global.textdata_en, "room_corridors_7",			"Break Corridor");
 	ds_map_add(global.textdata_en, "room_corridors_8",			"Rat Hole"); // Save
 	ds_map_add(global.textdata_en, "room_corridors_9",			"reCAPTCHA: Stage 2/3");
 	ds_map_add(global.textdata_en, "room_corridors_10",			"reCAPTCHA: Stage 2/3");
 	ds_map_add(global.textdata_en, "room_corridors_11",			"Split Corridor"); // Save + Broken Clock
-	ds_map_add(global.textdata_en, "unused_room_corridors_12",			"The Clock"); // Broken Clock
+	ds_map_add(global.textdata_en, "unused_room_corridors_12",	"The Clock"); // Broken Clock
 	ds_map_add(global.textdata_en, "room_corridors_13",			""); // Save
 	ds_map_add(global.textdata_en, "room_corridors_14",			"reCAPTCHA: Stage 3/3");
 	ds_map_add(global.textdata_en, "room_corridors_15",			"reCAPTCHA: Stage 3/3");
 	ds_map_add(global.textdata_en, "room_corridors_16",			"Crossed Paths"); // Save
-	ds_map_add(global.textdata_en, "room_corridors_16_A",			"Cave Entrance");
-	ds_map_add(global.textdata_en, "room_corridors_16_B",			"Subway Entrance");
+	ds_map_add(global.textdata_en, "room_corridors_16_A",		"Cave Entrance");
+	ds_map_add(global.textdata_en, "room_corridors_16_B",		"Subway Entrance");
 	ds_map_add(global.textdata_en, "room_corridors_17",			"Bridged Paths");
 	ds_map_add(global.textdata_en, "room_corridors_18",			"Last Corridor");
 	ds_map_add(global.textdata_en, "room_caverns_1",			"Rock Bottom");
@@ -268,7 +266,10 @@ function TEXTDATA_EN()
 	
 	ds_map_add(global.textdata_en, "item_pickup", "* (You picked up the ");
 	ds_map_add(global.textdata_en, "item_cantpickup", "* (Your inventory is full.)");
-		
+	
+	// Discord Rich Presence
+	ds_map_add(global.textdata_en, "drp_description", "A game by dsansthedsans and migel8022");
+	
 	// chara menu
 	ds_map_add(global.textdata_en, "charamenu_main_info_3", "$");
 	
@@ -596,12 +597,12 @@ function TEXTDATA_EN()
 	
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_4_0", "* Here.^1&* All Yours.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_0", "* (You got the :YKunai;D.)");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_6_0", "* Hope You Enjoy It.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_6_0", "* Hope You Like It.");
 	
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_4_1", "* You Have No Space?");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_1", "* Get Rid Of Something And I Give You Reward.");
 	
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_2_0", "* What?^3* Didn Like It?^2&* Sorry");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_2_0", "* What?^3 Didn Like It?^2&* Sorry");
 	
 	ds_map_add(global.textdata_en, "npc_trashguy_lost2", "* ...thanks...");
 	

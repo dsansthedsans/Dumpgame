@@ -24,6 +24,7 @@ if (enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0)
 		{
 			heart.x = -20;
 			heart.y = -20;
+			obj_battle_bg.waveFreeze = true;
 			battle_won = 1;
 			writer("battle_won", -1, -1);
 			if (global.writer_old != -1 && exists(global.writer_old) == 1)

@@ -80,7 +80,10 @@ if (active == 1)
 
 	// lower defense
 	if (controller.enemy_spare[myself] >= 100)
+	{
 		controller.enemy_def[myself] = -10293;
+		obj_battle_bg.waveFreeze = true;
+	}
 	else
 		controller.enemy_def[myself] = orig_def;
 
@@ -97,7 +100,6 @@ if (active == 1)
 		{
 			if (controller.level_heard == 3)
 				bubbledelay = 30;
-			
 			usedact = 2;
 			createbubble = 1;
 		}

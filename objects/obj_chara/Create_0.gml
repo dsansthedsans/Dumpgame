@@ -32,8 +32,10 @@ mycol = 0;
 lastcol = 0;
 
 // variáveis de suporte
-stepplay = 1;
+stepplay = false;
+stepstage = 1;
 stepsound = 0;
+stepvolume = 1;
 afktime = 0;
 afkmaxtime = (60 * 60);
 

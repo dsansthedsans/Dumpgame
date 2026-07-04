@@ -5,7 +5,9 @@ image_speed = 0;
 image_alpha = 1;
 image_xscale = 2;
 image_yscale = 2;
-if (controller.battle_bg != -1)
-	sprite_index = controller.battle_bg;
-else
-	destroy(id);
+wave = true;
+waveSpeed = 4;
+waveWidth = 20;
+waveHeight = 4;
+waveSiner = 0;
+waveFreeze = false;

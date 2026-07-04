@@ -432,7 +432,7 @@ function TEXT()
 			{
 				msg[m+1] = get_text($"room_rulesbook_{m+3}");
 				msg_skip[m+1] = false;
-				FAZER CONQUISTAS !!!!!!! (PRINCIPALMENTE RULES BOOK)
+				//FAZER CONQUISTAS !!!!!!! (PRINCIPALMENTE RULES BOOK)
 			}
 		}
 	}
@@ -1935,11 +1935,9 @@ function TEXT()
 						var _page = 0;
 						msg[_page] = get_text($"battle_act_result_brock_3_{_page}_" + string(_geno));
 						_page += 1;
-					
 						question[_page] = "";
 						question_option[1] = get_text($"battle_act_result_brock_3_{_page}_" + string(_convince) + "_1");
 						question_option[2] = get_text($"battle_act_result_brock_3_{_page}_" + string(_convince) + "_2");
-					
 						if (question_result[_page] != 0)
 						{
 							var _result = question_result[_page];
@@ -1957,7 +1955,6 @@ function TEXT()
 							}
 							else
 								audio_play(snd_battle_mercy_fail, 0, VOLUME_SOUND)
-						
 							_page += 1;
 							for (var i = 0; i < 99; i++)
 							{
