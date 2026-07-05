@@ -1,9 +1,9 @@
 if (controller.battle_bg != -1)
 {
 	sprite_index = controller.battle_bg;
-	if (wave == false)
+	if (wave == false) || (wave == true && global.visualeff == false)
 		draw_self();
-	else
+	else if (wave == true && global.visualeff == true)
 	{
 		waveSiner += 0.1;
 		if (waveFreeze == true)

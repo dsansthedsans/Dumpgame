@@ -32,7 +32,7 @@ if (active == 1)
 		shock_x = x;
 		shock_y = (y - (sprite_height / 2) + 8);
 		shock_index += (sprite_get_speed(spr_enemy_brock_shock) / 60);
-		draw_sprite_ext(spr_enemy_brock_shock, shock_index, shock_x, shock_y, image_xscale, image_yscale, image_angle, image_blend, shock_alpha);
+		draw_sprite_ext(spr_enemy_brock_shock, (shock_index * global.visualeff), shock_x, shock_y, image_xscale, image_yscale, image_angle, image_blend, shock_alpha);
 		
 		// body
 		var _xdist = 0;
@@ -176,7 +176,7 @@ if (active == 1)
 				movement = 3;
 			}
 		}
-		if (enemy.thiswriter != 0 && exists(enemy.thiswriter) == true)
+		if (enemy.thiswriter != 0 && exists(enemy.thiswriter) == true && global.visualeff == true)
 		{
 			enemy.thiswriter.bubble_x = (x + (sprite_width / 2) + 12);
 			enemy.thiswriter.bubble_y = (y + 6);

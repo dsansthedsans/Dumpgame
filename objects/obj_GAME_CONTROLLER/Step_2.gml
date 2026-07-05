@@ -2,7 +2,7 @@
 chara = obj_chara;
 if (exists(chara) == 1 && global.chara_camera_move == 1)
 {
-	var _cam_spd = (0.35 * 1.5);
+	var _cam_spd = cam_spd;
 	cam_charax = (chara.x - 160);
 	cam_charay = (chara.y - round(chara.sprite_height / 2) - 120);
 	if (global.chara_cutscene == true && global.chara_facing == SIT && chara.lastcol.object_index == obj_interact_block && chara.lastcol.result == 1)

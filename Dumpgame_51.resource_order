@@ -30,7 +30,6 @@
     {"name":"fnt_mars_18","order":7,"path":"fonts/fnt_mars_18/fnt_mars_18.yy",},
     {"name":"fnt_mars_6","order":8,"path":"fonts/fnt_mars_6/fnt_mars_6.yy",},
     {"name":"dg_demo_changes","order":6,"path":"notes/dg_demo_changes/dg_demo_changes.yy",},
-    {"name":"note_chara","order":5,"path":"notes/note_chara/note_chara.yy",},
     {"name":"obj_battle_bg","order":1,"path":"objects/obj_battle_bg/obj_battle_bg.yy",},
     {"name":"obj_battle_blt","order":2,"path":"objects/obj_battle_blt/obj_battle_blt.yy",},
     {"name":"obj_battle_controller","order":3,"path":"objects/obj_battle_controller/obj_battle_controller.yy",},

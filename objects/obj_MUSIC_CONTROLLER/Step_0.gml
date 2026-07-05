@@ -79,7 +79,7 @@ if (room >= room_corridors_3 && room < room_caverns_1)
 	if (global.chara_murder >= 2)
 		music_set(0, mus_corridors_geno)
 }
-if (room == unused_room_corridors_12) // bc events
+if (room == room_corridors_11) // bc events
 {
 	if (global.flag[37] == 0.25) || (global.flag[37] >= 0.75 && global.flag[39] == 0) || (global.flag[39] == 1 && global.flag[41] == 0)
 		global.music[0] = -1;

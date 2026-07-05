@@ -1,8 +1,14 @@
 
 if (con >= 1)
 {
-	// draw and control gate
-	for (var i = 0; i < 2; i++)
+	if (shock == 1)
+	{
+		shock_x = brock.x;
+		shock_y = (brock.y - (brock.sprite_height / 2));
+		shock_ind += 0.25;
+		draw_sprite_ext(spr_npc_brock_shock, shock_ind, shock_x, shock_y, brock.image_xscale, brock.image_yscale, brock.image_angle, c_white, brock.image_alpha);	
+	}
+	/*for (var i = 0; i < 2; i++)
 	{
 		if (con >= 3 && gate_y[i] != 80)
 		{
@@ -20,16 +26,7 @@ if (con >= 1)
 		}
 		gate_h = (sprite_get_height(gate_spr) - (gate_y[i] - 79));
 		draw_sprite_part(spr_overworld_sidegate, 0, 0, 0, gate_w, gate_h, gate_x[i], gate_y[i]);
-	}
-	
-	// draw shock
-	if (shock == 1)
-	{
-		shock_x = brock.x;
-		shock_y = (brock.y - (brock.sprite_height / 2));
-		shock_ind += 0.25;
-		draw_sprite_ext(spr_npc_brock_shock, shock_ind, shock_x, shock_y, brock.image_xscale, brock.image_yscale, brock.image_angle, c_white, brock.image_alpha);	
-	}
+	}*/
 }
 
 

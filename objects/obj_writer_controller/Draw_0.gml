@@ -325,9 +325,9 @@ for (var c = 1; c < (text_length + 1); c++)
 	{
 		if (shaking == 1) || (shaking == 2)
 		{
-			var _amt = 0.6;
+			var _amt = 0.5;
 			if (shaking == 2)
-				_amt = 1.4;
+				_amt = 0.75;
 			shake_x[c] = choose(_amt, 0);
 			shake_y[c] = choose(_amt, 0);
 		}
@@ -335,11 +335,12 @@ for (var c = 1; c < (text_length + 1); c++)
 		{
 			shake_x[c] = 0;
 			shake_y[c] = 0;
-			var _shake = irandom_range(0, 250);
-			if (_shake == 1)
+			if (irandom_range(1, 200) == 1)
+
 			{
-				shake_x[c] = choose(1.4, 0);
-				shake_y[c] = choose(1.4, 0);
+				var _amt = 1;
+				shake_x[c] = choose(-_amt, _amt);
+				shake_y[c] = choose(-_amt, _amt);
 			}
 		}
 	}
@@ -355,7 +356,7 @@ for (var c = 1; c < (text_length + 1); c++)
 		draw_set_font(msg_font[page]);
 		draw_set_alpha(alpha);
 		//draw_text_outline(round(_bonusx + text_x), round(_bonusy + text_y), string_char_at(msg[page], c), text_color[0], 1, c_black);
-		draw_text_color(((_bonusx + round(text_x + shake_x[c]) + _floatx)), (_bonusy + round(text_y + shake_y[c]) + _floaty), string_char_at(msg[page], c), text_color[1], text_color[1], text_color[0], text_color[0], alpha);
+		draw_text_color(((_bonusx + round(text_x) + shake_x[c] + _floatx)), (_bonusy + round(text_y) + shake_y[c] + _floaty), string_char_at(msg[page], c), text_color[1], text_color[1], text_color[0], text_color[0], alpha);
 		text_x += letter_xspace;
 	}
 }
