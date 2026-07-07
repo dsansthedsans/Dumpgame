@@ -256,7 +256,10 @@ if (active == 1)
 	}
 	
 	if (type == 6.0) // Broken Clock
+	{
 		speed += 0.05;
+		afterimage();
+	}
 	if (type == 6.1)
 	{
 		if (reverse == 0)
@@ -350,10 +353,10 @@ if (active == 1)
 		}
 		else if (stage == 1 && exists(obj_battle_danger) == 0)
 		{
-			x = nextx;
-			y = nexty;
-			image_angle = nextangle;
-			if (delay == 0)
+			x = lerp(x, nextx, 0.25);
+			y = lerp(y, nexty, 0.25);
+			image_angle = lerp(image_angle, nextangle, 0.25);
+			if (delay == 0 && touchytouchy == 1)
 				audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 			
 			var _time = 20;
@@ -361,6 +364,9 @@ if (active == 1)
 				_time = 15;
 			if (delay >= _time)
 			{
+				x = nextx;
+				y = nexty;
+				image_angle = nextangle;
 				delay = 0;
 				stage = 0;
 			}

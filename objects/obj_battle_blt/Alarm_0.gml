@@ -259,6 +259,7 @@ if (type == 6.3)
 {
 	sprite_index = spr_enemy_brock_body;
 	image_alpha = 0;
+	image_blend = c_red;
 	outside_box = 1;
 	destroy_on_impact = 0;
 	
@@ -280,6 +281,7 @@ if (type == 6.3)
 	ypos = 0;
 	dir = 0;
 	stage = 1;
+	touchytouchy = false;
 	
 	x = xx[xpos];
 	y = yy[ypos];

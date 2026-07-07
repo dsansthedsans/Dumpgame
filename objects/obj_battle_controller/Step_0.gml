@@ -420,7 +420,6 @@ else if (battle_lvl == 11)
 				attackobj[i].enemy = enemy_type[i];
 			}
 		}
-		
 		createbubble = 0;
 		startattack = 1;
 		heart_move = 1;

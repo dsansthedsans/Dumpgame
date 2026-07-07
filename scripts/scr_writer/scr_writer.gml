@@ -1090,6 +1090,7 @@ function TEXT()
 		if (irandom_range(1, 5) == 1)
 		{
 			msg[0] = "* I Slightly Dislike You";
+			msg_skip[0] = false;
 			msg_font[0] = global.fnt_dsans;
 			msg_talker[0] = obj_chara.mycol;
 			global.flag[66] = 0.5;
@@ -1475,7 +1476,7 @@ function TEXT()
 				_groupname = "eyecrush_armsguy";
 			if (_group == 11)
 				_groupname = "eyecrush_flitcher";
-			if (_group == 12)
+			if (_group == 13)
 				_groupname = "rhonhey";
 			if (_group == 2000)
 				_groupname = "toilet";
@@ -1750,7 +1751,8 @@ function TEXT()
 					break;
 				}
 			}
-			msg[0] = $"   {get_text("battle_flee_" + string(irandom(_msgAmount - 1)))}";
+			var _msg = irandom(_msgAmount - 1);
+			msg[0] = $"   {get_text("battle_flee_" + string(_msg))}";
 			msg_autoskip[0] = 1;
 		}
 		

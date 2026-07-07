@@ -11,27 +11,29 @@ if (altcon == 1)
 }
 if (con == 1)
 {
-	brock.image_alpha += (brockspd / 4);
-	brock.image_xscale += (brockspd * 0.125);
-	brock.image_yscale += (brockspd * 0.125);
-	//if (brock.hspeed < 0)
-	//	brock.hspeed += (brockspd);
-	//else
-		//brock.hspeed = 0;
-	if (brock.vspeed < 0)
-		brock.vspeed += brockspd;
-	else
+	var _xx = 500;
+	var _yy = 200;
+	var _spd = 0.1;
+	brock.x = lerp(brock.x, _xx, _spd);
+	brock.y = lerp(brock.y, _yy, _spd);
+	brock.image_alpha = lerp(brock.image_alpha, 1, _spd*2);
+	brock.image_xscale = lerp(brock.image_xscale, 1, _spd*2);
+	brock.image_yscale = lerp(brock.image_yscale, 1, _spd*2);
+	if (point_distance(brock.x, brock.y, _xx, _yy) <= 5)
 	{
-		//brock.depth = -100;
-		con = 2;
+		brock.image_alpha = 1;
+		brock.image_xscale = 1;
+		brock.image_yscale = 1;
+		aftercon = 2;
+		con = 4;
 	}
 }
 if (con >= 1)
 {
 	with (obj_GAME_CONTROLLER)
 	{
-		cam_x = lerp(cam_x, 340, (cam_spd / 2));
-		cam_y = lerp(cam_y, 60 + 10, (cam_spd / 2));
+		cam_x = lerp(cam_x, 340, (cam_spd / 4));
+		cam_y = lerp(cam_y, 70, (cam_spd / 4));
 	}
 	brock.depth = -room_height;
 	for (var i = 0; i < brickamount; i++)
@@ -44,21 +46,11 @@ if (con >= 1)
 		}
 	}
 }
-if (con == 2)
-{
-	brock.vspeed += brockspd;
-	if (brock.vspeed >= 3)
-	{
-		brock.friction = 0.075;
-		con = 3;
-	}
-}
 if (con == 3 && exists(brock) == true && brock.vspeed == 0)
 {
 	brock.x = round(brock.x);
 	brock.y = round(brock.y);
 	brock.friction = 0;
-	aftercon = 2;
 	con = 4;
 	//if (global.flag_skipboss == 1)
 	//{

@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"20c4f62d-2d51-4768-bf93-3d108e987680","name":"20c4f62d-2d51-4768-bf93-3d108e987680","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f6d8a021-aee3-45c6-adc3-dd29262e2aec","name":"f6d8a021-aee3-45c6-adc3-dd29262e2aec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"6e0f158a-70c4-49f2-b2c1-a5da3af29f4d","name":"6e0f158a-70c4-49f2-b2c1-a5da3af29f4d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"28abe330-0f9d-4d8e-82d8-ab8b6c228341","name":"28abe330-0f9d-4d8e-82d8-ab8b6c228341","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
@@ -71,8 +71,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"20c4f62d-2d51-4768-bf93-3d108e987680","path":"sprites/spr_overworld_lamp/spr_overworld_lamp.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8f10dd3c-944f-4f77-91ce-ae239bb2c51a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f6d8a021-aee3-45c6-adc3-dd29262e2aec","path":"sprites/spr_overworld_lamp/spr_overworld_lamp.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"76661006-076f-45f7-94ca-7264b9642843","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6e0f158a-70c4-49f2-b2c1-a5da3af29f4d","path":"sprites/spr_overworld_lamp/spr_overworld_lamp.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"8e767b88-c18a-447d-bc6b-d48efa8a3b7e","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},

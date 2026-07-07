@@ -511,7 +511,7 @@ function room_solid()
 	if (room == room_corridors_7)
 	{
 		if (x == 30 && y == 95)
-			sprite_index = spr_overworld_sign;
+			sprite_index = spr_overworld_signWood;
 		if (y == 20) || (y == 110)
 		{
 			sprite_index = spr_overworld_tree;
@@ -585,13 +585,13 @@ function room_solid()
 	
 		// sign
 		if (x == 170 && y == 650)
-			sprite_index = spr_overworld_sign;
+			sprite_index = spr_overworld_signWood;
 	}
 	if (room == room_corridors_11)
 	{
 		// sign
 		if (x == 30 && y == 95)
-			sprite_index = spr_overworld_sign;
+			sprite_index = spr_overworld_signWood;
 		// pillars
 		if (y == 40) || (y == 120) || (y == 130) || (y == 195) || (y == 210)
 		{
@@ -648,7 +648,7 @@ function room_solid()
 		
 		// sign
 		if (x == 470 && y == 175)
-			sprite_index = spr_overworld_sign;
+			sprite_index = spr_overworld_signWood;
 	}
 	if (room == unused_room_corridors_12)
 	{
@@ -693,7 +693,7 @@ function room_solid()
 		
 		// sign
 		if (x == 60 && y == 355)
-			sprite_index = spr_overworld_sign;
+			sprite_index = spr_overworld_signWood;
 		
 		// pillar door
 		if (x == 290 && y == 5)
@@ -713,7 +713,7 @@ function room_solid()
 		
 		// sign
 		if (x == 250 && (y == 1145 || y == 845 || 545)) || (x == 150 && y == 200)
-			sprite_index = spr_overworld_sign;
+			sprite_index = spr_overworld_signWood;
 			
 		// pillar
 		if (x == 150 && y == 155)
@@ -977,7 +977,7 @@ function room_solid()
 
 		// sign
 		if (x == 390 && y == 95)
-			sprite_index = spr_overworld_sign;
+			sprite_index = spr_overworld_signWood;
 	}
 	if (room == room_corridors_12_old)
 	{	

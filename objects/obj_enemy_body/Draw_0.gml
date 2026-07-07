@@ -32,6 +32,7 @@ if (active == 1)
 		shock_x = x;
 		shock_y = (y - (sprite_height / 2) + 8);
 		shock_index += (sprite_get_speed(spr_enemy_brock_shock) / 60);
+		shock_alpha = lerp(shock_alpha, shock_alphaTrue, 0.25);
 		draw_sprite_ext(spr_enemy_brock_shock, (shock_index * global.visualeff), shock_x, shock_y, image_xscale, image_yscale, image_angle, image_blend, shock_alpha);
 		
 		// body
@@ -108,8 +109,7 @@ if (active == 1)
 			{
 				_slow = 2;
 				_mult = 0.5;
-				if (shock_alpha > 0)
-					shock_alpha -= 0.025/2;
+				shock_alphaTrue = 0;
 			}
 			siner += 0.1;
 			vspeed = (sin(siner / (_slow + 1)) * _mult);
@@ -160,19 +160,30 @@ if (active == 1)
 		}
 		if (movement == 6) // movement for attack 2
 		{
-			if (controller.startattack == 1 && exists(controller.attackobj[myself]) == 1 && controller.attackobj[myself].time == 0 && exists(controller.attackobj[myself].thisobj) == 1)
+			if (controller.startattack == 1 && exists(controller.attackobj[myself]) == 1 && controller.attackobj[myself].time == 0 && exists(controller.attackobj[myself].thisobj) == 1 && controller.attackobj[myself].thisobj.active == true)
 			{
-				var _spd = 0.25;
-				var _thisobj = controller.attackobj[myself].thisobj;
-				x = lerp(x, _thisobj.x, _spd);
-				y = lerp(y, _thisobj.y, _spd);
+				var _obj = controller.attackobj[myself].thisobj;
+				if (_obj.touchytouchy == false)
+				{
+					var _spd = 0.25;
+					x = lerp(x, _obj.x, _spd);
+					y = lerp(y, _obj.y, _spd);
+					image_angle = lerp(image_angle, _obj.image_angle, _spd);
+					if (point_distance(x, y, _obj.x, _obj.y) <= 1)
+						_obj.touchytouchy = true;
+				}
+				else
+				{
+					x = _obj.x;
+					y = _obj.y;
+					image_angle = _obj.image_angle;
+				}
 				depth = controller.battle_depth[6];
-				image_angle = lerp(image_angle, _thisobj.image_angle, _spd);
-				shock_alpha = 0;
+				shock_alphaTrue = 0;
 			}
 			else
 			{
-				shock_alpha = 1;
+				shock_alphaTrue = 1;
 				movement = 3;
 			}
 		}

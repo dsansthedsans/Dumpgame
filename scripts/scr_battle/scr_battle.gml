@@ -38,13 +38,16 @@ function battle_getgroup()
 function battle_setupgroup()
 {
 	defaultx[0] = box_x;
+	
 	defaultx[1] = (box_x - 120);
 	defaultx[2] = (box_x + 120);
+	
 	defaultx[3] = (box_x - 200);
 	defaultx[4] = box_x;
 	defaultx[5] = (box_x + 200);
 	for (var i = 0; i < array_length(defaultx); i++)
 		defaultx[i] = round(defaultx[i]);
+	
 	defaulty = round(box_y - (box_h / 2) - box_borderw - 20);
 	
 	battle_bg = spr_battle_bg_corridors;
@@ -168,7 +171,19 @@ function battle_setupgroup()
 		enemy_obj[1] = instance_create_layer(defaultx[2], defaulty, "Instances", obj_enemy_flitcher);
 	}
 	
-	if (battle_group == 12) // Rhonhey
+	if (battle_group == 12) // Armsguy, Trashguy, Flitcher
+	{
+		enemy_type[0] = 2;
+		enemy_obj[0] = instance_create_layer(defaultx[3] + 20, defaulty, "Instances", obj_enemy_armsguy);
+		
+		enemy_type[1] = 3;
+		enemy_obj[1] = instance_create_layer(defaultx[4], defaulty, "Instances", obj_enemy_trashguy);
+		
+		enemy_type[2] = 4;
+		enemy_obj[2] = instance_create_layer(defaultx[5] - 40, defaulty, "Instances", obj_enemy_flitcher);
+	}
+	
+	if (battle_group == 13) // Rhonhey
 	{
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty + 8), "Instances", obj_enemy_rhonhey);
@@ -183,7 +198,6 @@ function battle_setupgroup()
 		enemy_type[0] = 1000;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_tfp);
 	}
-	
 	if (battle_group == 2000) // Toilet
 	{
 		battle_bg = -1;
@@ -427,6 +441,8 @@ function battle_getattack()
 				heart_nexty = box_nexty;
 				battle_turntime = 0;
 			}
+			
+			
 		}
 		
 		if (enemy_type[i] == 7) // Rhonhey

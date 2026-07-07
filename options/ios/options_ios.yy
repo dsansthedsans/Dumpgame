@@ -6,7 +6,7 @@
   "option_ios_bundle_name":"com.company.game",
   "option_ios_defer_home_indicator":false,
   "option_ios_devices":2,
-  "option_ios_display_name":"Created with GameMaker",
+  "option_ios_display_name":"Dumpgame",
   "option_ios_enable_broadcast":false,
   "option_ios_half_ipad1_textures":false,
   "option_ios_icon_ipad_app_152":"${base_options_dir}/ios/icons/app/ipad_152.png",
@@ -43,7 +43,7 @@
   "option_ios_splashscreen_background_colour":255,
   "option_ios_team_id":"",
   "option_ios_texture_page":"2048x2048",
-  "option_ios_version":"1.0.0.0",
+  "option_ios_version":"1.5.0",
   "resourceType":"GMiOSOptions",
   "resourceVersion":"2.0",
 }

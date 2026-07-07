@@ -88,6 +88,7 @@ for (var i = 0; i < enemy_length; i++)
 	enemy_obj[i] = -1;
 	enemy_spare[i] = 0;
 	enemy_attack[i] = -1;
+	attackobj[i] = -1;
 	
 	enemy_name[i] = "";
 	enemy_curhp[i] = 0;

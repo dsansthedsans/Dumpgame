@@ -32,6 +32,7 @@ if (type == 6) // Broken Clock
 	shock_y = 0;
 	shock_index = 0;
 	shock_alpha = 1;
+	shock_alphaTrue = 1;
 	
 	line_spr = spr_enemy_brock_line;
 	for (var i = 0; i < 3; i++)

@@ -11,7 +11,7 @@ if (exists(chara) == 1 && global.chara_camera_move == 1)
 		cam_charax = (chara.lastcol.x + (chara.lastcol.sprite_width / 2) - 160);
 		cam_charay = (chara.lastcol.y + (chara.lastcol.sprite_height / 2) - 120);
 	}
-	if (cam_spdJump == true)
+	if (cam_spdJump == true) || (global.visualeff == false)
 		_cam_spd = 1;
 	cam_x = lerp(cam_x, clamp(cam_charax, 0, (room_width - 320)), _cam_spd);
 	cam_y = lerp(cam_y, clamp(cam_charay, 0, (room_height - 240)), _cam_spd);
