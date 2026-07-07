@@ -742,6 +742,8 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"battle_flee_{m++}", "* Hell no.");
 	ds_map_add(global.textdata_en, $"battle_flee_{m++}", "* See ya.");
 	ds_map_add(global.textdata_en, $"battle_flee_{m++}", "* See you later, alligator.");
+	ds_map_add(global.textdata_en, $"battle_flee_{m++}", "* I have places to go."); // from UNDERTALE
+	ds_map_add(global.textdata_en, $"battle_flee_{m++}", "* I hope you die in a fire."); // from Living Tombstone's Five Nights at Freddy's 3 Song
 	
 	ds_map_add(global.textdata_en, "battle_nobody", "* But nobody came.");
 	

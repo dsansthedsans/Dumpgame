@@ -1751,7 +1751,7 @@ function TEXT()
 					break;
 				}
 			}
-			var _msg = irandom(_msgAmount - 1);
+			var _msg = (_msgAmount - 1);
 			msg[0] = $"   {get_text("battle_flee_" + string(_msg))}";
 			msg_autoskip[0] = 1;
 		}
