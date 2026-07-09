@@ -86,13 +86,8 @@ if (type == 7) // Rhonhey
 
 if (type == 1000) // TROLLFACE PRIME
 {
-	sprite_index = spr_enemy_tfp_legs;
-	x = enemy.orig_x;
-	y = enemy.orig_y;
-	
 	body_spd = 0;
-	head_spr = spr_enemy_tfp_head;
-	torso_spr = spr_enemy_tfp_torso;
+	head_spr = spr_enemy_troll_head;
 }
 
 active = 1;

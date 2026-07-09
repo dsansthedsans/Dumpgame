@@ -31,63 +31,6 @@ function TEXT()
 	* Hello Hello.
 	*/
 	
-	
-	
-	
-	
-	if (text == "test0")
-	{
-		msg[0] = "* (You feel a calming tranquility.^1 You're filled with determination...)";
-		msg[1] = "* Hello There!^1&* My name is Armsguy!";
-		msg[2] = "* You might have heard of me before.^1&* Fuck you!!!!!!!!!!";
-		
-		msg_face[1] = spr_dialogface_m6_default;
-		msg_sound[1] = snd_txt_brock;
-		msg_format[0] = "bubble";
-		
-		msg_type[2] = "default";
-		msg_face[2] = -1;
-		msg_sound[2] = snd_txt1;
-	}
-	if (text == "test1")
-	{
-		msg[0] = "* say...^1&* have you ever heard of a talking flower?";
-		msg[1] = "* im just asking for a friend.";
-		msg[2] = "* or for you mother.";
-		msg_face[0] = spr_dialogface_sans_default;
-		msg_font[0] = global.fnt_comicsans;
-		msg_sound[0] = snd_txt_dsans;
-		msg_face[1] = spr_dialogface_sans_sideeye;
-		msg_face[2] = spr_dialogface_sans_angry;
-	
-		question[3] = "";
-		question_option[1] = "Yeah";
-		question_option[2] = "What";
-		msg_face[3] = -1;
-		
-		if (question_result[3] == 1)
-		{	
-			msg[4] = "* so you must know everything about the ;Yecho flowers;D.";
-			msg[5] = "* on how they can repeat anything said near them.";
-			msg[6] = "* what about it?";
-			msg[7] = "* a while ago papyrus told me something weird.";
-			msg[8] = "* he told me the flowers were talking to him.";
-			msg[9] = "* that they would repeat compliments,^1 advices,^1 and even predictions.";
-			msg[10] = "* anyways,^1 it's probably just someone playing with him.";
-			msg[11] = "* but keep an eye out for him,^1 alright?";
-			msg_face[4] = spr_dialogface_sans_default;
-			msg_face[6] = spr_dialogface_sans_sideeye;
-			msg_face[7] = spr_dialogface_sans_default;
-			msg_face[10] = spr_dialogface_sans_sideeye;
-			msg_face[11] = spr_dialogface_sans_default;
-		}
-		else if (question_result[3] == 2)
-		{
-			msg[4] = "* yeah.^1&* maybe.^1&* fuck you.";
-			msg_face[4] = spr_dialogface_sans_angry;
-		}
-	}
-	
 	// intro
 	if (text == "intro")
 	{
@@ -1478,6 +1421,8 @@ function TEXT()
 				_groupname = "eyecrush_flitcher";
 			if (_group == 13)
 				_groupname = "rhonhey";
+			if (_group == 1000)
+				_groupname = "troll";
 			if (_group == 2000)
 				_groupname = "toilet";
 			
@@ -1520,6 +1465,11 @@ function TEXT()
 			{
 				_name = "rhonhey";
 				_max = 4;
+			}
+			if (_type == 1000)
+			{
+				_name = "troll";
+				_max = 3;
 			}
 			if (_type == 2000)
 			{
@@ -1751,7 +1701,7 @@ function TEXT()
 					break;
 				}
 			}
-			var _msg = (_msgAmount - 1);
+			var _msg = irandom(_msgAmount - 1);
 			msg[0] = $"   {get_text("battle_flee_" + string(_msg))}";
 			msg_autoskip[0] = 1;
 		}

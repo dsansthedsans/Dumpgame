@@ -76,19 +76,18 @@ function room_interact()
 			sprite_index = spr_npc_dummy;
 		}
 	}
-	if (r == room_corridors_4)
+	if (r == room_corridors_4_5)
 	{
-		// armsguy npc
-		if (x == 750 && y == 130)
+		if (x == 105 && y == 105)
 		{
 			text = "npc_armsguy1";
 			sprite_index = spr_npc_armsguy;
 			if (global.world_curpopulation[WORLD_CORRIDORS] < global.world_maxpopulation[WORLD_CORRIDORS])
 				destroy(id);
 		}
+		if (x == 150 && y == 125)
+			text = "room_rulesbook";
 	}
-	if (r == room_corridors_4_5 && x == 150 && y == 125)
-		text = "room_rulesbook";
 	if (room == room_corridors_5 && x == 60 && y == 60)
 		text = "room_captcha_mainsign_1";
 	if (room == room_corridors_5_A && x == 260 && y == 140) || (room == room_corridors_5_B && x == 20 && y == 140)

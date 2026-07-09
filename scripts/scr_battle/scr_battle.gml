@@ -192,11 +192,11 @@ function battle_setupgroup()
 	if (battle_group == 1000) // TROLLFACE PRIME
 	{
 		//battle_flee = 0;
-		battle_music = mus_battle_tfp;
-		battle_bg = -1;
-		
+		battle_music = mus_battle_troll;
+		battle_bg = spr_battle_bg_troll;
+		obj_battle_bg.waveSpeed /= 2;
 		enemy_type[0] = 1000;
-		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_tfp);
+		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_troll);
 	}
 	if (battle_group == 2000) // Toilet
 	{
@@ -347,9 +347,9 @@ function battle_enemy()
 				enemy_act[i, 3] = get_text("battle_act_rhonhey_3");
 			}
 			
-			if (enemy_type[i] == 1000) // TROLLFACE PRIME
+			if (enemy_type[i] == 1000) // TROLLFACE
 			{
-				enemy_name[i] = "TROLLFACE PRIME";
+				enemy_name[i] = "TROLLFACE";
 				enemy_curhp[i] = 100;
 				enemy_maxhp[i] = 100;
 				enemy_atk[i] = 10;

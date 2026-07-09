@@ -43,7 +43,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		game_restart();	
 	if (keyboard_check_pressed(ord("E")) == 1 && instance_exists(obj_chara) == 1) // entrar em batalha
 	{
-		global.battle_nextgroup = 6;
+		global.battle_nextgroup = 1000;
 		battle();
 	}
 	if (keyboard_check_pressed(vk_numpad7) == 1)

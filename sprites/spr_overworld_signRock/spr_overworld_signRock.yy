@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Dumpgame_51",
-    "path":"Dumpgame_51.yyp",
+    "name":"overworld",
+    "path":"folders/[!] sprites/overworld.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
