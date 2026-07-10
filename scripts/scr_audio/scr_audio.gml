@@ -9,12 +9,18 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 	{
 		if (_asset == snd_dumpgame)
 			_volume *= 0.75;
+		if (_asset == snd_option_movehold)
+			_volume *= 0.5;
 		if (_asset == snd_ambient_birds)
 			_volume *= 0.75;
 		if (_asset == snd_bird_startfly)
 			_volume /= 2;
 		if (_asset == snd_step1) || (_asset == snd_step2)
 			_volume *= 0.5;
+		if (_asset == snd_grab)
+			_volume *= 0.5;
+		if (_asset == snd_impact)
+			_volume *= 0.75;
 		if (_asset == snd_txt_m6)
 			_volume *= 0.75 + 0.125;
 		if (_asset == snd_surprise)
@@ -25,6 +31,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume = 0.75;
 		if (_asset == snd_ambient_wind)
 			_volume *= 0.5;
+		if (_asset == snd_bigcut)
+			_volume *= 0.75;
 		if (_asset == snd_txt_brock)
 			_volume *= 0.75;
 		if (_asset == snd_shock_blt)
@@ -59,7 +67,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 }
 function audio_pitch(_audio, _pitch)
 {
-	audio_sound_pitch(argument0, argument1);
+	audio_sound_pitch(_audio, _pitch);
 }
 
 function audio_play(_audio, _loop = false, _volume_type = VOLUME_MASTER, _gain = 1, _gain_time = 0, _gain_fadein = 0, _pitch = 1)

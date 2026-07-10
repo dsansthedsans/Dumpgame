@@ -1,488 +1,144 @@
-if (altcon == 1)
+if (con == 0 && obj_chara.x >= ((room_width / 2) + 10) && global.chara_move == 1)
 {
-	movetopoint(500, 280, 45, chara);
-	movetopoint(415, 255, 45, m6);
-	chara.image_speed = 0.25;
-	chara.image_index = 1;
-	m6.image_speed = 0.25;
-	m6.image_index = 1;
-	m6dist = point_distance(m6.x, m6.y, 80, 170);
-	altcon = 3;
-}
-if (con == 1)
-{
-	var _xx = 500;
-	var _yy = 200;
-	var _spd = 0.1;
-	brock.x = lerp(brock.x, _xx, _spd);
-	brock.y = lerp(brock.y, _yy, _spd);
-	brock.image_alpha = lerp(brock.image_alpha, 1, _spd*2);
-	brock.image_xscale = lerp(brock.image_xscale, 1, _spd*2);
-	brock.image_yscale = lerp(brock.image_yscale, 1, _spd*2);
-	if (point_distance(brock.x, brock.y, _xx, _yy) <= 5)
+	game = obj_GAME_CONTROLLER;
+	chara = obj_chara;
+	m6 = global.party[0];
+	brock = undefined;
+	brock_shock_image = 0;
+	brock_jumpTargetX = 500;
+	brock_jumpTargetY = 200;
+	brock_jumpSpeed = 0.075;
+	brock_siner = 0;
+	cam_time = 90;
+	cam_targetX = 340;
+	cam_targetY = 70;
+	cam_offsetX = (cam_targetX - game.cam_x);
+	cam_offsetY = (cam_targetY - game.cam_y);
+	cam_speedX = (cam_offsetX / cam_time);
+	cam_speedY = (cam_offsetY / cam_time);
+	gate_x = [385, 605];
+	gate_height = 0;
+	gate_time = 90;
+	global.flag[37] = 0.25;
+	chara_change(-1, 0, 0, 1, 0, 0, 0);
+	chara_stop();
+	chara_facing(UP);
+	party_change(0, -1, -1);
+	party_stop(0);
+	party_facing(0, UP);
+	for (var i = 0; i < instance_number(obj_overworld_solid); i++)
 	{
+		var _brickpile = instance_find(obj_overworld_solid, i);
+		if (_brickpile.sprite_index == spr_overworld_corridorsbricks)
+			shakeobj(_brickpile, 2, 2, 0.1);
+	}
+	audio_play(snd_grab, 0, VOLUME_SOUND, , , , 0.8);
+	con = 1;
+	depth = -room_height;
+	alarm[2] = 90;
+}
+else if (con == 2)
+{
+	if (abs(game.cam_x - cam_targetX) > abs(cam_speedX) && abs(game.cam_y - cam_targetY) > abs(cam_speedY))
+	{
+		game.cam_x += cam_speedX;
+		game.cam_y += cam_speedY;
+	}
+	else
+	{
+		game.cam_x = cam_targetX;
+		game.cam_y = cam_targetY;
+		movetopoint(515, 280, (gate_time / 2), chara);
+		chara.image_speed = chara.rimgspeed[1];
+		movetopoint(485, 280, (gate_time / 2), m6);
+		m6.image_speed = chara.rimgspeed_party;
+		brock = marker(500, 140, spr_npc_brock, 0.5, 0.75, 0.75, 0, 0, 0, c_white, -room_height);
+		audio_play(snd_bigcut, 0, VOLUME_SOUND);
+		shakescreen(4, 4);
+		for (var i = 0; i < instance_number(obj_overworld_solid); i++)
+		{
+			var _brickpile = instance_find(obj_overworld_solid, i);
+			if (_brickpile.sprite_index == spr_overworld_corridorsbricks)
+				shakeobj(_brickpile, 4, 4, 0.1);
+		}
+		for (var i = 0; i < 8; i++)
+		{
+			marker(brock.x, brock.y, spr_npc_brock_brick, 1, 1, 1, 0, 0, irandom(360), c_white, 0);
+			brick[i] = thismarker;
+			brick[i].depth = -(115 + sprite_get_height(spr_overworld_corridorsbricks) + 10);
+			brick[i].gravity = 0.1;
+			brick[i].hspeed = choose(-0.5, -0.25, 0.25, 0.5);
+			brick[i].vspeed = random_range(-2.25, -3.75);
+			brick[i].angleSign = choose(-1, 1);
+		}
+		con = 5;
+		aftercon = 1;
+	}
+}
+if (con == 5)
+{
+	if (exists(obj_movetopoint) == false)
+	{
+		chara_stop();
+		party_stop(0);
+	}
+	for (var i = 0; i < array_length(brick); i++)
+	{
+		if (exists(brick[i]) == 1)
+		{
+			brick[i].image_angle += (2 * brick[i].angleSign);
+			if (brick[i].y >= (room_height / 2))
+			{
+				destroy(brick[i]);
+				array_delete(brick, i, 1);
+			}
+		}
+	}
+	if (round(gate_height) < 181)
+	{
+		gate_height += (181 / gate_time);
+		if (audio_playing(snd_option_movehold) == false)
+			audio_play(snd_option_movehold, true, VOLUME_SOUND, , , , 1.05);
+	}
+	else if (round(gate_height) >= 181 && audio_playing(snd_option_movehold) == true)
+	{
+		gate_height = 181;
+		audio_stop(snd_option_movehold);
+		audio_play(snd_impact, false, VOLUME_SOUND);
+		audio_play(snd_screenshake, false, VOLUME_SOUND);
+		shakescreen(5, 5);
+	}
+	if (exists(obj_movetopoint) == false && gate_height == 181 && array_length(brick) <= 0 && audio_playing(snd_option_movehold) == false)
+	{
+		global.flag[37] = 0.5;
+		con = 6;
+		alarm[2] = 120;
+	}
+}
+if (aftercon == 1)
+{
+	brock.x = lerp(brock.x, brock_jumpTargetX, brock_jumpSpeed);
+	brock.y = lerp(brock.y, brock_jumpTargetY, brock_jumpSpeed);
+	brock.image_alpha = lerp(brock.image_alpha, 1, brock_jumpSpeed);
+	brock.image_xscale = lerp(brock.image_xscale, 1, brock_jumpSpeed);
+	brock.image_yscale = lerp(brock.image_yscale, 1, brock_jumpSpeed);
+	if (point_distance(brock.x, brock.y, brock_jumpTargetX, brock_jumpTargetY) <= 1)
+	{
+		brock.x = brock_jumpTargetX;
+		brock.y = brock_jumpTargetY;
 		brock.image_alpha = 1;
 		brock.image_xscale = 1;
 		brock.image_yscale = 1;
 		aftercon = 2;
-		con = 4;
 	}
-}
-if (con >= 1)
-{
-	with (obj_GAME_CONTROLLER)
-	{
-		cam_x = lerp(cam_x, 340, (cam_spd / 4));
-		cam_y = lerp(cam_y, 70, (cam_spd / 4));
-	}
-	brock.depth = -room_height;
-	for (var i = 0; i < brickamount; i++)
-	{
-		if (exists(brick[i]) == 1)
-		{
-			brick[i].image_angle += (2 * brickanglemult[i]);
-			if (brick[i].y >= (room_height / 2))
-				destroy(brick[i]);
-		}
-	}
-}
-if (con == 3 && exists(brock) == true && brock.vspeed == 0)
-{
-	brock.x = round(brock.x);
-	brock.y = round(brock.y);
-	brock.friction = 0;
-	con = 4;
-	//if (global.flag_skipboss == 1)
-	//{
-	//	alarm[3] = 60;
-	//	con = 12.5;	
-	//}
 }
 if (aftercon == 2)
 {
-	brocksiner += 0.1;
-	brock.vspeed = (sin(brocksiner) * 0.5);	
+	brock_siner += 0.1;
+	brock.vspeed = (sin(brock_siner) * 0.5);	
 }
-if (altcon == 3)
+if (con == 7)
 {
-	if (exists(obj_movetopoint) == 1)
-	{
-		if (point_distance(m6.x, m6.y, 80, 170) <= (m6dist / 2))
-			global.party_facing[0] = RIGHT;
-	}
-	else
-	{
-		chara.x = round(chara.x);
-		chara.y = round(chara.y);
-		m6.x = round(m6.x);
-		m6.y = round(m6.y);
-		chara_stop();
-		party_stop(0);
-		global.party_facing[0] = RIGHT;
-		altcon = 4;
-	}
-}
-if (con == 4 && altcon == 4)
-{
-	altcon = 0;
-	alarm[2] = 80;
-	con = 5;
-}
-if (con == 6)
-{
-	global.flag[37] = 0.5;
 	writer("event_brock_prebattle_0", -1, -1);
-	con = 7;
+	con = 8;
 }
-if (con == 7 && exists(thiswriter) == 0)
-{
-	var _xx = 470;
-	var _yy = 220;
-	var _spd = 0.225;
-	brock.x = lerp(brock.x, _xx, _spd);	
-	brock.y = lerp(brock.y, _yy, _spd);
-	var _dist = point_distance(brock.x, brock.y, _xx, _yy);
-	if (_dist <= 1)
-	{
-		global.chara_facing = LEFT;
-		shakeobj(brock, 0.5, 0.5, 0.01);
-		aftercon = 0;
-		altcon = 8;
-		con = 9;
-	}
-	/*
-	if (altcon == 0)
-	{
-		alarm[8] = 10;
-		altcon = 6;
-	}
-	*/
-}
-if (altcon == 8)
-{
-	if (shock_delay <= 0)
-	{
-		var _rdpos = irandom_range(-3, 3);
-		marker((shock_x + _rdpos), (shock_y + _rdpos), spr_npc_brock_shockblt, 1, 1, 1, 1, irandom(12), 0, c_white, -999);
-		shockblt = thismarker;
-		shockblt.direction = point_direction(shockblt.x, shockblt.y, m6.x, (m6.y - (m6.sprite_height / 2))) + irandom_range(-2, 2);
-		shockblt.image_angle = (direction + 90);
-		shockblt.speed = 4;
-		audio_play(snd_shock_blt, 0, VOLUME_SOUND);
-		shock_amount -= 1;
-		if (shock_amount <= 0)
-		{
-			aftercon = 2;
-			altcon = 0;
-		}
-		else
-			shock_delay = shock_delay_orig;
-	}
-	else
-		shock_delay -= 1;
-}
-if (con == 9)
-{
-	with (m6)
-	{
-		if (place_meeting(x, y, obj_marker) == 1)
-		{
-			global.flag[2] = 0;
-			global.party[0] = -1;
-			shakescreen(3, 3);
-			explosion(x, (y - (sprite_height / 2)));
-			if (global.chara_murder < 2)
-			{
-				surprise(obj_chara);
-				other.chara_surprise = thismarker;
-			}
-			other.con = 10;
-		}
-	}
-}	
-if (con == 10)
-{
-	with (m6)
-	{
-		x -= 6;
-		y += 1;
-		image_angle += 4;
-		if (x < (obj_GAME_CONTROLLER.cam_x - 40))
-		{
-			other.alarm[2] = 120;
-			other.con = 11;
-			destroy(id);
-		}
-	}
-}
-if (con == 12)
-{
-	var _xx = 500;
-	var _yy = 200;
-	var _spd = 0.225;
-	brock.x = lerp(brock.x, _xx, _spd);	
-	brock.y = lerp(brock.y, _yy, _spd);
-	var _dist = point_distance(brock.x, brock.y, _xx, _yy);
-	if (_dist <= 1)
-	{
-		writer("event_brock_prebattle_1", -1, -1);
-		con = 13;
-	}
-	if (altcon == 0)
-	{
-		alarm[8] = 10;
-		altcon = 11;
-	}
-}
-if (altcon == 12)
-{
-	global.chara_facing = UP;
-	if (is_undefined(chara_surprise) == false)
-		destroy(chara_surprise);
-	altcon = 0;
-}
-if (con == 13)
-{
-	if (exists(thiswriter) == 0)
-	{
-		global.flag[37] = 0.75;
-		audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
-		alarm[2] = 80;
-		con = 14;
-	}
-}
-if (con == 15)
-{
-	brock.x = lerp(brock.x, chara.x, 0.1);
-	brock.y = lerp(brock.y, chara.y, 0.1);
-	aftercon = 0;
-	with (chara)
-	{
-		if (place_meeting(x, (y - 20), other.brock) == 1)
-		{
-			global.flag[37] = 1;
-			//global.flag_skipboss = 1;
-			global.battle_nextgroup = 6;
-			battle();
-			other.con = 16;
-		}
-	}
-}
-
-
-/*
-if (con == 1)
-{
-	brock.image_alpha += (brockspd / 4);
-	brock.image_xscale += (brockspd * 0.125);
-	brock.image_yscale += (brockspd * 0.125);
-	if (brock.hspeed < 0)
-		brock.hspeed += (brockspd);
-	else
-		brock.hspeed = 0;
-	if (brock.vspeed < 0)
-		brock.vspeed += brockspd;
-	else
-	{
-		brock.depth = -100;
-		con = 2;
-	}
-}
-if (con == 2)
-{
-	brock.vspeed += brockspd;
-	if (brock.vspeed >= 3)
-	{
-		brock.friction = 0.1;
-		con = 3;
-	}
-}
-if (con == 3 && brock.vspeed == 0)
-{
-	brock.x = round(brock.x);
-	brock.y = round(brock.y);
-	brock.friction = 0;
-	aftercon = 2;
-	con = 4;
-	//if (global.flag_skipboss == 1)
-	//{
-	//	alarm[3] = 60;
-	//	con = 12.5;	
-	//}
-}
-if (con == 4 && altcon == 4)
-{
-	altcon = 0;
-	alarm[2] = 80;
-	con = 5;
-}
-if (con == 6)
-{
-	global.flag[37] = 0.5;
-	writer("event_brock_prebattle_0", -1, -1);
-	con = 7;
-}
-if (con == 7 && exists(thiswriter) == 0)
-{
-	if (altcon == 0)
-	{
-		alarm[8] = 10;
-		altcon = 6;
-	}
-	
-	var _xx = 140;
-	var _yy = 140;
-	var _spd = 0.225;
-	brock.x = lerp(brock.x, _xx, _spd);	
-	brock.y = lerp(brock.y, _yy, _spd);
-	var _dist = point_distance(brock.x, brock.y, _xx, _yy);
-	if (_dist <= 1)
-	{
-		global.chara_facing = LEFT;
-		shakeobj(bc, 0.5, 0.5, 0.01);
-		aftercon = 0;
-		altcon = 8;
-		con = 9;
-	}
-}
-if (altcon == 8)
-{
-	if (shock_delay <= 0)
-	{
-		var _rdpos = irandom_range(-3, 3);
-		marker((shock_x + _rdpos), (shock_y + _rdpos), spr_npc_brock_shockblt, 1, 1, 1, 1, irandom(12), 0, c_white, -999);
-		shockblt = thismarker;
-		shockblt.direction = point_direction(shockblt.x, shockblt.y, m6.x, (m6.y - (m6.sprite_height / 2))) + irandom_range(-2, 2);
-		shockblt.image_angle = (direction + 90);
-		shockblt.speed = 4;
-		audio_play(snd_shock_blt, 0, VOLUME_SOUND);
-		
-		shock_amount -= 1;
-		if (shock_amount <= 0)
-		{
-			aftercon = 2;
-			altcon = 0;
-		}
-		else
-			shock_delay = shock_delay_orig;
-	}
-	else
-		shock_delay -= 1;
-}
-if (con == 9)
-{
-	with (m6)
-	{
-		if (place_meeting(x, y, obj_marker) == 1)
-		{
-			with (other)
-			{
-				explosion(m6.x, (m6.y - (m6.sprite_height / 2)));
-				if (global.chara_murder < 2)
-					surprise(chara);
-				chara_surprise = thismarker;
-				global.flag[2] = 0;
-				global.party[0] = -1;
-				//global.chara_cutscene = 0;
-				shakescreen(3, 3);
-				con = 10;
-			}
-		}
-	}
-}	
-if (con == 10)
-{
-	// mee6 get thrown
-	with (m6) 
-	{
-		x -= 6;
-		y += 1;
-		image_angle += 4;
-		if (x < -20)
-		{
-			with (other)
-			{
-				alarm[2] = 120;
-				con = 11;
-			}
-		}
-	}
-}
-if (con == 12)
-{
-	if (altcon == 0)
-	{
-		alarm[8] = 10;
-		altcon = 11;
-	}
-	
-	var _xx = 160;
-	var _yy = 121;
-	var _spd = 0.225;
-	brock.x = lerp(brock.x, _xx, _spd);	
-	brock.y = lerp(brock.y, _yy, _spd);
-	var _dist = point_distance(brock.x, brock.y, _xx, _yy);
-	if (_dist <= 1)
-	{
-		writer("event_brock_prebattle_1", -1, -1);
-		con = 13;
-	}	
-}
-if (altcon == 12)
-{
-	global.chara_facing = UP;
-	destroy(chara_surprise);
-	altcon = 0;
-}
-if (con == 13)
-{
-	if (exists(thiswriter) == 0)
-	{
-		global.flag[37] = 0.75;
-		audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
-		alarm[2] = 80;
-		con = 14;
-	}
-}
-if (con == 15)
-{
-	brock.x = lerp(brock.x, chara.x, 0.1);
-	brock.y = lerp(brock.y, chara.y, 0.1);
-	aftercon = 0;
-	with (chara)
-	{
-		if (place_meeting(x, (y - 20), other.bc) == 1)
-		{
-			with (other)
-			{	
-				global.flag[2] = 0;
-				global.side[0] = -1;
-				global.flag[37] = 1;
-				//global.flag_skipboss = 1;
-				global.battle_nextgroup = 6;
-				battle();
-				destroy(id);
-			}
-		}
-	}
-}
-
-// chara and side movement
-if (altcon == 1)
-{
-	movetopoint(160, 210, 45, chara);
-	movetopoint(80, 170, 45, m6);
-	chara.image_speed = 0.25;
-	chara.image_index = 1;
-	m6.image_speed = 0.25;
-	m6.image_index = 1;
-	m6dist = point_distance(m6.x, m6.y, 80, 170);
-	altcon = 3;
-}
-if (altcon == 3)
-{
-	if (exists(obj_movetopoint) == 1)
-	{
-		var _curdist = point_distance(m6.x, m6.y, 80, 170);
-		if (_curdist <= (m6dist / 2))
-			global.party_facing[0] = RIGHT;
-	}
-	else
-	{
-		chara.x = round(chara.x);
-		chara.y = round(chara.y);
-		m6.x = round(m6.x);
-		m6.y = round(m6.y);
-		chara_stop();
-		party_stop(0);
-		global.party_facing[0] = RIGHT;
-		altcon = 4;
-	}
-}
-
-// manage brick particles
-if (con >= 1)
-{
-	for (var i = 0; i < brickamount; i++)
-	{
-		if (exists(brick[i]) == 1)
-		{
-			brick[i].image_angle += (2 * brickanglemult[i]);
-			if (brick[i].y >= (room_height / 2))
-				destroy(brick[i]);
-		}
-	}
-}
-
-// bc movement
-if (aftercon == 2)
-{
-	brocksiner += 0.1;
-	brock.vspeed = (sin(brocksiner) * 0.5);	
-}
-if (con > 0 && exists(bc) == true)
-{
-brock.x = (round(brock.x * 10) / 10);
-brock.y = (round(brock.y * 10) / 10);
-}
-*/

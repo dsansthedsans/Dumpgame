@@ -179,6 +179,7 @@ function marker(_x, _y, _sprite, _alpha, _xscale, _yscale, _img_speed, _img_inde
 	thismarker.image_angle = argument8;
 	thismarker.image_blend = argument9;
 	thismarker.depth = argument10;
+	return thismarker;
 }
 function surprise(_obj)
 {

@@ -1,6 +1,7 @@
 
 // definir sprite
 event_user(0);
+//global.chara_room = room;
 
 // criar MEE6
 if (global.flag[2] == 1 && exists(obj_party) == 0) // create MEE6

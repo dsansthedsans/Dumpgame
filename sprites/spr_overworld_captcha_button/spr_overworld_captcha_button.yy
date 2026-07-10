@@ -13,9 +13,9 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"5cd24554-9dfd-4cfe-91be-c72e79b176ca","name":"5cd24554-9dfd-4cfe-91be-c72e79b176ca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"0c8d09cb-525a-462a-8d03-edc174173e19","name":"0c8d09cb-525a-462a-8d03-edc174173e19","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"73285799-b3a2-406a-9c6e-219cdcd032d2","name":"73285799-b3a2-406a-9c6e-219cdcd032d2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"f1ac1172-c2d0-47f0-be04-f8b632d24a73","name":"f1ac1172-c2d0-47f0-be04-f8b632d24a73","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ce87eaee-3c1d-411c-9fe4-df0df9efc74c","name":"ce87eaee-3c1d-411c-9fe4-df0df9efc74c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"841caaf7-156b-4f93-874b-0fcc16ded27f","name":"841caaf7-156b-4f93-874b-0fcc16ded27f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"44321c9e-8829-4a55-8a68-17ad5f10ceed","name":"44321c9e-8829-4a55-8a68-17ad5f10ceed","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -75,14 +75,14 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5cd24554-9dfd-4cfe-91be-c72e79b176ca","path":"sprites/spr_overworld_captcha_button/spr_overworld_captcha_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"1258dbf0-1251-44e1-82a5-9bff480c685f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0c8d09cb-525a-462a-8d03-edc174173e19","path":"sprites/spr_overworld_captcha_button/spr_overworld_captcha_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b41a77fa-95bb-4844-bed8-d031b853e138","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ce87eaee-3c1d-411c-9fe4-df0df9efc74c","path":"sprites/spr_overworld_captcha_button/spr_overworld_captcha_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"0e03146f-4451-4fc1-b62e-4241f545e5f9","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"73285799-b3a2-406a-9c6e-219cdcd032d2","path":"sprites/spr_overworld_captcha_button/spr_overworld_captcha_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3d6d7c96-0b59-45f3-9eb0-bf6bf3d51a2a","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"841caaf7-156b-4f93-874b-0fcc16ded27f","path":"sprites/spr_overworld_captcha_button/spr_overworld_captcha_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"5b608aef-6363-4ab2-9f76-bed89d557fce","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f1ac1172-c2d0-47f0-be04-f8b632d24a73","path":"sprites/spr_overworld_captcha_button/spr_overworld_captcha_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"34739a74-7369-4177-88b1-cfdb8d9b46ef","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"44321c9e-8829-4a55-8a68-17ad5f10ceed","path":"sprites/spr_overworld_captcha_button/spr_overworld_captcha_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"366f2cb2-3251-4943-8ba4-7a6b4d39d543","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

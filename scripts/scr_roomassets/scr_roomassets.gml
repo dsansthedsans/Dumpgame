@@ -373,6 +373,10 @@ function room_solid()
 				image_xscale = -1;
 			}
 		}
+		
+		// sign
+		if (x == 140 && y== 260)
+			sprite_index = spr_overworld_signRock;
 	}
 	if (room == room_corridors_3_5)
 	{
@@ -461,6 +465,9 @@ function room_solid()
 			image_xscale = -1;
 		}
 		
+		// sign
+		if (x == 60 && y == 60)
+			sprite_index = spr_overworld_signRock;
 	}
 	if (room == room_corridors_5_A)
 	{
@@ -471,12 +478,20 @@ function room_solid()
 			if (x == 210 && y == 60)
 				image_index = 2;
 		}
+		
+		// sign
+		if (x == 260 && y== 140)
+			sprite_index = spr_overworld_signRock;
 	}
 	if (room == room_corridors_5_B)
 	{
 		// lamp
 		if (x == -10 && y == 120) || (x == 90 && y == 60) || (x == 250 && y == 60)
 			sprite_index = spr_overworld_lamp;
+		
+		// sign
+		if (x == 20 && y == 140)
+			sprite_index = spr_overworld_signRock;
 	}	
 	if (room == room_corridors_6) || (room == room_corridors_10)
 	{
@@ -582,7 +597,11 @@ function room_solid()
 		if (x == 110 && y == -10)
 			sprite_index = spr_overworld_pillardoor;
 	
-		// sign
+		// sign rock
+		if (x == 120 && y == 840)
+			sprite_index = spr_overworld_signRock;
+	
+		// signwood
 		if (x == 170 && y == 650)
 			sprite_index = spr_overworld_signWood;
 	}
@@ -592,21 +611,23 @@ function room_solid()
 		if (x == 30 && y == 95)
 			sprite_index = spr_overworld_signWood;
 		// pillars
-		if (y == 40) || (y == 120) || (y == 130) || (y == 195) || (y == 210)
+		if (y == 40) || (y == 130) || (y == 120) || (y == 210) || (y == 195)
 		{
 			sprite_index = spr_overworld_pillar;
-			if (y == 195) || (y == 210)
+			if (y == 210) || (y == 195)
 			{
-				if (x == 405)
+				if (x == 410)
+					image_index = 3;
+				if (x == 415)
 				{
+					x += 5;
+					y -= 3;
 					image_index = 5;
 					image_xscale = -1;
 				}
-				if (x == 400)
-					image_index = 3;
-				if (x == 580)
+				if (x == 570)
 					image_index = 1;
-				if (x == 610)
+				if (x == 600)
 				{
 					image_index = 4;
 					image_xscale = -1;

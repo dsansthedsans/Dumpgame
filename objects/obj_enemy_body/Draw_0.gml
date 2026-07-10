@@ -320,58 +320,21 @@ if (active == 1)
 		draw_sprite_ext(_arm_spr, 0, (_body_x + (_body_width / 2) - (7 * _body_xscale)), _arm_y, -_arm_xscale, _arm_yscale, 0, c_white, 1);
 		// head
 		var _head_spr = spr_enemy_troll_head;
-		var _head_xscale = (2 + (_sin / 8));
-		var _head_yscale = (2 + (_sin / 8));
-		var _head_width = (sprite_get_width(_head_spr) * _head_xscale);
-		var _head_height = (sprite_get_height(_head_spr) * _head_yscale);
-		var _head_cheek_height = ((_sin * 4) * _head_yscale);
+		var _head_scale = (2 + (_sin / 8));
+		var _head_width = (sprite_get_width(_head_spr) * _head_scale);
+		var _head_height = (sprite_get_height(_head_spr) * _head_scale);
 		var _head_x = (_body_x - (_head_width / 2) - 1 + (_cos * 4));
 		var _head_y = (_body_y - _body_height - (_head_height / 2) - 4 - (_sin * 20));
-		var _head_cheek_y = (_head_y + (25 * _head_yscale));
-		var _head_jaw_y =  (_head_cheek_y + _head_cheek_height);
-			// head cheek
-		draw_sprite_part_ext(_head_spr, 0, 0, 25, _head_width, 1, _head_x, _head_cheek_y, _head_xscale, _head_cheek_height, c_white, 1);
-			// head
-		draw_sprite_part_ext(_head_spr, 0, 0, 0, _head_width, 25, _head_x, _head_y, _head_xscale, _head_yscale, c_white, 1);
-			// head jaw
-		draw_sprite_part_ext(_head_spr, 0, 0, 26, _head_width, 17, _head_x, _head_jaw_y, _head_xscale, _head_yscale, c_white, 1);
-		
-		/*
-		// legs
-		var _legs_spr = spr_enemy_troll_legs;
-		var _legs_xscale = (2 + (_sin / 3.5))
-		var _legs_yscale = (2 - (_sin / 5));
-		var _legs_height = (sprite_get_height(_legs_spr) * _legs_yscale);
-		var _legs_x = enemy.orig_x;
-		var _legs_y = enemy.orig_y;
-		draw_sprite_ext(_legs_spr, 0, _legs_x, _legs_y, _legs_xscale, _legs_yscale, 0, c_white, 1);
-		// torso
-		var _torso_spr = spr_enemy_troll_torso;
-		var _torso_xscale = _legs_xscale;
-		var _torso_yscale = 2;
-		var _torso_height = (sprite_get_height(_torso_spr) * _torso_yscale);
-		var _torso_x = _legs_x;
-		var _torso_y = _legs_y - _legs_height + (_sin * 2.5);
-		draw_sprite_ext(_torso_spr, 0, _torso_x, _torso_y, _torso_xscale, _torso_yscale, 0, c_white, 1);
+		// cheek
+		var _cheek_y = (_head_y + (25 * _head_scale));
+		cheek_height = lerp(cheek_height, (10 * (enemy.hurt >= 1)), 0.1);
+		var _cheek_height = ((cheek_height * _head_scale) + ((_sin * 4) * _head_scale));
+		draw_sprite_part_ext(_head_spr, 0, 0, 25, _head_width, 1, _head_x, _cheek_y, _head_scale, _cheek_height, c_white, 1);
+		// jaw
+		var _jaw_y =  (_cheek_y + _cheek_height);
+		draw_sprite_part_ext(_head_spr, 0, 0, 26, _head_width, 17, _head_x, _jaw_y, _head_scale, _head_scale, c_white, 1);
 		// head
-		var _head_spr = spr_enemy_troll_head;
-		var _head_xscale = (2 + (_sin / 35));
-		var _head_yscale = (2 + (_sin / 35));
-		var _head_width = (sprite_get_width(_head_spr) * _head_xscale);
-		var _head_height = (sprite_get_height(_head_spr) * _head_yscale);
-		var _head_cheek_height = ((_sin * 5) * _head_yscale);
-		var _head_x = (_legs_x - (_head_width / 2) + (_sin * 3));
-		var _head_y = (_torso_y - _torso_height - (_head_height / 2) + (_sin * 5));
-		var _head_cheek_y = (_head_y + (25 * _head_yscale));
-		var _head_jaw_y =  (_head_cheek_y + _head_cheek_height);
-		
-			// head cheek
-		draw_sprite_part_ext(_head_spr, 0, 0, 25, _head_width, 1, _head_x, _head_cheek_y, _head_xscale, _head_cheek_height, c_white, 1);
-			// head
-		draw_sprite_part_ext(_head_spr, 0, 0, 0, _head_width, 25, _head_x, _head_y, _head_xscale, _head_yscale, c_white, 1);
-			// head jaw
-		draw_sprite_part_ext(_head_spr, 0, 0, 26, _head_width, 17, _head_x, _head_jaw_y, _head_xscale, _head_yscale, c_white, 1);
-		*/
+		draw_sprite_part_ext(_head_spr, 0, 0, 0, _head_width, 25, _head_x, _head_y, _head_scale, _head_scale, c_white, 1);
 	}
 }
 

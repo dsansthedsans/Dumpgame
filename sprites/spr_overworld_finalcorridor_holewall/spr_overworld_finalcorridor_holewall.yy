@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"spr_overworld_finalcorridor_holewall",
   "bboxMode":0,
-  "bbox_bottom":179,
+  "bbox_bottom":59,
   "bbox_left":0,
   "bbox_right":179,
   "bbox_top":0,
@@ -13,11 +13,6 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"b9a93e9a-eea9-4de7-a29e-dfe0997868a6","name":"b9a93e9a-eea9-4de7-a29e-dfe0997868a6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"7e21e17d-664c-415e-ab14-019fc5c0d235","name":"7e21e17d-664c-415e-ab14-019fc5c0d235","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"353b35d7-3169-4421-8a54-6c3c13569240","name":"353b35d7-3169-4421-8a54-6c3c13569240","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"cbec1168-58c4-4a27-b2c9-13bfcde59336","name":"cbec1168-58c4-4a27-b2c9-13bfcde59336","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"588d3f7f-cfd3-4c67-bd8c-0843837e230e","name":"588d3f7f-cfd3-4c67-bd8c-0843837e230e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"3de6f381-b861-474a-b832-365812518ddd","name":"3de6f381-b861-474a-b832-365812518ddd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":20,
   "gridY":20,
@@ -54,7 +49,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":6.0,
+    "length":1.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -76,21 +71,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b9a93e9a-eea9-4de7-a29e-dfe0997868a6","path":"sprites/spr_overworld_finalcorridor_holewall/spr_overworld_finalcorridor_holewall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"ef2a57c7-6cfd-4151-9273-74fcf775457b","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7e21e17d-664c-415e-ab14-019fc5c0d235","path":"sprites/spr_overworld_finalcorridor_holewall/spr_overworld_finalcorridor_holewall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"634e1475-8ac3-4ab3-b197-279aedb0ef58","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"353b35d7-3169-4421-8a54-6c3c13569240","path":"sprites/spr_overworld_finalcorridor_holewall/spr_overworld_finalcorridor_holewall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"df9f3963-8074-4f92-8119-a480d5cee1f9","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cbec1168-58c4-4a27-b2c9-13bfcde59336","path":"sprites/spr_overworld_finalcorridor_holewall/spr_overworld_finalcorridor_holewall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fccb98be-f6d1-461a-996f-ecbd4ffad81d","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"588d3f7f-cfd3-4c67-bd8c-0843837e230e","path":"sprites/spr_overworld_finalcorridor_holewall/spr_overworld_finalcorridor_holewall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3aaaa8d8-b0fe-421e-87d3-af23feef9d11","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3de6f381-b861-474a-b832-365812518ddd","path":"sprites/spr_overworld_finalcorridor_holewall/spr_overworld_finalcorridor_holewall.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"22b2667d-580d-4cac-9ffe-d35696615f44","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

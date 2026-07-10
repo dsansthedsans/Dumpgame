@@ -552,7 +552,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_4_5;
+		var _rm = room_corridors_11;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
