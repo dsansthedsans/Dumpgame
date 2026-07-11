@@ -185,6 +185,7 @@ function surprise(_obj)
 {
 	marker(argument0.x, (argument0.y - argument0.sprite_height - 2), spr_surprise, 1, 1, 1, 0, 0, 0, c_white, -9999);
 	thissurprise = thismarker;
+	return thissurprise;
 }
 function explosion(_x, _y)
 {
@@ -231,13 +232,9 @@ function shakeobj(_obj, _xint, _yint, _intlower)
 	shaker.yint = argument2;
 	shaker.intlower = argument3;
 }
-function shakeobj_normal() 
-{
-	shakeobj(id, 2, 2, 1);
-}
 function shakeobj_small() 
 {
-	shakeobj(id, 2, 2, 0.5);
+	shakeobj(id, 1, 1, 0.1);
 }	
 
 function screenpos(_x, _y)

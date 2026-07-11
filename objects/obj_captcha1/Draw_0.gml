@@ -15,7 +15,7 @@ for (var w = 0; w < 3; w++)
 	{
 		draw_set_font(fnt_main)
 		draw_set_alpha(1);
-		draw_set_color(#161419);
+		draw_set_color(#322544);
 		draw_set_valign(fa_middle);
 		draw_set_halign(fa_center);
 		draw_text((mybutton_x[w] + 10), (mybutton_y[h] + 7 + (3 * mybutton_pressed[w, h])), myletter[w, h]);

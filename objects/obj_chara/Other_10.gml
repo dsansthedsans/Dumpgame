@@ -13,7 +13,7 @@ if (afktime >= afkmaxtime)
 	{
 		xscale = 0.75;
 		yscale = 0.5;
-		audio_play(snd_cutesit, 0, VOLUME_SOUND);
+		audio_play(snd_splat, 0, VOLUME_SOUND);
 	}
 	global.chara_facing = SIT;
 }

@@ -189,7 +189,7 @@ function battle_setupgroup()
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty + 8), "Instances", obj_enemy_rhonhey);
 	}
 	
-	if (battle_group == 1000) // TROLLFACE PRIME
+	if (battle_group == 1000) // TROLLFACE
 	{
 		//battle_flee = 0;
 		battle_music = mus_battle_troll;

@@ -13,9 +13,10 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"045c1bfe-183d-4e98-8ae2-8ceb45e040fb","name":"045c1bfe-183d-4e98-8ae2-8ceb45e040fb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4a02f7b8-b01c-4c43-9741-0a172696170f","name":"4a02f7b8-b01c-4c43-9741-0a172696170f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":0,
-  "gridY":0,
+  "gridX":20,
+  "gridY":20,
   "height":20,
   "HTile":false,
   "layers":[
@@ -23,7 +24,7 @@
   ],
   "name":"spr_overworld_signRock",
   "nineSlice":null,
-  "origin":6,
+  "origin":0,
   "parent":{
     "name":"overworld",
     "path":"folders/[!] sprites/overworld.yy",
@@ -49,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -71,12 +72,15 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"045c1bfe-183d-4e98-8ae2-8ceb45e040fb","path":"sprites/spr_overworld_signRock/spr_overworld_signRock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e4f79fdb-112e-42f3-8717-ac85753f9bb4","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4a02f7b8-b01c-4c43-9741-0a172696170f","path":"sprites/spr_overworld_signRock/spr_overworld_signRock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"6f1fa6b2-1fc4-4813-a2e9-5317e3fe3686","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":20,
+    "yorigin":0,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

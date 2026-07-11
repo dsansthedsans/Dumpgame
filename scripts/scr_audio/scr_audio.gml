@@ -9,6 +9,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 	{
 		if (_asset == snd_dumpgame)
 			_volume *= 0.75;
+		if (_asset == snd_option_select)
+			_volume *= 1.25;
 		if (_asset == snd_option_movehold)
 			_volume *= 0.5;
 		if (_asset == snd_ambient_birds)
@@ -34,7 +36,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_bigcut)
 			_volume *= 0.75;
 		if (_asset == snd_txt_brock)
-			_volume *= 0.75;
+			_volume *= 0.5;
 		if (_asset == snd_shock_blt)
 			_volume *= 0.5;
 		if (_asset == snd_blt_launch) || (_asset == snd_blt_launch_reverse)
@@ -75,6 +77,8 @@ function audio_play(_audio, _loop = false, _volume_type = VOLUME_MASTER, _gain =
 	thisaudio = audio_play_sound(_audio, 80, _loop);
 	audio_gain(thisaudio, _gain, _gain_time, _gain_fadein, _volume_type);
 	audio_pitch(thisaudio, _pitch);
+	if (_audio == snd_splat_reversed)
+		audio_sound_set_track_position(thisaudio, 0.2);
 	return thisaudio;
 }
 function audio_stop(_audio)

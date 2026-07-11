@@ -24,6 +24,7 @@
     {"name":"inst_31DC676E","path":"rooms/room_corridors_10/room_corridors_10.yy",},
     {"name":"inst_4F6A314E","path":"rooms/room_corridors_10/room_corridors_10.yy",},
     {"name":"inst_3C6DCE69","path":"rooms/room_corridors_10/room_corridors_10.yy",},
+    {"name":"inst_7A40D717","path":"rooms/room_corridors_10/room_corridors_10.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -46,6 +47,7 @@
         {"$GMRInstance":"v4","%Name":"inst_44A0FF82","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_44A0FF82","objectId":{"name":"obj_solid_block","path":"objects/obj_solid_block/obj_solid_block.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":2.0,"x":260.0,"y":160.0,},
         {"$GMRInstance":"v4","%Name":"inst_31DC676E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_31DC676E","objectId":{"name":"obj_solid_block","path":"objects/obj_solid_block/obj_solid_block.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":2.0,"x":260.0,"y":80.0,},
         {"$GMRInstance":"v4","%Name":"inst_3C6DCE69","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3C6DCE69","objectId":{"name":"obj_overworld_solid","path":"objects/obj_overworld_solid/obj_overworld_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":290.0,"y":80.0,},
+        {"$GMRInstance":"v4","%Name":"inst_7A40D717","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7A40D717","objectId":{"name":"obj_overworld_solid","path":"objects/obj_overworld_solid/obj_overworld_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":140.0,"y":40.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_38340247_1","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_38340247_1","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_lamp","path":"sprites/spr_overworld_lamp/spr_overworld_lamp.yy",},"x":90.0,"y":40.0,},
@@ -67,10 +69,10 @@
           -2147483648,1,268435636,-6,-2147483648,1,180,-36,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tile_corridors","path":"tilesets/tile_corridors/tile_corridors.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
-          -2,-2147483648,1,103,-10,82,1,268435559,-4,-2147483648,7,1610612818,21,22,333,20,332,333,-4,20,93,1342177362,
-          0,0,-2147483648,-2147483648,1610612818,332,333,332,40,333,332,40,41,42,40,268435539,82,82,-2147483648,
-          -2147483648,1610612818,352,349,350,60,60,61,62,60,352,353,24,20,20,-2147483648,-2147483648,1610612818,
-          215,215,81,101,81,121,81,81,215,215,44,40,40,-2147483648,-2147483648,1610612818,215,215,334,268435770,
+          -2,-2147483648,1,103,-10,82,1,268435559,-4,-2147483648,7,1610612818,21,22,333,332,333,333,-4,20,93,1342177362,
+          0,0,-2147483648,-2147483648,1610612818,332,333,332,50,51,332,40,41,42,40,268435539,82,82,-2147483648,
+          -2147483648,1610612818,352,349,350,70,71,61,62,60,352,353,24,20,20,-2147483648,-2147483648,1610612818,
+          215,215,81,101,334,121,81,81,215,215,44,40,40,-2147483648,-2147483648,1610612818,215,215,334,268435770,
           268435616,160,81,81,215,215,64,60,60,-2147483648,-2147483648,1610612818,215,215,81,1879048352,536871076,
           805306537,1342177440,81,121,81,80,80,120,-2147483648,-2147483648,1610612818,215,215,81,1610612896,164,
           268435620,1073741984,-3,81,33,100,80,80,-2147483648,-2147483648,1610612818,215,215,81,81,805306528,536871072,

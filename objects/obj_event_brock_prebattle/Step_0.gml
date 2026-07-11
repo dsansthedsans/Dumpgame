@@ -3,13 +3,14 @@ if (con == 0 && obj_chara.x >= ((room_width / 2) + 10) && global.chara_move == 1
 	game = obj_GAME_CONTROLLER;
 	chara = obj_chara;
 	m6 = global.party[0];
+	m6_surprise = undefined;
 	brock = undefined;
 	brock_shock_image = 0;
 	brock_jumpTargetX = 500;
 	brock_jumpTargetY = 200;
-	brock_jumpSpeed = 0.075;
+	brock_jumpSpeed = 0.05;
 	brock_siner = 0;
-	cam_time = 90;
+	cam_time = 120;
 	cam_targetX = 340;
 	cam_targetY = 70;
 	cam_offsetX = (cam_targetX - game.cam_x);
@@ -23,9 +24,14 @@ if (con == 0 && obj_chara.x >= ((room_width / 2) + 10) && global.chara_move == 1
 	chara_change(-1, 0, 0, 1, 0, 0, 0);
 	chara_stop();
 	chara_facing(UP);
+	with (chara)
+		shakeobj_small();
 	party_change(0, -1, -1);
 	party_stop(0);
 	party_facing(0, UP);
+	m6_surprise = surprise(m6);
+	with (m6)
+		shakeobj_small();
 	for (var i = 0; i < instance_number(obj_overworld_solid); i++)
 	{
 		var _brickpile = instance_find(obj_overworld_solid, i);
@@ -43,14 +49,21 @@ else if (con == 2)
 	{
 		game.cam_x += cam_speedX;
 		game.cam_y += cam_speedY;
+		if (m6_surprise != undefined && exists(m6_surprise) == true)
+			destroy(m6_surprise);
+		m6_surprise = undefined;
 	}
 	else
 	{
 		game.cam_x = cam_targetX;
 		game.cam_y = cam_targetY;
-		movetopoint(515, 280, (gate_time / 2), chara);
-		chara.image_speed = chara.rimgspeed[1];
-		movetopoint(485, 280, (gate_time / 2), m6);
+		if (chara.y < 280)
+		{
+			movetopoint(515, 280, (gate_time / 2), chara);
+			chara.image_speed = chara.rimgspeed[1];
+		}
+		if (m6.y < 280)
+			movetopoint(485, 280, (gate_time / 2), m6);
 		m6.image_speed = chara.rimgspeed_party;
 		brock = marker(500, 140, spr_npc_brock, 0.5, 0.75, 0.75, 0, 0, 0, c_white, -room_height);
 		audio_play(snd_bigcut, 0, VOLUME_SOUND);
@@ -112,7 +125,7 @@ if (con == 5)
 	{
 		global.flag[37] = 0.5;
 		con = 6;
-		alarm[2] = 120;
+		alarm[2] = 60;
 	}
 }
 if (aftercon == 1)

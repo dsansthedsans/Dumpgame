@@ -153,7 +153,7 @@ else if (result == 1) // Bench
 			m6.yscale = 0.5;
 			chara.x += 11;
 		}
-		audio_play(snd_cutesit, 0, VOLUME_SOUND);
+		audio_play(snd_splat, 0, VOLUME_SOUND);
 		alarm[2] = 30;
 		con = 2;
 	}
@@ -179,7 +179,7 @@ else if (result == 1) // Bench
 				m6.yscale = 0.5;
 				party_change(0, 0, -1);
 			}
-			audio_play(snd_cutegetup, 0, VOLUME_SOUND);
+			audio_play(snd_splat_reversed, 0, VOLUME_SOUND);
 			con = 0;
 		}
 	}

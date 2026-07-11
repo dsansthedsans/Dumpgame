@@ -275,9 +275,9 @@ if (global.chara_move == 1)
 			image_index = 1;
 		if (afktime >= afkmaxtime)
 		{
-			xscale = 0.9;
-			yscale = 0.9;
-			audio_play(snd_cutegetup, 0, VOLUME_SOUND);
+			xscale = 0.75;
+			yscale = 0.5;
+			audio_play(snd_splat_reversed, 0, VOLUME_SOUND);
 		}
 		afktime = 0;
 		moving = 1;

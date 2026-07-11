@@ -231,10 +231,10 @@ function TEXT()
 	}
 		
 	// room_corridors_3
-	if (text == "room_stairssign")
+	if (text == "unused_room_stairssign")
 	{
 		for (var m = 0; m < 4; m++)
-			msg[m] = get_text($"room_stairssign_{m}");
+			msg[m] = get_text($"unused_room_stairssign_{m}");
 	}
 	if (text == "room_deadlamp")
 		msg[0] = get_text("room_deadlamp");
@@ -735,6 +735,11 @@ function TEXT()
 		else if (global.chara_armor == ITEM_BOWL)
 			msg[0] = get_text("room_chocobowl_4");
 	}
+	if (text == "room_chocosign")
+	{
+		for (var i = 0; i < 1; i++)
+			msg[i] = get_text("room_chocosign_" + string(i));
+	}
 		
 	// room_corridors_11
 	if (text == "npc_trashguy")
@@ -750,7 +755,7 @@ function TEXT()
 	}
 	if (text == "room_preclocksign")
 	{
-		for (var i = 0; i < 3; i++)
+		for (var i = 0; i < 4; i++)
 			msg[i] = get_text("room_preclocksign_" + string(i));
 	}
 	
@@ -858,7 +863,7 @@ function TEXT()
 		msg_format[0] = "textbox_top";
 	}
 	
-	// room_corridors_13
+	// unused_room_corridors_13
 	if (text == "room_postclocksign")
 	{
 		msg[0] = "* \"Hey!\"^1&* \"Did you have fun?\"";
@@ -1368,15 +1373,17 @@ function TEXT()
 			if (text == "battle_bubble_brock0") // normal
 			{
 				var _geno = enemy.geno;
-				var _round = clamp(controller.battle_round, 0, 7);
+				var _round = clamp(controller.battle_round, 0, 9);
 				if (controller.enemy_spare[enemy.myself] >= 100)
-					_round = 7;
+					_round = 9;
 				
 				for (var i = 0; i < 99; i++)
 				{
 					var _curmsg = get_text("battle_bubble_brock_" + string(_round) + "_" + string(i) + "_" +  string(_geno));
 					if (_curmsg != undefined)
 						msg[i] = _curmsg;
+					else
+						break;
 				}
 			}	
 			if (text == "battle_bubble_brock1") // fight attempt

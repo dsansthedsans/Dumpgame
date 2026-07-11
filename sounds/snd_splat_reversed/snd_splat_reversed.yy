@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"unused_snd_splat",
+  "%Name":"snd_splat_reversed",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":0.62403625,
   "exportDir":"",
-  "name":"unused_snd_splat",
+  "name":"snd_splat_reversed",
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] audio",
+    "path":"folders/[!] audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"unused_snd_splat.wav",
+  "soundFile":"snd_splat_reversed.wav",
   "volume":1.0,
 }

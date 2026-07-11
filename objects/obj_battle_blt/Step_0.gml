@@ -26,7 +26,7 @@ if (active == 1)
 				speed = 0;
 				image_index = 3;
 				image_angle = 0;
-				audio_play(unused_snd_splat, 0, VOLUME_SOUND);
+				audio_play(snd_splat, 0, VOLUME_SOUND);
 				stage = 2;
 			}
 		}

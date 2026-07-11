@@ -117,7 +117,7 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "room_corridors_10",		"Recompensa do CATPCHA (Estágio 2)");
 	ds_map_add(global.textdata_pt, "room_corridors_11",		"Caminho Relaxante");
 	ds_map_add(global.textdata_pt, "unused_room_corridors_12",		"O Relógio");
-	ds_map_add(global.textdata_pt, "room_corridors_13",		"Caminho das Pedras");
+	ds_map_add(global.textdata_pt, "unused_room_corridors_13",		"Caminho das Pedras");
 	ds_map_add(global.textdata_pt, "room_corridors_14",		"CAPTCHA (Último Estágio)");
 	ds_map_add(global.textdata_pt, "room_corridors_15",		"Recompensa do CAPTCHA (Último Estágio)");
 	ds_map_add(global.textdata_pt, "room_corridors_16",		"Ponto de Controle");
@@ -129,7 +129,7 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "room_caverns_2",		"Eu Espero Que Você Goste do Escuro Porque Isso É Apenas o Começo");
 	ds_map_add(global.textdata_pt, "room_caverns_3",		"Pilares Altos");
 	
-	ds_map_add(global.textdata_pt, "room_corridors_4_5",	"Regras");
+	ds_map_add(global.textdata_pt, "unused_room_corridors_4_5",	"Regras");
 	ds_map_add(global.textdata_pt, "room_corridors_1_doors","Elevador Estranho");
 	ds_map_add(global.textdata_pt, "unused_room_happybirthday",	"Feliz Aniversário");
 	
@@ -383,7 +383,7 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "npc_armsguy_1_1", "* Eles Só Estão Te Atacando Porque Eles Estão Com Medo.");
 	ds_map_add(global.textdata_pt, "npc_armsguy_1_2", "* Se Você Mostrar Que Você Não Vai Machucar Eles,^1 Tu Tá De Boa.");
 	
-	// room_corridors_4_5
+	// unused_room_corridors_4_5
 	ds_map_add(global.textdata_pt, "room_rulesbook_0", "* (É um livro antigo.)");
 	ds_map_add(global.textdata_pt, "room_rulesbook_1", "* (O título do livro é \"Regras\".)");
 	ds_map_add(global.textdata_pt, "room_rulesbook_2", "* (Algumas páginas estão arrancadas e outras cheias de desenhos.)");
