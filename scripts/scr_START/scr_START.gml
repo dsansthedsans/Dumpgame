@@ -141,12 +141,13 @@ function start_maininfo()
 	start_chara();
 	start_item();
 	start_flags();
+	global.flagtemp_bossSkip = false;
 	start_worlds();
 	
 	// start settings
 	// load settings
 	
-	start_savefile();
+	global.savefile_selected = -1;
 	
 	// start achievements
 	// load achievements
@@ -214,8 +215,6 @@ function start_chara()
 	global.chara_steps = 0;
 	global.chara_encounter = 0;
 	global.battle_nextgroup = 0;
-	global.battle_heart_x = 0;
-	global.battle_heart_y = 0;
 	
 	/*
 	#macro LEFT 0
@@ -281,7 +280,6 @@ function start_item()
 	#macro ITEM_BOWL 3
 	#macro ITEM_KUNAI 4
 	#macro ITEM_CHOCO 5
-	#macro ITEM_HELMET 6
 	
 	#macro ITEM_TYPE_CONSUMABLE 1
 	#macro ITEM_TYPE_WEAPON 2
@@ -291,11 +289,16 @@ function start_item()
 	global.item_last = (global.item_length - 1);
 	for (var i = 0; i < global.item_length; i++)
 		global.item[i] = -1;
+	
+	global.itemDropped_lengthMax = 99;
+	for (var i = 0; i < global.itemDropped_lengthMax; i++)
+		global.itemDropped[i] = {};
+	
 }
 function start_flags()
 {
-	// test flags
 	global.testflag[0] = 0; // finished event0
+	
 	
 	// flags
 	global.flag[0] = 0; // finished getting up event
@@ -425,6 +428,7 @@ function start_writer()
 	global.writer_old = -1;
 	global.writer_text = "";
 	global.writer_enemy = -1;
+	global.writer_infoArray = [];
 }
 function start_worlds()
 {
@@ -480,10 +484,6 @@ function start_settings()
 		settings_write();
 	else
 		settings_read();
-}
-function start_savefile()
-{
-	global.savefile_selected = -1;
 }
 function start_achievements()
 {
@@ -552,7 +552,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_11;
+		var _rm = room_corridors_6;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)

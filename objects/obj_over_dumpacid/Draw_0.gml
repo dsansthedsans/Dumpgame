@@ -7,7 +7,7 @@ if (room == room_menu)
 }
 
 // change y2 in game over
-else if (room == room_gameover && controller.con >= 9 && ((acid_y2 < 80) || (acid_alpha < 1)))
+else if (room == room_over && controller.con >= 9 && ((acid_y2 < 80) || (acid_alpha < 1)))
 {
 	var _amt = controller.bg_spd;
 	acid_y2 = lerp(acid_y2, 80, _amt);

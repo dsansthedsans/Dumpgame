@@ -2,7 +2,7 @@
 depth = -100;
 image_alpha = 0;
 controller = obj_menu_controller;
-if (room == room_gameover)
+if (room == room_over)
 	controller = obj_over_controller;
 
 acid_siner = 0;

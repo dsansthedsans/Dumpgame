@@ -17,6 +17,7 @@ text_length = 0;
 textbox_color = c_white;
 fastskip_stage = 0;
 fastskip_delay = 0;
+infoArray = global.writer_infoArray;
 
 // get default values
 for (var i = 0; i < 99; i++)

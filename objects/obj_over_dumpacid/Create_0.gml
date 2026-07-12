@@ -12,7 +12,7 @@ if (room == room_menu)
 	acid_alpha = controller.alpha;
 	acid_bonusy = controller.scroll_y;
 }
-else if (room == room_gameover)
+else if (room == room_over)
 {
 	controller = obj_over_controller;	
 	acid_alpha = 0;

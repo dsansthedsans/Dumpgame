@@ -33,32 +33,12 @@ if (warning == 0)
 
 	// indicador das opções
 	draw_sprite_ext(spr_heart_small, 0, (_cx + option_x[option_pos] - (string_width(option[option_pos]) / 2) - 10), (_cy + option_y[option_pos]), 1, 1, 0, c_white, alpha);
-
-	// mensagem do dia - divisão
-	/*
-	for (var i = 0; i < 2; i++)
-	{
-		var _msg_line_y = (msg_line_y - 1.5);
-		draw_set_color(c_white);
-		draw_line_width((_cx + msg_line_x[i, 0]), (_msg_line_y + _cy), (msg_line_x[i, 1] + _cx), (_msg_line_y + _cy), 3);
-	}
-	
-	// mensagem do dia - título
-	draw_set_halign(fa_left);
-	draw_set_font(fnt_mars_6);
-	draw_text((_cx + msg_line_x[0, 1] + 5), (_cy + msg_line_y), msg_title);
-	
-	// mensagem do dia
-	draw_set_color(c_gray);
-	draw_set_font(fnt_main);
-	draw_text_width((_cx + bg_x[0] + 5 + 5), (_cy + msg_line_y + (bg_h[1] / 2) - 4), msg, (bg_w[0] - 20));
-	*/
 }
 else
 {
 	// título
 	draw_set_alpha(alpha);
-	draw_set_color(c_red);
+	draw_set_color(merge_color(c_red, c_white, 0.2));
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
 	draw_set_font(fnt_main_spaced);

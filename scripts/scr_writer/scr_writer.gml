@@ -1,8 +1,9 @@
 
-function writer(_text, _optionalx, _optionaly)
+function writer(_text, _optionalx = -1, _optionaly = -1, _infoArray = [])
 {	
 	global.writer_text = _text;
 	global.writer_old = global.writer;
+	global.writer_infoArray = _infoArray;
 	global.writer = instance_create_layer(-20, -20, "Instances", obj_writer_controller);
 	global.writer.bubble_x = round(_optionalx);
 	global.writer.bubble_y = round(_optionaly);
@@ -77,17 +78,16 @@ function TEXT()
 	}
 	if (text == "charamenu_item_info")
 	{
-		msg[0] = item_desc(global.item[item_usepos()]);//global.inventory_slot_desc[obj_overworld_controller.levelopt_pos];	
+		msg[0] = item_desc(global.item[obj_chara_menu.option_pos_old]);
 		msg_format[0] = "textbox_bottom";
 	}
 	if (text == "charamenu_item_drop")
 	{
-		var _pos = item_usepos();
-		msg[0] = string(get_text("item_drop_0.0")) + string(item_name(global.item[_pos], "")) + string(get_text("item_drop_0.1"));
+		var _pos = obj_chara_menu.option_pos_old;
+		msg[0] = string(get_text("item_drop_0.0")) + ":Y" + string(item_name(global.item[_pos], "")) + ";D" + string(get_text($"item_drop_0.1_{irandom(9)}"));
 		msg_format[0] = "textbox_bottom";
-			
 		audio_play(snd_grab, 0, VOLUME_SOUND);
-		droppeditem_add(global.item[_pos]);
+		itemDropped_add(global.item[_pos]);
 		global.item[_pos] = -1;
 	}
 	
@@ -767,6 +767,8 @@ function TEXT()
 			var _curmsg = get_text("event_brock_prebattle_0_" + string(i));
 			if (_curmsg != undefined)
 				msg[i] = _curmsg;
+			else
+				break;
 		}
 			
 		msg_format[0] = "textbox_top";
@@ -776,20 +778,23 @@ function TEXT()
 		msg_face[2] = spr_dialogface_m6_angry;
 		msg_sound[2] = snd_txt_m6;
 		msg_talker[2] = global.party[0];
-			
-		msg_face[3] = -1;
-		msg_sound[3] = snd_txt_brock;
-		msg_talker[3] = -1;
 	}
 	if (text == "event_brock_prebattle_1")
 	{
+		msg[0] = get_text("event_brock_prebattle_1_0");
+		msg_format[0] = "textbox_top";
+		msg_sound[0] = snd_txt_brock;
+	}
+	if (text == "event_brock_prebattle_2")
+	{
 		for (var i = 0; i < 99; i++)
 		{
-			var _curmsg = get_text("event_brock_prebattle_1_" + string(i));
+			var _curmsg = get_text("event_brock_prebattle_2_" + string(i));
 			if (_curmsg != undefined)
 				msg[i] = _curmsg;
-		}
-				
+			else
+				break;
+		}		
 		msg_sound[0] = snd_txt_brock;
 		msg_format[0] = "textbox_top";
 	}
@@ -1257,9 +1262,9 @@ function TEXT()
 	}
 		
 	// dropped item
-	if (text == "droppeditem_pickup")
-		msg[0] = string(get_text("item_pickup")) + string(global.droppeditem_pickupname) + ".)";
-	if (text == "droppeditem_cantpickup")
+	if (text == "itemDropped_pickup")
+		msg[0] = string(get_text("item_pickup")) + string(infoArray[0]) + ";D.)";
+	if (text == "itemDropped_cantpickup")
 		msg[0] = get_text("item_cantpickup");
 	
 	if (string_starts_with(text, "battle_bubble") == 1) // bubble
@@ -1619,34 +1624,27 @@ function TEXT()
 		
 		if (text == "battle_itemlist")
 		{
-			item_organize();
-			
 			for (var i = 0; i < global.item_length; i++)
 			{
 				name[i] = "";
 				space[i] = "";
-				
 				var _type = "small";
 				if (controller.battle_serious == 1)
-					_type = "serious";
-				
-				if (global.item[i] != 0)
+					_type = "serious";	
+				if (global.item[i] != -1)
 				{
 					name[i] = ("   * " + string(item_name(global.item[i], _type)));
-				
-					// set space between options
 					for (var z = 0; z < (11 - string_length(item_name(global.item[i], _type))); z++)
 						space[i] += " ";
 				}
 			}
-				
 			msg[0] = (string(name[0]) + space[0] + string(name[1]) + "&!" + string(name[2]) + space[2] + string(name[3]) + "&!" + string(name[4]) + space[4] + string(name[5]));
 			msg_autoskip[0] = 1;
 		}
 		
 		if (text == "battle_useitem")
 		{
-			inventory_itemuse_dialog();
+			item_use();
 			msg_next[0] = 1;
 		}
 		

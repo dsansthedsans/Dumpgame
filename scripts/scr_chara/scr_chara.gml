@@ -182,7 +182,7 @@ function chara_inwhat()
 	global.inbattle = 0;
 	global.ingameover = 0;
 	
-	if (room > room_gameover && room < room_crazycat)
+	if (room > room_over && room < room_crazycat)
 		global.ingame = 1;
 	else if (room == room_menu)
 		global.inmenu = 1;
@@ -190,7 +190,7 @@ function chara_inwhat()
 		global.inintro = 1;
 	else if (room == room_battle)
 		global.inbattle = 1;
-	else if (room == room_gameover)
+	else if (room == room_over)
 		global.ingameover = 1;
 }
 

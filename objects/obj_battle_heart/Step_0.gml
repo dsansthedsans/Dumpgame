@@ -4,49 +4,49 @@ press_r = key("right_hold");
 press_u = key("up_hold");
 press_d = key("down_hold");
 press_shift = key("shift_hold");
-
-if (controller.heart_move == 1) // movement
+if (exists(controller) == true)
 {
-	curspeed = wspeed;
-	if (press_shift == 1)
-		curspeed = (wspeed / 2);
-	
-	x += ((press_r - press_l) * curspeed);
-	y += ((press_d - press_u) * curspeed);
-	
-	var _boxx = controller.box_x;
-	var _boxy = controller.box_y;
-	var _boxw = controller.box_w;
-	var _boxh = controller.box_h;
-	
-	var _lbox = (_boxx - (_boxw / 2) + (sprite_width / 2) - 2);
-	var _rbox = (_boxx + (_boxw / 2) - (sprite_width / 2) + 3);
-	x = clamp(x, _lbox, _rbox);
-	
-	var _ubox = (_boxy - (_boxh / 2) + (sprite_height / 2) - 2);
-	var _dbox = (_boxy + (_boxh / 2) - (sprite_height / 2) + 3);
-	y = clamp(y, _ubox, _dbox);
-}
-
-if (controller.fleeing == 0) // normal image speed
-{
-	if (invtime > 0)
-		invtime -= 1;
-	else
+	if (controller.heart_move == 1) // movement
 	{
-		image_speed = 0;
-		image_index = 0;
+		curspeed = wspeed;
+		if (press_shift == 1)
+			curspeed = (wspeed / 2);
+	
+		x += ((press_r - press_l) * curspeed);
+		y += ((press_d - press_u) * curspeed);
+	
+		var _boxx = controller.box_x;
+		var _boxy = controller.box_y;
+		var _boxw = controller.box_w;
+		var _boxh = controller.box_h;
+	
+		var _lbox = (_boxx - (_boxw / 2) + (sprite_width / 2) - 2);
+		var _rbox = (_boxx + (_boxw / 2) - (sprite_width / 2) + 3);
+		x = clamp(x, _lbox, _rbox);
+	
+		var _ubox = (_boxy - (_boxh / 2) + (sprite_height / 2) - 2);
+		var _dbox = (_boxy + (_boxh / 2) - (sprite_height / 2) + 3);
+		y = clamp(y, _ubox, _dbox);
 	}
+	if (controller.fleeing == 0) // normal image speed
+	{
+		if (invtime > 0)
+			invtime -= 1;
+		else
+		{
+			image_speed = 0;
+			image_index = 0;
+		}
+	}
+	else // fleeing animation
+	{
+		sprite_index = spr_battle_heart_flee;
+		image_speed = 0.25;
+		x -= 1.5;
+	}
+	graze.x = x;
+	graze.y = y;
 }
-else // fleeing animation
-{
-	sprite_index = spr_battle_heart_flee;
-	image_speed = 0.25;
-	x -= 1.5;
-}
-
-graze.x = x;
-graze.y = y;
 
 /*
 if (controller.fleeing == 0) // take damage

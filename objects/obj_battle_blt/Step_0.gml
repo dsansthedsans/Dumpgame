@@ -200,7 +200,6 @@ if (active == 1)
 	if (type >= 4.0 && type <= 4.2) // Flitcher
 	{
 		siner += 0.1;
-		
 		if (type == 4.0)
 			hspeed = (cos(siner) * mult);
 		else if (type == 4.1)
@@ -333,7 +332,7 @@ if (active == 1)
 			nexty = yy[ypos];
 			
 			// create danger
-			var _time = 30;
+			var _time = 27;
 			if (controller.battle_round > 3)
 				_time = 22;
 			dx1 = (x - (sw / 2) + 2);

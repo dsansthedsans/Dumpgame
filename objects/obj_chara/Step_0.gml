@@ -11,7 +11,7 @@ press_esc = key("pausegame");
 
 
 // abrir menu
-if (global.chara_cutscene == 0 && global.chara_open_menu == 1)
+if (global.chara_cutscene == 0 && global.chara_open_menu == 1 && exists(obj_room_transition) == false)
 {
 	if (exists(obj_chara_menu) == 0 && press_ctrl == 1)
 	{
@@ -29,7 +29,7 @@ if (global.chara_cutscene == 0 && global.chara_open_menu == 1)
 
 
 // pausar jogo
-if (global.chara_cutscene == 0 && global.chara_pause_game == 1)
+if (global.chara_cutscene == 0 && global.chara_pause_game == 1 && exists(obj_room_transition) == false)
 {
 	pauseobj = obj_chara_pause;
 	if (exists(pauseobj) == 0 && press_esc == 1)
@@ -320,40 +320,38 @@ else
 
 
 // interagir (blocos, mudar de quarto)
-if (global.chara_interact == 1)
+if (global.chara_move == 1 && global.chara_interact == 1)
 {
 	// blocos
-	for (var i = 0; i < 2; i++)
+	if (press_enter == 1 && exists(obj_room_transition) == false)
 	{
-		// pegar colisão
-		var _obj = obj_interact_parent;
-		if (i == 1)
-			_obj = obj_solidinteract_parent;
-		lcol = collision_rectangle(x, (y - (sprite_height / 2) - 2), (x - (sprite_width / 2) - 2), y, _obj, 0, 1);
-		rcol = collision_rectangle(x, (y - (sprite_height / 2) - 2), (x + (sprite_width / 2) + 2), y, _obj, 0, 1);
-		ucol = collision_rectangle((x - (sprite_width / 3) - 2), y, (x + (sprite_width / 3) + 2), (y - (sprite_height / 2) - 2), _obj, 0, 1);
-		dcol = collision_rectangle((x - (sprite_width / 3) - 2), y, (x + (sprite_width / 3) + 2), (y + (sprite_height / 3) + 2), _obj, 0, 1);
-		
-		// checar colisão e pegar o bloco
-		mycol = 0;
-		if (global.chara_facing == LEFT	&& lcol > 0)
-			mycol = lcol;
-		if (global.chara_facing == RIGHT && rcol > 0)
-			mycol = rcol;
-		if (global.chara_facing == UP && ucol > 0)
-			mycol = ucol;
-		if (global.chara_facing == DOWN	&& dcol > 0)
-			mycol = dcol;
-		
-		// iniciar resultado
-		if (press_enter == 1 && mycol != 0 && mycol.con == 0)
+		for (var i = 0; i < 2; i++)
 		{
-			chara_change(-1, 0, 0, -1, 0, 0, -1);
-			chara_stop();
-			mycol.con = 1;
-			lastcol = mycol;
+			var _obj = obj_interact_parent;
+			if (i == 1)
+				_obj = obj_solidinteract_parent;
+			lcol = collision_rectangle(x, (y - (sprite_height / 2) - 2), (x - (sprite_width / 2) - 2), y, _obj, 0, 1);
+			rcol = collision_rectangle(x, (y - (sprite_height / 2) - 2), (x + (sprite_width / 2) + 2), y, _obj, 0, 1);
+			ucol = collision_rectangle((x - (sprite_width / 3) - 2), y, (x + (sprite_width / 3) + 2), (y - (sprite_height / 2) - 2), _obj, 0, 1);
+			dcol = collision_rectangle((x - (sprite_width / 3) - 2), y, (x + (sprite_width / 3) + 2), (y + (sprite_height / 3) + 2), _obj, 0, 1);
+			mycol = 0;
+			if (global.chara_facing == LEFT	&& lcol > 0)
+				mycol = lcol;
+			if (global.chara_facing == RIGHT && rcol > 0)
+				mycol = rcol;
+			if (global.chara_facing == UP && ucol > 0)
+				mycol = ucol;
+			if (global.chara_facing == DOWN	&& dcol > 0)
+				mycol = dcol;
+			if (mycol != 0 && mycol.con == 0 )
+			{
+				chara_change(-1, 0, 0, -1, 0, 0, -1);
+				chara_stop();
+				mycol.con = 1;
+				lastcol = mycol;
+			}
 		}
-	}	
+	}
 	
 	// mudar de quarto
 	if (place_meeting(x, y, obj_room_parent) == 1)

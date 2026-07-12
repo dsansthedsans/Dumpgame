@@ -3,12 +3,6 @@ function room_interact()
 {
 	var r = room;
 	
-	// save point
-	if (r == room_corridors_4 && x == 115 && y == 205) ||  (room == room_corridors_8 && x == 195 && y == 340) || (room == room_corridors_11 && x == 170 && y == 90) || (room == unused_room_corridors_11 && x == 130 && y == 120) || (room == unused_room_corridors_13 && x == 370 && y == 160) || (room == room_corridors_16 && x == 170 && y == 200) || (room == room_caverns_3 && x == 150 && y == 225)
-	{
-		text = "savepoint";
-		result = 0.1;
-	}
 	// bench
 	if (room == room_corridors_7 && y == 100 && x != 480) || (room == room_corridors_11 && ((x == 130 || x == 290) && y == 95))
 		result = 1;	

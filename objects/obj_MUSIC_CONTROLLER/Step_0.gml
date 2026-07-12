@@ -38,7 +38,7 @@ if (room == room_intro)
 	if (controller.active == 1)
 		music_set(0, mus_intro);
 }
-if (room == room_gameover)
+if (room == room_over)
 	{
 		music_set(0, -1);
 		if (exists(obj_over_controller) == 1 && obj_over_controller.con == 9)
@@ -199,6 +199,8 @@ if (exists(obj_battle_quicker) == 1) || (room == room_battle)
 }
 else
 {
+	if (room == room_over)
+		music_set(3, -2);
 	if (global.music[3] == -2)
 	{
 		for (var i = 0; i < (global.music_length - 1); i++)

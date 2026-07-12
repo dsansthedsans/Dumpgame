@@ -83,6 +83,9 @@ if (con == 9) // options
 		savefile_load(global.savefile_selected);
 		global.chara_deaths += 1;
 		savefile_write();
+		global.chara_curhp = global.chara_maxhp;
+		chara_change(-1, 1,  1, 0, 1, 1, 1);
+		chara_facing(DOWN);
 		var _room = global.chara_room;
 		if (mainopt_pos == 2)
 		{
@@ -127,6 +130,3 @@ if (altcon == 1)
 		}
 	}
 }
-
-// manage particles
-//dumpparticle_manage();

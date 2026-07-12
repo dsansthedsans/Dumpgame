@@ -78,7 +78,7 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 			if (battle_lvl == 2.1)
 				thisopt[i] = enemy_act[enemy_target, i];
 			else
-				thisopt[i] = global.inventory_slot[i];
+				thisopt[i] = global.item[i];
 		}
 		
 		if (press_l == 1)
@@ -96,7 +96,7 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 			else
 				level_pos_xfactor = 0;
 		
-			if (thisopt[level_pos] == "") || (thisopt[level_pos] == 0)
+			if (thisopt[level_pos] == "") || (thisopt[level_pos] == -1)
 			{
 				level_pos -= 1;
 				level_pos_xfactor = 0;
@@ -117,7 +117,7 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 			else
 				level_pos_xfactor = 258;
 				
-			if (thisopt[level_pos] == "") || (thisopt[level_pos] == 0)
+			if (thisopt[level_pos] == "") || (thisopt[level_pos] == -1)
 			{
 				level_pos -= 1;
 				level_pos_xfactor = 0;
@@ -134,7 +134,7 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 				level_pos = (6 + level_pos);
 				level_pos_yfactor = 64;
 				
-				while (thisopt[level_pos] == "") || (thisopt[level_pos] == 0)
+				while (thisopt[level_pos] == "") || (thisopt[level_pos] == -1)
 				{
 					level_pos -= 2;
 					level_pos_yfactor -= 32;
@@ -156,7 +156,7 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 			if (level_pos == 6) || (level_pos == 7)
 				level_pos = (level_pos - 6);
 								
-			if (thisopt[level_pos] == "") || (thisopt[level_pos] == 0)
+			if (thisopt[level_pos] == "") || (thisopt[level_pos] == -1)
 			{
 				var _oldpos = level_pos;
 				level_pos = 0;
@@ -235,7 +235,10 @@ if (battle_lvl == 4.0 && press_enter == 1) // mercy (select)
 			alarm[0] = 60;
 		}
 		else
+		{
 			audio_play(snd_option_cantselect, 0, VOLUME_SOUND);
+			shakescreen(2, 2);
+		}
 	}
 	
 	press_enter = 0;
@@ -327,7 +330,7 @@ if (battle_lvl == 0) // main
 		// select
 		if (press_enter == 1)
 		{
-			if !(button_pos == 2 && global.inventory_slot[0] == 0)
+			if !(button_pos == 2 && global.item[0] == -1)
 			{
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
 				battle_lvl = (button_pos + 1);

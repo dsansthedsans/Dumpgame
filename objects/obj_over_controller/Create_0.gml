@@ -7,17 +7,23 @@ alpha = 1;
 bg_spd = 0.05;
 bg_alpha = 1;
 
-heart_x = global.battle_heart_x;
-heart_y = global.battle_heart_y;
+heart_targetx = (room_width / 2);
+heart_targety = (room_height / 1.5);
+heart_x = heart_targetx;
+heart_y = heart_targety;
+if (exists(obj_battle_heart) == true)
+{
+	heart_x = obj_battle_heart.x;
+	heart_y = obj_battle_heart.y;
+	destroy(obj_battle_heart);
+}
 heart_spr = spr_battle_heart;
 heart_alpha = 1;
 heart_color = global.c_dump;
-heart_targetx = (room_width / 2);
-heart_targety = (room_height / 1.5);
 
 title_scale = 1;
 title_xalign = (2 * title_scale);
-var _middlex = ((room_width / 2) + ((9 * title_scale) / 2));
+var _middlex = ((room_width / 2) + 15 + ((9 * title_scale) / 2));
 title_x[0] = (_middlex - (title_xalign / 2));
 title_x[1] = (_middlex + (title_xalign / 2));
 title_y = 70;
@@ -55,24 +61,3 @@ create(0, 0, obj_menu_bg);
 depth = -1000;
 image_alpha = 0;
 alarm[2] = 80;
-
-/*
-mystage_alt = 0;
-mydelay = 80;
-myheart = spr_battle_heart;
-myheartx = (room_width / 4);
-myhearty = (room_width / 1.5);
-myhearttargetx = (room_width / 2);
-myhearttargety = (room_height / 1.5);
-myheartcol = global.c_dump;
-myheartalpha = 1;
-myheartamt = 0.1;
-mytitle = spr_gameover_title;
-mytitlescale = 1;
-mytitlex = round((room_width / 2) - (sprite_get_width(mytitle) * (mytitlescale / 2)))
-mytitley = 80;
-mytitlew = 0;
-mytitleh = sprite_get_height(mytitle);
-myshardamt = 4
-fadealpha = 0;
-*/

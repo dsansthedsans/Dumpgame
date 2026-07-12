@@ -107,7 +107,7 @@ if (active == 1)
 			var _mult = 0.75;
 			if (controller.enemy_spare[myself] >= 100)
 			{
-				_slow = 2;
+				_slow = 1;
 				_mult = 0.5;
 				shock_alphaTrue = 0;
 			}

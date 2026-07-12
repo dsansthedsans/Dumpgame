@@ -278,7 +278,10 @@ if (move == 1)
 					audio_play(snd_option_select, 0, VOLUME_SOUND);
 				}
 				else
+				{
 					audio_play(snd_option_cantselect, 0, VOLUME_SOUND);
+					shakescreen(2, 2);
+				}
 			}
 		}
 	}

@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_droppeditem",
+  "%Name":"obj_itemDropped",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_droppeditem",
+  "name":"obj_itemDropped",
   "overriddenProperties":[],
   "parent":{
     "name":"Dumpgame_51",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_droppeditem",
-    "path":"sprites/spr_droppeditem/spr_droppeditem.yy",
+    "name":"spr_itemDropped",
+    "path":"sprites/spr_itemDropped/spr_itemDropped.yy",
   },
   "spriteMaskId":null,
   "visible":true,

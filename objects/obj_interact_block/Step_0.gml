@@ -1,4 +1,3 @@
-
 if (result >= 0 && result < 1) || (result == 4) // writer
 {
 	if (con == 1)
@@ -282,7 +281,30 @@ else if (result == 2) // moveble
 		}	
 	}
 }
-
+else if (result == 5) // itemDropoed
+{
+	if (con == 1)
+	{
+		if (global.item[global.item_last] == -1)
+		{
+			global.item[global.item_last] = global.itemDropped[itemDropped_arrayPos].item;
+			global.itemDropped[itemDropped_arrayPos] = {};
+			writer("itemDropped_pickup", -1, -1, [item_name(global.item[global.item_last], "")]);
+			audio_play(snd_item, 0, VOLUME_SOUND);
+			image_alpha = 0;
+		}
+		else
+			writer("itemDropped_cantpickup", -1, -1);
+		con = 2;
+	}
+	else if (con == 2 && exists(thiswriter) == 0)
+	{
+		chara_change(-1, 1, 1, -1, 1, 1, -1);
+		if (image_alpha == 0)
+			destroy(id);
+		con = 0;
+	}
+}
 
 
 

@@ -45,11 +45,11 @@ if (type == 1) // Dummy
 	image_speed = 1;
 	audio_play(snd_txt2, 0, VOLUME_SOUND);
 	outside_box = 1;
+	dmg = 0;
 }
 
 if (type == 2.0) // Armsguy
 {
-	dmg = 3;
 	gravity_direction = 270;
 	sprite_index = spr_battle_blt_drop;
 	image_xscale = 1;
@@ -67,7 +67,6 @@ if (type == 2.0) // Armsguy
 }
 if (type == 2.1)
 {
-	dmg = 3;
 	sprite_index = spr_battle_blt_slime;
 	image_xscale = 1;
 	image_yscale = 1;
@@ -79,8 +78,6 @@ if (type == 2.1)
 
 if (type == 3.0) // Trashguy
 {
-	dmg = 2;
-	
 	hspeed = random_range(-0.5, 0.5);
 	if (myself == 0)
 	{
@@ -147,7 +144,6 @@ if (type >= 4.0 && type <= 4.2) // Flitcher
 	image_yscale = 1;
 	siner = 0;
 	mult = 1;
-	
 	if (type == 4) || (type == 4.1)
 	{
 		if (type == 4)
@@ -163,6 +159,8 @@ if (type >= 4.0 && type <= 4.2) // Flitcher
 		else if (type == 4.1)
 			hspeed = -0.75;
 	}
+	if (type == 4.2)
+		dmg += 1;
 }
 
 if (type == 5.0) // Eyecrush
@@ -213,14 +211,15 @@ if (type == 6.0) // Broken Clock
 	image_xscale = 1;
 	image_yscale = 1;
 	sprite_index = spr_battle_blt_shock;
+	dmg += 1;
 	outside_box = 1;
 	audio_play(snd_shock_blt, 0, VOLUME_SOUND);
 }
 if (type == 6.1)
 {
+	dmg += 1;
 	can_damage = 0;
 	outside_box = 1;
-	
 	depth = controller.battle_depth[2];
 	image_alpha = 0;
 	image_index = irandom(4);
@@ -256,10 +255,11 @@ if (type == 6.1)
 	reverse_delay = 30;
 }
 if (type == 6.3)
-{
+{	
 	sprite_index = spr_enemy_brock_body;
 	image_alpha = 0;
 	image_blend = c_red;
+	dmg += 2;
 	outside_box = 1;
 	destroy_on_impact = 0;
 	
@@ -296,6 +296,7 @@ if (type == 6.20)
 	image_yscale = 1;
 	destroy_on_impact = 0;
 	outside_box = 1;
+	dmg += 2;
 }
 if (type >= 6.21 && type <= 6.23)
 {
@@ -311,6 +312,7 @@ if (type >= 6.21 && type <= 6.23)
 	}
 	destroy_on_impact = 0;
 	outside_box = 1;
+	dmg += 1;
 }
 if (type == 6.24)
 {
@@ -322,6 +324,7 @@ if (type == 6.24)
 	image_speed = 1;
 	alarm[1] = 7;
 	fadeout = 0;
+	dmg += 2;
 	outside_box = 1;
 	destroy_on_impact = 0;
 	audio_play(snd_explosion2, 0, VOLUME_SOUND);
