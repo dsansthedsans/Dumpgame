@@ -252,7 +252,21 @@ if (type == 6.1)
 	anglepos[0] = image_angle;
 	alphapos[0] = image_alpha;
 	reverse = 0;
-	reverse_delay = 30;
+	reverse_delay = 45;
+	if (controller.battle_round > 1)
+		reverse_delay = 30;
+}
+if (type == 6.15)
+{
+	sprite_index = spr_battle_blt_brock_video;
+	image_alpha = 0.25;
+	//image_xscale = 1;
+	//image_yscale = 1;
+	can_damage = 0;
+	outside_box = 1;
+	destroy_on_impact = 0;
+	
+	LASTINDEXaaa = 0;
 }
 if (type == 6.3)
 {	

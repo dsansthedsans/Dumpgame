@@ -668,6 +668,8 @@ function battle_attack()
 		{		
 			if (stage == 0)
 			{
+				bltvideo = create(box_x, box_y, obj_battle_blt);
+				bltvideo.type = 6.15;
 				bltpos = 0;
 				for (var i = 0; i < 100; i++)
 					thisblt[i] = -1;
@@ -676,11 +678,12 @@ function battle_attack()
 			}
 			if (stage == 1)
 			{
-				var _delay = 15 - (3 * (controller.battle_round > 1));
+				var _delay = 15 - (4 * (controller.battle_round > 1));
 				if (delay >= _delay)
 				{
 					create((box_x - (box_w / 2) + irandom(box_w)), (box_y - (box_h / 2) + 20), obj_battle_blt);
 					thisobj.type = 6.1;
+					thisobj.bltvideo = bltvideo;
 					thisblt[bltpos] = thisobj;
 					bltpos += 1;
 					delay = 0;

@@ -285,6 +285,8 @@ if (active == 1)
 		}
 		if (reverse == 1)
 		{
+			if (bltvideo.image_index != 1)
+				bltvideo.image_index = 1;
 			speed = 0;
 			gravity = 0;
 			reverse_delay -= 1;
@@ -293,6 +295,8 @@ if (active == 1)
 		}
 		if (reverse == 2 && pospos > 0)
 		{
+			if (bltvideo.image_index != 2)
+				bltvideo.image_index = 2;
 			pospos -= 1;
 			x = xpos[pospos];
 			y = ypos[pospos];
@@ -307,6 +311,14 @@ if (active == 1)
 				destroy(id);
 			}
 		}
+	}
+	if (type == 6.15)
+	{
+		if (LASTINDEXaaa == 0 && image_index == 1)
+			audio_play(snd_option_move, 0, VOLUME_SOUND);
+		if (LASTINDEXaaa == 1 && image_index == 2)
+			audio_play(snd_option_select, 0, VOLUME_SOUND);
+		LASTINDEXaaa = image_index;
 	}
 	if (type == 6.3)
 	{

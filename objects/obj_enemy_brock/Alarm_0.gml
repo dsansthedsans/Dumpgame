@@ -35,6 +35,8 @@ bubbledelay = 0;
 fightattempt = 0;
 
 skip = 0;
+if (global.indebug == true && global.debug_hud == true)
+	skip = 1;
 if (skip == 1)
 {
 	convince = 5;

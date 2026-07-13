@@ -760,45 +760,42 @@ function TEXT()
 	}
 	
 	// obj_event_brock_prebattle
-	if (text == "event_brock_prebattle_0")
+	if (text == "event_brock_battle_0")
 	{
 		for (var i = 0; i < 99; i++)
 		{
-			var _curmsg = get_text("event_brock_prebattle_0_" + string(i));
+			var _curmsg = get_text("event_brock_battle_0_" + string(i));
 			if (_curmsg != undefined)
 				msg[i] = _curmsg;
 			else
 				break;
 		}
-			
 		msg_format[0] = "textbox_top";
-			
 		msg_sound[0] = snd_txt_brock;
-			
 		msg_face[2] = spr_dialogface_m6_angry;
 		msg_sound[2] = snd_txt_m6;
 		msg_talker[2] = global.party[0];
 	}
-	if (text == "event_brock_prebattle_1")
+	if (text == "event_brock_battle_1")
 	{
-		msg[0] = get_text("event_brock_prebattle_1_0");
+		msg[0] = get_text("event_brock_battle_1_0");
 		msg_format[0] = "textbox_top";
 		msg_sound[0] = snd_txt_brock;
 	}
-	if (text == "event_brock_prebattle_2")
+	if (text == "event_brock_battle_2")
 	{
 		for (var i = 0; i < 99; i++)
 		{
-			var _curmsg = get_text("event_brock_prebattle_2_" + string(i));
+			var _curmsg = get_text("event_brock_battle_2_" + string(i));
 			if (_curmsg != undefined)
 				msg[i] = _curmsg;
 			else
 				break;
-		}		
+		}
 		msg_sound[0] = snd_txt_brock;
 		msg_format[0] = "textbox_top";
 	}
-	if (text == "event_brock_prebattle_6_genotest")
+	if (text == "unused_event_brock_prebattle_6_genotest")
 	{
 		msg[0] = "* WELL,^1 LOOKS LIKE THAT I WAS RIGHT.";
 		msg[1] = "* YOU'RE NO DIFFERENT FROM THEM.";
@@ -811,20 +808,20 @@ function TEXT()
 	}
 		
 	// obj_event_brock_postbattle
-	if (text == "event_brock_postbattle_0")
+	if (text == "event_brock_battle_3")
 	{
 		for (var i = 0; i < 99; i++)
 		{
-			var _curmsg = get_text("event_brock_postbattle_0_" + string(i));
+			var _curmsg = get_text("event_brock_battle_3_" + string(i));
 			if (_curmsg != undefined)
 				msg[i] = _curmsg;
 			else
 				break;
 		}
-		msg_sound[0] = snd_txt_brock;
+		msg_sound[0] = snd_txt_brock_tense;
 		msg_format[0] = "textbox_top";
 	}
-	if (text == "event_brock_postbattle_1")
+	if (text == "event_brock_battle_4")
 	{
 		for (var i = 0; i < 99; i++)
 		{
@@ -854,7 +851,7 @@ function TEXT()
 		msg_talker[0] = obj_event_brock_postbattle.m6;
 		msg_format[0] = "textbox_top";
 	}
-	if (text == "event_brock_postbattle_2")
+	if (text == "event_brock_battle_5")
 	{
 		msg[0] = get_text("event_brock_postbattle_2_0_0");
 		msg_face[0] = spr_dialogface_m6_angry;
@@ -1400,6 +1397,7 @@ function TEXT()
 	}
 	else if (string_starts_with(text, "battle_") == 1) // battlebox
 	{
+		msg_sound[0] = snd_txt2;
 		msg_next[0] = 0;
 		msg_font[0] = fnt_main_big;
 		msg_format[0] = "battlebox";

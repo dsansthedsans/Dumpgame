@@ -114,7 +114,7 @@ if (room == room_corridors_17)
 }
 if (room == room_corridors_18) // gabee's chase
 {
-	global.music[0] = -1;
+	music_set(0, -1);
 	music_fadeouttime_old[0] = 5;
 	music_set(1, snd_ambient_wind, , 2.5, 1, 0.75, , 2.5);
 	global.music_volumetype[1] = VOLUME_SOUND;
@@ -230,16 +230,25 @@ for (var i = 0; i < global.music_length; i++)
 	// parar música
 	if (((global.music[i] <= -1) || (global.music[i] != music_old[i] && music_old[i] > -1)) && music_audio[i] > -1)
 	{
-		debug($"--- Stopping old music \"{audio_get_name(audio_sound_get_asset(music_audio_old[i]))}\"");
-		audio_gain(music_audio_old[i], 0, music_fadeouttime_old[i], 0, music_volumetype_old[i]);
-		var z = 0;
-		while (music_fadingaudio[z] != -1 && z < global.music_length)
+		if (audio_playing(music_audio_old[i]) == true)
 		{
-			z += 1;
+			if (music_fadeouttime_old[i] > 0)
+			{
+				debug($"--- Stopping old music \"{audio_get_name(audio_sound_get_asset(music_audio_old[i]))}\"");
+				audio_gain(music_audio_old[i], 0, music_fadeouttime_old[i], 0, music_volumetype_old[i]);
+				var z = 0;
+				while (music_fadingaudio[z] != -1 && z < global.music_length)
+					z += 1;
+				music_fadingaudio[z] = music_audio_old[i];
+				music_fading[i] = 1;
+			}
+			else
+			{
+				debug($"--- Stopped old music \"{audio_get_name(audio_sound_get_asset(music_audio_old[i]))}\"");
+				audio_stop(music_audio_old[i]);
+			}
 		}
-		music_fadingaudio[z] = music_audio_old[i];
 		music_playing[i] = 0;
-		music_fading[i] = 1;
 		music_audio[i] = -1;
 	}
 	// tocar música

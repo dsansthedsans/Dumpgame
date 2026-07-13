@@ -42,7 +42,7 @@ button_x[1] = 183;
 button_x[2] = 338;
 button_x[3] = 493;
 for (var i = 0; i < 4; i++)
-	button_y[i] = round(432 - (sprite_get_height(button_spr[0]) / 4) + 2);
+	button_y[i] = round(432 - (sprite_get_height(button_spr[0]) / 4) + 0);
 
 button_alpha = 1;
 button_color[0] = #136641;
@@ -58,8 +58,8 @@ hp_color[1] = #DD2929;
 gui_alpha = 1;
 
 // box
-box_x = (room_width / 2) - 1;
-box_y = (room_width / 2);
+box_x = round((room_width / 2) - 1);
+box_y = round(room_width / 2);
 box_w = 564;
 box_h = 129;
 box_nextx = box_x;
@@ -128,9 +128,11 @@ if ((enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0) == false)
 	writer("battle_main", -1, -1);
 screenpos(0, 0);
 
-// custom
+/*
+// deltarune background custom
 spamtontest_cart_x = (room_width / 7);
 spamtontest_cart_siner = 0;
 spamtontest_rail_x[0] = -room_width;
 spamtontest_rail_x[1] = 0;
 spamtontest_rail_x[2] = room_width;
+*/

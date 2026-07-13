@@ -179,6 +179,8 @@ function start_chara()
 	// informações que não tem que salvar
 	global.chara_maxhp = 20;
 	global.chara_curhp = 20;
+	global.chara_m6Max = 20;
+	global.chara_m6Curr = 0;
 	
 	global.chara_nextexp = 0;
 	
@@ -552,7 +554,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_6;
+		var _rm = room_corridors_11;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -657,6 +659,8 @@ function CHANGE_GAME()
 			{
 				global.flag[36] = 1; // took chocolate from CAPTCHA's STAGE 2 reward	
 				global.item[5] = ITEM_CHOCO;
+				
+				//global.flag[37] = 1; // pre brock
 			}	
 			if (_lvl >= 6)
 			{

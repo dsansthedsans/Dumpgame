@@ -23,7 +23,7 @@
   ],
   "name":"spr_battle_hpsign",
   "nineSlice":null,
-  "origin":5,
+  "origin":3,
   "parent":{
     "name":"battle",
     "path":"folders/[!] sprites/battle.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":27,
+    "xorigin":0,
     "yorigin":7,
   },
   "swatchColours":null,

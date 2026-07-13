@@ -44,6 +44,11 @@ if (battle_group == -2)
 	draw_sprite_ext(spr_battle_deltabgtrans, 0, 0, (_yy - 25), 160, 2, 0, c_white, 1);
 }
 */
+var _alpha = 1;
+if (createbubble == 1) || (startattack == 1)
+	_alpha = 0.25;
+button_alpha = lerp(button_alpha, _alpha, 0.2);
+gui_alpha = lerp(gui_alpha, _alpha, 0.2);
 
 // draw buttons
 for (var i = 0; i < button_length; i++)
@@ -56,34 +61,35 @@ for (var i = 0; i < button_length; i++)
 }
 
 // draw chara info
-draw_set_font(fnt_mars_18);
+var _inbetween = (box_defaulty + round(box_defaulth / 2) + box_borderw);
+_inbetween = (button_y[0] - round((button_y[0] - _inbetween) / 2));
 draw_set_alpha(gui_alpha);
 draw_set_valign(fa_middle);
 draw_set_halign(fa_left);
-draw_text_outline(31.5, 412, string(global.chara_name) + "    LVL " + string(global.chara_lvl), c_white, 2, c_black);
+draw_set_font(fnt_mars_18);
+var _chara_icon_spr = spr_chara_d;
+var _chara_icon_x = (box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
+var _chara_name_text = global.chara_name;
+var _chara_name_x = (_chara_icon_x + (sprite_get_width(_chara_icon_spr) * 2) - 2 + 8);
+var _chara_bar_x = (_chara_name_x + string_width(_chara_name_text) + 1 + 16);
+var _chara_bar_y = (box_y + round(box_h / 2) + box_borderw + 11);
+draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, sprite_get_width(_chara_icon_spr), 16, _chara_icon_x, (_inbetween - 16), 2, 2, c_white, gui_alpha);
+draw_text_outline(_chara_name_x, (_inbetween + 4), _chara_name_text, c_white, 2, c_black);
+draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, (100 + (5 * (global.chara_lvl - 1))), /*#FFDC31*/ #F29948, #DD2929, 1);
+draw_set_alpha(gui_alpha);
+draw_set_valign(fa_middle);
+draw_set_halign(fa_left);
+draw_set_font(fnt_mars_18);
+var _m6_icon_spr = spr_m6_d;
+var _m6_icon_x = (box_defaultx + round(box_defaultw / 2) + box_borderw + 2 - (sprite_get_width(_m6_icon_spr) * 2) + 1);
+var _m6_name_text = "MEE6";
+var _m6_name_x = (_m6_icon_x - string_width(_m6_name_text) + 5 - 8);
+var _m6_bar_widthMax = 75;
+var _m6_bar_x = (_m6_name_x - _m6_bar_widthMax - 16 - (2 + 4) - 1);
+draw_sprite_part_ext(_m6_icon_spr, 0, 0, 1, sprite_get_width(_m6_icon_spr), 16, _m6_icon_x, (_inbetween - 16 + 2), 2, 2, c_white, gui_alpha);
+draw_text_outline(_m6_name_x, (_inbetween + 4), _m6_name_text, c_white, 2, c_black);
+draw_battle_bar("100%", 20, 20, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, #4986B7, c_black, 1);
 
-var _hpextra = "";
-if (global.chara_curhp < 10)
-	_hpextra = "0";
-var _hpamt = string(_hpextra) + string(global.chara_curhp) + " / "  + string(global.chara_maxhp);
-draw_set_alpha(1);
-draw_set_halign(fa_right);
-draw_text_outline(610, 412, _hpamt, c_white, 2, c_black);
-
-var _xx = (610 - string_width(_hpamt) - 14 - (global.chara_maxhp * 1.2));
-
-draw_set_alpha(1);
-draw_rectangle_outline(_xx, (410 - 11), (_xx + (global.chara_maxhp * 1.2) - 1), (410 + 9), hp_color[1], 2, c_black);
-draw_set_color(hp_color[0]);
-draw_rectangle(_xx, (410 - 11), (_xx + (global.chara_curhp * 1.2) - 1), (410 + 9), 0);
-
-draw_sprite_ext(spr_battle_hpsign, 0, (_xx - 14), 409, 1, 1, 0, c_white, 1);
-
-var _alpha = 1;
-if (createbubble == 1) || (startattack == 1)
-	_alpha = 0.25;
-button_alpha = lerp(button_alpha, _alpha, 0.2);
-gui_alpha = lerp(gui_alpha, _alpha, 0.2);
 
 // draw box
 var _x1 = (box_x - (box_w / 2));

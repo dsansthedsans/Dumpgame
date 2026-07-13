@@ -14,10 +14,13 @@ name_block[4] = 1;
 name_block[5] = 0;
 name_block[6] = 1;
 name_block[7] = 1;
-name_block[8] = 0;
-name_block[9] = 0;
+name_block[8] = 1;
+name_block[9] = 1;
 name_block[10] = 0;
 name_block[11] = 0;
+name_block[12] = 0;
+name_block[13] = 0;
+name_block[14] = 0;
 
 
 // checar nome

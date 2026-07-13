@@ -471,6 +471,28 @@ function draw_chapter_name(_alpha, _outlineWidth)
 	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120 + 10), $"{_name}", c_white, _outlineWidth, c_dkgrey);
 }
 
+function draw_battle_bar(__value_text, __value_current, __value_max, __bar_x, __bar_y, __bar_widthMax, __bar_color_current, __bar_color_max, __bar_alpha)
+{
+	draw_set_alpha(__bar_alpha);
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_center);
+	draw_set_font(fnt_mars_12);
+	var _bar_borderExternal_size = 4;
+	var _bar_borderInternal_size = 2;
+	var _bar_widthCurr = round((__value_current / __value_max) * __bar_widthMax);
+	debug(_bar_widthCurr)
+	var _bar_height = round(string_height("SALENIS") + 1);
+	var _bar_x = round(__bar_x);
+	var _bar_y = round(__bar_y);
+	var _bar_value_x = (_bar_x + round(__bar_widthMax / 2));
+	var _bar_value_y = (_bar_y + round(_bar_height / 2) + 3);
+	/*External border*/draw_rectangle_color((_bar_x - _bar_borderExternal_size), (_bar_y - _bar_borderExternal_size), (_bar_x + __bar_widthMax + _bar_borderExternal_size), (_bar_y + _bar_height + _bar_borderExternal_size), c_white, c_white, c_white, c_white, false);
+	/*Internal border + Max value bar*/draw_rectangle_outline(_bar_x, _bar_y, (_bar_x + __bar_widthMax), (_bar_y + _bar_height), __bar_color_max, _bar_borderInternal_size, c_black);	
+	if (_bar_widthCurr > 0)
+		/*Current value bar*/draw_rectangle_color(_bar_x, _bar_y, (_bar_x + _bar_widthCurr), (_bar_y + _bar_height), __bar_color_current, __bar_color_current, __bar_color_current, __bar_color_current, false);
+	/*Values*/draw_text_outline(_bar_value_x, _bar_value_y, __value_text, c_white, 2, c_black);
+}
+
 function debug(_string)
 {
 	return show_debug_message(argument0);	
