@@ -64,8 +64,6 @@ function savefile_write()
 	
 	file_text_close(_file);
 	}
-	else
-		debug("--- savefile !!!!!!!!!!!!!!!!!!!!!!!!!! HELP MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 }
 function savefile_read(_savefile)
 {
@@ -132,8 +130,6 @@ function savefile_read(_savefile)
 		
 		file_text_close(_file);
 	}
-	else
-		debug("---savefile !!!!!!!!!!!!!!!!!!!!!!!!!! HELP MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 	thisfile = _file;
 	return thisfile;
 }

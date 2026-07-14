@@ -15,9 +15,6 @@ function achievements_write()
 		}
 		file_text_close(_file);
 	}
-	else
-		debug("--- achievements !!!!!!!!!!!!!!!!!!!!!!!!!! HELP MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-
 }
 
 function achievements_read()
@@ -37,9 +34,6 @@ function achievements_read()
 	
 	file_text_close(_file);	
 	}
-	else
-		debug("--- achievements !!!!!!!!!!!!!!!!!!!!!!!!!! HELP MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-
 }
 
 function achievement_add(_id)

@@ -88,7 +88,7 @@ var _m6_bar_widthMax = 75;
 var _m6_bar_x = (_m6_name_x - _m6_bar_widthMax - 16 - (2 + 4) - 1);
 draw_sprite_part_ext(_m6_icon_spr, 0, 0, 1, sprite_get_width(_m6_icon_spr), 16, _m6_icon_x, (_inbetween - 16 + 2), 2, 2, c_white, gui_alpha);
 draw_text_outline(_m6_name_x, (_inbetween + 4), _m6_name_text, c_white, 2, c_black);
-draw_battle_bar("100%", 20, 20, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, #4986B7, c_black, 1);
+draw_battle_bar($"{round(assist.grazeCurr)}%", assist.grazeCurr, assist.grazeMax, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, #4986B7, c_black, 1);
 
 
 // draw box

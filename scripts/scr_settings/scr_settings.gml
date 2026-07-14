@@ -5,7 +5,6 @@ function settings_write()
 	var _file = file_text_open_write(global.game_directory + string(_file_name));
 	if (_file != -1)
 	{
-		debug("--- settings !!!!!!!!!!!!!!!!!!!!! HELL YEAH 1");
 		file_text_write_string(_file, "[You know, there's a settings section in the main menu. I think you'll like it there.]");
 		file_text_writeln(_file);
 
@@ -57,8 +56,6 @@ function settings_write()
 	
 		file_text_close(_file);
 	}
-	else
-		debug("--- settings !!!!!!!!!!!!!!!!!!!!!!!!!! HELP MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 }
 
 function settings_read()
@@ -67,7 +64,6 @@ function settings_read()
 	var _file = file_text_open_read(global.game_directory + string(_file_name));
 	if (_file != -1)
 	{
-				debug("--- setings !!!!!!!!!!!!!!!!!!!!! HELL YEAH 2");
 
 	file_text_readln(_file);
 	file_text_readln(_file);
@@ -117,8 +113,6 @@ function settings_read()
 	
 	file_text_close(_file);
 	}
-	else
-		debug("--- setings !!!!!!!!!!!!!!!!!!!!!!!!!! HELP MEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 }
 
 

@@ -128,6 +128,16 @@ if ((enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0) == false)
 	writer("battle_main", -1, -1);
 screenpos(0, 0);
 
+assist =
+{
+	active : global.flag[2],
+	object : undefined,
+	grazeCurr : 0,
+	grazeMax : 100,
+	grazeSpeed : 0.35,
+	healAmount : (global.chara_maxhp / 4),
+}
+
 /*
 // deltarune background custom
 spamtontest_cart_x = (room_width / 7);

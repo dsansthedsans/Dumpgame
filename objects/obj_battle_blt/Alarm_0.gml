@@ -38,7 +38,7 @@ if (type == -1) // test
 	
 if (type == 1) // Dummy
 {
-	sprite_index = spr_battle_blt_nail;
+	sprite_index = spr_battle_blt_gear;
 	image_xscale = 1;
 	image_yscale = 1;
 	image_alpha = 0;

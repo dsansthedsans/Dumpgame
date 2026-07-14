@@ -16,13 +16,13 @@ if (speed != 0)
 		xfactor = (postx / 320);
 		dmg = (dmg * (xfactor * 3));
 		xscale = 1.25;
-		if (postx >= (320 - 10))
+		/*if (postx >= (320 - 10))
 		{
 			dmg *= 1.25;
 			xscale = 1.5;
 			blend = 0.25;
 			audio_play(snd_bigcut, , VOLUME_SOUND);
-		}
+		}*/
 		yscale = xscale;
 		dmg = round(clamp(dmg, 0, 999999999999999999));
 		create(-20, -20, obj_battle_knife);

@@ -179,8 +179,7 @@ function start_chara()
 	// informações que não tem que salvar
 	global.chara_maxhp = 20;
 	global.chara_curhp = 20;
-	global.chara_m6Max = 20;
-	global.chara_m6Curr = 0;
+	global.chara_m6Max = 100;
 	
 	global.chara_nextexp = 0;
 	
@@ -554,7 +553,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_11;
+		var _rm = room_corridors_3_5;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)

@@ -495,6 +495,52 @@ box_h = lerp(box_h, box_nexth, _speed);
 if (abs(box_h - box_nexth) <= _dist)
 	box_h = box_nexth;
 
+if (assist.active == true)
+{
+	assist.grazeCurr = clamp((assist.grazeCurr + (assist.grazeSpeed * (obj_battle_grazeheart.image_alpha == 1))), 0, assist.grazeMax);
+	if (assist.grazeCurr >= assist.grazeMax && is_undefined(assist.object) == true)
+	{
+		assist.object = marker(box_defaultx + (box_defaultw / 2), box_defaulty + (box_defaulth / 2), spr_battle_blt_gear, 0, 2, 2, 0, 0, 0, global.c_dump, battle_depth[7]);
+		assist.object.active = true;
+		assist.grazeCurr = 0;
+		audio_play(snd_eyeflash, 0, VOLUME_SOUND)
+	}
+	else if (is_undefined(assist.object) == false && exists(heart) == true)
+	{
+		with (assist.object)
+		{
+			if (active == true)
+			{
+				var _distance = point_distance(x, y, other.heart.x, other.heart.y);
+				var _direction = angle_difference(point_direction(x, y, other.heart.x, other.heart.y), direction);
+				direction = lerp(direction, (direction + _direction), ((_distance > 20) ? 0.075 : (0.075 * 2)));
+				speed = clamp((speed + ((_distance > 75) ? 0.05 : -0.1)), 2.5, 10);
+				image_alpha = lerp(image_alpha, 1, (0.075 * 2));
+				image_angle += ((speed * sign(_direction)) * 2);
+				if (place_meeting(x, y, other.heart) == true)
+				{
+					chara_hp(other.assist.healAmount);
+					active = false;
+				}
+			}
+			if (active == false)
+			{
+				speed = 0;
+				image_alpha = lerp(image_alpha, 0, 0.1);
+				image_xscale = lerp(image_xscale, 1, 0.1);
+				image_yscale = lerp(image_yscale, 1, 0.1);
+				image_angle += 1;
+				if (image_alpha <= 0.1)
+				{
+					other.assist.object = undefined;
+					destroy(id);
+				}
+			}
+		}
+		
+	}
+}
+
 if (global.indebug == 1 && global.debug_hud == true && battle_won == 0)
 {	
 	debug("battle_lvl: " + string(battle_lvl) + " | button_pos: " + string(button_pos) + " | level_pos: " + /*string(level_pos) + " | usedFIGHT: " + string(battle_usedfight) +*/ " | usedACT: " + string(battle_usedact)/* + " | usedITEM: " + string(battle_useditem) + " | usedMERCY: " + string(battle_usedmercy)*/);

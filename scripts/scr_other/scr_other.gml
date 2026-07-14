@@ -480,7 +480,6 @@ function draw_battle_bar(__value_text, __value_current, __value_max, __bar_x, __
 	var _bar_borderExternal_size = 4;
 	var _bar_borderInternal_size = 2;
 	var _bar_widthCurr = round((__value_current / __value_max) * __bar_widthMax);
-	debug(_bar_widthCurr)
 	var _bar_height = round(string_height("SALENIS") + 1);
 	var _bar_x = round(__bar_x);
 	var _bar_y = round(__bar_y);
