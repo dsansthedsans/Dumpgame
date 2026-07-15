@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_cutegetup",
+  "%Name":"snd_alarm",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.15,
+  "duration":5.057596,
   "exportDir":"",
-  "name":"snd_cutegetup",
+  "name":"snd_alarm",
   "parent":{
     "name":"[!] audio",
     "path":"folders/[!] audio.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_cutegetup.wav",
+  "soundFile":"snd_alarm.ogg",
   "volume":1.0,
 }

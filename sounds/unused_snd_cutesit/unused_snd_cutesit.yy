@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_cutesit",
+  "%Name":"unused_snd_cutesit",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":0.30537415,
   "exportDir":"",
-  "name":"snd_cutesit",
+  "name":"unused_snd_cutesit",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_cutesit.wav",
+  "soundFile":"unused_snd_cutesit.wav",
   "volume":1.0,
 }

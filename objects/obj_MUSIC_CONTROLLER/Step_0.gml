@@ -82,7 +82,9 @@ if (room >= room_corridors_3 && room < room_caverns_1)
 	{
 		music_set(0, mus_hurry_intro, , , , , false);
 		if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_0) || (music_old[0] == mus_hurry_loop_1)
-			music_set(0, mus_hurry_loop_0);
+			music_set(0, mus_hurry_loop_0, , , , 1);
+		if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds <= obj_captcha3.timer.seconds_noReturn)
+			music_set(1, snd_alarm, , , , 0.75);
 	}
 }
 if (room == room_corridors_11) // bc events

@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"spr_overworld_captcha_button",
   "bboxMode":2,
-  "bbox_bottom":9,
+  "bbox_bottom":8,
   "bbox_left":4,
   "bbox_right":15,
   "bbox_top":3,

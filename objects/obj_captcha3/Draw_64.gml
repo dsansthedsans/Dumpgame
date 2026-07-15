@@ -1,3 +1,9 @@
+if (timer.active == true && timer.seconds <= timer.seconds_noReturn)
+{
+	draw_set_alpha(0.2);
+	draw_rectangle_colour(-20, -20, (20 + room_width + 20), (20 + room_height + 20), c_red, c_red, c_red, c_red, false);
+}
+// Timer
 if (timer.active == true)
 {
 	timer.color_green = lerp(timer.color_green, 0, 0.05);
@@ -6,10 +12,10 @@ if (timer.active == true)
 	draw_set_color(merge_color(make_color_rgb(255, timer.color_green, 0), c_white, 0.2));
 	draw_set_alpha(timer.alpha);
 	draw_set_font(fnt_main_big);
-	var _timer_widthSeconds = string_width("00");
-	var _timer_heightSeconds = string_height("00");
+	var _timer_widthSeconds = (string_width("00") * 1);
+	var _timer_heightSeconds = (string_height("00") * 1);
 	draw_set_font(fnt_main);
-	var _timer_widthMilliseconds = string_width(".00");
+	var _timer_widthMilliseconds = (string_width(".00") * 1);
 	var _timer_widthTotal = (_timer_widthSeconds + _timer_widthMilliseconds);
 	// Panel
 	var _panel_x = 4;

@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_heartbreak1",
+  "%Name":"unused_snd_cutegetup",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.71006805,
+  "duration":0.15,
   "exportDir":"",
-  "name":"snd_heartbreak1",
+  "name":"unused_snd_cutegetup",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_heartbreak1.wav",
+  "soundFile":"unused_snd_cutegetup.wav",
   "volume":1.0,
 }

@@ -12,11 +12,11 @@ death_delay = 0;
 
 puzzle_trtword = irandom_range(0, 2);
 if (puzzle_trtword == 0)
-	puzzle_trtword = "constructiveness";
+	puzzle_trtword = "Misunderstanding";
 else if (puzzle_trtword == 1)
-	puzzle_trtword = "characterization";
+	puzzle_trtword = "Incomprehensible";
 else
-	puzzle_trtword = "conversationally";
+	puzzle_trtword = "Responsibilities";
 if (global.flag[55] == "")
 	global.flag[55] = puzzle_trtword;
 else
