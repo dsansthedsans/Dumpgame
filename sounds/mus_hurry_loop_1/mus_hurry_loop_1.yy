@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"unused_mus_chase_loop",
+  "%Name":"mus_hurry_loop_1",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":56.920815,
   "exportDir":"",
-  "name":"unused_mus_chase_loop",
+  "name":"mus_hurry_loop_1",
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] audio",
+    "path":"folders/[!] audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"unused_mus_chase_loop.mp3",
+  "soundFile":"mus_hurry_loop_1.mp3",
   "volume":1.0,
 }

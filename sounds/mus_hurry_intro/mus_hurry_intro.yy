@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"mus_chase_intro",
+  "%Name":"mus_hurry_intro",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":1.3248526,
   "exportDir":"",
-  "name":"mus_chase_intro",
+  "name":"mus_hurry_intro",
   "parent":{
     "name":"[!] audio",
     "path":"folders/[!] audio.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_chase_intro.mp3",
+  "soundFile":"mus_hurry_intro.mp3",
   "volume":1.0,
 }

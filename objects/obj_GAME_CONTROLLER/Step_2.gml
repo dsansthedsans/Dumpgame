@@ -5,7 +5,7 @@ if (exists(chara) == 1 && global.chara_camera_move == 1)
 	var _cam_spd = cam_spd;
 	cam_charax = (chara.x - 160);
 	cam_charay = (chara.y - round(chara.sprite_height / 2) - 120);
-	if (global.chara_cutscene == true && global.chara_facing == SIT && chara.lastcol.object_index == obj_interact_block && chara.lastcol.result == 1)
+	if (global.chara_cutscene == true && global.chara_facing == SIT && is_undefined(chara.lastcol) == false && exists(chara.lastcol) == true && chara.lastcol.object_index == obj_interact_block && chara.lastcol.result == 1)
 	{
 		_cam_spd /= 2;
 		cam_charax = (chara.lastcol.x + (chara.lastcol.sprite_width / 2) - 160);

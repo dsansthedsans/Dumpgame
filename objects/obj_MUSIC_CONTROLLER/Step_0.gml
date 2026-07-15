@@ -78,6 +78,12 @@ if (room >= room_corridors_3 && room < room_caverns_1)
 	music_set(1, -1);
 	if (global.chara_murder >= 2)
 		music_set(0, mus_corridors_geno)
+	if (global.flag[50] == 0.5)
+	{
+		music_set(0, mus_hurry_intro, , , , , false);
+		if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_0) || (music_old[0] == mus_hurry_loop_1)
+			music_set(0, mus_hurry_loop_0);
+	}
 }
 if (room == room_corridors_11) // bc events
 {
@@ -122,10 +128,10 @@ if (room == room_corridors_18) // gabee's chase
 		music_set(1, -1);
 	if (global.flag[60] == 1 && global.flag[61] == 0)
 	{
-		music_set(0, mus_chase_intro, , , , , false);
-		if (music_old[0] == mus_chase_intro && audio_playing(mus_chase_intro) == false) || (music_old[0] == mus_chase_loop)
+		music_set(0, mus_hurry_intro, , , , , false);
+		if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_1)
 		{
-			music_set(0, mus_chase_loop);
+			music_set(0, mus_hurry_loop_1);
 			if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 45)
 			{
 				global.music_pitch[0] = music_pitch_old[0];
@@ -441,7 +447,7 @@ if (exists(obj_battle_quicker) == 0) || (_stop_music_on_quicker == 0)
 	{
 		if (global.flag[50] == 1 && global.flag[51] == 1 && global.flag[54] == 0)
 		{
-			global.music[MUSIC_NORMAL] = mus_captcha3;
+			global.music[MUSIC_NORMAL] = mus_hurry_loop_0;
 			global.music_gain[MUSIC_NORMAL] = 0;
 			if (exists(obj_captcha3) == 1 && obj_captcha3.stage >= 8) || (global.flag[53] == 1)
 			{
@@ -464,12 +470,12 @@ if (exists(obj_battle_quicker) == 0) || (_stop_music_on_quicker == 0)
 			
 		if (global.flag[60] == 1 && global.flag[61] == 0)
 		{
-			global.music[MUSIC_NORMAL] = mus_chase_intro;
+			global.music[MUSIC_NORMAL] = mus_hurry_intro;
 			global.music_loop[MUSIC_NORMAL] = 0;
 			
-			if (oldmusic[MUSIC_NORMAL] == mus_chase_intro && audio_playing(mus_chase_intro) == 0) || (oldmusic[MUSIC_NORMAL] == mus_chase_loop)
+			if (oldmusic[MUSIC_NORMAL] == mus_hurry_intro && audio_playing(mus_hurry_intro) == 0) || (oldmusic[MUSIC_NORMAL] == mus_hurry_loop_1)
 			{
-				global.music[MUSIC_NORMAL] = mus_chase_loop;
+				global.music[MUSIC_NORMAL] = mus_hurry_loop_1;
 				global.music_loop[MUSIC_NORMAL] = 1;
 			
 				eventobj = obj_event_gabee_chase;

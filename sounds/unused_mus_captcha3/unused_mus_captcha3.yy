@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"mus_chase_loop",
+  "%Name":"unused_mus_captcha3",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":59.10773,
+  "duration":64.88816,
   "exportDir":"",
-  "name":"mus_chase_loop",
+  "name":"unused_mus_captcha3",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_chase_loop.mp3",
+  "soundFile":"unused_mus_captcha3.mp3",
   "volume":1.0,
 }

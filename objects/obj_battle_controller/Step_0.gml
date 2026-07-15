@@ -497,12 +497,11 @@ if (abs(box_h - box_nexth) <= _dist)
 
 if (assist.active == true)
 {
-	assist.grazeCurr = clamp((assist.grazeCurr + (assist.grazeSpeed * (obj_battle_grazeheart.image_alpha == 1))), 0, assist.grazeMax);
-	if (assist.grazeCurr >= assist.grazeMax && is_undefined(assist.object) == true)
+	if (assist.curr >= assist.max && is_undefined(assist.object) == true)
 	{
 		assist.object = marker(box_defaultx + (box_defaultw / 2), box_defaulty + (box_defaulth / 2), spr_battle_blt_gear, 0, 2, 2, 0, 0, 0, global.c_dump, battle_depth[7]);
 		assist.object.active = true;
-		assist.grazeCurr = 0;
+		assist.curr = 0;
 		audio_play(snd_eyeflash, 0, VOLUME_SOUND)
 	}
 	else if (is_undefined(assist.object) == false && exists(heart) == true)
@@ -519,7 +518,7 @@ if (assist.active == true)
 				image_angle += ((speed * sign(_direction)) * 2);
 				if (place_meeting(x, y, other.heart) == true)
 				{
-					chara_hp(other.assist.healAmount);
+					chara_hp(other.assist.heal);
 					active = false;
 				}
 			}

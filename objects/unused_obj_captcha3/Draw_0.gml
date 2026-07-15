@@ -5,20 +5,14 @@ draw_set_alpha(1);
 for (var i = 0; i < 2; i++)
 {
 	var _flag = global.flag[(50 + i)];
-	
-	// wire
 	var _spr = spr_overworld_captcha_leverwire_off;
 	if (_flag == 1)
 		_spr = spr_overworld_captcha_leverwire_on;
-	
 	var _scale = 1;
 	if (i == 1)
 		_scale = -1;
-		
-	draw_sprite_ext(_spr, leverwire_index, (108 + (104 * i)), 1270, _scale, 1, 0, c_white, 1);
-	
-	// lever
-	draw_sprite_ext(spr_overworld_lever, _flag, (100 * (i + 1)), 1260, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(_spr, leverwire_index, lever[i].x, lever[i].y, _scale, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_overworld_lever, _flag, lever[i].x, lever[i].y, 1, 1, 0, c_white, 1);
 }
 leverwire_index += (sprite_get_speed(spr_overworld_captcha_leverwire_on) / 60);
 

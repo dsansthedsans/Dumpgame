@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"unused_mus_battle_troll",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -6,11 +6,11 @@ chara = obj_chara;
 chara_color = 255;
 myalpha = 0;
 heart_x = chara.x;
-heart_y = (chara.y - (chara.sprite_height / 2));
+heart_y = (chara.y - round(chara.sprite_height / 2));
 heart_move = 0;
 heart_alpha = 0;
-heart_targetx = (camera_get_view_x(view_camera[0]) + (50 / 2));
-heart_targety = (camera_get_view_y(view_camera[0]) + (453 / 2));
+heart_targetx = (camera_get_view_x(view_camera[0]) + round(50 / 2));
+heart_targety = (camera_get_view_y(view_camera[0]) + round(451 / 2));
 marker(heart_x, heart_y, spr_battle_heart, heart_alpha, 0.5, 0.5, 0, 0, 0, global.c_dump, -20000);
 heart = thismarker;
 

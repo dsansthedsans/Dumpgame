@@ -236,6 +236,36 @@ function TEXT()
 		for (var m = 0; m < 4; m++)
 			msg[m] = get_text($"unused_room_stairssign_{m}");
 	}
+	if (text == "room_rulesbook")
+	{
+		for (var m = 0; m < 3; m++)
+			msg[m] = get_text($"room_rulesbook_{m}");
+		if (global.chara_murder < 2)
+		{
+			question[m] = get_text($"room_rulesbook_{m}.0");
+			if (global.flag[67] > 0)
+				question[m] = $"{get_text("room_rulesbook_" + string(m) + ".1_0")}{(global.flag[67] + 1)}{get_text("room_rulesbook_" + string(m) + ".1_" + string(clamp(global.flag[67], 1, 3)))}"
+			question_option[1] = get_text($"room_rulesbook_{m}_1");
+			question_option[2] = get_text($"room_rulesbook_{m}_2");
+			if (question_result[m] == 1)
+			{
+				if (get_text($"room_rulesbook_{m+2}-{global.flag[67]}") != undefined)
+				{
+					msg[m+1] = get_text($"room_rulesbook_{m+1}.{(global.flag[67] > 0)}");
+					msg[m+2] = get_text($"room_rulesbook_{m+2}-{global.flag[67]}");
+					if (global.flag[67] > 0)
+						msg_skip[m+2] = global.indebug;
+					global.flag[67] += 1;
+				}
+				else
+				{
+					msg[m+1] = get_text($"room_rulesbook_{m+3}");
+					msg_skip[m+1] = false;
+					//FAZER CONQUISTAS !!!!!!! (PRINCIPALMENTE RULES BOOK)
+				}
+			}
+		}
+	}
 	if (text == "room_deadlamp")
 		msg[0] = get_text("room_deadlamp");
 		
@@ -346,38 +376,8 @@ function TEXT()
 				msg[i] = _curmsg;
 		}
 		if (global.flag[24] == 0)
-			global.flag[24] = 1;
-			
+			global.flag[24] = 1;	
 		msg_talker[0] = obj_chara.mycol;
-	}
-	
-	// room_corridors_4_5
-	if (text == "room_rulesbook")
-	{
-		for (var m = 0; m < 3; m++)
-			msg[m] = get_text($"room_rulesbook_{m}");
-		question[m] = get_text($"room_rulesbook_{m}.0");
-		if (global.flag[67] > 0)
-			question[m] = $"{get_text("room_rulesbook_" + string(m) + ".1_0")}{(global.flag[67] + 1)}{get_text("room_rulesbook_" + string(m) + ".1_" + string(clamp(global.flag[67], 1, 3)))}"
-		question_option[1] = get_text($"room_rulesbook_{m}_1");
-		question_option[2] = get_text($"room_rulesbook_{m}_2");
-		if (question_result[m] == 1)
-		{
-			if (get_text($"room_rulesbook_{m+2}-{global.flag[67]}") != undefined)
-			{
-				msg[m+1] = get_text($"room_rulesbook_{m+1}.{(global.flag[67] > 0)}");
-				msg[m+2] = get_text($"room_rulesbook_{m+2}-{global.flag[67]}");
-				if (global.flag[67] > 0)
-					msg_skip[m+2] = global.indebug;
-				global.flag[67] += 1;
-			}
-			else
-			{
-				msg[m+1] = get_text($"room_rulesbook_{m+3}");
-				msg_skip[m+1] = false;
-				//FAZER CONQUISTAS !!!!!!! (PRINCIPALMENTE RULES BOOK)
-			}
-		}
 	}
 	
 	// obj_event_m6_precaptcha1

@@ -131,11 +131,11 @@ screenpos(0, 0);
 assist =
 {
 	active : global.flag[2],
+	curr : 0,
+	max : 100,
+	speed : 3,
 	object : undefined,
-	grazeCurr : 0,
-	grazeMax : 100,
-	grazeSpeed : 0.35,
-	healAmount : (global.chara_maxhp / 4),
+	heal : (global.chara_maxhp / 4),
 }
 
 /*

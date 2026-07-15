@@ -4,6 +4,13 @@ function TEXTDATA_EN()
 	global.textdata_en = ds_map_create();
 	// ds_map_add(global.textdata_en, "", "");
 	
+	
+	/*
+		clanker m,ee7767776666666666666666666666666
+	*/
+	
+	
+	
 	// start
 	ds_map_add(global.textdata_en, "start",	"A game by dsans\nand migel8022");
 	ds_map_add(global.textdata_en, "warning", "This game is unaffiliated\nwith Toby Fox.");
@@ -671,10 +678,7 @@ function TEXTDATA_EN()
 	*/
 	
 	var i = 0;
-	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* THANK YOU...");
-	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* I MEAN IT,^1 I REALLY MEAN IT.^3&* THANK YOU...!");
-	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* AND I'M THE ONE WHO SHOULD BE SAYING SORRY,^1 NOT YOU.");
-	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* IT'S NOT YOUR FAULT.");
+	
 	// ITS BEN a while since lesat time i trusted someone. / It's weird to trust someone again. / I'd forgotten how to trust other people
 	/*ds_map_add(global.textdata_en, "event_brock_battle_3_2", "+S1* I'M THE ONE THAT SHOULD BE SORRY.^1&* YOU DIDN'T DO ANYTHING WRONG.");
 	ds_map_add(global.textdata_en, "event_brock_battle_3_3", "+S1* I...");

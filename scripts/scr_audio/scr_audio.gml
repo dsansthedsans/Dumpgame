@@ -45,6 +45,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume /= 5;
 		if (_asset == snd_splat) || (_asset == snd_splat_reversed)
 			_volume *= 0.5;
+		if (_asset == snd_bluh)
+		{
+			_volume *= 0.5;
+		}
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{

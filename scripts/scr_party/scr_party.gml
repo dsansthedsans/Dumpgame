@@ -31,11 +31,13 @@ function party_type(_type)
 		sprite[RIGHT, 0] = spr_m6_r;
 		sprite[UP, 0] = spr_m6_u;
 		sprite[DOWN, 0] = spr_m6_d;
+		sprite[SIT, 0] = spr_m6_sit;
 
 		sprite[LEFT, 1] = spr_m6_l_talk;
 		sprite[RIGHT, 1] = spr_m6_r_talk;
 		sprite[UP, 1] = spr_m6_u_talk;
 		sprite[DOWN, 1] = spr_m6_d_talk;
+		sprite[SIT, 1] = spr_m6_sit;
 	}
 	
 	debug("--- Created obj_party with type \"" + string(argument0) + "\"");

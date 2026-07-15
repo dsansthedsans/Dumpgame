@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"mus_captcha3",
+  "%Name":"mus_hurry_loop_0",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":64.88816,
+  "duration":59.10773,
   "exportDir":"",
-  "name":"mus_captcha3",
+  "name":"mus_hurry_loop_0",
   "parent":{
     "name":"[!] audio",
     "path":"folders/[!] audio.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_captcha3.mp3",
+  "soundFile":"mus_hurry_loop_0.mp3",
   "volume":1.0,
 }

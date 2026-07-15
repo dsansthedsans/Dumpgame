@@ -374,8 +374,8 @@ function start_flags()
 	
 	global.flag[49] = 0; // talked to armsguy post-bc
 	
-	global.flag[50] = 0; // pulled left lever from CAPTCHA.3
-	global.flag[51] = 0; // pulled right lever from CAPTCHA.3
+	global.flag[50] = 0; // finished CAPTCHA 3 (((UNUSED)))
+	global.flag[51] = 0; // (((UNUSED)))
 	global.flag[52] = 0; // finished pre-CAPTCHA.3 event
 	global.flag[53] = 0; // finished CAPTCHA.3 and finished post-CAPTCHA.3 event
 	global.flag[54] = 0; // left room_corridors_14 after CAPTCHA.3
@@ -553,7 +553,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_3_5;
+		var _rm = room_corridors_3;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -579,7 +579,7 @@ function CHANGE_GAME()
 				_lvl = 4.5;
 			if (_rm == room_corridors_11) || (_rm == unused_room_happybirthday)
 				_lvl = 5;
-			if (_rm == unused_room_corridors_13)
+			if (_rm == unused_room_corridors_13) || (_rm == room_corridors_14)
 				_lvl = 6;
 			if (_rm == room_corridors_16)
 				_lvl = 7;
@@ -593,7 +593,7 @@ function CHANGE_GAME()
 			// definir flags baseado de onde o jogo vai começar
 			if (_lvl >= 1)
 			{
-				global.flag[0] = true; // finished getting up event
+				//global.flag[0] = true; // finished getting up event
 				if (_rm >= room_corridors_2)
 				{
 					global.flag[64] = 1;
