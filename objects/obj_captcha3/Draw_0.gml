@@ -16,8 +16,8 @@ if (buttons_word != "" && buttons_length > 0)
 }
 // Buttons's display
 var _sprite = spr_overworld_captcha_screen2;
-var _sprite_x = 40;
-var _sprite_y = 420;
+var _sprite_x = 80;
+var _sprite_y = 960;
 draw_sprite_ext(_sprite, 0, _sprite_x, _sprite_y, 1, 1, 0, c_white, 1);
 draw_set_font(fnt_main_spaced)
 draw_set_valign(fa_middle);
@@ -33,7 +33,7 @@ for (var v = 0; v < sqrt(plates_length); v++)
 {
 	for (var h = 0; h < sqrt(plates_length); h++)
 	{
-		var _rectangle_color = plates[h, v].colors[(plates[h, v].active + plates_activeAll)];
+		var _rectangle_color = plates[h, v].colors[(plates[h, v].active)];
 		draw_rectangle_color(plates[h, v].object.x, plates[h, v].object.y, (plates[h, v].object.x + 18), (plates[h, v].object.y + 18), _rectangle_color, _rectangle_color, _rectangle_color, _rectangle_color, false);
 	}
 }

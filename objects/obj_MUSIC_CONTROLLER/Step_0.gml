@@ -76,15 +76,27 @@ if (room >= room_corridors_3 && room < room_caverns_1)
 {	
 	music_set(0, mus_corridors);
 	music_set(1, -1);
+	music_set(2, -1);
 	if (global.chara_murder >= 2)
 		music_set(0, mus_corridors_geno)
+	if (global.flag[50] == 0.25) || (global.flag[50] == 0.75)
+		music_set(0, -1);	
 	if (global.flag[50] == 0.5)
 	{
 		music_set(0, mus_hurry_intro, , , , , false);
 		if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_0) || (music_old[0] == mus_hurry_loop_1)
-			music_set(0, mus_hurry_loop_0, , , , 1);
-		if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds <= obj_captcha3.timer.seconds_noReturn)
-			music_set(1, snd_alarm, , , , 0.75);
+		{
+			music_set(0, mus_hurry_loop_0, , , , 1, , 0);
+			if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds < obj_captcha3.timer.fog.secondsMin)
+			{
+				var _sec = obj_captcha3.timer.seconds;
+				var _secMin = obj_captcha3.timer.fog.secondsMin;
+				global.music_pitch[0] = music_pitch_old[0];
+				global.music_pitch[0] = lerp(global.music_pitch[0], ((_sec > (_secMin / 2)) ? 1.05 : ((_sec > (_secMin / 4)) ? 1.1 : ((_sec > (_secMin / 8)) ? 1.15 : 1.2))), 0.025);
+				music_set(1, snd_alarm, , , 1, ((_sec > (_secMin / 2)) ? 0.75 : ((_sec > (_secMin / 4)) ? 1 : ((_sec > (_secMin / 8)) ? 1.25 : 1.5))), , 0);
+			}
+		}
+		
 	}
 }
 if (room == room_corridors_11) // bc events

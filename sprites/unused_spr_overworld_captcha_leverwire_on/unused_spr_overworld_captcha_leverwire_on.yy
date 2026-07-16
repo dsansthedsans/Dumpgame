@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_overworld_captcha_leverwire_on",
+  "%Name":"unused_spr_overworld_captcha_leverwire_on",
   "bboxMode":0,
   "bbox_bottom":3,
   "bbox_left":0,
@@ -23,7 +23,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"b91bbe90-87f2-4b13-bd2d-747a3f7dede1","blendMode":0,"displayName":"default","isLocked":false,"name":"b91bbe90-87f2-4b13-bd2d-747a3f7dede1","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_overworld_captcha_leverwire_on",
+  "name":"unused_spr_overworld_captcha_leverwire_on",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -35,7 +35,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_overworld_captcha_leverwire_on",
+    "%Name":"unused_spr_overworld_captcha_leverwire_on",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -59,7 +59,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_overworld_captcha_leverwire_on",
+    "name":"unused_spr_overworld_captcha_leverwire_on",
     "playback":1,
     "playbackSpeed":10.0,
     "playbackSpeedType":0,
@@ -71,13 +71,13 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"77e2e16e-cc92-494f-bb8b-5831dc2c7605","path":"sprites/spr_overworld_captcha_leverwire_on/spr_overworld_captcha_leverwire_on.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"77e2e16e-cc92-494f-bb8b-5831dc2c7605","path":"sprites/unused_spr_overworld_captcha_leverwire_on/unused_spr_overworld_captcha_leverwire_on.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"6edefa05-d437-4a27-b4d1-a465d4237d91","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5d9bd7c4-6f14-44c6-b50b-cf3c112e6ddf","path":"sprites/spr_overworld_captcha_leverwire_on/spr_overworld_captcha_leverwire_on.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5d9bd7c4-6f14-44c6-b50b-cf3c112e6ddf","path":"sprites/unused_spr_overworld_captcha_leverwire_on/unused_spr_overworld_captcha_leverwire_on.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"54d3ac49-cbe4-47d0-a49e-b969d1d99d8d","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7d04ac87-d9f7-4287-9451-c9c9518425ba","path":"sprites/spr_overworld_captcha_leverwire_on/spr_overworld_captcha_leverwire_on.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7d04ac87-d9f7-4287-9451-c9c9518425ba","path":"sprites/unused_spr_overworld_captcha_leverwire_on/unused_spr_overworld_captcha_leverwire_on.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"03a9b984-df19-4932-ace6-ed96912d6415","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

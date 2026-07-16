@@ -51,6 +51,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		}
 		if (_asset == snd_bump)
 			_volume *= 0.75;
+		if (_asset == snd_trombone)
+			_volume *= 1.5;
+		if (_asset == snd_applause) || (_asset == snd_cheer)
+			_volume *= 0.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -68,7 +72,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == mus_cave)
 			_volume *= 1.5;
 		if (_asset == mus_hurry_loop_0)
-			_volume *= 1.25;
+			_volume *= 1.5;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)

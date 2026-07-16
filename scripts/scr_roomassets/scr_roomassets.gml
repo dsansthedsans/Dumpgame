@@ -189,21 +189,20 @@ function room_interact()
 	}
 	if (room == room_corridors_14)
 	{
-		// main sign
-		if (x == 140 && y == 1440)
+		if (x == 140)
+		{
 			text = "room_captcha_mainsign_3";
-			
-		// guide sign
-		if (x == 250 && y == 1145)
-			text = "room_captcha_guidesign_3_1";
-		if (x == 250 && y == 845)
-			text = "room_captcha_guidesign_3_2";
-		if (x == 250 && y == 545)
-			text = "room_captcha_guidesign_3_3";
-		
-		// final sign
-		if (x == 140 && y == 240)
-			text = "room_captcha_endsign_3";
+			if (y == 160)
+				text = "room_captcha_endsign_3";
+		}
+		if (x == 150)
+		{
+			text = "room_captcha_guidesign_1";
+			if (y == 785)
+				text = "room_captcha_guidesign_2";
+			if (y == 475)
+				text = "room_captcha_guidesign_3_3";
+		}
 	}
 	if (room == room_corridors_15 && x == 150 && y == 125)
 		text = "room_nobowl";
@@ -720,30 +719,25 @@ function room_solid()
 	}
 	if (room == room_corridors_14)
 	{
-		// lamp
-		if ((x == 100 || x == 200) && y == 1420) || ((x == 60 || x == 240) && y == 1260) || ((x == 80 || x == 220) && (y == 960 || y == 360 || y == 60)) || (x == 80 && y == 660) || (x == 220 && y == 690) || ((x == 100 || x == 200) && y == 220)
+		if (x == 110)
 		{
-			sprite_index = spr_overworld_lamp;
-			if (x == 100 && y == 1420) || (x == 80 && y == 60)
+			sprite_index = spr_overworld_pillardoor_split;
+			bridge = marker(x, y, spr_overworld_pillardoor_split, 1, 1, 1, 0, 1, 0, c_white, -bbox_bottom);
+			pillar = create(x, y, obj_solid_parent);
+			with (pillar)
+			{
+				sprite_index = spr_overworld_pillardoor_split;
+				image_speed = 0;
 				image_index = 2;
-			if (x == 220 && y == 690)
-				image_index = 1;
+				image_alpha = 1;
+				depth = -bbox_bottom;
+				visible = 1;
+			}
 		}
-		
-		// sign
-		if (x == 250 && (y == 1145 || y == 845 || 545)) || (x == 150 && y == 200)
+		if (x == 140)
+			sprite_index = spr_overworld_signWood_big;
+		if (x == 150)
 			sprite_index = spr_overworld_signWood;
-			
-		// pillar
-		if (x == 150 && y == 155)
-		{
-			sprite_index = spr_overworld_pillar;
-			image_index = 2;
-		}
-		
-		// pillar door
-		if (x == 110 && y == 5)
-			sprite_index = spr_overworld_pillardoor;
 	}
 	if (room == room_corridors_15)
 	{

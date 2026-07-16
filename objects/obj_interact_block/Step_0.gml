@@ -305,33 +305,6 @@ else if (result == 5) // itemDropoed
 		con = 0;
 	}
 }
-else if (result == 6) // captcha 3 lever
-{
-	if (con == 1)
-	{
-		var _snd = snd_heartpulse1;
-		if (x == 100 && global.flag[50] == 0)
-			global.flag[50] = 1;
-		else if (x == 200 && global.flag[51] == 0)
-			global.flag[51] = 1;
-		else
-			_snd = -1;
-		if (_snd != -1)
-		{
-			if (global.flag[50] == 1 && global.flag[51] == 1)
-			{
-				chara_change(-1, true, true, true, false, false, true);
-				_snd = snd_bluh;
-			}
-			else
-				chara_change(-1, true, true, false, true, true, true);
-			audio_play(_snd, 0, 0);
-		}
-		con = 0;
-	}
-}
-
-
 
 
 

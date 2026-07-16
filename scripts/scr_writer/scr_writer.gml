@@ -925,16 +925,6 @@ function TEXT()
 		msg[8] = "* \"The countdown will start after you pull the two&levers at the top.\"";
 		msg[9] = "* \"Good luck!\"";
 	}
-	if (text == "room_captcha_guidesign_3_1")
-	{
-		msg[0] = "* \"Write the word shown above using all the buttons.\"";
-		msg[1] = "* \"The button with a 'X' resets the puzzle.\"";
-	}
-	if (text == "room_captcha_guidesign_3_2")
-	{
-		msg[0] = "* \"Take the box to the :Lgreen;D floor.\"";
-		msg[1] = "* \"The box can only be moved through the white path inside the mechanism.\"";
-	}
 	if (text == "room_captcha_guidesign_3_3")
 	{
 		msg[0] = "* \"Turn all the squares green.\"";
@@ -961,7 +951,7 @@ function TEXT()
 		msg[4] = "* In any way,^1 let us keep going!";
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_txt_m6;
-		msg_talker[0] = global.side[0];
+		msg_talker[0] = global.party[0];
 	}
 	
 	// room_corridors_15

@@ -1,4 +1,5 @@
 depth = 0;
+image_alpha = 0;
 chara = obj_chara;
 m6 = obj_party;
 stage = 0;
@@ -7,9 +8,11 @@ for (var l = 0; l < 2; l++)
 {
 	levers[l] =
 	{
-		object : marker((100 * (l + 1)), 1280, spr_overworld_lever, 1, 1, 1, 0, 0, 0, c_white, -(1280 + 20)),
 		active : false,
+		distance : 30,
+		object : marker((90 + (120 * l)), 1180, spr_overworld_lever, 1, 1, 1, 0, 0, 0, c_white, 0),
 	}
+	levers[l].object.depth = -levers[l].object.bbox_bottom;
 }
 // Doors
 doors_length = 4;
@@ -17,8 +20,8 @@ for (var d = 0; d < doors_length; d++)
 {
 	doors[d] =
 	{
-		object : marker(0, 0, spr_overworld_bigdoor_closed, 1, 1, 1, 0, 0, 0, c_white, 0),
 		active : false,
+		object : create(140, 0, obj_solid_parent),
 	}
 	doors[d].object.index = d;
 	with (doors[d].object)
@@ -26,23 +29,46 @@ for (var d = 0; d < doors_length; d++)
 		switch (index)
 		{
 			case 0:
-			x = 0;
-			y = 0;
+			y = 1145;
+			break;
+			case 1:
+			y = 845;
+			break;
+			case 2:
+			y = 545;
+			break;
+			case 3:
+			y = 245;
 			break;
 		}
-		depth = -bbox_bottom;
+		sprite_index = spr_overworld_bigdoor_closed;
+		image_alpha = 1;
+		visible = 1;
+		depth = -y;
 	}
 }
 // Timer
 timer =
 {
 	active : false,
-	seconds : 60,
-	seconds_noReturn : 15,
+	seconds : 0,
+	secondsTotal : 60,
 	milliseconds : 0,
+	millisecondsTotal : 60,
 	color_green : 0,
 	alpha : 0,
 	scale : 1,
+	// Fog
+	fog :
+	{
+		active : true,
+		secondsMin : 30,
+		color : c_red,
+		alpha : 0,
+		alpha_max : 0.2,
+		alpha_time : (60 * 5),
+		alpha_siner : 0,
+	},
 }
 // Buttons
 buttons_word = ((global.flag[55] == "") ? string_upper(choose("Misunderstanding", "Incomprehensible", "Responsibilities")) : global.flag[55]);
@@ -57,7 +83,7 @@ for (var v = 0; v < sqrt(buttons_length); v++)
 		{
 			active : false,
 			letter : "",
-			object : marker((60 + (20 * h)), (480 + (15 * v)), spr_overworld_captcha_button, 1, 1, 1, 0, 0, 0, c_white, (50 - (v * (h + 1)))),
+			object : marker((100 + (20 * h)), (995 + (15 * v)), spr_overworld_captcha_button, 1, 1, 1, 0, 0, 0, c_white, (50 - (v * (h + 1)))),
 		}
 	}
 }
@@ -117,7 +143,16 @@ switch (buttons_path)
 buttonsReset =
 {
 	active : false,
-	object : marker(220, 480, spr_overworld_captcha_button, 1, 1, 1, 0, 2, 0, c_white, 0),
+	object : marker(200, 1020, spr_overworld_captcha_button, 1, 1, 1, 0, 2, 0, c_white, 0),
+}
+// Moveable
+moveable =
+{
+	startX : 80,
+	startY : 760,
+	endX : 220,
+	endY : 660,
+	object : create_moveable(0, 0, false, -1, -1),
 }
 // Plates
 plates_length = 9;
@@ -129,8 +164,8 @@ for (var v = 0; v < sqrt(plates_length); v++)
 		{
 			active : false,
 			activated : false,
-			object : marker((80 + (40 * h)), (280 + (40 * v)), spr_overworld_captcha_plate, 1, 1, 1, 0, 0, 0, c_white, -100),
-			colors : [(#433F5E), #FFD54C, global.c_dump],
+			object : marker((90 + (40 * h)), (370 + (40 * v)), spr_overworld_captcha_plate, 1, 1, 1, 0, 0, 0, c_white, -100),
+			colors : [(#433F5E), global.c_dump],
 		}
 	}
 }
@@ -138,16 +173,23 @@ plates_activeAll = false;
 platesReset =
 {
 	active : false,
-	object : marker(220, 280, spr_overworld_captcha_button, 1, 1, 1, 0, 2, 0, c_white, 0),
+	object : marker(210, 410, spr_overworld_captcha_button, 1, 1, 1, 0, 2, 0, c_white, 0),
 }
-
 if (global.flag[50] == true)
 {
+	stage = 16;
+	for (var l = 0; l < 2; l++)
+		levers[l].active = true;
+	for (var d = 0; d < doors_length; d++)
+		doors[d].active = true;
 	buttons_wordCurr = buttons_word;
+	moveable.object.x = moveable.endX;
+	moveable.object.y = moveable.endY;
+	moveable.object.depth = -moveable.object.bbox_bottom;
 	plates_activeAll = true;
 }
 
 
-skip = true;
+skip = false;
 if (skip == true)
 	stage = 1;

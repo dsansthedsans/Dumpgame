@@ -59,7 +59,7 @@ if (global.chara_move == 1)
 		running = 1;
 		global.chara_runtime += 1;
 		rspeed_pos = 0;
-		if (global.chara_runtime >= 90)
+		if (global.chara_runtime >= 180)
 			rspeed_pos = 1;
 		curspeed = rspeed[rspeed_pos];
 		curimgspeed = rimgspeed[rspeed_pos];
@@ -349,6 +349,7 @@ if (global.chara_move == 1 && global.chara_interact == 1)
 				chara_stop();
 				mycol.con = 1;
 				lastcol = mycol;
+				break;
 			}
 		}
 	}

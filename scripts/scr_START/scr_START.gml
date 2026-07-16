@@ -374,10 +374,10 @@ function start_flags()
 	
 	global.flag[49] = 0; // talked to armsguy post-bc
 	
-	global.flag[50] = 0; // finished CAPTCHA 3 (((UNUSED)))
+	global.flag[50] = 0; // finished CAPTCHA 3
 	global.flag[51] = 0; // (((UNUSED)))
 	global.flag[52] = 0; // finished pre-CAPTCHA.3 event
-	global.flag[53] = 0; // finished CAPTCHA.3 and finished post-CAPTCHA.3 event
+	global.flag[53] = 0; // finished post-CAPTCHA.3 event
 	global.flag[54] = 0; // left room_corridors_14 after CAPTCHA.3
 	global.flag[55] = ""; // CAPTCHA.3 - puzzle 1 word
 	global.flag[56] = -1; // CAPTCHA.3 - puzzle 1 way
@@ -553,7 +553,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_3;
+		var _rm = room_corridors_14;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -562,7 +562,7 @@ function CHANGE_GAME()
 				window_set_caption("Dumpgame");
 			}
 			global.game_startroom[0] = _rm;
-			
+			global.flag[50] = 1;
 			// pegar em qual nível que o jogador está
 			var _lvl = 0;
 			if (_rm == room_corridors_1) || (_rm == room_corridors_1_5) || (_rm == room_corridors_2)
@@ -671,10 +671,9 @@ function CHANGE_GAME()
 			}
 			if (_lvl >= 7)
 			{
-				global.flag[50] = 1; // pulled left lever from CAPTCHA.3
-				global.flag[51] = 1; // pulled right lever from CAPTCHA.3
+				global.flag[50] = 1; //
 				global.flag[52] = 1; // finished pre-CAPTCHA.3 event
-				global.flag[53] = 1; // finished CAPTCHA.3 and finished post-CAPTCHA.3 event
+				global.flag[53] = 1; // finished post-CAPTCHA.3 event
 				global.flag[54] = 1; // left room_corridors_14 after CAPTCHA.3
 			
 				global.achievement[ACHIEVEMENT_PUZZLEMASTER] = 1;

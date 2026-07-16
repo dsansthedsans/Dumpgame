@@ -3,10 +3,10 @@ if (stage == 0)
 {
 	for (var l = 0; l < 2; l++)
 	{
-		if (levers[l].active == false && key("enter_press") == true && exists(chara) == true && point_distance(chara.x, (chara.y - (chara.sprite_height / 2)), (levers[l].object.x + (levers[l].object.sprite_width / 2)), (levers[l].object.y + (levers[l].object.sprite_height / 2))) <= 20 && global.chara_facing == UP && global.chara_move == true)
+		if (levers[l].active == false && key("enter_press") == true && exists(chara) == true && point_distance(chara.x, (chara.y - (chara.sprite_height / 2)), (levers[l].object.x + (levers[l].object.sprite_width / 2)), (levers[l].object.y + (levers[l].object.sprite_height / 2))) <= levers[l].distance && global.chara_facing == UP && global.chara_move == true)
 		{
 			levers[l].active = true;
-			audio_play(snd_heartpulse1, false, VOLUME_SOUND);
+			global.flag[50] = 0.25;
 			if (levers[!l].active == true)
 			{
 				stage = 1;
@@ -17,25 +17,128 @@ if (stage == 0)
 }
 if (stage == 1)
 {
+	stage = 2;
 	global.flag[50] = 0.5;
 	chara_change(-1, false, false, true, false, false, true);
-	stage = 2;
+	chara_stop();
 	alarm[2] = (60 + 15);
+}
+for (var l = 0; l < 2; l++)
+{
+	var _index = levers[l].object.image_index;
+	levers[l].object.image_index = levers[l].active;
+	if (_index != levers[l].object.image_index && stage < 16)
+	{
+		if (audio_playing(snd_heartpulse1) == true)
+			audio_stop(snd_heartpulse1);
+		audio_play(snd_heartpulse1, false, VOLUME_SOUND);
+		shakeobj(levers[l].object, 1, 1, 0.1);
+	}
 }
 // Doors
 if (stage == 3)
 {
-	chara_change(-1, true, true, true, false, false, true);
-	if (is_undefined(doors[0].object) == false)
-		doors[0].object.sprite_index = spr_overworld_bigdoor_open;
 	doors[0].active = true;
-	audio_play(snd_bluh, 0, VOLUME_SOUND);
-	shakescreen(3, 3);
 	timer.active = true;
+	timer.seconds = timer.secondsTotal;
+	timer.fog.alpha = 0;
+	timer.fog.alpha_siner = 0;
+	//buttons_wordCurr = "";
+	if (buttons_word != buttons_wordCurr)
+	{
+		for (var v = 0; v < sqrt(buttons_length); v++)
+		{
+			for (var h = 0; h < sqrt(buttons_length); h++)
+				buttons[h, v].active = false;
+		}
+	}
+	if (round(moveable.object.x) != moveable.endX && round(moveable.object.y) != moveable.endY)
+	{
+		moveable.object.x = moveable.startX;
+		moveable.object.y = moveable.startY;
+		moveable.object.canmove = 1;	
+	}
+	for (var v = 0; v < sqrt(plates_length); v++)
+	{
+		for (var h = 0; h < sqrt(plates_length); h++)
+			plates[h, v].active = false;
+	}
+	chara_change(-1, true, true, true, false, false, true);
 	stage = 4;
 }
+if (stage == 4 && buttons_word == buttons_wordCurr)
+{
+	alarm[2] = 30;
+	stage = 5;
+}
+if (stage == 6)
+{
+	doors[1].active = true;
+	stage = 7;
+}
+if (stage == 7 && round(moveable.object.x) == moveable.endX && round(moveable.object.y) == moveable.endY)
+{
+	stage = 8;
+	alarm[2] = 30;
+	moveable.object.canmove = 0;
+	audio_play(snd_victory, false, VOLUME_SOUND);
+}
+if (stage == 9)
+{
+	doors[2].active = true;
+	stage = 10;
+}
+if (stage == 10 && plates_activeAll == true)
+{
+	global.flag[50] = 0.75;
+	chara_change(-1, false, false, true, false, false, true);
+	chara_stop();
+	party_change(0, -1, -1);
+	party_stop(0);
+	party_facing(0, UP);
+	stage = 11;
+	alarm[2] = 90;
+	timer.active = false;
+}
+if (stage == 12)
+{
+	global.flag[50] = 1;
+	stage = 13;
+	alarm[2] = 90;
+	doors[3].active = true;
+	audio_play(snd_cheer, false, VOLUME_SOUND);
+	audio_play(snd_applause, false, VOLUME_SOUND);
+}
+if (stage == 14)
+{
+	writer("event_m6_postcaptcha3");
+	stage = 15;
+}
+if (stage == 15 && exists(thiswriter) == false)
+{
+	chara_change(-1, true, true, false, true, true, true);
+	chara_facing(DOWN);
+	party_change(0, 0, -1);
+	stage = 16;
+}
+for (var d = 0; d < doors_length; d++)
+{
+	if (is_undefined(doors[d].object) == false && exists(doors[d].object) == true)
+	{
+		var _sprite = doors[d].object.sprite_index;
+		doors[d].object.sprite_index = ((doors[d].active == false) ? spr_overworld_bigdoor_closed : spr_overworld_bigdoor_open);
+		if (_sprite != doors[d].object.sprite_index && stage < 16)
+		{
+			if (_sprite == spr_overworld_bigdoor_closed)
+				audio_play(snd_bluh, 0, VOLUME_SOUND);
+			else
+				audio_play(snd_impact, 0, VOLUME_SOUND);
+			shakescreen(5, 5);
+		}
+	}
+}
 // Buttons & Reset button
-if (buttons_word != "" && buttons_word != buttons_wordCurr && buttons_length > 0)
+if (stage >= 3 && buttons_word != buttons_wordCurr)
 {
 	// Reset button
 	if (collision_rectangle(chara.bbox_left, chara.bbox_top, chara.bbox_right, chara.bbox_bottom, buttonsReset.object, true, true) == noone && ((exists(m6) == false) || (exists(m6) == true && collision_rectangle(m6.bbox_left, m6.bbox_top, m6.bbox_right, m6.bbox_bottom, buttonsReset.object, true, true) == noone)))
@@ -81,7 +184,7 @@ if (buttons_word != "" && buttons_word != buttons_wordCurr && buttons_length > 0
 		}
 	}
 }
-else if (buttons_word != "" && buttons_word == buttons_wordCurr && buttons_length > 0)
+else
 {
 	buttonsReset.active = true;
 	buttonsReset.object.image_index = 3;
@@ -94,10 +197,10 @@ else if (buttons_word != "" && buttons_word == buttons_wordCurr && buttons_lengt
 		}
 	}
 }
-// Plates & Reset plate
-if (plates_activeAll == false)
+// Plates & Reset button
+if (stage >= 3 && plates_activeAll == false)
 {
-	// Reset plate
+	// Reset button
 	if (collision_rectangle(chara.bbox_left, chara.bbox_top, chara.bbox_right, chara.bbox_bottom, platesReset.object, true, true) == noone && ((exists(m6) == false) || (exists(m6) == true && collision_rectangle(m6.bbox_left, m6.bbox_top, m6.bbox_right, m6.bbox_bottom, platesReset.object, true, true) == noone)))
 	{
 		platesReset.active = false;
@@ -169,7 +272,7 @@ else
 	for (var v = 0; v < sqrt(plates_length); v++)
 	{
 		for (var h = 0; h < sqrt(plates_length); h++)
-			plates[h, v].active = true;
+			plates[h, v].active = global.flag[50];
 	}
 }
 // Timer
@@ -179,10 +282,21 @@ if (timer.active == true && timer.seconds > 0)
 	if (timer.milliseconds < 0)
 	{
 		timer.seconds = clamp((timer.seconds - 1), 0, timer.seconds);
-		timer.milliseconds = ((timer.seconds > 0) ? 60 : 0);
+		timer.milliseconds = ((timer.seconds > 0) ? timer.millisecondsTotal : 0);
 		timer.color_green = 255;
 		timer.scale = 1.25;
 		audio_play(snd_bump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
 		audio_play(snd_txt1, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
+		if (timer.seconds <= 0 && plates_activeAll == false)
+		{
+			stage = 0;
+			for (var l = 0; l < 2; l++)
+				levers[l].active = false;
+			timer.active = false;
+			moveable.object.canmove = 0;
+			global.flag[50] = 0;
+			chara_change(-1, true, true, false, true, true, true);
+			audio_play(snd_trombone, 0, VOLUME_SOUND);
+		}
 	}
 }

@@ -151,6 +151,7 @@ function create_moveable(_x, _y, _canmove, _xflagid, _yflagid)
 	mymoveable.canmove = argument2;
 	mymoveable.xflagid = argument3;
 	mymoveable.yflagid = argument4;
+	return mymoveable;
 }
 function create_notification(_id)
 {
