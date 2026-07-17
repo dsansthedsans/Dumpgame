@@ -402,7 +402,7 @@ function TEXT()
 	// room_corridors_5_A, room_corridors_5_B
 	if (text == "room_captcha_guidesign_1")
 	{
-		for (var i = 0; i < 3; i++)
+		for (var i = 0; i < 2; i++)
 			msg[i] = get_text("room_captcha_guidesign_1_" + string(i));
 	}
 		
@@ -866,37 +866,43 @@ function TEXT()
 	}
 	
 	// unused_room_corridors_13
-	if (text == "room_postclocksign")
+	if (text == "unused_room_postclocksign")
 	{
 		msg[0] = "* \"Hey!\"^1&* \"Did you have fun?\"";
 		msg[1] = "* \"Actually,^1 don't mind answering,^1 I'm just a sign.\"";
 		msg[2] = "* \"But we hope you did!\"";
 	}
-	if (text == "npc_armsguy_postbrock")
-	{
-		if (global.flag[49] == 0)
-		{
-			msg[0] = "* You The New Member The Guys Were Talking About.";
-			msg[1] = "* I Saw Your Fight With Broken Clock.^1&* Pretty Epic Actually.";
-			msg[2] = "* He One Of The Coolest Guys Here.";
-			msg[3] = "* He Got Kinda Mad After The Invasion,^1 But He Still Cool.";
-			global.flag[49] = 1;
-		}
-		else
-		{
-			msg[0] = "* He Was With The Humans All The Time.";
-			msg[1] = "* That Was Before The Invasion Obviously.";
-			msg[2] = "* Now He Just Be In That Brick Pile.";
-		}
-		msg_talker[0] = obj_chara.mycol;
-	}
-	if (text == "room_maurice")
+	if (text == "unused_room_maurice")
 	{
 		msg[0] = "* (It's a rock in the format of a head.)";
 		msg[1] = "* (The name \"Maurice\" is engraved in its forehead.)";
 	}
 	
-	// obj_event_m6_precaptcha3
+	// room_corridors_13
+	if (text == "npc_armsguy_postbrock")
+	{
+		if (global.flag[49] == 0)
+		{
+			for (var i = 0; i < 3; i++)
+				msg[i] = get_text($"npc_armsguy_postbrock_0_{i}");
+			if (global.flag[2] == true && exists(global.party[0]) == true)
+			{
+				msg[3] = "* ";
+				msg_face[3] = spr_dialogface_m6_angry;
+				msg_sound[3] = snd_txt_m6;
+				msg_talker[3] = obj_party;
+			}
+			global.flag[49] = 1;
+		}
+		else
+		{
+			for (var i = 0; i < 3; i++)
+				msg[i] = get_text($"npc_armsguy_postbrock_1_{i}");
+		}
+		msg_talker[0] = obj_chara.mycol;
+	}
+	
+	// room_corridors_14
 	if (text == "event_m6_precaptcha3")
 	{
 		msg[0] = "* Hey!^1&* This is already CAPTCHA's last stage!";
@@ -910,35 +916,20 @@ function TEXT()
 		msg_face[2] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_txt_m6;
 	}
-	
-	// room_corridors_14
 	if (text == "room_captcha_mainsign_3")
 	{
-		msg[0] = "* \"[CAPTCHA - LAST STAGE]\"";
-		msg[1] = "* \"This is the third and the last stage of the CAPTCHA's verification.\"";
-		msg[2] = "* \"You will need to complete all the next three puzzles to complete the stage.\"";
-		msg[3] = "* \"The first two puzzles are harder versions of the ones from STAGE 1 and 2.\"";
-		msg[4] = "* \"The last puzzle,^1 however,^1&is different.\"";
-		msg[5] = "* \"The instructions of the puzzles are informed at the side of each one of them.\"";
-		msg[6] = "* \"Another important factor is that this stage is timed.\"";
-		msg[7] = "* \"You will have exactly one minute to complete all the puzzles.\"";
-		msg[8] = "* \"The countdown will start after you pull the two&levers at the top.\"";
-		msg[9] = "* \"Good luck!\"";
+		for (var i = 0; i < 4; i++)
+			msg[i] = get_text($"room_captcha_mainsign_3_{i}");
 	}
 	if (text == "room_captcha_guidesign_3_3")
 	{
-		msg[0] = "* \"Turn all the squares green.\"";
-		msg[1] = "* \"You can change their color by stepping on them.\"";
-		msg[2] = "* \"Doing that will also change the color of the other squares near them.\"";
-		msg[3] = "* \"If it's grey,^1 it becomes green.^1 If it's green, it becomes grey.\"";
-		msg[4] = "* \"The button with a 'X' resets the puzzle.\"";
+		for (var i = 0; i < 2; i++)
+			msg[i] = get_text($"room_captcha_guidesign_3_3_{i}");
 	}
 	if (text == "room_captcha_endsign_3")
 	{
-		msg[0] = "* \"Congrats on finishing CAPTCHA's last verification stage!\"";
-		msg[1] = "* \"Now you're free to leave the Corridors and get to the Central City.\"";
-		msg[2] = "* \"In the next room,^1 you'll be granted with a reward.\"";
-		msg[3] = "* \"Congratulations and goodbye!\"";
+		for (var i = 0; i < 2; i++)
+			msg[i] = get_text($"room_captcha_endsign_3_{i}");
 	}
 	
 	// obj_event_m6_postcaptcha3
@@ -1048,11 +1039,12 @@ function TEXT()
 	if (text == "room_finalcorridor_sign")
 	{
 		msg[0] = "* \"New member,^1 you are at the Corridors' edge.\"";
-		msg[1] = "* \"Soon you will be at the Central City,^1 enjoying life&as much as you can!\"";
+		msg[1] = "* \"Soon you will be at the Central City,^1 enjoying life&as much as you can.\"";
 		msg[2] = "* \"But,^1 before that,^1&there's one last thing&you have to do.\"";
 		msg[3] = "* \"Face your last challenge before leaving this place.\"";
 		msg[4] = "* \"Prove yourself worthy by walking through this unnecessarily long corridor.\"";
-		msg[5] = "* \"Jokes aside,^1 we're sorry.\"";
+		msg[5] = "* \"Jokes aside,^1 we're sorry.\"^1&* \"Someone's REALLY bad&at urban planning.\"";
+		msg[6] = "* \"Signed,^1 your local&Dumpster Friend\"";
 	}
 	if (text == "event_gabee_chase_0") || (text == "event_gabee_chase_1") || (text == "event_gabee_chase_2")
 	{

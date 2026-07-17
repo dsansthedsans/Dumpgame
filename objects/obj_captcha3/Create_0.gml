@@ -41,11 +41,23 @@ for (var d = 0; d < doors_length; d++)
 			y = 245;
 			break;
 		}
+		visible = true;
+		depth = -y;
 		sprite_index = spr_overworld_bigdoor_closed;
 		image_alpha = 1;
-		visible = 1;
-		depth = -y;
 	}
+}
+// Gate
+gate =
+{
+	active : false,
+	sprite : spr_overworld_bottomgate,
+	x : 180,
+	y : (1340 + 5),
+	width : 0,
+	widthMax : 41,
+	widthTime : 30,
+	object : undefined,
 }
 // Timer
 timer =
@@ -175,18 +187,26 @@ platesReset =
 	active : false,
 	object : marker(210, 410, spr_overworld_captcha_button, 1, 1, 1, 0, 2, 0, c_white, 0),
 }
-if (global.flag[50] == true)
+	
+
+if (global.flag[51] == true)
 {
-	stage = 16;
-	for (var l = 0; l < 2; l++)
-		levers[l].active = true;
-	for (var d = 0; d < doors_length; d++)
-		doors[d].active = true;
 	buttons_wordCurr = buttons_word;
-	moveable.object.x = moveable.endX;
-	moveable.object.y = moveable.endY;
-	moveable.object.depth = -moveable.object.bbox_bottom;
-	plates_activeAll = true;
+	if (global.flag[54] == true)
+	{
+		moveable.object.x = moveable.endX;
+		moveable.object.y = moveable.endY;
+		moveable.object.depth = -moveable.object.bbox_bottom;
+		if (global.flag[50] == true)
+		{
+			stage = 16;
+			for (var l = 0; l < 2; l++)
+				levers[l].active = true;
+			for (var d = 0; d < doors_length; d++)
+				doors[d].active = true;
+			plates_activeAll = true;
+		}
+	}
 }
 
 

@@ -39,23 +39,25 @@ for (var l = 0; l < 2; l++)
 if (stage == 3)
 {
 	doors[0].active = true;
+	gate.active = true;
 	timer.active = true;
 	timer.seconds = timer.secondsTotal;
 	timer.fog.alpha = 0;
 	timer.fog.alpha_siner = 0;
-	//buttons_wordCurr = "";
-	if (buttons_word != buttons_wordCurr)
+	if (buttons_word != buttons_wordCurr && global.flag[51] == false)
 	{
+		buttons_wordCurr = "";
 		for (var v = 0; v < sqrt(buttons_length); v++)
 		{
 			for (var h = 0; h < sqrt(buttons_length); h++)
 				buttons[h, v].active = false;
 		}
 	}
-	if (round(moveable.object.x) != moveable.endX && round(moveable.object.y) != moveable.endY)
+	if (round(moveable.object.x) != moveable.endX && round(moveable.object.y) != moveable.endY && global.flag[54] == false)
 	{
 		moveable.object.x = moveable.startX;
 		moveable.object.y = moveable.startY;
+		moveable.object.depth = -moveable.object.bbox_bottom;
 		moveable.object.canmove = 1;	
 	}
 	for (var v = 0; v < sqrt(plates_length); v++)
@@ -68,8 +70,11 @@ if (stage == 3)
 }
 if (stage == 4 && buttons_word == buttons_wordCurr)
 {
-	alarm[2] = 30;
+	if (global.flag[51] == false)
+		audio_play(snd_victory, false, VOLUME_SOUND);
+	global.flag[51] = true;
 	stage = 5;
+	alarm[2] = 30;
 }
 if (stage == 6)
 {
@@ -78,10 +83,12 @@ if (stage == 6)
 }
 if (stage == 7 && round(moveable.object.x) == moveable.endX && round(moveable.object.y) == moveable.endY)
 {
+	if (global.flag[54] == false)
+		audio_play(snd_victory, false, VOLUME_SOUND);
+	global.flag[54] = true;
 	stage = 8;
 	alarm[2] = 30;
 	moveable.object.canmove = 0;
-	audio_play(snd_victory, false, VOLUME_SOUND);
 }
 if (stage == 9)
 {
@@ -99,6 +106,7 @@ if (stage == 10 && plates_activeAll == true)
 	stage = 11;
 	alarm[2] = 90;
 	timer.active = false;
+	audio_play(snd_victory, false, VOLUME_SOUND);
 }
 if (stage == 12)
 {
@@ -106,6 +114,7 @@ if (stage == 12)
 	stage = 13;
 	alarm[2] = 90;
 	doors[3].active = true;
+	gate.active = false;
 	audio_play(snd_cheer, false, VOLUME_SOUND);
 	audio_play(snd_applause, false, VOLUME_SOUND);
 }
@@ -130,10 +139,51 @@ for (var d = 0; d < doors_length; d++)
 		if (_sprite != doors[d].object.sprite_index && stage < 16)
 		{
 			if (_sprite == spr_overworld_bigdoor_closed)
+			{
+				if (audio_playing(snd_bluh) == true)
+					audio_stop(snd_bluh);
 				audio_play(snd_bluh, 0, VOLUME_SOUND);
+			}
 			else
 				audio_play(snd_impact, 0, VOLUME_SOUND);
 			shakescreen(5, 5);
+		}
+	}
+}
+// Gate
+if (gate.object == undefined) || (exists(gate.object) == false)
+{
+	gate.object = create(gate.x, gate.y, obj_solid_block);
+	with (gate.object)
+		image_xscale = 2;
+}
+else
+	gate.object.x = (gate.x - gate.width);
+// Timer
+if (timer.active == true && timer.seconds > 0)
+{
+	timer.milliseconds -= 1;
+	if (timer.milliseconds < 0)
+	{
+		timer.seconds = clamp((timer.seconds - 1), 0, timer.seconds);
+		timer.milliseconds = ((timer.seconds > 0) ? timer.millisecondsTotal : 0);
+		timer.color_green = 255;
+		timer.scale = 1.25;
+		audio_play(snd_bump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
+		audio_play(snd_txt1, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
+		if (timer.seconds <= 0)
+		{
+			stage = 0;
+			for (var l = 0; l < 2; l++)
+				levers[l].active = false;
+			gate.active = false;
+			timer.active = false;
+			moveable.object.canmove = 0;
+			global.flag[50] = 0;
+			global.chara_cutscene = false;
+			if (exists(obj_writer_controller) == false)
+				
+			audio_play(snd_trombone, 0, VOLUME_SOUND);
 		}
 	}
 }
@@ -173,9 +223,8 @@ if (stage >= 3 && buttons_word != buttons_wordCurr)
 				{
 					buttons[h, v].active = true;
 					buttons[h, v].object.image_index = 1;
-					buttons_wordCurr += buttons[h, v].letter;
-					if (buttons_word == buttons_wordCurr)
-						audio_play(snd_victory, false, VOLUME_SOUND);
+					if (string_length(buttons_wordCurr) < buttons_length)
+						buttons_wordCurr += buttons[h, v].letter;
 					if (audio_playing(snd_heartpulse1) == true)
 						audio_stop(snd_heartpulse1);
 					audio_play(snd_heartpulse1, false, VOLUME_SOUND);
@@ -250,10 +299,7 @@ if (stage >= 3 && plates_activeAll == false)
 						}
 					}
 					if (_active == plates_length)
-					{
 						plates_activeAll = true;
-						audio_play(snd_victory, false, VOLUME_SOUND);
-					}
 					if (audio_playing(snd_option_select) == true)
 						audio_stop(snd_option_select);
 					audio_play(((plates[h, v].active == true) ? snd_option_select : snd_option_move), false, VOLUME_SOUND, , , , (0.5 + plates[h, v].active));
@@ -272,31 +318,6 @@ else
 	for (var v = 0; v < sqrt(plates_length); v++)
 	{
 		for (var h = 0; h < sqrt(plates_length); h++)
-			plates[h, v].active = global.flag[50];
-	}
-}
-// Timer
-if (timer.active == true && timer.seconds > 0)
-{
-	timer.milliseconds -= 1;
-	if (timer.milliseconds < 0)
-	{
-		timer.seconds = clamp((timer.seconds - 1), 0, timer.seconds);
-		timer.milliseconds = ((timer.seconds > 0) ? timer.millisecondsTotal : 0);
-		timer.color_green = 255;
-		timer.scale = 1.25;
-		audio_play(snd_bump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
-		audio_play(snd_txt1, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
-		if (timer.seconds <= 0 && plates_activeAll == false)
-		{
-			stage = 0;
-			for (var l = 0; l < 2; l++)
-				levers[l].active = false;
-			timer.active = false;
-			moveable.object.canmove = 0;
-			global.flag[50] = 0;
-			chara_change(-1, true, true, false, true, true, true);
-			audio_play(snd_trombone, 0, VOLUME_SOUND);
-		}
+			plates[h, v].active = (global.flag[50] >= 0.75);
 	}
 }

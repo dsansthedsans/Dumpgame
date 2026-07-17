@@ -14,22 +14,27 @@ if (con == 1 && exists(m6) == 1)
 	m6.image_index = 1;
 	m6.sprite_index = spr_m6_u;
 	party_change(0, -1, -1);
-	maxy = 1495;
+	party_facing(0, UP);
+	maxy = (1320 + 10);
 	
 	con = 2;
 }
-if (con == 2 && chara.y <= maxy && m6.y <= maxy)
+if (con == 2)
 {
-	chara.y = maxy;
-	chara.vspeed = 0;
-	chara_stop();
+	m6.depth = -m6.bbox_bottom;
+	if (chara.y <= maxy && m6.y <= maxy)
+	{
+		chara.y = maxy;
+		chara.vspeed = 0;
+		chara_stop();
 	
-	m6.y = maxy;
-	m6.vspeed = 0;
-	party_stop(0);
+		m6.y = maxy;
+		m6.vspeed = 0;
+		party_stop(0);
 	
-	alarm[2] = 30;
-	con = 3;
+		alarm[2] = 30;
+		con = 3;
+	}
 }
 if (con == 4)
 {
@@ -39,11 +44,9 @@ if (con == 4)
 if (con == 5 && instance_exists(thiswriter) == 0)
 {
 	global.flag[52] = 1;
-	global.chara_move = 1;
-	global.chara_facing = DOWN;
-	global.chara_cutscene = 0;
-	global.chara_interact = 1;
-	party_change(0, 0, RIGHT);
+	chara_change(-1, true, true, false, true, true, true);
+	chara_facing(DOWN);
+	party_change(0, 1, RIGHT);
 	destroy(id);
 }
 

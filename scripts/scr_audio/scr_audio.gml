@@ -16,7 +16,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_bird_startfly)
 			_volume /= 2;
 		if (_asset == snd_step1) || (_asset == snd_step2)
-			_volume *= 0.5;
+			_volume *= 1;
 		if (_asset == snd_grab)
 			_volume *= 0.5;
 		if (_asset == snd_impact)
@@ -55,6 +55,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.5;
 		if (_asset == snd_applause) || (_asset == snd_cheer)
 			_volume *= 0.5;
+		if (_asset == snd_alarm)
+			_volume *= 1.75;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -71,8 +73,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 4;
 		if (_asset == mus_cave)
 			_volume *= 1.5;
+		if (_asset == mus_hurry_intro)
+			_volume *= 2;
 		if (_asset == mus_hurry_loop_0)
-			_volume *= 1.5;
+			_volume *= (1.5 + 0.125);
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)

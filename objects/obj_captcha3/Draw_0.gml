@@ -1,3 +1,7 @@
+// Gate
+var _gate_widthSpeed = ((gate.widthMax / gate.widthTime) * ((gate.active == true) ? 1 : -1));
+gate.width = clamp((gate.width + _gate_widthSpeed), 0, gate.widthMax);
+draw_sprite_stretched_ext(gate.sprite, 0, (gate.x - gate.width), gate.y, gate.width, sprite_get_height(gate.sprite), c_white, 1);
 // Buttons
 if (buttons_word != "" && buttons_length > 0)
 {
@@ -33,6 +37,7 @@ for (var v = 0; v < sqrt(plates_length); v++)
 {
 	for (var h = 0; h < sqrt(plates_length); h++)
 	{
+		plates[h, v].object.image_index = plates[h, v].active;
 		var _rectangle_color = plates[h, v].colors[(plates[h, v].active)];
 		draw_rectangle_color(plates[h, v].object.x, plates[h, v].object.y, (plates[h, v].object.x + 18), (plates[h, v].object.y + 18), _rectangle_color, _rectangle_color, _rectangle_color, _rectangle_color, false);
 	}

@@ -240,12 +240,12 @@ else if (result == 2) // moveble
 			con = 0;
 			mytargetx = -1;
 			mytargety = -1;
-			chara_change(-1, 1, 1, -1, 1, 1, -1);
+			chara_change(-1, 1, 1, -1, true, true, -1);
 		}
 		else
 		{
 			audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
-			chara_change(-1, 0, 0, -1, 0, 0, -1)
+			chara_change(-1, 0, 0, -1, false, false, -1)
 			con = 2;
 		}
 	}
@@ -273,7 +273,7 @@ else if (result == 2) // moveble
 				global.flag[xflagid] = x;
 				global.flag[yflagid] = y;
 			}
-			chara_change(-1, 1, 1, -1, 1, 1, 1);
+			chara_change(-1, 1, 1, -1, true, true, -1);
 			myfacing = -1;
 			mytargetx = -1;
 			mytargety = -1;

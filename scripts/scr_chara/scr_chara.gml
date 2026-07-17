@@ -240,9 +240,9 @@ function chara_room()
 		}
 		if (room == room_corridors_5)
 			rm = room_corridors_6;
-		if (room == room_corridors_7)
+		if (room == room_corridors_7) || (room == room_corridors_11)
 		{
-			xx = 40;
+			xx = 20;
 			yy = 360;
 		}
 		if (room == room_corridors_9 && global.flag[31] == 1 && global.flag[48] == 1)
@@ -262,8 +262,6 @@ function chara_room()
 		if (room == room_corridors_15)
 		{
 			xx = 180;
-			yy = 370;
-			global.flag[54] = 1;
 		}
 		if (room == room_corridors_16)
 			rm = room_corridors_17;
@@ -286,11 +284,11 @@ function chara_room()
 			rm = room_corridors_5;
 			
 		// general
-		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == unused_room_corridors_4_5) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_15) || (room == room_corridors_16)
+		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == unused_room_corridors_4_5) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == room_corridors_15) || (room == room_corridors_16)
 		{
 			xx = 160;
 			yy = 100;
-			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14)
+			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == room_corridors_15)
 				yy += 20;
 			if (room == unused_room_corridors_4_5) || (room == room_corridors_5)
 				xx = 720;
@@ -330,10 +328,10 @@ function chara_room()
 			xx = 300;
 			yy = 160;
 		}
-		if (room == room_corridors_14)
+		if (room == room_corridors_13)
 		{
-			xx = 340;
-			yy = 100;
+			xx = 980;
+			yy = 140;
 		}
 		if (room == room_corridors_16_A) || (room == room_corridors_16_B)
 		{
@@ -401,74 +399,6 @@ function chara_room()
 function chara_room_name(_room)
 {
 	return get_text(room_get_name(argument0));
-	
-	/*
-	name = "";
-	myroom = room;
-	
-	// get mode
-	if (variable_instance_exists(id, "mode") == 0)
-		mode = 0; // 0 = Discord RPC; 1 = Save dialog
-
-	// get room name
-	if (mode == 0)
-		name = ds_map_find_value(global.textdata_en, room_get_name(myroom));
-	else if (mode == 1)
-	{
-		myroom = global.file_chara_saveroom;
-		name = get_text(room_get_name(myroom));;
-	}
-	
-	return name;
-	*/
-	
-	/*
-	var _st = "";
-	var _rm = room;
-	if (argument0 == "save")
-		_rm = global.file_chara_saveroom;
-	
-	if (_rm == room_corridors_1)
-		_st = "The Room Of The New Members";
-	if (_rm == room_corridors_1_5)
-		_st = "First Corridor";
-	if (_rm == room_corridors_2)
-		_st = "MEE6's Room";
-	if (_rm == room_corridors_3)
-		_st = "Entrance";
-	if (_rm == room_corridors_3_5)
-		_st = "Dummy Training Room";
-	if (_rm == room_corridors_4)
-		_st = "Grass Pathway";
-	if (_rm == room_corridors_4_5)
-		_st = "Rules";
-	if (_rm == room_corridors_5)
-		_st = "CAPTCHA (Stage 1)";
-	if (_rm == room_corridors_5_A)
-		_st = "CAPTCHA (Stage 1 - Puzzle 1)";
-	if (_rm == room_corridors_5_B)
-		_st = "CAPTCHA (Stage 1 - Puzzle 2)";
-	if (_rm == room_corridors_6)
-		_st = "CAPTCHA's Reward (Stage 1)";
-	if (_rm == room_corridors_7)
-		_st = "Relaxing Corridor";
-	if (_rm == room_corridors_8)
-		_st = "Mouse Hole";
-	if (_rm == room_corridors_9)
-		_st = "CAPTCHA (Stage 2)";
-	if (_rm == room_corridors_10)
-		_st = "CAPTCHA's Reward (Stage 2)";
-	if (_rm == room_corridors_11)
-		_st = "Relaxing Pathway";
-	if (_rm == room_corridors_12)
-		_st = "The Clock";
-		
-	// special
-	if (_rm == unused_room_happybirthday)
-		_st = "Happy Birthday";
-	
-	return _st;
-	*/
 }
 
 function chara_world()
@@ -570,53 +500,4 @@ function chara_stepping()
 	|| (room >= room_caverns_2 && room <= room_caverns_3)
 	|| (inwater == 1)
 		stepplay = 1;
-}
-
-// unused
-function chara_encounter()
-{
-	// definir se poupou todos os inimigos
-	var _sparedall = 0;
-	if (global.world_sparedpopulation[global.chara_world] == global.world_maxpopulation[global.chara_world] && global.world_curpopulation[global.chara_world] == global.world_maxpopulation[global.chara_world])
-		_sparedall = 1;
-		
-	// definir se pode iniciar uma batalha
-	encounter = 1;
-	if (room == room_corridors_1) 
-	|| (room == room_corridors_1_5) 
-	|| (room == room_corridors_2) 
-	|| (room == room_corridors_3 && global.flag[17] == 0)
-	|| (room == room_corridors_4 && global.flag[18] == 0)
-	|| (room == room_corridors_3_5 && global.flag[17] == 0)
-	|| (room == room_corridors_5 && global.flag[15] == 1 && global.flag[16] == 0)
-	|| (room == room_corridors_5_A && global.flag[11] == 0)
-	|| (room == room_corridors_5_B && global.flag[14] == 0)
-	|| (room == room_corridors_9 && global.flag[42] == 0)
-	|| (room == unused_room_corridors_12 && global.flag[41] == 0)
-	|| (room == room_corridors_14 && global.flag[54] == 0)
-	|| (room == room_corridors_16_B)
-	|| (room == room_corridors_17)
-	|| (room == room_corridors_18)
-	|| (room == room_caverns_1)
-	|| (room == room_caverns_2)
-	|| (room == room_caverns_3)
-	|| (room == room_corridors_1_doors)
-	|| (_sparedall == 1)
-	{
-		encounter = 0;
-		maxsteps = 999999;
-	}
-	
-	// get amount of max steps
-	if (encounter == 1)
-	{
-		var _curpop = global.world_curpopulation[global.chara_world];
-		var _maxpop = global.world_maxpopulation[global.chara_world];
-		var _killed = (_maxpop - _curpop);
-		maxsteps = (2000 - (_killed * 30));
-		
-		// genocide
-		if (global.chara_world == WORLD_CORRIDORS && global.flag[22] == 1)
-			maxsteps = 1200;
-	}
 }

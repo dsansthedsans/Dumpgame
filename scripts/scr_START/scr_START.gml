@@ -374,11 +374,11 @@ function start_flags()
 	
 	global.flag[49] = 0; // talked to armsguy post-bc
 	
-	global.flag[50] = 0; // finished CAPTCHA 3
-	global.flag[51] = 0; // (((UNUSED)))
+	global.flag[50] = 0; // finished CAPTCHA 3 / CAPTCHA 3 PUZZLE 3
+	global.flag[51] = 0; // FINISHED PUZZLE 1 CAPTCHA 3
 	global.flag[52] = 0; // finished pre-CAPTCHA.3 event
 	global.flag[53] = 0; // finished post-CAPTCHA.3 event
-	global.flag[54] = 0; // left room_corridors_14 after CAPTCHA.3
+	global.flag[54] = 0; // FINISHED PUZZLE 2 CAPTCHA 3
 	global.flag[55] = ""; // CAPTCHA.3 - puzzle 1 word
 	global.flag[56] = -1; // CAPTCHA.3 - puzzle 1 way
 	
@@ -553,7 +553,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_14;
+		var _rm = room_corridors_13;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -562,7 +562,7 @@ function CHANGE_GAME()
 				window_set_caption("Dumpgame");
 			}
 			global.game_startroom[0] = _rm;
-			global.flag[50] = 1;
+			
 			// pegar em qual nível que o jogador está
 			var _lvl = 0;
 			if (_rm == room_corridors_1) || (_rm == room_corridors_1_5) || (_rm == room_corridors_2)
@@ -579,7 +579,7 @@ function CHANGE_GAME()
 				_lvl = 4.5;
 			if (_rm == room_corridors_11) || (_rm == unused_room_happybirthday)
 				_lvl = 5;
-			if (_rm == unused_room_corridors_13) || (_rm == room_corridors_14)
+			if (_rm == unused_room_corridors_13) || (_rm == room_corridors_14) || (_rm == room_corridors_13)
 				_lvl = 6;
 			if (_rm == room_corridors_16)
 				_lvl = 7;
@@ -674,7 +674,7 @@ function CHANGE_GAME()
 				global.flag[50] = 1; //
 				global.flag[52] = 1; // finished pre-CAPTCHA.3 event
 				global.flag[53] = 1; // finished post-CAPTCHA.3 event
-				global.flag[54] = 1; // left room_corridors_14 after CAPTCHA.3
+				global.flag[54] = 1;
 			
 				global.achievement[ACHIEVEMENT_PUZZLEMASTER] = 1;
 			}

@@ -79,6 +79,12 @@ if (room >= room_corridors_3 && room < room_caverns_1)
 	music_set(2, -1);
 	if (global.chara_murder >= 2)
 		music_set(0, mus_corridors_geno)
+	// Broken Clock
+	if (global.flag[37] == 0.25) || (global.flag[37] >= 0.75 && global.flag[39] == 0) || (global.flag[39] == 1 && global.flag[41] == 0)
+		music_set(0, -1);
+	if (global.flag[37] == 0.5)
+		music_set(0, mus_brock_prebattle, , , , , , 0);
+	// CAPTCHA 3
 	if (global.flag[50] == 0.25) || (global.flag[50] == 0.75)
 		music_set(0, -1);	
 	if (global.flag[50] == 0.5)
@@ -86,30 +92,23 @@ if (room >= room_corridors_3 && room < room_caverns_1)
 		music_set(0, mus_hurry_intro, , , , , false);
 		if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_0) || (music_old[0] == mus_hurry_loop_1)
 		{
-			music_set(0, mus_hurry_loop_0, , , , 1, , 0);
+			music_set(0, mus_hurry_loop_0, , , , , , 0);
 			if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds < obj_captcha3.timer.fog.secondsMin)
 			{
 				var _sec = obj_captcha3.timer.seconds;
 				var _secMin = obj_captcha3.timer.fog.secondsMin;
 				global.music_pitch[0] = music_pitch_old[0];
 				global.music_pitch[0] = lerp(global.music_pitch[0], ((_sec > (_secMin / 2)) ? 1.05 : ((_sec > (_secMin / 4)) ? 1.1 : ((_sec > (_secMin / 8)) ? 1.15 : 1.2))), 0.025);
-				music_set(1, snd_alarm, , , 1, ((_sec > (_secMin / 2)) ? 0.75 : ((_sec > (_secMin / 4)) ? 1 : ((_sec > (_secMin / 8)) ? 1.25 : 1.5))), , 0);
+				music_set(1, snd_alarm, , , 2, , , 0);
+				if (music_old[1] == snd_alarm)
+					global.music_pitch[1] = music_pitch_old[1];
+				global.music_pitch[1] = lerp(global.music_pitch[1], ((_sec > (_secMin / 2)) ? 1 : ((_sec > (_secMin / 4)) ? 1.1 : ((_sec > (_secMin / 8)) ? 1.2 : 1.3))), 0.025);
+				global.music_volumetype[1] = VOLUME_SOUND;
 			}
 		}
 		
 	}
 }
-if (room == room_corridors_11) // bc events
-{
-	if (global.flag[37] == 0.25) || (global.flag[37] >= 0.75 && global.flag[39] == 0) || (global.flag[39] == 1 && global.flag[41] == 0)
-		global.music[0] = -1;
-	if (global.flag[37] == 0.5)
-	{
-		music_set(0, mus_brock_prebattle, , , , , , 0);
-	}
-}
-if (room == room_corridors_16)
-	music_set(1, -1);
 if (room == room_corridors_16_B)
 {
 	music_set(0, -1);
