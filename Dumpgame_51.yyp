@@ -220,6 +220,7 @@
     {"id":{"name":"unused_room_corridors_16_A","path":"rooms/unused_room_corridors_16_A/unused_room_corridors_16_A.yy",},},
     {"id":{"name":"unused_room_corridors_16_B","path":"rooms/unused_room_corridors_16_B/unused_room_corridors_16_B.yy",},},
     {"id":{"name":"unused_room_corridors_16","path":"rooms/unused_room_corridors_16/unused_room_corridors_16.yy",},},
+    {"id":{"name":"unused_room_corridors_17","path":"rooms/unused_room_corridors_17/unused_room_corridors_17.yy",},},
     {"id":{"name":"unused_room_corridors_4_5","path":"rooms/unused_room_corridors_4_5/unused_room_corridors_4_5.yy",},},
     {"id":{"name":"unused_room_happybirthday","path":"rooms/unused_room_happybirthday/unused_room_happybirthday.yy",},},
     {"id":{"name":"unused_room_rhonheyattacktest","path":"rooms/unused_room_rhonheyattacktest/unused_room_rhonheyattacktest.yy",},},
@@ -668,6 +669,7 @@
     {"roomId":{"name":"unused_room_corridors_16","path":"rooms/unused_room_corridors_16/unused_room_corridors_16.yy",},},
     {"roomId":{"name":"unused_room_corridors_16_A","path":"rooms/unused_room_corridors_16_A/unused_room_corridors_16_A.yy",},},
     {"roomId":{"name":"unused_room_corridors_16_B","path":"rooms/unused_room_corridors_16_B/unused_room_corridors_16_B.yy",},},
+    {"roomId":{"name":"unused_room_corridors_17","path":"rooms/unused_room_corridors_17/unused_room_corridors_17.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

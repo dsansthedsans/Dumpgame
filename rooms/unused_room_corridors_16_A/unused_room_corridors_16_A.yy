@@ -64,8 +64,8 @@
   ],
   "name":"unused_room_corridors_16_A",
   "parent":{
-    "name":"Corridors",
-    "path":"folders/[!] rooms/Corridors.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

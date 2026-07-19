@@ -264,8 +264,8 @@ function chara_room()
 			xx = 180;
 		}
 		if (room == unused_room_corridors_16)
-			rm = room_corridors_17;
-		if (room == room_corridors_17)
+			rm = unused_room_corridors_17;
+		if (room == unused_room_corridors_17)
 		{
 			xx = 160;
 			yy = 290;
@@ -284,11 +284,11 @@ function chara_room()
 			rm = room_corridors_5;
 			
 		// general
-		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == unused_room_corridors_4_5) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == unused_room_corridors_16) || (room == room_corridors_17)
+		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == unused_room_corridors_4_5) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == unused_room_corridors_16) || (room == unused_room_corridors_17)
 		{
 			xx = 160;
 			yy = 100;
-			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == room_corridors_17)
+			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == unused_room_corridors_17)
 				yy += 20;
 			if (room == unused_room_corridors_4_5) || (room == room_corridors_5)
 				xx = 720;

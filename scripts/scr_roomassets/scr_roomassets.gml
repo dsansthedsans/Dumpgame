@@ -258,7 +258,7 @@ function room_interact()
 		if (x == 140 && y == 60)
 			text = "room_subwaybutton";
 	}
-	if (room == room_corridors_17)
+	if (room == unused_room_corridors_17)
 	{
 		// first armsguy
 		if (x == 505 && y == 370)
@@ -855,7 +855,7 @@ function room_solid()
 		if (x == 140 && y == 40)
 			sprite_index = spr_overworld_brokenbutton;
 	}
-	if (room == room_corridors_17)
+	if (room == unused_room_corridors_17)
 	{
 		// lamp
 		if ((x == 130 || x == 250 || x == 410 || x == 530 || x == 690 || x == 810) && (y == 60 || y == 280)) || (x == 410 && y == 90)
@@ -887,6 +887,21 @@ function room_solid()
 		// pillar door
 		if (x == 430 && y == 5)
 			sprite_index = spr_overworld_pillardoor;
+	}
+	if (room == room_corridors_17)
+	{
+		// Lamps
+		if (y == 60) || (x == 410 && y == 90)
+		{
+			sprite_index = spr_overworld_lamp;
+			if (x == 410 && y == 90)
+				image_index = 1;
+			if (x == 690)
+				image_index = 2;
+		}
+		if (y == 175) || (y == 355)
+			sprite_index = spr_overworld_lamp2;
+		// Trees
 	}
 	if (room == room_corridors_18)
 	{

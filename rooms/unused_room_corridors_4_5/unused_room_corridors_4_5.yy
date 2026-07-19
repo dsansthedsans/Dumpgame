@@ -29,7 +29,7 @@
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_16FA973E","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_16FA973E","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_lamp","path":"sprites/spr_overworld_lamp/spr_overworld_lamp.yy",},"x":215.0,"y":40.0,},
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_3C39DFFE","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":true,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_3C39DFFE","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_pillardoor","path":"sprites/spr_overworld_pillardoor/spr_overworld_pillardoor.yy",},"x":110.0,"y":-10.0,},
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_B8CE721","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":7.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_B8CE721","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_pillar","path":"sprites/spr_overworld_pillar/spr_overworld_pillar.yy",},"x":150.0,"y":85.0,},
-        {"$GMRSpriteGraphic":"v1","%Name":"graphic_20AA4C07","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_20AA4C07","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_npc_armsguy","path":"sprites/spr_npc_armsguy/spr_npc_armsguy.yy",},"x":105.0,"y":105.0,},
+        {"$GMRSpriteGraphic":"v1","%Name":"graphic_20AA4C07","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_20AA4C07","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_npc_armsguy_lifting","path":"sprites/spr_npc_armsguy_lifting/spr_npc_armsguy_lifting.yy",},"x":105.0,"y":105.0,},
       ],"depth":0,"effectEnabled":true,"effectType":null,"gridX":5,"gridY":5,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets_1","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":5,"gridY":5,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_61934389","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_61934389","objectId":{"name":"obj_solid_block","path":"objects/obj_solid_block/obj_solid_block.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":2.0,"x":180.0,"y":200.0,},
@@ -78,8 +78,8 @@
   ],
   "name":"unused_room_corridors_4_5",
   "parent":{
-    "name":"Corridors",
-    "path":"folders/[!] rooms/Corridors.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -60,7 +60,7 @@
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_37F3388F","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_37F3388F","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_tree","path":"sprites/spr_overworld_tree/spr_overworld_tree.yy",},"x":55.0,"y":280.0,},
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_1F247975","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_1F247975","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_tree","path":"sprites/spr_overworld_tree/spr_overworld_tree.yy",},"x":240.0,"y":260.0,},
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_697DD9AC","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_697DD9AC","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_signWood","path":"sprites/spr_overworld_signWood/spr_overworld_signWood.yy",},"x":60.0,"y":355.0,},
-        {"$GMRSpriteGraphic":"v1","%Name":"graphic_7B7BE133","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_7B7BE133","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_npc_armsguy","path":"sprites/spr_npc_armsguy/spr_npc_armsguy.yy",},"x":160.0,"y":370.0,},
+        {"$GMRSpriteGraphic":"v1","%Name":"graphic_7B7BE133","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_7B7BE133","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_npc_armsguy_lifting","path":"sprites/spr_npc_armsguy_lifting/spr_npc_armsguy_lifting.yy",},"x":160.0,"y":370.0,},
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_7B3472A6","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_7B3472A6","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_save_block","path":"sprites/spr_save_block/spr_save_block.yy",},"x":370.0,"y":160.0,},
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_514BAB96","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_514BAB96","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_rock","path":"sprites/spr_overworld_rock/spr_overworld_rock.yy",},"x":190.0,"y":310.0,},
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_A3529EA","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":2.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_A3529EA","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_overworld_rock","path":"sprites/spr_overworld_rock/spr_overworld_rock.yy",},"x":360.0,"y":437.0,},
@@ -147,8 +147,8 @@
   ],
   "name":"unused_room_corridors_13",
   "parent":{
-    "name":"Corridors",
-    "path":"folders/[!] rooms/Corridors.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

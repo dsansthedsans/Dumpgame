@@ -550,7 +550,8 @@ function TEXT()
 	{
 		if (global.flag[45] == 0 && global.flag[48] == 0)
 		{
-			for (var i = 0; i < 99; i++)
+			msg[0] = $"{get_text("npc_armsguy_lost_0_0_0_0")}{global.chara_name}{get_text("npc_armsguy_lost_0_0_0_1")}";
+			for (var i = 1; i < 99; i++)
 			{
 				var _curmsg = get_text("npc_armsguy_lost_0_0_" + string(i));
 				if (_curmsg != undefined)
@@ -988,8 +989,8 @@ function TEXT()
 		msg[2] = "* (Doesn't seem to be working.)";
 	}
 	
-	// room_corridors_17
-	if (text == "npc_armsguy_exitfirst")
+	// unused_room_corridors_17
+	if (text == "npc_armsguy_exit")
 	{
 		for (var m = 0; m < 99; m++)
 		{
@@ -1001,23 +1002,40 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 		global.flag[57] = 1;
 	}
-	if (text == "npc_trashguy_exitfishing")
+	if (text == "npc_armsguy_exit_fishing")
 	{
-		if (global.flag[58] == 0)
+		for (var m = 0; m < 99; m++)
 		{
-			msg[0] = "* ...hi...";
-			msg[1] = "* ...what...?^1&* ...i'm not fishing...";
-			msg[2] = "* ...i was throwing trash down there but i accidentally threw something important...";
-			msg[3] = "* ...now i'm trying to take it back with a fishing rod...";
-			msg[4] = "* ...it's not working...";
-			global.flag[58] = 1;
+			var _msg = get_text($"npc_armsguy_exit_fishing_0_{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
 		}
-		else
-			msg[0] = "* ...i think i'll&just give up...";	
+		msg_talker[0] = obj_chara.mycol;
+		for (var o = 0; o < instance_number(obj_npc_room); o++)
+		{
+			var _obj = instance_find(obj_npc_room, o);
+			if (_obj.x == 110 && y == 390 && sprite_index == spr_npc_trashguy_fishing)
+			{
+				msg_talker[2] = _obj;
+				break;
+			}
+		}
+	}
+	if (text == "npc_trashguy_exit_fishing")
+	{
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = get_text($"npc_trashguy_exit_fishing_{global.flag[58]}_{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+		global.flag[58] = true;
 		msg_talker[0] = obj_chara.mycol;
 	}
-	if (text == "npc_armsguy_exitlifting")
-		msg[0] = "* Can't Talk Right Now.^1&* I Gyming.";	
+	if (text == "npc_armsguy_exit_lifting")
+		msg[0] = get_text($"npc_armsguy_exit_lifting_{global.flag[43]}_0");
 	if (text == "npc_flitcher_exit")
 	{
 		var _weird = (irandom_range(1, 3) == 1 && global.flag[44] == 0);
@@ -1361,8 +1379,10 @@ function TEXT()
 				var _geno = enemy.geno;
 				var _round = clamp(controller.battle_round, 0, 9);
 				if (controller.enemy_spare[enemy.myself] >= 100)
+				{
 					_round = 9;
-				
+					msg_type[0] = "tense";
+				}
 				for (var i = 0; i < 99; i++)
 				{
 					var _curmsg = get_text("battle_bubble_brock_" + string(_round) + "_" + string(i) + "_" +  string(_geno));
@@ -1927,9 +1947,7 @@ function TEXT()
 							msg_sound[_page] = snd_txt_brock;
 							msg_format[_page] = "bubble";
 							if (_convince >= 4)
-							{
-								msg_type[_page + 7] = "tense";
-							}
+								msg_type[_page + 8] = "tense";
 							enemy.body.movement = 1;
 						}
 					}

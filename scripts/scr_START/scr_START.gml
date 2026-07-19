@@ -363,8 +363,8 @@ function start_flags()
 	
 	global.flag[42] = 0; // finished MEE6's post-CAPTCHA.2 event
 	
-	global.flag[43] = 0; // (((UNUSED)))
-	global.flag[44] = 0; // FLITCHER room_corridors_17 WEIRD VERY WEIRD
+	global.flag[43] = 0; // ARMSGUY lifting unused_room_corridors_17
+	global.flag[44] = 0; // FLITCHER unused_room_corridors_17 WEIRD VERY WEIRD
 	
 	global.flag[45] = 0; // talked to armsguy before CAPTCHA 2
 	global.flag[46] = 0; // left room_corridors_9 after talking to trashguy
@@ -581,7 +581,7 @@ function CHANGE_GAME()
 				_lvl = 6;
 			if (_rm == unused_room_corridors_16)
 				_lvl = 7;
-			if (_rm == room_corridors_17) || (_rm == room_corridors_18)
+			if (_rm == unused_room_corridors_17) || (_rm == room_corridors_18)
 				_lvl = 8;
 			if (_rm == room_caverns_1)
 				_lvl = 9;
