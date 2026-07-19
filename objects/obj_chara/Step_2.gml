@@ -19,17 +19,17 @@ var r = room;
 if (r == room_corridors_1)
 || (r == room_corridors_1_5)
 || (r == room_corridors_2)
-|| (r == room_corridors_3		&& global.flag[17] == 0)
-|| (r == room_corridors_4		&& global.flag[18] == 0)
-|| (r == room_corridors_3_5		&& global.flag[17] == 0)
-|| (r == room_corridors_5		&& global.flag[15] == 1 && global.flag[16] == 0)
-|| (r == room_corridors_5_A		&& global.flag[11] == 0)
-|| (r == room_corridors_5_B		&& global.flag[14] == 0)
-|| (r == room_corridors_9		&& global.flag[42] == 0)
-|| (r == unused_room_corridors_12		&& global.flag[41] == 0)
+|| (r == room_corridors_3 && global.flag[17] == 0)
+|| (r == room_corridors_4 && global.flag[18] == 0)
+|| (r == room_corridors_3_5 && global.flag[17] == 0)
+|| (r == room_corridors_5 && global.flag[15] == 1 && global.flag[16] == 0)
+|| (r == room_corridors_5_A && global.flag[11] == 0)
+|| (r == room_corridors_5_B && global.flag[14] == 0)
+|| (r == room_corridors_9 && global.flag[42] == 0)
+|| (r == unused_room_corridors_12 && global.flag[41] == 0)
 || (r == room_corridors_14 && global.flag[50] < 1)
-|| (r == room_corridors_16_A)
-|| (r == room_corridors_16_B)
+|| (r == unused_room_corridors_16_A)
+|| (r == unused_room_corridors_16_B)
 || (r == room_corridors_17)
 || (r == room_corridors_18)
 || (r == room_caverns_1)
@@ -39,11 +39,10 @@ if (r == room_corridors_1)
 	global.chara_encounter = 0;
 if (global.chara_encounter == 1)
 {
-	var _curpop = global.world_curpopulation[global.chara_world];
-	var _maxpop = global.world_maxpopulation[global.chara_world];
-	var _killed = (_maxpop - _curpop);
-	maxsteps = (2000 - (_killed * 30));
-	maxsteps = clamp(maxsteps, 120, 9999);
+	maxsteps = (2000 - (40 * (global.world_maxpopulation[global.chara_world] - global.world_curpopulation[global.chara_world])));
+	if (chara_murder() >= 2 && chara_world() == WORLD_CORRIDORS)
+		maxsteps = 1000;
+	maxsteps = clamp(maxsteps, 1000, 9999);
 	if (global.chara_steps >= maxsteps)
 	{
 		if (battlecon == 0 && global.chara_move == 1 && global.chara_interact == true && global.chara_cutscene == 0)

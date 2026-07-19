@@ -87,9 +87,10 @@ function battle_setupgroup()
 	
 	if (battle_group == 0) // But nobody came.
 	{
-		//battle_bg = -1;
 		battle_music = -1;
-		global.flag[22] = 1;
+		if (global.flag[22] == false)
+			audio_play(snd_murder, 0, VOLUME_SOUND);
+		global.flag[22] = true;
 	}
 	if (battle_group == 1) // Dummy
 	{
@@ -297,7 +298,7 @@ function battle_enemy()
 				enemy_name[i] = "Flitcher";
 				enemy_curhp[i] = 25;
 				enemy_maxhp[i] = 25;
-				enemy_atk[i] = 4;
+				enemy_atk[i] = 3;
 				enemy_def[i] = 6;
 				enemy_reward_exp[i] = 3;
 				enemy_reward_mny[i] = 2;
@@ -323,8 +324,8 @@ function battle_enemy()
 				enemy_name[i] = "Broken Clock";
 				enemy_curhp[i] = 50;
 				enemy_maxhp[i] = 50;
-				enemy_atk[i] = 5;
-				enemy_def[i] = 1000;
+				enemy_atk[i] = 10;
+				enemy_def[i] = 99999;
 				enemy_reward_exp[i] = 15;
 				enemy_reward_mny[i] = 10;
 				enemy_act[i, 1] = get_text("battle_act_brock_1");

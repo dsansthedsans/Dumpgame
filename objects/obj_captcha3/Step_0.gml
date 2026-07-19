@@ -115,8 +115,11 @@ if (stage == 12)
 	alarm[2] = 90;
 	doors[3].active = true;
 	gate.active = false;
-	audio_play(snd_cheer, false, VOLUME_SOUND);
-	audio_play(snd_applause, false, VOLUME_SOUND);
+	if (chara_murder() < 1)
+	{
+		audio_play(snd_cheer, false, VOLUME_SOUND);
+		audio_play(snd_applause, false, VOLUME_SOUND);
+	}
 }
 if (stage == 14)
 {
@@ -181,9 +184,8 @@ if (timer.active == true && timer.seconds > 0)
 			moveable.object.canmove = 0;
 			global.flag[50] = 0;
 			global.chara_cutscene = false;
-			if (exists(obj_writer_controller) == false)
-				
-			audio_play(snd_trombone, 0, VOLUME_SOUND);
+			if (chara_murder() < 1)
+				audio_play(snd_trombone, 0, VOLUME_SOUND);
 		}
 	}
 }

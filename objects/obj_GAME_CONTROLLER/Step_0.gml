@@ -63,6 +63,10 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		else
 			room_goto(room_last);
 	}
+	if (keyboard_check_pressed(ord("M")) == 1)
+	{
+		global.world_curpopulation[chara_world()] = clamp((global.world_curpopulation[chara_world()] + (1 * ((keyboard_check(vk_backspace) == true) ? 1 : -1))), 0, global.world_maxpopulation[chara_world()]);
+	}
 	if (keyboard_check(ord("P")) == 1) // party
 	{
 		if (keyboard_check_pressed(ord("O")) == 1)

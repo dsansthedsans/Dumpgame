@@ -221,10 +221,9 @@ if (active == 1)
 							part[i].gravity = 0.075;
 							part[i].vspeed = random_range(-7, -5);
 							part[i].hspeed = random_range(-2, 2);
-							part[i].angleamt = choose(-1.5, 1.5);
+							part[i].angleamt = (choose(-1.5, 1.5) * 2);
 						}
 					}
-					
 					hspeed = 0;
 					vspeed = 0;
 					gravity = 0;
@@ -251,13 +250,16 @@ if (active == 1)
 		if (otherimage == 1) // afterimage
 			afterimage();
 		
-		draw_self();
+		//draw_self();
+		var _shake_offsetX = ((clamp((irandom(-25) + 1), 0, 1) * choose(-1, 1)) * tense);
+		var _shake_offsetY = ((clamp((irandom(-25) + 1), 0, 1) * choose(-1, 1)) * tense);
+		draw_sprite_ext(sprite_index, image_index, x + _shake_offsetX, y + _shake_offsetY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 		
 		// lines
 		for (var i = 0; i < 3; i++)
 		{
 			line_time[i] += ((line_amt[i] / (i + 1)) * line_side[i]);
-			draw_sprite_ext(line_spr, i, x, y, image_xscale, image_yscale, (line_time[i] + image_angle), c_white, image_alpha);
+			draw_sprite_ext(line_spr, i, x + _shake_offsetX, y + _shake_offsetY, image_xscale, image_yscale, (line_time[i] + image_angle), c_white, image_alpha);
 		}
 		
 		// explosion

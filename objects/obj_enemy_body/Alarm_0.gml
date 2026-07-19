@@ -27,6 +27,7 @@ if (type == 6) // Broken Clock
 {
 	sprite_index = spr_enemy_brock_body;
 	otherimage = 1;
+	tense = false;
 	
 	shock_x = 0;
 	shock_y = 0;

@@ -48,6 +48,7 @@ if (msg_format[page] == "textbox") || (msg_format[page] == "textbox_bottom") || 
 	if (msg_type[page] == "notawake")
 		text_y = 120;
 	
+	
 	// change text_x if there's face
 	if (msg_face[page] > -1)
 		text_x = (16 + 11 + sprite_get_width(msg_face[page]) + 8);
@@ -100,7 +101,12 @@ if (msg_format[page] == "bubble")
 		bubble_spr = spr_writer_bubble3;
 	else if (msg_type[page] == 4) // top big
 		bubble_spr = spr_writer_bubble4;
-		
+	if (msg_type[page] == "tense")
+	{
+		text_speed = 3;
+		//letter_xspace = 12;
+	}
+	
 	if (bubble_spr == spr_writer_bubble1)
 	{
 		text_x += 38;

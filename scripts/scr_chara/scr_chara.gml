@@ -259,11 +259,11 @@ function chara_room()
 			if (global.flag[39] == 1)
 				global.flag[41] = 1;
 		}
-		if (room == room_corridors_15)
+		if (room == unused_room_corridors_15)
 		{
 			xx = 180;
 		}
-		if (room == room_corridors_16)
+		if (room == unused_room_corridors_16)
 			rm = room_corridors_17;
 		if (room == room_corridors_17)
 		{
@@ -284,11 +284,11 @@ function chara_room()
 			rm = room_corridors_5;
 			
 		// general
-		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == unused_room_corridors_4_5) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == room_corridors_15) || (room == room_corridors_16)
+		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == unused_room_corridors_4_5) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == unused_room_corridors_16) || (room == room_corridors_17)
 		{
 			xx = 160;
 			yy = 100;
-			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == room_corridors_15)
+			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == room_corridors_17)
 				yy += 20;
 			if (room == unused_room_corridors_4_5) || (room == room_corridors_5)
 				xx = 720;
@@ -333,19 +333,13 @@ function chara_room()
 			xx = 980;
 			yy = 140;
 		}
-		if (room == room_corridors_16_A) || (room == room_corridors_16_B)
+		if (room == unused_room_corridors_16_A) || (room == unused_room_corridors_16_B)
 		{
 			xx = 20;
 			yy = 220;
-			if (room == room_corridors_16_B)
+			if (room == unused_room_corridors_16_B)
 				xx = 340;
-			rm = room_corridors_16;
-		}
-		if (room == room_corridors_17)
-		{
-			xx = 180;
-			yy = 100;
-			rm = room_corridors_16;
+			rm = unused_room_corridors_16;
 		}
 		if (room == room_corridors_18)
 		{
@@ -382,16 +376,16 @@ function chara_room()
 		if (room == room_corridors_5)
 			rm = room_corridors_5_A;
 			
-		if (room == room_corridors_16)
-			rm = room_corridors_16_A;
+		if (room == unused_room_corridors_16)
+			rm = unused_room_corridors_16_A;
 	}
 	if (thisblock == obj_room_other_B)
 	{
 		if (room == room_corridors_5)
 			rm = room_corridors_5_B;
 			
-		if (room == room_corridors_16)
-			rm = room_corridors_16_B;
+		if (room == unused_room_corridors_16)
+			rm = unused_room_corridors_16_B;
 	}
 	
 	room_go(rm, xx, yy);
@@ -403,10 +397,11 @@ function chara_room_name(_room)
 
 function chara_world()
 {
-	if (room >= room_corridors_1 && room <= room_corridors_18)
-		global.chara_world = WORLD_CORRIDORS;
+	var _world = WORLD_CORRIDORS;
 	if (room >= room_caverns_1 && room <= room_caverns_3)
-		global.chara_world = WORLD_CAVERNS;
+		_world = WORLD_CAVERNS;
+	global.chara_world = _world;
+	return _world;
 }
 function chara_world_name(_world)
 {
@@ -421,12 +416,27 @@ function chara_world_name(_world)
 
 function chara_murder()
 {
+	var _murder = 0;
+	if (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
+	{
+		_murder = 1;
+		if (global.world_curpopulation[WORLD_CORRIDORS] <= 0 && global.flag[22] == true)
+		{
+			_murder = 2;
+			if (global.flag[38] == true)
+				_murder = 3;
+		}
+	}
+	global.chara_murder = _murder;
+	return _murder;
+	
+	/*
 	// matou metade dos monstros dos corredores
 	if (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2) && global.chara_murder == 0)
 		global.chara_murder = 1;
 	
 	// "but nobody came" dos corredores
-	if (global.flag[22] == 1 && global.flag[37] == 0)
+	if (global.flag[22] == 1)
 	{
 		global.chara_murder = 2;
 			
@@ -441,7 +451,8 @@ function chara_murder()
 	// matou o broken clock
 	if (global.chara_murder == 2 && global.flag[38] == 1)
 		global.chara_murder = 3; // som toca quando consegue conquista
-		
+	*/
+	
 	// "but nobody came" das cavernas
 	/*
 	if (global.world_curpopulation[WORLD_CAVERNS] <= (global.world_maxpopulation[WORLD_CAVERNS] / 2) && global.chara_murder == 3)
@@ -494,7 +505,7 @@ function chara_stepping()
 	|| (room == room_corridors_1_5)
 	|| (room == room_corridors_2)
 	|| (room == room_corridors_14 && global.flag[50] > 0 && global.flag[50] < 1)
-	|| (room == room_corridors_16_B)
+	|| (room == unused_room_corridors_16_B)
 	|| (room == room_corridors_18) 
 	|| (room >= room_caverns_1)
 	|| (room >= room_caverns_2 && room <= room_caverns_3)

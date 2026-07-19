@@ -17,8 +17,8 @@
   ],
   "name":"room_battle",
   "parent":{
-    "name":"[!] rooms",
-    "path":"folders/[!] rooms.yy",
+    "name":"Corridors",
+    "path":"folders/[!] rooms/Corridors.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

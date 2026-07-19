@@ -5,7 +5,14 @@ function room_interact()
 	
 	// bench
 	if (room == room_corridors_7 && y == 100 && x != 480) || (room == room_corridors_11 && ((x == 130 || x == 290) && y == 95))
-		result = 1;	
+	{
+		result = 1;
+		if (chara_murder() >= 1)
+		{
+			result = 0;
+			text = "room_bench_geno";
+		}
+	}
 	
 	// corridors
 	if (r == room_corridors_1)
@@ -105,7 +112,7 @@ function room_interact()
 		{
 			text = "npc_trashguy";
 			sprite_index = spr_npc_trashguy_closed;
-			if (global.world_curpopulation[WORLD_CORRIDORS] < global.world_maxpopulation[WORLD_CORRIDORS])
+			if (global.world_curpopulation[WORLD_CORRIDORS] < (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
 				destroy(id);
 		}
 		if (x == 480 && y == 100)
@@ -115,7 +122,14 @@ function room_interact()
 	{
 		// rat hole
 		if (x == 220 && y == 280)
+		{
 			result = 3;	
+			if (chara_murder() >= 1)
+			{
+				result = 0;
+				text = "room_rat_geno";
+			}
+		}
 		
 		// armsguy npc (lost)
 		if (x == 185 && y == 185)
@@ -197,7 +211,7 @@ function room_interact()
 	if (room == room_corridors_13)
 	{
 		// armsguy
-		if (x == 65 && y == 350)
+		if (x == 95 && y == 350)
 		{
 			text = "npc_armsguy_postbrock";
 			sprite_index = spr_npc_armsguy;
@@ -222,9 +236,9 @@ function room_interact()
 				text = "room_captcha_guidesign_3_3";
 		}
 	}
-	if (room == room_corridors_15 && x == 150 && y == 125)
+	if (room == unused_room_corridors_15 && x == 150 && y == 125)
 		text = "room_nobowl";
-	if (room == room_corridors_16_A)
+	if (room == unused_room_corridors_16_A)
 	{
 		// sign
 		if (x ==  80 && y == 60)
@@ -234,7 +248,7 @@ function room_interact()
 		if (x == 140 && y == 60)
 			text = "room_cavernsdoor";
 	}
-	if (room == room_corridors_16_B)
+	if (room == unused_room_corridors_16_B)
 	{
 		// sign
 		if (x == 105 && y == 60)
@@ -775,7 +789,7 @@ function room_solid()
 		if (x == 150)
 			sprite_index = spr_overworld_signWood;
 	}
-	if (room == room_corridors_15)
+	if (room == unused_room_corridors_15)
 	{
 		// pillar
 		if (x  == 150 && y == 85)
@@ -788,7 +802,7 @@ function room_solid()
 		if ((x == 90 || x == 210) && y == 40)
 			sprite_index = spr_overworld_lamp;
 	}
-	if (room == room_corridors_16)
+	if (room == unused_room_corridors_16)
 	{
 		// lamp
 		if (x == 90 && y == 60) || ((x == -10 || x == 350) && y == 160)
@@ -815,7 +829,7 @@ function room_solid()
 				image_index = 3;
 		}
 	}
-	if (room == room_corridors_16_A)
+	if (room == unused_room_corridors_16_A)
 	{
 		// door
 		if (x == 140 && y == 0)
@@ -825,7 +839,7 @@ function room_solid()
 		if (x == 210 && y == 40) || (x == 290 && y == 80)
 			sprite_index = spr_overworld_lamp;
 	}
-	if (room == room_corridors_16_B)
+	if (room == unused_room_corridors_16_B)
 	{
 		// lamp
 		if (x == -10 && y == 80) || (x == 60 && y == 70)
@@ -876,8 +890,10 @@ function room_solid()
 	}
 	if (room == room_corridors_18)
 	{
+		if (x == 140 && y == 100)
+			sprite_index = spr_overworld_signRock;
 		// lamp
-		if (x == 100 && y == 100) || (x == 200 && y == 130) || (x == 270 && y == 140) || ((x == 340 || x == 470 || x == 720 || x == 840 || x == 960 || x == 1200 || x == 1320 || x == 1440 || x == 1560 || x == 1680 || x == 1800 || x == 2040 || x == 2160 || x == 2280 || x == 2400 || x == 2640 || x == 2880 || x == 3000 || x == 3120 || x == 3600 || x == 3720) && y == 120) || ((x == 600 || x == 1080 || x == 1920 || x == 2520 || x == 2760 || x == 3240) && y == 150)
+		if (x == 100 && y == 100) || (x == 200 && y == 130) || (x == 280 && y == 140) || ((x == 340 || x == 470 || x == 720 || x == 840 || x == 960 || x == 1200 || x == 1320 || x == 1440 || x == 1560 || x == 1680 || x == 1800 || x == 2040 || x == 2160 || x == 2280 || x == 2400 || x == 2640 || x == 2880 || x == 3000 || x == 3120 || x == 3600 || x == 3720) && y == 120) || ((x == 600 || x == 1080 || x == 1920 || x == 2520 || x == 2760 || x == 3240) && y == 150)
 		{
 			sprite_index = spr_overworld_lamp;
 			
@@ -1105,7 +1121,7 @@ function room_nonsolid()
 			depth = 525;
 		}
 	}
-	if (room == room_corridors_16_B)
+	if (room == unused_room_corridors_16_B)
 	{
 		sprite_index = spr_overworld_corridorssinglebrick;
 		depth = -bbox_bottom;
@@ -1137,7 +1153,7 @@ function readable_room()
 	}
 	
 	// save point
-	if (room == room_corridors_3 && x == 150 && y == 270) || (room == room_corridors_4 && x == 660 && y == 120) || (room == room_corridors_8 && x == 90 && y == 325) || (room == room_corridors_11 && x == 130 && y == 120) || (room == unused_room_corridors_13 && x == 370 && y == 160) || (room == room_corridors_16 && x == 170 && y == 200) || (room == room_caverns_3 && x == 150 && y == 225)
+	if (room == room_corridors_3 && x == 150 && y == 270) || (room == room_corridors_4 && x == 660 && y == 120) || (room == room_corridors_8 && x == 90 && y == 325) || (room == room_corridors_11 && x == 130 && y == 120) || (room == unused_room_corridors_13 && x == 370 && y == 160) || (room == unused_room_corridors_16 && x == 170 && y == 200) || (room == room_caverns_3 && x == 150 && y == 225)
 	{
 		myid = "savepoint";
 		myresult = 0.1;

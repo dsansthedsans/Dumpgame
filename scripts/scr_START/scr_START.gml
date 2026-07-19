@@ -335,7 +335,7 @@ function start_flags()
 	global.flag[21] = 0; // interacted with candy bowl
 
 	global.flag[22] = 0; // got Corridors' "but nobody came"
-	global.flag[23] = 0; // created Corridors' genocide dialog
+	global.flag[23] = 0; // (((UNUSED)))
 	
 	global.flag[24] = 0; // talked with Armsguy in room_corridors_8
 	
@@ -363,9 +363,8 @@ function start_flags()
 	
 	global.flag[42] = 0; // finished MEE6's post-CAPTCHA.2 event
 	
-	global.flag[43] = 0; // talked with Trashguy in room_corridors_11
-	
-	global.flag[44] = 0; // first time playing the genocide corridor music
+	global.flag[43] = 0; // (((UNUSED)))
+	global.flag[44] = 0; // FLITCHER room_corridors_17 WEIRD VERY WEIRD
 	
 	global.flag[45] = 0; // talked to armsguy before CAPTCHA 2
 	global.flag[46] = 0; // left room_corridors_9 after talking to trashguy
@@ -394,8 +393,7 @@ function start_flags()
 	
 	global.flag[64] = 0; // tutorial - interagir
 	global.flag[65] = 0; // tutorial - correr
-	
-	global.flag[66] = 0; // Pre M6 - thing 1
+	global.flag[66] = 0; // PRE M6 WIERD THING AHHH
 	
 	global.flag[67] = 0; // rules book smiley face amount
 }
@@ -553,7 +551,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_13;
+		var _rm = room_corridors_17;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -581,9 +579,9 @@ function CHANGE_GAME()
 				_lvl = 5;
 			if (_rm == unused_room_corridors_13) || (_rm == room_corridors_14) || (_rm == room_corridors_13)
 				_lvl = 6;
-			if (_rm == room_corridors_16)
+			if (_rm == unused_room_corridors_16)
 				_lvl = 7;
-			if (_rm == room_corridors_18)
+			if (_rm == room_corridors_17) || (_rm == room_corridors_18)
 				_lvl = 8;
 			if (_rm == room_caverns_1)
 				_lvl = 9;
@@ -680,9 +678,6 @@ function CHANGE_GAME()
 			}
 			if (_lvl >= 8)
 			{
-				global.flag[57] = 1; // talked to the first exit armsguy
-				global.flag[58] = 1; // talked to the fishing trashguy
-			
 				var _skipchase = 0;
 				if (_skipchase == 1)
 				{	

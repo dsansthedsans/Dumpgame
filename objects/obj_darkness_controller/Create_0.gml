@@ -11,7 +11,7 @@ if (room == room_corridors_1_5)
 	val = 255; // this is used yes ignore error
 	m6_val = 255;
 }
-else if (room == room_corridors_16_B)
+else if (room == unused_room_corridors_16_B)
 {
 	type = 2;
 	chara_curcolor = 255;

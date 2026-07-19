@@ -1,6 +1,15 @@
 // Gate
-var _gate_widthSpeed = ((gate.widthMax / gate.widthTime) * ((gate.active == true) ? 1 : -1));
-gate.width = clamp((gate.width + _gate_widthSpeed), 0, gate.widthMax);
+var _gate_widthTarget = (gate.widthMax * (gate.active == true));
+if (gate.width != _gate_widthTarget)
+{
+	var _gate_widthSpeed = ((gate.widthMax / gate.widthTime) * ((gate.active == true) ? 1 : -1));
+	gate.width = clamp((gate.width + _gate_widthSpeed), 0, gate.widthMax);
+	if (gate.width == _gate_widthTarget)
+	{
+		audio_play(snd_impact, 0, VOLUME_SOUND, 0.5);
+		shakescreen(2, 2);
+	}
+}
 draw_sprite_stretched_ext(gate.sprite, 0, (gate.x - gate.width), gate.y, gate.width, sprite_get_height(gate.sprite), c_white, 1);
 // Buttons
 if (buttons_word != "" && buttons_length > 0)

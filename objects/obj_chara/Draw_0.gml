@@ -14,22 +14,22 @@ if (xscale < 1) || (yscale < 1)
 // desenhar armadura e sombra do genocida
 if (global.chara_facing != -1 && global.chara_facing != FALLEN && global.chara_facing != SIT) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 {
-	// pegar y do extra
 	var _extrayfactor = 0;
 	if (image_index >= 1 && image_index < 2) || (image_index >= 3 && image_index < 4)
 		_extrayfactor = 1;
-	
-	
-	// desenhar sombra do genocida
-	if (global.chara_murder >= 2)
-		draw_sprite_ext(spr_chara_genoshadow, global.chara_facing, x, (_chara_y + _extrayfactor), xscale, yscale, image_angle, image_blend, image_alpha);
-	
-	
-	// desenhar armadura
+	if (chara_murder() >= 1)
+	{
+		var _sprite = spr_chara_genoshadow;
+		if (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
+		{
+			_sprite = asset_get_index($"{sprite_get_name(sprite_index)}_genoshadow");
+			_extrayfactor = 0;
+		}
+		draw_sprite_ext(_sprite, global.chara_facing, x, (y + _extrayfactor), xscale, yscale, image_angle, image_blend, (image_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
+	}
 	var _armor = 0;
 	var _armor_x = -20;
 	var _armor_y = -20;
-	
 	if (global.chara_armor == ITEM_BOWL)
 	{
 		_armor = spr_mainchara_armor_candybowl;
@@ -46,7 +46,6 @@ if (global.chara_facing != -1 && global.chara_facing != FALLEN && global.chara_f
 			_armor_y += image_index;
 	}
 	_armor_y += _extrayfactor;
-	
 	if (_armor != 0 && _armor_x != -20 && _armor_y != -20)
 		draw_sprite_ext(_armor, global.chara_facing, _armor_x, _armor_y, xscale, yscale, image_angle, image_blend, image_alpha);
 }

@@ -119,10 +119,10 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "unused_room_corridors_12",		"O Relógio");
 	ds_map_add(global.textdata_pt, "unused_room_corridors_13",		"Caminho das Pedras");
 	ds_map_add(global.textdata_pt, "room_corridors_14",		"CAPTCHA (Último Estágio)");
-	ds_map_add(global.textdata_pt, "room_corridors_15",		"Recompensa do CAPTCHA (Último Estágio)");
-	ds_map_add(global.textdata_pt, "room_corridors_16",		"Ponto de Controle");
-	ds_map_add(global.textdata_pt, "room_corridors_16_A",	"Entrada das Cavernas");
-	ds_map_add(global.textdata_pt, "room_corridors_16_B",	"Entrada do Metrô nos Corredores");
+	ds_map_add(global.textdata_pt, "unused_room_corridors_15",		"Recompensa do CAPTCHA (Último Estágio)");
+	ds_map_add(global.textdata_pt, "unused_room_corridors_16",		"Ponto de Controle");
+	ds_map_add(global.textdata_pt, "unused_room_corridors_16_A",	"Entrada das Cavernas");
+	ds_map_add(global.textdata_pt, "unused_room_corridors_16_B",	"Entrada do Metrô nos Corredores");
 	ds_map_add(global.textdata_pt, "room_corridors_17",		"Último Caminho");
 	ds_map_add(global.textdata_pt, "room_corridors_18",		"Corredor Final");
 	ds_map_add(global.textdata_pt, "room_caverns_1",		"No Fundo do Poço");

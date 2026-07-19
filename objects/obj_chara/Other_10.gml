@@ -7,7 +7,7 @@ sprite[DOWN]	= spr_chara_d;
 sprite[FALLEN]	= spr_chara_fallen;
 sprite[SIT]		= spr_chara_sit;
 
-if (afktime >= afkmaxtime)
+if (afktime >= afkmaxtime && chara_murder() < 1)
 {
 	if (global.chara_facing != SIT)
 	{
@@ -19,11 +19,7 @@ if (afktime >= afkmaxtime)
 }
 if (global.chara_facing == SIT)
 {
-	image_index = 0;
-	if (global.chara_murder >= 2)
-		image_index = 1;
-	
-	// armadura
+	image_index = (chara_murder() >= 2);
 	if (global.chara_armor == ITEM_BOWL)
 		image_index += 2;
 }

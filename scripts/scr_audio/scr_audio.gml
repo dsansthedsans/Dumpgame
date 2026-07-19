@@ -32,7 +32,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_ambient_wind)
 			_volume *= 0.5;
 		if (_asset == snd_bigcut)
-			_volume *= 0.75;
+			_volume *= 1;
 		if (_asset == snd_txt_brock) || (_asset == snd_txt_brock_tense)
 			_volume *= 0.5;
 		if (_asset == snd_shock_blt)
@@ -57,6 +57,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.5;
 		if (_asset == snd_alarm)
 			_volume *= 1.75;
+		if (_asset == snd_murder)
+			_volume *= 0.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -75,8 +77,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.5;
 		if (_asset == mus_hurry_intro)
 			_volume *= 2;
-		if (_asset == mus_hurry_loop_0)
+		if (_asset == mus_hurry_loop_0) || (_asset == mus_hurry_loop_1)
 			_volume *= (1.5 + 0.125);
+		if (_asset == mus_corridors_geno)
+			_volume *= 1.25;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)

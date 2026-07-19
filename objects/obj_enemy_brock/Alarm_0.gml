@@ -42,3 +42,7 @@ if (skip == 1)
 	convince = 5;
 	controller.enemy_spare[myself] = 100;
 }
+
+
+convince = 4;
+controller.enemy_spare[myself] = 80;

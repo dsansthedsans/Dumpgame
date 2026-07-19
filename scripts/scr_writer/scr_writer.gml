@@ -505,7 +505,7 @@ function TEXT()
 		}
 		else
 		{
-			for (var i = 0; i < 4; i++)
+			for (var i = 0; i < (4 - (3 * (chara_murder() >= 1))); i++)
 				msg[i] = get_text($"room_candybowl_3_{i}");
 		}
 	}
@@ -521,12 +521,31 @@ function TEXT()
 		for (var i = 0; i < 3; i++)
 			msg[i] = get_text("room_relaxsign_" + string(i));
 	}
+	if (text == "room_bench_geno")
+	{
+		msg[0] = get_text("room_bench_geno_0");
+	}
 	if (text == "room_benchlamp")
 	{
 		msg[0] = get_text("room_benchlamp_0");
+		if (chara_murder() >= 1)
+			msg[0] = get_text("room_benchlamp_0_geno");
+	}
+	if (text == "npc_trashguy")
+	{
+		for (var i = 0; i < 99; i++)
+		{
+			var _curmsg = get_text("npc_trashguy_" + string(i));
+			if (_curmsg != undefined)
+				msg[i] = _curmsg;
+			else
+				break;
+		}
 	}
 	
 	// room_corridors_8
+	if (text == "room_rat_geno")
+		msg[0] = get_text("room_rat_geno");
 	if (text == "npc_armsguy_lost")
 	{
 		if (global.flag[45] == 0 && global.flag[48] == 0)
@@ -536,7 +555,7 @@ function TEXT()
 				var _curmsg = get_text("npc_armsguy_lost_0_0_" + string(i));
 				if (_curmsg != undefined)
 				{
-					if (i != 5)
+					if (i != 3)
 						msg[i] = _curmsg;
 					else
 					{
@@ -552,7 +571,7 @@ function TEXT()
 			var _result = question_result[i];
 			if (_result == 1)
 			{
-				for (var b = 0; b < 2; b++)
+				for (var b = 0; b < 1; b++)
 					msg[i+1+b] = get_text("npc_armsguy_lost_0_1_" + string(b));
 				global.flag[45] = 1;
 			}
@@ -732,27 +751,17 @@ function TEXT()
 					msg[3] = get_text("room_chocobowl_3_1");
 			}
 		}
-		else if (global.chara_armor == ITEM_BOWL)
+		else if (global.chara_armor == ITEM_BOWL && chara_murder() < 1)
 			msg[0] = get_text("room_chocobowl_4");
 	}
 	if (text == "room_chocosign")
 	{
-		for (var i = 0; i < 1; i++)
-			msg[i] = get_text("room_chocosign_" + string(i));
+		msg[0] = get_text("room_chocosign");
+		if (chara_murder() >= 1)
+			msg[0] = get_text("room_chocosign_geno");
 	}
 		
 	// room_corridors_11
-	if (text == "npc_trashguy")
-	{
-		for (var i = 0; i < 99; i++)
-		{
-			var _curmsg = get_text("npc_trashguy_" + string(global.flag[43]) + "_" + string(i));
-			if (_curmsg != undefined)
-				msg[i] = _curmsg;
-		}
-		//if (global.flag[43] == 0)
-		//	global.flag[43] = 1;
-	}
 	if (text == "room_preclocksign")
 	{
 		for (var i = 0; i < 4; i++)
@@ -797,12 +806,13 @@ function TEXT()
 	}
 	if (text == "unused_event_brock_prebattle_6_genotest")
 	{
+		// spr_chara_u_knifepull
 		msg[0] = "* WELL,^1 LOOKS LIKE THAT I WAS RIGHT.";
 		msg[1] = "* YOU'RE NO DIFFERENT FROM THEM.";
 		msg[2] = "* IF YOU REALLY WANT TO END IT LIKE THIS,^1 I WON'T STOP YOU.";
 		msg[3] = "* BUT YOU'VE GOTTA UNDERSTAND.";
 		msg[4] = "* IN A FIGHT AGAINST ME...";
-		msg[5] = "* YOU WOULD NEVER WIN!";
+		msg[5] = "* YOU'LL NEVER WIN!";
 		mytype[0] = 6;
 		auto_side[0] = 0;
 	}
@@ -945,8 +955,8 @@ function TEXT()
 		msg_talker[0] = global.party[0];
 	}
 	
-	// room_corridors_15
-	if (text == "room_nobowl")
+	// unused_room_corridors_15
+	if (text == "unused_room_nobowl")
 	{
 		msg[0] = "* Where is the reward?";
 		msg[1] = "* I think the reward was supposed to be on this pillar.";
@@ -959,19 +969,19 @@ function TEXT()
 		msg_talker[0] = global.side[0];
 	}
 	
-	// room_corridors_16_A
-	if (text == "room_cavernssign")
+	// unused_room_corridors_16_A
+	if (text == "unused_room_cavernssign")
 		msg[0] = "* \"Cave system entrance.\"^1&* \"Proceed with caution.\"";
-	if (text == "room_cavernsdoor")
+	if (text == "unused_room_cavernsdoor")
 		msg[0] = "* (Something behind the door is stopping you from opening it.)";
 	
-	// room_corridors_16_B
-	if (text == "room_subwaysign")
+	// unused_room_corridors_16_B
+	if (text == "unused_room_subwaysign")
 	{
 		msg[0] = "* \"Welcome to the Corridor's subway entrance.\"";
 		msg[1] = "* \"If you are an administrador,^1 press the button and wait for a cart to come.\"";
 	}
-	if (text == "room_subwaybutton")
+	if (text == "unused_room_subwaybutton")
 	{
 		msg[0] = "* (You pressed the button.)";
 		msg[1] = "* (...)";
@@ -981,23 +991,15 @@ function TEXT()
 	// room_corridors_17
 	if (text == "npc_armsguy_exitfirst")
 	{
-		if (global.flag[57] == 0)
+		for (var m = 0; m < 99; m++)
 		{
-			msg[0] = "* You The New Member?^1&* That Cool.";
-			msg[1] = "* The First Since The Invasion!";
-			msg[2] = "* It A Shame You Leaving.^1&* The Exit Right Up There.";
-			msg[3] = "* How You Getting Through The Corridor??";
-			global.flag[57] = 1;
-		}
-		else
-		{
-			msg[0] = "* ... You Know Nothing About It?";
-			msg[1] = "* The Corridor Up There Destroyed Because Of The Battle.";
-			msg[2] = "* The Battle Between The New Members And The Administrators.";
-			msg[3] = "* Mee6 Didn't Tell You That?^3&* Actually Why He Here??";
-			msg[4] = "* Shouldn't He Be Locked Up??";
+			var _msg = get_text($"npc_armsguy_exit_{global.flag[57]}_{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
 		}
 		msg_talker[0] = obj_chara.mycol;
+		global.flag[57] = 1;
 	}
 	if (text == "npc_trashguy_exitfishing")
 	{
@@ -1018,20 +1020,20 @@ function TEXT()
 		msg[0] = "* Can't Talk Right Now.^1&* I Gyming.";	
 	if (text == "npc_flitcher_exit")
 	{
-		if (irandom_range(1, 5) == 1)
+		var _weird = (irandom_range(1, 3) == 1 && global.flag[44] == 0);
+		for (var m = 0; m < 99; m++)
 		{
-			msg[0] = "* I Slightly Dislike You";
+			var _msg = get_text($"npc_flitcher_exit_{_weird}_{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+		if (_weird == true)
+		{
 			msg_skip[0] = false;
 			msg_font[0] = global.fnt_dsans;
 			msg_talker[0] = obj_chara.mycol;
-			global.flag[66] = 0.5;
-		}
-		else
-		{
-			msg[0] = "* (You wave to Flitcher.)";
-			msg[1] = "* (He waves back at you.)";
-			msg[2] = "* (How did he wave back if he has no hands at all?)";
-			msg[3] = "* (This is the weirdest mystery of All Time.)";	
+			global.flag[44] = 0.5;
 		}
 	}
 	
@@ -1515,7 +1517,11 @@ function TEXT()
 				if (controller.enemy_type[_enemy1] == 7 && controller.enemy_obj[_enemy1].punched == 1 && controller.enemy_obj[_enemy1].terrorized == 1)
 					_custom = 3;
 				if (controller.enemy_type[_enemy1] == 6 && controller.enemy_obj[_enemy1].convince >= 5)
+				{
 					_custom = 4;
+					if (chara_murder() >= 1)
+						_custom = 5;
+				}
 				msg[0] = "* " + string(name[_enemy1]) + get_text("battle_main_sparing_0_" + string(_custom));
 				if (_amt == 2)
 					msg[0] = "* " + string(name[_enemy1]) + get_text("battle_main_sparing_1_0") + string(name[_enemy2]) + get_text("battle_main_sparing_1_1");
@@ -1677,8 +1683,10 @@ function TEXT()
 		
 		if (text == "battle_fleeing")
 		{
-			var _msgAmount = 0;
-			for (var m = 0; m < 99; m++)
+			if (chara_murder() < 1)
+			{
+				var _msgAmount = 0;
+				for (var m = 0; m < 99; m++)
 			{
 				if (get_text($"battle_flee_{m}") == undefined)
 				{
@@ -1686,8 +1694,11 @@ function TEXT()
 					break;
 				}
 			}
-			var _msg = irandom(_msgAmount - 1);
-			msg[0] = $"   {get_text("battle_flee_" + string(_msg))}";
+				var _msg = irandom(_msgAmount - 1);
+				msg[0] = $"   {get_text("battle_flee_" + string(_msg))}";
+			}
+			else
+				msg[0] = $"   {get_text("battle_flee_geno")}";
 			msg_autoskip[0] = 1;
 		}
 		
@@ -1915,6 +1926,10 @@ function TEXT()
 							msg_font[_page] = global.fnt_dotum;
 							msg_sound[_page] = snd_txt_brock;
 							msg_format[_page] = "bubble";
+							if (_convince >= 4)
+							{
+								msg_type[_page + 7] = "tense";
+							}
 							enemy.body.movement = 1;
 						}
 					}

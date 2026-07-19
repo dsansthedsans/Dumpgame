@@ -2,6 +2,7 @@
 if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 {
 	chara = obj_chara;
+	characolorvalue = 255;
 	if (global.flag[2] == 1)
 		m6 = global.party[0];
 	
@@ -39,7 +40,6 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 		m6_mover = thismover;
 		m6.image_speed = 0.25;
 		
-		characolorvalue = 255;
 		con = 1;
 	}
 	else if (global.flag[60] == 0)

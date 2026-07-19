@@ -81,6 +81,9 @@ if (active == 1)
 	// lower defense
 	if (controller.enemy_spare[myself] >= 100)
 	{
+		controller.battle_music = -1;
+		if (body.tense == true)
+			controller.battle_music = mus_brock_sad;
 		controller.enemy_def[myself] = -10293;
 		obj_battle_bg.waveFreeze = true;
 	}

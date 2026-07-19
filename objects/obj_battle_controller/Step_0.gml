@@ -26,6 +26,7 @@ if (enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0)
 			heart.y = -20;
 			obj_battle_bg.waveFreeze = true;
 			battle_won = 1;
+			battle_music = -1;
 			writer("battle_won", -1, -1);
 			if (global.writer_old != -1 && exists(global.writer_old) == 1)
 				destroy(global.writer_old);
@@ -232,6 +233,7 @@ if (battle_lvl == 4.0 && press_enter == 1) // mercy (select)
 			fleeing = 1;
 			button_select = 0;
 			battle_lvl = 4.1;
+			battle_music = -1;
 			alarm[0] = 60;
 		}
 		else
@@ -387,7 +389,6 @@ if (battle_lvl == 10)
 				_bubble += 1;
 		}
 	}
-	
 	if (_bubble == _amount)
 	{
 		battle_getattack();
@@ -397,7 +398,7 @@ if (battle_lvl == 10)
 		battle_lvl = 11;
 	}
 }
-else if (battle_lvl == 11)
+if (battle_lvl == 11)
 {
 	var _amount = 0;
 	var _attack = 0;
@@ -410,7 +411,6 @@ else if (battle_lvl == 11)
 				_attack += 1;
 		}
 	}
-	
 	if (_attack == _amount && box_x == box_nextx && box_y == box_nexty && box_w == box_nextw && box_h == box_nexth)
 	{
 		for (var i = 0; i < enemy_length; i++)
@@ -429,7 +429,7 @@ else if (battle_lvl == 11)
 		battle_lvl = 12;
 	}
 }
-else if (battle_lvl == 12)
+if (battle_lvl == 12)
 {
 	battle_turntime -= 1;
 	if (battle_turntime <= 0 && battle_turntime > -10)
@@ -454,7 +454,7 @@ else if (battle_lvl == 12)
 		heart.y = -20;
 	}
 }
-else if (battle_lvl == 13 && box_x == box_defaultx && box_y == box_defaulty && box_w == box_defaultw && box_h == box_defaulth)
+if (battle_lvl == 13 && box_x == box_defaultx && box_y == box_defaulty && box_w == box_defaultw && box_h == box_defaulth)
 {
 	var _amount = 0;
 	var _return = 0;
@@ -467,7 +467,6 @@ else if (battle_lvl == 13 && box_x == box_defaultx && box_y == box_defaulty && b
 				_return += 1;
 		}
 	}
-	
 	if (_return == _amount)
 	{
 		writer("battle_main", -1, -1);

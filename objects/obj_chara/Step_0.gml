@@ -273,7 +273,7 @@ if (global.chara_move == 1)
 		image_speed = curimgspeed;
 		if (moving == 0)
 			image_index = 1;
-		if (afktime >= afkmaxtime)
+		if (afktime >= afkmaxtime && chara_murder() < 1)
 		{
 			xscale = 0.75;
 			yscale = 0.5;
