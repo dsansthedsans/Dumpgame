@@ -1002,26 +1002,6 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 		global.flag[57] = 1;
 	}
-	if (text == "npc_armsguy_exit_fishing")
-	{
-		for (var m = 0; m < 99; m++)
-		{
-			var _msg = get_text($"npc_armsguy_exit_fishing_0_{m}");
-			if (_msg == undefined)
-				break;
-			msg[m] = _msg;
-		}
-		msg_talker[0] = obj_chara.mycol;
-		for (var o = 0; o < instance_number(obj_npc_room); o++)
-		{
-			var _obj = instance_find(obj_npc_room, o);
-			if (_obj.x == 110 && y == 390 && sprite_index == spr_npc_trashguy_fishing)
-			{
-				msg_talker[2] = _obj;
-				break;
-			}
-		}
-	}
 	if (text == "npc_trashguy_exit_fishing")
 	{
 		for (var m = 0; m < 99; m++)
@@ -1034,11 +1014,33 @@ function TEXT()
 		global.flag[58] = true;
 		msg_talker[0] = obj_chara.mycol;
 	}
-	if (text == "npc_armsguy_exit_lifting")
-		msg[0] = get_text($"npc_armsguy_exit_lifting_{global.flag[43]}_0");
+	if (text == "npc_armsguy_exit_fishing")
+	{
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = get_text($"npc_armsguy_exit_fishing_{global.flag[23]}_{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+		msg_talker[0] = obj_chara.mycol;
+		if (global.flag[23] == false)
+		{
+			for (var o = 0; o < instance_number(obj_npc_room); o++)
+			{
+				var _obj = instance_find(obj_npc_room, o);
+				if (_obj.x == 120 && _obj.y == 370 && _obj.sprite_index == spr_npc_trashguy_fishing)
+				{
+					msg_talker[2] = _obj;
+					break;
+				}
+			}
+			global.flag[23] = true;
+		}
+	}
 	if (text == "npc_flitcher_exit")
 	{
-		var _weird = (irandom_range(1, 3) == 1 && global.flag[44] == 0);
+		var _weird = (irandom_range(1, 5) == 1 && global.flag[44] == 0);
 		for (var m = 0; m < 99; m++)
 		{
 			var _msg = get_text($"npc_flitcher_exit_{_weird}_{m}");
@@ -1053,6 +1055,11 @@ function TEXT()
 			msg_talker[0] = obj_chara.mycol;
 			global.flag[44] = 0.5;
 		}
+	}
+	if (text == "npc_armsguy_exit_lifting")
+	{
+		msg[0] = get_text($"npc_armsguy_exit_lifting_{clamp(global.flag[43], 0, 3)}_0");
+		global.flag[43] += 1;
 	}
 	
 	// room_corridors_18

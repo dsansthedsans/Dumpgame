@@ -335,7 +335,7 @@ function start_flags()
 	global.flag[21] = 0; // interacted with candy bowl
 
 	global.flag[22] = 0; // got Corridors' "but nobody came"
-	global.flag[23] = 0; // (((UNUSED)))
+	global.flag[23] = 0; // ROOM CORRIDORS 17 ARMSGUY FISHING IDIOT
 	
 	global.flag[24] = 0; // talked with Armsguy in room_corridors_8
 	
@@ -581,7 +581,7 @@ function CHANGE_GAME()
 				_lvl = 6;
 			if (_rm == unused_room_corridors_16)
 				_lvl = 7;
-			if (_rm == unused_room_corridors_17) || (_rm == room_corridors_18)
+			if (_rm == room_corridors_17) || (_rm == room_corridors_18)
 				_lvl = 8;
 			if (_rm == room_caverns_1)
 				_lvl = 9;

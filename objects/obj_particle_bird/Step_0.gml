@@ -108,15 +108,15 @@ if (scarefly == 1)
 	if (scarefly_stage == 0)
 	{
 		audio_play(snd_bird_startfly, 0, VOLUME_SOUND);
-		audio_pitch(thisaudio, 1.35);
+		audio_pitch(thisaudio, 1.25);
 		scarefly_stage = 1;
 		spdx = 0;
 		spdy = 0;
 	}
 	if (scarefly_stage == 1)
 	{
-		spdx = lerp(spdx, ((scarefly_x - x) * 0.1), 0.15);
-		spdy = lerp(spdy, ((scarefly_y - y) * 0.1), 0.15);
+		spdx = lerp(spdx, ((scarefly_x - x) * 0.1), 0.1);
+		spdy = lerp(spdy, ((scarefly_y - y) * 0.1), 0.1);
 		depth = -bbox_bottom;
 		x += spdx;
 		y += spdy;
@@ -139,6 +139,12 @@ if (scarefly == 1)
 			flying = 0;
 			scarefly = 0;
 			scarefly_stage = 2;
+			if (mytype >= 5 && mytype <= 7)
+			{
+				origx = x;
+				origy = y;
+				dancing = 1;
+			}
 		}	
 	}
 }
@@ -147,7 +153,7 @@ else
 
 // trigger scarefly
 if (mytype == 1 && global.flag[0] < 1 && obj_event_start.con >= 4 && custom_stage == 0) 
-|| (mytype >= 2 && mytype <= 5 && dancing == 1 && point_distance(x, y, chara.x, chara.y) <= scarefly_dist && chara.moving == 1)
+|| (mytype >= 2 && dancing == 1 && point_distance(x, y, chara.x, chara.y) <= scarefly_dist && chara.moving == 1)
 {
 	eating = 0;
 	flying = 1;

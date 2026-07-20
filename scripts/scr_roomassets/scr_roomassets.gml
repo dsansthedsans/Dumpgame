@@ -4,7 +4,7 @@ function room_interact()
 	var r = room;
 	
 	// bench
-	if (room == room_corridors_7 && y == 100 && x != 480) || (room == room_corridors_11 && ((x == 130 || x == 290) && y == 95))
+	if (room == room_corridors_7 && y == 100 && x != 480) || (room == room_corridors_11 && ((x == 130 || x == 290) && y == 95)) || (room == room_corridors_17 && y == 270)
 	{
 		result = 1;
 		if (chara_murder() >= 1)
@@ -291,6 +291,37 @@ function room_interact()
 		
 		if (global.world_curpopulation[global.chara_world] <= 0) || (global.flag[38] == 1)
 			destroy(id);
+	}
+	if (room == room_corridors_17)
+	{
+		if (x == 540 && y == 325)
+		{
+			sprite_index = spr_npc_armsguy;
+			text = "npc_armsguy_exit";
+		}
+		if (x == 120 && y == 370)
+		{
+			sprite_index = spr_npc_trashguy_fishing;
+			text = "npc_trashguy_exit_fishing";
+		}
+		if (x == 145 && y == 360)
+		{
+			y -= 15;
+			sprite_index = spr_npc_armsguy;
+			text = "npc_armsguy_exit_fishing";
+		}
+		if (x == 260 && y == 285)
+		{
+			sprite_index = spr_npc_flitcher;
+			depth = -(bbox_bottom + 10);
+			text = "npc_flitcher_exit";
+		}
+		if (x == 785 && y == 380)
+		{
+			sprite_index = spr_npc_armsguy_lifting;
+			image_speed = 1;
+			text = "npc_armsguy_exit_lifting";
+		}
 	}
 	if (room == room_corridors_18)
 	{
@@ -890,6 +921,8 @@ function room_solid()
 	}
 	if (room == room_corridors_17)
 	{
+		if (x == 430 && y == 10)
+			sprite_index = spr_overworld_pillardoor;
 		// Lamps
 		if (y == 60) || (x == 410 && y == 90)
 		{
@@ -902,6 +935,20 @@ function room_solid()
 		if (y == 175) || (y == 355)
 			sprite_index = spr_overworld_lamp2;
 		// Trees
+		if (x == 130 && y == 65) || (x == 100 && y == 90) || (x == 300 && y == 50) || (x == 640 && y == 40) || (x == 660 && y == 50) || (x == 770 && y == 90) || (y == 120)
+		|| (x == 430 && y == 220) || (x == 390 && y == 300)
+		{
+			sprite_index = spr_overworld_tree;
+			if (x == 660 && y == 50)
+			|| (x == 320 && y == 120)
+			|| (x == 390 && y == 300)
+				image_index = 1;
+			else
+				leaf_fall = true;
+		}
+		// Bench
+		if (y == 250)
+			sprite_index = spr_overworld_bench;
 	}
 	if (room == room_corridors_18)
 	{

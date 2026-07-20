@@ -45,6 +45,8 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 	{
 		if (keyboard_check(vk_shift) == 1)
 			global.battle_nextgroup = 6;
+		if (keyboard_check(vk_control) == 1)
+			global.battle_nextgroup = 1000;
 		battle();
 	}
 	if (keyboard_check_pressed(vk_numpad7) == 1)

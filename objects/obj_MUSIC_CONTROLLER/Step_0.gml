@@ -115,7 +115,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 			}
 		}
 		// Flitcher's first words
-		if (room == unused_room_corridors_17 && global.flag[44] == 0.5)
+		if (room == room_corridors_17 && global.flag[44] == 0.5)
 		{
 			music_paused[0] = true;
 			if (exists(obj_writer_controller) == false)

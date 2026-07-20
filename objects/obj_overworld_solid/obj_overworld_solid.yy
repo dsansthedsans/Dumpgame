@@ -40,8 +40,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_overworld_captcha_chocobowl",
-    "path":"sprites/spr_overworld_captcha_chocobowl/spr_overworld_captcha_chocobowl.yy",
+    "name":"spr_overworld_lamp",
+    "path":"sprites/spr_overworld_lamp/spr_overworld_lamp.yy",
   },
   "spriteMaskId":null,
   "visible":true,
