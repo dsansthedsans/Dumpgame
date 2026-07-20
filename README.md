@@ -12,18 +12,17 @@
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. The game follows a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children in trench coats.</p>
+<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children.</p>
 <br>
 
-> [!WARNING]
-> Dumpgame's code is TERRIBLE !!!! It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
-> <br><br><i>"the source code for undertale is literally just a bunch of rubber bands and tape stuck to a paper saying 'DETERMINATION'."</i><br>— Toby Fox
+> [!IMPORTANT]
+> Dumpgame's code is terrible. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
 
 <br>
 <h2>Features</h2>
 <ul>
   <li>Original art, story and characters created almost entirely by one person, me, <b>dsansthedsans</b>...!</li>
-  <li>An amazing soundtrack of 50+ songs fully composed and arranged by <b>migel8022</b>!</li>
+  <li>An amazing original soundtrack fully composed and arranged by <b>migel8022</b>!</li>
 </ul>
 <br>
 <h2>Development History</h2>
@@ -38,25 +37,18 @@
 <p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295"></p>
 <p align="center"><img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's battle"></p>
 <br>
-<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until May that year, ...</p>
+<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until May of the same year. [...]</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
 <p align="center"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6's cutscene"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's battle"></p>
 <br>
-<p></p>
+<p>Then, on June 2022, I had an epiphany. I evolved. I, for once, made a rational, logical decision. I focused on learning programming and writing the story instead of improvising the whole game...! That's when the "3rd generation" started. [...]</p>
 <br>
-UNUSED TEXT AS OF NOW:
-Three years and a month later, in December 13, 2024, I gave up on Dumpgame. Not only had the code grown incomprehensible, but Dumpster Friends had fallen apart.
-Then, on June 14, 2026, almost two years after.
-leaving the project unfinished.
-An update with almost a year worth of new content since the latest release.
-It simply wasn't juicy enough.
-I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog Systems" series. Without him, Dumpgame's code would've been significantly worse.
-Both of us developed our skills as we made the game.
+<p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
-<blockquote>No, not since December 2024. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>"Development History"</b></a>.</blockquote>
+<blockquote>No. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>"Development History"</b></a>.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
 <blockquote>Yes, very. The full game would've been four times longer.</blockquote>
 <h3>Is Dumpgame associated with UNDERTALE or Toby Fox?</h3>
