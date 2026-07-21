@@ -829,7 +829,7 @@ function TEXT()
 			else
 				break;
 		}
-		msg_sound[0] = snd_txt_brock_tense;
+		msg_sound[0] = snd_txt_brock;
 		msg_format[0] = "textbox_top";
 	}
 	if (text == "event_brock_battle_4")

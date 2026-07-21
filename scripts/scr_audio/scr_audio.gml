@@ -33,7 +33,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.5;
 		if (_asset == snd_bigcut)
 			_volume *= 1;
-		if (_asset == snd_txt_brock) || (_asset == snd_txt_brock_tense)
+		if (_asset == snd_txt_brock)
 			_volume *= 0.5;
 		if (_asset == snd_shock_blt)
 			_volume *= 0.5;
@@ -92,8 +92,8 @@ function audio_pitch(_audio, _pitch)
 	var _asset = _audio;
 	if (audio_sound_get_asset(_asset) != undefined)
 		_asset = audio_sound_get_asset(_asset);
-	if (_asset == snd_txt_brock_tense)
-		_pitch *= 0.75 + 0.125;
+	if (_asset == snd_bird_startfly)
+		_pitch *= irandom_range(1.25, 1.35);
 	audio_sound_pitch(_audio, _pitch);
 }
 

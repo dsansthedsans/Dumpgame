@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_txt_brock_tense",
+  "%Name":"unused_snd_npc_rat_0a",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.18285714,
+  "duration":0.47258502,
   "exportDir":"",
-  "name":"snd_txt_brock_tense",
+  "name":"unused_snd_npc_rat_0a",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_txt_brock_tense.mp3",
+  "soundFile":"unused_snd_npc_rat_0a.mp3",
   "volume":1.0,
 }

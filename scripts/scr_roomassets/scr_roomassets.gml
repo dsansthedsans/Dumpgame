@@ -884,7 +884,7 @@ function room_solid()
 		
 		// button
 		if (x == 140 && y == 40)
-			sprite_index = spr_overworld_brokenbutton;
+			sprite_index = unused_spr_overworld_brokenbutton;
 	}
 	if (room == unused_room_corridors_17)
 	{
