@@ -1,4 +1,3 @@
-
 if (type == 1)
 {
 	for (var i = 0; i < (1 + (global.flag[2] == 1 && global.party[0] != -1 && exists(global.party[0]) == true)); i++)
@@ -68,19 +67,13 @@ if (type == 2)
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-/*
-if (type == 1)
+if (type == 3)
 {
-	
+	for (var o = 0; o < instance_number(all); o++)
+	{
+		var _object = instance_find(all, o);
+		_object.image_blend = c_white
+		if (_object.sprite_index != spr_overworld_brokenfloor && _object.x <= (leftX + 2)) || (_object.x >= (rightX - 2)) || (_object.y <= (topY + 2)) || (_object.y >= (bottomY - 2))
+			_object.image_blend = c_gray;
+	}
 }
-*/

@@ -285,6 +285,7 @@ else if (result == 5) // itemDropoed
 {
 	if (con == 1)
 	{
+		debug(global.itemDropped[itemDropped_arrayPos]);
 		if (global.item[global.item_last] == -1)
 		{
 			global.item[global.item_last] = global.itemDropped[itemDropped_arrayPos].item;
@@ -297,7 +298,7 @@ else if (result == 5) // itemDropoed
 			writer("itemDropped_cantpickup", -1, -1);
 		con = 2;
 	}
-	else if (con == 2 && exists(thiswriter) == 0)
+	if (con == 2 && exists(thiswriter) == 0)
 	{
 		chara_change(-1, 1, 1, -1, 1, 1, -1);
 		if (image_alpha == 0)

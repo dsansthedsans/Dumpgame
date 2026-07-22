@@ -13,9 +13,7 @@ movetype = 0;
 moving = 0;
 targetside = -1;
 facing = DOWN;
-
 event_user(2);
-
 x = chara_x[pos];
 y = chara_y[pos];
 event_user(0);

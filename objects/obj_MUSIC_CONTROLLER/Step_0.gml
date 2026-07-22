@@ -55,7 +55,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 			if (global.flag[0] == 1)
 				_gain_time = 0.5;
 			var _fadeouttime = 5;
-			music_set(0, mus_start, , _gain_time, 1, 1, 1, _fadeouttime);
+			music_set(0, mus_chapter_1, , _gain_time, 1, 1, 1, _fadeouttime);
 			if (global.chara_murder >= 2)
 				global.music[0] = mus_nobody;
 			else
@@ -76,10 +76,10 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 	if (room >= room_corridors_3 && room < room_caverns_1)
 	{	
 		music_set(0, mus_corridors, , , , (1 - (0.025 * (chara_murder() == 1))));
-		music_set(1, -1);
-		music_set(2, -1);
 		if (chara_murder() >= 2)
 			music_set(0, mus_corridors_geno)
+		music_set(1, -1);
+		music_set(2, -1);
 		// Broken Clock
 		if (room == room_corridors_11)
 		{
@@ -115,17 +115,24 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 			}
 		}
 		// Flitcher's first words
-		if (room == room_corridors_17 && global.flag[44] == 0.5)
+		if (room == room_corridors_17)
 		{
-			music_paused[0] = true;
-			if (exists(obj_writer_controller) == false)
-				global.flag[44] = 1;
+			if (chara_murder() < 2)
+				music_set(1, snd_ambient_birds);
+			if (global.flag[44] == 0.5)
+			{
+				music_paused[0] = true;
+				music_paused[1] = true;
+				if (exists(obj_writer_controller) == false)
+					global.flag[44] = 1;
+			}
 		}
 		// Gabee's chase
 		if (room == room_corridors_18)
 		{
 			music_set(0, -1);
 			music_fadeouttime_old[0] = 5;
+			music_fadeouttime_old[1] = 5;
 			if ((exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 9) == false)
 			{
 				music_set(1, snd_ambient_wind, , 2.5, 1, 0.75, , 2.5);
@@ -141,6 +148,8 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 					{
 						global.music_pitch[0] = music_pitch_old[0];
 						global.music_pitch[0] = lerp(global.music_pitch[0], 0, 0.025);
+						if (global.music_pitch[0] <= 0.1)
+							global.music[0] = -1;
 					}
 				}
 			}
@@ -161,9 +170,9 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 		if (global.flag[62] >= 0.5)
 		{
 			if (global.flag[62] == 0.5)
-				music_set(0, unused_mus_start, , , , 0.5 + 0.25, false);
-			music_set(1, snd_ambient_wind, , 2.5, 1, 0.35, , 5);
-			music_set(2, snd_titleimpact, 1.5, 2.5, 1, 0.4, , 5);
+				music_set(0, mus_chapter_2, , , , 0.5 + 0.25, false);
+			music_set(1, snd_ambient_wind, , 2.5, 1, 0.25, , 5);
+			music_set(2, snd_titleimpact, 1.5, 2.5, 1, 0.35, , 5);
 		}
 	}
 	if (room >= room_caverns_3 && room <= room_caverns_3) // cavernas

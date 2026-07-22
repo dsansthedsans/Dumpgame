@@ -288,7 +288,7 @@ function chara_room()
 		{
 			xx = 160;
 			yy = 100;
-			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == unused_room_corridors_17)
+			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == unused_room_corridors_17) || (room == room_corridors_18)
 				yy += 20;
 			if (room == unused_room_corridors_4_5) || (room == room_corridors_5)
 				xx = 720;
@@ -313,11 +313,6 @@ function chara_room()
 			xx = 820;
 			yy = 140;
 		}
-		/*if (room == room_corridors_12)
-		{
-			xx = 980;
-			yy = 140;
-		}*/
 		if (room == unused_room_corridors_12)
 		{
 			xx = 540;

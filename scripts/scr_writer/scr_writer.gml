@@ -339,7 +339,7 @@ function TEXT()
 			msg[0] = "* (......)";
 			if (irandom_range(1, 100) == 100)
 				msg[0] = "* (.....!)";
-			if (global.chara_murder >= 2)
+			if (chara_murder() >= 1)
 				msg[0] = get_text("npc_dummy_2");
 		}
 	}
@@ -355,7 +355,7 @@ function TEXT()
 		msg_face[2] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_txt_m6;
 	}
-		
+	
 	// obj_event_m6_dummydoor
 	if (text == "event_m6_dummydoor")
 	{
@@ -989,7 +989,7 @@ function TEXT()
 		msg[2] = "* (Doesn't seem to be working.)";
 	}
 	
-	// unused_room_corridors_17
+	// room_corridors_17
 	if (text == "npc_armsguy_exit")
 	{
 		for (var m = 0; m < 99; m++)
@@ -1061,50 +1061,61 @@ function TEXT()
 		msg[0] = get_text($"npc_armsguy_exit_lifting_{clamp(global.flag[43], 0, 3)}_0");
 		global.flag[43] += 1;
 	}
+	if (text == "room_corridors_17_egg")
+	{
+		for (var m = 0; m < (1 + (chara_murder() < 1)); m++)
+			msg[m] = get_text($"room_corridors_17_egg.{m}");
+		
+	}
 	
 	// room_corridors_18
 	if (text == "room_finalcorridor_sign")
 	{
-		msg[0] = "* \"New member,^1 you are at the Corridors' edge.\"";
-		msg[1] = "* \"Soon you will be at the Central City,^1 enjoying life&as much as you can.\"";
-		msg[2] = "* \"But,^1 before that,^1&there's one last thing&you have to do.\"";
-		msg[3] = "* \"Face your last challenge before leaving this place.\"";
-		msg[4] = "* \"Prove yourself worthy by walking through this unnecessarily long corridor.\"";
-		msg[5] = "* \"Jokes aside,^1 we're sorry.\"^1&* \"Someone's REALLY bad&at urban planning.\"";
-		msg[6] = "* \"Signed,^1 your local&Dumpster Friend\"";
-	}
-	if (text == "event_gabee_chase_0") || (text == "event_gabee_chase_1") || (text == "event_gabee_chase_2")
-	{
-		if (text == "event_gabee_chase_0")
+		for (var m = 0; m < 99; m++)
 		{
-			msg[0] = "* This is it.";
-			msg[1] = "* The exit is at the end of this corridor.";
-			msg[2] = "* Before we continue,^1 I have a question for you.";
-			msg[3] = "* You do remember how :YBATTLES;D work,^2 correct?";
-			msg[4] = "* ...";
-			msg[5] = "* No!^1 Nothing!^2&* I just wanted to know.";
+			var _msg = get_text($"room_corridors_18_sign.{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+	}
+	if (string_starts_with(text, "event_gabee_chase.") == true)
+	{
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = get_text($"{text}.{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+		msg_format[0] = "textbox_bottom";
+		var _text_number = string_char_at(text, string_length(text));
+		switch (_text_number)
+		{
+			case 0:
 			msg_face[0] = spr_dialogface_m6_neutral;
 			msg_face[5] = spr_dialogface_m6_pleased;
-		}
-		if (text == "event_gabee_chase_1")
-		{
-			msg[0] = "* I confess.";
-			msg[1] = "* I lied.";
-			msg[2] = "* There is a reason I questioned your memory.";
-			msg[3] = "* You see,^1 I may have not been as hone()";
+			msg_sound[0] = snd_txt_m6;
+			msg_talker[0] = global.party[0];
+			break;
+			case 1:
 			msg_face[0] = spr_dialogface_m6_neutralTense;
 			msg_face[1] = spr_dialogface_m6_default;
 			msg_face[2] = spr_dialogface_m6_defaultTense;
 			msg_face[3] = spr_dialogface_m6_default;
+			msg_sound[0] = snd_txt_m6;
+			msg_talker[0] = global.party[0];
+			break;
+			case 3:
+			msg_type[0] = "notawake";
+			break;
 		}
-		msg_sound[0] = snd_txt_m6;
-		msg_talker[0] = global.party[0];
-		msg_format[0] = "textbox_bottom";
 	}
+	
 	if (text == "event_gabee_chase_3")
 	{
 		msg[0] = "* (Você consegue ouvir uma conversa distante.)";
-		msg_type[0] = "notawake";
+		
 		
 		var i = 1;
 		msg[i] = "* Ele tá bem alí^1&* Tá vendo?"; // g

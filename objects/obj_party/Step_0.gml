@@ -34,13 +34,13 @@ if (active == 1)
 		targetx = chara.x;
 		targety = chara.y;
 		if (targetside == LEFT)
-			targetx = (chara.x - 20);
+			targetx = (chara.x - pos);
 		else if (targetside == RIGHT)
-			targetx = (chara.x + 20);
+			targetx = (chara.x + pos);
 		else if (targetside == UP)
-			targety = (chara.y - 20);
+			targety = (chara.y - pos);
 		else if (targetside == DOWN)
-			targety = (chara.y + 20);
+			targety = (chara.y + pos);
 		
 		// definir aparência e velocidade
 		event_user(3);

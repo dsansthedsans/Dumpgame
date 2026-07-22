@@ -3,7 +3,6 @@ depth = -90;
 image_alpha = 0;
 chara = obj_chara;
 m6 = obj_party;
-
 type = 0;
 if (room == room_corridors_1_5)
 {
@@ -21,8 +20,13 @@ else if (room == unused_room_corridors_16_B)
 }
 else if (room == room_caverns_1)
 {
+	depth = 0//-200;
 	type = 3;
-	depth = -200;
+	imperfection = 8;
+	leftX = (60 - imperfection);
+	rightX = (280 + imperfection);
+	topY = (100 - imperfection);
+	bottomY = (180 + imperfection);
 }
 else if (room == room_caverns_2)
 {

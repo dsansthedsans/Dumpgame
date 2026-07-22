@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"unused_mus_start",
+  "%Name":"mus_chapter_1",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":18.912653,
+  "duration":82.44245,
   "exportDir":"",
-  "name":"unused_mus_start",
+  "name":"mus_chapter_1",
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] audio",
+    "path":"folders/[!] audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"unused_mus_start.mp3",
+  "soundFile":"mus_chapter_1.mp3",
   "volume":1.0,
 }

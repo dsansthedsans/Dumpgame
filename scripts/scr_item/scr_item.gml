@@ -97,7 +97,7 @@ function item_use()
 		msg[0] = string(get_text("item_equip")) + ":Y" + string(item_name(_item, "")) + ";D.)";
 	}
 }
-function itemDropped_add(_item)
+function itemDropped_add(_item, _x = obj_chara.x, _y = obj_chara.y)
 {
 	for (var i = 0; i < global.itemDropped_lengthMax; i++)
 	{
@@ -106,8 +106,8 @@ function itemDropped_add(_item)
 			global.itemDropped[i] =
 			{
 				room : room,
-				x : obj_chara.x,
-				y : obj_chara.y,
+				x : _x,
+				y : _y,
 				item : _item,
 			}
 			break;

@@ -10,7 +10,7 @@ if (active == 1)
 			speed = spd;
 		else
 		{
-			if (type == 1.0)
+			if (type == 1.0 && exists(heart) == true)
 			{
 				image_angle = point_direction(x, y, heart.x, heart.y);
 				direction = image_angle;

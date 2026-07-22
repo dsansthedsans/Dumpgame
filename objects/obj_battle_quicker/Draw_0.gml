@@ -13,6 +13,7 @@ if (heart_move == 1)
 	// heart get to place
 	if (abs(heart_x - heart_targetx) <= 0.2 && abs(heart_y - heart_targety) <= 0.2)
 	{
+		chara.image_blend = c_white;
 		room_goto(room_battle);
 		heart_move = 0;
 	}

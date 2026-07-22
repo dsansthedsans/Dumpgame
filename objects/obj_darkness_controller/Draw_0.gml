@@ -74,28 +74,13 @@ if (type == 3)
 	draw_set_color(c_black);
 	for (var i = 0; i < 100; i++)
 	{
-		draw_set_alpha(0.25 + (0.01 * i));
-		
-		// bottom middle
-		var _y = (206 + i);
-		draw_rectangle(100, _y, 200, _y, 0);
-		
-		// top
-		_y = (72 - i);
-		draw_rectangle(100, _y, 139, _y, 0);
-		draw_rectangle(180, _y, 239, _y, 0);
-		
-		// bottom right
-		_y = (184 + i);
-		draw_rectangle(220, _y, 240, _y, 0);
-		
-		// left
-		var _x = (80 - i);
-		draw_rectangle(_x, -20, _x, 260, 0);
-		
-		// right
-		var _x = (270 + i);
-		draw_rectangle(_x, -20, _x, 260, VOLUME_SOUND);
+		draw_set_alpha(0.125 + (0.125 / 2) + (0.0075 * i));
+		/*Top*/ draw_rectangle(60, (topY - i), 160, (topY - i), false);
+		/*Top*/ draw_rectangle(180, (topY - i), 260, (topY - i), false);
+		draw_set_alpha(0.125 + (0.125 / 2) + (0.01 * i));
+		/*Left*/ draw_rectangle((leftX - i), 40, (leftX - i), 180, false);
+		/*Right*/ draw_rectangle((rightX + i), 60, (rightX + i), 160, false);
+		/*Bottom*/ draw_rectangle(60, (bottomY + i), 240, (bottomY + i), false);
 	}
 }
 if (type == 4)

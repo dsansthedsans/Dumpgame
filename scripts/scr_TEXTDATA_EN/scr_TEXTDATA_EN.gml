@@ -225,7 +225,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "chapter_name_2", "CIVILIZED CHAOS"); //centralcity
 	
 	// items
-	ds_map_add(global.textdata_en, "item_name_none",		"(Empty)");
+	ds_map_add(global.textdata_en, "item_name_none",		"None");
 
 	ds_map_add(global.textdata_en, "item_name_stick",		"Broomstick");
 	ds_map_add(global.textdata_en, "item_name_bandage",		"Bandage");
@@ -477,7 +477,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_dummy_1", "* (Battle the dummy?)");
 	ds_map_add(global.textdata_en, "npc_dummy_1_1", "Yes");
 	ds_map_add(global.textdata_en, "npc_dummy_1_2", "No");
-		ds_map_add(global.textdata_en, "npc_dummy_2", "* (It's strangely quiet.)");
+		ds_map_add(global.textdata_en, "npc_dummy_2", "* (It's a dummy.)");
 	
 	// obj_event_m6_postdummy
 	ds_map_add(global.textdata_en, "event_m6_postdummy_0", "* You are very good at this.");
@@ -756,7 +756,35 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_0", "* (You wave to Flitcher.)^3&* (It waves back at you.)");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_1", "* (How did it wave back if it doesn't even have hands?)");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_2", "* (This is one of the weirdest mysteries of All Time.)");
-	ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.^4^4^4^4&* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
+	ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.");
+	//ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.^4^4^4^4&* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
+	
+	ds_map_add(global.textdata_en, "room_corridors_17_egg.0", "* (It's an egg.)");
+	ds_map_add(global.textdata_en, "room_corridors_17_egg.1", "* (It's unclear why there's an egg beside the tree.)");
+	
+	// room_corridors_18
+	ds_map_add(global.textdata_en, "room_corridors_18_sign.0", "* \"New member,^1 you are at the Corridors' edge.\"");
+	ds_map_add(global.textdata_en, "room_corridors_18_sign.1", "* \"Soon you'll be at the Central City,^1 enjoying life&as much as you can.\"");
+	ds_map_add(global.textdata_en, "room_corridors_18_sign.2", "* \"But,^1 before that,^1&there's one last thing&you have to do.\"");
+	ds_map_add(global.textdata_en, "room_corridors_18_sign.3", "* \"Face your last challenge before leaving this place.\"");
+	ds_map_add(global.textdata_en, "room_corridors_18_sign.4", "* \"Prove yourself worthy by walking through this unnecessarily long corridor.\"");
+	ds_map_add(global.textdata_en, "room_corridors_18_sign.5", "* \"Jokes aside,^1 we're sorry.\"^1&* \"Someone's REALLY bad&at urban planning.\"");
+	ds_map_add(global.textdata_en, "room_corridors_18_sign.6", "* \"Signed,^1 your local&Dumpster Friend\"");
+	
+	// event_gabee_chase
+	var m = 0;
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.0", "* This is it.");
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.1", "* The exit is at the end of this corridor.");
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.2", "* Before we continue,^1 I have a question for you.");
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.3", "* You do remember how :YBATTLES;D work,^2 correct?");
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.4", "* ...");
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.5", "* No!^1 Nothing!^2&* I just wanted to know.");
+	ds_map_add(global.textdata_en, "event_gabee_chase.1.0", "* I confess.");
+	ds_map_add(global.textdata_en, "event_gabee_chase.1.1", "* I lied.");
+	ds_map_add(global.textdata_en, "event_gabee_chase.1.2", "* There is a reason I questioned your memory.");
+	ds_map_add(global.textdata_en, "event_gabee_chase.1.3", "* You see,^1 I may have not been as hone()");
+	//ds_map_add(global.textdata_en, $"event_gabee_chase.3.{m++}", "* (You hear a distant voice.)");
+	ds_map_add(global.textdata_en, $"event_gabee_chase.3.{m++}", "* ");
 	
 	// hopped, approached, drew, comes, enters, crawled, came, appeared	
 	// battle main

@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"mus_start",
+  "%Name":"mus_chapter_2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":82.44245,
+  "duration":18.912653,
   "exportDir":"",
-  "name":"mus_start",
+  "name":"mus_chapter_2",
   "parent":{
     "name":"[!] audio",
     "path":"folders/[!] audio.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_start.mp3",
+  "soundFile":"mus_chapter_2.mp3",
   "volume":1.0,
 }

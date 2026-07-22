@@ -298,30 +298,50 @@ function room_interact()
 		{
 			sprite_index = spr_npc_armsguy;
 			text = "npc_armsguy_exit";
+			if (chara_murder() >= 1)
+				destroy(id);
 		}
 		if (x == 120 && y == 370)
 		{
 			sprite_index = spr_npc_trashguy_fishing;
 			text = "npc_trashguy_exit_fishing";
+			if (chara_murder() >= 1)
+				destroy(id);
 		}
 		if (x == 145 && y == 360)
 		{
 			y -= 15;
 			sprite_index = spr_npc_armsguy;
 			text = "npc_armsguy_exit_fishing";
+			if (chara_murder() >= 1)
+				destroy(id);
 		}
 		if (x == 260 && y == 285)
 		{
 			sprite_index = spr_npc_flitcher;
 			depth = -(bbox_bottom + 10);
 			text = "npc_flitcher_exit";
+			if (chara_murder() >= 2)
+			{
+				create(240, 270, obj_interact_block);
+				destroy(id);
+			}
+		}
+		if (x == 240 && y == 270)
+		{
+			image_xscale = 2;
+			text = "room_bench_geno";
 		}
 		if (x == 785 && y == 380)
 		{
 			sprite_index = spr_npc_armsguy_lifting;
 			image_speed = 1;
 			text = "npc_armsguy_exit_lifting";
+			if (chara_murder() >= 2)
+				destroy(id);
 		}
+		if (x == 150 && y == 155)
+			text = "room_corridors_17_egg";
 	}
 	if (room == room_corridors_18)
 	{
@@ -949,6 +969,9 @@ function room_solid()
 		// Bench
 		if (y == 250)
 			sprite_index = spr_overworld_bench;
+		// Egg
+		if (x == 150 && y == 155)
+			sprite_index = spr_overworld_egg;
 	}
 	if (room == room_corridors_18)
 	{
@@ -975,7 +998,6 @@ function room_solid()
 		if (x == 90 && y == 70) || (x == 60 && y == 90) || (x == 175 && y == 90) || (x == 250 && y == 90) || (x == 150 && y == 180) || (x == 100 && y == 190)
 		{
 			sprite_index = spr_overworld_caverns_rock;
-			
 			if (x == 60 && y == 90)
 				image_index = 5;
 			if (x == 175 && y == 90)
@@ -986,6 +1008,19 @@ function room_solid()
 				image_index = 1;
 			if (x == 100 && y == 190)
 				image_index = 4;
+			y += 20;
+		}
+		if (x == 55 && y == 135)
+		{
+			x += 2;
+			y -= 2;
+			depth = -bbox_top;
+			sprite_index = spr_overworld_brokenfloor;
+		}
+		if (x == 60 && y == 30)
+		{
+			sprite_index = spr_overworld_corridorsbricks;
+			image_index = 1;
 		}
 	}
 	if (room == room_caverns_2)

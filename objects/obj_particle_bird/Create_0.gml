@@ -137,5 +137,5 @@ baseindex = (2 * indexmult);
 image_index = baseindex;
 depth = -bbox_bottom;
 
-if (chara_murder() >= 1)
+if (chara_murder() >= 2)
 	destroy(id);

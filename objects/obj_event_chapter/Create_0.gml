@@ -3,6 +3,11 @@ event_inherited();
 
 if (room == room_corridors_1 && global.flag[0] == 0) || (room == room_caverns_1 && global.flag[62] == 0)
 {
+	if (global.chara_armor == ITEM_BOWL)
+	{
+		itemDropped_add(ITEM_BOWL, 230, 140);
+		global.chara_armor = -1;
+	}
 	chara_facing(FALLEN);
 	chara_change(-1, 0, 0, 1, 0, 0, 0);
 	chara = obj_chara;

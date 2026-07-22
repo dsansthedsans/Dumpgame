@@ -63,7 +63,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 	if (_volume_type == VOLUME_MUSIC)
 	{
 		_volume *= 0.5;
-		if (_asset == mus_start)
+		if (_asset == mus_chapter_1)
 			_volume *= 1.5;
 		if (_asset == mus_m6)
 			_volume *= 2.5;
@@ -71,14 +71,14 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.125;
 		if (_asset == mus_battle_dummy)
 			_volume *= 1.25;
-		if (_asset == unused_mus_start)
+		if (_asset == mus_chapter_2)
 			_volume *= 4;
 		if (_asset == mus_cave)
 			_volume *= 1.5;
 		if (_asset == mus_hurry_intro)
 			_volume *= 2;
 		if (_asset == mus_hurry_loop_0) || (_asset == mus_hurry_loop_1)
-			_volume *= (1.5 + 0.125);
+			_volume *= (1.5 + 0.125 + (0.125 * (_asset == mus_hurry_loop_1)));
 		if (_asset == mus_corridors_geno)
 			_volume *= 1.25;
 	}

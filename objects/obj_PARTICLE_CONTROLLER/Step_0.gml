@@ -25,7 +25,7 @@ if (room == room_corridors_18 && global.flag[61] == 0 && global.flag[2] == 0 && 
 		thismarker.direction = (90 + irandom_range(-20, 20));
 		particle[num] = thismarker;
 		num += 1;
-		delay = 20;
+		delay = 18;
 	}
 	else
 		delay -= 1;
