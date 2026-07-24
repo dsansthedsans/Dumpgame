@@ -5,7 +5,7 @@ if (room == room_corridors_1 && global.flag[0] == 0) || (room == room_caverns_1 
 {
 	if (global.chara_armor == ITEM_BOWL)
 	{
-		itemDropped_add(ITEM_BOWL, 230, 140);
+		itemDropped_add(ITEM_BOWL, 100, 160);
 		global.chara_armor = -1;
 	}
 	chara_facing(FALLEN);

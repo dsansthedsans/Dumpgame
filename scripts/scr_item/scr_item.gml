@@ -113,7 +113,7 @@ function itemDropped_add(_item, _x = obj_chara.x, _y = obj_chara.y)
 			break;
 		}
 	}
-	itemDropped_create(i);
+	return i;
 }
 function itemDropped_create(_index)
 {

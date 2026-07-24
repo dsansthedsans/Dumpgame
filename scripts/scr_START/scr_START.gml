@@ -361,7 +361,7 @@ function start_flags()
 	
 	global.flag[41] = 0; // left room_corridors_12 after Broken Clock's battle
 	
-	global.flag[42] = 0; // finished MEE6's post-CAPTCHA.2 event
+	global.flag[42] = 0; // (((UNUSED)))
 	
 	global.flag[43] = 0; // ARMSGUY lifting unused_room_corridors_17
 	global.flag[44] = 0; // FLITCHER unused_room_corridors_17 WEIRD VERY WEIRD
@@ -411,6 +411,7 @@ function start_music()
 		global.music_loop[i] = 1;
 		global.music_fadeouttime[i] = 0.5;
 		global.music_volumetype[i] = VOLUME_MUSIC;
+		global.music_offset[i] = 0;
 	}
 }
 function start_party()
@@ -551,7 +552,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_caverns_1;
+		var _rm = room_corridors_18;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -585,7 +586,7 @@ function CHANGE_GAME()
 				_lvl = 8;
 			if (_rm == room_caverns_1)
 				_lvl = 9;
-			if (_rm == room_caverns_3)//|| (_rm == room_caverns_1)
+			if (_rm == room_caverns_2) || (_rm == room_caverns_3)
 				_lvl = 10;
 			
 			// definir flags baseado de onde o jogo vai começar
@@ -644,7 +645,6 @@ function CHANGE_GAME()
 				global.flag[33] = 1; // completed third puzzle in CAPTCHA.2
 				global.flag[34] = 1; // completed CAPTCHA.2
 				global.flag[35] = 1; // finished MEE6's pre-CAPTCHA.2 event
-				global.flag[42] = 1; // finished MEE6's post-CAPTCHA.2 event			
 				global.flag[45] = 1; // talked to armsguy before CAPTCHA 2
 				global.flag[47] = 1; // got reward from armsguy
 				global.flag[48] = 1; // talked to trashguy

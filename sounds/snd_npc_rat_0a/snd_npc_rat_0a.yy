@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"unused_snd_npc_rat_1e",
+  "%Name":"snd_npc_rat_0a",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.41825396,
+  "duration":0.47258502,
   "exportDir":"",
-  "name":"unused_snd_npc_rat_1e",
+  "name":"snd_npc_rat_0a",
   "parent":{
     "name":"[!] UNUSED !!!!!",
     "path":"folders/[!] UNUSED !!!!!.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"unused_snd_npc_rat_1e.mp3",
+  "soundFile":"snd_npc_rat_0a.mp3",
   "volume":1.0,
 }

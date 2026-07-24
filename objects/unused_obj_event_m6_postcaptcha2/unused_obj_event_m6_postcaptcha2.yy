@@ -1,18 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_genofeeling_controller",
+  "%Name":"unused_obj_event_m6_postcaptcha2",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_chara","path":"objects/obj_chara/obj_chara.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_genofeeling_controller",
+  "name":"unused_obj_event_m6_postcaptcha2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dumpgame_51",
-    "path":"Dumpgame_51.yyp",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_event_parent",
+    "path":"objects/obj_event_parent/obj_event_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_control_block",
-    "path":"sprites/spr_control_block/spr_control_block.yy",
+    "name":"spr_event_block",
+    "path":"sprites/spr_event_block/spr_event_block.yy",
   },
   "spriteMaskId":null,
   "visible":true,

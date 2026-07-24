@@ -1,4 +1,3 @@
-
 // first dialog
 if (con == 1)
 {
@@ -42,13 +41,12 @@ if (con == 4)
 		con = 5;
 	}
 }
-
 // second dialog/chase start
 if (con == 5 && chara.x >= 720)
 {
 	chara_speed = chara.curspeed;
 	chara_imgspeed = chara.curimgspeed;
-	chara_change(-1, 0, 0, 1, 0, 0, 1);
+	chara_change(-1, false, false, true, false, false, true);
 	chara_facing(RIGHT);
 	party_change(0, -1, -1);
 	party_facing(0, RIGHT);
@@ -74,23 +72,22 @@ if (con == 9)
 }
 if (con == 11)
 {	
+	chara_change(-1, -1, -1, -1, -1, -1, false);
 	chara_facing(LEFT);
-	chara_change(-1, -1, -1, -1, -1, -1, 0);
-	cam_x = obj_GAME_CONTROLLER.cam_x;
 	alarm[2] = 60;
 	con = 12;
 }
 if (con == 13)
 {
-	if (cam_x <= (chara.x - ((chara.x - m6.x) / 2) - 160))
+	if (game.cam_x <= (chara.x - ((chara.x - m6.x) / 2) - 160))
 	{
-		cam_x = round(cam_x);
+		game.cam_x = round(game.cam_x);
 		alarm[2] = 45;
 		con = 14;
 	}
 	else
-		cam_x -= 0.5;
-	screenpos(cam_x, obj_GAME_CONTROLLER.cam_y);
+		game.cam_x -= 0.5;
+	screenpos(game.cam_x, game.cam_y);
 }
 if (con == 15)
 {
@@ -104,7 +101,7 @@ if (con == 16 && exists(thiswriter) == 0)
 		bullet[i] = -1;
 	for (var i = 0; i < 3; i++)
 	{
-		marker((m6.x - 20 + (20 * i)), (obj_GAME_CONTROLLER.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
+		marker((m6.x - 20 + (20 * i)), (game.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
 		thismarker.image_angle = point_direction(thismarker.x, thismarker.y, m6.x, m6.y);
 		thismarker.direction = thismarker.image_angle;
 		thismarker.speed = 4;
@@ -222,17 +219,17 @@ if (con == 36)
 }
 if (con == 36.5)
 {
-	global.flag[60] = 1;
 	audio_play(snd_eyeflash, 0, VOLUME_SOUND);
-	alarm[4] = 45;
+	alarm[4] = round(30 + 7.5);
 	con = 36.75;
 }
 if (con == 37)
 {
+	global.flag[60] = 1;
 	audio_play(snd_jump, 0, VOLUME_SOUND);
 	audio_pitch(thisaudio, 0.8);
 	eyes_jumpsnd = thisaudio;
-	alarm[3] = 15;
+	alarm[3] = round(15 + 7.5);
 	con = 37.5;
 }
 if (con == 38)
@@ -241,48 +238,35 @@ if (con == 38)
 	with (chara)
 		shakeobj_small();
 	audio_play(snd_bump, 0, VOLUME_SOUND);
-	cam_y = obj_GAME_CONTROLLER.cam_y;
-	alarm[2] = 15;
+	alarm[2] = round(15 + 7.5);
 	con = 39;
 }
 if (con == 40)
 {
-	if (cam_y < 60)
-		cam_y += 2;
-	else
-		cam_y = 60;
-	
-	screenpos(cam_x, cam_y);
-	if (cam_x <= (chara.x - 160))
-	{
-		chara_change(1, 1, 0, 0, 0, 1, 1);
-		create(-20, -20, obj_overworld_heart);
-		aftercon = 0;
-		con = 41;
-	}
-	else
-		cam_x -= 1;
+	chara_change(true, true, false, true, false, false, true);
+	create(-20, -20, obj_overworld_heart);
+	con = 41;
 }
-
 // chase
 if (con == 41)
 {
 	bullet_stage = 0;
-	if (chara.x >= 1500)
+	if (chara.x <= (gate.x + 160) && gate.active == false)
+		gate.active = true;
+	if (chara.x >= 1400)
 		bullet_stage = 1;
-	//if (chara.x >= 2300)
-	//	bullet_stage = 2;
-	
+	if (chara.x >= 2400)
+		bullet_stage = 2;
 	for (var s = 0; s < 3; s++)
 	{
 		if (bullet_stage == s && bullet_delay[s] <= 0)
 		{
-			if (s == 0) || (s == 1 && chara.x >= 2300)
+			if (s == 0)// || (s == 1 && chara.x >= 2300)
 			{
-				create((chara.x - 130), (200 + irandom_range(-30, 30)), obj_overworld_blt);
+				create((chara.x - 130), obj_overworld_heart.y /*(200 + irandom_range(-40, 40))*/, obj_overworld_blt);
 				thisobj.type = 1.0;
 				bullet_time[0] -= 2;
-				bullet_time[0] = clamp(bullet_time[0], 20, 35);
+				bullet_time[0] = clamp(bullet_time[0], 22, 32);
 			}
 			if (s == 1)
 			{
@@ -292,81 +276,62 @@ if (con == 41)
 					thisobj.type = 1.1;
 				}
 				bullet_format[1] = !bullet_format[1];
-				bullet_time[1] -= 8;
-				bullet_time[1] = clamp(bullet_time[1], 25, 60);
+				bullet_time[1] -= 4;
+				bullet_time[1] = clamp(bullet_time[1], 24, 48);
 			}
-			/*
 			if (s == 2)
 			{
-				for (var z = 0; z < 9; z++)
+				for (var z = 0; z < 10; z++)
 				{
 					for (var i = 0; i < 5; i++)
 					{
-						create((2300 + (10 * i) + (100 * z) + (50 * bullet_format[2])), -20, obj_overworld_blt);
+						create((2300 + (10 * i) + (100 * z) + (50 * bullet_format[2])), 40, obj_overworld_blt);
 						thisobj.type = 1.2;
 					}
 				}
 				bullet_format[2] = !bullet_format[2];	
 			}
-			*/
 			audio_play(snd_blt_appear, 0, VOLUME_SOUND, , , , (1 + (0.15 * bullet_stage)));
 			bullet_delay[s] = bullet_time[s];
 		}
 		else
 			bullet_delay[s] -= 1;
 	}
-	if (chara.x >= 3160)
+	if (chara.x >= 3240)
+	{
+		chara_change(-1, false, false, true, false, false, true);
+		chara.image_speed = chara.curimgspeed;
+		chara_speed = chara.curspeed;
+		obj_overworld_heart.canhurt = 0;
+		obj_overworld_heart.disappear = 1;
+		altcon = 1;
 		con = 42;
+	}
 }
-
-// post-chase
+// jump
 if (con == 42)
 {
-	obj_overworld_heart.canhurt = 0;
-	obj_overworld_heart.disappear = 1;
-	chara_change(-1, 0, 0, 1, 0, 1, 1);
-	movetopoint(3240, 210, 45, chara);
-	chara.image_speed = chara.rimgspeed[0];
-	cam_x = obj_GAME_CONTROLLER.cam_x;
-	altcon = 1;
-	con = 43;
-}
-if (con == 43)
-{
-	if (cam_x >= 3210)
-		con = 44;
+	chara.x += chara_speed;
+	if (abs(200 - chara.y) > chara_speed)
+		chara.y += (chara_speed * sign(200 - chara.y));
 	else
-		cam_x += 5;
-	screenpos(cam_x, obj_GAME_CONTROLLER.cam_y);
-}
-if (altcon == 1 && exists(thismover) == 0)
-{
-	chara.x += chara.rspeed[0];
-	if (chara.x >= 3300)
+		chara.y = 200;
+	if (chara.x >= 3280)
 	{
-		global.chara_facing = -1;
+		chara_facing(-1);
 		chara.sprite_index = spr_chara_r_prejump;
-	}
-	if (chara.x >= 3330)
-	{
-		if (jumpsnd == 123)
-		{
-			audio_play(snd_jump, 0, VOLUME_SOUND);
-			audio_pitch(thisaudio, 0.65);
-		}
-		jumpsnd = 1;
 	}
 	if (chara.x >= 3360)
 	{
 		chara_stop();
 		chara.hspeed = (chara.rspeed[0] / 4);
-		chara.vspeed = -0.9;
+		chara.vspeed = -0.85;
 		chara.gravity = 0.035 / 4;
 		chara.friction = 0;
 		chara.sprite_index = spr_chara_r_jump;
 		audio_play(snd_jump, 0, VOLUME_SOUND);
 		audio_pitch(thisaudio, 0.65);
-		audio_play(snd_startwhite, 0, VOLUME_SOUND);
+		audio_play(snd_cymbal, 0, VOLUME_SOUND);
 		audio_pitch(thisaudio, 1.4);
 		altcon = 0;
 		con = 46;
@@ -374,11 +339,9 @@ if (altcon == 1 && exists(thismover) == 0)
 }
 if (con == 46)
 {
-	if (global.chara_camera_move == 0 && chara.x >= (cam_x + 160))
-		global.chara_camera_move = 1;
 	if (chara.x >= 3495)
 	{
-		global.chara_camera_move = 0;
+		chara_change(-1, -1, -1, -1, -1, -1, false);
 		chara.hspeed = 0;
 		chara.vspeed = 0;
 		chara.gravity = 0;
@@ -408,6 +371,7 @@ if (con == 54)
 		shakeobj_small();
 	audio_play(snd_grab, 0, VOLUME_SOUND);
 	audio_play(snd_fall, 0, VOLUME_SOUND);
+	chara.hspeed = -0.1;
 	chara.gravity = 0.1;
 	chara.sprite_index = spr_chara_r_fall;
 	con = 55;
@@ -441,7 +405,6 @@ if (con == 60)
 	room_goto(room_caverns_1);
 	destroy(id);
 }
-
 if (aftercon == 1)
 {
 	for (var i = 0; i < bullet_length; i++)
@@ -454,377 +417,18 @@ if (aftercon == 1)
 		}
 	}
 }
-
-
-
-
-/*
-if (con == 41)
+// Gate
+if (con > 0)
 {
-	bullet_stage = 0;
-	if (chara.x >= 1500)
-		bullet_stage = 1;
-	if (chara.x >= 2300)
-		bullet_stage = 2;
-	
-	// shooting
-	if (bullet_stage <= 1 && bullet_delay[0] <= 0)
+	if (gate.object == undefined) || (exists(gate.object) == false)
 	{
-		create((chara.x - 130), (200 + irandom_range(-30, 30)), obj_overworld_blt);
-		thisobj.type = 1.0;
-		audio_stop(snd_blt_appear);
-		audio_play(snd_blt_appear, 0, 0);
-		bullet_delay[0] = (30 - (5 * bullet_stage));
-	}
-	else
-		bullet_delay[0] -= 1;
-	
-	// wave
-	if (bullet_stage == 1 && bullet_delay[1] <= 0)
-	{
-		for (var i = 0; i < 5; i++)
+		gate.object = create(gate.x, gate.y, obj_solid_block);
+		with (gate.object)
 		{
-			create(-20, ((160 + (40 * bullet_format[1])) + (10 * i)), obj_overworld_blt);
-			thisobj.type = 1.1;
+			image_xscale = 0.5;
+			image_yscale = 5;
 		}
-		//audio_play(snd_blt_appear, 0, 0);
-		
-		bullet_format[1] += 1;
-		if (bullet_format[1] >= 2)
-			bullet_format[1] = 0;
-		
-		bullet_delay[1] = bullet_time;
-		bullet_time -= 4;
-		bullet_time = clamp(bullet_time, 30, 60);
-	}
-	else if (bullet_stage == 1)
-		bullet_delay[1] -= 1;
-	
-	// bottom
-	if (bullet_stage == 2 && bullet_delay[2] <= 0)
-	{	
-		for (var z = 0; z < 8; z++)
-		{
-			for (var i = 0; i < 5; i++)
-			{
-				create((2300 + (10 * i) + (100 * z) + (50 * bullet_format[2])), (room_height + 20 + (40 * 0)), obj_overworld_blt);
-				thisobj.type = 1.2;
-			}
-		}
-		audio_play(snd_blt_appear, 0, 0);
-		
-		bullet_format[2] = !bullet_format[2];
-		bullet_delay[2] = 30;
-	}
-	else if (bullet_stage == 2)
-		bullet_delay[2] -= 1;
-}
-*/
-
-
-
-
-
-/*
-var _xbonus = irandom_range(-150, 150);
-if (chara.movex >= chara.wspeed)
-	_xbonus = (150 + irandom_range(-40, 40));
-var _x = (chara.x + _xbonus);
-_y = choose(75, 280);
-					
-create(_x, _y, obj_overworld_blt);
-thisobj.type = 1;
-thisobj.randomdir = i;
-bullet[num] = thisobj;
-num += 1;
-*/
-				
-/*
-var _xbonus = irandom_range(-150, 150);
-if (chara.movex >= chara.wspeed)
-	_xbonus = (150 + irandom_range(-40, 40));
-var _x = (chara.x + _xbonus);
-_y = choose(75, 280);
-var _dirbonus = 0;
-if (i > 0 && (chara.movex != 0 || chara.movey != 0))
-	_dirbonus = irandom_range(160, 200);
-			
-marker(_x, _y, spr_battle_blt_kunai, 0, 1, 1, 0, 0, 0, c_white, (chara.depth - 1));
-thismarker.image_angle = point_direction(thismarker.x, thismarker.y, (chara.x + _dirbonus), (chara.y - (chara.sprite_height / 2)));
-thismarker.direction = thismarker.image_angle;
-thismarker.delay = 0;
-bullet[num] = thismarker;
-num += 1;
-*/
-			
-			
-			
-			
-			
-			
-			
-			
-
-
-
-
-
-/*
-if (con == 38)
-{
-	global.side_facing[0] = UP;
-	m6.y -= 4;
-	with (m6)
-		shakeobj_small();
-	audio_play(snd_bump, 0, 0);
-	alarm[2] = 30;
-	con = 39;
-}
-if (con == 40)
-{
-	global.chara_facing = RIGHT;
-	chara_stop();
-	audio_play(snd_bump, 0, 0);
-	alarm[2] = 30;
-	con = 41;
-}
-if (con == 42)
-{
-	m6.y -= 2;
-	m6.image_speed = chara.rimgspeed;
-	if (m6.y <= chara.y)
-	{
-		global.side_facing[0] = RIGHT;
-		m6.y = chara.y;
-		con = 43;
-	}
-}
-if (con == 43)
-{
-	m6.x += 2;
-	if (m6.x >= (chara.x - 40))
-		global.chara_facing = LEFT;
-	if (m6.x >= (chara.x - 20))
-	{
-		m6.x = (chara.x - 20);
-		side_stop(0);
-		alarm[2] = 30;
-		con = 44;
-	}
-}
-if (con == 45)
-{
-	writer("event_gabee_chase_2", -1, -1);
-	cam_x = obj_GAME_CONTROLLER.cam_x;
-	con = 46;
-}
-if (con == 46 && exists(thiswriter) == 0)
-{
-	screenpos(cam_x, obj_GAME_CONTROLLER.cam_y);
-	if (cam_x <= (chara.x - 160))
-	{
-		global.chara_move = 1;
-		global.chara_facing = DOWN;
-		global.chara_cutscene = 0;
-		global.chara_openmenu = 0;
-		global.chara_cameramove = 1;
-	
-		side_change(0, 1, 0, LEFT, RIGHT);
-	
-		global.flag[60] = 1;
-		con = 47;
 	}
 	else
-		cam_x -= 1;
+		gate.object.y = (gate.y - gate.height);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if (aftercon == 1)
-{
-	for (var i = 0; i < 6; i++)
-	{
-		if (bullet[i] != -1)
-			bullet[i].image_alpha += 0.1;
-	}	
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-if (con == 35)
-{
-	for (var i = 0; i < 6; i++)
-		bullet[i].speed = 6;
-	audio_play(snd_blt_launch, 0, 0);
-	chara.speed = -4;
-	chara.friction = 0.12;
-	chara.image_speed = 0.35;
-	global.chara_facing = RIGHT;
-	con = 36;
-}
-if (con == 36 && chara.speed >= -0.25)
-{
-	chara.speed = 0;
-	chara.friction = 0;
-	chara_stop();
-	debug(chara.x);
-}
-*/
-
-
-/*
-if (con == 5 && chara.x >= 720)
-{
-	global.chara_move = 0;
-	global.chara_facing = RIGHT;
-	global.chara_cutscene = 1;
-	chara_stop();
-	
-	side_change(0, 0, 0, -1, -1);
-	global.side_facing[0] = RIGHT;
-	movetopoint(780, 200, 45, m6);
-	m6.image_speed = 0.35;
-	m6_mover = thismover;
-	con = 6;
-}
-if (con == 6)
-{
-	if (exists(m6_mover) == 1)
-		m6.depth = -m6.bbox_bottom;
-	else
-	{
-		roundpos(m6);
-		side_stop(0);
-		alarm[2] = 45;
-		con = 7;
-	}
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-/*
-if (con == 8)
-{
-	writer("event_gabee_chase_1", -1, -1);
-	con = 9;
-}
-if (con == 9 && exists(thiswriter) == 0)
-{
-	alarm[2] = 45;
-	con = 10;
-}
-if (con == 11)
-{
-	global.side_facing[0] = DOWN;
-	alarm[2] = 45;
-	con = 12;
-}
-if (con == 13)
-{
-	global.side_facing[0] = LEFT;
-	alarm[2] = 45;
-	con = 14;
-}
-if (con == 15)
-{
-	writer("event_gabee_chase_2", -1, -1);
-	con = 16;	
-}
-if (con == 16 && exists(thiswriter) == 0)
-{
-	global.chara_facing = UP;
-	global.side_facing[0] = UP;
-	audio_play(snd_blt_launch, 0, 0);
-	for (var i = 0; i < 3; i++)
-	{
-		marker((m6.x - 20 + (20 * i)), (obj_GAME_CONTROLLER.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
-		thismarker.image_angle = point_direction(thismarker.x, thismarker.y, m6.x, m6.y);
-		thismarker.direction = thismarker.image_angle;
-		thismarker.speed = 6;
-		bullet[i] = thismarker;
-	}
-	con = 17;
-}
-if (con == 17)
-{
-	with (bullet[1])
-	{
-		if (place_meeting(x, (y - 20), other.m6) == 1)
-			other.con = 18;
-	}
-}
-if (con == 18)
-{
-	global.side_facing[0] = UP_SIT;
-	for (var i = 0; i < 3; i++)
-		destroy(bullet[i]);
-	audio_play(snd_bigcut, 0, 0);
-	shakescreen(3, 3);
-	con = 19;
-}
-if (con == 19)
-{
-	m6.y += 4;
-	if (m6.y >= 240)
-	{
-		m6.y = 240;
-		audio_play(snd_screenshake, 0, 0);
-		shakescreen(5, 5);
-		alarm[2] = 60;
-		con = 20;
-	}
-}
-
-
-
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-

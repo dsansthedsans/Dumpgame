@@ -59,6 +59,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.75;
 		if (_asset == snd_murder)
 			_volume *= 0.5;
+		if (_asset == snd_battle_mercy_fail)
+			_volume *= 0.5;
+		if (_asset == snd_battle_danger)
+			_volume *= 0.75;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -81,6 +85,12 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= (1.5 + 0.125 + (0.125 * (_asset == mus_hurry_loop_1)));
 		if (_asset == mus_corridors_geno)
 			_volume *= 1.25;
+		if (_asset == mus_battle_troll)
+			_volume *= 1.5;
+		if (_asset == mus_brock_prebattle)
+			_volume *= 1.25;
+		if (_asset == mus_battle_brock)
+			_volume *= 1.5;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)
@@ -139,4 +149,5 @@ function music_set(_pos, _music, _gain_volume = 1, _gain_time = 0, _gain_fadein 
 	global.music_loop[i] = _loop;
 	global.music_fadeouttime[i] = _fade_out_time
 	global.music_volumetype[i] = VOLUME_MUSIC;
+	global.music_offset[i] = 0;
 }

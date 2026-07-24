@@ -87,7 +87,7 @@ function TEXT()
 		msg[0] = string(get_text("item_drop_0.0")) + ":Y" + string(item_name(global.item[_pos], "")) + ";D" + string(get_text($"item_drop_0.1_{irandom(9)}"));
 		msg_format[0] = "textbox_bottom";
 		audio_play(snd_grab, 0, VOLUME_SOUND);
-		itemDropped_add(global.item[_pos]);
+		itemDropped_create(itemDropped_add(global.item[_pos]));
 		global.item[_pos] = -1;
 	}
 	
@@ -240,7 +240,7 @@ function TEXT()
 	{
 		for (var m = 0; m < 3; m++)
 			msg[m] = get_text($"room_rulesbook_{m}");
-		if (global.chara_murder < 2)
+		if (chara_murder() < 1)
 		{
 			question[m] = get_text($"room_rulesbook_{m}.0");
 			if (global.flag[67] > 0)
@@ -254,14 +254,13 @@ function TEXT()
 					msg[m+1] = get_text($"room_rulesbook_{m+1}.{(global.flag[67] > 0)}");
 					msg[m+2] = get_text($"room_rulesbook_{m+2}-{global.flag[67]}");
 					if (global.flag[67] > 0)
-						msg_skip[m+2] = global.indebug;
+						msg_skip[m+2] = false;
 					global.flag[67] += 1;
 				}
 				else
 				{
 					msg[m+1] = get_text($"room_rulesbook_{m+3}");
 					msg_skip[m+1] = false;
-					//FAZER CONQUISTAS !!!!!!! (PRINCIPALMENTE RULES BOOK)
 				}
 			}
 		}
@@ -336,9 +335,9 @@ function TEXT()
 		}
 		else
 		{
-			msg[0] = "* (......)";
+			msg[0] = "* ......";
 			if (irandom_range(1, 100) == 100)
-				msg[0] = "* (.....!)";
+				msg[0] = "* .....!";
 			if (chara_murder() >= 1)
 				msg[0] = get_text("npc_dummy_2");
 		}
@@ -1059,7 +1058,7 @@ function TEXT()
 	if (text == "npc_armsguy_exit_lifting")
 	{
 		msg[0] = get_text($"npc_armsguy_exit_lifting_{clamp(global.flag[43], 0, 3)}_0");
-		global.flag[43] += 1;
+		global.flag[43] = (real(global.flag[43]) + 1);
 	}
 	if (text == "room_corridors_17_egg")
 	{
@@ -1079,6 +1078,8 @@ function TEXT()
 			msg[m] = _msg;
 		}
 	}
+	
+	// event_gabee_chase
 	if (string_starts_with(text, "event_gabee_chase.") == true)
 	{
 		for (var m = 0; m < 99; m++)
@@ -1111,7 +1112,6 @@ function TEXT()
 			break;
 		}
 	}
-	
 	if (text == "event_gabee_chase_3")
 	{
 		msg[0] = "* (Você consegue ouvir uma conversa distante.)";
@@ -1277,7 +1277,28 @@ function TEXT()
 		msg_sound[22] = snd_txt_dsans;
 		*/
 	}
-		
+	
+	// room_cave_3
+	if (text == "npc_cave_armsguy")
+	{
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = get_text($"npc_cave_armsguy.0.{m}");
+			if (_msg == undefined)
+				break;
+			if (string_char_at(_msg, string_length(_msg)) != "?")
+				msg[m] = _msg;
+			else
+			{
+				question[m] = _msg;
+				question_option[1] = get_text($"npc_cave_armsguy.0.{m}.1");
+				question_option[2] = get_text($"npc_cave_armsguy.0.{m}.2");
+				break;
+			}
+		}
+		msg[m+1] = get_text($"npc_cave_armsguy.{question_result[m]}.0");
+	}
+	
 	// dropped item
 	if (text == "itemDropped_pickup")
 		msg[0] = string(get_text("item_pickup")) + string(infoArray[0]) + ";D.)";
@@ -1327,7 +1348,7 @@ function TEXT()
 		}
 		if (string_starts_with(text, "battle_bubble_armsguy") == 1) // Armsguy
 		{
-			if (controller.battle_group >= 7 && controller.battle_group <= 10)
+			if (controller.battle_group >= 7)
 				msg_type[0] = 4;
 			
 			if (text == "battle_bubble_armsguy0") // Armsguy
@@ -1352,7 +1373,7 @@ function TEXT()
 		}
 		if (string_starts_with(text, "battle_bubble_trashguy") == 1) // Trashguy
 		{
-			if (controller.battle_group == 8)
+			if (controller.battle_group >= 7)
 				msg_type[0] = 4;
 			
 			if (text == "battle_bubble_trashguy0") // Armsguy
@@ -1451,6 +1472,8 @@ function TEXT()
 				_groupname = "eyecrush_armsguy";
 			if (_group == 11)
 				_groupname = "eyecrush_flitcher";
+			if (_group == 12)
+				_groupname = "armsguy_trashguy_flitcher";
 			if (_group == 13)
 				_groupname = "rhonhey";
 			if (_group == 1000)
@@ -1481,7 +1504,7 @@ function TEXT()
 			if (_type == 4)
 			{
 				_name = "flitcher";
-				_max = 4;
+				_max = 5;
 			}
 			if (_type == 5)
 			{
@@ -1965,7 +1988,7 @@ function TEXT()
 							msg_sound[_page] = snd_txt_brock;
 							msg_format[_page] = "bubble";
 							if (_convince >= 4)
-								msg_type[_page + 8] = "tense";
+								msg_type[_page + 9] = "tense";
 							enemy.body.movement = 1;
 						}
 					}

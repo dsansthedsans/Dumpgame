@@ -36,7 +36,7 @@ if (active == 1)
 	if (stage == 3)
 	{
 		fade_alpha += 0.0035;
-		if (fade_alpha >= 1 && audio_playing(snd_startwhite) == 0)
+		if (fade_alpha >= 1 && audio_playing(snd_cymbal) == 0)
 		{
 			event_user(0);
 			stage = 4;

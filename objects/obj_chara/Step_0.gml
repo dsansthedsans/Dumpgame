@@ -59,7 +59,7 @@ if (global.chara_move == 1)
 		running = 1;
 		global.chara_runtime += 1;
 		rspeed_pos = 0;
-		if (global.chara_runtime >= 180)
+		if (global.chara_runtime >= 180) || (global.flag[60] == true && global.flag[61] == false)
 			rspeed_pos = 1;
 		curspeed = rspeed[rspeed_pos];
 		curimgspeed = rimgspeed[rspeed_pos];
@@ -317,6 +317,14 @@ else
 	afktime = 0;
 	moving = 0;
 }
+if (position_meeting(x, y, obj_water_block) == false)
+	inwater = false;
+else
+{
+	if (inwater == false)
+		audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
+	inwater = true;
+}
 
 
 // interagir (blocos, mudar de quarto)
@@ -375,6 +383,8 @@ if (stepplay == 1)
 			var _snd = snd_step1;
 			if (stepsound == 1)
 				_snd = snd_step2;
+			if (inwater == true)
+				_snd = snd_step_water;
 			audio_play(_snd, 0, VOLUME_SOUND, stepvolume, , , (1 + (0.05 * (rspeed_pos + 1) * (curspeed == rspeed[rspeed_pos]))));
 			stepstage = 0;
 		}
@@ -385,6 +395,9 @@ if (stepplay == 1)
 		stepstage = 1;
 	}
 }
+
+
+
 
 
 

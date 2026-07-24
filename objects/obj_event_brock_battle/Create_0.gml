@@ -38,3 +38,6 @@ brockShock_draw = false;
 brockShock_image = 0;
 brockBrick = [];
 thiswriter = undefined;
+
+//////////////////
+global.flag[37] = 1;

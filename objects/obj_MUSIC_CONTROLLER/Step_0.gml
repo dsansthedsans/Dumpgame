@@ -87,6 +87,8 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 				music_set(0, -1);
 			if (global.flag[37] == 0.5)
 				music_set(0, mus_brock_prebattle, , , , , , 0);
+			//else if (global.flag[37] == 1 && global.flag[39] == 0)
+			//	music_set(0, mus_brock_sad, , , , 0.75 + 0.125 + 0.125);
 		}
 		// CAPTCHA 3
 		if (room == room_corridors_14 && chara_murder() < 2)
@@ -113,6 +115,14 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 					}
 				}
 			}
+		}
+		// Subway
+		if (room == unused_room_corridors_16_B)
+		{
+			music_set(0, -1);
+			music_fadeouttime_old[0] = 5;
+			music_set(1, snd_ambient_wind, , 2.5, 1, 0.5, , 1);
+			global.music_volumetype[1] = VOLUME_SOUND;
 		}
 		// Flitcher's first words
 		if (room == room_corridors_17)
@@ -148,19 +158,10 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 					{
 						global.music_pitch[0] = music_pitch_old[0];
 						global.music_pitch[0] = lerp(global.music_pitch[0], 0, 0.025);
-						if (global.music_pitch[0] <= 0.1)
-							global.music[0] = -1;
 					}
 				}
 			}
 		}
-	}
-	if (room == unused_room_corridors_16_B)
-	{
-		music_set(0, -1);
-		music_fadeouttime_old[0] = 5;
-		music_set(1, snd_ambient_wind, , 2.5, 1, 0.5, , 1);
-		global.music_volumetype[1] = VOLUME_SOUND;
 	}
 	if (room >= room_caverns_1 && room <= room_caverns_3)
 	{
@@ -173,12 +174,15 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 				music_set(0, mus_chapter_2, , , , 0.5 + 0.25, false);
 			music_set(1, snd_ambient_wind, , 2.5, 1, 0.25, , 5);
 			music_set(2, snd_titleimpact, 1.5, 2.5, 1, 0.35, , 5);
+			global.music_volumetype[1] = VOLUME_SOUND;
+			global.music_volumetype[2] = VOLUME_SOUND;
 		}
 	}
 	if (room >= room_caverns_3 && room <= room_caverns_3) // cavernas
 	{
 		music_set(0, mus_cave);
-		music_set(2, snd_ambient_water, , 2.5, 1, , , 5);	
+		music_set(2, snd_ambient_water, , 2.5, 1, , , 5);
+		global.music_volumetype[2] = VOLUME_SOUND;
 	}
 	if (room == room_crazycat)
 	{
@@ -252,6 +256,7 @@ for (var i = 0; i < global.music_length; i++)
 	if (global.music[i] > -1 && music_playing[i] == 0)
 	{
 		audio_play(global.music[i], global.music_loop[i], global.music_volumetype[i], global.music_gain_volume[i], global.music_gain_time[i], global.music_gain_fadein[i], global.music_pitch[i]);
+		audio_sound_set_track_position(thisaudio, global.music_offset[i]);
 		music_audio[i] = thisaudio;
 		music_playing[i] = 1;
 		music_timeplaying[i] = 0;
@@ -267,10 +272,12 @@ for (var i = 0; i < global.music_length; i++)
 }
 for (var i = 0; i < (global.music_length * 2); i++)
 {
-	if (music_fadingaudio[i] != -1 && audio_sound_get_gain(music_fadingaudio[i]) == 0)
+	if (music_fadingaudio[i] != -1 && audio_playing(music_fadingaudio[i]) == true && audio_sound_get_gain(music_fadingaudio[i]) == 0)
 	{
 		debug($"--- Stopped old music \"{audio_get_name(audio_sound_get_asset(music_fadingaudio[i]))}\"");
 		audio_stop(music_fadingaudio[i]);
 		music_fadingaudio[i] = -1;
-	}	
+	}
+	else if (music_fadingaudio[i] != -1 && audio_playing(music_fadingaudio[i]) == false)
+		music_fadingaudio[i] = -1;
 }

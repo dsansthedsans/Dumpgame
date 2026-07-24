@@ -19,7 +19,7 @@ if (hurt == 1 && hurt_time < 60)
 		create(-20, -20, obj_battle_dmgwriter);
 	}
 	if (hurt_time == 20)
-		audio_play_sound(hurtsound, 0, VOLUME_SOUND);
+		audio_play(hurtsound, VOLUME_SOUND, false);
 	
 	x = normal_x;
 	y = normal_y;

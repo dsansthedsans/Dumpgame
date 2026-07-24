@@ -92,8 +92,10 @@ function room_interact()
 		text = "room_captcha_guidesign_1";
 	if (room == room_corridors_5_A && x == 90 && y == 190)
 	{
-		text = "npc_armsguy1";
+		x -= 5;
+		y -= 5;
 		sprite_index = spr_npc_armsguy;
+		text = "npc_armsguy1";
 		if (global.world_curpopulation[WORLD_CORRIDORS] < global.world_maxpopulation[WORLD_CORRIDORS])
 			destroy(id);
 	}
@@ -258,40 +260,6 @@ function room_interact()
 		if (x == 140 && y == 60)
 			text = "room_subwaybutton";
 	}
-	if (room == unused_room_corridors_17)
-	{
-		// first armsguy
-		if (x == 505 && y == 370)
-		{
-			text = "npc_armsguy_exitfirst";
-			sprite_index = spr_npc_armsguy;
-		}
-		
-		// trashguy
-		if (x == 106 && y == 425)
-		{
-			text = "npc_trashguy_exitfishing";
-			sprite_index = spr_npc_trashguy_fishing;
-		}
-		
-		// armsguy gym
-		if (x == 740 && y == 150)
-		{
-			text = "npc_armsguy_exitlifting";
-			sprite_index = spr_npc_armsguy_lifting;
-			image_speed = 1;
-		}
-		
-		// flitcher
-		if (x == 430 && y == 240)
-		{
-			text = "npc_flitcher_exit";
-			sprite_index = spr_npc_flitcher;
-		}
-		
-		if (global.world_curpopulation[global.chara_world] <= 0) || (global.flag[38] == 1)
-			destroy(id);
-	}
 	if (room == room_corridors_17)
 	{
 		if (x == 540 && y == 325)
@@ -322,15 +290,12 @@ function room_interact()
 			depth = -(bbox_bottom + 10);
 			text = "npc_flitcher_exit";
 			if (chara_murder() >= 2)
-			{
-				create(240, 270, obj_interact_block);
 				destroy(id);
-			}
 		}
 		if (x == 240 && y == 270)
 		{
-			image_xscale = 2;
-			text = "room_bench_geno";
+			if (chara_murder() < 2)
+				destroy(id);
 		}
 		if (x == 785 && y == 380)
 		{
@@ -906,7 +871,7 @@ function room_solid()
 		if (x == 140 && y == 40)
 			sprite_index = unused_spr_overworld_brokenbutton;
 	}
-	if (room == unused_room_corridors_17)
+	if (room == room_corridors_17)
 	{
 		// lamp
 		if ((x == 130 || x == 250 || x == 410 || x == 530 || x == 690 || x == 810) && (y == 60 || y == 280)) || (x == 410 && y == 90)
@@ -1014,7 +979,6 @@ function room_solid()
 		{
 			x += 2;
 			y -= 2;
-			depth = -bbox_top;
 			sprite_index = spr_overworld_brokenfloor;
 		}
 		if (x == 60 && y == 30)
@@ -1036,6 +1000,7 @@ function room_solid()
 				image_index = 4;
 			if (x == 150 && y == 130)
 				image_index = 2;
+			y += 20;
 		}
 	}
 	if (room == room_caverns_3)
@@ -1051,6 +1016,7 @@ function room_solid()
 				image_index = 4;
 			if (x == 130 && y == 110)
 				image_index = 2;
+			y += 20;
 		}
 	}
 	

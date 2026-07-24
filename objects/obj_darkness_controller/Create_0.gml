@@ -20,7 +20,7 @@ else if (room == unused_room_corridors_16_B)
 }
 else if (room == room_caverns_1)
 {
-	depth = 0//-200;
+	depth = 0;
 	type = 3;
 	imperfection = 8;
 	leftX = (60 - imperfection);
@@ -30,8 +30,11 @@ else if (room == room_caverns_1)
 }
 else if (room == room_caverns_2)
 {
+	depth = -room_height;
 	type = 4;
-	depth = -2000;
+	rightX = 0;
+	rightY = 300;
+	rightHeight = 99;
 }
 else if (room == room_caverns_3)
 {

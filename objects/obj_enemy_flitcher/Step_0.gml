@@ -68,7 +68,8 @@ if (active == 1)
 		sprite_index = spr_enemy_flitcher_hurt
 		destroy(body);
 		battle_sparecloud(id);
-		audio_play(snd_battle_spared, 0, VOLUME_SOUND);
+		if (audio_playing(snd_battle_spared) == false)
+			audio_play(snd_battle_spared, 0, VOLUME_SOUND);
 		global.chara_spares += 1;
 		global.world_sparedpopulation[global.chara_world] += 1;
 		controller.battle_mnyreward += controller.enemy_reward_mny[myself];
@@ -149,7 +150,7 @@ if (active == 1)
 			else if (emotion == 2)
 			{
 				body.sprite_index = spr_enemy_flitcher;
-				body.image_speed = 2;
+				body.image_speed = 3;
 			}
 		}
 	}

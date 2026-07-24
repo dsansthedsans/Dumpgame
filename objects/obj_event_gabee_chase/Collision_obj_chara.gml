@@ -1,6 +1,7 @@
 
 if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 {
+	game = obj_GAME_CONTROLLER;
 	chara = obj_chara;
 	characolorvalue = 255;
 	if (global.flag[2] == 1)
@@ -8,10 +9,10 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 	
 	bullet_length = 6;
 	
-	bullet_time[0] = 35;
-	bullet_time[1] = 65;
-	bullet_time[2] = 30;
-	bullet_delay[0] = 30;
+	bullet_time[0] = 32;
+	bullet_time[1] = 48;
+	bullet_time[2] = 32;
+	bullet_delay[0] = 16;
 	bullet_delay[1] = 0;
 	bullet_delay[2] = 0;
 	bullet_format[0] = 0;
@@ -23,14 +24,33 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 	eyes_index = 0;
 	eyes_alpha = 1;
 	eyes_y = 100;
-	
 	jumpsnd = 0;
 	
-	if (global.flag[59] == 0)
+	gate =
+	{
+		active : false,
+		sprite : spr_overworld_sidegate,
+		x : 305,
+		y : 220,
+		height : 0,
+		heightMax : 101,
+		heightTime : 30,
+		object : undefined,
+	}
+	
+	/* debug
+	chara.x = 720;
+	chara.y = 200;
+	m6.x = 670;
+	m6.y = 200;
+	global.flag[59] = true;
+	*/
+	
+	if (global.flag[59] == false)
 	{
 		chara_facing(RIGHT)
-		chara_change(-1, 0, 0, 1, 0, 0, 1);
-		movetopoint(309, 195, 60, chara);
+		chara_change(-1, false, false, true, false, false, true);
+		movetopoint(310, 195, 60, chara);
 		chara_mover = thismover;
 		chara.image_speed = 0.25;
 		
@@ -42,70 +62,8 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 		
 		con = 1;
 	}
-	else if (global.flag[60] == 0)
+	else if (global.flag[60] == false)
 		con = 5;
-	else if (global.flag[60] == 1)
-	{
-		if (global.indebug == 0)
-			destroy(id);
-		else
-		{
-			con = 41;
-			bullet_delay[0] = 0;
-			global.indebug = 0;
-			global.chara_openmenu = 0;
-			global.chara_canpause = 0;
-			global.chara_hpmenu = 1;
-			create(-20, -20, obj_overworld_heart);
-		}
-	}
+	else
+		destroy(id);
 }
-
-/*
-if (global.chara_move == 1 && global.chara_menu == 0 && global.chara_cutscene == 0)
-{
-	if (con == 0)
-	{
-		chara = obj_chara;
-		if (global.flag[2] == 1)
-			m6 = global.side[0];
-		bullet_delay = 0;
-		bullet_length = 6;
-		bullet_format = 0;
-	}
-	
-	if (global.flag[59] == 0 && con == 0)
-	{
-		global.chara_move = 0;
-		global.chara_facing = RIGHT;
-		global.chara_cutscene = 1;
-		movetopoint(309, 195, 60, chara);
-		chara_mover = thismover;
-		chara.image_speed = 0.25;
-		
-		side_change(0, 0, 0, -1, -1);
-		global.side_facing[0] = RIGHT;
-		movetopoint(310, 215, 60, m6);
-		m6_mover = thismover;
-		m6.image_speed = 0.25;
-		
-		con = 1;
-	}
-	else if (con == 0 && global.flag[60] == 0)
-		con = 5;
-	else if (con == 0 && global.flag[60] == 1)
-	{
-		if (global.indebug == 0)
-			destroy(id);
-		else
-		{
-			con = 41;
-			global.chara_openmenu = 0;
-			global.chara_canpause = 0;
-			global.chara_hpmenu = 1;
-			create(-20, -20, obj_overworld_heart);
-			bullet_delay = 60;
-		}
-	}
-}
-*/

@@ -1,7 +1,7 @@
 
 // desenhar corpo
 var _chara_y = (y + (2 * inwater));
-if (inwater == 0)
+if (inwater == false)
 	draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, image_alpha);
 else
 	draw_sprite_part_ext(sprite_index, image_index, 0, 0, sprite_width, (sprite_height - 2), (x - (sprite_width / 2) + 0.5), (_chara_y - (sprite_height - 2) - 2), xscale, yscale, image_blend, image_alpha);	
@@ -17,14 +17,13 @@ if (global.chara_facing != -1 && global.chara_facing != FALLEN && global.chara_f
 	var _extrayfactor = 0;
 	if (image_index >= 1 && image_index < 2) || (image_index >= 3 && image_index < 4)
 		_extrayfactor = 1;
+	if (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
+		_extrayfactor = 0;
 	if (chara_murder() >= 1)
 	{
 		var _sprite = spr_chara_genoshadow;
 		if (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
-		{
 			_sprite = asset_get_index($"{sprite_get_name(sprite_index)}_genoshadow");
-			_extrayfactor = 0;
-		}
 		draw_sprite_ext(_sprite, global.chara_facing, x, (y + _extrayfactor), xscale, yscale, image_angle, image_blend, (image_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
 	}
 	var _armor = 0;

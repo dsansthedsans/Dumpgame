@@ -15,8 +15,8 @@
   "name":"obj_intro_controller_old",
   "overriddenProperties":[],
   "parent":{
-    "name":"[!] DELETE !!!!!",
-    "path":"folders/[!] DELETE !!!!!.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "parentObjectId":null,
   "persistent":false,

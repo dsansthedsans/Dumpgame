@@ -52,8 +52,8 @@ gate =
 {
 	active : false,
 	sprite : spr_overworld_bottomgate,
-	x : 180,
-	y : (1340 + 5),
+	x : 285,
+	y : 220,
 	width : 0,
 	widthMax : 41,
 	widthTime : 30,

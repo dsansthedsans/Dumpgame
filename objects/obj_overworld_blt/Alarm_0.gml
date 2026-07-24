@@ -11,24 +11,21 @@ dmg = 4;
 
 if (type >= 1 && type < 2) // Gabee's chase
 {
+	direction = 0;
 	image_alpha = 0;
 	delay = 30;
 	spd = 6;
 	chara_x = chara.x;
-	
 	if (type == 1.1)
-	{
 		direction = 180
-		image_angle = 180;
-	}
 	if (type == 1.2)
 	{
-		image_angle = 270;
-		image_alpha = 1;
 		direction = 270;
+		image_alpha = 1;
 		delay = 0;
-		spd = 2;
+		spd = 1.5;
 	}
+	image_angle = direction;
 }
 
 /*

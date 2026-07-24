@@ -20,14 +20,14 @@ function battle_getgroup()
 		{
 			battle_group = choose(irandom_range(2, 4), irandom_range(7, 9));
 			if (global.flag[37] == 1 && global.flag[39] == 1)
-				battle_group = irandom_range(7, 9);
+				battle_group = ((irandom_range(1, 5) != 1) ? irandom_range(7, 9) : 12);
 		}
 		if (global.battle_nextgroup == 0)
 			global.flag[18] = 1;
 	}
 	else if (global.chara_world == WORLD_CAVERNS) // caverns
 	{
-		battle_group = 12;
+		battle_group = 13;
 	}
 	if (global.world_curpopulation[global.chara_world] <= 0) // but nobody came
 		battle_group = 0;
@@ -171,17 +171,16 @@ function battle_setupgroup()
 		enemy_type[1] = 4;
 		enemy_obj[1] = instance_create_layer(defaultx[2], defaulty, "Instances", obj_enemy_flitcher);
 	}
-	
 	if (battle_group == 12) // Armsguy, Trashguy, Flitcher
 	{
 		enemy_type[0] = 2;
 		enemy_obj[0] = instance_create_layer(defaultx[3] + 20, defaulty, "Instances", obj_enemy_armsguy);
 		
 		enemy_type[1] = 3;
-		enemy_obj[1] = instance_create_layer(defaultx[4], defaulty, "Instances", obj_enemy_trashguy);
+		enemy_obj[1] = instance_create_layer(defaultx[4] + 25, defaulty, "Instances", obj_enemy_trashguy);
 		
 		enemy_type[2] = 4;
-		enemy_obj[2] = instance_create_layer(defaultx[5] - 40, defaulty, "Instances", obj_enemy_flitcher);
+		enemy_obj[2] = instance_create_layer(defaultx[5] - 5, defaulty, "Instances", obj_enemy_flitcher);
 	}
 	
 	if (battle_group == 13) // Rhonhey

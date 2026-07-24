@@ -45,9 +45,6 @@ if (type == 6) // Broken Clock
 	
 	part_length = 20;
 	explosion_alpha = 1;
-	
-	if (enemy.skip == 1)
-		movement = 1;
 }
 
 if (type == 7) // Rhonhey

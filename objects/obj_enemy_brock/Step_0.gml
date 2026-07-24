@@ -70,7 +70,8 @@ if (active == 1)
 		image_alpha = 0.5;
 		destroy(body);
 		battle_sparecloud(id);
-		audio_play(snd_battle_spared, 0, VOLUME_SOUND);
+		if (audio_playing(snd_battle_spared) == false)
+			audio_play(snd_battle_spared, 0, VOLUME_SOUND);
 		global.chara_spares += 1;
 		global.world_sparedpopulation[global.chara_world] += 1;
 		controller.battle_mnyreward += controller.enemy_reward_mny[myself];
@@ -82,8 +83,6 @@ if (active == 1)
 	if (controller.enemy_spare[myself] >= 100)
 	{
 		controller.battle_music = -1;
-		if (body.tense == true)
-			controller.battle_music = mus_brock_sad;
 		controller.enemy_def[myself] = -10293;
 		obj_battle_bg.waveFreeze = true;
 	}

@@ -1,13 +1,10 @@
-
 if (active == 1)
 {
 	draw_set_alpha(image_alpha);
-
 	if (type == 2000) // Toilet
 	{
 		draw_self();	
 	}
-	
 	if (type == -1) || (type == -10) // Test
 	{	
 		draw_self();
@@ -18,14 +15,12 @@ if (active == 1)
 		draw_sprite_ext(spr_enemy_test_hand, 0, (x + sprite_width), (_y + (sin(siner / 1.5) * 8)), 2, 2, 0, c_white, image_alpha);
 		draw_sprite_ext(spr_enemy_test_hand, 0, x, (_y - (sin(siner / 2) * 8)), 2, 2, 0, c_white, image_alpha);
 	}
-
 	if (type >= 1 && type <= 5) // Dummy, Armsguy, Trashguy, Flitcher, Eyecrush
 	{
 		draw_self();
 		if (type == 1) // Dummy
 			image_index = stage;
 	}
-
 	if (type == 6) // Broken Clock
 	{
 		// shock
@@ -277,17 +272,12 @@ if (active == 1)
 				explosion_alpha = 0;
 		}
 	}
-	
 	if (type == 7) // Rhonhey
 	{
 		head_index += (sprite_get_speed(body_spr[0]) / 60);
 		siner += 0.1;
-		
-		// body's outline
 		for (var i = (body_length - 1); i >= 1; i--)
 			draw_sprite_ext(body_spr[i], 1, body_x[i], (body_y[i] + (sin(siner + i) * 10)), body_scale[i], body_scale[i], 0, c_white, 1);		
-		
-		// head; body's main
 		for (var i = (body_length - 1); i >= 0; i--)
 		{
 			var _index = 0;
@@ -295,9 +285,7 @@ if (active == 1)
 				_index = head_index;
 			draw_sprite_ext(body_spr[i], _index, body_x[i], (body_y[i] + (sin(siner + i) * 10)), body_scale[i], body_scale[i], 0, body_color[i], 1);		
 		}
-		
 	}
-	
 	if (type == 1000) // TROLLFACE
 	{
 		if (enemy.hurt == 0)

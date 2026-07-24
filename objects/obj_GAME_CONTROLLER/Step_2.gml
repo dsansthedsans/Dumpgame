@@ -25,7 +25,7 @@ if (exists(chara) == 1 && global.chara_camera_move == 1)
 		if (chara.x < 220 && !(hstairs.active == 1 && hstairs.infloor == 1))
 			cam_y = clamp(cam_y, 0, 40);
 	}
-	if (room == room_corridors_18 && global.flag[60] == 1 && global.flag[61] == 0)
+	if (room == room_corridors_18)
 		cam_y = clamp(cam_y, 60, (room_height - 240));
 }
 var _xx = cam_x;

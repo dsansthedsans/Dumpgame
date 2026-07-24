@@ -32,7 +32,6 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "unused_room_corridors_16",		"Crossed Paths"); // Save
 	ds_map_add(global.textdata_en, "unused_room_corridors_16_A",	"Cave Entrance");
 	ds_map_add(global.textdata_en, "unused_room_corridors_16_B",	"Subway Entrance");
-	ds_map_add(global.textdata_en, "unused_room_corridors_17",	"Exit");
 	ds_map_add(global.textdata_en, "unused_room_happybirthday",		"Happy Birthday");
 	
 	// start
@@ -217,12 +216,12 @@ function TEXTDATA_EN()
 	
 	// chapters
 	ds_map_add(global.textdata_en, "chapter_main", "Chapter");
-	ds_map_add(global.textdata_en, "chapter_number_0", "I"); //corirdors
-	ds_map_add(global.textdata_en, "chapter_number_1", "II"); //caverns
-	ds_map_add(global.textdata_en, "chapter_number_2", "III"); //centralcity
-	ds_map_add(global.textdata_en, "chapter_name_0", "FALLEN ANGEL"); //corirdors
-	ds_map_add(global.textdata_en, "chapter_name_1", "ROCK BOTTOM"); //caverns
-	ds_map_add(global.textdata_en, "chapter_name_2", "CIVILIZED CHAOS"); //centralcity
+	ds_map_add(global.textdata_en, "chapter_number_0", "I");
+	ds_map_add(global.textdata_en, "chapter_number_1", "II");
+	ds_map_add(global.textdata_en, "chapter_number_2", "III");
+	ds_map_add(global.textdata_en, "chapter_name_0", "FALLEN ANGEL");
+	ds_map_add(global.textdata_en, "chapter_name_1", "ROCK BOTTOM");
+	ds_map_add(global.textdata_en, "chapter_name_2", "CIVILIZED CHAOS");
 	
 	// items
 	ds_map_add(global.textdata_en, "item_name_none",		"None");
@@ -648,30 +647,44 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "event_brock_battle_1_0", "+S1* SHUT UP!!!!!!!!!!");
 	
 	ds_map_add(global.textdata_en, "event_brock_battle_2_0", "+S1* AS I WAS SAYING...");
-	ds_map_add(global.textdata_en, "event_brock_battle_2_1", "+S1* YOU THINK YOU CAN JUST PASS BY ME AND IGNORE MY EXISTENCE?!?");
+	ds_map_add(global.textdata_en, "event_brock_battle_2_1", "+S1* DO YOU THINK YOU CAN JUST WALK PAST ME AND IGNORE MY EXISTENCE?!?");
 	ds_map_add(global.textdata_en, "event_brock_battle_2_2", "+S1* ABSOLUTELY NO WAY,^1 BUDDY.^3&* NOT AFTER EVERYTHING YOU HUMANS DID TO ME.");
-	ds_map_add(global.textdata_en, "event_brock_battle_2_3", "+S1* I'VE BEEN WAITING RIGHT HERE FOR MONTHS,^3 COUNTING DOWN THE SECONDS UNTIL THIS DAY...");
-	ds_map_add(global.textdata_en, "event_brock_battle_2_3", "+S1* THE DAY I'D FINALLY GET MY REVENGE!!!!");
-	ds_map_add(global.textdata_en, "event_brock_battle_2_4", "+S1* AND NOW'S THE TIME TO MAKE IT HAPPEN...!");
+	ds_map_add(global.textdata_en, "event_brock_battle_2_3", "+S1* I'VE BEEN COUNTING DOWN THE SECONDS UNTIL THIS DAY,^1 RIGHT HERE,^3 FOR MONTHS!!!!");
+	ds_map_add(global.textdata_en, "event_brock_battle_2_4", "+S1* SO LET'S MAKE THE WAIT WORTH IT...!");
+	//ds_map_add(global.textdata_en, "event_brock_battle_2_3", "+S1* THERE'S NO TURNING BACK THE HANDS OF TIME.");
+	//ds_map_add(global.textdata_en, "event_brock_battle_2_3", "+S1* YOU WOULDN'T WANNA RUIN THIS MOMENT FOR ME,^1 WOULD YOU?!");
+	//ds_map_add(global.textdata_en, "event_brock_battle_2_", "+S1* AND NOW'S THE TIME TO SAY GOODBYE...!");
+	//ds_map_add(global.textdata_en, "event_brock_battle_2_", "+S1* AND NOW'S THE TIME TO MAKE IT HAPPEN...!");
 	/*
-	//ds_map_add(global.textdata_en, "event_brock_prebattle_2_4", "+S1* THE DAY I'D FINALLY GET MY REVENGE...!");
-	//ds_map_add(global.textdata_en, "event_brock_prebattle_2_5", "+S1* AND HERE.^2 YOU.^2 ARE!!!!^1&* YOU HAVE NO IDEA OF HOW HAPPY I AM TO SEE YOU!!!!!");
-	ds_map_add(global.textdata_en, "event_brock_prebattle_1_6", "* LET'S MAKE THE WAIT WORTH IT...!");
+	ds_map_add(global.textdata_en, "event_brock_battle_2_3", "+S1* I'VE BEEN WAITING RIGHT HERE FOR MONTHS,^3 COUNTING DOWN THE SECONDS UNTIL THIS DAY...");
+	ds_map_add(global.textdata_en, "event_brock_battle_2_4", "+S1* THE DAY I'D FINALLY GET MY REVENGE...!");
+	ds_map_add(global.textdata_en, "event_brock_battle_2_5", "+S1* AND HERE.^2 YOU.^2 ARE!!!!^1&* YOU HAVE NO IDEA OF HOW HAPPY I AM TO SEE YOU!!!!!"
+	*/
+	/*
 	ds_map_add(global.textdata_en, "event_brock_prebattle_1_4", "* NOW,^1 IN CASE YOU'RE WONDERING WHAT I'M GONNA DO TO YOU EXACTLY...");
 	ds_map_add(global.textdata_en, "event_brock_prebattle_1_5", "* WELL...^1&* FOR THE SAKE OF ARGUMENT...^1&* LET'S SAY THAT...");
 	ds_map_add(global.textdata_en, "event_brock_prebattle_1_6", "* YOU'LL FIND OUT VERY SOON...!");
 	*/
 	
 	var i = 0;
-	
-	// ITS BEN a while since lesat time i trusted someone. / It's weird to trust someone again. / I'd forgotten how to trust other people
-	/*ds_map_add(global.textdata_en, "event_brock_battle_3_2", "+S1* I'M THE ONE THAT SHOULD BE SORRY.^1&* YOU DIDN'T DO ANYTHING WRONG.");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* YOU...^2 YOU SPARED ME?^2&* EVEN AFTER I TRIED&TO KILL YOU?!");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* WHY WOULD YOU TRUST ME?!^2&* WHY WOULD YOU RISK YOUR OWN LIFE JUST FOR ME?!");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* LOOK,^1 YOU SHOULDN'T SAY SORRY.^1&* YOU DIDN'T DO ANYTHING WRONG,^2&BUT I DID.^2 NOT YOU,^1 ME.");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* AND I'M SORRY.^1 I REALLY AM.^2&* I'M REALLY,^1 REALLY SORRY...!");
+	/*
+	ds_map_add(global.textdata_en, "event_brock_battle_3_2", "+S1* I'M THE ONE THAT SHOULD BE SORRY.^1&* YOU DIDN'T DO ANYTHING WRONG.");
 	ds_map_add(global.textdata_en, "event_brock_battle_3_3", "+S1* I...");
 	ds_map_add(global.textdata_en, "event_brock_battle_3_4", "+S1* I DID.");
 	ds_map_add(global.textdata_en, "event_brock_battle_3_5", "+S1* I-^1I WAS SO SCARED.^2&* SO SCARED OF BEING HURT AGAIN,^1 SCARED OF BEING...^2 USED.");
 	ds_map_add(global.textdata_en, "event_brock_battle_3_6", "+S1* I CAN'T GO THROUGH IT AGAIN.");
 	ds_map_add(global.textdata_en, "event_brock_battle_3_7", "+S1* I-^3I'M SORRY,^1 I'M REALLY SORRY.^1&* I DON'T KNOW WHY I DID THAT.");
 	ds_map_add(global.textdata_en, "event_brock_battle_3_8", "+S1* I DON'T KNOW.^2 I DON'T KNOW.");
+	
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* YOU REALLY ARE SPECIAL,^1 YOU KNOW THAT...?^2&* YOU'RE NOT LIKE THEM.");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* YOU DID THE RIGHT THING EVEN WHEN YOU DIDN'T WANT TO.");
+	
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* WHY?!^2&* WHY TRUST ME?!^2&* WHY RISK YOUR OWN LIFE FOR ME?!\\");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* HOW COULD YOU BE SO...^2NAIVE?");
 	*/
 	
 	/*
@@ -756,8 +769,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_0", "* (You wave to Flitcher.)^3&* (It waves back at you.)");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_1", "* (How did it wave back if it doesn't even have hands?)");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_2", "* (This is one of the weirdest mysteries of All Time.)");
-	ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.");
-	//ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.^4^4^4^4&* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
+	ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.^4&* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
 	
 	ds_map_add(global.textdata_en, "room_corridors_17_egg.0", "* (It's an egg.)");
 	ds_map_add(global.textdata_en, "room_corridors_17_egg.1", "* (It's unclear why there's an egg beside the tree.)");
@@ -785,6 +797,20 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "event_gabee_chase.1.3", "* You see,^1 I may have not been as hone()");
 	//ds_map_add(global.textdata_en, $"event_gabee_chase.3.{m++}", "* (You hear a distant voice.)");
 	ds_map_add(global.textdata_en, $"event_gabee_chase.3.{m++}", "* ");
+	
+	// event_cave_armsguy
+	ds_map_add(global.textdata_en, "unused_event_cave_armsguy.0", "* Ah!^3 You Here Too!");
+	ds_map_add(global.textdata_en, "unused_event_cave_armsguy.1", "* Look Like I Not Da Only That Try To Jump!^1&* Ha ha!");
+	
+	// room_cave_3
+	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.0", "* If I Was Little Closer To Hole,^3 I Jump To Other Side!");
+	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.1", "* But You??^1&* You Weak.^3 Very!");
+	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.2", "* You Stupid Or Sumthin??");
+	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.2.1", "At least I have legs.");
+	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.2.2", "It was a cutscene");
+	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.1.0", "* ...Ahhh I Kill You!!!!!!");
+	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.2.0", "* ...^2&* What??");
+	
 	
 	// hopped, approached, drew, comes, enters, crawled, came, appeared	
 	// battle main
@@ -924,8 +950,8 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_act_result_armsguy_2", "* (You punch Armsguy's face pretending to use your full strength.)");
 
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_0", "+F1Let Me Be Slimy.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_1", "+F1Punch Me In Da Face.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_2", "+F1Use You Strength In Me.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_1", "+F1Punch Me In Da Face!");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_2", "+F1Use You Strength In Me!");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_3", "+F1You Never Be Strong As Me.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_4", "+F1You Should Go To Da Gym.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_5", "+F1What?^1&\"Leg Day\"?");
@@ -936,13 +962,13 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_9", "+F1I Believe In You Potential.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_10", "+F1You Good.");
 	
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_0", "+F1Back Off Dumbass.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_1", "+F1Take You Hands Off Me.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_2", "+F1Don Touch&My Arms.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_0", "+F1Back Off Dumbass!!!!");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_1", "+F1Take You Hands Off Me!!!!");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_2", "+F1Don Touch&My Arms!!!!");
 		
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_0", "+F1Ouch!^1 Keep Going.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_1", "+F1That How&You Do It.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_2", "+F1Congrats,^1 I Love It.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_2", "+F1Congrats,^1 I Love It!");
 	
 	// Trashguy battle
 	ds_map_add(global.textdata_en, "battle_main_trashguy", "* Trashguy rolled in your way!");
@@ -992,6 +1018,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_main_flitcher_2", "* Flitcher is daydreaming.");
 	ds_map_add(global.textdata_en, "battle_main_flitcher_3", "* Flitcher doesn't really know why he's here.");
 	ds_map_add(global.textdata_en, "battle_main_flitcher_4", "* Flitcher is just there.");
+	ds_map_add(global.textdata_en, "battle_main_flitcher_5", "* Flitcher doesn't think,^3 therefore he isn't.");
 	
 	ds_map_add(global.textdata_en, "battle_act_flitcher_1", "Talk");
 	ds_map_add(global.textdata_en, "battle_act_flitcher_2", "Wave");
@@ -1168,34 +1195,20 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2YOU'RE NOT THE ONE WHO BROKE ME.");
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2YOU'RE JUST&A CHILD.");
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M THE ONE THAT'S HURTING YOU.");
+	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M THE ONE THAT'S TRYING TO KILL YOU.\\");
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I-I'M THE ONE THAT'S...");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2T-THAT'S...");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M...");
+	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2T-THAT'S,^2 UH...");
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2...");
-	/*
+	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M...");
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I-I'M JUST LIKE THEM,^2 AREN'T I...?");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M HURTING YOU...");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2THE SAME WAY THEY HURT M-ME...!");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M JUST LIKE THEM...!");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I-I'M JUST LIKE THEM...");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M...");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2...");
-	*/
+	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M JUST LIKE T-THEM.");
 	
-	// Armsguy, Armsguy battle
 	ds_map_add(global.textdata_en, "battle_main_armsguy_armsguy", "* Armsguys jumped in your way!");
-	
-	// Trashguy, Armsguy battle
 	ds_map_add(global.textdata_en, "battle_main_trashguy_armsguy", "* Trashguy rolled in your way!^1&* Armsguy jumped in to help them!");
-	
-	// Armsguy, Flitcher battle
 	ds_map_add(global.textdata_en, "battle_main_armsguy_flitcher", "* Armsguy jumped in your way!^1&* Flitcher is here too,^3 somehow.");
-	
-	// Eyecrush, Armsguy battle
-	ds_map_add(global.textdata_en, "battle_main_eyecrush_armsguy", "* Eyecrush crawled into your way!^1&* Armsguy jumped in to help them!");
-	
-	// Eyecrush, Flitcher battle
-	ds_map_add(global.textdata_en, "battle_main_eyecrush_flitcher", "* Eyecrush crawled into your way!^1&* Flitcher thinks one big eye isn't enough.");
+	ds_map_add(global.textdata_en, "unused_battle_main_eyecrush_armsguy", "* Eyecrush crawled into your way!^1&* Armsguy jumped in to help them!");
+	ds_map_add(global.textdata_en, "unused_battle_main_eyecrush_flitcher", "* Eyecrush crawled into your way!^1&* Flitcher thinks one big eye isn't enough.");
+	ds_map_add(global.textdata_en, "battle_main_armsguy_trashguy_flitcher", "* The whole gang showed up!");
 	
 	// Rhonhey
 	ds_map_add(global.textdata_en, "battle_main_rhonhey", "* Rhonhey is ready to&eat you alive.");

@@ -206,8 +206,7 @@ else if (result == 2) // moveble
 		if (myfacing == UP)
 			mytargety = (y - mydist);	
 		if (myfacing == DOWN)
-			mytargety = (y + mydist);	
-			
+			mytargety = (y + mydist);
 		var i = 0;
 		xx = x;
 		yy = y;
@@ -228,13 +227,10 @@ else if (result == 2) // moveble
 					_amt = 1;
 				yy += _amt;
 			}
-			
 			if (place_meeting(xx, yy, obj_solid_block_moveable) == 1)
 				touched = 1;
-			
 			i += 1;
 		}
-		
 		if (canmove == 0) || (touched == 1)//(mytargetx != -1 && place_meeting(mytargetx, y, obj_solid_block_moveable) == 1) || (mytargety != -1 && place_meeting(x, mytargety, obj_solid_block_moveable) == 1)
 		{
 			con = 0;
@@ -267,7 +263,6 @@ else if (result == 2) // moveble
 				x = mytargetx;
 			else if (mytargety != -1)
 				y = mytargety;
-		
 			if (room == room_corridors_9)
 			{
 				global.flag[xflagid] = x;
@@ -285,23 +280,24 @@ else if (result == 5) // itemDropoed
 {
 	if (con == 1)
 	{
-		debug(global.itemDropped[itemDropped_arrayPos]);
-		if (global.item[global.item_last] == -1)
+		debug($"--- itemDropped[itemDropped_arrayPos] = {global.itemDropped[itemDropped_arrayPos]} | struct_names_count(global.itemDropped[itemDropped_arrayPos]) = {struct_names_count(global.itemDropped[itemDropped_arrayPos])}");
+		if (global.item[global.item_last] == -1 && struct_names_count(global.itemDropped[itemDropped_arrayPos]) > 0)
 		{
 			global.item[global.item_last] = global.itemDropped[itemDropped_arrayPos].item;
 			global.itemDropped[itemDropped_arrayPos] = {};
 			writer("itemDropped_pickup", -1, -1, [item_name(global.item[global.item_last], "")]);
-			audio_play(snd_item, 0, VOLUME_SOUND);
+			visible = false;
 			image_alpha = 0;
+			audio_play(snd_item, 0, VOLUME_SOUND);
 		}
 		else
 			writer("itemDropped_cantpickup", -1, -1);
 		con = 2;
 	}
-	if (con == 2 && exists(thiswriter) == 0)
+	if (con == 2 && exists(thiswriter) == false)
 	{
 		chara_change(-1, 1, 1, -1, 1, 1, -1);
-		if (image_alpha == 0)
+		if (visible == false) || (image_alpha == 0)
 			destroy(id);
 		con = 0;
 	}

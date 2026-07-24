@@ -77,33 +77,29 @@ if (type == 3)
 		draw_set_alpha(0.125 + (0.125 / 2) + (0.0075 * i));
 		/*Top*/ draw_rectangle(60, (topY - i), 160, (topY - i), false);
 		/*Top*/ draw_rectangle(180, (topY - i), 260, (topY - i), false);
+		draw_set_alpha(0.1 + (0.01 * i));
+		/*Right*/ draw_rectangle((rightX + i), 60, (rightX + i), 160, false);
 		draw_set_alpha(0.125 + (0.125 / 2) + (0.01 * i));
 		/*Left*/ draw_rectangle((leftX - i), 40, (leftX - i), 180, false);
-		/*Right*/ draw_rectangle((rightX + i), 60, (rightX + i), 160, false);
 		/*Bottom*/ draw_rectangle(60, (bottomY + i), 240, (bottomY + i), false);
 	}
 }
 if (type == 4)
 {
 	draw_set_color(c_black);
-	for (var i = 0; i < 60; i++)
+	for (var i = 0; i < room_width; i++)
 	{
-		var _alpha = (0.35 + (0.01 * i));
-		_alpha = clamp(_alpha, 0.35, 0.85);
-		draw_set_alpha(_alpha);
-		draw_rectangle(i, 300, i, 399, 0);
+		draw_set_alpha(clamp((0.075 + (0.005 * i)), 0, 0.5));
+		draw_rectangle((rightX + i), rightY, (rightX + i), (rightY + rightHeight), false);
 	}
-	
-	draw_set_alpha(0.85);
-	draw_set_color(c_black);
-	draw_rectangle(0, 400, 260, 459, 0);
-	draw_rectangle(60, 0, room_width, 399, 0);
+	draw_set_alpha(0.5);
+	draw_rectangle(rightX, 0, room_width, (rightY - 1), false);
+	draw_rectangle(rightX, (rightY + rightHeight + 1), room_width, room_height, false);
 }
 if (type == 5)
 {
-	draw_set_alpha(0.5);
+	draw_set_alpha(0.4);
 	draw_set_color(c_black);
-	
 	draw_rectangle(0, 0, room_width, room_height, 0);
 }
 draw_set_alpha(1);

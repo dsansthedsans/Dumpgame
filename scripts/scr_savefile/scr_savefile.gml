@@ -133,7 +133,6 @@ function savefile_read(_savefile)
 	thisfile = _file;
 	return thisfile;
 }
-
 function savefile_load(_savefile)
 {
 	savefile_read(argument0);

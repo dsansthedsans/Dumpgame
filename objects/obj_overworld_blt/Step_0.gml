@@ -10,11 +10,11 @@ if (active == 1)
 			speed = spd;
 		else
 		{
-			if (type == 1.0 && exists(heart) == true)
-			{
-				image_angle = point_direction(x, y, heart.x, heart.y);
-				direction = image_angle;
-			}
+			//if (type == 1.0 && exists(heart) == true)
+			//{
+			//	image_angle = point_direction(x, y, heart.x, heart.y);
+			//	direction = image_angle;
+			//}
 			if (type == 1.1)
 				x = ((chara.x - 160) + 320 - 40);
 			delay -= 1;

@@ -68,7 +68,8 @@ if (active == 1)
 		sprite_index = spr_enemy_armsguy_hurt;
 		destroy(body);
 		battle_sparecloud(id);
-		audio_play(snd_battle_spared, 0, VOLUME_SOUND);
+		if (audio_playing(snd_battle_spared) == false)
+			audio_play(snd_battle_spared, 0, VOLUME_SOUND);
 		controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 		controller.enemy_type[myself] = 0;
 		spared = 0;

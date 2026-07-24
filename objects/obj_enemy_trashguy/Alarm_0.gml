@@ -19,7 +19,7 @@ body_ydif = 0;
 
 bubble_x = (x + sprite_width + 10);
 bubble_y = (y + (sprite_height / 2));
-if (controller.battle_group == 8)
+if (controller.battle_group >= 7)
 {	
 	bubble_x = (orig_x - 1);
 	bubble_y = (y - 4);

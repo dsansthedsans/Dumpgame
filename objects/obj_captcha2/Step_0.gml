@@ -7,10 +7,15 @@ for (var i = 0; i < 3; i++)
 	if (puzzle_complete[i] == 0 && moveable_curx[i] == moveable_targetx[i] && moveable_cury[i] == moveable_targety[i])
 	{
 		alarm[0] = 30;
-		var _winflagid = (31 + i);
-		global.flag[_winflagid] = 1;
+		global.flag[31 + i] = 1;
 		if (global.flag[31] == 1 && global.flag[32] == 1 && global.flag[33] == 1)
+		{
 			global.flag[34] = 1;
+			chara_change(-1, false, false, true, false, false, true);
+			chara_stop();
+			party_change(0, -1, -1);
+			party_stop(0);
+		}
 		moveable[i].canmove = 0;
 		puzzle_complete[i] = 0.25;
 	}
@@ -38,5 +43,11 @@ for (var i = 0; i < 3; i++)
 			audio_stop(snd_option_movehold);
 			destroy(bridge_wall[i]);
 		}
+	}
+	if (puzzle_complete[i] >= 0.5 && i == 2 && thiswriter != undefined && exists(thiswriter) == false)
+	{
+		chara_change(-1, true, true, false, true, true, true);
+		party_change(0, 0, -1);
+		thiswriter = undefined;
 	}
 }
