@@ -187,12 +187,12 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 		if (instance_exists(obj_crazycat) == true && obj_crazycat.cat_dancing == 1)
 			music_set(0, mus_crazycat);
 	}
-	for (var i = 0; i < (global.music_length * exists(obj_chara_pause)); i++)
+	for (var i = 0; i < ((global.music_length - 2) * exists(obj_chara_pause)); i++)
 		music_paused[i] = true;
 }
 else
 {
-	for (var i = 0; i < (global.music_length - 1); i++)
+	for (var i = 0; i < (global.music_length - 2); i++)
 	{
 		music_paused[i] = true;
 		if (global.music[i] == mus_corridors && global.world_curpopulation[WORLD_CORRIDORS] <= 0 && global.flag[22] == false)
@@ -204,7 +204,12 @@ else
 			music_paused[i] = false;
 	}
 	if (exists(obj_battle_controller) == true)
-		music_set(3, obj_battle_controller.battle_music, 1, 0, 0, (1 - (0.025 * (chara_murder() == 1))), 1, 0.5);
+	{
+		control = obj_battle_controller;
+		music_set(3, control.battle_music, 1, 0, 0, (1 - (0.025 * (chara_murder() == 1))), 1, 0.5);
+		if (control.battle_group == 13)
+			music_set(4, snd_ambient_wind, 0.5, , , 0.25);
+	}
 }
 
 for (var i = 0; i < global.music_length; i++)

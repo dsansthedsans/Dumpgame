@@ -274,6 +274,33 @@ if (active == 1)
 	}
 	if (type == 7) // Rhonhey
 	{
+		siner++;
+		head_image += (1 / 30);
+		if (head_image >= 2)
+			head_image = 0;
+		var _x = (x + 48);
+		var _y = (y + 16);
+		var _scale = 2;
+		for (var i = 1; i >= 0; i--)
+		{
+			for (var b = 7; b >= 0; b--)
+			{
+				var _body_spr = spr_enemy_rhonhey_body;
+				var _body_scale = (_scale - (0.1 * b));
+				var _body_x = (_x + ((sprite_get_width(_body_spr) * _body_scale) / 2) - (dcos(-(35 * 2) + (b * 35)) * 75) + (fn_dcos(siner, (b * 5)) * 2.5));
+				var _body_y = (_y + ((sprite_get_height(_body_spr) * _body_scale) / 2) + (dsin(-(35 * 2) + (b * 35) - 20) * 75) + (fn_dsin(siner, (b * 5)) * 20));
+				var _body_color = merge_colour(c_white, c_black, (0.075 * b));
+				var _body_angle = (10 * (b + 1));
+				if (b >= 4)
+					_body_angle = (8 - (4 * (b - 4)));
+				draw_sprite_ext(_body_spr, i, _body_x, _body_y, _body_scale, _body_scale, _body_angle, _body_color, 1)
+			}
+			var _head_spr = spr_enemy_rhonhey_head;
+			var _head_x = (_x + (fn_dcos(siner, 0) * 5));
+			var _head_y = (_y - (sprite_get_height(_head_spr) * _scale) - 10 + (fn_dsin(siner, 0) * 35));
+			draw_sprite_ext(_head_spr, ((i * 2) + floor(head_image)), _head_x, _head_y, 2, 2, 0, c_white, 1);
+		}
+		/* old body
 		head_index += (sprite_get_speed(body_spr[0]) / 60);
 		siner += 0.1;
 		for (var i = (body_length - 1); i >= 1; i--)
@@ -285,6 +312,7 @@ if (active == 1)
 				_index = head_index;
 			draw_sprite_ext(body_spr[i], _index, body_x[i], (body_y[i] + (sin(siner + i) * 10)), body_scale[i], body_scale[i], 0, body_color[i], 1);		
 		}
+		*/
 	}
 	if (type == 1000) // TROLLFACE
 	{
@@ -298,8 +326,8 @@ if (active == 1)
 		var _body_yscale = (2 - (_sin / 6));
 		var _body_width = (sprite_get_width(_body_spr) * _body_xscale);
 		var _body_height = (sprite_get_height(_body_spr) * _body_yscale);
-		var _body_x = enemy.x;
-		var _body_y = enemy.y;
+		var _body_x = x;
+		var _body_y = y;
 		draw_sprite_ext(_body_spr, 0, _body_x, _body_y, _body_xscale, _body_yscale, 0, c_white, 1);
 		// arms
 		var _arm_spr = spr_enemy_troll_arm;

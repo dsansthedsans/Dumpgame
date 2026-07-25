@@ -465,6 +465,7 @@
     {"id":{"name":"spr_enemy_flitcher_scared","path":"sprites/spr_enemy_flitcher_scared/spr_enemy_flitcher_scared.yy",},},
     {"id":{"name":"spr_enemy_flitcher","path":"sprites/spr_enemy_flitcher/spr_enemy_flitcher.yy",},},
     {"id":{"name":"spr_enemy_rhonhey_body","path":"sprites/spr_enemy_rhonhey_body/spr_enemy_rhonhey_body.yy",},},
+    {"id":{"name":"spr_enemy_rhonhey_head_1","path":"sprites/spr_enemy_rhonhey_head_1/spr_enemy_rhonhey_head_1.yy",},},
     {"id":{"name":"spr_enemy_rhonhey_head_orig","path":"sprites/spr_enemy_rhonhey_head_orig/spr_enemy_rhonhey_head_orig.yy",},},
     {"id":{"name":"spr_enemy_rhonhey_head","path":"sprites/spr_enemy_rhonhey_head/spr_enemy_rhonhey_head.yy",},},
     {"id":{"name":"spr_enemy_test_body","path":"sprites/spr_enemy_test_body/spr_enemy_test_body.yy",},},

@@ -188,7 +188,7 @@ function battle_setupgroup()
 		battle_music = mus_battle0;
 		button_active = false;
 		enemy_type[0] = 7;
-		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty + 8), "Instances", obj_enemy_rhonhey);
+		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
 	}
 	
 	if (battle_group == 1000) // TROLLFACE

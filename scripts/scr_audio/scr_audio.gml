@@ -120,6 +120,8 @@ function audio_pitch(_audio, _pitch)
 		_asset = audio_sound_get_asset(_asset);
 	if (_asset == snd_bird_startfly)
 		_pitch *= irandom_range(1.25, 1.35);
+	if (_asset == mus_battle0)
+		_pitch *= 0.75;
 	audio_sound_pitch(_audio, _pitch);
 }
 

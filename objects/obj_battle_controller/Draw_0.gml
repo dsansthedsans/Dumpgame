@@ -99,26 +99,35 @@ if (button_active == true)
 }
 else
 {
+	var _chara_icon_spr = spr_chara_d;
+	var _chara_icon_width = sprite_get_width(_chara_icon_spr);
+	var _chara_icon_height = 16;
+	var _chara_icon_scale = 2;
+	draw_set_font(fnt_mars_18);
+	var _chara_name_text = global.chara_name;
+	var _chara_name_gapX = 8;
+	var _chara_name_width = string_width(_chara_name_text);
+	var _chara_name_height = string_height(_chara_name_text);
+	draw_set_font(fnt_mars_12);
+	var _chara_bar_gapX = 12;
+	var _chara_bar_width = (100 + (5 * (global.chara_lvl - 1)));
+	var _chara_y = (box_y + round(box_h / 2) + box_borderw);
+	var _chara_width = ((_chara_icon_width * _chara_icon_scale) + _chara_name_gapX + _chara_name_width + _chara_bar_gapX + _chara_bar_width + 4);
+	var _chara_icon_x = (320 - (_chara_width / 2)); //(box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
+	var _chara_icon_y = (_chara_y + 12);
+	var _chara_name_x = (_chara_icon_x + (_chara_icon_width * _chara_icon_scale) - 2 + _chara_name_gapX);
+	var _chara_name_y = (_chara_icon_y + ((_chara_icon_height * _chara_icon_scale) / 2) + 4);
+	var _chara_bar_x = (_chara_name_x + _chara_name_width + 1 + _chara_bar_gapX);
+	var _chara_bar_y = (_chara_name_y - (_chara_name_height / 2));
 	draw_set_alpha(1);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_left);
 	draw_set_font(fnt_mars_18);
-	var _chara_y = (box_y + round(box_h / 2) + box_borderw);
-	var _chara_icon_spr = spr_chara_d;
-	var _chara_icon_x = (box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
-	var _chara_icon_y = (_chara_y + 3);
-	var _chara_icon_height = 16;
-	var _chara_icon_scale = 2;
-	var _chara_name_text = global.chara_name;
-	var _chara_name_x = (_chara_icon_x + (sprite_get_width(_chara_icon_spr) * _chara_icon_scale) - 2 + 8);
-	var _chara_name_y = (_chara_icon_y + ((_chara_icon_height * _chara_icon_scale) / 2) + 4);
-	var _chara_bar_x = (_chara_name_x + string_width(_chara_name_text) + 1 + 16);
-	var _chara_bar_y = (_chara_y + 11);
-	draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, sprite_get_width(_chara_icon_spr), _chara_icon_height, _chara_icon_x, _chara_icon_y, _chara_icon_scale, _chara_icon_scale, c_white, 1);
+	draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, sprite_get_width(_chara_icon_spr), _chara_icon_height, round(_chara_icon_x), round(_chara_icon_y), _chara_icon_scale, _chara_icon_scale, c_white, 1);
 	if (chara_murder() >= 1)
-		draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, sprite_get_width(_chara_icon_spr), _chara_icon_height, _chara_icon_x, _chara_icon_y, _chara_icon_scale, _chara_icon_scale, c_white, ((chara_murder() == 1) ? 0.5 : 1));
-	draw_text_outline(_chara_name_x, _chara_name_y, _chara_name_text, c_white, 2, c_black);
-	draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, (100 + (5 * (global.chara_lvl - 1))), /*#FFDC31*/ #F29948, #DD2929, 1);
+		draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, sprite_get_width(_chara_icon_spr), _chara_icon_height, round(_chara_icon_x), round(_chara_icon_y), _chara_icon_scale, _chara_icon_scale, c_white, ((chara_murder() == 1) ? 0.5 : 1));
+	draw_text_outline(round(_chara_name_x), round(_chara_name_y), _chara_name_text, c_white, 2, c_black);
+	draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, round(_chara_bar_x), round(_chara_bar_y), _chara_bar_width, /*#FFDC31*/ #F29948, #DD2929, 1);
 }
 
 

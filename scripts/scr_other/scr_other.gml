@@ -1,4 +1,13 @@
 
+function fn_dcos(_value, _value_add)
+{
+	return ((dcos((_value + _value_add) * 5) * 0.5) + 0.5)
+}
+function fn_dsin(_value, _value_add)
+{
+	return ((dsin((_value + _value_add) * 5) * 0.5) + 0.5)
+}
+
 function key(_id)
 {
 	k = argument0;
@@ -496,97 +505,4 @@ function draw_battle_bar(__value_text, __value_current, __value_max, __bar_x, __
 function debug(_string)
 {
 	return show_debug_message(argument0);	
-}
-
-/*
-function dumpparticle_start()
-{
-	particle_pos = 0;
-	particle_max = 10000;
-	particle_delay = 0;
-	for (var i = 0; i < particle_max; i++)
-		particle[i] = -1;
-}
-function dumpparticle_manage()
-{
-	// create particles
-	if (global.visualeff == 1)
-	{
-		// create particles
-		if (particle_delay >= 20)
-		{	
-			// reset particles
-			if (particle_pos == particle_max)
-				dumpparticle_start();
-		
-			// create particles
-			for (var i = 0; i < 2; i++)
-			{
-				var z = (i + 1);
-				var _utheart = irandom(1000);
-				marker(irandom_range(0, room_width), 660, spr_dumpparticle_heart, 0, (1 / z), (1 / z), 0, 0, (irandom_range(80, 100) - 90), c_white, (-900 + (100 * i)));
-				p = thismarker;
-				p.mydir = choose(1, -1);
-				p.myfade = 0;
-				p.myalpha = (1 / z);
-				p.speed = (irandom_range(1.2, 2) / z);
-				p.direction = (image_angle + 90);
-				if (_utheart == 0)
-					p.image_index = 1;
-				particle[particle_pos] = p;
-				particle_pos += 1;
-			}
-			particle_delay = 0;
-		} 
-		
-		// manage particles appearance
-		else
-		{
-			particle_delay += 1;
-			
-			
-			//////////////////////////////////////
-			for (var i = 0; i < particle_max; i++)
-			{
-				if (particle[i] != -1 && exists(particle[i]) == 1)
-				{
-					with (particle[i])
-					{
-						image_angle += (0.01 * mydir);
-						direction = (image_angle + 90)
-	
-						if (y <= 240)
-							myfade += 0.005;
-						image_alpha = (myalpha - myfade)
-	
-						if (x <= -20) || (x >= (room_width + 20)) || (y <= -20) || (image_alpha <= 0)
-							destroy(id);
-					}
-				}
-			}
-			//////////////////////////////////////
-		}
-	}
-	
-	// destroy particles
-	else if (exists(obj_marker) == 1)
-	{
-		dumpparticle_start()
-		destroy(obj_marker);
-	}
-}
-*/
-
-function display_gui_fix()
-{	
-	var sc = (640 / camera_get_view_width(view_camera[0]));
-	
-	
-	
-	/*
-	var c = view_camera[0];
-	var cw = camera_get_view_width(c);
-	var ch = camera_get_view_height(c);
-	display_set_gui_size(cw, ch);
-	*/
 }

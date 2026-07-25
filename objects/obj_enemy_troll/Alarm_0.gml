@@ -14,8 +14,10 @@ normal_x = x;
 normal_y = y;
 
 body = -1;
-body_xdif = (sprite_width / 2);
-body_ydif = sprite_height;
+body_xdif = 0;
+body_ydif = 0;
+//body_xdif = (sprite_width / 2);
+//body_ydif = sprite_height;
 
 //bubble_x = (x + sprite_width - 20);
 //bubble_y = (y + (sprite_height / 2));

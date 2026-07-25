@@ -2,7 +2,7 @@
 function START_GAME()
 {		
 	randomize();
-	display_gui_fix();
+	display_set_gui_maximise(2, 2);
 	load_time = 180//irandom_range(180, 240);
 	
 	global.game_version = "v1.5.0-demo";
@@ -399,7 +399,7 @@ function start_flags()
 }
 function start_music()
 {
-	global.music_length = 4;
+	global.music_length = 5;
 	
 	for (var i = 0; i < global.music_length; i++)
 	{
@@ -549,7 +549,7 @@ function CHANGE_GAME()
 	var _change = true;
 	if (_change == true)
 	{
-		global.chara_name = "FRISK";
+		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
 		var _rm = room_corridors_18;

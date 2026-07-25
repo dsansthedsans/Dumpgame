@@ -13,7 +13,11 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"14e38104-2ab7-4aaf-8749-a2e56affd26b","name":"14e38104-2ab7-4aaf-8749-a2e56affd26b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"1964401a-e42d-461c-a7c5-c7ab7d9c176d","name":"1964401a-e42d-461c-a7c5-c7ab7d9c176d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bcf98a57-329b-4503-b950-bb19d9747787","name":"bcf98a57-329b-4503-b950-bb19d9747787","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"44a23934-82ba-41a5-b37f-967aac95affa","name":"44a23934-82ba-41a5-b37f-967aac95affa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"21da09b0-2774-46d2-9464-d86736373f9c","name":"21da09b0-2774-46d2-9464-d86736373f9c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b10cf733-732c-4ac4-87b6-4b878f121991","name":"b10cf733-732c-4ac4-87b6-4b878f121991","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5c176540-eadc-4bab-9ce0-6379cbbf94ac","name":"5c176540-eadc-4bab-9ce0-6379cbbf94ac","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":5,
   "gridY":5,
@@ -24,7 +28,7 @@
   ],
   "name":"spr_enemy_rhonhey_head",
   "nineSlice":null,
-  "origin":4,
+  "origin":0,
   "parent":{
     "name":"enemies",
     "path":"folders/[!] sprites/battle/enemies.yy",
@@ -50,7 +54,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":6.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -73,14 +77,26 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"14e38104-2ab7-4aaf-8749-a2e56affd26b","path":"sprites/spr_enemy_rhonhey_head/spr_enemy_rhonhey_head.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7ae7d7dc-0448-4af4-b803-bb0c530f9f43","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1964401a-e42d-461c-a7c5-c7ab7d9c176d","path":"sprites/spr_enemy_rhonhey_head/spr_enemy_rhonhey_head.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"82e77ca2-fbaa-4f13-8c8d-b989f866e672","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bcf98a57-329b-4503-b950-bb19d9747787","path":"sprites/spr_enemy_rhonhey_head/spr_enemy_rhonhey_head.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"404aee61-529a-47a7-8a8b-f8cc008a9063","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"44a23934-82ba-41a5-b37f-967aac95affa","path":"sprites/spr_enemy_rhonhey_head/spr_enemy_rhonhey_head.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4f7d83a3-b1bc-4b87-8a95-69a4f7e46c8b","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"21da09b0-2774-46d2-9464-d86736373f9c","path":"sprites/spr_enemy_rhonhey_head/spr_enemy_rhonhey_head.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"5251d92d-ca4f-4415-90cc-1971aa22429c","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b10cf733-732c-4ac4-87b6-4b878f121991","path":"sprites/spr_enemy_rhonhey_head/spr_enemy_rhonhey_head.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"9b90cd67-0d82-4c2e-be67-875f105ffa8e","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5c176540-eadc-4bab-9ce0-6379cbbf94ac","path":"sprites/spr_enemy_rhonhey_head/spr_enemy_rhonhey_head.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"088148ce-7fc4-4757-9797-b70d96588fd2","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":29,
-    "yorigin":28,
+    "xorigin":0,
+    "yorigin":0,
   },
   "swatchColours":null,
   "swfPrecision":2.525,
