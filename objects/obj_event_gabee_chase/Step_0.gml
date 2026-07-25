@@ -255,7 +255,7 @@ if (con == 41)
 		gate.active = true;
 	if (chara.x >= 1400)
 		bullet_stage = 1;
-	if (chara.x >= 2400)
+	if (chara.x >= 2500)
 		bullet_stage = 2;
 	for (var s = 0; s < 3; s++)
 	{
@@ -281,7 +281,7 @@ if (con == 41)
 			}
 			if (s == 2)
 			{
-				for (var z = 0; z < 10; z++)
+				for (var z = 0; z < 9; z++)
 				{
 					for (var i = 0; i < 5; i++)
 					{
@@ -402,7 +402,7 @@ if (con == 58 && exists(thiswriter) == 0)
 }
 if (con == 60)
 {
-	room_goto(room_caverns_1);
+	room_goto(room_cave_1);
 	destroy(id);
 }
 if (aftercon == 1)

@@ -970,9 +970,9 @@ function TEXT()
 	}
 	
 	// unused_room_corridors_16_A
-	if (text == "unused_room_cavernssign")
+	if (text == "unused_room_cavesign")
 		msg[0] = "* \"Cave system entrance.\"^1&* \"Proceed with caution.\"";
-	if (text == "unused_room_cavernsdoor")
+	if (text == "unused_room_cavedoor")
 		msg[0] = "* (Something behind the door is stopping you from opening it.)";
 	
 	// unused_room_corridors_16_B
@@ -1039,21 +1039,26 @@ function TEXT()
 	}
 	if (text == "npc_flitcher_exit")
 	{
-		var _weird = (irandom_range(1, 5) == 1 && global.flag[44] == 0);
-		for (var m = 0; m < 99; m++)
+		if (chara_murder() <= 0)
 		{
-			var _msg = get_text($"npc_flitcher_exit_{_weird}_{m}");
-			if (_msg == undefined)
-				break;
-			msg[m] = _msg;
+			var _weird = (irandom_range(1, 5) == 1 && global.flag[44] == 0);
+			for (var m = 0; m < 99; m++)
+			{
+				var _msg = get_text($"npc_flitcher_exit_{_weird}_{m}");
+				if (_msg == undefined)
+					break;
+				msg[m] = _msg;
+			}
+			if (_weird == true)
+			{
+				msg_skip[0] = false;
+				msg_font[0] = global.fnt_dsans;
+				msg_talker[0] = obj_chara.mycol;
+				global.flag[44] = 0.5;
+			}
 		}
-		if (_weird == true)
-		{
-			msg_skip[0] = false;
-			msg_font[0] = global.fnt_dsans;
-			msg_talker[0] = obj_chara.mycol;
-			global.flag[44] = 0.5;
-		}
+		else
+			msg[0] = get_text("npc_flitcher_exit_geno_0");
 	}
 	if (text == "npc_armsguy_exit_lifting")
 	{
@@ -1859,7 +1864,7 @@ function TEXT()
 			{
 				msg[0] = get_text("battle_act_result_flitcher_0_0");
 				msg[1] = get_text("battle_act_result_flitcher_0_1");
-				msg[2] = get_text("battle_act_result_flitcher_0_2");
+				//msg[2] = get_text("battle_act_result_flitcher_0_2");
 			}
 			if (text == "battle_act_flitcher1")
 				msg[0] = get_text("battle_act_result_flitcher_1");

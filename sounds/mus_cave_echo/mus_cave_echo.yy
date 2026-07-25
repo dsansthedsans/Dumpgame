@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_ambient_water",
+  "%Name":"mus_cave_echo",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":3.0142403,
+  "duration":20.03592,
   "exportDir":"",
-  "name":"snd_ambient_water",
+  "name":"mus_cave_echo",
   "parent":{
     "name":"[!] audio",
     "path":"folders/[!] audio.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_ambient_water.ogg",
+  "soundFile":"mus_cave_echo.mp3",
   "volume":1.0,
 }

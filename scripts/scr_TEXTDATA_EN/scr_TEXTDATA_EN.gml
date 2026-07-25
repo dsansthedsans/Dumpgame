@@ -22,9 +22,9 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_corridors_14",			"reCAPTCHA: Stage 3/3");
 	ds_map_add(global.textdata_en, "room_corridors_17",			"Exit"); // Save
 	ds_map_add(global.textdata_en, "room_corridors_18",			"Last Corridor");
-	ds_map_add(global.textdata_en, "room_caverns_1",			"Rock Bottom");
-	ds_map_add(global.textdata_en, "room_caverns_2",			"I Really Hope You Like the Darkness Because This Is Just the Beginning (Actually It's the End but Whatever)");
-	ds_map_add(global.textdata_en, "room_caverns_3",			"Towering Pillars"); // Save
+	ds_map_add(global.textdata_en, "room_cave_1",				"Rock Bottom");
+	ds_map_add(global.textdata_en, "room_cave_2",				"I Really Hope You Like the Darkness Because This Is Just the Beginning (Actually It's the End but Whatever)");
+	ds_map_add(global.textdata_en, "room_cave_3",				"Towering Pillars"); // Save
 	ds_map_add(global.textdata_en, "unused_room_corridors_4_5",		"Rules Book");
 	ds_map_add(global.textdata_en, "unused_room_corridors_12",		"The Clock");
 	ds_map_add(global.textdata_en, "unused_room_corridors_13",		"");
@@ -150,6 +150,8 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"menu_namemsg_13",		"No Judgement");
 	ds_map_add(global.textdata_en, $"menu_name_14",		"migel8022");
 	ds_map_add(global.textdata_en, $"menu_namemsg_14",		"No Judgement");
+	ds_map_add(global.textdata_en, $"menu_name_15",		"Frisk");
+	ds_map_add(global.textdata_en, $"menu_namemsg_15",		"WARNING: This name will make the\ngame ridiculously easier.");
 	
 	// conquistas
 	var a = 0;
@@ -770,6 +772,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_1", "* (How did it wave back if it doesn't even have hands?)");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_2", "* (This is one of the weirdest mysteries of All Time.)");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.^4&* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
+	ds_map_add(global.textdata_en, "npc_flitcher_exit_geno_0", "* (It's Flitcher.)");
 	
 	ds_map_add(global.textdata_en, "room_corridors_17_egg.0", "* (It's an egg.)");
 	ds_map_add(global.textdata_en, "room_corridors_17_egg.1", "* (It's unclear why there's an egg beside the tree.)");
@@ -1014,20 +1017,20 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_main_flitcher", "* Flitcher appeared from nowhere.");
 	
 	ds_map_add(global.textdata_en, "battle_main_flitcher_0", "* Flitcher stares blankly to north and south.");
-	ds_map_add(global.textdata_en, "battle_main_flitcher_1", "* Flitcher is moving his tongue unconsciously.");
+	ds_map_add(global.textdata_en, "battle_main_flitcher_1", "* Flitcher is moving its tongue unconsciously.");
 	ds_map_add(global.textdata_en, "battle_main_flitcher_2", "* Flitcher is daydreaming.");
-	ds_map_add(global.textdata_en, "battle_main_flitcher_3", "* Flitcher doesn't really know why he's here.");
+	ds_map_add(global.textdata_en, "battle_main_flitcher_3", "* Flitcher doesn't really know why it's here.");
 	ds_map_add(global.textdata_en, "battle_main_flitcher_4", "* Flitcher is just there.");
-	ds_map_add(global.textdata_en, "battle_main_flitcher_5", "* Flitcher doesn't think,^3 therefore he isn't.");
+	ds_map_add(global.textdata_en, "battle_main_flitcher_5", "* Flitcher doesn't think,^3 therefore it isn't.");
 	
 	ds_map_add(global.textdata_en, "battle_act_flitcher_1", "Talk");
 	ds_map_add(global.textdata_en, "battle_act_flitcher_2", "Wave");
 	
 	ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_0", "* Flitcher - [3 ATK | 6 DEF]^1&* This monster doesn't really know what's happening.");
-	ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_1", "* His body is made out of a thin and moist skin,^1 along with scales in some areas.");
-	ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_2", "* He hates eye contact and any  that envolves talking.");
-	ds_map_add(global.textdata_en, "battle_act_result_flitcher_1", "* (You talk to Flitcher.)^1&* (He seems scared.)");
-	ds_map_add(global.textdata_en, "battle_act_result_flitcher_2", "* (You wave to Flitcher.)^1&* (He seems happy.)");
+	//ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_1", "* Its body is made out of a thin and moist skin,^1 along with scales in some areas.");
+	ds_map_add(global.textdata_en, "battle_act_result_flitcher_0_1", "* It hates eye contact and any type of interaction that envolves talking.");
+	ds_map_add(global.textdata_en, "battle_act_result_flitcher_1", "* (You talk to Flitcher.)^1&* (It seems scared.)");
+	ds_map_add(global.textdata_en, "battle_act_result_flitcher_2", "* (You wave to Flitcher.)^1&* (It seems happy.)");
 	
 	// Eyecrush battle
 	ds_map_add(global.textdata_en, "battle_main_eyecrush", "* Eyecrush crawled into your way!");
@@ -1198,11 +1201,12 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M THE ONE THAT'S TRYING TO KILL YOU.\\");
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I-I'M THE ONE THAT'S...");
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2T-THAT'S,^2 UH...");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2...");
 	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M...");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I-I'M JUST LIKE THEM,^2 AREN'T I...?");
-	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M JUST LIKE T-THEM.");
+	ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2...");
+	//ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I-I'M JUST LIKE THEM,^2 AREN'T I...?");
+	//ds_map_add(global.textdata_en, $"battle_bubble_brock_convince_4_1_{i++}", "+S2I'M JUST LIKE T-THEM.");
 	
+	// Armsguy, Trashguy, Flitcher & Eyecrush
 	ds_map_add(global.textdata_en, "battle_main_armsguy_armsguy", "* Armsguys jumped in your way!");
 	ds_map_add(global.textdata_en, "battle_main_trashguy_armsguy", "* Trashguy rolled in your way!^1&* Armsguy jumped in to help them!");
 	ds_map_add(global.textdata_en, "battle_main_armsguy_flitcher", "* Armsguy jumped in your way!^1&* Flitcher is here too,^3 somehow.");

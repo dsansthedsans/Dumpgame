@@ -1,4 +1,7 @@
 
+game = obj_GAME_CONTROLLER;
+hp_surface = -1;
+hp_alpha = 0;
 image_xscale = 1;
 image_yscale = 1;
 image_alpha = 1;
@@ -44,6 +47,7 @@ moving = 0;
 running = 0;
 friskdance = 1;
 inwater = 0;
+
 
 maxsteps = 9999;
 battlecon = 0;

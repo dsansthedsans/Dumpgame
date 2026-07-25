@@ -47,6 +47,8 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			global.battle_nextgroup = 6;
 		if (keyboard_check(vk_control) == 1)
 			global.battle_nextgroup = 1000;
+		if (keyboard_check(vk_tab) == 1)
+			global.battle_nextgroup = 13;
 		battle();
 	}
 	if (keyboard_check_pressed(vk_numpad7) == 1)
@@ -57,6 +59,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			room_goto_next();
 		else
 			room_goto(room_first);
+		chara_change(-1, true, true, false, true, true, true);
 	}
 	if (keyboard_check_pressed(ord("G")) == 1) // ir para o quarto anterior
 	{
@@ -64,10 +67,12 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			room_goto_previous();
 		else
 			room_goto(room_last);
+		chara_change(-1, true, true, false, true, true, true);
 	}
 	if (keyboard_check_pressed(ord("M")) == 1)
 	{
 		global.world_curpopulation[chara_world()] = clamp((global.world_curpopulation[chara_world()] + (1 * ((keyboard_check(vk_backspace) == true) ? 1 : -1))), 0, global.world_maxpopulation[chara_world()]);
+		global.chara_exp = (3 * (global.world_maxpopulation[WORLD_CORRIDORS] - global.world_curpopulation[WORLD_CORRIDORS]));
 	}
 	if (keyboard_check(ord("P")) == 1) // party
 	{

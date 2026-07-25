@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_overworld_caverns_rock",
+  "%Name":"spr_overworld_cave_rock",
   "bboxMode":2,
   "bbox_bottom":17,
   "bbox_left":3,
@@ -26,7 +26,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"9922e5c7-0237-4cd5-a7e7-6bf053f12a39","blendMode":0,"displayName":"default","isLocked":false,"name":"9922e5c7-0237-4cd5-a7e7-6bf053f12a39","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_overworld_caverns_rock",
+  "name":"spr_overworld_cave_rock",
   "nineSlice":null,
   "origin":6,
   "parent":{
@@ -38,7 +38,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_overworld_caverns_rock",
+    "%Name":"spr_overworld_cave_rock",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -62,7 +62,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_overworld_caverns_rock",
+    "name":"spr_overworld_cave_rock",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -74,22 +74,22 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b49a572d-1ce4-451d-a4fa-3c3e2f6af874","path":"sprites/spr_overworld_caverns_rock/spr_overworld_caverns_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b49a572d-1ce4-451d-a4fa-3c3e2f6af874","path":"sprites/spr_overworld_cave_rock/spr_overworld_cave_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"ddee2dcf-a676-4f35-a2a0-72b750292abc","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"081fbfc5-eb2a-4c66-95c0-0a45d581f1c4","path":"sprites/spr_overworld_caverns_rock/spr_overworld_caverns_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"081fbfc5-eb2a-4c66-95c0-0a45d581f1c4","path":"sprites/spr_overworld_cave_rock/spr_overworld_cave_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"3fe7c658-4f74-4250-9fc4-e930e1094950","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6e7191e5-7d5e-4f77-b6ba-bca1dd282aad","path":"sprites/spr_overworld_caverns_rock/spr_overworld_caverns_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6e7191e5-7d5e-4f77-b6ba-bca1dd282aad","path":"sprites/spr_overworld_cave_rock/spr_overworld_cave_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"362ecbcd-0627-4f7b-8f54-24aab764baec","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"38db9598-143b-4508-a419-99163c6dd31b","path":"sprites/spr_overworld_caverns_rock/spr_overworld_caverns_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"38db9598-143b-4508-a419-99163c6dd31b","path":"sprites/spr_overworld_cave_rock/spr_overworld_cave_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"9088747c-9312-4ee8-8540-ba8a45c5188a","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"48b563d7-4549-4620-a294-b2e5c2c3d056","path":"sprites/spr_overworld_caverns_rock/spr_overworld_caverns_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"48b563d7-4549-4620-a294-b2e5c2c3d056","path":"sprites/spr_overworld_cave_rock/spr_overworld_cave_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"8f524f25-e891-41e9-9f73-88f5887176c4","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cd56a5e2-7bce-4c2e-a0cf-0558eb628348","path":"sprites/spr_overworld_caverns_rock/spr_overworld_caverns_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cd56a5e2-7bce-4c2e-a0cf-0558eb628348","path":"sprites/spr_overworld_cave_rock/spr_overworld_cave_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"8020ed21-17fb-4b35-a5e4-2d535bf1f827","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

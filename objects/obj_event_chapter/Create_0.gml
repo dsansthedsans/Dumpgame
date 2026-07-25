@@ -1,7 +1,7 @@
 
 event_inherited();
 
-if (room == room_corridors_1 && global.flag[0] == 0) || (room == room_caverns_1 && global.flag[62] == 0)
+if (room == room_corridors_1 && global.flag[0] == 0) || (room == room_cave_1 && global.flag[62] == 0)
 {
 	if (global.chara_armor == ITEM_BOWL)
 	{

@@ -163,17 +163,11 @@ if (gate.object == undefined) || (exists(gate.object) == false)
 else
 	gate.object.x = (gate.x - gate.width);
 // Timer
-if (timer.active == true && timer.seconds > 0)
+if (timer.active == true)
 {
 	timer.milliseconds -= 1;
 	if (timer.milliseconds < 0)
 	{
-		timer.seconds = clamp((timer.seconds - 1), 0, timer.seconds);
-		timer.milliseconds = ((timer.seconds > 0) ? timer.millisecondsTotal : 0);
-		timer.color_green = 255;
-		timer.scale = 1.25;
-		audio_play(snd_bump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
-		audio_play(snd_txt1, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
 		if (timer.seconds <= 0)
 		{
 			stage = 0;
@@ -187,6 +181,12 @@ if (timer.active == true && timer.seconds > 0)
 			if (chara_murder() < 1)
 				audio_play(snd_trombone, 0, VOLUME_SOUND);
 		}
+		timer.milliseconds = ((timer.seconds > 0) ? timer.millisecondsTotal : 0);
+		timer.seconds = clamp((timer.seconds - 1), 0, timer.seconds);
+		timer.color_green = 255;
+		timer.scale = 1.25;
+		audio_play(snd_bump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
+		audio_play(snd_txt1, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
 	}
 }
 // Buttons & Reset button

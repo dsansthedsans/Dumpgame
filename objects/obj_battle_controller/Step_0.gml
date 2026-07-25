@@ -429,7 +429,7 @@ if (battle_lvl == 11)
 		battle_lvl = 12;
 	}
 }
-if (battle_lvl == 12)
+if (battle_lvl == 12 && button_active == true)
 {
 	battle_turntime -= 1;
 	if (battle_turntime <= 0 && battle_turntime > -10)

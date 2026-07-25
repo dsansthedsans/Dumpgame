@@ -1,13 +1,13 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"tile_caverns",
+  "%Name":"tile_cave",
   "autoTileSets":[],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
     "TileSerialiseData":[],
   },
-  "name":"tile_caverns",
+  "name":"tile_cave",
   "out_columns":20,
   "out_tilehborder":2,
   "out_tilevborder":2,
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_tile_caverns",
-    "path":"sprites/spr_tile_caverns/spr_tile_caverns.yy",
+    "name":"spr_tile_cave",
+    "path":"sprites/spr_tile_cave/spr_tile_cave.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{

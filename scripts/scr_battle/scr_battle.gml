@@ -52,7 +52,7 @@ function battle_setupgroup()
 	
 	battle_bg = spr_battle_bg_corridors;
 	if (global.chara_world == WORLD_CAVERNS)
-		battle_bg = spr_battle_bg_caverns;
+		battle_bg = spr_battle_bg_cave;
 	battle_music = mus_battle1;
 	
 	if (battle_group == -4) // Test
@@ -185,6 +185,8 @@ function battle_setupgroup()
 	
 	if (battle_group == 13) // Rhonhey
 	{
+		battle_music = mus_battle0;
+		button_active = false;
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty + 8), "Instances", obj_enemy_rhonhey);
 	}

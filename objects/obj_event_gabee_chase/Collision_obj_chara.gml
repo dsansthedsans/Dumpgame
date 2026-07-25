@@ -38,13 +38,23 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 		object : undefined,
 	}
 	
-	/* debug
-	chara.x = 720;
-	chara.y = 200;
-	m6.x = 670;
-	m6.y = 200;
-	global.flag[59] = true;
-	*/
+	var _skip = 1;
+	if (_skip == 1)
+	{
+		chara.x = 720;
+		chara.y = 200;
+		m6.x = 670;
+		m6.y = 200;
+		global.flag[59] = true;
+		_skip = 2;
+		if (_skip == 2)
+		{
+			global.flag[2] = false
+			global.flag[60] = true;
+			party_change(0, -1, -1);
+			con = 37;
+		}
+	}
 	
 	if (global.flag[59] == false)
 	{
@@ -64,6 +74,6 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 	}
 	else if (global.flag[60] == false)
 		con = 5;
-	else
+	else if (_skip < 1)
 		destroy(id);
 }

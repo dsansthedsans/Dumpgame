@@ -3,7 +3,7 @@ if (con == 2)
 {
 	if (room == room_corridors_1)
 		global.flag[0] = 0.5;
-	else if (room == room_caverns_1)
+	else if (room == room_cave_1)
 		global.flag[62] = 0.5;
 	con  = 2.25;
 	alarm[4] = (getuptime / 2);

@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_battle_bg_caverns",
+  "%Name":"spr_battle_bg_cave",
   "bboxMode":0,
   "bbox_bottom":239,
   "bbox_left":0,
@@ -26,7 +26,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"4bfb8a7e-649e-4720-847b-0236f798eab5","blendMode":0,"displayName":"default","isLocked":false,"name":"4bfb8a7e-649e-4720-847b-0236f798eab5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_battle_bg_caverns",
+  "name":"spr_battle_bg_cave",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -38,7 +38,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_battle_bg_caverns",
+    "%Name":"spr_battle_bg_cave",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -62,7 +62,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_battle_bg_caverns",
+    "name":"spr_battle_bg_cave",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -74,22 +74,22 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a84636df-7a27-4030-9f4a-6e66b73e7233","path":"sprites/spr_battle_bg_caverns/spr_battle_bg_caverns.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a84636df-7a27-4030-9f4a-6e66b73e7233","path":"sprites/spr_battle_bg_cave/spr_battle_bg_cave.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"0fb7d9a3-7093-4ce7-b487-349d695d14e1","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3d1908fc-7eed-4537-bb01-e16502f4b4b0","path":"sprites/spr_battle_bg_caverns/spr_battle_bg_caverns.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3d1908fc-7eed-4537-bb01-e16502f4b4b0","path":"sprites/spr_battle_bg_cave/spr_battle_bg_cave.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"3af167f7-21f7-46c8-aaab-5cf9d7e2f160","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6c880965-93bc-4d2d-8813-0c92183c268a","path":"sprites/spr_battle_bg_caverns/spr_battle_bg_caverns.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6c880965-93bc-4d2d-8813-0c92183c268a","path":"sprites/spr_battle_bg_cave/spr_battle_bg_cave.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7b6d6425-deaf-4300-b90b-6be0217ac2da","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"96ce733d-4f81-4550-b538-66ee6a4770e7","path":"sprites/spr_battle_bg_caverns/spr_battle_bg_caverns.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"96ce733d-4f81-4550-b538-66ee6a4770e7","path":"sprites/spr_battle_bg_cave/spr_battle_bg_cave.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"acd75144-1632-4c03-94fa-3d0c67be6ed6","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9a28c594-790b-4dc7-96b8-c5494952e4fa","path":"sprites/spr_battle_bg_caverns/spr_battle_bg_caverns.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9a28c594-790b-4dc7-96b8-c5494952e4fa","path":"sprites/spr_battle_bg_cave/spr_battle_bg_cave.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"0ead7726-9ebf-4dfe-902a-2c4278d19d2c","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"599939a6-7590-48a2-b88a-5dac53972689","path":"sprites/spr_battle_bg_caverns/spr_battle_bg_caverns.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"599939a6-7590-48a2-b88a-5dac53972689","path":"sprites/spr_battle_bg_cave/spr_battle_bg_cave.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"a2ba7f0b-669b-4634-9a6a-5ef7aa15ed4f","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

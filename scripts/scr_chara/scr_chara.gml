@@ -160,6 +160,8 @@ function chara_stats()
 	    global.chara_def = 109;
 	    global.chara_maxhp = 99;
 	}
+	if (string_upper(global.chara_name) == "FRISK")
+		global.chara_maxhp = (100 + (10 * (global.chara_lvl - 1)));
 
 	// arma e armadura
 	var _weapon = global.chara_weapon;
@@ -275,7 +277,9 @@ function chara_room()
 			xx = 160;
 			yy = 290;
 		}
-		if (room == room_caverns_2)
+		if (room == room_corridors_18)
+			rm = room_crazycat;
+		if (room == room_cave_2)
 		{
 			xx = 160;
 			yy = 470;
@@ -338,12 +342,12 @@ function chara_room()
 				xx = 340;
 			rm = unused_room_corridors_16;
 		}
-		if (room == room_caverns_2)
+		if (room == room_cave_2)
 		{
 			xx = 300;
 			yy = 140;
 		}
-		if (room == room_caverns_3)
+		if (room == room_cave_3)
 		{
 			xx = 180;
 			yy = 40;
@@ -390,7 +394,7 @@ function chara_room_name(_room)
 function chara_world()
 {
 	var _world = WORLD_CORRIDORS;
-	if (room >= room_caverns_1 && room <= room_caverns_3)
+	if (room >= room_cave_1 && room <= room_cave_3)
 		_world = WORLD_CAVERNS;
 	global.chara_world = _world;
 	return _world;
@@ -499,8 +503,8 @@ function chara_stepping()
 	|| (room == room_corridors_14 && global.flag[50] > 0 && global.flag[50] < 1)
 	|| (room == unused_room_corridors_16_B)
 	|| (room == room_corridors_18) 
-	|| (room >= room_caverns_1)
-	|| (room >= room_caverns_2 && room <= room_caverns_3)
+	|| (room >= room_cave_1)
+	|| (room >= room_cave_2 && room <= room_cave_3)
 	|| (inwater == 1)
 		stepplay = 1;
 }

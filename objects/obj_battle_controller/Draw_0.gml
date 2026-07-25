@@ -51,7 +51,7 @@ button_alpha = lerp(button_alpha, _alpha, 0.2);
 gui_alpha = lerp(gui_alpha, _alpha, 0.2);
 
 // draw buttons
-for (var i = 0; i < button_length; i++)
+for (var i = 0; i < button_length * button_active; i++)
 {
 	var _index = 0;
 	if (i == button_pos && button_select == 1)
@@ -61,38 +61,64 @@ for (var i = 0; i < button_length; i++)
 }
 
 // draw chara info
-var _inbetween = (box_defaulty + round(box_defaulth / 2) + box_borderw);
-_inbetween = (button_y[0] - round((button_y[0] - _inbetween) / 2));
-draw_set_alpha(gui_alpha);
-draw_set_valign(fa_middle);
-draw_set_halign(fa_left);
-draw_set_font(fnt_mars_18);
-var _chara_icon_spr = spr_chara_d;
-var _chara_icon_x = (box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
-var _chara_name_text = global.chara_name;
-var _chara_name_x = (_chara_icon_x + (sprite_get_width(_chara_icon_spr) * 2) - 2 + 8);
-var _chara_bar_x = (_chara_name_x + string_width(_chara_name_text) + 1 + 16);
-var _chara_bar_y = (box_y + round(box_h / 2) + box_borderw + 11);
-draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, sprite_get_width(_chara_icon_spr), 16, _chara_icon_x, (_inbetween - 16), 2, 2, c_white, gui_alpha);
-if (chara_murder() >= 1)
-	draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, sprite_get_width(_chara_icon_spr), 16, _chara_icon_x, (_inbetween - 16), 2, 2, c_white, (gui_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
-draw_text_outline(_chara_name_x, (_inbetween + 4), _chara_name_text, c_white, 2, c_black);
-draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, (100 + (5 * (global.chara_lvl - 1))), /*#FFDC31*/ #F29948, #DD2929, 1);
-if (assist.active == true)
+if (button_active == true)
 {
+	var _inbetween = (box_defaulty + round(box_defaulth / 2) + box_borderw);
+	_inbetween = (button_y[0] - round((button_y[0] - _inbetween) / 2));
 	draw_set_alpha(gui_alpha);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_left);
 	draw_set_font(fnt_mars_18);
-	var _m6_icon_spr = spr_m6_d;
-	var _m6_icon_x = (box_defaultx + round(box_defaultw / 2) + box_borderw + 2 - (sprite_get_width(_m6_icon_spr) * 2) + 1);
-	var _m6_name_text = "MEE6";
-	var _m6_name_x = (_m6_icon_x - string_width(_m6_name_text) + 5 - 8);
-	var _m6_bar_widthMax = 75;
-	var _m6_bar_x = (_m6_name_x - _m6_bar_widthMax - 16 - (2 + 4) - 1);
-	draw_sprite_part_ext(_m6_icon_spr, 0, 0, 1, sprite_get_width(_m6_icon_spr), 16, _m6_icon_x, (_inbetween - 16 + 2), 2, 2, c_white, gui_alpha);
-	draw_text_outline(_m6_name_x, (_inbetween + 4), _m6_name_text, c_white, 2, c_black);
-	draw_battle_bar($"{round(assist.curr)}%", assist.curr, assist.max, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, #4986B7, c_black, 1);
+	var _chara_icon_spr = spr_chara_d;
+	var _chara_icon_x = (box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
+	var _chara_name_text = global.chara_name;
+	var _chara_name_x = (_chara_icon_x + (sprite_get_width(_chara_icon_spr) * 2) - 2 + 8);
+	var _chara_bar_x = (_chara_name_x + string_width(_chara_name_text) + 1 + 16);
+	var _chara_bar_y = (box_y + round(box_h / 2) + box_borderw + 11);
+	draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, sprite_get_width(_chara_icon_spr), 16, _chara_icon_x, (_inbetween - 16), 2, 2, c_white, gui_alpha);
+	if (chara_murder() >= 1)
+		draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, sprite_get_width(_chara_icon_spr), 16, _chara_icon_x, (_inbetween - 16), 2, 2, c_white, (gui_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
+	draw_text_outline(_chara_name_x, (_inbetween + 4), _chara_name_text, c_white, 2, c_black);
+	draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, (100 + (5 * (global.chara_lvl - 1))), /*#FFDC31*/ #F29948, #DD2929, 1);
+	if (assist.active == true)
+	{
+		draw_set_alpha(gui_alpha);
+		draw_set_valign(fa_middle);
+		draw_set_halign(fa_left);
+		draw_set_font(fnt_mars_18);
+		var _m6_icon_spr = spr_m6_d;
+		var _m6_icon_x = (box_defaultx + round(box_defaultw / 2) + box_borderw + 2 - (sprite_get_width(_m6_icon_spr) * 2) + 1);
+		var _m6_name_text = "MEE6";
+		var _m6_name_x = (_m6_icon_x - string_width(_m6_name_text) + 5 - 8);
+		var _m6_bar_widthMax = 75;
+		var _m6_bar_x = (_m6_name_x - _m6_bar_widthMax - 16 - (2 + 4) - 1);
+		draw_sprite_part_ext(_m6_icon_spr, 0, 0, 1, sprite_get_width(_m6_icon_spr), 16, _m6_icon_x, (_inbetween - 16 + 2), 2, 2, c_white, gui_alpha);
+		draw_text_outline(_m6_name_x, (_inbetween + 4), _m6_name_text, c_white, 2, c_black);
+		draw_battle_bar($"{round(assist.curr)}%", assist.curr, assist.max, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, #4986B7, c_black, 1);
+	}
+}
+else
+{
+	draw_set_alpha(1);
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_left);
+	draw_set_font(fnt_mars_18);
+	var _chara_y = (box_y + round(box_h / 2) + box_borderw);
+	var _chara_icon_spr = spr_chara_d;
+	var _chara_icon_x = (box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
+	var _chara_icon_y = (_chara_y + 3);
+	var _chara_icon_height = 16;
+	var _chara_icon_scale = 2;
+	var _chara_name_text = global.chara_name;
+	var _chara_name_x = (_chara_icon_x + (sprite_get_width(_chara_icon_spr) * _chara_icon_scale) - 2 + 8);
+	var _chara_name_y = (_chara_icon_y + ((_chara_icon_height * _chara_icon_scale) / 2) + 4);
+	var _chara_bar_x = (_chara_name_x + string_width(_chara_name_text) + 1 + 16);
+	var _chara_bar_y = (_chara_y + 11);
+	draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, sprite_get_width(_chara_icon_spr), _chara_icon_height, _chara_icon_x, _chara_icon_y, _chara_icon_scale, _chara_icon_scale, c_white, 1);
+	if (chara_murder() >= 1)
+		draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, sprite_get_width(_chara_icon_spr), _chara_icon_height, _chara_icon_x, _chara_icon_y, _chara_icon_scale, _chara_icon_scale, c_white, ((chara_murder() == 1) ? 0.5 : 1));
+	draw_text_outline(_chara_name_x, _chara_name_y, _chara_name_text, c_white, 2, c_black);
+	draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, (100 + (5 * (global.chara_lvl - 1))), /*#FFDC31*/ #F29948, #DD2929, 1);
 }
 
 

@@ -231,6 +231,7 @@ else if (result == 2) // moveble
 				touched = 1;
 			i += 1;
 		}
+		//chara_change(-1, 1, 1, -1, true, true, -1);
 		if (canmove == 0) || (touched == 1)//(mytargetx != -1 && place_meeting(mytargetx, y, obj_solid_block_moveable) == 1) || (mytargety != -1 && place_meeting(x, mytargety, obj_solid_block_moveable) == 1)
 		{
 			con = 0;
@@ -268,7 +269,7 @@ else if (result == 2) // moveble
 				global.flag[xflagid] = x;
 				global.flag[yflagid] = y;
 			}
-			chara_change(-1, 1, 1, -1, true, true, -1);
+			chara_change(-1, true, true, -1, true, true, -1);
 			myfacing = -1;
 			mytargetx = -1;
 			mytargety = -1;

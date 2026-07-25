@@ -45,41 +45,32 @@ if (room == room_over)
 }
 if (room != room_battle && exists(obj_battle_quicker) == false)
 {
-	if (room == room_corridors_1) // corredores
-	{
+	if (room >= room_corridors_1 && room <= room_corridors_18)
+	{	
 		music_set(0, -1);
 		music_set(1, -1);
-		if (global.flag[0] >= 0.5)
-		{
-			var _gain_time = 5;
-			if (global.flag[0] == 1)
-				_gain_time = 0.5;
-			var _fadeouttime = 5;
-			music_set(0, mus_chapter_1, , _gain_time, 1, 1, 1, _fadeouttime);
-			if (global.chara_murder >= 2)
-				global.music[0] = mus_nobody;
-			else
-				music_set(1, snd_ambient_birds, , _gain_time, 1, 1, 1, _fadeouttime);
-		}
-	}
-	if (room == room_corridors_1_5) || (room == room_corridors_2)
-	{
-		global.music[0] = -1;
-		music_set(1, snd_ambient_wind, 0.75, 5, 1, 0.5, 1, 2.5);
-		if (room == room_corridors_2 && global.flag[1] >= 0.5 && global.flag[1] < 1)
-		{
-			music_set(1, -1);
-			if (global.flag[1] == 0.75)
-				music_set(0, mus_m6);
-		}
-	}
-	if (room >= room_corridors_3 && room < room_caverns_1)
-	{	
-		music_set(0, mus_corridors, , , , (1 - (0.025 * (chara_murder() == 1))));
-		if (chara_murder() >= 2)
-			music_set(0, mus_corridors_geno)
-		music_set(1, -1);
 		music_set(2, -1);
+		// Fallen Angel
+		if (room == room_corridors_1 && global.flag[0] >= 0.5)
+		{
+			music_set(0, mus_chapter_1, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
+			if (chara_murder() < 2)
+				music_set(1, snd_ambient_birds, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
+			else
+				global.music[0] = mus_nobody;
+		}
+		// First Corridor & MEE6's Room
+		if (room == room_corridors_1_5) || (room == room_corridors_2 && (global.flag[1] == 0 || global.flag[1] == 1))
+			music_set(1, snd_ambient_wind, , 4, true, 0.5, , 2);
+		else if (room == room_corridors_2 && global.flag[1] == 0.75)
+			music_set(0, mus_m6);
+		// Entrance
+		if (room >= room_corridors_3 && room <= room_corridors_18)
+		{
+			music_set(0, mus_corridors, , , , (1 - (0.025 * (chara_murder() == 1))));
+			if (chara_murder() >= 2)
+				music_set(0, mus_corridors_geno)
+		}
 		// Broken Clock
 		if (room == room_corridors_11)
 		{
@@ -145,7 +136,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 			music_fadeouttime_old[1] = 5;
 			if ((exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 9) == false)
 			{
-				music_set(1, snd_ambient_wind, , 2.5, 1, 0.75, , 2.5);
+				music_set(1, snd_ambient_wind, , 2, true, 0.75, , 2);
 				global.music_volumetype[1] = VOLUME_SOUND;
 			}
 			if (global.flag[60] == 1 && global.flag[61] == 0)
@@ -163,26 +154,31 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 			}
 		}
 	}
-	if (room >= room_caverns_1 && room <= room_caverns_3)
+	if (room >= room_cave_1 && room <= room_cave_3)
 	{
 		music_set(0, -1);
 		music_set(1, -1);
 		music_set(2, -1);
-		if (global.flag[62] >= 0.5)
+		if (room >= room_cave_1 && global.flag[62] >= 0.5)
 		{
 			if (global.flag[62] == 0.5)
 				music_set(0, mus_chapter_2, , , , 0.5 + 0.25, false);
-			music_set(1, snd_ambient_wind, , 2.5, 1, 0.25, , 5);
-			music_set(2, snd_titleimpact, 1.5, 2.5, 1, 0.35, , 5);
+			music_set(1, snd_ambient_wind, , 2, true, 0.5, , 4);
+			music_set(2, snd_titleimpact, , 2, true, 0.35, , 4);
 			global.music_volumetype[1] = VOLUME_SOUND;
 			global.music_volumetype[2] = VOLUME_SOUND;
 		}
-	}
-	if (room >= room_caverns_3 && room <= room_caverns_3) // cavernas
-	{
-		music_set(0, mus_cave);
-		music_set(2, snd_ambient_water, , 2.5, 1, , , 5);
-		global.music_volumetype[2] = VOLUME_SOUND;
+		if (room == room_cave_2)
+		{
+			music_set(0, mus_cave_echo, , 2, true, , , 1);
+			music_set(2, -1);
+		}
+		if (room >= room_cave_3 && room <= room_cave_3)
+		{
+			music_set(0, mus_cave, , , , , , 1);
+			music_set(2, snd_ambient_water, , 2, true, , , 4);
+			global.music_volumetype[2] = VOLUME_SOUND;
+		}
 	}
 	if (room == room_crazycat)
 	{

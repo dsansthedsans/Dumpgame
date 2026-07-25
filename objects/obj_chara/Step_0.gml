@@ -131,6 +131,7 @@ if (global.chara_move == 1)
 			global.chara_facing = DOWN;
 	}
 	
+	
 	// colisão da escada
 	if (place_meeting((x + xmove), y, obj_solid_stairs_lu) == 1 && hold_l == 1)
 	{
@@ -322,7 +323,7 @@ if (position_meeting(x, y, obj_water_block) == false)
 else
 {
 	if (inwater == false)
-		audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
+		audio_play(snd_heartpulse1, , VOLUME_SOUND, 0.5);
 	inwater = true;
 }
 
@@ -385,7 +386,7 @@ if (stepplay == 1)
 				_snd = snd_step2;
 			if (inwater == true)
 				_snd = snd_step_water;
-			audio_play(_snd, 0, VOLUME_SOUND, stepvolume, , , (1 + (0.05 * (rspeed_pos + 1) * (curspeed == rspeed[rspeed_pos]))));
+			audio_play(_snd, 0, VOLUME_SOUND, stepvolume, , , (1 + random_range(-0.025, 0.025) + (0.05 * (rspeed_pos + 1) * (curspeed == rspeed[rspeed_pos]))));
 			stepstage = 0;
 		}
 	}

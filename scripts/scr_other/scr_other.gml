@@ -581,7 +581,7 @@ function display_gui_fix()
 {	
 	var sc = (640 / camera_get_view_width(view_camera[0]));
 	
-	display_set_gui_maximize(2, 2);
+	
 	
 	/*
 	var c = view_camera[0];

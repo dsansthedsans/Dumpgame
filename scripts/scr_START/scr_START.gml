@@ -388,8 +388,8 @@ function start_flags()
 	global.flag[60] = 0; // started gabee's chase
 	global.flag[61] = 0; // finished gabee's chase
 
-	global.flag[62] = 0; // finished caverns start event
-	global.flag[63] = 0; // left room_caverns_2
+	global.flag[62] = 0; // (((UNUSED)))
+	global.flag[63] = 0; // left room_cave_2
 	
 	global.flag[64] = 0; // tutorial - interagir
 	global.flag[65] = 0; // tutorial - correr
@@ -549,7 +549,7 @@ function CHANGE_GAME()
 	var _change = true;
 	if (_change == true)
 	{
-		global.chara_name = "CRAZYCAT";
+		global.chara_name = "FRISK";
 		global.indebug = true;
 		load_time = 1;
 		var _rm = room_corridors_18;
@@ -584,9 +584,9 @@ function CHANGE_GAME()
 				_lvl = 7;
 			if (_rm == room_corridors_17) || (_rm == room_corridors_18)
 				_lvl = 8;
-			if (_rm == room_caverns_1)
+			if (_rm == room_cave_1)
 				_lvl = 9;
-			if (_rm == room_caverns_2) || (_rm == room_caverns_3)
+			if (_rm == room_cave_2) || (_rm == room_cave_3)
 				_lvl = 10;
 			
 			// definir flags baseado de onde o jogo vai começar
@@ -697,12 +697,15 @@ function CHANGE_GAME()
 				global.flag[59] = 1;
 				global.flag[60] = 1;
 				global.flag[61] = 1;
+				
+				global.flag[62] = 1;
 			}
 			if (_lvl >= 10)
 			{
 				global.flag[62] = 1;
-				global.flag[63] = 1;
 			}
 		}
+		chara_stats();
+		global.chara_curhp = global.chara_maxhp;
 	}	
 }

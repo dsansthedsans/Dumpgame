@@ -18,7 +18,7 @@ else if (room == unused_room_corridors_16_B)
 	m6_curcolor = 255;
 	m6_colorvalue = 120;
 }
-else if (room == room_caverns_1)
+else if (room == room_cave_1)
 {
 	depth = 0;
 	type = 3;
@@ -28,7 +28,7 @@ else if (room == room_caverns_1)
 	topY = (100 - imperfection);
 	bottomY = (180 + imperfection);
 }
-else if (room == room_caverns_2)
+else if (room == room_cave_2)
 {
 	depth = -room_height;
 	type = 4;
@@ -36,7 +36,7 @@ else if (room == room_caverns_2)
 	rightY = 300;
 	rightHeight = 99;
 }
-else if (room == room_caverns_3)
+else if (room == room_cave_3)
 {
 	type = 5;
 	depth = -2000;

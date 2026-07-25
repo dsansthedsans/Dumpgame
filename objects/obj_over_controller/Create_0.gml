@@ -1,4 +1,5 @@
 
+game  = obj_GAME_CONTROLLER;
 con = 0;
 altcon = 0;
 active = 1;
@@ -17,6 +18,13 @@ if (exists(obj_battle_heart) == true)
 	heart_y = obj_battle_heart.y;
 	destroy(obj_battle_heart);
 }
+if (exists(obj_overworld_heart) == true)
+{
+	heart_x = ((obj_overworld_heart.x - game.cam_x) * 2);
+	heart_y = ((obj_overworld_heart.y - game.cam_y) * 2);
+	destroy(obj_overworld_heart);
+}
+screenpos(0, 0);
 heart_spr = spr_battle_heart;
 heart_alpha = 1;
 heart_color = global.c_dump;

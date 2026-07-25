@@ -244,11 +244,11 @@ function room_interact()
 	{
 		// sign
 		if (x ==  80 && y == 60)
-			text = "room_cavernssign";
+			text = "room_cavesign";
 		
 		// door
 		if (x == 140 && y == 60)
-			text = "room_cavernsdoor";
+			text = "room_cavedoor";
 	}
 	if (room == unused_room_corridors_16_B)
 	{
@@ -345,7 +345,7 @@ function room_solid()
 		// rocks
 		if (x == 220 && y == 570) || (x == 270 && y == 530) || (x == 230 && y == 440) || (x == 210 && y == 350)
 		{
-			sprite_index = spr_overworld_caverns_rock;
+			sprite_index = spr_overworld_cave_rock;
 			if (x == 220 && y == 570)
 				image_index = 4;
 			if (x == 230 && y == 440)
@@ -958,11 +958,11 @@ function room_solid()
 	}
 	
 	// caverns
-	if (room == room_caverns_1)
+	if (room == room_cave_1)
 	{
 		if (x == 90 && y == 70) || (x == 60 && y == 90) || (x == 175 && y == 90) || (x == 250 && y == 90) || (x == 150 && y == 180) || (x == 100 && y == 190)
 		{
-			sprite_index = spr_overworld_caverns_rock;
+			sprite_index = spr_overworld_cave_rock;
 			if (x == 60 && y == 90)
 				image_index = 5;
 			if (x == 175 && y == 90)
@@ -987,11 +987,11 @@ function room_solid()
 			image_index = 1;
 		}
 	}
-	if (room == room_caverns_2)
+	if (room == room_cave_2)
 	{
 		if (x == 30 && y == 400) || (x == 90 && y == 350) || (x == 170 && y == 400) || (x == 190 && y == 230) || (x == 150 && y == 130) || (x == 190 && y == 50)
 		{
-			sprite_index = spr_overworld_caverns_rock;
+			sprite_index = spr_overworld_cave_rock;
 			if (x == 30 && y == 400)
 				image_index = 3;
 			if (x == 170 && y == 400) || (x == 190 && y == 50)
@@ -1003,11 +1003,11 @@ function room_solid()
 			y += 20;
 		}
 	}
-	if (room == room_caverns_3)
+	if (room == room_cave_3)
 	{
 		if (x == 180 && y == 320) || (x == 210 && y == 270) || (x == 60 && y == 250) || (x == 180 && y == 180) || (x == 20 && y == 170) || (x == 270 && y == 170) || (x == 130 && y == 110)
 		{
-			sprite_index = spr_overworld_caverns_rock;
+			sprite_index = spr_overworld_cave_rock;
 			if (x == 180 && y == 320) || (x == 180 && y == 180)
 				image_index = 3;
 			if (x == 210 && y == 270) || (x == 270 && y == 170)
@@ -1216,7 +1216,7 @@ function readable_room()
 	}
 	
 	// save point
-	if (room == room_corridors_3 && x == 150 && y == 270) || (room == room_corridors_4 && x == 660 && y == 120) || (room == room_corridors_8 && x == 90 && y == 325) || (room == room_corridors_11 && x == 130 && y == 120) || (room == unused_room_corridors_13 && x == 370 && y == 160) || (room == unused_room_corridors_16 && x == 170 && y == 200) || (room == room_caverns_3 && x == 150 && y == 225)
+	if (room == room_corridors_3 && x == 150 && y == 270) || (room == room_corridors_4 && x == 660 && y == 120) || (room == room_corridors_8 && x == 90 && y == 325) || (room == room_corridors_11 && x == 130 && y == 120) || (room == unused_room_corridors_13 && x == 370 && y == 160) || (room == unused_room_corridors_16 && x == 170 && y == 200) || (room == room_cave_3 && x == 150 && y == 225)
 	{
 		myid = "savepoint";
 		myresult = 0.1;

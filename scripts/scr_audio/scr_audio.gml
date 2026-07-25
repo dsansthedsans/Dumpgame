@@ -11,12 +11,18 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.75;
 		if (_asset == snd_option_movehold)
 			_volume *= 0.5;
-		if (_asset == snd_ambient_birds)
+		if (_asset == snd_option_return)
 			_volume *= 0.75;
+		if (_asset == snd_ambient_birds)
+			_volume *= 0.5;
+		if (_asset == snd_ambient_wind)
+			_volume *= 0.75 + 0.125;
+		if (_asset == snd_ambient_water)
+			_volume *= 1.25;
 		if (_asset == snd_bird_startfly)
 			_volume /= 2;
 		if (_asset == snd_step1) || (_asset == snd_step2)
-			_volume *= 1;
+			_volume *= 0.75;
 		if (_asset == snd_grab)
 			_volume *= 0.5;
 		if (_asset == snd_impact)
@@ -25,7 +31,9 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.75 + 0.125;
 		if (_asset == snd_surprise)
 			_volume *= 0.5 + (0.25 / 2);
-		if (_asset == snd_heartpulse1) || (_asset == snd_heartpulse2)
+		if (_asset == snd_heartpulse1)
+			_volume *= 0.75 - 0.125;
+		if (_asset == snd_heartpulse2)
 			_volume *= 0.75;
 		if (_asset == snd_explosion1)
 			_volume = 0.75;
@@ -56,41 +64,49 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_applause) || (_asset == snd_cheer)
 			_volume *= 0.5;
 		if (_asset == snd_alarm)
-			_volume *= 1.75;
+			_volume *= 1.5;
 		if (_asset == snd_murder)
 			_volume *= 0.5;
 		if (_asset == snd_battle_mercy_fail)
 			_volume *= 0.5;
 		if (_asset == snd_battle_danger)
 			_volume *= 0.75;
+		if (_asset == snd_save)
+			_volume *= 0.75;
+		if (_asset == snd_heal)
+			_volume *= 1 - 0.125;
+		if (_asset == snd_victory)
+			_volume *= 0.75;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
 		_volume *= 0.5;
 		if (_asset == mus_chapter_1)
-			_volume *= 1.5;
+			_volume *= 1.25;
 		if (_asset == mus_m6)
 			_volume *= 2.5;
 		if (_asset == mus_corridors)
-			_volume *= 1.125;
+			_volume *= 1 - 0.125;
 		if (_asset == mus_battle_dummy)
 			_volume *= 1.25;
 		if (_asset == mus_chapter_2)
 			_volume *= 4;
+		if (_asset == mus_cave_echo)
+			_volume *= 0.5 - 0.125;
 		if (_asset == mus_cave)
-			_volume *= 1.5;
+			_volume *= 1;
 		if (_asset == mus_hurry_intro)
 			_volume *= 2;
 		if (_asset == mus_hurry_loop_0) || (_asset == mus_hurry_loop_1)
-			_volume *= (1.5 + 0.125 + (0.125 * (_asset == mus_hurry_loop_1)));
+			_volume *= (1.5 - 0.125);
 		if (_asset == mus_corridors_geno)
 			_volume *= 1.25;
 		if (_asset == mus_battle_troll)
-			_volume *= 1.5;
+			_volume *= 1.25;
 		if (_asset == mus_brock_prebattle)
 			_volume *= 1.25;
 		if (_asset == mus_battle_brock)
-			_volume *= 1.5;
+			_volume *= 1.25;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)

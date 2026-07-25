@@ -125,9 +125,9 @@ function TEXTDATA_PT_OLD()
 	ds_map_add(global.textdata_pt, "unused_room_corridors_16_B",	"Entrada do Metrô nos Corredores");
 	ds_map_add(global.textdata_pt, "room_corridors_17",		"Último Caminho");
 	ds_map_add(global.textdata_pt, "room_corridors_18",		"Corredor Final");
-	ds_map_add(global.textdata_pt, "room_caverns_1",		"No Fundo do Poço");
-	ds_map_add(global.textdata_pt, "room_caverns_2",		"Eu Espero Que Você Goste do Escuro Porque Isso É Apenas o Começo");
-	ds_map_add(global.textdata_pt, "room_caverns_3",		"Pilares Altos");
+	ds_map_add(global.textdata_pt, "room_cave_1",		"No Fundo do Poço");
+	ds_map_add(global.textdata_pt, "room_cave_2",		"Eu Espero Que Você Goste do Escuro Porque Isso É Apenas o Começo");
+	ds_map_add(global.textdata_pt, "room_cave_3",		"Pilares Altos");
 	
 	ds_map_add(global.textdata_pt, "unused_room_corridors_4_5",	"Regras");
 	ds_map_add(global.textdata_pt, "room_corridors_1_doors","Elevador Estranho");

@@ -225,6 +225,8 @@ if (move == 1)
 				move = 0;
 				global.savefile_selected = play_save;
 				savefile_load(global.savefile_selected);
+				chara_stats();
+				global.chara_curhp = global.chara_maxhp;
 				room_go(global.chara_room, -1, -1);
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
 			}
@@ -274,6 +276,8 @@ if (move == 1)
 				if (block == 0)
 				{
 					global.savefile_selected = play_save;
+					chara_stats();
+					global.chara_curhp = global.chara_maxhp;
 					room_goto(global.game_startroom[1]);
 					audio_play(snd_option_select, 0, VOLUME_SOUND);
 				}

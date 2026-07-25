@@ -51,6 +51,7 @@ button_color[1] = global.c_dump;
 button_pos = 0;
 button_length = array_length(button_spr);
 button_select = 1;
+button_active = true;
 
 // gui
 hp_color[0] = #FFDC31;
@@ -123,10 +124,17 @@ level_curbarcolor[1] = c_yellow;
 level_maxbarcolor[0] = #DD2929;
 level_maxbarcolor[1] = #B24A00//#CC6600;
 
-create(-20, -20, obj_battle_fadein);
-if ((enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0) == false)
-	writer("battle_main", -1, -1);
 screenpos(0, 0);
+create(-20, -20, obj_battle_fadein);
+if (button_active == true && (enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0) == false)
+	writer("battle_main", -1, -1);
+else if (button_active == false)
+{
+	battle_lvl = 10;
+	button_select = false;
+	heart.x = heart_nextx;
+	heart.y = heart_nexty;
+}
 
 assist =
 {
