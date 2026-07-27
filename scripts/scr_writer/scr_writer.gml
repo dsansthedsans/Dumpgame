@@ -1519,7 +1519,7 @@ function TEXT()
 			if (_type == 6)
 			{
 				_name = "brock";
-				_max = 8;
+				_max = 9;
 			}
 			if (_type == 7)
 			{
@@ -1529,7 +1529,7 @@ function TEXT()
 			if (_type == 1000)
 			{
 				_name = "troll";
-				_max = 3;
+				_max = 10;
 			}
 			if (_type == 2000)
 			{

@@ -1,11 +1,11 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_prem6_thing",
+  "%Name":"spr_event_rhonhey_thing",
   "bboxMode":0,
   "bbox_bottom":39,
   "bbox_left":0,
   "bbox_right":39,
-  "bbox_top":19,
+  "bbox_top":5,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -22,7 +22,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"2423191c-aa24-49c0-847c-32801f4b7082","blendMode":0,"displayName":"default","isLocked":false,"name":"2423191c-aa24-49c0-847c-32801f4b7082","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_prem6_thing",
+  "name":"spr_event_rhonhey_thing",
   "nineSlice":null,
   "origin":7,
   "parent":{
@@ -34,7 +34,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_prem6_thing",
+    "%Name":"spr_event_rhonhey_thing",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -58,7 +58,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_prem6_thing",
+    "name":"spr_event_rhonhey_thing",
     "playback":1,
     "playbackSpeed":8.0,
     "playbackSpeedType":0,
@@ -70,10 +70,10 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fd5134e5-dcba-4958-b1e6-78c91f6acfe5","path":"sprites/spr_prem6_thing/spr_prem6_thing.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fd5134e5-dcba-4958-b1e6-78c91f6acfe5","path":"sprites/spr_event_rhonhey_thing/spr_event_rhonhey_thing.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"8bfd3f50-2fc9-4d48-9ce5-737e6367947e","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"de7cc791-39ea-44f7-81e4-a2dcbcc5f70e","path":"sprites/spr_prem6_thing/spr_prem6_thing.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"de7cc791-39ea-44f7-81e4-a2dcbcc5f70e","path":"sprites/spr_event_rhonhey_thing/spr_event_rhonhey_thing.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e72cc5ba-1a6c-40ee-a03c-b7ac08def659","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

@@ -1,4 +1,5 @@
 
+/*
 if (con == 0)
 {
 	thing[0].speed = 3;
@@ -25,3 +26,4 @@ if (sound > 0)
 	audio_play(snd_step2, 0, VOLUME_SOUND, 1, , , _pitch);
 	sound = 0;
 }
+*/

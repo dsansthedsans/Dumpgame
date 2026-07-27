@@ -109,7 +109,7 @@ else
 	var _chara_name_width = string_width(_chara_name_text);
 	var _chara_name_height = string_height(_chara_name_text);
 	draw_set_font(fnt_mars_12);
-	var _chara_bar_gapX = 12;
+	var _chara_bar_gapX = 10;
 	var _chara_bar_width = (100 + (5 * (global.chara_lvl - 1)));
 	var _chara_y = (box_y + round(box_h / 2) + box_borderw);
 	var _chara_width = ((_chara_icon_width * _chara_icon_scale) + _chara_name_gapX + _chara_name_width + _chara_bar_gapX + _chara_bar_width + 4);

@@ -170,7 +170,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 		}
 		if (room == room_cave_2)
 		{
-			music_set(0, mus_cave_echo, , 2, true, , , 1);
+			music_set(0, mus_cave_echo, (0.5 * ((room_height - obj_chara.y) / room_height)), 2, true, , , 1);
 			music_set(2, -1);
 		}
 		if (room >= room_cave_3 && room <= room_cave_3)

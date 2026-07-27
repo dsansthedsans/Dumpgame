@@ -22,7 +22,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_bird_startfly)
 			_volume /= 2;
 		if (_asset == snd_step1) || (_asset == snd_step2)
-			_volume *= 0.75;
+			_volume *= (0.5 + 0.125);
 		if (_asset == snd_grab)
 			_volume *= 0.5;
 		if (_asset == snd_impact)
@@ -77,6 +77,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1 - 0.125;
 		if (_asset == snd_victory)
 			_volume *= 0.75;
+		if (_asset == snd_pedronstro)
+			_volume *= 0.5;
+		if (_asset == snd_879)
+			_volume *= 0.25;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -91,10 +95,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.25;
 		if (_asset == mus_chapter_2)
 			_volume *= 4;
-		if (_asset == mus_cave_echo)
-			_volume *= 0.5 - 0.125;
 		if (_asset == mus_cave)
-			_volume *= 1;
+			_volume *= 1.125;
 		if (_asset == mus_hurry_intro)
 			_volume *= 2;
 		if (_asset == mus_hurry_loop_0) || (_asset == mus_hurry_loop_1)
@@ -124,7 +126,6 @@ function audio_pitch(_audio, _pitch)
 		_pitch *= 0.75;
 	audio_sound_pitch(_audio, _pitch);
 }
-
 function audio_play(_audio, _loop = false, _volume_type = VOLUME_MASTER, _gain = 1, _gain_time = 0, _gain_fadein = 0, _pitch = 1)
 {
 	thisaudio = audio_play_sound(_audio, 80, _loop);

@@ -296,7 +296,7 @@ if (active == 1)
 				draw_sprite_ext(_body_spr, i, _body_x, _body_y, _body_scale, _body_scale, _body_angle, _body_color, 1)
 			}
 			var _head_spr = spr_enemy_rhonhey_head;
-			var _head_x = (_x + (fn_dcos(siner, 0) * 5));
+			var _head_x = (_x - 5 + (fn_dcos(siner, 0) * 5));
 			var _head_y = (_y - (sprite_get_height(_head_spr) * _scale) - 10 + (fn_dsin(siner, 0) * 35));
 			draw_sprite_ext(_head_spr, ((i * 2) + floor(head_image)), _head_x, _head_y, 2, 2, 0, c_white, 1);
 		}
