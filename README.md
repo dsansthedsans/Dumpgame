@@ -26,7 +26,7 @@
 </ul>
 <br>
 <h2>Development History</h2>
-<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, then started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
+<p>Long ago, on November 14, 2021, 11-year-old me opened GameMaker for the first time, created a new project with a name I made up on the spot, then started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
 <p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
@@ -42,23 +42,19 @@
 <p align="center"><img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
 <p align="center"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
-<p>Then, on June 2022, I had an epiphany. I evolved. I, for once, made a rational, logical decision. I focused on learning programming and writing the story instead of improvising the whole game...! That's when the "3rd generation" started. [...]</p>
+<p>Then, on June 2022, I had an epiphany. I evolved. I, for once, made a smart, logical decision. I focused on learning programming and writing the story instead of improvising the whole game...! That's when the "3rd generation" started. [...]</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
-<br>
-<p>[...]</p>
-<br>
-<p>To be honest, Dumpgame is just another random UNDERTALE fangame. There's nothing special about it. If anything, it's that it was made by an 11-year-old from Brazil with only four hours of sleep, but that's just it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
 <blockquote>No. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>"Development History"</b></a>.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
-<blockquote>Yes, very. The full game would've been four times longer.</blockquote>
-<h3>Is Dumpgame associated with UNDERTALE or Toby Fox?</h3>
-<blockquote>No.</blockquote>
+<blockquote>Yes, very. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
 <h3>Is Dumpgame still associated with Dumpster Friends?</h3>
 <blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server.</blockquote>
+<h3>Is Dumpgame associated with  UNDERTALE, Discord or MEE6?</h3>
+<blockquote>No, Dumpgame is not associated with UNDERTALE, Discord or MEE6.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, NOTHING related to Dumpgame is AI-generated. The ONLY exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
