@@ -33,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_battle_heart_flee",
-    "path":"sprites/spr_battle_heart_flee/spr_battle_heart_flee.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

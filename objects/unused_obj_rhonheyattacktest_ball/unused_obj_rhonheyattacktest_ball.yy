@@ -4,7 +4,6 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"unused_obj_rhonheyattacktest_ball",
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"unused_spr_rhonheyattacktest_ball",
-    "path":"sprites/unused_spr_rhonheyattacktest_ball/unused_spr_rhonheyattacktest_ball.yy",
+    "name":"spr_battle_blt_rhonhey_ball",
+    "path":"sprites/spr_battle_blt_rhonhey_ball/spr_battle_blt_rhonhey_ball.yy",
   },
   "spriteMaskId":null,
   "visible":true,

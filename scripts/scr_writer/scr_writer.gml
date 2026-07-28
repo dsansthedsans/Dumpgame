@@ -813,8 +813,6 @@ function TEXT()
 		msg[3] = "* BUT YOU'VE GOTTA UNDERSTAND.";
 		msg[4] = "* IN A FIGHT AGAINST ME...";
 		msg[5] = "* YOU'LL NEVER WIN!";
-		mytype[0] = 6;
-		auto_side[0] = 0;
 	}
 		
 	// obj_event_brock_postbattle
@@ -1101,6 +1099,7 @@ function TEXT()
 		{
 			case 0:
 			msg_face[0] = spr_dialogface_m6_neutral;
+			msg_face[4] = spr_dialogface_m6_neutralTense;
 			msg_face[5] = spr_dialogface_m6_pleased;
 			msg_sound[0] = snd_txt_m6;
 			msg_talker[0] = global.party[0];
@@ -1302,7 +1301,7 @@ function TEXT()
 		{
 			var _msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}");
 			if (_questioned != undefined)
-				_msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.{question_result[m-1]}");
+				_msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.{question_result[_questioned]}");
 			if (_msg == undefined)
 				break;
 			if (string_char_at(_msg, string_length(_msg)) != "?")
@@ -1312,9 +1311,12 @@ function TEXT()
 				question[m] = _msg;
 				question_option[1] = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.1");
 				question_option[2] = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.2");
+				msg_talker[m] = -1;
+				msg_talker[m+1] = obj_chara.mycol;
 				_questioned = m;
 			}
 		}
+		msg_talker[0] = obj_chara.mycol;
 		global.flag[68] = true;
 	}
 	

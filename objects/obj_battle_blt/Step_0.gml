@@ -397,6 +397,9 @@ if (active == 1)
 		}
 		fadeout = 1;
 	}
+	
+	if (type == 13 && image_alpha < 1)
+		image_alpha += 0.1;
 }
 
 

@@ -416,7 +416,6 @@ function battle_getattack()
 			enemy_attack[i] = battle_round;
 			if (battle_round > 3)
 				enemy_attack[i] = irandom_range(0, 3);
-			enemy_attack[i] = 2;
 			
 			// get turntime and box info
 			if (enemy_attack[i] == 1)
@@ -451,6 +450,7 @@ function battle_getattack()
 		if (enemy_type[i] == 7) // Rhonhey
 		{
 			enemy_attack[i] = 0;
+			heart_nexty = (box_nexty + (box_nexth / 4));
 		}
 	}
 	
@@ -774,8 +774,80 @@ function battle_attack()
 	{
 		if (attack == 0)
 		{
-			create(-20, -20, unused_obj_rhonheyattacktest_controller);
-			time = 0;
+			if (stage == 0)
+			{
+				ball =
+				{
+					objects : [],
+					speed : 0.0075,
+					length : 6,
+					distance : ((32 / 2) + 8),
+					angle : 180,
+					angleSpeed : 0,
+					angleSpeed_max : -7,
+					audio :
+					{
+						asset : snd_whoosh,
+						id : undefined,
+						volume : undefined,
+						volumeMin : 0,
+						volumeMax : 1,
+						pitch : undefined,
+						pitchMin : 0.5,
+						pitchMax : 1,
+					},
+				}
+				for (var b = 0; b < ball.length; b++)
+				{
+					ball.objects[b] = create(-20, -20, obj_battle_blt);
+					thisobj.type = 13;
+				}
+				delay = 30;
+				stage = 1;
+			}
+			else if (stage == 1)
+			{
+				if (delay > 0)
+					delay -= 1;
+				else
+				{
+					ball.angleSpeed = lerp(ball.angleSpeed, ball.angleSpeed_max, ball.speed);
+					ball.angle += ball.angleSpeed;
+					if (ball.audio.id == undefined)
+						ball.audio.id = audio_play(ball.audio.asset, true, VOLUME_SOUND);
+					if (ball.audio.id != undefined && audio_playing(ball.audio.asset) == true)
+					{
+						if (ball.audio.volume == undefined)
+							ball.audio.volume = ball.audio.volumeMin;
+						ball.audio.volume = lerp(ball.audio.volume, (ball.audio.volumeMin + (abs(ball.audio.volumeMax - ball.audio.volumeMin) * (ball.angleSpeed / ball.angleSpeed_max))), ball.speed);
+						audio_gain(ball.audio.id, ball.audio.volume, 0, false, VOLUME_SOUND);
+						if (ball.audio.pitch == undefined)
+							ball.audio.pitch = ball.audio.pitchMin;
+						ball.audio.pitch = lerp(ball.audio.pitch, (ball.audio.pitchMin + (abs(ball.audio.pitchMax - ball.audio.pitchMin) * (ball.angleSpeed / ball.angleSpeed_max))), ball.speed);
+						audio_pitch(ball.audio.id, ball.audio.pitch);
+					}
+					else
+						ball.audio.id = undefined;
+				}
+				for (var b = 0; b < ball.length; b++)
+				{
+					var _angle = ((b == 0) ? ball.angle : (ball.objects[b - 1].image_angle + 90 + ((-ball.angleSpeed_max * b) * (ball.angleSpeed / ball.angleSpeed_max))));
+					var _x = ((b == 0) ? controller.box_x : (ball.objects[b - 1].x + lengthdir_x(ball.distance, _angle)));
+					var _y = ((b == 0) ? controller.box_x : (ball.objects[b - 1].y + lengthdir_y(ball.distance, _angle)));
+					ball.objects[b].image_angle = (_angle - 90);
+					ball.objects[b].x = _x;
+					ball.objects[b].y = _y;
+					with (ball.objects[b])
+					{
+						if (active == true && can_damage == true && place_meeting(x, y, obj_battle_heart) == true)
+							other.stage = 2;
+					}
+				}
+			}
+			if (stage == 2)
+			{
+				
+			}
 		}
 	}
 	

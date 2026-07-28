@@ -347,10 +347,14 @@ if (type == 6.24)
 
 if (type == 13)
 {
-	sprite_index = spr_battle_blt_rhonhey_tooth;
-	image_xscale = 4;
-	image_yscale = 1;
+	sprite_index = spr_battle_blt_rhonhey_ball;
+	image_xscale = 1;
+	image_yscale = image_xscale;
+	image_angle = 180;
+	direction = image_angle;
+	image_alpha = 0;
 	outside_box = true;
+	destroy_on_impact = false;
 }
 
 

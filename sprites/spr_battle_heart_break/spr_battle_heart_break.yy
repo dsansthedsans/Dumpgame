@@ -16,7 +16,6 @@
     {"$GMSpriteFrame":"v1","%Name":"6e6a295a-48b9-438e-8f25-3d6deb9c2a55","name":"6e6a295a-48b9-438e-8f25-3d6deb9c2a55","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"9a48720e-480d-4e53-872d-5133cf875bb9","name":"9a48720e-480d-4e53-872d-5133cf875bb9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"cc9661e4-36b4-4e61-bb3c-ee096ce9a6a9","name":"cc9661e4-36b4-4e61-bb3c-ee096ce9a6a9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"721c6ab9-2505-402c-ba93-4f32e20c7b1a","name":"721c6ab9-2505-402c-ba93-4f32e20c7b1a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -53,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":5.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -84,9 +83,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cc9661e4-36b4-4e61-bb3c-ee096ce9a6a9","path":"sprites/spr_battle_heart_break/spr_battle_heart_break.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"00ca6b7e-c0c9-484e-b3b2-9a652af7d896","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"721c6ab9-2505-402c-ba93-4f32e20c7b1a","path":"sprites/spr_battle_heart_break/spr_battle_heart_break.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"26cc0f1b-4bd5-45d5-8568-0fe80c65a238","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

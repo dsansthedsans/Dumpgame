@@ -477,10 +477,10 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_captcha1_2", "LIGHTBULB");
 	ds_map_add(global.textdata_en, "room_captcha1_3", "CLOWNFISH");
 	ds_map_add(global.textdata_en, "npc_armsguy1_0_0", "* You A New Member?");
-	ds_map_add(global.textdata_en, "npc_armsguy1_0_1", "* Cool.^1&* I An Armsguy.^1&* Call Me Armsguy.");
-	ds_map_add(global.textdata_en, "npc_armsguy1_0_2", "* Why I Not Fight You?^2&* Easy.^1 No Why.");
-	ds_map_add(global.textdata_en, "npc_armsguy1_0_3", "* You A Kid.^1 You Weak.^1&* I Stronger Than You.");
-	//ds_map_add(global.textdata_en, "npc_armsguy1_0_4", "* But If You Kill.^1 I Run.");
+	ds_map_add(global.textdata_en, "npc_armsguy1_0_1", "* Cool.^1&* Me An Armsguy.^1&* Call Me Armsguy.");
+	ds_map_add(global.textdata_en, "npc_armsguy1_0_2", "* Why Me Not Fight You?^2&* Easy.^1 No Why.");
+	ds_map_add(global.textdata_en, "npc_armsguy1_0_3", "* You A Kid.^1 You Weak.^1&* Me Stronger Than You.");
+	//ds_map_add(global.textdata_en, "npc_armsguy1_0_4", "* But If You Kill.^1 Me Run.");
 	ds_map_add(global.textdata_en, "npc_armsguy1_1_0", "* Try Be Cool With Monsters.");
 	ds_map_add(global.textdata_en, "npc_armsguy1_1_1", "* They Hurt You Because&They Scared.");
 	ds_map_add(global.textdata_en, "npc_armsguy1_1_2", "* If You Don Hurt Them,^1 You Cool.");
@@ -536,24 +536,24 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_0_0", "* Hey You,^3 ;@@");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_0_1", ";D.^1&* You A New Member Right?");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_1", "* Me Buddy Is Dumbass!^1&* He Stuck In Capcha 2.^3&* He Need Help.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_2", "* I Give You Gift For It.^3&* Very Good Gift.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_2", "* Me Give You Gift For It.^3&* Very Good Gift.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_3", "* (Do you want to help Armsguy?)");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_3_1", "Yes");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_0_3_2", "No");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_1_0", "* Cool.^3&* I Wait Here.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_1_0", "* Cool.^3&* Me Wait Here.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_0_2_0", "* Didn Even Need It Anyways.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_0_0", "* You Even Know Where It Is?");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_0_1", "* It Right Up There.^3&* After Pillars.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_0", "* Good Job Human.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_1", "* As I Said,^3 I Give You Gift.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_1", "* As Me Said,^3 Me Give You Gift.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_0__", "* Hey Human.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_1__", "* You Helped Me Dumbass Buddy.^1&* I Give You Gift.");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_2", "* I Don Know What Is,^1 But I Found It Around Here.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_1__", "* You Helped Me Dumbass Buddy.^1&* Me Give You Gift.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_2", "* Me Don Know What Is,^1 But Me Found It Around Here.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_3", "* Very Weird Thing.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_4_0", "* Here.^1&* All Yours.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_0", "* (You got :YKunai;D.)");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_4_1", "* You Have No Space?");
-	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_1", "* Dump Something And I Give You Gift.");
+	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_1", "* Dump Something And Me Give You Gift.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_2_0", "* What?^3 Didn Like It?^2&* Deal With It");
 	ds_map_add(global.textdata_en, "npc_trashguy_lost2", "* ...thanks...");
 	
@@ -677,8 +677,8 @@ function TEXTDATA_EN()
 
 	// room_corridors_13
 	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_0_0", "* You Da New Member Da Guys Talk About.");
-	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_0_1", "* I Watch You Fight Brock.^1&* Very Epic!");
-	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_0_2", "* I Laugh When Brock&Scare Meeseeks.^3&* Total Clanker.");
+	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_0_1", "* Me Watch You Fight Brock.^1&* Very Epic!");
+	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_0_2", "* Me Laugh When Brock&Scare Meeseeks.^3&* Total Clanker.");
 	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_1_0", "* Brock Is Very Chill.^1&* He A Cool Guy!");
 	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_1_1", "* He Got Angry After Invasion,^1 But He Not Always Angry.");
 	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_1_2", "* Why He Angry At You?");
@@ -699,19 +699,19 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_0_2", "* How You Go Through Corridor??^3&* You Fly??");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_1_0", "* Meeseeks Not Say Of Da Raid??");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_1_1", "* Da Raid Was Nuts!^3&* Da Corridor There&Broken Totally.");
-	ds_map_add(global.textdata_en, "npc_armsguy_exit_1_2", "* Da Humans Killed My Grandma!^1&* But I Cool Now."); // from Trolls. Not sure why I added this
+	ds_map_add(global.textdata_en, "npc_armsguy_exit_1_2", "* Da Humans Killed My Grandma!^1&* But Me Cool Now."); // from Trolls. Not sure why I added this
 	ds_map_add(global.textdata_en, "npc_trashguy_exit_fishing_0_0", "* ...hi...");
 	ds_map_add(global.textdata_en, "npc_trashguy_exit_fishing_0_1", "* ...what...?^1&* ...i'm not fishing...");
 	ds_map_add(global.textdata_en, "npc_trashguy_exit_fishing_0_2", "* ...i was throwing trash down there but i accidentally threw something important...");
 	ds_map_add(global.textdata_en, "npc_trashguy_exit_fishing_0_3", "* ...now i'm trying to take it back with a fishing rod...");
 	ds_map_add(global.textdata_en, "npc_trashguy_exit_fishing_0_4", "* ...it's not working...");
 	ds_map_add(global.textdata_en, "npc_trashguy_exit_fishing_1_0", "* ...i think i'll&just give up...");
-	ds_map_add(global.textdata_en, "npc_armsguy_exit_fishing_0_0", "* What Up.^1&* I Just Waiting This Smartass Here Get Thing Back.");
+	ds_map_add(global.textdata_en, "npc_armsguy_exit_fishing_0_0", "* What Up.^1&* Me Just Waiting This Smartass Here Get Thing Back.");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_fishing_0_1", "* Big Waste Of Time!^3&* How That Fall There Anyway!?");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_fishing_0_2", "* ...i already told you&i don't know...");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_fishing_1_0", "* This Intolerable!"); // from Indiana Jones and the Last Crusade
-	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_0_0", "* I Don Talk Now.^3&* I Gyming.");
-	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_1_0", "* I Say I Don Talk&Now Dumbass!!!");
+	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_0_0", "* Me Don Talk Now.^3&* I Gyming.");
+	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_1_0", "* Me Say Me Don Talk&Now Dumbass!!!");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_2_0", "* Go Away!!!!!!");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_3_0", "* Ahhhhhh!!!!!!!!!!!!");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_0", "* (You wave to Flitcher.)^3&* (It waves back at you.)");
@@ -737,8 +737,8 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "event_gabee_chase.0.1", "* The exit is at the end of this corridor.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.0.2", "* Before we continue,^1 I have a question for you.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.0.3", "* You do remember how :YBATTLES;D work,^2 correct?");
-	ds_map_add(global.textdata_en, "event_gabee_chase.0.4", "* ...");
-	ds_map_add(global.textdata_en, "event_gabee_chase.0.5", "* No!^1 Nothing!^2&* I just wanted to know.");
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.4", "* ");
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.5", "* ... No!^1 Nothing!^2&* I just wanted to know.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.1.0", "* I confess.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.1.1", "* I lied.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.1.2", "* There is a reason I questioned your memory.");
@@ -748,13 +748,13 @@ function TEXTDATA_EN()
 	
 	// room_cave_3
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.0.0", "* Ahh!^3 You Here Too!");
-	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.0.1", "* Look Like I Not Da Only That Try To Jump!^3&* Mweheheh!!");
-	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.0", "* If I Was Little Closer To Hole,^1 I Jump To Other Side.");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.0.1", "* Look Like Me Not Da Only That Try To Jump!^3&* Mweheheh!!");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.0", "* If Me Was Little Closer To Hole,^1 Me Jump To Other Side.");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.1", "* But You??^3&* You A Human Yes?^1&* You Very Weak!");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2", "* You Dumbass Too??");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.1", "Yes");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.2", "No");
-	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.1", "* ...^2^1&* ...^2^1&* ... OK");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.1", "* ...^2^2&* ...^2^2^2&* ... OK");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.2", "* Mweheheheh!!^1 That Funny!^1&* You Dumbass Yes,^3 Dumbass.^1&* Go Dumbass Away.");
 	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2", "* You Stupid Too??");
 	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.1", "You're the one who thought you could jump without legs");
@@ -898,17 +898,17 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_3", "+F1You Never Be Strong As Me.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_4", "+F1You Should Go To Da Gym.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_5", "+F1... What?^1&\"Leg Day\"?");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_6", "+F1I Stronger Than You.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_6", "+F1Me Stronger Than You.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_7", "+F1Want Break You Legs?");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_8", "+F1Well Done.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_9", "+F1I Believe In You Potential.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_10", "+F1You Good.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_8", "+F1Good Job.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_9", "+F1Me Believe In You Potential.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_10", "+F1That How&You Do It.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_0", "+F1Back Off Dumbass!!!!");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_1", "+F1Take You Hands Off Me!!!!");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_clean_2", "+F1Don Touch&My Arms!!!!");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_0", "+F1Ouch!^1 Keep Going.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_1", "+F1That How&You Do It.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_2", "+F1Congrats,^1 I Love It!");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_0", "+F1Ouch!!^1 Keep Going.");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_1", "+F1Mweheheh!!^1 Me Like It!");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_punch_2", "+F1Congrats,^1 Me Love It!!");
 	
 	// Trashguy
 	ds_map_add(global.textdata_en, "battle_main_trashguy", "* (Trashguy rolls into your way!)");

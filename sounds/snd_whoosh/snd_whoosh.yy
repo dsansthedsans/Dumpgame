@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_npc_rat_2o",
+  "%Name":"snd_whoosh",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.4672789,
+  "duration":6.3448753,
   "exportDir":"",
-  "name":"snd_npc_rat_2o",
+  "name":"snd_whoosh",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_npc_rat_2o.mp3",
+  "soundFile":"snd_whoosh.wav",
   "volume":1.0,
 }

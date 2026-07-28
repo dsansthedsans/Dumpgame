@@ -1,13 +1,10 @@
 
+controller = obj_battle_controller;
+depth = controller.battle_depth[6];
 image_speed = 0;
 image_index = 1;
 alarm[0] = 1;
 x = (room_width / 2);
 y = (room_height / 2);
 active = 0;
-siner = 0;
-heart = obj_battle_heart;
-heart_oldx = 0;
-heart_oldy = 0;
-heart_shake = 1;
-con = 0;
+type = 0;

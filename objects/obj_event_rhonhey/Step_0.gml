@@ -10,8 +10,8 @@ if (con == 3 && chara.bbox_top <= 200 && global.chara_move == true)
 	global.flag[66] = 0.75;
 	chara_change(-1, false, false, true, false, false, false);
 	chara_stop();
-	audio_play(snd_enemy_hurt3, false, VOLUME_SOUND, 0.75, , , (0.5 + 0.125));
-	audio_play(snd_yowl, false, VOLUME_SOUND, 0.75, , , (0.5 + 0.125));
+	audio_play(snd_enemy_hurt3, false, VOLUME_SOUND, 0.5, , , (0.5 + 0.25));
+	audio_play(snd_yowl, false, VOLUME_SOUND, 0.5, , , (0.5 + 0.25));
 	con = 4;
 }
 if (con == 4)

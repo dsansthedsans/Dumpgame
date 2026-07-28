@@ -1,4 +1,3 @@
-
 siner = 0;
 active = 0;
 alarm[0] = 1;

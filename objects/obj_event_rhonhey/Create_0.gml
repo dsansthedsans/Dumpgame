@@ -38,6 +38,7 @@ if (global.flag[66] < 1)
 		break;
 		case 0.5:
 		con = 3;
+		destroy(thing_object[0]);
 		destroy(thing_object[1]);
 		break;
 	}

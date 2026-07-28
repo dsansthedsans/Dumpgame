@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"unused_spr_rhonheyattacktest_ball",
-    "path":"sprites/unused_spr_rhonheyattacktest_ball/unused_spr_rhonheyattacktest_ball.yy",
+    "name":"spr_battle_blt_rhonhey_ball",
+    "path":"sprites/spr_battle_blt_rhonhey_ball/spr_battle_blt_rhonhey_ball.yy",
   },
   "spriteMaskId":null,
   "visible":true,

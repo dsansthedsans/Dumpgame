@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snd_npc_rat_0a",
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] audio",
+    "path":"folders/[!] audio.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

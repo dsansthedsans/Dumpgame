@@ -38,7 +38,7 @@ if (con == 5)
 			controller = obj_over_controller;
 			sprite_index = spr_battle_heart_break;
 			image_speed = 0;
-			image_index = irandom_range(1, 4);
+			image_index = irandom_range(1, 3);
 			image_blend = controller.heart_color;
 			direction = irandom_range(0, 360);
 			gravity = 0.1;
