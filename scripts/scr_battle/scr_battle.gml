@@ -416,6 +416,7 @@ function battle_getattack()
 			enemy_attack[i] = battle_round;
 			if (battle_round > 3)
 				enemy_attack[i] = irandom_range(0, 3);
+			enemy_attack[i] = 2;
 			
 			// get turntime and box info
 			if (enemy_attack[i] == 1)
@@ -773,7 +774,8 @@ function battle_attack()
 	{
 		if (attack == 0)
 		{
-				
+			create(-20, -20, unused_obj_rhonheyattacktest_controller);
+			time = 0;
 		}
 	}
 	

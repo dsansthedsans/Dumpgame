@@ -316,6 +316,7 @@ if (active == 1)
 	}
 	if (type == 1000) // TROLLFACE
 	{
+		head_image = clamp(enemy.hurt, 0, 1);
 		if (enemy.hurt == 0)
 			siner++;
 		var _sin = ((dsin(siner * 5) * 0.5) + 0.5);
@@ -347,12 +348,12 @@ if (active == 1)
 		var _cheek_y = (_head_y + (25 * _head_scale));
 		cheek_height = lerp(cheek_height, (10 * (enemy.hurt >= 1)), 0.1);
 		var _cheek_height = ((cheek_height * _head_scale) + ((_sin * 4) * _head_scale));
-		draw_sprite_part_ext(_head_spr, 0, 0, 25, _head_width, 1, _head_x, _cheek_y, _head_scale, _cheek_height, c_white, 1);
+		draw_sprite_part_ext(_head_spr, head_image, 0, 25, _head_width, 1, _head_x, _cheek_y, _head_scale, _cheek_height, c_white, 1);
 		// jaw
 		var _jaw_y =  (_cheek_y + _cheek_height);
-		draw_sprite_part_ext(_head_spr, 0, 0, 26, _head_width, 17, _head_x, _jaw_y, _head_scale, _head_scale, c_white, 1);
+		draw_sprite_part_ext(_head_spr, head_image, 0, 26, _head_width, 17, _head_x, _jaw_y, _head_scale, _head_scale, c_white, 1);
 		// head
-		draw_sprite_part_ext(_head_spr, 0, 0, 0, _head_width, 25, _head_x, _head_y, _head_scale, _head_scale, c_white, 1);
+		draw_sprite_part_ext(_head_spr, head_image, 0, 0, _head_width, 25, _head_x, _head_y, _head_scale, _head_scale, c_white, 1);
 	}
 }
 

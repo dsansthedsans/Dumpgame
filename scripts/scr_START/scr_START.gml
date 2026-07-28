@@ -388,7 +388,7 @@ function start_flags()
 	global.flag[60] = 0; // started gabee's chase
 	global.flag[61] = 0; // finished gabee's chase
 
-	global.flag[62] = 0; // (((UNUSED)))
+	global.flag[62] = 0; // CHAPTER 2 CUTSCENE AAAAAAAAAA
 	global.flag[63] = 0; // left room_cave_2
 	
 	global.flag[64] = 0; // tutorial - interagir
@@ -396,6 +396,8 @@ function start_flags()
 	global.flag[66] = 0; // PRE M6 WIERD THING AHHH
 	
 	global.flag[67] = 0; // rules book smiley face amount
+	
+	global.flag[68] = 0; // TALKED ARMSGUY CAVE 3
 }
 function start_music()
 {
@@ -592,7 +594,7 @@ function CHANGE_GAME()
 			// definir flags baseado de onde o jogo vai começar
 			if (_lvl >= 1)
 			{
-				//global.flag[0] = true; // finished getting up event
+				global.flag[0] = true; // finished getting up event
 				if (_rm >= room_corridors_2)
 				{
 					global.flag[64] = 1;

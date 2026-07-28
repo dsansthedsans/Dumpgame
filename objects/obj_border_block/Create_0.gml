@@ -9,4 +9,4 @@ image_index = 0;
 image_xscale = 1;
 image_yscale = 1;
 mydist = 0;
-mindist = 20;
+mindist = 40;

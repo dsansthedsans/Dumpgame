@@ -1,47 +1,50 @@
-if (con == 1 && chara.bbox_top <= 980) || (con == 2 && chara.bbox_top <= 680)
+if (con == 1 && chara.bbox_top <= 1000) || (con == 2 && chara.bbox_top <= 685)
 {
-	global.flag[66] += 1;
+	global.flag[66] += 0.25;
 	con += 1;
-	thing_object[(con - 2)].speed = 5;
-	audio_play(snd_pedronstro, false, VOLUME_SOUND);
+	thing_object[(con - 2)].speed = 4;
+	audio_play(snd_pedronstro, false, VOLUME_SOUND,,,, (1 + (0.5 * con)));
 }
 if (con == 3 && chara.bbox_top <= 200 && global.chara_move == true)
 {
+	global.flag[66] = 0.75;
 	chara_change(-1, false, false, true, false, false, false);
 	chara_stop();
-	surprise(obj_chara);
-	audio_play(snd_surprise, false, VOLUME_SOUND);
+	audio_play(snd_enemy_hurt3, false, VOLUME_SOUND, 0.75, , , (0.5 + 0.125));
+	audio_play(snd_yowl, false, VOLUME_SOUND, 0.75, , , (0.5 + 0.125));
 	con = 4;
 }
 if (con == 4)
 {
-	game.cam_y -= 3;
+	game.cam_y -= 2;
 	if (game.cam_y <= 0)
 	{
 		con = 5;
-		alarm[2] = 30;
+		alarm[2] = 45;
 	}
 }
 if (con == 6)
 {
-	con = 7;
-	alarm[2] = 60;
-	audio_play(snd_enemy_hurt2, false, VOLUME_SOUND);
-}
-if (con == 8)
-{
-	con = 9;
-	audio_play(snd_879, false, VOLUME_SOUND, , , , 0.5);
+	con = 8;
+	alarm[2] = 90;
+	audio_play(snd_heartbreak2, false, VOLUME_SOUND);
 }
 if (con == 9)
 {
-	thing_object[2].x = lerp(thing_object[2].x, chara.x, 0.1);
-	thing_object[2].y = lerp(thing_object[2].y, chara.y, 0.1);
+	if (audio_playing(snd_879) == false)
+	{
+		xscream = audio_play(snd_879, true, VOLUME_SOUND, , , , 0.5);
+		audio_play(snd_pedronstro, false, VOLUME_SOUND,,,, 1.5);
+	}
+	audio_pitch(xscream, (audio_sound_get_pitch(xscream) + 0.01));
+	thing_object[2].speed = 8;
 	if (thing_object[2].y >= (chara.y - 20))
 	{
+		global.flag[66] = 1;
 		global.battle_nextgroup = 13;
 		battle();
 		con = 10;
 		audio_stop(snd_879);
+		audio_stop(snd_pedronstro);
 	}
 }

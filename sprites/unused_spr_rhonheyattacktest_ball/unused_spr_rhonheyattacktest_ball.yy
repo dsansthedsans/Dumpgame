@@ -13,9 +13,6 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"3afdf497-94b0-4f42-9c26-341d9601d9e9","name":"3afdf497-94b0-4f42-9c26-341d9601d9e9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"469dd77b-62e4-4fe2-a117-c8c184037f89","name":"469dd77b-62e4-4fe2-a117-c8c184037f89","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"ffab3bba-1305-4e88-a792-1e7957de7881","name":"ffab3bba-1305-4e88-a792-1e7957de7881","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"0215555b-bf5b-499c-98c1-12fde8e454dc","name":"0215555b-bf5b-499c-98c1-12fde8e454dc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -52,7 +49,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":4.0,
+    "length":1.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -74,15 +71,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3afdf497-94b0-4f42-9c26-341d9601d9e9","path":"sprites/unused_spr_rhonheyattacktest_ball/unused_spr_rhonheyattacktest_ball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c33aa3f3-5bfd-44a5-bc72-ca190248ea95","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"469dd77b-62e4-4fe2-a117-c8c184037f89","path":"sprites/unused_spr_rhonheyattacktest_ball/unused_spr_rhonheyattacktest_ball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7eec3cec-7cd8-4c56-ab74-6149f89e3682","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ffab3bba-1305-4e88-a792-1e7957de7881","path":"sprites/unused_spr_rhonheyattacktest_ball/unused_spr_rhonheyattacktest_ball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8406228c-1496-4236-84d3-70c170b793e7","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0215555b-bf5b-499c-98c1-12fde8e454dc","path":"sprites/unused_spr_rhonheyattacktest_ball/unused_spr_rhonheyattacktest_ball.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"18c4cced-9bd7-4f19-9f83-7e97f6c40dcc","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

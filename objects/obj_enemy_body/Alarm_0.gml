@@ -79,6 +79,9 @@ if (type == 7) // Rhonhey
 }
 
 if (type == 1000) // TROLLFACE PRIME
+{
+	head_image = 0;
 	cheek_height = 0;
+}
 
 active = 1;

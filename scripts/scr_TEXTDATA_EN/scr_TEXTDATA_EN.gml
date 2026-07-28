@@ -8,11 +8,6 @@ function TEXTDATA_EN()
 	Leave the baby alone, you foul beast!
 	You do not belong here! Leave!
 	Your presence is unwanted!
-	
-	
-	babaka dummy design.
-	
-	
 	*/
 	///////////////////////
 	
@@ -311,8 +306,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "unused_genodialog_1_1", "* (But nobody came.)");
 	
 	// room_corridors_1
-	ds_map_add(global.textdata_en, "room_lamp_0","* (It's a lamp.)");
-	ds_map_add(global.textdata_en, "room_lamp_1","* (Its light comes from a strange-looking blue fire.)");
+	ds_map_add(global.textdata_en, "room_lamp_0","* (It's a lamp.)^1&* (An exotic blue fire lights the room.)");
 	ds_map_add(global.textdata_en, "room_brokenlamp", "* (This lamp appears to have been forcefully thrown&against the floor.)");
 	
 	// obj_event_m6_start
@@ -752,19 +746,30 @@ function TEXTDATA_EN()
 	//ds_map_add(global.textdata_en, $"event_gabee_chase.3.{m++}", "* (You hear a distant voice.)");
 	ds_map_add(global.textdata_en, $"event_gabee_chase.3.{m++}", "* ");
 	
-	// event_cave_armsguy
-	ds_map_add(global.textdata_en, "unused_event_cave_armsguy.0", "* Ah!^3 You Here Too!");
-	ds_map_add(global.textdata_en, "unused_event_cave_armsguy.1", "* Look Like I Not Da Only That Try To Jump!^1&* Ha ha!");
-	
 	// room_cave_3
-	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.0", "* If I Was Little Closer To Hole,^3 I Jump To Other Side!");
-	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.1", "* But You??^1&* You Weak.^3 Very!");
-	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.2", "* You Stupid Or Sumthin??");
-	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.2.1", "At least I have legs.");
-	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.0.2.2", "It was a cutscene");
-	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.1.0", "* ...Ahhh I Kill You!!!!!!");
-	ds_map_add(global.textdata_en, "unused_npc_cave_armsguy.2.0", "* ...^2&* What??");
-	ds_map_add(global.textdata_en, "border_0", "* (This eletrical border gives you the feeling the PRE-DEMO ended.)");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.0.0", "* Ahh!^3 You Here Too!");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.0.1", "* Look Like I Not Da Only That Try To Jump!^3&* Mweheheh!!");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.0", "* If I Was Little Closer To Hole,^1 I Jump To Other Side.");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.1", "* But You??^3&* You A Human Yes?^1&* You Very Weak!");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2", "* You Dumbass Too??");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.1", "Yes");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.2", "No");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.1", "* ...^2^1&* ...^2^1&* ... OK");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.2", "* Mweheheheh!!^1 That Funny!^1&* You Dumbass Yes,^3 Dumbass.^1&* Go Dumbass Away.");
+	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2", "* You Stupid Too??");
+	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.1", "You're the one who thought you could jump without legs");
+	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.2", "It was a cutscene");
+	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.1", "* ... Ahhhh I Kill You!!!!!!!!!");
+	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.2", "* ...^2&* ...^2&* ... What??");
+	var i = 0;
+	ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", $"* (An electrical border is blocking the path.)");
+	ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", $"* (You feel like this is the end to some sort of \"demo\"...)");
+	ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", $"* (... and that a \"full game\" has been canceled,^3 too...?)");
+	//ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", $"* (Such strange feelings...)^1&* (What could they mean?)");
+	//ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", $"* (Suddenly,^3 your mouth starts to move by itself as if it was trying to speak.)");
+	//ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", $"* (Could it be an attempt at communication from a supernatural entity?);
+	//ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", $"* (It muttered...^2 \"Thanks for playing\"...?)");
+	//ds_map_add(global.textdata_en, "border_0", "* (This eletrical border gives you the feeling the PRE-DEMO ended.)");
 	//ds_map_add(global.textdata_en, "border_0", "* (There's an eletrical border preventing you from continuing.)");
 	
 	/* BATTLES BATTLES BATTLES */
@@ -892,7 +897,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_2", "+F1Use You Strength In Me!");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_3", "+F1You Never Be Strong As Me.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_4", "+F1You Should Go To Da Gym.");
-	ds_map_add(global.textdata_en, "battle_bubble_armsguy_5", "+F1What?^1&\"Leg Day\"?");
+	ds_map_add(global.textdata_en, "battle_bubble_armsguy_5", "+F1... What?^1&\"Leg Day\"?");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_6", "+F1I Stronger Than You.");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_7", "+F1Want Break You Legs?");
 	ds_map_add(global.textdata_en, "battle_bubble_armsguy_8", "+F1Well Done.");
@@ -987,8 +992,8 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_act_brock_3", "Convince");
 	ds_map_add(global.textdata_en, "battle_act_result_brock_0_0_0", "* Broken Clock - [10 ATK | 0 DEF]^1&* \"A clock permanently possessed by a ghost.\"");
 	ds_map_add(global.textdata_en, "battle_act_result_brock_0_1_0", "* \"He's scared and just wants&to survive.\"");
-	ds_map_add(global.textdata_en, "battle_act_result_brock_1_0_0", "* (You scream for help,^1 hoping someone listens to you...)");
-	ds_map_add(global.textdata_en, "battle_act_result_brock_1_1_0", "* (But nobody came.)");
+	ds_map_add(global.textdata_en, "battle_act_result_brock_1_0_0", "* (You call for help,^1 crying into the darkness...)"); // from UNDERTALE
+	ds_map_add(global.textdata_en, "battle_act_result_brock_1_1_0", "* (But nobody came.)"); // from UNDERTALE
 	ds_map_add(global.textdata_en, "battle_act_result_brock_2_0", "* (You tried to deal your way out,^1 but Broken Clock ignored you completely.)");
 	ds_map_add(global.textdata_en, "battle_act_result_brock_3_0_0", "* (What will you say?)");
 	ds_map_add(global.textdata_en, "battle_act_result_brock_3_1_0_1", "I don't wanna\nhurt you");
@@ -1022,7 +1027,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_bubble_brock_4_2_0", "+S2THEY DID ALL THAT JUST FOR FUN!!!!");
 	ds_map_add(global.textdata_en, "battle_bubble_brock_5_0_0", "+S2YOU'RE A NEW MEMBER,^3 JUST&LIKE THEM.");
 	ds_map_add(global.textdata_en, "battle_bubble_brock_5_1_0", "+S2HOW WOULD I KNOW IF YOU DIDN'T COME HERE TO KILL ME?!?");
-	ds_map_add(global.textdata_en, "battle_bubble_brock_6_0_0", "+S2TO BE HONEST,^1 I DON'T WANT TO KILL YOU.");
+	ds_map_add(global.textdata_en, "battle_bubble_brock_6_0_0", "+S2TO BE HONEST,^1 I DON'T WANT TO&KILL YOU.");
 	ds_map_add(global.textdata_en, "battle_bubble_brock_6_1_0", "+S2BUT I ALSO DON'T WANT YOU TO TAKE AN INNOCENT LIFE.");
 	ds_map_add(global.textdata_en, "battle_bubble_brock_6_2_0", "+S2WHETER IT BE MINE OR ANY OTHER MONSTER'S.");
 	ds_map_add(global.textdata_en, "battle_bubble_brock_7_0_0", "+S2ALL I'M DOING&IS STOPPING A DISASTER BEFORE&IT EVEN HAPPENS.");
@@ -1086,7 +1091,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "battle_act_rhonhey_1", "Punch");
 	ds_map_add(global.textdata_en, "battle_act_rhonhey_2", "Threat");
 	ds_map_add(global.textdata_en, "battle_act_rhonhey_3", "Terrorize");
-	ds_map_add(global.textdata_en, "battle_act_result_rhonhey_0", "* Rhonhey - [?? ATK | ?? DEF]^1 &* [No saved information about this enemy.]");	
+	ds_map_add(global.textdata_en, "battle_act_result_rhonhey_0", "* Rhonhey - [?? ATK | ?? DEF]^1 &* [No data available.]"); // from UNDERTALE
 	ds_map_add(global.textdata_en, "battle_act_result_rhonhey_1_0_0", "* (You punched Rhonhey in the face with all the strength&you had.)");
 	ds_map_add(global.textdata_en, "battle_act_result_rhonhey_1_0_1_0", "* (Rhonhey is getting uncomfortable around you.)");
 	ds_map_add(global.textdata_en, "battle_act_result_rhonhey_1_0_1_1", "* (You've made Rhonhey uncomfortable.)");

@@ -3,7 +3,7 @@ if (exists(chara) == true)
 {
 	x = chara.x;
 	y = (chara.y - (chara.sprite_height / 2) + 6);
-	depth = (chara.depth - 1);
+	//depth = (chara.depth - 1);
 }
 
 // damage animation

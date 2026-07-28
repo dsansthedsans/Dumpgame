@@ -82,7 +82,7 @@ if (con == 13)
 	if (game.cam_x <= (chara.x - ((chara.x - m6.x) / 2) - 160))
 	{
 		game.cam_x = round(game.cam_x);
-		alarm[2] = 45;
+		alarm[2] = 60;
 		con = 14;
 	}
 	else
@@ -113,7 +113,7 @@ if (con == 17)
 {
 	with (bullet[1])
 	{
-		if (y >= (other.m6.y - 80))
+		if (y >= (other.m6.y - 100))
 			party_facing(0, UP);
 		if (place_meeting(x, (y - 20), other.m6) == 1)
 			other.con = 18;

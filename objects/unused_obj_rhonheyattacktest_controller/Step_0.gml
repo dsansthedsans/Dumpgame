@@ -24,7 +24,7 @@ if (active == 1)
 				{
 					with (ball[i])
 					{	
-						if (place_meeting(x, y, unused_obj_rhonheyattacktest_heart) == 1)
+						if (place_meeting(x, y, other.heart) == 1)
 						{
 							with (other)
 							{

@@ -36,14 +36,7 @@ if (room == room_intro)
 	if (controller.active == 1)
 		music_set(0, mus_intro);
 }
-if (room == room_over)
-{
-	music_set(0, -1);
-	music_set(3, -1);
-	if (exists(obj_over_controller) == 1 && obj_over_controller.con == 9)
-		music_set(0, mus_gameover, , 0, , , , 1);
-}
-if (room != room_battle && exists(obj_battle_quicker) == false)
+if (room != room_battle && exists(obj_battle_quicker) == false && room != room_over)
 {
 	if (room >= room_corridors_1 && room <= room_corridors_18)
 	{	
@@ -60,8 +53,11 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 				global.music[0] = mus_nobody;
 		}
 		// First Corridor & MEE6's Room
-		if (room == room_corridors_1_5) || (room == room_corridors_2 && (global.flag[1] == 0 || global.flag[1] == 1))
+		if (room == room_corridors_1_5 && global.flag[66] != 0.75) || (room == room_corridors_2 && (global.flag[1] == 0 || global.flag[1] == 1))
+		{
 			music_set(1, snd_ambient_wind, , 4, true, 0.5, , 2);
+			global.music_volumetype[1] = VOLUME_SOUND;
+		}
 		else if (room == room_corridors_2 && global.flag[1] == 0.75)
 			music_set(0, mus_m6);
 		// Entrance
@@ -170,12 +166,12 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 		}
 		if (room == room_cave_2)
 		{
-			music_set(0, mus_cave_echo, (0.5 * ((room_height - obj_chara.y) / room_height)), 2, true, , , 1);
+			music_set(0, mus_cave_echo, (0.5 * ((room_height - obj_chara.y) / room_height)),,,,, 1);
 			music_set(2, -1);
 		}
 		if (room >= room_cave_3 && room <= room_cave_3)
 		{
-			music_set(0, mus_cave, , , , , , 1);
+			music_set(0, mus_cave,,,,,, 2);
 			music_set(2, snd_ambient_water, , 2, true, , , 4);
 			global.music_volumetype[2] = VOLUME_SOUND;
 		}
@@ -190,7 +186,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false)
 	for (var i = 0; i < ((global.music_length - 2) * exists(obj_chara_pause)); i++)
 		music_paused[i] = true;
 }
-else
+else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 {
 	for (var i = 0; i < (global.music_length - 2); i++)
 	{
@@ -207,9 +203,18 @@ else
 	{
 		control = obj_battle_controller;
 		music_set(3, control.battle_music, 1, 0, 0, (1 - (0.025 * (chara_murder() == 1))), 1, 0.5);
-		if (control.battle_group == 13)
-			music_set(4, snd_ambient_wind, 0.5, , , 0.25);
+		//if (control.battle_group == 13)
+		//	music_set(4, snd_ambient_wind, 0.5, , , 0.25);
 	}
+}
+else if (room == room_over)
+{
+	music_set(0, -1);
+	music_set(1, -1);
+	music_set(2, -1);
+	music_set(3, -1);
+	if (exists(obj_over_controller) == 1 && obj_over_controller.con == 9)
+		music_set(0, mus_gameover, , 0, , , , 1);
 }
 
 for (var i = 0; i < global.music_length; i++)
@@ -232,7 +237,7 @@ for (var i = 0; i < global.music_length; i++)
 	// parar música
 	if (((global.music[i] <= -1) || (global.music[i] != music_old[i] && music_old[i] > -1)) && music_audio[i] > -1)
 	{
-		if (audio_playing(music_audio_old[i]) == true)
+		if (audio_playing(music_audio_old[i]) == true && audio_is_paused(music_audio_old[i]) == false)
 		{
 			if (music_fadeouttime_old[i] > 0)
 			{

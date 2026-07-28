@@ -80,13 +80,18 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_pedronstro)
 			_volume *= 0.5;
 		if (_asset == snd_879)
-			_volume *= 0.25;
+			_volume *= 0.5;
+		if (_asset == snd_yowl)
+			_volume *= 0.75;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
 		_volume *= 0.5;
+		
 		if (_asset == mus_chapter_1)
 			_volume *= 1.25;
+		if (_asset == mus_battle0)
+			_volume *= 1.5;
 		if (_asset == mus_m6)
 			_volume *= 2.5;
 		if (_asset == mus_corridors)

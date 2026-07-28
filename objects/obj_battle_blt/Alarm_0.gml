@@ -345,7 +345,13 @@ if (type == 6.24)
 	shakescreen(5, 5);
 }
 
-
+if (type == 13)
+{
+	sprite_index = spr_battle_blt_rhonhey_tooth;
+	image_xscale = 4;
+	image_yscale = 1;
+	outside_box = true;
+}
 
 
 

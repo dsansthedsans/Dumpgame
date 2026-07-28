@@ -95,7 +95,7 @@ function TEXT()
 	if (text == "room_lamp")
 	{
 		msg[0] = get_text("room_lamp_0");
-		msg[1] = get_text("room_lamp_1");
+		//msg[1] = get_text("room_lamp_1");
 	}
 	if (text == "room_brokenlamp")
 		msg[0] = get_text(text);
@@ -1052,6 +1052,7 @@ function TEXT()
 			if (_weird == true)
 			{
 				msg_skip[0] = false;
+				msg_sound[0] = snd_txt2;
 				msg_font[0] = global.fnt_dsans;
 				msg_talker[0] = obj_chara.mycol;
 				global.flag[44] = 0.5;
@@ -1284,11 +1285,24 @@ function TEXT()
 	}
 	
 	// room_cave_3
-	if (text == "npc_cave_armsguy")
+	if (text == "room_border")
 	{
 		for (var m = 0; m < 99; m++)
 		{
-			var _msg = get_text($"npc_cave_armsguy.0.{m}");
+			var _msg = get_text($"room_cave_3_border.{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+	}
+	if (text == "npc_cave_armsguy")
+	{
+		var _questioned = undefined;
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}");
+			if (_questioned != undefined)
+				_msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.{question_result[m-1]}");
 			if (_msg == undefined)
 				break;
 			if (string_char_at(_msg, string_length(_msg)) != "?")
@@ -1296,12 +1310,12 @@ function TEXT()
 			else
 			{
 				question[m] = _msg;
-				question_option[1] = get_text($"npc_cave_armsguy.0.{m}.1");
-				question_option[2] = get_text($"npc_cave_armsguy.0.{m}.2");
-				break;
+				question_option[1] = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.1");
+				question_option[2] = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.2");
+				_questioned = m;
 			}
 		}
-		msg[m+1] = get_text($"npc_cave_armsguy.{question_result[m]}.0");
+		global.flag[68] = true;
 	}
 	
 	// dropped item

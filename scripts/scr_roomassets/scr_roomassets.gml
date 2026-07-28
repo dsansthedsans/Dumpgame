@@ -314,6 +314,18 @@ function room_interact()
 		if (x == 140 && y == 120)
 			text = "room_finalcorridor_sign";
 	}
+	if (room == room_cave_3)
+	{
+		if (x == 205 && y == 295)
+		{
+			sprite_index = spr_npc_armsguy;
+			text = "npc_cave_armsguy";
+			if (chara_murder() >= 2)
+				destroy(id);
+		}
+		if (x == 130 && y == 50)
+			text = "room_border";
+	}
 }
 
 function room_solid()

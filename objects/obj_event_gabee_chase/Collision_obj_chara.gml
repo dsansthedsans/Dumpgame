@@ -38,7 +38,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 		object : undefined,
 	}
 	
-	var _skip = 1;
+	var _skip = 0;
 	if (_skip == 1)
 	{
 		chara.x = 720;

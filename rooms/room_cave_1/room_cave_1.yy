@@ -37,6 +37,7 @@
     {"name":"inst_40D917C8","path":"rooms/room_cave_1/room_cave_1.yy",},
     {"name":"inst_38DEDC97","path":"rooms/room_cave_1/room_cave_1.yy",},
     {"name":"inst_14213B28","path":"rooms/room_cave_1/room_cave_1.yy",},
+    {"name":"inst_35E79C1F","path":"rooms/room_cave_1/room_cave_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -83,6 +84,7 @@
         {"$GMRInstance":"v4","%Name":"inst_40D917C8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_40D917C8","objectId":{"name":"obj_event_chapter","path":"objects/obj_event_chapter/obj_event_chapter.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":80.0,"y":120.0,},
         {"$GMRInstance":"v4","%Name":"inst_38DEDC97","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_38DEDC97","objectId":{"name":"obj_overworld_solid","path":"objects/obj_overworld_solid/obj_overworld_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":55.0,"y":135.0,},
         {"$GMRInstance":"v4","%Name":"inst_14213B28","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_14213B28","objectId":{"name":"obj_overworld_solid","path":"objects/obj_overworld_solid/obj_overworld_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":60.0,"y":30.0,},
+        {"$GMRInstance":"v4","%Name":"inst_35E79C1F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_35E79C1F","objectId":{"name":"obj_overworld_fog","path":"objects/obj_overworld_fog/obj_overworld_fog.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-464.0,"y":-256.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_4","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_4","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
           -18,-2147483648,-14,0,-2,-2147483648,-14,0,-2,-2147483648,-14,0,-2,-2147483648,-14,0,-2,-2147483648,

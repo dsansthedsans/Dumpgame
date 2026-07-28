@@ -39,5 +39,5 @@ else if (room == room_cave_2)
 else if (room == room_cave_3)
 {
 	type = 5;
-	depth = -2000;
+	depth = -room_height;
 }
