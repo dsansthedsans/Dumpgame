@@ -31,20 +31,24 @@
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
 <br>
-<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". The game was ugly, stiff, confusing and barely functional.</p>
+<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". The game was ugly, stiff, confusing and barely functional. [...]</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
-<p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6 custcene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295"></p>
-<p align="center"><img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's battle"></p>
+<p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295"></p>
+<p align="center"><img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
 <p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until May of the same year. [...]</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
-<p align="center"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing a MEE6's cutscene"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's battle"></p>
+<p align="center"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
 <p>Then, on June 2022, I had an epiphany. I evolved. I, for once, made a rational, logical decision. I focused on learning programming and writing the story instead of improvising the whole game...! That's when the "3rd generation" started. [...]</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
+<br>
+<p>[...]</p>
+<br>
+<p>To be honest, Dumpgame is just another random UNDERTALE fangame. There's nothing special about it. If anything, it's that it was made by an 11-year-old from Brazil with only four hours of sleep, but that's just it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
@@ -56,7 +60,7 @@
 <h3>Is Dumpgame still associated with Dumpster Friends?</h3>
 <blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
-<blockquote>No, nothing related to Dumpgame is AI-generated. The only exception is GitHub's commit messages.</blockquote>
+<blockquote>No, NOTHING related to Dumpgame is AI-generated. The ONLY exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
 <blockquote>Will you trust me if I say no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>VirusTotal</b></a>, reliable security vendors like Google, Microsoft, Avast, Bitdefender, Malwarebytes, Kaspersky, AVG and ESET won't flag the file as malicious.</blockquote>
 <h3>Why "Dumpgame"?</h3>
@@ -78,8 +82,6 @@
   <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy (two of the most important non-player characters of the game)</i></li>
   <li>☭Comunista☭<i> 〜 Concept Art Assistance for MEE6 (the most important non-player character of the game)</i></li>
   <li>fer10tanb<i> 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</i></li>
-  <li>NuggetFrango<i> 〜 Accidental Easter Egg Assistance</i></li>
-  <li>Babakinha<i> 〜 Programming Assistance</i></li>
 </ul>
 <h4>Special Thanks</h4>
 <ul>
@@ -87,7 +89,7 @@
   <li>Temmie Chang</li>
   <li>Tophat Interactive</li>
   <li>Arsi "Hakita" Patala</li>
-  <li>Markus Persson</li>
+  <li>Mojang Studios</li>
   <li>Playdead</li>
   <li>YoYo Games</li>
   <li>Image-Line Software</li>
@@ -95,6 +97,8 @@
   <li>Anis Belkacem</li>
   <li>HybridTeacher</li>
   <li>Mãe Gamer</li>
+  <li>sam06tanb</li>
+  <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
 </ul>
 <br>
