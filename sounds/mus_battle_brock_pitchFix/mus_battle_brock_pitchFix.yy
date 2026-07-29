@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"mus_battle_brock_pitchFix",
   "parent":{
-    "name":"[!] audio",
-    "path":"folders/[!] audio.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

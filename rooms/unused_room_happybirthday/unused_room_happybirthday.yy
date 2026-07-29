@@ -69,8 +69,8 @@
   ],
   "name":"unused_room_happybirthday",
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

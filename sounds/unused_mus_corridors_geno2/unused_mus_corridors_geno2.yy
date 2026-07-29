@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"unused_mus_corridors_geno2",
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

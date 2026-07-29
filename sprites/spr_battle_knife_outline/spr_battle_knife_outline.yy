@@ -33,8 +33,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"battle",
-    "path":"folders/[!] sprites/battle.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

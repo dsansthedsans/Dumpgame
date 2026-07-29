@@ -4,7 +4,7 @@ battle_won = 0;
 battle_flee = 1;
 battle_group = 0;
 battle_round = 0;
-battle_music = mus_battle1;
+battle_music = mus_battle_1;
 battle_serious = 0;
 battle_depth[0] = -1000; // battle_controller
 battle_depth[1] = -800; // enemy & battle_vapor & battle_vaporpixel
@@ -112,10 +112,11 @@ assist =
 	x : (box_defaultx + (box_defaultw / 2)),
 	y : (box_defaulty + (box_defaulth / 2)),
 	object : undefined,
-	objectSpeedMax : 10,
+	objectSpeedMax : 8,
 	slide : true,
 	heal : (global.chara_maxhp / 4),
 	audio_assets : [snd_appearFlash, snd_appearSparkles],
+	audio_volume :  1,
 	destroyBullets : true,
 }
 
@@ -148,8 +149,8 @@ else if (button_active == false)
 {
 	battle_lvl = 10;
 	button_select = false;
-	heart.x = heart_nextx;
-	heart.y = heart_nexty;
+	//heart.x = heart_nextx;
+	//heart.y = heart_nexty;
 }
 
 /*

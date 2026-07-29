@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"unused_snd_blt_whip_throw",
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

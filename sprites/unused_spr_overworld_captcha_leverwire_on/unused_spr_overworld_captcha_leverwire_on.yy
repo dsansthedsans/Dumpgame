@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"overworld",
-    "path":"folders/[!] sprites/overworld.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

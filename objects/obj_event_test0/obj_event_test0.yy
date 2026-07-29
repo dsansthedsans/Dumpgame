@@ -9,8 +9,8 @@
   "name":"obj_event_test0",
   "overriddenProperties":[],
   "parent":{
-    "name":"events",
-    "path":"folders/[!] objects/events.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":{
     "name":"obj_event_parent",

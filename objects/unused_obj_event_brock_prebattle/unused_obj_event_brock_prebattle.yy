@@ -10,8 +10,8 @@
   "name":"unused_obj_event_brock_prebattle",
   "overriddenProperties":[],
   "parent":{
-    "name":"corridors",
-    "path":"folders/[!] objects/events/corridors.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":{
     "name":"obj_event_parent",

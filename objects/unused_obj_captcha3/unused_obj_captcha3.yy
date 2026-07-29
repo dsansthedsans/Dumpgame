@@ -11,8 +11,8 @@
   "name":"unused_obj_captcha3",
   "overriddenProperties":[],
   "parent":{
-    "name":"[!] objects",
-    "path":"folders/[!] objects.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":null,
   "persistent":false,

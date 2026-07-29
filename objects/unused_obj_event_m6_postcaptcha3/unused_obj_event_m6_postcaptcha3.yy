@@ -9,8 +9,8 @@
   "name":"unused_obj_event_m6_postcaptcha3",
   "overriddenProperties":[],
   "parent":{
-    "name":"corridors",
-    "path":"folders/[!] objects/events/corridors.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":{
     "name":"obj_event_parent",

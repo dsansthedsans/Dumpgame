@@ -61,40 +61,6 @@ if (active == 0
 		floor_x = 580;
 		floor_y = 180;
 	}
-	if (room == unused_room_corridors_11)
-	{
-		wall[0, 0] = obj_solid_stairs_lu;
-		wall_x[0, 0] = 220;
-		wall_y[0, 0] = 180;
-	
-		wall[1, 0] = obj_solid_stairs_lu;
-		wall_x[1, 0] = 240;
-		wall_y[1, 0] = 200;
-	
-		wall[2, 0] = obj_solid_stairs_lu;
-		wall_x[2, 0] = 260;
-		wall_y[2, 0] = 220;
-		
-		wall[3, 0] = obj_solid_stairs_rd;
-		wall_x[3, 0] = 260;
-		wall_y[3, 0] = 180;
-		
-		//
-		wall[0, 1] = obj_solid_block;
-		wall_x[0, 1] = 220;
-		wall_y[0, 1] = 180;
-		wall_xsc[0, 1] = 3;
-		wall_ysc[0, 1] = 0.5;
-	
-		wall[1, 1] = obj_solid_block;
-		wall_x[1, 1] = 270;
-		wall_y[1, 1] = 180;
-		wall_ysc[1, 1] = 3;
-		
-		floor_x = 220;
-		floor_y = 180;
-		floor_index = 1;
-	}
 
 	// criar paredes
 	for (var f = 0; f < 2; f++)

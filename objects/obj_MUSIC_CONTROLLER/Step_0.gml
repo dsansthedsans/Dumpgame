@@ -34,7 +34,7 @@ if (room == room_intro)
 	global.music[0] = -1;
 	controller = obj_intro_controller;
 	if (controller.active == 1)
-		music_set(0, mus_intro);
+		music_set(0, mus_event_intro);
 }
 if (room != room_battle && exists(obj_battle_quicker) == false && room != room_over)
 {
@@ -46,11 +46,11 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		// Fallen Angel
 		if (room == room_corridors_1 && global.flag[0] >= 0.5)
 		{
-			music_set(0, mus_chapter_1, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
+			music_set(0, mus_event_chapter1, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
 			if (chara_murder() < 2)
 				music_set(1, snd_ambient_birds, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
 			else
-				global.music[0] = mus_nobody;
+				global.music[0] = mus_event_chapter1_geno;
 		}
 		// First Corridor & MEE6's Room
 		if (room == room_corridors_1_5 && global.flag[66] != 0.75) || (room == room_corridors_2 && (global.flag[1] == 0 || global.flag[1] == 1))
@@ -59,7 +59,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			global.music_volumetype[1] = VOLUME_SOUND;
 		}
 		else if (room == room_corridors_2 && global.flag[1] == 0.75)
-			music_set(0, mus_m6);
+			music_set(0, mus_event_m6);
 		// Entrance
 		if (room >= room_corridors_3 && room <= room_corridors_18)
 		{
@@ -73,9 +73,9 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			if (global.flag[37] == 0.25) || (global.flag[37] >= 0.75 && global.flag[39] == 0) || (global.flag[39] == 1 && global.flag[41] == 0)
 				music_set(0, -1);
 			if (global.flag[37] == 0.5)
-				music_set(0, mus_brock_prebattle, , , , , , 0);
+				music_set(0, mus_event_brock_mad, , , , , , 0);
 			//else if (global.flag[37] == 1 && global.flag[39] == 0)
-			//	music_set(0, mus_brock_sad, , , , 0.75 + 0.125 + 0.125);
+			//	music_set(0, mus_event_brock_sad, , , , 0.75 + 0.125 + 0.125);
 		}
 		// CAPTCHA 3
 		if (room == room_corridors_14 && chara_murder() < 2)
@@ -158,7 +158,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		if (room >= room_cave_1 && global.flag[62] >= 0.5)
 		{
 			if (global.flag[62] == 0.5)
-				music_set(0, mus_chapter_2, , , , 0.5 + 0.25, false);
+				music_set(0, mus_event_chapter2, , , , 0.5 + 0.25, false);
 			music_set(1, snd_ambient_wind, , 2, true, 0.5, , 4);
 			music_set(2, snd_impactTitle, , 2, true, 0.35, , 4);
 			global.music_volumetype[1] = VOLUME_SOUND;
@@ -181,7 +181,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		global.music[0] = -1;
 		global.music[1] = -1;
 		if (instance_exists(obj_crazycat) == true && obj_crazycat.cat_dancing == 1)
-			music_set(0, mus_crazycat);
+			music_set(0, mus_event_cat);
 	}
 	for (var i = 0; i < ((global.music_length - 2) * exists(obj_chara_pause)); i++)
 		music_paused[i] = true;
@@ -214,7 +214,7 @@ else if (room == room_over)
 	music_set(2, -1);
 	music_set(3, -1);
 	if (exists(obj_over_controller) == 1 && obj_over_controller.con == 9)
-		music_set(0, mus_gameover, , 0, , , , 1);
+		music_set(0, mus_over, , 0, , , , 1);
 }
 
 for (var i = 0; i < global.music_length; i++)

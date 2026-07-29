@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_eyecrush",
-    "path":"sprites/spr_enemy_eyecrush/spr_enemy_eyecrush.yy",
+    "name":"unused_spr_enemy_eyecrush",
+    "path":"sprites/unused_spr_enemy_eyecrush/unused_spr_enemy_eyecrush.yy",
   },
   "spriteMaskId":null,
   "visible":true,

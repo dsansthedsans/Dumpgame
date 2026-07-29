@@ -22,7 +22,7 @@ if (type == 2000)
 	outside_box = 1;
 	destroy_on_impact = 0;
 	
-	sprite_index = spr_battle_blt_mysteriousball;
+	sprite_index = unused_spr_battle_blt_mysteriousball;
 	image_xscale = 1;
 	image_yscale = 1;
 	image_alpha = 0;
@@ -171,13 +171,13 @@ if (type == 5.0) // Eyecrush
 	image_speed = 1;
 	
 	var _spd = 1;
-	sprite_index = spr_battle_blt_tinycrush_h;
+	sprite_index = unused_spr_battle_blt_tinycrush_h;
 	hspeed = _spd;
 	if (side == RIGHT)
 		hspeed = -_spd;
 	if (side == UP) || (side == DOWN)
 	{
-		sprite_index = spr_battle_blt_tinycrush_v;
+		sprite_index = unused_spr_battle_blt_tinycrush_v;
 		vspeed = _spd;
 		hspeed = 0;
 		if (side == DOWN)
@@ -186,7 +186,7 @@ if (type == 5.0) // Eyecrush
 }
 if (type == 5.1)
 {
-	sprite_index = spr_battle_blt_eye;
+	sprite_index = unused_spr_battle_blt_eye;
 	if (x < controller.box_x)
 		image_xscale *= -1;
 	image_alpha = 0;
@@ -195,7 +195,7 @@ if (type == 5.1)
 }
 if (type == 5.15)
 {
-	sprite_index = spr_battle_blt_eyelaser;
+	sprite_index = unused_spr_battle_blt_eyelaser;
 	image_angle = point_direction(x, y, obj_battle_heart.x, obj_battle_heart.y);
 	image_speed = 1;
 	direction = image_angle;
@@ -266,6 +266,7 @@ if (type == 6.15)
 	can_damage = 0;
 	outside_box = 1;
 	destroy_on_impact = 0;
+	assist_can_destroy = false;
 	
 	LASTINDEXaaa = 0;
 }
@@ -277,6 +278,7 @@ if (type == 6.3)
 	dmg += 2;
 	outside_box = 1;
 	destroy_on_impact = 0;
+	assist_can_destroy = false;
 	
 	bx = controller.box_x;
 	by = controller.box_y;
@@ -310,6 +312,7 @@ if (type == 6.20)
 	image_xscale = 1;
 	image_yscale = 1;
 	destroy_on_impact = 0;
+	assist_can_destroy = false;
 	outside_box = 1;
 	dmg += 2;
 }

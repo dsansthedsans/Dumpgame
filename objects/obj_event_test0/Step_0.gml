@@ -1,14 +1,12 @@
 
 if (con == 1)
 {
-	mus_volume(global.music[MUSIC_AMBIENCE], 0, 1);
 	alarm[2] = 60;
 	con = 2;
 }
 if (con == 3)
 {
 	camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + 1, camera_get_view_y(view_camera[0]));
-	
 	if (camera_get_view_x(view_camera[0]) >= 200)
 	{
 		alarm[2] = 60;
@@ -17,15 +15,15 @@ if (con == 3)
 }
 if (con == 5)
 {
-	create_writer("event_test0.0", -1)
+	writer("event_test0.0")
 	con = 6;
 }
-if (con == 6 && instance_exists(obj_writer) == 0)
+if (con == 6 && instance_exists(thiswriter) == 0)
 {
 	alarm[2] = 60;
 	con = 7;
 }
-if (con == 8 && instance_exists(obj_writer) == 0)
+if (con == 8 && instance_exists(thiswriter) == 0)
 {
 	thismarker.sprite_index = obj_chara.sprite_u;
 	alarm[2] = 60;
@@ -39,14 +37,14 @@ if (con == 10)
 }
 if (con == 12)
 {
-	create_writer("event_test0.1", -1)
+	writer("event_test0.1", -1)
 	con = 13;
 }
 if (con == 13)
 {
-	if (instance_exists(obj_writer) == 1)
+	if (instance_exists(thiswriter) == 1)
 	{
-		if (obj_writer.mypage == 7) || (obj_writer.mypage == 12)
+		if (thiswriter.mypage == 7) || (thiswriter.mypage == 12)
 		{
 			thismarker.sprite_index = obj_chara.sprite_u;
 			audio_stop(unused_mus_event_test0);
@@ -55,13 +53,13 @@ if (con == 13)
 		{
 			thismarker.sprite_index = obj_chara.sprite_l;
 			
-			if (obj_writer.mypage == 8 && audio_playing(unused_mus_event_test0) == 0)
+			if (thiswriter.mypage == 8 && audio_playing(unused_mus_event_test0) == 0)
 				music_organize();
-			if (obj_writer.mypage == 9)
+			if (thiswriter.mypage == 9)
 				audio_sound_pitch(unused_mus_event_test0, 1.2);
-			if (obj_writer.mypage == 10)
+			if (thiswriter.mypage == 10)
 				audio_sound_pitch(unused_mus_event_test0, 1.4);
-			if (obj_writer.mypage == 11)
+			if (thiswriter.mypage == 11)
 				audio_sound_pitch(unused_mus_event_test0, 1.6);
 		}
 	}

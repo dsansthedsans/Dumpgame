@@ -19,7 +19,7 @@ if (type >= 2 && type <= 5) // Armsguy, Trashguy, Flitcher, Eyecrush
 	else if (type == 4)
 		sprite_index = spr_enemy_flitcher;
 	else if (type == 5)
-		sprite_index = spr_enemy_eyecrush;
+		sprite_index = unused_spr_enemy_eyecrush;
 	image_speed = 1;
 }
 

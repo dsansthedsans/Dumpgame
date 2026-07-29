@@ -503,8 +503,8 @@ if (assist.active == true)
 		assist.curr = 0;
 		if (assist.audio_assets != undefined)
 		{
-			audio_play(assist.audio_assets[0], 0, VOLUME_SOUND);
-			audio_play(assist.audio_assets[1], 0, VOLUME_SOUND);
+			audio_play(assist.audio_assets[0], 0, VOLUME_SOUND, assist.audio_volume);
+			audio_play(assist.audio_assets[1], 0, VOLUME_SOUND, assist.audio_volume);
 		}
 	}
 	else if (is_undefined(assist.object) == false && exists(heart) == true)
@@ -514,27 +514,36 @@ if (assist.active == true)
 			if (active == true)
 			{
 				var _distance = point_distance(x, y, other.heart.x, other.heart.y);
-				var _direction = angle_difference(point_direction(x, y, other.heart.x, other.heart.y), direction);
-				direction = lerp(direction, (direction + _direction), ((_distance > 20) ? 0.075 : (0.075 * 2)));
-				speed = clamp((speed + ((_distance <= 75 && other.assist.slide == true) ? -0.1 : 0.05)), 2.5, other.assist.objectSpeedMax);
+				var _angleDifference = angle_difference(point_direction(x, y, other.heart.x, other.heart.y), direction);
+				speed = clamp((speed + ((_distance <= 75) ? -0.1 : 0.05)), 2.5, other.assist.objectSpeedMax);
+				direction = lerp(direction, (direction + _angleDifference), ((_distance > 20) ? 0.075 : (0.075 * 2)));
+				if (other.assist.slide == false)
+				{
+					speed  = other.assist.objectSpeedMax;
+					direction = point_direction(x, y, other.heart.x, other.heart.y);
+				}
 				image_alpha = lerp(image_alpha, 1, (0.075 * 2));
-				image_angle += ((speed * sign(_direction)) * 2);
+				image_angle += ((speed * sign(_angleDifference)) * 2);
 				if (place_meeting(x, y, other.heart) == true)
 				{
 					with (other)
 					{
 						chara_hp(assist.heal);
-						if (assist.destroyBullets == true)
+						var _destroyed = false;
+						for (var i = 0; i < (instance_number(obj_battle_blt) * assist.destroyBullets); i++)
 						{
-							for (var i = 0; i < instance_number(obj_battle_blt); i++)
+							var _blt = instance_find(obj_battle_blt, i);
+							if (_blt.active == true && _blt.assist_can_destroy == true)
 							{
-								var _blt = instance_find(obj_battle_blt, i);
-								if (_blt.assist_can_destroy == true)
-									destroy(_blt);
+								_destroyed = true;
+								destroy(_blt);
 							}
+							else
+								debug($"NO BRAINER HERE !!!!!!!! {_blt.type}");
 						}
+						if (_destroyed == true)
+							audio_play(snd_bellFlower, false, VOLUME_SOUND);
 					}
-					audio_play(snd_bellFlower, false, VOLUME_SOUND);
 					active = false;
 				}
 			}

@@ -105,7 +105,7 @@ function TEXT()
 		msg[0] = "* (It's a pile of rocks.)";
 	if (text == "room_rockpile_1")
 		msg[0] = "* (Oh,^3 my God!^1 It can't be!)^2&* (It's a pile of rocks.)";
-	
+		
 	// obj_event_m6_start
 	if (text == "event_m6_start_0") || (text == "event_m6_start_1") || (text == "event_m6_start_2") || (text == "event_m6_start_3") || (text == "event_m6_start_4")
 	{
@@ -1335,7 +1335,6 @@ function TEXT()
 	{
 		msg_format[0] = "bubble";
 		msg_font[0] = global.fnt_dotum;
-		
 		if (text == "battle_bubble_sans1")
 		{
 			msg[0] = "what?^1 you think i wanna hurt you?";
@@ -1365,7 +1364,16 @@ function TEXT()
 			if (controller.battle_group == -4)
 				msg_type[0] = 2;
 		}
-		
+		if (string_starts_with(text, "battle_bubble_m6_") == true)
+		{
+			for (var m = 0; m < 99; m++)
+			{
+				var _msg = get_text($"battle_bubble_m6_{string_char_at(text, (string_length(text) - 1))}_{m}");
+				if (_msg == undefined)
+					break;
+				msg[m] = _msg;
+			}
+		}
 		if (text == "battle_bubble_dummy") // Dummy
 		{
 			msg[0] = "+F1......";
@@ -1434,7 +1442,6 @@ function TEXT()
 			msg[0] = "+F1...";
 			msg_type[0] = 3;
 		}
-		
 		if (string_starts_with(text, "battle_bubble_brock") == 1) // Broken Clock
 		{
 			msg_sound[0] = snd_txt_brock;
@@ -1894,20 +1901,20 @@ function TEXT()
 			
 			if (text == "battle_act_eyecrush0") // Eyecrush
 			{
-				msg[0] = get_text("battle_act_result_eyecrush_0_0");
-				msg[1] = get_text("battle_act_result_eyecrush_0_1");
+				msg[0] = get_text("unused_battle_act_result_eyecrush_0_0");
+				msg[1] = get_text("unused_battle_act_result_eyecrush_0_1");
 			}
 			if (text == "battle_act_eyecrush1")
 			{
-				msg[0] = get_text("battle_act_result_eyecrush_1_0");
-				msg[1] = get_text("battle_act_result_eyecrush_1_1");
+				msg[0] = get_text("unused_battle_act_result_eyecrush_1_0");
+				msg[1] = get_text("unused_battle_act_result_eyecrush_1_1");
 			}
 			if (text == "battle_act_eyecrush2_0") || (text == "battle_act_eyecrush2_1")
 			{
-				msg[0] = get_text("battle_act_result_eyecrush_2_0");
-				msg[1] = get_text("battle_act_result_eyecrush_2_1_0");
+				msg[0] = get_text("unused_battle_act_result_eyecrush_2_0");
+				msg[1] = get_text("unused_battle_act_result_eyecrush_2_1_0");
 				if (text == "battle_act_eyecrush2_1")
-					msg[1] = get_text("battle_act_result_eyecrush_2_1_1");
+					msg[1] = get_text("unused_battle_act_result_eyecrush_2_1_1");
 			}
 			
 			if (text == "battle_act_rhonhey0") // Rhonhey

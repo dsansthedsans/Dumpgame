@@ -53,7 +53,7 @@ function battle_setupgroup()
 	battle_bg = spr_battle_bg_corridors;
 	if (global.chara_world == WORLD_CAVERNS)
 		battle_bg = spr_battle_bg_cave;
-	battle_music = mus_battle1;
+	battle_music = mus_battle_1;
 	
 	if (battle_group == -4) // Test
 	{
@@ -185,16 +185,17 @@ function battle_setupgroup()
 	
 	if (battle_group == 13) // Rhonhey
 	{
-		battle_music = mus_battle0;
+		battle_music = mus_battle_0;
 		button_active = false;
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
+		assist.active = false;
 		assist.x = (room_width * 1.5);
 		assist.y = (room_height * 0.5);
-		assist.objectSpeedMax = 100;
+		assist.objectSpeedMax = 14;
 		assist.slide = false;
 		assist.heal = 99;
-		//assist.audio_assets = undefined;
+		assist.audio_volume = 0.5;
 		assist.destroyBullets = false;
 	}
 	
@@ -299,7 +300,7 @@ function battle_enemy()
 				enemy_reward_mny[i] = 2;
 				enemy_act[i, 1] = get_text("battle_act_trashguy_1");
 				enemy_act[i, 2] = get_text("battle_act_trashguy_2");
-				enemy_obj[i].hurtsound = snd_shriekLaugh;
+				enemy_obj[i].hurtsound = snd_shriekDemon;
 			}
 			if (enemy_type[i] == 4) // Flitcher
 			{
@@ -323,8 +324,8 @@ function battle_enemy()
 				enemy_def[i] = 0;
 				enemy_reward_exp[i] = 3;
 				enemy_reward_mny[i] = 2;
-				enemy_act[i, 1] = get_text("battle_act_eyecrush_1");
-				enemy_act[i, 2] = get_text("battle_act_eyecrush_2");
+				enemy_act[i, 1] = get_text("unused_battle_act_eyecrush_1");
+				enemy_act[i, 2] = get_text("unused_battle_act_eyecrush_2");
 			}
 			
 			if (enemy_type[i] == 6) // Broken Clock
@@ -594,7 +595,7 @@ function battle_attack()
 			side = choose(LEFT, RIGHT, UP, DOWN);
 			var _inheart = choose(0, 0, 1);
 			
-			var _s = spr_battle_blt_tinycrush_h;
+			var _s = unused_spr_battle_blt_tinycrush_h;
 			var _sw = sprite_get_width(_s);
 			var _sh = sprite_get_height(_s);
 		
@@ -607,7 +608,7 @@ function battle_attack()
 				
 			if (side == UP) || (side == DOWN)
 			{
-				_s = spr_battle_blt_tinycrush_v;
+				_s = unused_spr_battle_blt_tinycrush_v;
 				_sw = sprite_get_width(_s);
 				_sh = sprite_get_height(_s);
 				
@@ -783,8 +784,8 @@ function battle_attack()
 		{
 			if (stage == 0)
 			{
+				stage += 1;
 				delay = 30;
-				stage = 1;
 			}
 			else if (stage == 1)
 			{
@@ -795,18 +796,18 @@ function battle_attack()
 			}
 			if (stage == 2)
 			{
-				stage = 3;
+				stage += 1;
 				delay = (60 + 30 - 15);
 				ball =
 				{
 					objects : [],
-					speed : 0.005,
+					speed : 0.00375,
 					length : 6,
 					distance : ((32 / 2) + 8),
 					angle : 180,
 					angleOffset : 90,
 					angleSpeed : 0,
-					angleSpeed_max : -7,
+					angleSpeed_max : -8,
 					appear :
 					{
 						asset : snd_appearSword,
@@ -839,15 +840,23 @@ function battle_attack()
 				mee6 =
 				{
 					stage : 0,
-					delay : (60 * 3),
+					delay : (60 * 6),
 					buildup :
 					{
 						asset : snd_buildupComputer,
 						id : undefined,
-						pitch : 1,
-						pitchSpeed : 0.005,
+						pitch : undefined,
+						pitchMin : 0.5,
+						pitchMax : 3,
+						pitchSpeed : 0.00375,
 					},
+					object : undefined,
+					bubble_offsetX : 0,
+					bubble_offsetY : 0,
 				};
+				mee6.object = marker(round(room_width * 1.5), (controller.box_defaulty - round(controller.box_defaulth / 2) - 35), spr_enemy_m6_default, 1, 2, 2, 0, 0, 0, c_white, controller.battle_depth[1]);
+				mee6.bubble_offsetX = -(((sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale) / 2) + 35);
+				mee6.bubble_offsetY = -((sprite_get_height(mee6.object.sprite_index) * mee6.object.image_yscale) / 2);
 			}
 			else if (stage == 3)
 			{
@@ -899,11 +908,14 @@ function battle_attack()
 					{
 						heart.x = (ball.objects[b].x + lengthdir_x((ball.objects[b].sprite_width / 2), (_angle - ball.angleOffset)));
 						heart.y = (ball.objects[b].y + lengthdir_y((ball.objects[b].sprite_height / 2), (_angle - ball.angleOffset)));
-						if (ball.catch.angle != undefined)
-							heart.image_angle = (ball.catch.angle + _angle + ball.angleOffset);
+						//if (ball.catch.angle != undefined)
+						//	heart.image_angle = (ball.catch.angle + _angle + ball.angleOffset);
 						if (mee6.buildup.id == undefined)
 							mee6.buildup.id = audio_play(mee6.buildup.asset, true, VOLUME_SOUND);
+						if (mee6.buildup.pitch == undefined)
+							mee6.buildup.pitch = mee6.buildup.pitchMin;
 						mee6.buildup.pitch += mee6.buildup.pitchSpeed;
+						mee6.buildup.pitch = clamp(mee6.buildup.pitch, mee6.buildup.pitchMin, mee6.buildup.pitchMax);
 						audio_pitch(mee6.buildup.id, mee6.buildup.pitch);
 						if (mee6.delay > 0)
 							mee6.delay -= 1;
@@ -916,11 +928,14 @@ function battle_attack()
 						{
 							global.flag[69] = 0.5;
 							controller.battle_music = -1;
-							stage = 4;
+							controller.heart_move = true;
+							stage += 1;
+							delay = 45;
 							for (var bb = 0; bb < ball.length; bb++)
 								destroy(ball.objects[bb]);
+							audio_play(snd_bellFlower, false, VOLUME_SOUND);
 							audio_stop(ball.rotate.id);
-							audio_stop(mee6.buildup.id);
+							audio_stop(mee6.buildup.id)
 							break;
 						}
 					}
@@ -928,7 +943,26 @@ function battle_attack()
 			}
 			else if (stage == 4)
 			{
-				controller.heart_move = true;
+				if (delay > 0)
+					delay -= 1;
+				else
+					stage += 1;
+				debug("!!!!!!!!!!!!!!!!!!!");
+			}
+			else if (stage == 5)
+			{
+				debug("honestamtene");
+				writer("battle_bubble_m6_0", clamp((mee6.object.x + mee6.bubble_offsetX), 0, (room_width - 35)), (mee6.object.y + mee6.bubble_offsetY));
+				stage = 6;
+			}
+			else if (stage == 7)
+			{
+				mee6.object.hspeed = -3;
+				if (mee6.object <= round(controller.box_defaultx + (controller.box_defaultw / 4)))
+				{
+					
+					mee6.object.hspeed = 0;
+				}
 			}
 		}
 	}

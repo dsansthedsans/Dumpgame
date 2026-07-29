@@ -15,7 +15,7 @@ if (active == 1)
 	// hurt animation
 	if (hurt == 1 && hurt_time < 60)
 	{	
-		body.sprite_index = spr_enemy_eyecrush_hurt;
+		body.sprite_index = unused_spr_enemy_eyecrush_hurt;
 		startattack = 0;
 		if (hurt_time == 0)
 		{
@@ -41,7 +41,7 @@ if (active == 1)
 		if (controller.enemy_curhp[myself] <= 0)
 		{
 			image_alpha = 0;
-			sprite_index = spr_enemy_eyecrush_hurt;
+			sprite_index = unused_spr_enemy_eyecrush_hurt;
 			global.chara_kills += 1;
 			global.world_curpopulation[global.chara_world] -= 1;
 			controller.battle_expreward += controller.enemy_reward_exp[myself];
@@ -52,7 +52,7 @@ if (active == 1)
 		}
 		else
 		{
-			body.sprite_index = spr_enemy_eyecrush;
+			body.sprite_index = unused_spr_enemy_eyecrush;
 			createbubble = 1;
 		}
 		
@@ -63,7 +63,7 @@ if (active == 1)
 	if (spared == 1)
 	{
 		image_alpha = 0.5;
-		sprite_index = spr_enemy_eyecrush_hurt;
+		sprite_index = unused_spr_enemy_eyecrush_hurt;
 		destroy(body);
 		battle_sparecloud(id);
 		audio_play(snd_launchSparkles, 0, VOLUME_SOUND);
@@ -92,7 +92,7 @@ if (active == 1)
 			if (_heard == 1)
 			{
 				controller.enemy_spare[myself] = 100;
-				body.sprite_index = spr_enemy_eyecrush_hypnotized;
+				body.sprite_index = unused_spr_enemy_eyecrush_hypnotized;
 				hypnotized = 1;
 			}
 			if (_heard == 2 && controller.enemy_spare[myself] < 100)
@@ -114,7 +114,7 @@ if (active == 1)
 			if (hypnotized == 2)
 			{
 				controller.enemy_spare[myself] = 0;
-				body.sprite_index = spr_enemy_eyecrush;
+				body.sprite_index = unused_spr_enemy_eyecrush;
 				hypnotized = 0;
 			}
 			if (hypnotized == 1)

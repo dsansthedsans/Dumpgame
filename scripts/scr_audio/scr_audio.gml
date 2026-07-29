@@ -48,7 +48,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_launch) || (_asset == snd_launch_reverse)
 			_volume *= 0.75;
 		if (_asset == snd_explosion2)
-			_volume *= 0.25;
+			_volume *= 0.375;
 		if (_asset == snd_txt_gabee) || (_asset == snd_txt_dsans)
 			_volume /= 5;
 		if (_asset == snd_splat) || (_asset == snd_splat_reversed)
@@ -86,7 +86,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 		if (_asset == snd_appearSword) || (_asset == snd_rotate)
 			_volume *= 0.75;
 		if (_asset == snd_buildupComputer)
-			_volume *= 0.5;
+			_volume *= 0.625;
 		if (_asset == snd_bellFlower)
 			_volume *= 1.5;
 	}
@@ -94,17 +94,17 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 	{
 		_volume *= 0.5;
 		
-		if (_asset == mus_chapter_1)
+		if (_asset == mus_event_chapter1)
 			_volume *= 1.25;
-		if (_asset == mus_battle0)
+		if (_asset == mus_battle_0)
 			_volume *= 1.5;
-		if (_asset == mus_m6)
+		if (_asset == mus_event_m6)
 			_volume *= 2.5;
 		if (_asset == mus_corridors)
 			_volume *= 1 - 0.125;
 		if (_asset == mus_battle_dummy)
 			_volume *= 1.25;
-		if (_asset == mus_chapter_2)
+		if (_asset == mus_event_chapter2)
 			_volume *= 4;
 		if (_asset == mus_cave)
 			_volume *= 1.125;
@@ -116,7 +116,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.25;
 		if (_asset == mus_battle_troll)
 			_volume *= 1.25;
-		if (_asset == mus_brock_prebattle)
+		if (_asset == mus_event_brock_mad)
 			_volume *= 1.25;
 		if (_asset == mus_battle_brock)
 			_volume *= 1.25;
@@ -133,7 +133,7 @@ function audio_pitch(_audio, _pitch)
 		_asset = audio_sound_get_asset(_asset);
 	if (_asset == snd_bird_startfly)
 		_pitch *= irandom_range(1.25, 1.35);
-	if (_asset == mus_battle0)
+	if (_asset == mus_battle_0)
 		_pitch *= 0.75;
 	audio_sound_pitch(_audio, _pitch);
 }

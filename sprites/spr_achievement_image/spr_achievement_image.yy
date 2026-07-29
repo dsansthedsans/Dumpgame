@@ -35,8 +35,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"[!] sprites",
-    "path":"folders/[!] sprites.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

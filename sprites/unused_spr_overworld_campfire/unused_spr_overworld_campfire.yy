@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":6,
   "parent":{
-    "name":"overworld",
-    "path":"folders/[!] sprites/overworld.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

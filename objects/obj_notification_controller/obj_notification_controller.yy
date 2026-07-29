@@ -11,8 +11,8 @@
   "name":"obj_notification_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"[!] objects",
-    "path":"folders/[!] objects.yy",
+    "name":"Dumpgame_51",
+    "path":"Dumpgame_51.yyp",
   },
   "parentObjectId":null,
   "persistent":true,

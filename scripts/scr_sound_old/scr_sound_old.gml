@@ -46,7 +46,7 @@ function _audio_play(_sound, _loop, _gain_in_seconds)
 		_volume_amt = 0.35;
 	if (_snd == snd_explosion2) || (_snd == snd_txt_dsans) || (_snd == snd_txt_gabee)
 		_volume_amt = 0.6;
-	if (_snd == snd_txt_m6) || (_snd == snd_shriekLaugh) || (_snd == snd_shriekTroll) || (_snd == snd_notification_achievement) || (_snd == snd_explosion3)
+	if (_snd == snd_txt_m6) || (_snd == snd_shriekDemon) || (_snd == snd_shriekTroll) || (_snd == snd_notification_achievement) || (_snd == snd_explosion3)
 		_volume_amt = 0.8;
 	if (_snd == snd_shriekDragon)
 		_volume_amt = 0.9;

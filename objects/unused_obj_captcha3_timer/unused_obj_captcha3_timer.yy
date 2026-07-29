@@ -8,8 +8,8 @@
   "name":"unused_obj_captcha3_timer",
   "overriddenProperties":[],
   "parent":{
-    "name":"[!] objects",
-    "path":"folders/[!] objects.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":null,
   "persistent":false,

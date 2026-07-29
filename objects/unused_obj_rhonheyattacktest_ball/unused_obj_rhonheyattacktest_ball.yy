@@ -9,8 +9,8 @@
   "name":"unused_obj_rhonheyattacktest_ball",
   "overriddenProperties":[],
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentObjectId":null,
   "persistent":false,

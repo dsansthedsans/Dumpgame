@@ -69,6 +69,8 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			room_goto(room_last);
 		chara_change(-1, true, true, false, true, true, true);
 	}
+	if (keyboard_check_pressed(ord("A")) == true && exists(obj_battle_controller) == true && obj_battle_controller.assist.active == true)
+		obj_battle_controller.assist.curr = obj_battle_controller.assist.max;
 	if (keyboard_check_pressed(ord("M")) == 1)
 	{
 		global.world_curpopulation[chara_world()] = clamp((global.world_curpopulation[chara_world()] + (1 * ((keyboard_check(vk_backspace) == true) ? 1 : -1))), 0, global.world_maxpopulation[chara_world()]);

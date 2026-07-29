@@ -572,7 +572,7 @@ function CHANGE_GAME()
 				_lvl = 1;
 			if (_rm == room_corridors_3) || (_rm == room_corridors_3_5)
 				_lvl = 2;
-			if (_rm == room_corridors_4) || (_rm == unused_room_corridors_4_5)
+			if (_rm == room_corridors_4)
 				_lvl = 3;
 			if (_rm == room_corridors_6)
 				_lvl = 3.5;
@@ -580,11 +580,10 @@ function CHANGE_GAME()
 				_lvl = 4;
 			if (_rm == room_corridors_10)
 				_lvl = 4.5;
-			if (_rm == room_corridors_11) || (_rm == unused_room_happybirthday)
+			if (_rm == room_corridors_11)
 				_lvl = 5;
-			if (_rm == unused_room_corridors_13) || (_rm == room_corridors_14) || (_rm == room_corridors_13)
+			if (_rm == room_corridors_14) || (_rm == room_corridors_13)
 				_lvl = 6;
-			if (_rm == unused_room_corridors_16)
 				_lvl = 7;
 			if (_rm == room_corridors_17) || (_rm == room_corridors_18)
 				_lvl = 8;

@@ -254,24 +254,11 @@ function chara_room()
 			xx = 20;
 			yy = 140;
 		}
-		if (room == unused_room_corridors_12)
-		{
-			xx = 20;
-			yy = 400;
-			if (global.flag[39] == 1)
-				global.flag[41] = 1;
-		}
 		if (room == room_corridors_14)
 		{
 			xx = 480;
 			yy = 430;
 		}
-		if (room == unused_room_corridors_15)
-		{
-			xx = 180;
-		}
-		if (room == unused_room_corridors_16)
-			rm = room_corridors_17;
 		if (room == room_corridors_17)
 		{
 			xx = 160;
@@ -290,13 +277,13 @@ function chara_room()
 		rm = room_previous(room);
 		if (room == room_corridors_6)
 			rm = room_corridors_5;
-		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == unused_room_corridors_4_5) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == unused_room_corridors_16) || (room == room_corridors_17) || (room == room_corridors_18)
+		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == room_corridors_17) || (room == room_corridors_18)
 		{
 			xx = 160;
 			yy = 100;
-			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == unused_room_corridors_15) || (room == room_corridors_17) || (room == room_corridors_18)
+			if (room == room_corridors_1_5) || (room == room_corridors_3_5) || (room == room_corridors_9) || (room == room_corridors_14) || (room == room_corridors_17) || (room == room_corridors_18)
 				yy += 20;
-			if (room == unused_room_corridors_4_5) || (room == room_corridors_5)
+			if (room == room_corridors_5)
 				xx = 720;
 			if (room == room_corridors_9 && global.flag[31] == 1 && global.flag[48] == 1)
 				global.flag[46] = 1;
@@ -317,18 +304,6 @@ function chara_room()
 			xx = 820;
 			yy = 140;
 		}
-		if (room == unused_room_corridors_12)
-		{
-			xx = 540;
-			yy = 220;
-			if (global.flag[39] == 1)
-				global.flag[41] = 1;
-		}
-		if (room == unused_room_corridors_13)
-		{
-			xx = 300;
-			yy = 160;
-		}
 		if (room == room_corridors_13)
 		{
 			xx = 980;
@@ -340,7 +315,6 @@ function chara_room()
 			yy = 220;
 			if (room == unused_room_corridors_16_B)
 				xx = 340;
-			rm = unused_room_corridors_16;
 		}
 		if (room == room_cave_2)
 		{
@@ -371,17 +345,11 @@ function chara_room()
 	{
 		if (room == room_corridors_5)
 			rm = room_corridors_5_A;
-			
-		if (room == unused_room_corridors_16)
-			rm = unused_room_corridors_16_A;
 	}
 	if (thisblock == obj_room_other_B)
 	{
 		if (room == room_corridors_5)
 			rm = room_corridors_5_B;
-			
-		if (room == unused_room_corridors_16)
-			rm = unused_room_corridors_16_B;
 	}
 	
 	room_go(rm, xx, yy);

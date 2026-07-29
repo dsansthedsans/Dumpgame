@@ -145,8 +145,8 @@
   ],
   "name":"unused_room_corridors_11",
   "parent":{
-    "name":"[!] UNUSED !!!!!",
-    "path":"folders/[!] UNUSED !!!!!.yy",
+    "name":"[!] DELETE !!!!!",
+    "path":"folders/[!] DELETE !!!!!.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
