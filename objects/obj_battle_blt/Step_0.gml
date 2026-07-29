@@ -12,7 +12,7 @@ if (active == 1)
 			image_angle = (direction + 90);
 			speed = 4;
 			stage = 1;
-			audio_play(snd_blt_launch, 0, VOLUME_SOUND);
+			audio_play(snd_launch, 0, VOLUME_SOUND);
 		}
 		else if (exists(thismover) == 0 && delay > 0)
 			delay -= 1;
@@ -110,8 +110,8 @@ if (active == 1)
 				vspeed = 0;
 				gravity = 0;
 				image_index = 1;
-				audio_stop(snd_bump);
-				audio_play(snd_bump, 0, VOLUME_SOUND);
+				audio_stop(snd_impactBump);
+				audio_play(snd_impactBump, 0, VOLUME_SOUND);
 				delay = 45;
 				stage = 1;
 			}
@@ -122,8 +122,8 @@ if (active == 1)
 			vspeed = -3;
 			gravity = basegrav;
 			image_index = 0;
-			audio_stop(snd_smalljump);
-			audio_play(snd_smalljump, 0, VOLUME_SOUND);
+			audio_stop(snd_jumpSmall);
+			audio_play(snd_jumpSmall, 0, VOLUME_SOUND);
 			targetx = obj_battle_heart.x;
 			delay = 0;
 			stage = 0;
@@ -187,7 +187,7 @@ if (active == 1)
 				hspeed = 0;
 				if (myside == 0)
 				{
-					audio_play(snd_screenshake, 0, VOLUME_SOUND);
+					audio_play(snd_impactShake, 0, VOLUME_SOUND);
 					shakescreen(5, 5)
 				}
 				can_damage = 0;
@@ -268,7 +268,7 @@ if (active == 1)
 				depth = controller.battle_depth[6];	
 				can_damage = 1;
 				if (playsnd == 0)
-					audio_play(snd_blt_launch, 0, VOLUME_SOUND);
+					audio_play(snd_launch, 0, VOLUME_SOUND);
 				playsnd = 1;
 			}
 		
@@ -307,7 +307,7 @@ if (active == 1)
 				can_damage = 0;
 			if (pospos == 0)
 			{
-				audio_play(snd_blt_launch_reverse, 0, VOLUME_SOUND);
+				audio_play(snd_launch_reverse, 0, VOLUME_SOUND);
 				destroy(id);
 			}
 		}
@@ -399,7 +399,16 @@ if (active == 1)
 	}
 	
 	if (type == 13 && image_alpha < 1)
-		image_alpha += 0.1;
+	{
+		if (delaydelay > 0)
+			delaydelay -= 1;
+		else
+		{
+			image_alpha += 1;
+			audio_play(snd_impactBump, false, VOLUME_SOUND, 0.5);
+			shakescreen(2, 2);
+		}
+	}
 }
 
 

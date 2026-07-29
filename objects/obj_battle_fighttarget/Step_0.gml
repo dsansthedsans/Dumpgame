@@ -21,7 +21,7 @@ if (speed != 0)
 			dmg *= 1.25;
 			xscale = 1.5;
 			blend = 0.25;
-			audio_play(snd_bigcut, , VOLUME_SOUND);
+			audio_play(snd_impactSwing, , VOLUME_SOUND);
 		}*/
 		yscale = xscale;
 		dmg = round(clamp(dmg, 0, 999999999999999999));

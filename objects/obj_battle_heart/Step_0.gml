@@ -27,6 +27,7 @@ if (exists(controller) == true)
 		var _ubox = (_boxy - (_boxh / 2) + (sprite_height / 2) - 2);
 		var _dbox = (_boxy + (_boxh / 2) - (sprite_height / 2) + 3);
 		y = clamp(y, _ubox, _dbox);
+		image_angle = lerp(image_angle, 0, 0.1);
 	}
 	if (controller.fleeing == 0) // normal image speed
 	{
@@ -55,7 +56,7 @@ if (controller.fleeing == 0) // take damage
 	{
 		image_speed = 1;
 		global.chara_curhp -= 2;
-		audio_play(snd_battle_hurt, 0, 0);
+		audio_play(snd_impactHurt, 0, 0);
 		invtime = 60;
 	}
 	else if (invtime > 0)

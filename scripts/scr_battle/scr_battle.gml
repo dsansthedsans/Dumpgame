@@ -189,6 +189,13 @@ function battle_setupgroup()
 		button_active = false;
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
+		assist.x = (room_width * 1.5);
+		assist.y = (room_height * 0.5);
+		assist.objectSpeedMax = 100;
+		assist.slide = false;
+		assist.heal = 99;
+		//assist.audio_assets = undefined;
+		assist.destroyBullets = false;
 	}
 	
 	if (battle_group == 1000) // TROLLFACE
@@ -216,7 +223,7 @@ function battle_enemy()
 		{
 			enemy_obj[i].myself = i;
 			enemy_obj[i].hpwidth = 100;
-			enemy_obj[i].hurtsound = snd_enemy_hurt1;
+			enemy_obj[i].hurtsound = snd_shriekFrog;
 		
 			if (enemy_type[i] == 2000) // Toilet
 			{
@@ -292,7 +299,7 @@ function battle_enemy()
 				enemy_reward_mny[i] = 2;
 				enemy_act[i, 1] = get_text("battle_act_trashguy_1");
 				enemy_act[i, 2] = get_text("battle_act_trashguy_2");
-				enemy_obj[i].hurtsound = snd_enemy_hurt2;
+				enemy_obj[i].hurtsound = snd_shriekLaugh;
 			}
 			if (enemy_type[i] == 4) // Flitcher
 			{
@@ -305,7 +312,7 @@ function battle_enemy()
 				enemy_reward_mny[i] = 2;
 				enemy_act[i, 1] = get_text("battle_act_flitcher_1");
 				enemy_act[i, 2] = get_text("battle_act_flitcher_2");
-				enemy_obj[i].hurtsound = snd_enemy_hurt3;
+				enemy_obj[i].hurtsound = snd_shriekDragon;
 			}
 			if (enemy_type[i] == 5) // Eyecrush
 			{
@@ -332,7 +339,7 @@ function battle_enemy()
 				enemy_act[i, 1] = get_text("battle_act_brock_1");
 				enemy_act[i, 2] = get_text("battle_act_brock_2");
 				enemy_act[i, 3] = get_text("battle_act_brock_3");
-				enemy_obj[i].hurtsound = snd_enemy_hurt5;
+				enemy_obj[i].hurtsound = snd_impactBreak;
 			}
 			
 			if (enemy_type[i] == 7) // Rhonhey
@@ -358,7 +365,7 @@ function battle_enemy()
 				enemy_def[i] = 10;
 				enemy_reward_exp[i] = 25;
 				enemy_reward_mny[i] = 100;
-				enemy_obj[i].hurtsound = snd_enemy_hurt4;
+				enemy_obj[i].hurtsound = snd_shriekTroll;
 			}
 		}
 	}
@@ -450,7 +457,7 @@ function battle_getattack()
 		if (enemy_type[i] == 7) // Rhonhey
 		{
 			enemy_attack[i] = 0;
-			heart_nexty = (box_nexty + (box_nexth / 4));
+			heart_nexty = round(box_nexty + (box_nexth / 3));
 		}
 	}
 	
@@ -524,7 +531,7 @@ function battle_attack()
 			thisobj.myself = myself;
 			
 			shakeobj(_enemy.body, 3, 3, 0.25);
-			audio_play(snd_bump, 0, VOLUME_SOUND);
+			audio_play(snd_impactBump, 0, VOLUME_SOUND);
 			
 			time = (irandom_range(15, 25) + normaltime);
 		}
@@ -776,32 +783,6 @@ function battle_attack()
 		{
 			if (stage == 0)
 			{
-				ball =
-				{
-					objects : [],
-					speed : 0.0075,
-					length : 6,
-					distance : ((32 / 2) + 8),
-					angle : 180,
-					angleSpeed : 0,
-					angleSpeed_max : -7,
-					audio :
-					{
-						asset : snd_whoosh,
-						id : undefined,
-						volume : undefined,
-						volumeMin : 0,
-						volumeMax : 1,
-						pitch : undefined,
-						pitchMin : 0.5,
-						pitchMax : 1,
-					},
-				}
-				for (var b = 0; b < ball.length; b++)
-				{
-					ball.objects[b] = create(-20, -20, obj_battle_blt);
-					thisobj.type = 13;
-				}
 				delay = 30;
 				stage = 1;
 			}
@@ -810,43 +791,144 @@ function battle_attack()
 				if (delay > 0)
 					delay -= 1;
 				else
-				{
-					ball.angleSpeed = lerp(ball.angleSpeed, ball.angleSpeed_max, ball.speed);
-					ball.angle += ball.angleSpeed;
-					if (ball.audio.id == undefined)
-						ball.audio.id = audio_play(ball.audio.asset, true, VOLUME_SOUND);
-					if (ball.audio.id != undefined && audio_playing(ball.audio.asset) == true)
-					{
-						if (ball.audio.volume == undefined)
-							ball.audio.volume = ball.audio.volumeMin;
-						ball.audio.volume = lerp(ball.audio.volume, (ball.audio.volumeMin + (abs(ball.audio.volumeMax - ball.audio.volumeMin) * (ball.angleSpeed / ball.angleSpeed_max))), ball.speed);
-						audio_gain(ball.audio.id, ball.audio.volume, 0, false, VOLUME_SOUND);
-						if (ball.audio.pitch == undefined)
-							ball.audio.pitch = ball.audio.pitchMin;
-						ball.audio.pitch = lerp(ball.audio.pitch, (ball.audio.pitchMin + (abs(ball.audio.pitchMax - ball.audio.pitchMin) * (ball.angleSpeed / ball.angleSpeed_max))), ball.speed);
-						audio_pitch(ball.audio.id, ball.audio.pitch);
-					}
-					else
-						ball.audio.id = undefined;
-				}
-				for (var b = 0; b < ball.length; b++)
-				{
-					var _angle = ((b == 0) ? ball.angle : (ball.objects[b - 1].image_angle + 90 + ((-ball.angleSpeed_max * b) * (ball.angleSpeed / ball.angleSpeed_max))));
-					var _x = ((b == 0) ? controller.box_x : (ball.objects[b - 1].x + lengthdir_x(ball.distance, _angle)));
-					var _y = ((b == 0) ? controller.box_x : (ball.objects[b - 1].y + lengthdir_y(ball.distance, _angle)));
-					ball.objects[b].image_angle = (_angle - 90);
-					ball.objects[b].x = _x;
-					ball.objects[b].y = _y;
-					with (ball.objects[b])
-					{
-						if (active == true && can_damage == true && place_meeting(x, y, obj_battle_heart) == true)
-							other.stage = 2;
-					}
-				}
+					stage = 2;
 			}
 			if (stage == 2)
 			{
-				
+				stage = 3;
+				delay = (60 + 30 - 15);
+				ball =
+				{
+					objects : [],
+					speed : 0.005,
+					length : 6,
+					distance : ((32 / 2) + 8),
+					angle : 180,
+					angleOffset : 90,
+					angleSpeed : 0,
+					angleSpeed_max : -7,
+					appear :
+					{
+						asset : snd_appearSword,
+						id : undefined,
+					},
+					rotate :
+					{
+						asset : snd_rotate,
+						id : undefined,
+						volume : undefined,
+						volumeMin : 0.25,
+						volumeMax : 1,
+						pitch : undefined,
+						pitchMin : 2,
+						pitchMax : 4,
+					},
+					catch :
+					{
+						index : undefined,
+						angle : undefined,
+					},
+				};
+				for (var b = 0; b < ball.length; b++)
+				{
+					ball.objects[b] = create(-20, -20, obj_battle_blt);
+					thisobj.type = 13;
+					thisobj.delaydelay = (10 * b);
+				};
+				ball.appear.id = audio_play(ball.appear.asset, false, VOLUME_SOUND);
+				mee6 =
+				{
+					stage : 0,
+					delay : (60 * 3),
+					buildup :
+					{
+						asset : snd_buildupComputer,
+						id : undefined,
+						pitch : 1,
+						pitchSpeed : 0.005,
+					},
+				};
+			}
+			else if (stage == 3)
+			{
+				if (delay > 0)
+					delay -= 1;
+				else
+				{
+					ball.angleSpeed = lerp(ball.angleSpeed, ball.angleSpeed_max, ball.speed);
+					ball.angle += ball.angleSpeed;
+					if (ball.rotate.id == undefined)
+						ball.rotate.id = audio_play(ball.rotate.asset, true, VOLUME_SOUND);
+					if (ball.rotate.id != undefined && audio_playing(ball.rotate.asset) == true)
+					{
+						if (ball.rotate.volume == undefined)
+							ball.rotate.volume = ball.rotate.volumeMin;
+						ball.rotate.volume = lerp(ball.rotate.volume, (ball.rotate.volumeMin + (abs(ball.rotate.volumeMax - ball.rotate.volumeMin) * (ball.angleSpeed / ball.angleSpeed_max))), ball.speed);
+						audio_gain(ball.rotate.id, ball.rotate.volume, 0, false, VOLUME_SOUND);
+						if (ball.rotate.pitch == undefined)
+							ball.rotate.pitch = ball.rotate.pitchMin;
+						ball.rotate.pitch = lerp(ball.rotate.pitch, (ball.rotate.pitchMin + (abs(ball.rotate.pitchMax - ball.rotate.pitchMin) * (ball.angleSpeed / ball.angleSpeed_max))), ball.speed);
+						audio_pitch(ball.rotate.id, ball.rotate.pitch);
+					}
+					else
+						ball.rotate.id = undefined;
+				}
+				for (var b = 0; b < ball.length; b++)
+				{
+					var _angle = ((b == 0) ? ball.angle : (ball.objects[b - 1].image_angle + ball.angleOffset + ((-ball.angleSpeed_max * b) * (ball.angleSpeed / ball.angleSpeed_max))));
+					var _x = ((b == 0) ? controller.box_x : (ball.objects[b - 1].x + lengthdir_x(ball.distance, _angle)));
+					var _y = ((b == 0) ? controller.box_x : (ball.objects[b - 1].y + lengthdir_y(ball.distance, _angle)));
+					ball.objects[b].image_angle = (_angle - ball.angleOffset);
+					ball.objects[b].x = _x;
+					ball.objects[b].y = _y;
+					if (ball.catch.index == undefined)
+					{
+						with (ball.objects[b])
+						{
+							if (active == true && can_damage == true && place_meeting(x, y, other.heart) == true)
+							{
+								controller.heart_move = false;
+								other.ball.catch.index = b;
+								other.ball.catch.angle = other.heart.image_angle;
+								audio_play(snd_impactOrchestra, false, VOLUME_SOUND,,,, 1.5);
+								shakescreen(3, 3);
+							}
+						}
+					}
+					else if (ball.catch.index == b)
+					{
+						heart.x = (ball.objects[b].x + lengthdir_x((ball.objects[b].sprite_width / 2), (_angle - ball.angleOffset)));
+						heart.y = (ball.objects[b].y + lengthdir_y((ball.objects[b].sprite_height / 2), (_angle - ball.angleOffset)));
+						if (ball.catch.angle != undefined)
+							heart.image_angle = (ball.catch.angle + _angle + ball.angleOffset);
+						if (mee6.buildup.id == undefined)
+							mee6.buildup.id = audio_play(mee6.buildup.asset, true, VOLUME_SOUND);
+						mee6.buildup.pitch += mee6.buildup.pitchSpeed;
+						audio_pitch(mee6.buildup.id, mee6.buildup.pitch);
+						if (mee6.delay > 0)
+							mee6.delay -= 1;
+						else if (controller.assist.active == false)
+						{
+							controller.assist.active = true;
+							controller.assist.curr = controller.assist.max;
+						}
+						else if (controller.assist.object != undefined && controller.assist.object.active == false) || (controller.assist.object == undefined)
+						{
+							global.flag[69] = 0.5;
+							controller.battle_music = -1;
+							stage = 4;
+							for (var bb = 0; bb < ball.length; bb++)
+								destroy(ball.objects[bb]);
+							audio_stop(ball.rotate.id);
+							audio_stop(mee6.buildup.id);
+							break;
+						}
+					}
+				}
+			}
+			else if (stage == 4)
+			{
+				controller.heart_move = true;
 			}
 		}
 	}

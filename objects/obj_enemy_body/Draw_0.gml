@@ -274,9 +274,14 @@ if (active == 1)
 	}
 	if (type == 7) // Rhonhey
 	{
-		siner++;
-		head_image += (1 / 30);
-		if (head_image >= 2)
+		if (global.flag[69] != 0.5)
+		{
+			siner++;
+			head_image += (1 / 30);
+			if (head_image >= 2)
+				head_image = 0;
+		}
+		else
 			head_image = 0;
 		var _x = (x + 48);
 		var _y = (y + 16);
@@ -298,6 +303,7 @@ if (active == 1)
 			var _head_spr = spr_enemy_rhonhey_head;
 			var _head_x = (_x - 5 + (fn_dcos(siner, 0) * 5));
 			var _head_y = (_y - (sprite_get_height(_head_spr) * _scale) - 10 + (fn_dsin(siner, 0) * 35));
+			
 			draw_sprite_ext(_head_spr, ((i * 2) + floor(head_image)), _head_x, _head_y, 2, 2, 0, c_white, 1);
 		}
 		/* old body

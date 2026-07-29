@@ -1,8 +1,9 @@
 /// @descr get type
 
-can_damage = 1;
-outside_box = 0; // if 0, image_scale won't matter
-destroy_on_impact = 1;
+can_damage = true;
+outside_box = false; // if 0, image_scale won't matter
+destroy_on_impact = true;
+assist_can_destroy = true;
 
 image_xscale = 2;
 image_yscale = 2;
@@ -213,7 +214,7 @@ if (type == 6.0) // Broken Clock
 	sprite_index = spr_battle_blt_shock;
 	dmg += 1;
 	outside_box = 1;
-	audio_play(snd_shock_blt, 0, VOLUME_SOUND);
+	audio_play(snd_launchShock, 0, VOLUME_SOUND);
 }
 if (type == 6.1)
 {
@@ -235,7 +236,7 @@ if (type == 6.1)
 	
 	playsnd = 1;
 	angleamt = choose(1, -1);
-	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
+	audio_play(snd_launch, 0, VOLUME_SOUND);
 	
 	pospos = 0;
 	for (var i = 0; i < 1000; i++)
@@ -350,9 +351,8 @@ if (type == 13)
 	sprite_index = spr_battle_blt_rhonhey_ball;
 	image_xscale = 1;
 	image_yscale = image_xscale;
-	image_angle = 180;
-	direction = image_angle;
 	image_alpha = 0;
+	//dmg += 2;
 	outside_box = true;
 	destroy_on_impact = false;
 }

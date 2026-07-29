@@ -398,6 +398,8 @@ function start_flags()
 	global.flag[67] = 0; // rules book smiley face amount
 	
 	global.flag[68] = 0; // TALKED ARMSGUY CAVE 3
+	
+	global.flag[69] = 0; // RHONHEY BATLEEEEEEEEEEEEEEEEEEEEEEEE
 }
 function start_music()
 {

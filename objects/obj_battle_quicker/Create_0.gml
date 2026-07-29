@@ -10,7 +10,7 @@ heart_y = (chara.y - round(chara.sprite_height / 2));
 heart_move = 0;
 heart_alpha = 0;
 heart_targetx = (camera_get_view_x(view_camera[0]) + round(((global.battle_nextgroup != 13) ? 50 : 319) / 2));
-heart_targety = (camera_get_view_y(view_camera[0]) + round(((global.battle_nextgroup != 13) ? 451 : 320) / 2));
+heart_targety = (camera_get_view_y(view_camera[0]) + round(((global.battle_nextgroup != 13) ? 451 : 373) / 2));
 marker(heart_x, heart_y, spr_battle_heart, heart_alpha, 0.5, 0.5, 0, 0, 0, global.c_dump, -20000);
 heart = thismarker;
 

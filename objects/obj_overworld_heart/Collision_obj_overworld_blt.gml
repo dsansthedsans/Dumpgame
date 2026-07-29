@@ -10,7 +10,7 @@ if (canhurt == 1 && invtime <= 0 && other.active == 1)
 	}
 	else
 		image_speed = 0.4;
-	audio_play(snd_battle_hurt, 0, VOLUME_SOUND);
+	audio_play(snd_impactHurt, 0, VOLUME_SOUND);
 	shakescreen(2, 2);
 	destroy(other);
 	invtime = 60;

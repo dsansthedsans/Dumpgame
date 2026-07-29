@@ -3,7 +3,7 @@
   "%Name":"spr_battle_blt_rhonhey_ball",
   "bboxMode":2,
   "bbox_bottom":24,
-  "bbox_left":5,
+  "bbox_left":15,
   "bbox_right":32,
   "bbox_top":5,
   "collisionKind":0,

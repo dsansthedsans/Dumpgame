@@ -226,7 +226,7 @@ if (stage == 2)
 	if (delay <= 0)
 	{
 		door[1].sprite_index = spr_overworld_bigdoor_open;
-		audio_play(snd_bluh, 0, VOLUME_SOUND);
+		audio_play(snd_impactBluh, 0, VOLUME_SOUND);
 		shakescreen(3, 3);
 		stage = 3;
 	}
@@ -238,7 +238,7 @@ if (stage == 4)
 	if (delay <= 0)
 	{
 		door[2].sprite_index = spr_overworld_bigdoor_open;
-		audio_play(snd_bluh, 0, VOLUME_SOUND);
+		audio_play(snd_impactBluh, 0, VOLUME_SOUND);
 		shakescreen(3, 3);
 		stage = 5;
 	}
@@ -250,7 +250,7 @@ if (stage == 6)
 	if (delay <= 0)
 	{
 		door[3].sprite_index = spr_overworld_bigdoor_open;
-		audio_play(snd_bluh, 0, VOLUME_SOUND);
+		audio_play(snd_impactBluh, 0, VOLUME_SOUND);
 		shakescreen(3, 3);
 		stage = 7;
 	}

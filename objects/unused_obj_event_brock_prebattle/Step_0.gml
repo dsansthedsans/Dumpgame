@@ -128,7 +128,7 @@ if (altcon == 8)
 		shockblt.direction = point_direction(shockblt.x, shockblt.y, m6.x, (m6.y - (m6.sprite_height / 2))) + irandom_range(-2, 2);
 		shockblt.image_angle = (direction + 90);
 		shockblt.speed = 4;
-		audio_play(snd_shock_blt, 0, VOLUME_SOUND);
+		audio_play(snd_launchShock, 0, VOLUME_SOUND);
 		shock_amount -= 1;
 		if (shock_amount <= 0)
 		{
@@ -206,7 +206,7 @@ if (con == 13)
 	if (exists(thiswriter) == 0)
 	{
 		global.flag[37] = 0.75;
-		audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
+		audio_play(snd_breakPieces, 0, VOLUME_SOUND);
 		alarm[2] = 80;
 		con = 14;
 	}
@@ -315,7 +315,7 @@ if (altcon == 8)
 		shockblt.direction = point_direction(shockblt.x, shockblt.y, m6.x, (m6.y - (m6.sprite_height / 2))) + irandom_range(-2, 2);
 		shockblt.image_angle = (direction + 90);
 		shockblt.speed = 4;
-		audio_play(snd_shock_blt, 0, VOLUME_SOUND);
+		audio_play(snd_launchShock, 0, VOLUME_SOUND);
 		
 		shock_amount -= 1;
 		if (shock_amount <= 0)
@@ -399,7 +399,7 @@ if (con == 13)
 	if (exists(thiswriter) == 0)
 	{
 		global.flag[37] = 0.75;
-		audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
+		audio_play(snd_breakPieces, 0, VOLUME_SOUND);
 		alarm[2] = 80;
 		con = 14;
 	}

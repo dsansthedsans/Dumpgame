@@ -498,10 +498,14 @@ if (assist.active == true)
 {
 	if (assist.curr >= assist.max && is_undefined(assist.object) == true)
 	{
-		assist.object = marker(box_defaultx + (box_defaultw / 2), box_defaulty + (box_defaulth / 2), spr_battle_blt_gear, 0, 2, 2, 0, 0, 0, global.c_dump, battle_depth[7]);
+		assist.object = marker(assist.x, assist.y, spr_battle_blt_gear, 0, 2, 2, 0, 0, 0, global.c_dump, battle_depth[7]);
 		assist.object.active = true;
 		assist.curr = 0;
-		audio_play(snd_eyeflash, 0, VOLUME_SOUND)
+		if (assist.audio_assets != undefined)
+		{
+			audio_play(assist.audio_assets[0], 0, VOLUME_SOUND);
+			audio_play(assist.audio_assets[1], 0, VOLUME_SOUND);
+		}
 	}
 	else if (is_undefined(assist.object) == false && exists(heart) == true)
 	{
@@ -512,12 +516,25 @@ if (assist.active == true)
 				var _distance = point_distance(x, y, other.heart.x, other.heart.y);
 				var _direction = angle_difference(point_direction(x, y, other.heart.x, other.heart.y), direction);
 				direction = lerp(direction, (direction + _direction), ((_distance > 20) ? 0.075 : (0.075 * 2)));
-				speed = clamp((speed + ((_distance > 75) ? 0.05 : -0.1)), 2.5, 10);
+				speed = clamp((speed + ((_distance <= 75 && other.assist.slide == true) ? -0.1 : 0.05)), 2.5, other.assist.objectSpeedMax);
 				image_alpha = lerp(image_alpha, 1, (0.075 * 2));
 				image_angle += ((speed * sign(_direction)) * 2);
 				if (place_meeting(x, y, other.heart) == true)
 				{
-					chara_hp(other.assist.heal);
+					with (other)
+					{
+						chara_hp(assist.heal);
+						if (assist.destroyBullets == true)
+						{
+							for (var i = 0; i < instance_number(obj_battle_blt); i++)
+							{
+								var _blt = instance_find(obj_battle_blt, i);
+								if (_blt.assist_can_destroy == true)
+									destroy(_blt);
+							}
+						}
+					}
+					audio_play(snd_bellFlower, false, VOLUME_SOUND);
 					active = false;
 				}
 			}

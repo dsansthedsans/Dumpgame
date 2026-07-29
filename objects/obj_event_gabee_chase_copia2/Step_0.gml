@@ -108,7 +108,7 @@ if (con == 15)
 if (con == 16 && exists(thiswriter) == 0)
 {
 	global.side_facing[0] = UP;
-	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
+	audio_play(snd_launch, 0, VOLUME_SOUND);
 	for (var i = 0; i < 6; i++)
 		bullet[i] = -1;
 	for (var i = 0; i < 3; i++)
@@ -138,7 +138,7 @@ if (con == 18)
 		destroy(bullet[i]);
 		bullet[i] = -1;
 	}
-	audio_play(snd_bigcut, 0, VOLUME_SOUND);
+	audio_play(snd_impactSwing, 0, VOLUME_SOUND);
 	shakescreen(3, 3);
 	con = 19;
 }
@@ -148,7 +148,7 @@ if (con == 19)
 	if (m6.y >= 240)
 	{
 		m6.y = 240;
-		audio_play(snd_screenshake, 0, VOLUME_SOUND);
+		audio_play(snd_impactShake, 0, VOLUME_SOUND);
 		shakescreen(5, 5);
 		alarm[2] = 45;
 		con = 20;
@@ -199,7 +199,7 @@ if (con >= 21 && con % 2 == 1 && con <= 31)
 	}
 	num += 1;
 	
-	audio_play(snd_blt_appear, 0, 0);
+	audio_play(snd_appearBullet, 0, 0);
 	alarm[2] = 6;
 	con += 1;
 	
@@ -214,7 +214,7 @@ if (con == 35)
 {
 	for (var i = 0; i < 6; i++)
 		bullet[i].speed = 6;
-	audio_play(snd_blt_launch, 0, 0);
+	audio_play(snd_launch, 0, 0);
 	con = 36;
 }
 if (con == 36)
@@ -259,7 +259,7 @@ if (con == 35)
 {
 	for (var i = 0; i < 6; i++)
 		bullet[i].speed = 6;
-	audio_play(snd_blt_launch, 0, 0);
+	audio_play(snd_launch, 0, 0);
 	chara.speed = -4;
 	chara.friction = 0.12;
 	chara.image_speed = 0.35;
@@ -347,7 +347,7 @@ if (con == 16 && exists(thiswriter) == 0)
 {
 	global.chara_facing = UP;
 	global.side_facing[0] = UP;
-	audio_play(snd_blt_launch, 0, 0);
+	audio_play(snd_launch, 0, 0);
 	for (var i = 0; i < 3; i++)
 	{
 		marker((m6.x - 20 + (20 * i)), (obj_GAME_CONTROLLER.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
@@ -371,7 +371,7 @@ if (con == 18)
 	global.side_facing[0] = UP_SIT;
 	for (var i = 0; i < 3; i++)
 		destroy(bullet[i]);
-	audio_play(snd_bigcut, 0, 0);
+	audio_play(snd_impactSwing, 0, 0);
 	shakescreen(3, 3);
 	con = 19;
 }
@@ -381,7 +381,7 @@ if (con == 19)
 	if (m6.y >= 240)
 	{
 		m6.y = 240;
-		audio_play(snd_screenshake, 0, 0);
+		audio_play(snd_impactShake, 0, 0);
 		shakescreen(5, 5);
 		alarm[2] = 60;
 		con = 20;

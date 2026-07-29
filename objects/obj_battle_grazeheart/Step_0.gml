@@ -1,5 +1,5 @@
 var _damage = false;
-if (control.assist.active == true)
+if (global.flag[2] == true && control.assist.active == true)
 {
 	touching = ds_list_create();
 	touching_length = instance_place_list(x, y, obj_battle_blt, touching, true);

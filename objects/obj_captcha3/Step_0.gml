@@ -117,8 +117,8 @@ if (stage == 12)
 	gate.active = false;
 	if (chara_murder() < 1)
 	{
-		audio_play(snd_cheer, false, VOLUME_SOUND);
-		audio_play(snd_applause, false, VOLUME_SOUND);
+		audio_play(snd_crowdCheer, false, VOLUME_SOUND);
+		audio_play(snd_crowdApplause, false, VOLUME_SOUND);
 	}
 }
 if (stage == 14)
@@ -143,9 +143,9 @@ for (var d = 0; d < doors_length; d++)
 		{
 			if (_sprite == spr_overworld_bigdoor_closed)
 			{
-				if (audio_playing(snd_bluh) == true)
-					audio_stop(snd_bluh);
-				audio_play(snd_bluh, 0, VOLUME_SOUND);
+				if (audio_playing(snd_impactBluh) == true)
+					audio_stop(snd_impactBluh);
+				audio_play(snd_impactBluh, 0, VOLUME_SOUND);
 			}
 			else
 				audio_play(snd_impact, 0, VOLUME_SOUND);
@@ -185,7 +185,7 @@ if (timer.active == true)
 		timer.seconds = clamp((timer.seconds - 1), 0, timer.seconds);
 		timer.color_green = 255;
 		timer.scale = 1.25;
-		audio_play(snd_bump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
+		audio_play(snd_impactBump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
 		audio_play(snd_txt1, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
 	}
 }

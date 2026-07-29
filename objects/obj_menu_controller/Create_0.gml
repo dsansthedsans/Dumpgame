@@ -112,7 +112,7 @@ if (global.fastmenu > 0)
 	window_set_caption("Dumpgame");
 	if (dumpgaem == 1)
 		window_set_caption("Dumpgaem");
-	audio_play(snd_dumpgame, 0, VOLUME_SOUND);
+	audio_play(snd_voiceDump, 0, VOLUME_SOUND);
 }
 
 

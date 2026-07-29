@@ -74,7 +74,7 @@ if (victory_delay <= 0)
 		global.flag[15] = 1;
 		global.chara_move = 1;
 		shakescreen(0, 5);
-		audio_play(snd_bluh, 0, VOLUME_SOUND);
+		audio_play(snd_impactBluh, 0, VOLUME_SOUND);
 		if (audio_playing(victorysound) == true)
 			audio_stop(victorysound);
 	}

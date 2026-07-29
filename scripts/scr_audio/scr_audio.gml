@@ -7,7 +7,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 	_volume *= 2;
 	if (_volume_type == VOLUME_SOUND)
 	{
-		if (_asset == snd_dumpgame)
+		if (_asset == snd_voiceDump)
 			_volume *= 0.75;
 		if (_asset == snd_option_movehold)
 			_volume *= 0.5;
@@ -23,12 +23,12 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume /= 2;
 		if (_asset == snd_step1) || (_asset == snd_step2)
 			_volume *= (0.5 + 0.125);
-		if (_asset == snd_grab)
+		if (_asset == snd_impactGrab)
 			_volume *= 0.5;
 		if (_asset == snd_impact)
 			_volume *= 0.75;
-		if (_asset == snd_txt_m6)
-			_volume *= 0.75 + 0.125;
+		if (_asset == snd_txt_m6) || (_asset == snd_txt_m6_1) || (_asset == snd_txt_m6_2)
+			_volume *= 0.35;
 		if (_asset == snd_surprise)
 			_volume *= 0.5 + (0.25 / 2);
 		if (_asset == snd_heartpulse1)
@@ -39,13 +39,13 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume = 0.75;
 		if (_asset == snd_ambient_wind)
 			_volume *= 0.5;
-		if (_asset == snd_bigcut)
+		if (_asset == snd_impactSwing)
 			_volume *= 1;
 		if (_asset == snd_txt_brock)
 			_volume *= 0.5;
-		if (_asset == snd_shock_blt)
+		if (_asset == snd_launchShock)
 			_volume *= 0.5;
-		if (_asset == snd_blt_launch) || (_asset == snd_blt_launch_reverse)
+		if (_asset == snd_launch) || (_asset == snd_launch_reverse)
 			_volume *= 0.75;
 		if (_asset == snd_explosion2)
 			_volume *= 0.25;
@@ -53,15 +53,15 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume /= 5;
 		if (_asset == snd_splat) || (_asset == snd_splat_reversed)
 			_volume *= 0.5;
-		if (_asset == snd_bluh)
+		if (_asset == snd_impactBluh)
 		{
 			_volume *= 0.5;
 		}
-		if (_asset == snd_bump)
+		if (_asset == snd_impactBump)
 			_volume *= 0.75;
 		if (_asset == snd_trombone)
 			_volume *= 1.5;
-		if (_asset == snd_applause) || (_asset == snd_cheer)
+		if (_asset == snd_crowdApplause) || (_asset == snd_crowdCheer)
 			_volume *= 0.5;
 		if (_asset == snd_alarm)
 			_volume *= 1.5;
@@ -81,8 +81,14 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.5;
 		if (_asset == snd_879)
 			_volume *= 0.5;
-		if (_asset == snd_yowl)
+		if (_asset == snd_shriekYowl)
 			_volume *= 0.75;
+		if (_asset == snd_appearSword) || (_asset == snd_rotate)
+			_volume *= 0.75;
+		if (_asset == snd_buildupComputer)
+			_volume *= 0.5;
+		if (_asset == snd_bellFlower)
+			_volume *= 1.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{

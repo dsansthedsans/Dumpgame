@@ -15,7 +15,7 @@ if (room == room_menu)
 	for (var i = 0; i < global.music_length; i++)
 		global.music[i] = -1;
 	controller = obj_menu_controller;
-	if (global.fastmenu == 0 && controller.started == 1) || (global.fastmenu == 1 && audio_playing(snd_dumpgame) == 0)
+	if (global.fastmenu == 0 && controller.started == 1) || (global.fastmenu == 1 && audio_playing(snd_voiceDump) == 0)
 	{
 		var _pitch = 1;
 		if (exists(obj_menu_namer) == 1 && obj_menu_namer.typing == 1)
@@ -160,7 +160,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			if (global.flag[62] == 0.5)
 				music_set(0, mus_chapter_2, , , , 0.5 + 0.25, false);
 			music_set(1, snd_ambient_wind, , 2, true, 0.5, , 4);
-			music_set(2, snd_titleimpact, , 2, true, 0.35, , 4);
+			music_set(2, snd_impactTitle, , 2, true, 0.35, , 4);
 			global.music_volumetype[1] = VOLUME_SOUND;
 			global.music_volumetype[2] = VOLUME_SOUND;
 		}

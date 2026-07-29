@@ -20,7 +20,7 @@ if (con == 1)
 if (con == 3)
 {
 	heart_spr = spr_battle_heart_break;
-	audio_play(snd_heartbreak1, 0, VOLUME_SOUND);
+	audio_play(snd_breakSplit, 0, VOLUME_SOUND);
 	event_user(0);
 	alarm[2] = round(60 * 1.25);
 	con = 4;
@@ -28,7 +28,7 @@ if (con == 3)
 if (con == 5)
 {
 	heart_alpha = 0;
-	audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
+	audio_play(snd_breakPieces, 0, VOLUME_SOUND);
 	event_user(0);
 	for (var i = 0; i < shard_amt; i++)
 	{
@@ -52,7 +52,7 @@ if (con == 5)
 }
 if (con == 7)
 {
-	audio_play(snd_gameover, 0, VOLUME_SOUND);
+	audio_play(snd_voiceOver, 0, VOLUME_SOUND);
 	alarm[2] = 120;
 	con = 8;
 }
@@ -108,8 +108,8 @@ else if (con < 9 && press_enter == 1) // skip
 				destroy(shard[i]);
 		}
 	}
-	if (audio_playing(snd_gameover) == false)
-		audio_play(snd_gameover, 0, VOLUME_SOUND);
+	if (audio_playing(snd_voiceOver) == false)
+		audio_play(snd_voiceOver, 0, VOLUME_SOUND);
 	title_length = 2;
 	heart_alpha = 0;
 	bg_alpha = 0;

@@ -306,8 +306,8 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "unused_genodialog_1_1", "* (But nobody came.)");
 	
 	// room_corridors_1
-	ds_map_add(global.textdata_en, "room_lamp_0","* (It's a lamp.)^1&* (An exotic blue fire lights the room.)");
-	ds_map_add(global.textdata_en, "room_brokenlamp", "* (This lamp appears to have been forcefully thrown&against the floor.)");
+	ds_map_add(global.textdata_en, "room_lamp_0","* (It's a lamp.)^1&* (An exotic blue fire is lighting up the room.)");
+	ds_map_add(global.textdata_en, "room_brokenlamp", "* (This lamp appears to have been forcefully thrown&against the floor...)");
 	
 	// obj_event_m6_start
 	/*
@@ -714,10 +714,12 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_1_0", "* Me Say Me Don Talk&Now Dumbass!!!");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_2_0", "* Go Away!!!!!!");
 	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_3_0", "* Ahhhhhh!!!!!!!!!!!!");
+	ds_map_add(global.textdata_en, "npc_armsguy_exit_lifting_4_0", "* I Kill You!!!!!!!!!!!!");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_0", "* (You wave to Flitcher.)^3&* (It waves back at you.)");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_1", "* (How did it wave back if it doesn't even have hands?)");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_0_2", "* (This is one of the weirdest mysteries of All Time.)");
-	ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.^4&* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
+	ds_map_add(global.textdata_en, "npc_flitcher_exit_1_0", "* Please,^4 help me.");
+	ds_map_add(global.textdata_en, "unused_npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.^4&* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
 	ds_map_add(global.textdata_en, "npc_flitcher_exit_geno_0", "* (It's Flitcher.)");
 	ds_map_add(global.textdata_en, "room_corridors_17_egg.0", "* (It's an egg.)");
 	ds_map_add(global.textdata_en, "room_corridors_17_egg.1", "* (It's unclear why there's an egg beside the tree.)"); // from DELTARUNE
@@ -737,7 +739,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "event_gabee_chase.0.1", "* The exit is at the end of this corridor.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.0.2", "* Before we continue,^1 I have a question for you.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.0.3", "* You do remember how :YBATTLES;D work,^2 correct?");
-	ds_map_add(global.textdata_en, "event_gabee_chase.0.4", "* ");
+	ds_map_add(global.textdata_en, "event_gabee_chase.0.4", "* ...");
 	ds_map_add(global.textdata_en, "event_gabee_chase.0.5", "* ... No!^1 Nothing!^2&* I just wanted to know.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.1.0", "* I confess.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.1.1", "* I lied.");
@@ -754,7 +756,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2", "* You Dumbass Too??");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.1", "Yes");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.2", "No");
-	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.1", "* ...^2^2&* ...^2^2^2&* ... OK");
+	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.1", "* ...^2^2^2&* ...^2^2^2&* ... OK");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.3.2", "* Mweheheheh!!^1 That Funny!^1&* You Dumbass Yes,^3 Dumbass.^1&* Go Dumbass Away.");
 	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2", "* You Stupid Too??");
 	//ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.1.2.1", "You're the one who thought you could jump without legs");
@@ -1113,8 +1115,8 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (TROLLFACE is gently touching your hair.)");
 	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (TROLLFACE suddenly proposes going somewhere more private.)"); // from real life experience
 	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (TROLLFACE does something explicit and acts like&nothing happened.)");
-	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (TROLLFACE's behavior makes you question your own moral principles.)");
-	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (TROLLFACE's behavior makes you consider legalizing the death penalty.)");
+	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (TROLLFACE's behavior makes&you question your own moral principles.)");
+	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (TROLLFACE's behavior makes&you consider legalizing the&death penalty.)");
 	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (TROLLFACE's behavior fills you with hate and despair.)");
 	ds_map_add(global.textdata_en, $"battle_main_troll_{i++}", "* (You feel TROLLFACE's sins crawling on your back.)"); // from UNDERTALE
 	/*

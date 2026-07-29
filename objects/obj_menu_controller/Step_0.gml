@@ -41,7 +41,7 @@ if (startcon >= 7 && startcon <= 23 && (startcon / 2) != round(startcon / 2))
 		audio_play(snd_impact, 0, VOLUME_SOUND);
 	}
 	else
-		audio_play(snd_dumpgame, 0, VOLUME_SOUND);
+		audio_play(snd_voiceDump, 0, VOLUME_SOUND);
 		
 	var _name = "Dumpgame";
 	if (dumpgaem == 1)
@@ -243,7 +243,7 @@ if (move == 1)
 					play_erase = 0;
 					option_pos = (play_save + 1);
 					global.menu_lvl = 1;
-					audio_play(snd_enemy_vaporized, 0, VOLUME_SOUND);
+					audio_play(snd_launchVapor, 0, VOLUME_SOUND);
 				}
 			}
 		}

@@ -7,7 +7,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 		if (result == 4)
 		{
 			sprite_index = spr_npc_trashguy;
-			audio_play(snd_bump, 0, VOLUME_SOUND);
+			audio_play(snd_impactBump, 0, VOLUME_SOUND);
 			shakeobj_small();
 			chara_change(-1, 0, 0, 1, 0, 0, -1);
 		}
@@ -27,7 +27,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 			con = 5;
 			x += 9;
 			sprite_index = spr_npc_trashguy_closedfall;
-			audio_play(snd_bump, 0, VOLUME_SOUND);
+			audio_play(snd_impactBump, 0, VOLUME_SOUND);
 			shakeobj_small();
 			alarm[2] = 60;
 			angle_amt = 1;
@@ -43,7 +43,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 		{
 			image_angle = 0;
 			sprite_index = spr_npc_trashguy_closedroll;
-			audio_play(snd_screenshake, 0, VOLUME_SOUND);
+			audio_play(snd_impactShake, 0, VOLUME_SOUND);
 			shakescreen(3, 3);
 			con = 7;
 			alarm[2] = 80;
@@ -77,7 +77,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 	//	{
 	//		x += 9;
 	//		sprite_index = spr_npc_trashguy_closedfall;
-	//		audio_play(snd_bump, 0, 0);
+	//		audio_play(snd_impactBump, 0, 0);
 	//		shakeobj_small();
 	//		middle_delay = 60;
 	//		middle_stage = 1;
@@ -91,7 +91,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 	//		{
 	//			image_angle = 0;
 	//			sprite_index = spr_npc_trashguy_closedroll;
-	//			audio_play(snd_screenshake, 0, 0);
+	//			audio_play(snd_impactShake, 0, 0);
 	//			shakescreen(3, 3);
 	//			middle_delay = 80;
 	//			middle_stage = 2;
@@ -329,7 +329,7 @@ if (myinteract == 1)
 		if (myresult == 4)
 		{
 			sprite_index = spr_npc_trashguy;
-			audio_play(snd_bump, 0, 0);
+			audio_play(snd_impactBump, 0, 0);
 			shakeobj_small();
 			global.chara_cutscene = 1;
 		}
@@ -444,7 +444,7 @@ if (myinteract == 1)
 		if (_snd != -1)
 		{
 			if (global.flag[50] == 1 && global.flag[51] == 1)
-				_snd = snd_bluh;
+				_snd = snd_impactBluh;
 			audio_play(_snd, 0, 0);
 		}
 		
@@ -536,7 +536,7 @@ if (myinteract == 2 && myresult == 4 && exists(thiswriter) == 0) // trashguy rol
 	{
 		x += 9;
 		sprite_index = spr_npc_trashguy_closedfall;
-		audio_play(snd_bump, 0, 0);
+		audio_play(snd_impactBump, 0, 0);
 		shakeobj_small();
 		middle_delay = 60;
 		middle_stage = 1;
@@ -550,7 +550,7 @@ if (myinteract == 2 && myresult == 4 && exists(thiswriter) == 0) // trashguy rol
 		{
 			image_angle = 0;
 			sprite_index = spr_npc_trashguy_closedroll;
-			audio_play(snd_screenshake, 0, 0);
+			audio_play(snd_impactShake, 0, 0);
 			shakescreen(3, 3);
 			middle_delay = 80;
 			middle_stage = 2;

@@ -10,8 +10,8 @@ if (con == 3 && chara.bbox_top <= 200 && global.chara_move == true)
 	global.flag[66] = 0.75;
 	chara_change(-1, false, false, true, false, false, false);
 	chara_stop();
-	audio_play(snd_enemy_hurt3, false, VOLUME_SOUND, 0.5, , , (0.5 + 0.25));
-	audio_play(snd_yowl, false, VOLUME_SOUND, 0.5, , , (0.5 + 0.25));
+	audio_play(snd_shriekDragon, false, VOLUME_SOUND, 0.5, , , (0.5 + 0.25));
+	audio_play(snd_shriekYowl, false, VOLUME_SOUND, 0.5, , , (0.5 + 0.25));
 	con = 4;
 }
 if (con == 4)
@@ -27,7 +27,7 @@ if (con == 6)
 {
 	con = 8;
 	alarm[2] = 90;
-	audio_play(snd_heartbreak2, false, VOLUME_SOUND);
+	audio_play(snd_breakPieces, false, VOLUME_SOUND);
 }
 if (con == 9)
 {

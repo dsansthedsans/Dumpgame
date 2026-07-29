@@ -80,7 +80,7 @@ if (button_active == true)
 		draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, sprite_get_width(_chara_icon_spr), 16, _chara_icon_x, (_inbetween - 16), 2, 2, c_white, (gui_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
 	draw_text_outline(_chara_name_x, (_inbetween + 4), _chara_name_text, c_white, 2, c_black);
 	draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, (100 + (5 * (global.chara_lvl - 1))), /*#FFDC31*/ #F29948, #DD2929, 1);
-	if (assist.active == true)
+	if (global.flag[2] == true && assist.active == true)
 	{
 		draw_set_alpha(gui_alpha);
 		draw_set_valign(fa_middle);

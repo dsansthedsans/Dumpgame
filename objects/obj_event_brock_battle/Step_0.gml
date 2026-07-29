@@ -22,7 +22,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 			if (_brickpile.sprite_index == spr_overworld_corridorsbricks)
 				shakeobj(_brickpile, 2, 2, 0.1);
 		}
-		audio_play(snd_grab, 0, VOLUME_SOUND, , , , 0.8);
+		audio_play(snd_impactGrab, 0, VOLUME_SOUND, , , , 0.8);
 		if (global.flagtemp_bossSkip == false)
 		{
 			con = 1;
@@ -66,7 +66,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 			}
 			brock.image_alpha = (brock_jumpAlpha / 2);
 			brockShock_draw = true;
-			audio_play(snd_bigcut, 0, VOLUME_SOUND);
+			audio_play(snd_impactSwing, 0, VOLUME_SOUND);
 			shakescreen(4, 4);
 			for (var i = 0; i < instance_number(obj_overworld_solid); i++)
 			{
@@ -101,7 +101,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 			gate_height = gate_heightMax;
 			audio_stop(snd_option_movehold);
 			audio_play(snd_impact, false, VOLUME_SOUND);
-			audio_play(snd_screenshake, false, VOLUME_SOUND);
+			audio_play(snd_impactShake, false, VOLUME_SOUND);
 			shakescreen(5, 5);
 		}
 		if (exists(obj_movetopoint) == false)
@@ -209,7 +209,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 		party_stop(0);
 		party_facing(0, -1);
 		m6.sprite_index = spr_m6_u_sit;
-		audio_play(snd_grab, 0, VOLUME_SOUND);
+		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		with (m6)
 			shakeobj_small();
 		con = 12;
@@ -233,7 +233,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 	else if (con == 15 && ((is_undefined(thiswriter) == false && exists(thiswriter) == false) || (is_undefined(thiswriter) == true))) 
 	{
 		global.flag[37] = 0.75;
-		audio_play(snd_heartbreak2, 0, VOLUME_SOUND);
+		audio_play(snd_breakPieces, 0, VOLUME_SOUND);
 		con = 16;
 		alarm[2] = 80;
 	}
@@ -300,7 +300,7 @@ else if (global.flag[37] == 1 && global.flag[39] == 0)
 			gate_height = 0;
 			if (audio_playing(snd_option_movehold) == true)
 				audio_stop(snd_option_movehold);
-			audio_play(snd_screenshake, false, VOLUME_SOUND, , , , (1.05 * 0.75));
+			audio_play(snd_impactShake, false, VOLUME_SOUND, , , , (1.05 * 0.75));
 			shakescreen(3, 3);
 		}
 	}

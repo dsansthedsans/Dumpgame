@@ -48,8 +48,8 @@ if (spared == 1)
 	image_alpha = 0.5;
 	destroy(body);
 	battle_sparecloud(id);
-	if (audio_playing(snd_battle_spared) == false)
-		audio_play(snd_battle_spared, 0, VOLUME_SOUND);
+	if (audio_playing(snd_launchSparkles) == false)
+		audio_play(snd_launchSparkles, 0, VOLUME_SOUND);
 	controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 	controller.enemy_type[myself] = 0;
 	spared = 0;

@@ -29,8 +29,8 @@ if (con == 2)
 }
 if (con == 4)
 {
-	audio_play(snd_applause, 0, VOLUME_SOUND);
-	audio_play(snd_cheer, 0, VOLUME_SOUND);
+	audio_play(snd_crowdApplause, 0, VOLUME_SOUND);
+	audio_play(snd_crowdCheer, 0, VOLUME_SOUND);
 	con = 5;
 }
 if (con == 5)

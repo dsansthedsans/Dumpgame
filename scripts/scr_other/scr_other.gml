@@ -254,8 +254,8 @@ function screenpos(_x, _y)
 }
 function shakescreen(_xint, _yint)
 {
-	obj_GAME_CONTROLLER.cam_shake_xint = argument0;
-	obj_GAME_CONTROLLER.cam_shake_yint = argument1;
+	obj_GAME_CONTROLLER.cam_shake_xint += argument0;
+	obj_GAME_CONTROLLER.cam_shake_yint += argument1;
 	obj_GAME_CONTROLLER.cam_shake_stage = 1;
 }
 

@@ -86,7 +86,7 @@ function TEXT()
 		var _pos = obj_chara_menu.option_pos_old;
 		msg[0] = string(get_text("item_drop_0.0")) + ":Y" + string(item_name(global.item[_pos], "")) + ";D" + string(get_text($"item_drop_0.1_{irandom(9)}"));
 		msg_format[0] = "textbox_bottom";
-		audio_play(snd_grab, 0, VOLUME_SOUND);
+		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		itemDropped_create(itemDropped_add(global.item[_pos]));
 		global.item[_pos] = -1;
 	}
@@ -1061,7 +1061,7 @@ function TEXT()
 	}
 	if (text == "npc_armsguy_exit_lifting")
 	{
-		msg[0] = get_text($"npc_armsguy_exit_lifting_{clamp(global.flag[43], 0, 3)}_0");
+		msg[0] = get_text($"npc_armsguy_exit_lifting_{clamp(global.flag[43], 0, 4)}_0");
 		global.flag[43] = (real(global.flag[43]) + 1);
 	}
 	if (text == "room_corridors_17_egg")
@@ -1106,10 +1106,10 @@ function TEXT()
 			break;
 			case 1:
 			msg_face[0] = spr_dialogface_m6_neutralTense;
-			msg_face[1] = spr_dialogface_m6_default;
-			msg_face[2] = spr_dialogface_m6_defaultTense;
-			msg_face[3] = spr_dialogface_m6_default;
-			msg_sound[0] = snd_txt_m6;
+			msg_face[1] = spr_dialogface_m6_neutral;
+			msg_face[2] = spr_dialogface_m6_neutralTense;
+			msg_face[3] = spr_dialogface_m6_neutral;
+			msg_sound[0] = snd_txt_m6_1;
 			msg_talker[0] = global.party[0];
 			break;
 			case 3:
@@ -1300,11 +1300,16 @@ function TEXT()
 		for (var m = 0; m < 99; m++)
 		{
 			var _msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}");
+			debug($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}");
 			if (_questioned != undefined)
+			{
 				_msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.{question_result[_questioned]}");
+				if (question_result[_questioned] == 1)
+					msg_skip[m] = false;
+			}
 			if (_msg == undefined)
 				break;
-			if (string_char_at(_msg, string_length(_msg)) != "?")
+			else if (string_char_at(_msg, string_length(_msg)) != "?")
 				msg[m] = _msg;
 			else
 			{

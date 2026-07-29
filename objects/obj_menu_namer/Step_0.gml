@@ -8,7 +8,7 @@ if (keyboard_check_pressed(vk_f10) == 1)
 {
 	keyboard_string = "";
 	typing = !typing;
-	audio_play(snd_f10, 0, VOLUME_SOUND);
+	audio_play(snd_shriekCar, 0, VOLUME_SOUND);
 }
 
 // normal

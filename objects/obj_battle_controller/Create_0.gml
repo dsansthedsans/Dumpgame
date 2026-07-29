@@ -103,6 +103,22 @@ for (var i = 0; i < enemy_length; i++)
 	enemy_act[i, 0] = "Check";
 }
 
+assist =
+{
+	active : global.flag[2],
+	curr : 0,
+	max : 100,
+	speed : 3,
+	x : (box_defaultx + (box_defaultw / 2)),
+	y : (box_defaulty + (box_defaulth / 2)),
+	object : undefined,
+	objectSpeedMax : 10,
+	slide : true,
+	heal : (global.chara_maxhp / 4),
+	audio_assets : [snd_appearFlash, snd_appearSparkles],
+	destroyBullets : true,
+}
+
 battle_getgroup();
 create(0, 0, obj_battle_bg);
 battle_setupgroup();
@@ -134,16 +150,6 @@ else if (button_active == false)
 	button_select = false;
 	heart.x = heart_nextx;
 	heart.y = heart_nexty;
-}
-
-assist =
-{
-	active : global.flag[2],
-	curr : 0,
-	max : 100,
-	speed : 3,
-	object : undefined,
-	heal : (global.chara_maxhp / 4),
 }
 
 /*

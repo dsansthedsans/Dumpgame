@@ -96,7 +96,7 @@ if (con == 15)
 }
 if (con == 16 && exists(thiswriter) == 0)
 {
-	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
+	audio_play(snd_launch, 0, VOLUME_SOUND);
 	for (var i = 0; i < 6; i++)
 		bullet[i] = -1;
 	for (var i = 0; i < 3; i++)
@@ -113,9 +113,9 @@ if (con == 17)
 {
 	with (bullet[1])
 	{
-		if (y >= (other.m6.y - 100))
+		if (y >= (other.m6.y - 80))
 			party_facing(0, UP);
-		if (place_meeting(x, (y - 20), other.m6) == 1)
+		if (place_meeting(x, y, other.m6) == 1)
 			other.con = 18;
 	}
 }
@@ -129,7 +129,7 @@ if (con == 18)
 		destroy(bullet[i]);
 		bullet[i] = -1;
 	}
-	audio_play(snd_bigcut, 0, VOLUME_SOUND, 1.5);
+	audio_play(snd_impactSwing, 0, VOLUME_SOUND, 1.5);
 	shakescreen(4, 4);
 	con = 19;
 }
@@ -149,7 +149,7 @@ if (con == 19)
 		with (m6)
 			shakeobj_small();
 		audio_play(snd_impact, 0, VOLUME_SOUND);
-		audio_play(snd_screenshake, 0, VOLUME_SOUND, 2);
+		audio_play(snd_impactShake, 0, VOLUME_SOUND, 2);
 		shakescreen(6, 6);
 		
 		create((m6.x - 10), (m6.y - 15), obj_solid_block);
@@ -185,7 +185,7 @@ if (con >= 21 && con % 2 == 1 && con <= 31)
 	}
 	num += 1;
 	
-	audio_play(snd_blt_appear, 0, VOLUME_SOUND);
+	audio_play(snd_appearBullet, 0, VOLUME_SOUND);
 	alarm[2] = 6;
 	con += 1;
 }
@@ -198,7 +198,7 @@ if (con == 35)
 {
 	for (var i = 0; i < 6; i++)
 		bullet[i].speed = 6;
-	audio_play(snd_blt_launch, 0, VOLUME_SOUND);
+	audio_play(snd_launch, 0, VOLUME_SOUND);
 	con = 36;
 }
 if (con == 36)
@@ -212,14 +212,14 @@ if (con == 36)
 		chara.speed = -3;
 		chara.friction = 0.12;
 		global.chara_facing = SIT;
-		audio_play(snd_grab, 0, VOLUME_SOUND);
+		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		alarm[4] = 45;
 		con = 36.25;
 	}
 }
 if (con == 36.5)
 {
-	audio_play(snd_eyeflash, 0, VOLUME_SOUND);
+	audio_play(snd_appearFlash, 0, VOLUME_SOUND);
 	alarm[4] = round(30 + 7.5);
 	con = 36.75;
 }
@@ -237,7 +237,7 @@ if (con == 38)
 	global.chara_facing = DOWN;
 	with (chara)
 		shakeobj_small();
-	audio_play(snd_bump, 0, VOLUME_SOUND);
+	audio_play(snd_impactBump, 0, VOLUME_SOUND);
 	alarm[2] = round(15 + 7.5);
 	con = 39;
 }
@@ -291,7 +291,7 @@ if (con == 41)
 				}
 				bullet_format[2] = !bullet_format[2];	
 			}
-			audio_play(snd_blt_appear, 0, VOLUME_SOUND, , , , (1 + (0.15 * bullet_stage)));
+			audio_play(snd_appearBullet, 0, VOLUME_SOUND, , , , (1 + (0.15 * bullet_stage)));
 			bullet_delay[s] = bullet_time[s];
 		}
 		else
@@ -331,7 +331,7 @@ if (con == 42)
 		chara.sprite_index = spr_chara_r_jump;
 		audio_play(snd_jump, 0, VOLUME_SOUND);
 		audio_pitch(thisaudio, 0.65);
-		audio_play(snd_cymbal, 0, VOLUME_SOUND);
+		audio_play(snd_buildupCymbal, 0, VOLUME_SOUND);
 		audio_pitch(thisaudio, 1.4);
 		altcon = 0;
 		con = 46;
@@ -350,7 +350,7 @@ if (con == 46)
 		with (chara)
 			shakeobj_small();
 		audio_stop(thisaudio);
-		audio_play(snd_grab, 0, VOLUME_SOUND);
+		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		alarm[2] = 120;
 		con = 47;
 	}
@@ -361,7 +361,7 @@ if (con >= 48 && con <= 52 && con % 2 == 0)
 	chara.image_index += (1 * (con != 48));
 	with (chara)
 		shakeobj_small();
-	audio_play(snd_bump, 0, VOLUME_SOUND);
+	audio_play(snd_impactBump, 0, VOLUME_SOUND);
 	alarm[2] = (60 + (15 * (con - 48)));
 	con += 1;
 }
@@ -369,8 +369,8 @@ if (con == 54)
 {
 	with (chara)
 		shakeobj_small();
-	audio_play(snd_grab, 0, VOLUME_SOUND);
-	audio_play(snd_fall, 0, VOLUME_SOUND);
+	audio_play(snd_impactGrab, 0, VOLUME_SOUND);
+	audio_play(snd_fallDeep, 0, VOLUME_SOUND);
 	chara.hspeed = -0.1;
 	chara.gravity = 0.1;
 	chara.sprite_index = spr_chara_r_fall;
@@ -385,7 +385,7 @@ if (con == 55)
 		global.flag[61] = 1;
 		depth = -5000;
 		audio_stop(thisaudio);
-		audio_play(snd_impact2, 0, VOLUME_SOUND);
+		audio_play(snd_impactDeep, 0, VOLUME_SOUND);
 		alarm[2] = 300;
 		con = 56;
 	}

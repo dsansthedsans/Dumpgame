@@ -12,7 +12,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0)
 		aftercon = 1;
 		alarm[8] = 10;
 		global.flag[37] = 0.25;
-		audio_play(snd_bigcut, 0, VOLUME_SOUND);
+		audio_play(snd_impactSwing, 0, VOLUME_SOUND);
 		//shakescreen(4, 4);
 		
 		chara = obj_chara;

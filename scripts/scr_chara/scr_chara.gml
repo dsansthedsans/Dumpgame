@@ -161,7 +161,7 @@ function chara_stats()
 	    global.chara_maxhp = 99;
 	}
 	if (string_upper(global.chara_name) == "FRISK")
-		global.chara_maxhp = (100 + (10 * (global.chara_lvl - 1)));
+		global.chara_maxhp = 99;
 
 	// arma e armadura
 	var _weapon = global.chara_weapon;
