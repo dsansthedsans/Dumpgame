@@ -26,23 +26,24 @@
 </ul>
 <br>
 <h2>Development History</h2>
-<p>Long ago, on November 14, 2021, 11-year-old me opened GameMaker for the first time, created a new project with a name I made up on the spot, then started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
+<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
 <p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
+<p>I was 11 years old at the time.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
 <br>
-<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". The game was ugly, stiff, confusing and barely functional. [...]</p>
+<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation".</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
 <p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295"></p>
 <p align="center"><img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
-<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until May of the same year. [...]</p>
+<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until May of the same year.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
 <p align="center"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
-<p>Then, on June 2022, I had an epiphany. I evolved. I, for once, made a smart, logical decision. I focused on learning programming and writing the story instead of improvising the whole game...! That's when the "3rd generation" started. [...]</p>
+<p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
 <br>
@@ -56,7 +57,7 @@
 <h3>Is Dumpgame associated with  UNDERTALE, Discord or MEE6?</h3>
 <blockquote>No, Dumpgame is not associated with UNDERTALE, Discord or MEE6.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
-<blockquote>No, NOTHING related to Dumpgame is AI-generated. The ONLY exception is GitHub's commit messages.</blockquote>
+<blockquote>No, NOTHING related to Dumpgame is AI-generated, not even this README. The ONLY exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
 <blockquote>Will you trust me if I say no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>VirusTotal</b></a>, reliable security vendors like Google, Microsoft, Avast, Bitdefender, Malwarebytes, Kaspersky, AVG and ESET won't flag the file as malicious.</blockquote>
 <h3>Why "Dumpgame"?</h3>
@@ -93,6 +94,7 @@
   <li>Anis Belkacem</li>
   <li>HybridTeacher</li>
   <li>Mãe Gamer</li>
+  <li>Babakinha</li>
   <li>sam06tanb</li>
   <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
