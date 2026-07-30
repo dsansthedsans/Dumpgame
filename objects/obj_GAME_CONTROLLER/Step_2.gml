@@ -26,6 +26,8 @@ var _xx = cam_x;
 var _yy = cam_y;
 if (cam_shake_stage == 1) || (cam_shake_stage == 2)
 {
+	cam_shake_xint = clamp(cam_shake_xint, 0, 6);
+	cam_shake_yint = clamp(cam_shake_yint, 0, 6);
 	_xx += round(cam_shake_xint * choose(1, -1));
 	_yy += round(cam_shake_yint * choose(1, -1));
 	

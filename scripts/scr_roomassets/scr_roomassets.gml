@@ -1,8 +1,6 @@
-
 function room_interact()
 {
 	var r = room;
-	
 	// bench
 	if (room == room_corridors_7 && y == 100 && x != 480) || (room == room_corridors_11 && ((x == 130 || x == 290) && y == 95)) || (room == room_corridors_17 && y == 270)
 	{
@@ -13,7 +11,6 @@ function room_interact()
 			text = "room_bench_geno";
 		}
 	}
-	
 	// corridors
 	if (r == room_corridors_1)
 	{
@@ -73,18 +70,6 @@ function room_interact()
 			text = "npc_dummy";
 			sprite_index = spr_npc_dummy;
 		}
-	}
-	if (r == unused_room_corridors_4_5)
-	{
-		if (x == 105 && y == 105)
-		{
-			text = "npc_armsguy1";
-			sprite_index = spr_npc_armsguy;
-			if (global.world_curpopulation[WORLD_CORRIDORS] < global.world_maxpopulation[WORLD_CORRIDORS])
-				destroy(id);
-		}
-		if (x == 150 && y == 125)
-			text = "room_rulesbook";
 	}
 	if (room == room_corridors_5 && x == 60 && y == 60)
 		text = "room_captcha_mainsign_1";
@@ -299,11 +284,8 @@ function room_interact()
 			text = "room_border";
 	}
 }
-
-function room_solid()
+function room_solid() // i really really really fucking hate this how could i make something this terrible
 {
-	// i really really really fucking hate this how could i make something this terrible
-	
 	// corridors
 	if (room == room_corridors_1)
 	{
@@ -813,7 +795,6 @@ function room_solid()
 				image_index = 2;
 		}
 	}
-	
 	// caverns
 	if (room == room_cave_1)
 	{
@@ -876,119 +857,6 @@ function room_solid()
 			y += 20;
 		}
 	}
-	
-	// old
-	/*
-	if (room == room_corridors_3_old)
-	{
-		// lamp
-		if (x == 90 && y == 420) || (x == 210 && y == 420) || (x == 150 && y == 240) || (x == 90 && y == 60) || (x == 210 && y == 60)
-		{
-			sprite_index = spr_overworld_lamp;
-		
-			if (x == 90 && y == 60)
-				image_index = 2;
-		}
-
-		// pillar
-		if (x == 110 && y == 50) || (x == 190 && y == 50) || (x == 224 && y == 60) || (x == 240 && y == 56)
-			sprite_index = spr_overworld_pillar;
-	}
-	if (room == room_corridors_4_old)
-	{
-		// lamp
-		if (x == 60 && y == 200) || (x == 200 && y == 200) || (x == 290 && y == 60) || (x == 410 && y == 60) || (x == 500 && y == 100) || (x == 640 && y == 130)
-		{
-			sprite_index = spr_overworld_lamp;
-		
-		
-			if (x == 200 && y == 200) // deactivated
-				image_index = 2;
-			if (x == 640 && y == 130) // broken
-				image_index = 1;
-		}
-
-		// tree
-		if (x == 250 && y == 120) || (x == 370 && y == 40) || (x == 400 && y == 190)
-		{
-			sprite_index = spr_overworld_tree;
-			tree = 1;
-		}
-	}
-	if (room == room_corridors_8_old)
-	{
-		// lamp
-		if (x == -10 && y == 180) || (x == 80 && y == 40) || (x == 220 && y == 40)
-		{
-			sprite_index = spr_overworld_lamp;
-			if (x == 80 && y == 40)
-				image_index = 2;
-		}
-
-		// pillar
-		if (x == 90 && y == 105) || (x == 210 && y == 105)
-			sprite_index = spr_overworld_pillar;
-	
-		// pillar dooor
-		if (x == 110 && y == -15)
-			sprite_index = spr_overworld_pillardoor;
-	}
-	if (room == room_corridors_11_old)
-	{
-		// lamp
-		if (x == 80 && y == 40) || (x == 220 && y == 40) || (x == 360 && y == 70) || (x == 440 && y == 80)
-		{
-			sprite_index = spr_overworld_lamp;
-			if (x == 360 && y == 70)
-				image_index = 1;
-			if (x == 80 && y == 40)
-				image_index = 2;
-		}	
-	
-		// tree
-		if (x == 80 && y == 30) || (x == 260 && y == 20) || (x == 180 && y == 110)
-		{
-			sprite_index = spr_overworld_tree;
-			leaf_fall = 1;
-		}
-		
-		// bench
-		if (x == 120 && y == 75) || (x == 280 && y == 75) || (x == 120 && y == 130) || (x == 280 && y == 130)
-		{
-			sprite_index = spr_overworld_bench;	
-			if (x == 120 && y == 130) || (x == 280 && y == 130)
-				image_index = 1;
-		}
-
-		// sign
-		if (x == 390 && y == 95)
-			sprite_index = spr_overworld_signWood;
-	}
-	if (room == room_corridors_12_old)
-	{	
-		// lamp
-		if (x == 20 && y == 100) || (x == 280 && y == 100)
-		{
-			sprite_index = spr_overworld_lamp;
-			if (x == 20 && y == 100)
-				image_index = 2;
-		}
-	
-		// lamp2
-		if (x == 130 && y == -30)
-			sprite_index = spr_overworld_lamp2;
-	
-		// pillar
-		if (x == 90 && y == 30) || (x == 210 && y == 30) || (x == 195 && y == 35)
-		{
-			sprite_index = spr_overworld_pillar;	
-			if (x == 210 && y == 30)
-				image_index = 1;
-			if ( x == 195 && y == 35)
-				image_index = 4;
-		}
-	}	
-	*/
 }
 function room_nonsolid()
 {
@@ -1005,41 +873,6 @@ function room_nonsolid()
 		if (x == 120 && y == 140)
 			sprite_index = spr_overworld_m6_papers;
 		depth = 0;
-	}
-	if (room == unused_room_corridors_12)
-	{
-		// single brick
-		if (x == 100 && y == 120) || (x == 180 && y == 100)
-		{
-			sprite_index = spr_overworld_corridorssinglebrick;
-			depth = (-bbox_bottom - 1);
-			
-			if (x == 100 && y == 120)
-			{
-				image_xscale = -1;
-				x += 20;
-			}
-		}
-		
-		// bricks
-		if (x == 104 && y == 40) || (x == 186 && y == 31) || (x == 158 && y == 40)
-		{
-			sprite_index = spr_overworld_corridorsbricks;
-			depth = 575;
-			if (x == 186 && y == 31)
-				image_xscale = -1;
-		}
-		
-		// cover
-		if (x == 109 && y == 0)
-		{
-			sprite_index = spr_singlepixel;
-			image_blend = c_black;
-			image_xscale = 109;
-			image_yscale = 99;
-			image_alpha = 0.5;
-			depth = 525;
-		}
 	}
 	if (room == unused_room_corridors_16_B)
 	{
@@ -1060,85 +893,3 @@ function room_nonsolid()
 		}
 	}
 }
-
-/*
-function readable_room()
-{
-	if (room == unused_room_test1)
-	{
-		if (x == 200 && y == 40)
-			myid = "test1";
-		if (x == 100 && y == 180)
-			myid = "test0";
-	}
-	
-	// save point
-	if (room == room_corridors_3 && x == 150 && y == 270) || (room == room_corridors_4 && x == 660 && y == 120) || (room == room_corridors_8 && x == 90 && y == 325) || (room == room_corridors_11 && x == 130 && y == 120) || (room == unused_room_corridors_13 && x == 370 && y == 160) || (room == unused_room_corridors_16 && x == 170 && y == 200) || (room == room_cave_3 && x == 150 && y == 225)
-	{
-		myid = "savepoint";
-		myresult = 0.1;
-	}
-	
-	// border
-	if (room == room_corridors_12)
-		myid = "border";
-	
-	// bench
-	if (room == room_corridors_7 && ((x == 240 || x == 560) && y == 95)) || (room == room_corridors_11 && ((x == 130 || x == 290) && y == 95))
-		myresult = 1;	
-	
-	// corridors
-	if (room == room_corridors_1)
-	{
-		// lamp
-		if (x == 80 && y == 420) || (x == 220 && y == 420) || (x == 90 && y == 80)
-			myid = "room_lamp";
-		
-		// pillar
-		if (x == 50 && y == 455) || (x == 250 && y == 455) || (x == 50 && y == 555) || (x == 250 && y == 555) || (x == 120 && y == 80) || (x == 180 && y == 80)
-			myid = "room_pillar";
-		
-		// broken lamp
-		if (x == 210 && y == 90)
-			myid = "room_brokenlamp";
-	}
-	if (room == room_corridors_2)
-	{
-		// banner
-		if (x == 85 && y == 100)
-			myid = "room_m6_banner";
-		
-		// poster
-		if (x == 215 && y == 60)
-			myid = "room_m6_poster";
-		
-		// papers
-		if (x == 120 && y == 140)
-			myid = "room_m6_papers";
-	}
-	if (room == room_corridors_3)
-	{
-		// mini6
-		if (x == 260 && y == 260)
-			myid = "room_m6_brokenwall";
-		
-		// dead lamp
-		if (x == 80 && y == 80)
-			myid = "room_deadlamp";
-	}
-	if (room == room_corridors_3_5 && x == 160 && y == 140)
-	{
-		myid = "npc_dummy";
-		sprite_index = spr_npc_dummy;
-	}
-	if (room == room_corridors_4 && x == 755 && y == 110) // armsguy npc
-	{
-		myid = "npc_armsguy";
-		sprite_index = spr_npc_armsguy;
-		if (global.world_curpopulation[WORLD_CORRIDORS] < global.world_maxpopulation[WORLD_CORRIDORS])
-			destroy(id);
-	}
-	
-
-}
-*/

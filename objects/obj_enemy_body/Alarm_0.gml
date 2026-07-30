@@ -49,7 +49,13 @@ if (type == 6) // Broken Clock
 
 if (type == 7) // Rhonhey
 {
+	posX = 0;
+	posY = 0;
+	offsetY = 0;
+	scale = 0;
+	head_sprite = spr_enemy_rhonhey_head;
 	head_image = 0;
+	head_angle = 0;
 	/* old body
 	body_length = 5;
 	body_spr[0] = spr_enemy_rhonhey_head;

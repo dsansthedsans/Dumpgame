@@ -13,7 +13,6 @@ function START_GAME()
 	global.game_startroom[0] = room_menu;
 	global.game_startroom[1] = room_corridors_1 //room_intro;
 	TEXTDATA_EN();
-	TEXTDATA_PT();
 	start_maininfo();
 	start_music();
 	start_party();
@@ -584,7 +583,6 @@ function CHANGE_GAME()
 				_lvl = 5;
 			if (_rm == room_corridors_14) || (_rm == room_corridors_13)
 				_lvl = 6;
-				_lvl = 7;
 			if (_rm == room_corridors_17) || (_rm == room_corridors_18)
 				_lvl = 8;
 			if (_rm == room_cave_1)

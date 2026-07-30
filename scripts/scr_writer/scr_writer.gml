@@ -1366,13 +1366,18 @@ function TEXT()
 		}
 		if (string_starts_with(text, "battle_bubble_m6_") == true)
 		{
+			var _index = string_char_at(text, string_length(text));
 			for (var m = 0; m < 99; m++)
 			{
-				var _msg = get_text($"battle_bubble_m6_{string_char_at(text, (string_length(text) - 1))}_{m}");
+				var _msg = get_text($"battle_bubble_m6_{_index}_{m}");
 				if (_msg == undefined)
 					break;
 				msg[m] = _msg;
 			}
+			msg_type[0] = 5;
+			//if (_index == 1)
+				//msg_type[0] = 2;
+			msg_sound[0] = snd_txt_m6;
 		}
 		if (text == "battle_bubble_dummy") // Dummy
 		{

@@ -223,7 +223,7 @@ if (active == 1)
 			{
 				create(x, y, obj_battle_blt);
 				thisobj.type = 5.15;
-				audio_play(snd_shot, 0, VOLUME_SOUND);
+				audio_play(unused_snd_shot, 0, VOLUME_SOUND);
 				
 				delay = 60;
 				stage = 2;	
@@ -405,8 +405,16 @@ if (active == 1)
 		else
 		{
 			image_alpha += 1;
-			audio_play(snd_impactBump, false, VOLUME_SOUND, 0.5);
-			shakescreen(2, 2);
+			if (index < (controller.attackobj[myself].ball.length - 1))
+			{
+				audio_play(snd_impactBump, false, VOLUME_SOUND, 0.5);
+				shakescreen(2, 2);
+			}
+			else
+			{
+				audio_play(snd_impact, false, VOLUME_SOUND, 1);
+				shakescreen(4, 4);
+			}
 		}
 	}
 }

@@ -217,20 +217,6 @@ function chara_room()
 		// default
 		rm = room_next(room);
 		
-		// test
-		if (room == unused_room_test0)
-		{
-			rm = unused_room_test1;
-			xx = 30;
-			yy = 80;
-		}
-		if (room == unused_room_test1)
-		{
-			rm = unused_room_test2;
-			xx = 20;
-			yy = 40;
-		}
-	
 		// custom position and/or room
 		if (room == room_corridors_2)
 			global.flag[3] = 1;
@@ -325,20 +311,6 @@ function chara_room()
 		{
 			xx = 180;
 			yy = 40;
-		}
-	
-		// test
-		if (room == unused_room_test1)
-		{
-			rm = unused_room_test0;
-			xx = 30;
-			yy = 120;
-		}
-		if (room == unused_room_test2)
-		{
-			rm = unused_room_test1;
-			xx = 150;
-			yy = 100;
 		}
 	}
 	if (thisblock == obj_room_other_A)

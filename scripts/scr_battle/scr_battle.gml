@@ -185,10 +185,12 @@ function battle_setupgroup()
 	
 	if (battle_group == 13) // Rhonhey
 	{
-		battle_music = mus_battle_0;
+		battle_music = mus_event_rhonhey_battle;
 		button_active = false;
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
+		heart.x = box_defaultx;
+		heart.y = round(box_defaulty + (160 / 3));
 		assist.active = false;
 		assist.x = (room_width * 1.5);
 		assist.y = (room_height * 0.5);
@@ -797,11 +799,11 @@ function battle_attack()
 			if (stage == 2)
 			{
 				stage += 1;
-				delay = (60 + 30 - 15);
+				delay = round(60 * 1.75);
 				ball =
 				{
 					objects : [],
-					speed : 0.00375,
+					speed : 0.002,
 					length : 6,
 					distance : ((32 / 2) + 8),
 					angle : 180,
@@ -834,13 +836,15 @@ function battle_attack()
 				{
 					ball.objects[b] = create(-20, -20, obj_battle_blt);
 					thisobj.type = 13;
+					thisobj.index = b;
+					thisobj.myself = myself;
 					thisobj.delaydelay = (10 * b);
 				};
 				ball.appear.id = audio_play(ball.appear.asset, false, VOLUME_SOUND);
 				mee6 =
 				{
 					stage : 0,
-					delay : (60 * 6),
+					delay : 0,//round(60 * 6),
 					buildup :
 					{
 						asset : snd_buildupComputer,
@@ -854,9 +858,11 @@ function battle_attack()
 					bubble_offsetX : 0,
 					bubble_offsetY : 0,
 				};
-				mee6.object = marker(round(room_width * 1.5), (controller.box_defaulty - round(controller.box_defaulth / 2) - 35), spr_enemy_m6_default, 1, 2, 2, 0, 0, 0, c_white, controller.battle_depth[1]);
-				mee6.bubble_offsetX = -(((sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale) / 2) + 35);
-				mee6.bubble_offsetY = -((sprite_get_height(mee6.object.sprite_index) * mee6.object.image_yscale) / 2);
+				mee6.object = marker(-20, -20, spr_enemy_m6_default, 1, 2, 2, 0, 0, 0, c_white, controller.battle_depth[1]);
+				mee6.object.x = (room_width + (sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale));
+				mee6.object.y = controller.defaulty;
+				mee6.bubble_offsetX = (-((sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale) / 2));
+				mee6.bubble_offsetY = -(((sprite_get_height(mee6.object.sprite_index) * mee6.object.image_yscale) / 2) - round(35 / 4));
 			}
 			else if (stage == 3)
 			{
@@ -900,16 +906,15 @@ function battle_attack()
 								other.ball.catch.index = b;
 								other.ball.catch.angle = other.heart.image_angle;
 								audio_play(snd_impactOrchestra, false, VOLUME_SOUND,,,, 1.5);
-								shakescreen(3, 3);
+								shakescreen(6, 6);
 							}
 						}
 					}
 					else if (ball.catch.index == b)
 					{
+						global.flag[69] = 0.125;
 						heart.x = (ball.objects[b].x + lengthdir_x((ball.objects[b].sprite_width / 2), (_angle - ball.angleOffset)));
 						heart.y = (ball.objects[b].y + lengthdir_y((ball.objects[b].sprite_height / 2), (_angle - ball.angleOffset)));
-						//if (ball.catch.angle != undefined)
-						//	heart.image_angle = (ball.catch.angle + _angle + ball.angleOffset);
 						if (mee6.buildup.id == undefined)
 							mee6.buildup.id = audio_play(mee6.buildup.asset, true, VOLUME_SOUND);
 						if (mee6.buildup.pitch == undefined)
@@ -926,16 +931,18 @@ function battle_attack()
 						}
 						else if (controller.assist.object != undefined && controller.assist.object.active == false) || (controller.assist.object == undefined)
 						{
-							global.flag[69] = 0.5;
+							global.flag[69] = 0.25;
 							controller.battle_music = -1;
 							controller.heart_move = true;
 							stage += 1;
-							delay = 45;
+							delay = 0//(60 * 2);
 							for (var bb = 0; bb < ball.length; bb++)
 								destroy(ball.objects[bb]);
 							audio_play(snd_bellFlower, false, VOLUME_SOUND);
-							audio_stop(ball.rotate.id);
-							audio_stop(mee6.buildup.id)
+							if (ball.rotate.id != undefined && audio_playing(ball.rotate.id) == true)
+								audio_stop(ball.rotate.id);
+							if (mee6.buildup.id != undefined && audio_playing(mee6.buildup.id) == true)
+								audio_stop(mee6.buildup.id);
 							break;
 						}
 					}
@@ -947,21 +954,90 @@ function battle_attack()
 					delay -= 1;
 				else
 					stage += 1;
-				debug("!!!!!!!!!!!!!!!!!!!");
 			}
 			else if (stage == 5)
 			{
-				debug("honestamtene");
-				writer("battle_bubble_m6_0", clamp((mee6.object.x + mee6.bubble_offsetX), 0, (room_width - 35)), (mee6.object.y + mee6.bubble_offsetY));
-				stage = 6;
+				global.flag[69] = 0.5;
+				stage += 1;
+				delay = 0//120;
+				audio_play(snd_whip_crack, false, VOLUME_SOUND);
+			}
+			else if (stage == 6)
+			{
+				if (delay > 0)
+					delay -= 1;
+				else
+					stage += 1;
 			}
 			else if (stage == 7)
 			{
-				mee6.object.hspeed = -3;
-				if (mee6.object <= round(controller.box_defaultx + (controller.box_defaultw / 4)))
+				global.flag[69] = 0.625;
+				writer("battle_bubble_m6_0", clamp((mee6.object.x + mee6.bubble_offsetX), 0, (room_width - round(35 / 4))), (mee6.object.y + mee6.bubble_offsetY));
+				stage += 1;
+			}
+			else if (stage == 8 && exists(thiswriter) == false)
+			{
+				global.flag[69] = 0.75;
+				var _rhonhey_targetX = (controller.box_defaultx - (controller.box_defaultw / 2.5));
+				if (controller.enemy_obj[myself].body.x > _rhonhey_targetX)
+					controller.enemy_obj[myself].body.x -= 1;
+				var _mee6_targetX = round(controller.box_defaultx + (controller.box_defaultw / 2.5));
+				if (mee6.object.x > _mee6_targetX)
+					mee6.object.x -= 2;
+				if (controller.enemy_obj[myself].body.x <= _rhonhey_targetX && mee6.object.x <= _mee6_targetX)
 				{
-					
-					mee6.object.hspeed = 0;
+					controller.enemy_obj[myself].body.x = round(controller.enemy_obj[myself].body.x);
+					mee6.object.x = round(mee6.object.x);
+					stage += 1;
+				}
+			}
+			else if (stage == 9)
+			{
+				writer("battle_bubble_m6_1", (mee6.object.x + mee6.bubble_offsetX), (mee6.object.y + mee6.bubble_offsetY));
+				stage += 1;
+			}
+			else if (stage == 10 && exists(thiswriter) == false)
+			{
+				global.flag[69] = 0.875;
+				var _rhonhey_targetX = (controller.box_defaultx - (controller.box_defaultw / 2));
+				controller.enemy_obj[myself].body.x -= 0.5;
+				if (controller.enemy_obj[myself].body.x <= _rhonhey_targetX)
+				{
+					controller.enemy_obj[myself].body.x = round(controller.enemy_obj[myself].body.x);
+					stage += 1;
+					delay = 60;
+				}
+			}
+			else if (stage == 11)
+			{
+				if (delay > 0)
+					delay -= 1;
+				else
+					stage += 1;
+			}
+			else if (stage == 12)
+			{
+				writer("battle_bubble_m6_2", (mee6.object.x + mee6.bubble_offsetX), (mee6.object.y + mee6.bubble_offsetY));
+				stage += 1;
+				delay = 60;
+			}
+			else if (stage == 13 && exists(thiswriter) == false)
+			{
+				if (delay > 0)
+					delay -= 1;
+				else
+					stage += 1;
+			}
+			else if (stage == 14)
+			{
+				global.flag[69] = 1;
+				var _rhonhey_targetX = -(room_width / 2)
+				controller.enemy_obj[myself].body.x -= 2;
+				if (controller.enemy_obj[myself].body.x <= _rhonhey_targetX)
+				{
+					controller.enemy_obj[myself].body.x = round(controller.enemy_obj[myself].body.x);
+					stage += 1;
+					delay = 60;
 				}
 			}
 		}
@@ -979,44 +1055,6 @@ function battle_attack()
 		}
 	}
 	
-	/*
-	else
-	{
-		if (stage == 0)
-		{
-			for (var i = 0; i < 3; i++)
-			{
-				create((box_x + 61), ((round(box_y) - (box_h / 2)) + (40 * i)), obj_battle_blt);
-				thisobj.type = 5.1;
-				eyeleg[i] = thisobj;
-			}
-			eyeleg_spd = 0.2;
-				
-			ii = irandom(2);
-			zz = ii;
-			while (zz == ii)
-				zz = irandom(2);
-			stage = 1;
-		}
-		else if (stage == 1)
-		{
-			var _targetx = (box_x + 31);
-			eyeleg[ii].x = lerp(eyeleg[ii].x, _targetx, eyeleg_spd);
-			eyeleg[zz].x = lerp(eyeleg[zz].x, _targetx, eyeleg_spd);
-			if (round(eyeleg[ii].x) == _targetx && round(eyeleg[zz].x) == _targetx)
-			{
-				time = 30;
-				stage = 2;
-			}
-		}
-		else if (stage == 2)
-		{
-			var _targetx = (box_x + 46);
-			eyeleg[ii].x = lerp(eyeleg[ii].x, _targetx, eyeleg_spd);
-			eyeleg[zz].x = lerp(eyeleg[zz].x, _targetx, eyeleg_spd);
-		}
-	}
-	*/
 }
 function battle_sparecloud(_instance)
 {
@@ -1031,7 +1069,6 @@ function battle_sparecloud(_instance)
 		cloud.direction = irandom(360);
 	}
 }
-
 function battle_danger(_type, _x1, _y1, _x2, _y2, _destroytime)
 {
 	danger = instance_create_layer(0, 0, "Instances", obj_battle_danger);
@@ -1042,6 +1079,3 @@ function battle_danger(_type, _x1, _y1, _x2, _y2, _destroytime)
 	danger.mytype = _type;
 	danger.destroytime = _destroytime;
 }
-
-
-

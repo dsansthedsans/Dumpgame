@@ -272,39 +272,71 @@ if (active == 1)
 				explosion_alpha = 0;
 		}
 	}
-	if (type == 7) // Rhonhey
+	// Rhonhey
+	if (type == 7)
 	{
-		if (global.flag[69] != 0.5)
+		head_sprite = spr_enemy_rhonhey_head;
+		if (global.flag[69] < 0.25) || (global.flag[69] > 0.625)
 		{
 			siner++;
 			head_image += (1 / 30);
 			if (head_image >= 2)
 				head_image = 0;
+			switch (global.flag[69])
+			{
+				case 0.125:
+				offsetY = lerp(offsetY, round(35 * 2.5), 0.003);
+				head_sprite = spr_enemy_rhonhey_head_downEat;
+				head_image = 0;
+				if (exists(controller.heart) == true)
+					head_angle = lerp(head_angle, (point_direction(posX, posY, controller.heart.x, controller.heart.y) - 180 - 90 - (45 / 2)), 0.03);
+				break;
+				case 0.75:
+				offsetY = lerp(offsetY, 0, 0.0125);
+				head_sprite = spr_enemy_rhonhey_head_rightConfused;
+				head_angle = lerp(head_angle, 0, 0.03);
+				break;
+				case 0.875:
+				head_sprite = spr_enemy_rhonhey_head_rightMad;
+				break;
+				case 1:
+				head_sprite = spr_enemy_rhonhey_head_leftdownMad;
+				break;
+			}
 		}
 		else
+		{
+			head_sprite = spr_enemy_rhonhey_head_downEat;
 			head_image = 0;
-		var _x = (x + 48);
-		var _y = (y + 16);
-		var _scale = 2;
+			switch (global.flag[69])
+			{
+				case 0.5:
+				head_sprite = spr_enemy_rhonhey_head_downMad;
+				break;
+				case 0.625:
+				head_sprite = spr_enemy_rhonhey_head_rightConfused;
+				break;
+			}
+		}
+		posX = (x + 48);
+		posY = (y + 16 + offsetY);
+		scale = 2;
 		for (var i = 1; i >= 0; i--)
 		{
+			// Body
 			for (var b = 7; b >= 0; b--)
 			{
 				var _body_spr = spr_enemy_rhonhey_body;
-				var _body_scale = (_scale - (0.1 * b));
-				var _body_x = (_x + ((sprite_get_width(_body_spr) * _body_scale) / 2) - (dcos(-(35 * 2) + (b * 35)) * 75) + (fn_dcos(siner, (b * 5)) * 2.5));
-				var _body_y = (_y + ((sprite_get_height(_body_spr) * _body_scale) / 2) + (dsin(-(35 * 2) + (b * 35) - 20) * 75) + (fn_dsin(siner, (b * 5)) * 20));
+				var _body_scale = (scale - (0.1 * b));
+				var _body_x = (posX + ((sprite_get_width(_body_spr) * _body_scale) / 2) - (dcos(-(35 * 2) + (b * 35)) * 75) + (fn_dcos(siner, (b * 5)) * 2.5));
+				var _body_y = (posY + ((sprite_get_height(_body_spr) * _body_scale) / 2) + (dsin(-(35 * 2) + (b * 35) - 20) * 75) + (fn_dsin(siner, (b * 5)) * 20));
 				var _body_color = merge_colour(c_white, c_black, (0.075 * b));
 				var _body_angle = (10 * (b + 1));
 				if (b >= 4)
 					_body_angle = (8 - (4 * (b - 4)));
-				draw_sprite_ext(_body_spr, i, _body_x, _body_y, _body_scale, _body_scale, _body_angle, _body_color, 1)
+				draw_sprite_ext(_body_spr, i, _body_x, _body_y, _body_scale, _body_scale, _body_angle, _body_color, image_alpha)
 			}
-			var _head_spr = spr_enemy_rhonhey_head;
-			var _head_x = (_x - 5 + (fn_dcos(siner, 0) * 5));
-			var _head_y = (_y - (sprite_get_height(_head_spr) * _scale) - 10 + (fn_dsin(siner, 0) * 35));
 			
-			draw_sprite_ext(_head_spr, ((i * 2) + floor(head_image)), _head_x, _head_y, 2, 2, 0, c_white, 1);
 		}
 		/* old body
 		head_index += (sprite_get_speed(body_spr[0]) / 60);

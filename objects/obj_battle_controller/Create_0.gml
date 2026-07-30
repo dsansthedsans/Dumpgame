@@ -149,8 +149,6 @@ else if (button_active == false)
 {
 	battle_lvl = 10;
 	button_select = false;
-	//heart.x = heart_nextx;
-	//heart.y = heart_nexty;
 }
 
 /*

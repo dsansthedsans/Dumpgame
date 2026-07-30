@@ -1,5 +1,4 @@
 /// @descr get type
-
 if (msg_format[page] == "textbox") || (msg_format[page] == "textbox_bottom") || (msg_format[page] == "textbox_top")
 {
 	// get textbox side
@@ -101,6 +100,8 @@ if (msg_format[page] == "bubble")
 		bubble_spr = spr_writer_bubble3;
 	else if (msg_type[page] == 4) // top big
 		bubble_spr = spr_writer_bubble4;
+	else if (msg_type[page] == 5) 
+		bubble_spr = spr_writer_bubble5;
 	if (msg_type[page] == "tense")
 	{
 		text_speed = 3;
@@ -124,21 +125,23 @@ if (msg_format[page] == "bubble")
 			text_x -= 54;
 			text_y -= 80;
 		}
-		else
+		else if (bubble_spr == spr_writer_bubble4)
 		{
 			text_x -= 84;
 			text_y -= 100;
 		}
+		
 		text_xend = (bubble_x + (sprite_get_width(bubble_spr) / 2) - 10);
 	}
-	
-	//if (msg_font[page] == global.fnt_comicsans) cabeça vazia
-	//	text_x -= 5;
-	
+	else if (bubble_spr == spr_writer_bubble5)
+	{
+		text_x -= (237 - 10);
+		text_y -= 42;
+		text_xend = (bubble_x - 38);
+	}
 	if (text_xend == 0)
 		text_xend = (bubble_x + sprite_get_width(bubble_spr) - 10);
 }
-
 orig_text_x = text_x;
 orig_text_y = text_y;
 orig_text_color = text_color[0];

@@ -6,9 +6,9 @@ function TEXTDATA_EN()
 	// Rooms
 	ds_map_add(global.textdata_en, "room_corridors_1",			"Fallen Angel");
 	ds_map_add(global.textdata_en, "room_corridors_1_5",		"First Corridor");
-	ds_map_add(global.textdata_en, "room_corridors_2",			"MEE6's Room");
+	ds_map_add(global.textdata_en, "room_corridors_2",			"MEE6's Desk");
 	ds_map_add(global.textdata_en, "room_corridors_3",			"Entrance");
-	ds_map_add(global.textdata_en, "room_corridors_3_5",		"Dummy Training Room");
+	ds_map_add(global.textdata_en, "room_corridors_3_5",		"Dummy Training");
 	ds_map_add(global.textdata_en, "room_corridors_4",			""); // Save
 	ds_map_add(global.textdata_en, "room_corridors_5",			"reCAPTCHA: Stage 1/3");
 	ds_map_add(global.textdata_en, "room_corridors_5_A",		"reCAPTCHA: Stage 1/3");
@@ -25,7 +25,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_corridors_18",			"Last Corridor");
 	ds_map_add(global.textdata_en, "room_cave_1",				"Rock Bottom");
 	ds_map_add(global.textdata_en, "room_cave_2",				"I Really Hope You Like the Darkness Because This Is Just the Beginning (Actually It's the End but Whatever)");
-	ds_map_add(global.textdata_en, "room_cave_3",				"Towering Pillars"); // Save
+	ds_map_add(global.textdata_en, "room_cave_3",				"Towering Pillars");
 	ds_map_add(global.textdata_en, "unused_room_corridors_16_A",	"Cave Entrance");
 	ds_map_add(global.textdata_en, "unused_room_corridors_16_B",	"Subway Entrance");
 	// Discord Rich Presence & Main Menu
@@ -692,7 +692,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_corridors_17_egg.1", "* (It's unclear why there's an egg beside the tree.)"); // from DELTARUNE
 	// room_corridors_18
 	ds_map_add(global.textdata_en, "room_corridors_18_sign.0", "* \"New member,^1 you are at the Corridors' edge.\"");
-	ds_map_add(global.textdata_en, "room_corridors_18_sign.1", "* \"Soon you'll be at the Central City,^1 enjoying life&as much as you can.\"");
+	ds_map_add(global.textdata_en, "room_corridors_18_sign.1", "* \"Soon you'll be at the Central City,^1 enjoying life as much as you can.\"");
 	ds_map_add(global.textdata_en, "room_corridors_18_sign.2", "* \"But,^1 before that,^1&there's one last thing&you have to do.\"");
 	ds_map_add(global.textdata_en, "room_corridors_18_sign.3", "* \"Face your last challenge before leaving this place.\"");
 	ds_map_add(global.textdata_en, "room_corridors_18_sign.4", "* \"Prove yourself worthy by walking through this unnecessarily long corridor.\"");
@@ -781,20 +781,15 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"battle_flee_geno", "* In my way."); // from UNDERTALE
 	ds_map_add(global.textdata_en, "battle_nobody", "* But nobody came."); // from UNDERTALE
 	// MEE6 in Rhonhey's semi-battle
+	var i = 0;
 	ds_map_add(global.textdata_en, $"battle_bubble_m6_0_{i++}", "Hey!^3 Hey!!^3 You!^1 You over there!!");
 	ds_map_add(global.textdata_en, $"battle_bubble_m6_0_{i++}", "Freeze,^3 rulebreaker!!^1 Cease and desist!!");
 	var i = 0;
 	ds_map_add(global.textdata_en, $"battle_bubble_m6_1_{i++}", "Leave the baby alone,^1 you foul beast!");
-	ds_map_add(global.textdata_en, $"battle_bubble_m6_1_{i++}", "You do not belong here!^3 Leave!");
-	ds_map_add(global.textdata_en, $"battle_bubble_m6_1_{i++}", "Your presence is unwanted!");
+	ds_map_add(global.textdata_en, $"battle_bubble_m6_1_{i++}", "You do not belong here!^1 Your presence is unwanted!");
+	ds_map_add(global.textdata_en, $"battle_bubble_m6_1_{i++}", "Leave!");
 	var i = 0;
 	ds_map_add(global.textdata_en, $"battle_bubble_m6_2_{i++}", "Leave!!!!");
-	/* MEE7 RHONHEYT AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-	Hey! Hey!
-	Leave the baby alone, you foul beast!
-	You do not belong here! Leave!
-	Your presence is unwanted!
-	*/
 	// Dummy's battle
 	ds_map_add(global.textdata_en, "battle_main_dummy_0_0", "* Here we are!");
 	ds_map_add(global.textdata_en, "battle_main_dummy_0_1", "* Do you see those four buttons in the bottom?");
@@ -955,7 +950,7 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"battle_main_brock_{i++}", "* (Broken Clock has you living on borrowed time.)"); // from "on borrowed time"
 	ds_map_add(global.textdata_en, $"battle_main_brock_{i++}", "* (Broken Clock's movements are making you dizzy.)");
 	ds_map_add(global.textdata_en, $"battle_main_brock_{i++}", "* (Even Broken Clock is right twice a day.)"); // from "even a broken clock is right twice a day"
-	ds_map_add(global.textdata_en, "battle_act_brock_1", "Scream");
+	ds_map_add(global.textdata_en, "battle_act_brock_1", "Cry");
 	ds_map_add(global.textdata_en, "battle_act_brock_2", "Deal");
 	ds_map_add(global.textdata_en, "battle_act_brock_3", "Convince");
 	ds_map_add(global.textdata_en, "battle_act_result_brock_0_0_0", "* Broken Clock - [10 ATK | 0 DEF]^1&* \"A clock permanently possessed by a ghost.\"");
