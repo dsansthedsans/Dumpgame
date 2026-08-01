@@ -178,7 +178,6 @@ function start_chara()
 	// informações que não tem que salvar
 	global.chara_maxhp = 20;
 	global.chara_curhp = 20;
-	global.chara_m6Max = 100;
 	
 	global.chara_nextexp = 0;
 	
@@ -215,6 +214,9 @@ function start_chara()
 	global.chara_steps = 0;
 	global.chara_encounter = 0;
 	global.battle_nextgroup = 0;
+	global.chara_lastx = 0;
+	global.chara_lasty = 0;
+	global.chara_lastroom = 0;
 	
 	/*
 	#macro LEFT 0
@@ -392,13 +394,13 @@ function start_flags()
 	
 	global.flag[64] = 0; // tutorial - interagir
 	global.flag[65] = 0; // tutorial - correr
-	global.flag[66] = 0; // PRE M6 WIERD THING AHHH
+	global.flag[66] = 0; // RHONHEY BATTLE MEE6 EVENT #0
 	
 	global.flag[67] = 0; // rules book smiley face amount
 	
 	global.flag[68] = 0; // TALKED ARMSGUY CAVE 3
 	
-	global.flag[69] = 0; // RHONHEY BATLEEEEEEEEEEEEEEEEEEEEEEEE
+	global.flag[69] = 0; // RHONHEY BATTLE MEE6 EVENT #1
 }
 function start_music()
 {
@@ -555,7 +557,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_1_5;
+		var _rm = room_corridors_11;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -594,11 +596,14 @@ function CHANGE_GAME()
 			if (_lvl >= 1)
 			{
 				global.flag[0] = true; // finished getting up event
+				global.flag[66] = 1;
+				global.flag[69] = 1;
 				if (_rm >= room_corridors_2)
 				{
 					global.flag[64] = 1;
 					global.flag[65] = 1;
-					global.flag[66] = 1;
+					global.flag[66] = 2;
+					global.flag[69] = 1;
 				}
 			}
 			if (_lvl >= 2)
@@ -657,8 +662,6 @@ function CHANGE_GAME()
 			{
 				global.flag[36] = 1; // took chocolate from CAPTCHA's STAGE 2 reward	
 				global.item[5] = ITEM_CHOCO;
-				
-				//global.flag[37] = 1; // pre brock
 			}	
 			if (_lvl >= 6)
 			{

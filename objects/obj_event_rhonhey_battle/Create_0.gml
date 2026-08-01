@@ -1,6 +1,6 @@
 event_inherited();
 chara = obj_chara;
-if (global.flag[66] < 1)
+if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 {
 	for (var t = 0; t < 3; t++)
 		thing_object[t] = marker(0, 0, spr_event_rhonhey_thing_0, 1, 1, 1, 0, 0, 0, c_white, -room_height);
@@ -42,6 +42,16 @@ if (global.flag[66] < 1)
 		destroy(thing_object[1]);
 		break;
 	}
+}
+else if (global.flag[2] == false && global.flag[66] >= 1 && global.flag[66] < 2 && global.flag[69] == 1)
+{
+	screenpos(0, 0);
+	alarm[2] = 120;
+	chara_facing(UP);
+	chara.x = (room_width / 2);
+	if (abs(global.chara_lasty - 200) > 6)
+		chara.y = 200;
+	m6 = marker((room_width / 2), 160, spr_m6_d_talk, 1, 1, 1, 0, 0, 0, c_white, -160);
 }
 else
 	destroy(id);

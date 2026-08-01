@@ -105,7 +105,21 @@ function TEXT()
 		msg[0] = "* (It's a pile of rocks.)";
 	if (text == "room_rockpile_1")
 		msg[0] = "* (Oh,^3 my God!^1 It can't be!)^2&* (It's a pile of rocks.)";
-		
+	// obj_event_rhonhey_battle
+	if (string_starts_with(text, "event_rhonhey_battle_") == true)
+	{
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = get_text($"event_rhonhey_battle_{string_char_at(text, string_length(text))}_{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+		msg_face[0] = spr_dialogface_m6_default;
+		msg_sound[0] = snd_txt_m6;
+		if (instance_exists(obj_event_rhonhey_battle) == true && exists(obj_event_rhonhey_battle.m6) == true)
+			msg_talker[0] = obj_event_rhonhey_battle.m6;
+	}
 	// obj_event_m6_start
 	if (text == "event_m6_start_0") || (text == "event_m6_start_1") || (text == "event_m6_start_2") || (text == "event_m6_start_3") || (text == "event_m6_start_4")
 	{

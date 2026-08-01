@@ -176,11 +176,11 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			global.music_volumetype[2] = VOLUME_SOUND;
 		}
 	}
-	if (room == room_crazycat)
+	if (room == room_event_cat)
 	{
 		global.music[0] = -1;
 		global.music[1] = -1;
-		if (instance_exists(obj_crazycat) == true && obj_crazycat.cat_dancing == 1)
+		if (instance_exists(obj_event_cat) == true && obj_event_cat.cat_dancing == 1)
 			music_set(0, mus_event_cat);
 	}
 	for (var i = 0; i < ((global.music_length - 2) * exists(obj_chara_pause)); i++)

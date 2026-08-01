@@ -184,7 +184,7 @@ function chara_inwhat()
 	global.inbattle = 0;
 	global.ingameover = 0;
 	
-	if (room > room_over && room < room_crazycat)
+	if (room > room_over && room < room_event_cat)
 		global.ingame = 1;
 	else if (room == room_menu)
 		global.inmenu = 1;
@@ -251,7 +251,7 @@ function chara_room()
 			yy = 290;
 		}
 		if (room == room_corridors_18)
-			rm = room_crazycat;
+			rm = room_event_cat;
 		if (room == room_cave_2)
 		{
 			xx = 160;

@@ -90,7 +90,7 @@ if (active == 1)
 			myalpha = 1;
 			mystage = 1;
 			if (myroom == -1)
-				myroom = room_crazycat;
+				myroom = room_event_cat;
 			room_goto(myroom);
 			global.inbattle = 0;
 		}

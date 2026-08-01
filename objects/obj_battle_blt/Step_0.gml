@@ -412,7 +412,7 @@ if (active == 1)
 			}
 			else
 			{
-				audio_play(snd_impact, false, VOLUME_SOUND, 1);
+				audio_play(snd_impactShake, false, VOLUME_SOUND, 1);
 				shakescreen(4, 4);
 			}
 		}

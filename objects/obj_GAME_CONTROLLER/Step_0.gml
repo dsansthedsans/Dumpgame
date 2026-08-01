@@ -49,24 +49,20 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			global.battle_nextgroup = 1000;
 		if (keyboard_check(vk_tab) == 1)
 			global.battle_nextgroup = 13;
+		if (keyboard_check(vk_space) == 1)
+			global.battle_nextgroup = 12;
 		battle();
 	}
 	if (keyboard_check_pressed(vk_numpad7) == 1)
 		global.debug_hud = !global.debug_hud;
 	if (keyboard_check_pressed(ord("F")) == 1) // ir para o próximo quarto
 	{
-		if (room_next(room) != room_last)
-			room_goto_next();
-		else
-			room_goto(room_first);
+		room_goto_next();
 		chara_change(-1, true, true, false, true, true, true);
 	}
 	if (keyboard_check_pressed(ord("G")) == 1) // ir para o quarto anterior
 	{
-		if (room_previous(room) != room_first)
-			room_goto_previous();
-		else
-			room_goto(room_last);
+		room_goto_previous();
 		chara_change(-1, true, true, false, true, true, true);
 	}
 	if (keyboard_check_pressed(ord("A")) == true && exists(obj_battle_controller) == true && obj_battle_controller.assist.active == true)
