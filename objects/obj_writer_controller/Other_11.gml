@@ -23,7 +23,7 @@ if (question_active == 1)
 	msg_next[page] = 1;
 	msg_face[page] = -2;
 	msg_font[page] = fnt_main;
-	msg_sound[page] = snd_txt1;
+	msg_sound[page] = snd_writer_0;
 	msg_talker[page] = -2;
 	msg_format[page] = "textbox";
 	msg_autoskip[page] = 0;

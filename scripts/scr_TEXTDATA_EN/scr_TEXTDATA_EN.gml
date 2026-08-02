@@ -281,7 +281,9 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "room_lamp_0","* (It's a lamp.)^1&* (An exotic blue fire is lighting up the room.)");
 	ds_map_add(global.textdata_en, "room_brokenlamp", "* (This lamp appears to have been forcefully thrown&against the floor...)");
 	// obj_event_rhonhey_battle
-	ds_map_add(global.textdata_en, "event_rhonhey_battle_0_0", "* kill me");
+	// begone
+	ds_map_add(global.textdata_en, "event_rhonhey_battle_0_0", "* I apologize for not interrupting earlier.");
+	ds_map_add(global.textdata_en, "event_rhonhey_battle_0_0", "* I was not aware that ");
 	
 	// obj_event_m6_start
 	/*
@@ -338,6 +340,9 @@ function TEXTDATA_EN()
 
 	*/
 	
+	// room_corridors_1_5
+	ds_map_add(global.textdata_en, "room_rockpile_0_0", "* (It's a pile of rocks.)");
+	ds_map_add(global.textdata_en, "room_rockpile_1_0", "* (Oh,^3 my God!^1 It can't be!)^2&* (It's a pile of rocks.)");
 	// room_corridors_2
 	ds_map_add(global.textdata_en, "room_m6_banner_0", "* (It's an old banner.)");
 	ds_map_add(global.textdata_en, "room_m6_banner_1", "* (The banner depicts MEE6 advertising a product&that you don't know.)");
@@ -426,11 +431,10 @@ function TEXTDATA_EN()
 	*/
 	
 	// room_corridors_3_5
-	ds_map_add(global.textdata_en, "npc_dummy_0", "* (There's a dummy here.)");
+	ds_map_add(global.textdata_en, "npc_dummy_0", "* (It's a training dummy.)");
 	ds_map_add(global.textdata_en, "npc_dummy_1", "* (Battle the dummy?)");
 	ds_map_add(global.textdata_en, "npc_dummy_1_1", "Yes");
 	ds_map_add(global.textdata_en, "npc_dummy_1_2", "No");
-	ds_map_add(global.textdata_en, "npc_dummy_2", "* (It's a dummy.)");
 	
 	// obj_event_m6_postdummy
 	/*ds_map_add(global.textdata_en, "event_m6_postdummy_0", "* You are very good at this.");
@@ -442,11 +446,11 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "event_m6_dummydoor_1_2", "* I really hope you know how :YBATTLES;D work.");
 	ds_map_add(global.textdata_en, "event_m6_dummydoor_2", "* Well,^1 let us just keep going.");*/
 	
-	// obj_event_m6_precaptcha1
-	ds_map_add(global.textdata_en, "event_m6_precaptcha1_0", "* This is the door that has trapped me here for all of this time.");
-	ds_map_add(global.textdata_en, "event_m6_precaptcha1_1", "* I have never understood the reason behind the puzzles' difficulty.");
-	ds_map_add(global.textdata_en, "event_m6_precaptcha1_2", "* In any way,^1 I believe you should read the sign next to the door.");
-	ds_map_add(global.textdata_en, "event_m6_precaptcha1_3", "* It may help you find the answer to the puzzles!");
+	// obj_event_m6_captcha1_0
+	ds_map_add(global.textdata_en, "event_m6_captcha1_0_0", "* This is the door that has trapped me here for all of this time.");
+	ds_map_add(global.textdata_en, "event_m6_captcha1_0_1", "* I have never understood the reason behind the puzzles' difficulty.");
+	ds_map_add(global.textdata_en, "event_m6_captcha1_0_2", "* In any way,^1 I believe you should read the sign next to the door.");
+	ds_map_add(global.textdata_en, "event_m6_captcha1_0_3", "* It may help you find the answer to the puzzles!");
 	// room_corridors_5
 	ds_map_add(global.textdata_en, "room_captcha_mainsign_1_0", "* \"reCAPTCHA\\:  Stage 1/3\"");
 	ds_map_add(global.textdata_en, "room_captcha_mainsign_1_1", "* \"Before accessing the server,^1 you need to complete a quick verification check.\"");
@@ -467,12 +471,12 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_armsguy1_1_0", "* Try Be Cool With Monsters.");
 	ds_map_add(global.textdata_en, "npc_armsguy1_1_1", "* They Hurt You Because&They Scared.");
 	ds_map_add(global.textdata_en, "npc_armsguy1_1_2", "* If You Don Hurt Them,^1 You Cool.");
-	// obj_event_m6_postcaptcha1
-	ds_map_add(global.textdata_en, "event_m6_postcaptcha1_0", "* You opened the door?!");
-	ds_map_add(global.textdata_en, "event_m6_postcaptcha1_1", "* I knew you would!");
-	ds_map_add(global.textdata_en, "event_m6_postcaptcha1_2", "* Thank you,^1 new member.");
-	ds_map_add(global.textdata_en, "event_m6_postcaptcha1_3", "* Unfortunately,^1 this is not the only door you will have to open.");
-	ds_map_add(global.textdata_en, "event_m6_postcaptcha1_4", "* But,^1 let us keep going!");
+	// obj_event_m6_captcha1_1
+	ds_map_add(global.textdata_en, "event_m6_captcha1_1_0", "* You opened the door?!");
+	ds_map_add(global.textdata_en, "event_m6_captcha1_1_1", "* I knew you would!");
+	ds_map_add(global.textdata_en, "event_m6_captcha1_1_2", "* Thank you,^1 new member.");
+	ds_map_add(global.textdata_en, "event_m6_captcha1_1_3", "* Unfortunately,^1 this is not the only door you will have to open.");
+	ds_map_add(global.textdata_en, "event_m6_captcha1_1_4", "* But,^1 let us keep going!");
 	// room_corridors_6
 	ds_map_add(global.textdata_en, "room_candybowl_0_0_0", "* (It's a candy bowl.)");
 	ds_map_add(global.textdata_en, "room_candybowl_0_0_1", "^1&* (There ");
@@ -535,9 +539,9 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_1_5_1", "* Dump Something And Me Give You Gift.");
 	ds_map_add(global.textdata_en, "npc_armsguy_lost_1_2_0", "* What?^3 Didn Like It?^2&* Deal With It");
 	ds_map_add(global.textdata_en, "npc_trashguy_lost2", "* ...thanks...");
-	// obj_event_m6_precaptcha2
-	ds_map_add(global.textdata_en, "event_m6_precaptcha2_0", "* Here comes more extremely difficult puzzles for you.");
-	ds_map_add(global.textdata_en, "event_m6_precaptcha2_1", "* The faster we go,^3&the sooner we leave&this place.");
+	// obj_event_m6_captcha2
+	ds_map_add(global.textdata_en, "event_m6_captcha2_0", "* Here comes more extremely difficult puzzles for you.");
+	ds_map_add(global.textdata_en, "event_m6_captcha2_1", "* The faster we go,^3&the sooner we leave&this place.");
 	// room_corridors_9
 	ds_map_add(global.textdata_en, "room_captcha_mainsign_2_0", "* \"reCAPTCHA\\:  Stage 2/3\"");
 	ds_map_add(global.textdata_en, "room_captcha_mainsign_2_1", "* \"Please solve three puzzles to confirm you are a human.\"");
@@ -595,15 +599,13 @@ function TEXTDATA_EN()
 	var i = 0;
 	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* YOU...^2 SPARED ME?^2&* EVEN AFTER I TRIED&TO KILL YOU?!");
 	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* WHY WOULD YOU TRUST ME?^1&* WHY WOULD YOU RISK YOUR OWN LIFE JUST FOR ME?");
-	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* HOW COULD YOU BE SO...^4 KIND...?");
-	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* LOOK,^3 YOU SHOULDN'T SAY SORRY.^1&* YOU DIDN'T DO ANYTHING WRONG.");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* WHY ARE YOU SO...^4 KIND...?");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* LOOK,^1 YOU SHOULDN'T SAY SORRY.^1&* YOU DIDN'T DO ANYTHING WRONG.");
 	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* I DID.^1 NOT YOU,^1 ME.");
 	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* AND I'M SORRY.^1 I REALLY AM!^1&* I'M REALLY,^1 REALLY SORRY...!");
-	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* ");
+	ds_map_add(global.textdata_en, $"event_brock_battle_3_{i++}", "+S1* I'VE WASTED ENOUGH OF YOUR TIME ALREADY.");
 	/*
-	i dont wanna waste any more of your time
 	until next time!!!!!!!
-	
 	*/
 	/*
 	ds_map_add(global.textdata_en, "event_brock_postbattle_0_4", "* AFTER THEY INVADED THE CORRIDORS,^1 THE LEADERS&CREATED A NEW RULE.");
@@ -634,6 +636,10 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_1_0", "* Brock Is Very Chill.^1&* He A Cool Guy!");
 	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_1_1", "* He Got Angry After Invasion,^1 But He Not Always Angry.");
 	ds_map_add(global.textdata_en, "npc_armsguy_postbrock_1_2", "* Why He Angry At You?");
+	ds_map_add(global.textdata_en, "unused_npc_flitcher_postbrock_0", "It stares into the abyss, thinking.");
+	ds_map_add(global.textdata_en, "unused_npc_flitcher_postbrock_1", "That is, if it thinks.");
+	ds_map_add(global.textdata_en, "unused_npc_flitcher_postbrock_2", "Perhaps it's waiting for an answer.");
+	ds_map_add(global.textdata_en, "unused_npc_flitcher_postbrock_3", "Or, perhaps,");
 	// room_corridors_14
 	ds_map_add(global.textdata_en, "room_captcha_mainsign_3_0", "* \"reCAPTCHA\\:  Stage 3/3\"");
 	ds_map_add(global.textdata_en, "room_captcha_mainsign_3_1", "* \"Please solve three puzzles to confirm you are a human.\"");
@@ -693,8 +699,30 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, "event_gabee_chase.1.2", "* There is a reason I questioned your memory.");
 	ds_map_add(global.textdata_en, "event_gabee_chase.1.3", "* You see,^1 I may have not been as hone()");
 	ds_map_add(global.textdata_en, $"unused_event_gabee_chase.3.0", "* (You hear a distant voice.)");
-	var m = 0;
-	ds_map_add(global.textdata_en, $"event_gabee_chase.3.{m++}", "* ");
+	var i = 0;
+	ds_map_add(global.textdata_en, $"event_gabee_chase.3.{i++}", "* ele ta ali^1&* ta vendo?");
+	ds_map_add(global.textdata_en, $"event_gabee_chase.3.{i++}", "* tu acha q ele morreu?");
+	ds_map_add(global.textdata_en, $"event_gabee_chase.3.{i++}", "* ...");
+	ds_map_add(global.textdata_en, $"event_gabee_chase.3.{i++}", "* ");
+	// room_cave_2
+	var i = 0;
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* (Ring,^1 ring...)");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* (It's a voice you have never heard before.)"); // from UNDERTALE
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* Hey.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* It must be obvious by now that I like UNDERTALE.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* But it's more than&that,^1 really.^1&* Way more than that.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* I met all my friends literally just because of UNDERTALE.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* I might've never gotten better at drawing without UNDERTALE.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* I probably would've never gotten into programming without UNDERTALE.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* I definitely would've never even thought of making music without UNDERTALE.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* Basically,^1 I'd have a completely different life and personality without UNDERTALE.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* ...");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* It's weird,^1 isn't it?");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* Knowing someone you've never met,^1 and most certainly never will,^1 has changed you forever.");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* In a good way!");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* Well,^2 I just wanted to say...");
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* You made a snowman&really happy...!"); // from UNDERTALE
+	ds_map_add(global.textdata_en, $"cellphone_developer_{i++}", "* (Click...)");
 	// room_cave_3
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.0.0", "* Ahh!^3 You Here Too!");
 	ds_map_add(global.textdata_en, "room_cave_3_npc_armsguy.0.1", "* Look Like Me Not Da Only That Try To Jump!^3&* Mweheheh!!");
@@ -709,10 +737,11 @@ function TEXTDATA_EN()
 	ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", "* (An electrical border is blocking the path.)");
 	ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", "* (You feel like this is the end to some sort of \"demo\"...)");
 	ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", "* (... and that a \"full game\" has been canceled,^3 too...?)");
+	ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", "* (Suddenly,^3 your mouth starts moving by itself like it's trying to speak.)");
+	ds_map_add(global.textdata_en, $"room_cave_3_border.{i++}", "* (You muttered...^2&\"Thanks for playing\".)");
+
 	ds_map_add(global.textdata_en, $"unused_room_cave_3_border.{i++}", "* (Such strange feelings...)^1&* (What could they mean?)");
-	ds_map_add(global.textdata_en, $"unused_room_cave_3_border.{i++}", "* (Suddenly,^3 your mouth starts to move by itself as if it was trying to speak.)");
-	ds_map_add(global.textdata_en, $"unused_room_cave_3_border.{i++}", "* (Could it be an attempt at communication from a supernatural entity?)");
-	ds_map_add(global.textdata_en, $"unused_room_cave_3_border.{i++}", "* (It muttered...^2 \"Thanks for playing\"...?)");
+	ds_map_add(global.textdata_en, $"unused_room_cave_3_border.{i++}", "* (Could it be an attempt at communication from a supernatural entity...?)");
 	ds_map_add(global.textdata_en, "unused_border_0", "* (This eletrical border gives you the feeling the PRE-DEMO ended.)");
 	// Battle system
 	ds_map_add(global.textdata_en, "battle_main_sparing_0_0", " is sparing you.");

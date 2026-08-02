@@ -35,10 +35,22 @@ if (hurt == 1 && hurt_time < 60)
 }
 else if (hurt_time >= 60)
 {
-	controller.enemy_def[myself] = 9999999;
-	createbubble = 1;
+	//controller.enemy_def[myself] = 9999999;
 	if (stage == 1)
 		stage = 2;
+	if (controller.enemy_curhp[myself] <= 0)
+	{
+		image_alpha = 0;
+		global.flag[5] = true;
+		global.chara_kills += 1;
+		controller.battle_expreward += controller.enemy_reward_exp[myself];
+		controller.battle_mnyreward += controller.enemy_reward_mny[myself];
+		controller.enemy_type[myself] = 0;
+		create(x, y, obj_battle_vapor);
+		destroy(body);
+	}
+	else
+		createbubble = 1;
 	event_user(0);
 }
 

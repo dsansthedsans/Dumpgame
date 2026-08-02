@@ -67,7 +67,7 @@ function TEXT()
 		msg_skip[0] = 1;
 		msg_next[0] = 1;
 		msg_type[0] = "intro";
-		msg_sound[0] = snd_txt2;
+		msg_sound[0] = snd_writer_1;
 	}
 	
 	// chara menu
@@ -93,18 +93,13 @@ function TEXT()
 	
 	// room_corridors_1
 	if (text == "room_lamp")
-	{
 		msg[0] = get_text("room_lamp_0");
-		//msg[1] = get_text("room_lamp_1");
-	}
 	if (text == "room_brokenlamp")
 		msg[0] = get_text(text);
 	
 	// room_corridors_1_5
-	if (text == "room_rockpile_0")
-		msg[0] = "* (It's a pile of rocks.)";
-	if (text == "room_rockpile_1")
-		msg[0] = "* (Oh,^3 my God!^1 It can't be!)^2&* (It's a pile of rocks.)";
+	if (string_starts_with(text, "room_rockpile_") == true)
+		msg[0] = get_text($"room_rockpile_{string_char_at(text, string_length(text))}_0");
 	// obj_event_rhonhey_battle
 	if (string_starts_with(text, "event_rhonhey_battle_") == true)
 	{
@@ -116,7 +111,7 @@ function TEXT()
 			msg[m] = _msg;
 		}
 		msg_face[0] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		if (instance_exists(obj_event_rhonhey_battle) == true && exists(obj_event_rhonhey_battle.m6) == true)
 			msg_talker[0] = obj_event_rhonhey_battle.m6;
 	}
@@ -156,7 +151,7 @@ function TEXT()
 		}
 			
 		// get text info
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_talker[0] = obj_marker;
 		
 		if (_idnum == 0)
@@ -178,7 +173,7 @@ function TEXT()
 			msg_face[0] = spr_dialogface_m6_neutral;
 				
 			msg_face[8] = -1;
-			msg_sound[8] = snd_txt1;
+			msg_sound[8] = snd_writer_0;
 			msg_talker[8] = -1;
 			
 			msg_face[9] = spr_dialogface_m6_default;
@@ -189,7 +184,7 @@ function TEXT()
 				msg_skip[9] = false;
 				msg_skip[10] = true;
 			}
-			msg_sound[9] = snd_txt_m6;
+			msg_sound[9] = snd_writer_m6;
 			msg_talker[9] = obj_marker;
 		}
 		else if (_idnum == 4)
@@ -282,82 +277,75 @@ function TEXT()
 	if (text == "room_deadlamp")
 		msg[0] = get_text("room_deadlamp");
 		
-	// obj_event_m6_predummy
+	// room_corridors_3_5
 	if (text == "event_m6_predummy_0")
 	{
 		for (var m = 0; m < 99; m++)
 		{
 			var _curmsg = get_text("event_m6_predummy_0_" + string(m));
-			if (_curmsg != undefined)
-				msg[m] = _curmsg;
+			if (_curmsg == undefined)
+				break;
+			msg[m] = _curmsg;
 		}
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_face[3] = spr_dialogface_m6_neutral;
 		msg_face[4] = spr_dialogface_m6_default;
 		msg_face[7] = spr_dialogface_m6_neutral;
 		msg_face[8] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 	}
 	if (text == "event_m6_predummy_1")
 	{
 		for (var m = 0; m < 3; m++)
 			msg[m] = get_text("event_m6_predummy_1_" + string(m));
 		msg_face[0] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 			
 		question[3] = get_text("event_m6_predummy_1_3");
 		question_option[1] = get_text("event_m6_predummy_1_3_1");
 		question_option[2] = get_text("event_m6_predummy_1_3_2");
 		msg_face[3] = -1;
-		msg_sound[3] = snd_txt1;
+		msg_sound[3] = snd_writer_0;
 			
 		msg[4] = get_text("event_m6_predummy_1_" + string(question_result[3]) + "_4");
 		msg[5] = get_text("event_m6_predummy_1_" + string(question_result[3]) + "_5");
 		msg_face[4] = spr_dialogface_m6_default;
-		msg_sound[4] = snd_txt_m6;
+		msg_sound[4] = snd_writer_m6;
 			
 		if (question_result[3] == 1)
 		{
 			//msg[6] = string(get_text("event_m6_predummy_1_1_6_0")) + string_upper(key_name(global.keybind[04])) + string(get_text("event_m6_predummy_1_1_6_1")) + string_upper(key_name(global.keybind[05])) + string(get_text("event_m6_predummy_1_1_6_2"));
 			//msg_face[6] = -1;
-			//msg_sound[6] = snd_txt1;
+			//msg_sound[6] = snd_writer_0;
 		}
 		else if (question_result[3] == 2)
 			msg_face[4] = spr_dialogface_m6_neutral;
 			
 		global.flag[5] = question_result[3];		
 	}
-	
-	// room_corridors_3_5
 	if (text == "npc_dummy")
 	{
-		if (global.flag[6] == 0 && global.flag[7] == 0)
+		msg[0] = get_text("npc_dummy_0");
+		if (global.flag[4] == true && global.flag[6] == false && global.flag[7] == false)
 		{
-			msg[0] = get_text("npc_dummy_0");
-			if (global.flag[4] == 1 && global.flag[5] == 1)
+			question[1] = get_text("npc_dummy_1");
+			question_option[1] = get_text("npc_dummy_1_1");
+			question_option[2] = get_text("npc_dummy_1_2");
+			if (question_result[1] == 1)
 			{
-				question[1] = get_text("npc_dummy_1");
-				question_option[1] = get_text("npc_dummy_1_1");
-				question_option[2] = get_text("npc_dummy_1_2");
-				if (question_result[1] == 1)
-				{
-					global.battle_nextgroup = 1;
-					audio_stop(snd_option_select);
-					battle();
-				}
+				global.flag[6] = true;
+				global.battle_nextgroup = 1;
+				audio_stop(snd_option_select);
+				battle();
 			}
 		}
-		else
+		else if (global.flag[4] == true && global.flag[6] == true && global.flag[7] == true && chara_murder() < 0)
 		{
 			msg[0] = "* ......";
 			if (irandom_range(1, 100) == 100)
 				msg[0] = "* .....!";
-			if (chara_murder() >= 1)
-				msg[0] = get_text("npc_dummy_2");
 		}
 	}
-	
-	// obj_event_m6_postdummy
 	if (text == "event_m6_postdummy")
 	{
 		msg[0] = get_text("event_m6_postdummy_0");
@@ -366,17 +354,15 @@ function TEXT()
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_face[1] = spr_dialogface_m6_sassy;
 		msg_face[2] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 	}
-	
-	// obj_event_m6_dummydoor
 	if (text == "event_m6_dummydoor")
 	{
 		msg[0] = get_text("event_m6_dummydoor_0");
 		msg[1] = get_text("event_m6_dummydoor_1_" + string(global.flag[5]));
 		msg[2] = get_text("event_m6_dummydoor_2");
 		msg_face[0] = spr_dialogface_m6_neutral;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 	}
 	
 	// room_corridors_4
@@ -393,15 +379,15 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 	}
 	
-	// obj_event_m6_precaptcha1
-	if (text == "event_m6_precaptcha1")
+	// obj_event_m6_captcha1_0
+	if (text == "event_m6_captcha1_0")
 	{
 		for (var i = 0; i < 4; i++)
-			msg[i] = get_text("event_m6_precaptcha1_" + string(i));
+			msg[i] = get_text("event_m6_captcha1_0_" + string(i));
 		msg_face[0] = spr_dialogface_m6_neutral;
 		msg_face[1] = spr_dialogface_m6_neutralTense;
 		msg_face[2] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_format[0] = "textbox_bottom";
 	}
 		
@@ -419,17 +405,17 @@ function TEXT()
 			msg[i] = get_text("room_captcha_guidesign_1_" + string(i));
 	}
 		
-	// obj_event_m6_postcaptcha1
-	if (text == "event_m6_postcaptcha1")
+	// obj_event_m6_captcha1_1
+	if (text == "event_m6_captcha1_1")
 	{
 		for (var i = 0; i < 5; i++)
-			msg[i] = get_text("event_m6_postcaptcha1_" + string(i));
+			msg[i] = get_text("event_m6_captcha1_1_" + string(i));
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_face[1] = spr_dialogface_m6_pleased;
 		msg_face[2] = spr_dialogface_m6_default;
 		msg_face[2] = spr_dialogface_m6_defaultTense;
 		msg_face[2] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_talker[0] = global.party[0];
 		msg_format[0] = "textbox_bottom";
 	}
@@ -703,13 +689,13 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 	}
 
-	// obj_event_m6_precaptcha2
-	if (text == "event_m6_precaptcha2")
+	// obj_event_m6_captcha2
+	if (text == "event_m6_captcha2")
 	{
-		msg[0] = get_text("event_m6_precaptcha2_0");
-		msg[1] = get_text("event_m6_precaptcha2_1");
+		msg[0] = get_text("event_m6_captcha2_0");
+		msg[1] = get_text("event_m6_captcha2_1");
 		msg_face[0] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_format[0] = "textbox_bottom";
 	}
 		
@@ -738,7 +724,7 @@ function TEXT()
 		msg[0] = get_text("event_m6_postcaptcha2_0");
 		msg[1] = get_text("event_m6_postcaptcha2_1");
 		msg_face[0] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_format[0] = "textbox_bottom";
 	}
 				
@@ -782,7 +768,7 @@ function TEXT()
 			msg[i] = get_text("room_preclocksign_" + string(i));
 	}
 	
-	// obj_event_brock_prebattle
+	// obj_event_brock_battle
 	if (text == "event_brock_battle_0")
 	{
 		for (var i = 0; i < 99; i++)
@@ -794,16 +780,16 @@ function TEXT()
 				break;
 		}
 		msg_format[0] = "textbox_top";
-		msg_sound[0] = snd_txt_brock;
+		msg_sound[0] = snd_writer_brock;
 		msg_face[2] = spr_dialogface_m6_angry;
-		msg_sound[2] = snd_txt_m6;
+		msg_sound[2] = snd_writer_m6;
 		msg_talker[2] = global.party[0];
 	}
 	if (text == "event_brock_battle_1")
 	{
 		msg[0] = get_text("event_brock_battle_1_0");
 		msg_format[0] = "textbox_top";
-		msg_sound[0] = snd_txt_brock;
+		msg_sound[0] = snd_writer_brock;
 	}
 	if (text == "event_brock_battle_2")
 	{
@@ -815,7 +801,7 @@ function TEXT()
 			else
 				break;
 		}
-		msg_sound[0] = snd_txt_brock;
+		msg_sound[0] = snd_writer_brock;
 		msg_format[0] = "textbox_top";
 	}
 	if (text == "unused_event_brock_prebattle_6_genotest")
@@ -828,8 +814,6 @@ function TEXT()
 		msg[4] = "* IN A FIGHT AGAINST ME...";
 		msg[5] = "* YOU'LL NEVER WIN!";
 	}
-		
-	// obj_event_brock_postbattle
 	if (text == "event_brock_battle_3")
 	{
 		for (var i = 0; i < 99; i++)
@@ -840,7 +824,7 @@ function TEXT()
 			else
 				break;
 		}
-		msg_sound[0] = snd_txt_brock;
+		msg_sound[0] = snd_writer_brock;
 		msg_format[0] = "textbox_top";
 	}
 	if (text == "event_brock_battle_4")
@@ -869,7 +853,7 @@ function TEXT()
 			msg_face[2] = spr_dialogface_m6_neutral;
 			msg_face[3] = spr_dialogface_m6_default;
 		}
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_talker[0] = obj_event_brock_postbattle.m6;
 		msg_format[0] = "textbox_top";
 	}
@@ -882,7 +866,7 @@ function TEXT()
 			msg[0] = get_text("event_brock_postbattle_2_0_1");
 			msg_face[0] = spr_dialogface_m6_default;
 		}
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_talker[0] = obj_event_brock_postbattle.m6;
 		msg_format[0] = "textbox_top";
 	}
@@ -911,7 +895,7 @@ function TEXT()
 			{
 				msg[3] = "* ";
 				msg_face[3] = spr_dialogface_m6_angry;
-				msg_sound[3] = snd_txt_m6;
+				msg_sound[3] = snd_writer_m6;
 				msg_talker[3] = obj_party;
 			}
 			global.flag[49] = 1;
@@ -925,7 +909,7 @@ function TEXT()
 	}
 	
 	// room_corridors_14
-	if (text == "event_m6_precaptcha3")
+	if (text == "event_m6_captcha3")
 	{
 		msg[0] = "* Hey!^1&* This is already CAPTCHA's last stage!";
 		msg[1] = "* As far as I can recall,^1 this is the hardest one.";
@@ -936,7 +920,7 @@ function TEXT()
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_face[1] = spr_dialogface_m6_neutral;
 		msg_face[2] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 	}
 	if (text == "room_captcha_mainsign_3")
 	{
@@ -963,7 +947,7 @@ function TEXT()
 		msg[3] = "* Thank you,^1 new member.";
 		msg[4] = "* In any way,^1 let us keep going!";
 		msg_face[0] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_talker[0] = global.party[0];
 	}
 	
@@ -977,7 +961,7 @@ function TEXT()
 		msg[4] = "* After all,^1 all we have to do now is just keep going!";
 		msg_face[0] = spr_dialogface_m6_neutral;
 		msg_face[3] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_txt_m6;
+		msg_sound[0] = snd_writer_m6;
 		msg_talker[0] = global.side[0];
 	}
 	
@@ -1064,7 +1048,7 @@ function TEXT()
 			if (_weird == true)
 			{
 				msg_skip[0] = false;
-				msg_sound[0] = snd_txt2;
+				msg_sound[0] = snd_writer_1;
 				msg_font[0] = global.fnt_dsans;
 				msg_talker[0] = obj_chara.mycol;
 				global.flag[44] = 0.5;
@@ -1108,14 +1092,13 @@ function TEXT()
 			msg[m] = _msg;
 		}
 		msg_format[0] = "textbox_bottom";
-		var _text_number = string_char_at(text, string_length(text));
-		switch (_text_number)
+		switch (string_char_at(text, string_length(text)))
 		{
 			case 0:
 			msg_face[0] = spr_dialogface_m6_neutral;
 			msg_face[4] = spr_dialogface_m6_neutralTense;
 			msg_face[5] = spr_dialogface_m6_pleased;
-			msg_sound[0] = snd_txt_m6;
+			msg_sound[0] = snd_writer_m6;
 			msg_talker[0] = global.party[0];
 			break;
 			case 1:
@@ -1123,191 +1106,30 @@ function TEXT()
 			msg_face[1] = spr_dialogface_m6_neutral;
 			msg_face[2] = spr_dialogface_m6_neutralTense;
 			msg_face[3] = spr_dialogface_m6_neutral;
-			msg_sound[0] = snd_txt_m6_1;
+			msg_sound[0] = snd_writer_m6_tense;
 			msg_talker[0] = global.party[0];
 			break;
 			case 3:
 			msg_type[0] = "notawake";
+			msg_sound[0] = snd_writer_gabee;
 			break;
 		}
 	}
-	if (text == "event_gabee_chase_3")
-	{
-		msg[0] = "* (Você consegue ouvir uma conversa distante.)";
-		
-		
-		var i = 1;
-		msg[i] = "* Ele tá bem alí^1&* Tá vendo?"; // g
-		msg_sound[i] = snd_txt_gabee;
-		i += 1;
-		
-		/*
-		msg[00] = "* hes right there^1&* can you see it?"; // g
-		
-		msg[01] = "* I can see it"; // d
-		
-		msg[02] = "* do you think hes dead?"; // g
-		
-		msg[03] = "* probably"; // d
-		
-		msg[04] = "* i didnt think he would try to jump over the hole"; // g
-		msg[05] = "* i thought he would stop or something";
-		msg[06] = "* i didnt want this to happen";
-		
-		msg[07] = "* look,^1 you didn't do anything wrong";  // d
-		msg[08] = "* both of us knew that this would happen at some point";
-		msg[09] = "* I'll take his body out of there eventually";
-		msg[10] = "* I just have to do some other stuff before I do that";
-		msg[11] = "* but don't tell about this to the others,^1 alright?";
-		msg[12] = "* this could literally fucking end the server";
-		
-		msg[13] = "* alright"; // g
-		
-		msg[14] = "* and you don't need to stay in this corridor anymore"; // d
-		msg[15] = "* you can go back to your station there in the front";
-		msg[16] = "* it's not like he's going to get up and try to jump over the hole again";
-		
-		msg[17] = "* ..."; // g
-		msg[18] = "* how arent you unhappy with this?";
-		
-		msg[19] = "* I am unhappy"; // d
-		msg[20] = "* you can be sure of that";
-		*/
-		
-		/*
-		msg[00] = "* ele ta bem ali^1&* ta vendo?"; // g
-		
-		msg[01] = "* eu tô vendo"; // d
-		
-		msg[02] = "* tu acha que ele morreu?"; // g
-		
-		msg[03] = "* provavelmente"; // d
-		
-		msg[04] = "* eu n achei que ele ia tentar pular por cima do buraco"; // g
-		msg[05] = "* eu achava que ele ia parar ou algo assim";
-		msg[06] = "* eu n queria que isso tivesse acontecido";
-		
-		msg[07] = "* olha,^1 tu não fez nada de errado";  // d
-		msg[08] = "* nós dois sabíamos que isso iria acontecer em algum momento";
-		msg[09] = "* eu vou tirar o corpo dele dali daqui a pouco";
-		msg[10] = "* eu só preciso fazer umas coisas antes disso";
-		msg[11] = "* mas não conta sobre isso pros outros,^1 tá?";
-		msg[12] = "* isso pode literalmente acabar a porra do servidor";
-		
-		msg[13] = "* ta"; // g
-		
-		msg[14] = "* e tu não precisa mais ficar aqui nesse corredor"; // d
-		msg[15] = "* já pode voltar lá pra tua estação lá na frente";
-		msg[16] = "* não é como se ele fosse levantar e tentar pular por cima do buraco de novo";
-		
-		msg[17] = "* ..."; // g
-		msg[18] = "* como que tu ta tão de boa?";
-		
-		msg[19] = "* de boa eu não estou"; // d
-		msg[20] = "* você pode ter certeza disso";
-		*/
-		
-		//msg[00] = "* ";
-		//msg[00] = "* (You hear a distant conversation.)";
-		
-		
-		/*
-		// som de ligação
-		
-		msg[i++] = "* Oi,^1 eu tô nos Corredores.^1&* Tu pode vim aqui?"; // g
-		msg[i++] = "* ...^1 Aconteceu.^1&* Um novo membro.";
-		
-		// som de teleportar
-		
-		msg[03] = "* como assim"; // d
-		msg[04] = "* onde que ele tá";
-		*/
-		
-		
-		/*
-		msg[i] = "* eu tô vendo"; // d
-		msg_font[i] = global.fnt_dsans;
-		msg_sound[i] = snd_txt_dsans;
-		i += 1;
-	
-		msg[i] = "* Tu acha que ele morreu?"; // g
-		msg_sound[i] = snd_txt_gabee;
-		i += 1;
-		
-		msg[i] = "* provavelmente"; // d
-		
-		msg[i] = "* Eu n achei que ele ia tentar pular por cima do buraco"; // g
-		msg_sound[i] = snd_txt_gabee;
-		i += 1;
-		msg[i] = "* Eu achava que ele ia parar antes ou algo assim";
-		
-		
-		msg[i] = "* olha,^1 gabee,^1 nós dois sabíamos que isso iria acontecer em algum momento"; // d
-		msg[i] = "* eu vou tirar o corpo dele dali daqui a pouco";
-		msg[i] = "* eu só preciso fazer umas coisas antes disso";
-		msg[i] = "* mas não conta sobre isso pros outros,^1 tá?";
-		msg[i] = "* isso pode literalmente acabar a porra do servidor";
-		
-		msg[i] = "* Tá"; // g
-		msg_sound[i] = snd_txt_gabee;
-		i += 1;
-		
-		msg[i] = "* e tu não precisa mais ficar aqui"; // d
-		msg[i] = "* é melhor tu passar um tempo lá na cidade depois disso";
-		msg[i] = "* não é como se ele fosse levantar e tentar pular por cima do buraco de novo";
-		
-		msg[i] = "* ..."; // g
-		msg_sound[i] = snd_txt_gabee;
-		i += 1;
-		msg[i] = "* Tu não tá triste com isso?";
-		
-		msg[i] = "* eu estou triste"; // d
-		msg[i] = "* você pode ter certeza disso";
-		
-		
-		msg_font[5] = fnt_main;
-		msg_sound[5] = snd_txt_gabee;
-		
-		msg_font[6] = global.fnt_dsans;
-		msg_sound[6] = snd_txt_dsans;
-		
-		msg_font[7] = fnt_main;
-		msg_sound[7] = snd_txt_gabee;
-		
-		msg_font[8] = global.fnt_dsans;
-		msg_sound[8] = snd_txt_dsans;
-		
-		msg_font[9] = fnt_main;
-		msg_sound[9] = snd_txt_gabee;
-		
-		msg_font[11] = global.fnt_dsans;
-		msg_sound[11] = snd_txt_dsans;
-		
-		msg_font[16] = fnt_main;
-		msg_sound[16] = snd_txt_gabee;
-		
-		msg_font[17] = global.fnt_dsans;
-		msg_sound[17] = snd_txt_dsans;
-		
-		msg_font[20] = fnt_main;
-		msg_sound[20] = snd_txt_gabee;
-		
-		msg_font[22] = global.fnt_dsans;
-		msg_sound[22] = snd_txt_dsans;
-		*/
-	}
-	
-	// room_cave_3
-	if (text == "room_border")
+	// room_cave_2
+	if (text == "cellphone_developer")
 	{
 		for (var m = 0; m < 99; m++)
 		{
-			var _msg = get_text($"room_cave_3_border.{m}");
+			var _msg = get_text($"cellphone_developer_{m}");
 			if (_msg == undefined)
 				break;
 			msg[m] = _msg;
 		}
+		msg_sound[2] = snd_writer_dsans;
+		msg_sound[m-1] = snd_writer_0;
 	}
+	
+	// room_cave_3
 	if (text == "npc_cave_armsguy")
 	{
 		var _questioned = undefined;
@@ -1337,6 +1159,17 @@ function TEXT()
 		}
 		msg_talker[0] = obj_chara.mycol;
 		global.flag[68] = true;
+	}
+	if (text == "room_border")
+	{
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = get_text($"room_cave_3_border.{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+		global.flag[70] = true;
 	}
 	
 	// dropped item
@@ -1391,7 +1224,7 @@ function TEXT()
 			msg_type[0] = 5;
 			//if (_index == 1)
 				//msg_type[0] = 2;
-			msg_sound[0] = snd_txt_m6;
+			msg_sound[0] = snd_writer_m6;
 		}
 		if (text == "battle_bubble_dummy") // Dummy
 		{
@@ -1463,7 +1296,7 @@ function TEXT()
 		}
 		if (string_starts_with(text, "battle_bubble_brock") == 1) // Broken Clock
 		{
-			msg_sound[0] = snd_txt_brock;
+			msg_sound[0] = snd_writer_brock;
 			
 			if (text == "battle_bubble_brock0") // normal
 			{
@@ -1492,7 +1325,7 @@ function TEXT()
 	}
 	else if (string_starts_with(text, "battle_") == 1) // battlebox
 	{
-		msg_sound[0] = snd_txt2;
+		msg_sound[0] = snd_writer_1;
 		msg_next[0] = 0;
 		msg_font[0] = fnt_main_big;
 		msg_format[0] = "battlebox";
@@ -1668,11 +1501,11 @@ function TEXT()
 					// get faces and sounds
 					msg_next[0] = 1;
 					msg_face[0] = spr_dialogface_m6_default;
-					msg_sound[0] = snd_txt_m6;
+					msg_sound[0] = snd_writer_m6;
 					
 					msg_next[_finalpage] = 0;
 					msg_face[_finalpage] = -1;
-					msg_sound[_finalpage] = snd_txt1;
+					msg_sound[_finalpage] = snd_writer_0;
 
 					_enemy.stage += 1;
 				}
@@ -1881,7 +1714,7 @@ function TEXT()
 					msg_face[2] = spr_dialogface_m6_sassy;
 					if (_screamed == 3)
 						msg_face[2] = spr_dialogface_m6_angry;
-					msg_sound[2] = snd_txt_m6;
+					msg_sound[2] = snd_writer_m6;
 				}
 			}
 			
@@ -2030,14 +1863,14 @@ function TEXT()
 										var _lastpage = (i + _page);
 										msg[_lastpage] = _id;
 										msg_font[_lastpage] = fnt_main_big;
-										msg_sound[_lastpage] = snd_txt1;
+										msg_sound[_lastpage] = snd_writer_0;
 										msg_format[_lastpage] = "battlebox";
 									}
 									break;
 								}
 							}
 							msg_font[_page] = global.fnt_dotum;
-							msg_sound[_page] = snd_txt_brock;
+							msg_sound[_page] = snd_writer_brock;
 							msg_format[_page] = "bubble";
 							if (_convince >= 4)
 								msg_type[_page + 9] = "tense";

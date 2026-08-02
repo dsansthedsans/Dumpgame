@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Dumpgame_51",
-    "path":"Dumpgame_51.yyp",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -18,8 +18,12 @@ if (global.menu_lvl == 5)
 		var _asset_sprite = layer_sprite_get_sprite(_assets[a]);
 		var _asset_x = layer_sprite_get_x(_assets[a]);
 		var _asset_y = layer_sprite_get_y(_assets[a]);
-		if (_asset_sprite == spr_mainchara_armor_candybowl && savefile_armor != ITEM_BOWL)
+		var _asset_alpha = layer_sprite_get_alpha(_assets[a]);
+		if (_asset_sprite == spr_chara_genoshadow && savefile_murder < 1)
+		|| (_asset_sprite == spr_mainchara_armor_candybowl && savefile_armor != ITEM_BOWL)
 			continue;
+		else if (_asset_sprite == spr_chara_genoshadow && savefile_murder >= 1)
+			_asset_alpha = ((savefile_murder < 2) ? 0.5 : 1);
 		if (savefile_world == WORLD_CORRIDORS)
 		{
 			if (_asset_sprite == spr_m6_d && (savefile_flag[2] == false || savefile_armor == ITEM_BOWL))
@@ -34,7 +38,7 @@ if (global.menu_lvl == 5)
 				_asset_y += (sin(continueback_brocksiner) * 0.5)*10
 			}
 		}
-		draw_sprite_ext(_asset_sprite, layer_sprite_get_index(_assets[a]), _asset_x, _asset_y, layer_sprite_get_xscale(_assets[a]), layer_sprite_get_yscale(_assets[a]), layer_sprite_get_angle(_assets[a]), layer_sprite_get_blend(_assets[a]), layer_sprite_get_alpha(_assets[a]));
+		draw_sprite_ext(_asset_sprite, layer_sprite_get_index(_assets[a]), _asset_x, _asset_y, layer_sprite_get_xscale(_assets[a]), layer_sprite_get_yscale(_assets[a]), layer_sprite_get_angle(_assets[a]), layer_sprite_get_blend(_assets[a]), _asset_alpha);
 	}
 	surface_reset_target();
 	draw_surface_ext(continueback_surface, 0, 0, 2, 2, 0, c_white, 1);

@@ -44,7 +44,7 @@ if (type == 1) // Dummy
 	image_yscale = 1;
 	image_alpha = 0;
 	image_speed = 1;
-	audio_play(snd_txt2, 0, VOLUME_SOUND);
+	audio_play(snd_writer_1, 0, VOLUME_SOUND);
 	outside_box = 1;
 	dmg = 0;
 }

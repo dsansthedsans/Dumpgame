@@ -74,6 +74,8 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				music_set(0, -1);
 			if (global.flag[37] == 0.5)
 				music_set(0, mus_event_brock_mad, , , , , , 0);
+			else if (global.flag[39] == 0.5)
+				music_set(0, mus_event_brock_sad);
 			//else if (global.flag[37] == 1 && global.flag[39] == 0)
 			//	music_set(0, mus_event_brock_sad, , , , 0.75 + 0.125 + 0.125);
 		}
@@ -155,7 +157,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		music_set(0, -1);
 		music_set(1, -1);
 		music_set(2, -1);
-		if (room >= room_cave_1 && global.flag[62] >= 0.5)
+		if (room >= room_cave_1 && global.flag[62] >= 0.5 && global.flag[71] != 0.5)
 		{
 			if (global.flag[62] == 0.5)
 				music_set(0, mus_event_chapter2, , , , 0.5 + 0.25, false);
@@ -166,7 +168,8 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		}
 		if (room == room_cave_2)
 		{
-			music_set(0, mus_cave_echo, (0.5 * ((room_height - obj_chara.y) / room_height)),,,,, 1);
+			if (global.flag[71] != 0.5)
+				music_set(0, mus_cave_echo, (0.5 * ((room_height - obj_chara.y) / room_height)),,,,, 1);
 			music_set(2, -1);
 		}
 		if (room >= room_cave_3 && room <= room_cave_3)
@@ -178,8 +181,9 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 	}
 	if (room == room_event_cat)
 	{
-		global.music[0] = -1;
-		global.music[1] = -1;
+		music_set(0, -1);
+		music_set(1, -1);
+		music_set(2, -1);
 		if (instance_exists(obj_event_cat) == true && obj_event_cat.cat_dancing == 1)
 			music_set(0, mus_event_cat);
 	}
@@ -203,6 +207,8 @@ else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 	{
 		control = obj_battle_controller;
 		music_set(3, control.battle_music, 1, 0, 0, (1 - (0.025 * (chara_murder() == 1))), 1, 0.5);
+		if (control.battle_group == 6)
+			global.music_fadeouttime[3] = 7.5;
 		//if (control.battle_group == 13)
 		//	music_set(4, snd_ambient_wind, 0.5, , , 0.25);
 	}

@@ -27,7 +27,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.5;
 		if (_asset == snd_impact)
 			_volume *= 0.75;
-		if (_asset == snd_txt_m6) || (_asset == snd_txt_m6_1) || (_asset == snd_txt_m6_2)
+		if (_asset == snd_writer_m6) || (_asset == snd_writer_m6_tense) || (_asset == snd_writer_m6_angry)
 			_volume *= 0.35;
 		if (_asset == snd_surprise)
 			_volume *= 0.5 + (0.25 / 2);
@@ -41,7 +41,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.5;
 		if (_asset == snd_impactSwing)
 			_volume *= 1;
-		if (_asset == snd_txt_brock)
+		if (_asset == snd_writer_brock)
 			_volume *= 0.5;
 		if (_asset == snd_launchShock)
 			_volume *= 0.5;
@@ -49,7 +49,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.75;
 		if (_asset == snd_explosion2)
 			_volume *= 0.375;
-		if (_asset == snd_txt_gabee) || (_asset == snd_txt_dsans)
+		if (_asset == snd_writer_gabee) || (_asset == snd_writer_dsans)
 			_volume /= 5;
 		if (_asset == snd_splat) || (_asset == snd_splat_reversed)
 			_volume *= 0.5;

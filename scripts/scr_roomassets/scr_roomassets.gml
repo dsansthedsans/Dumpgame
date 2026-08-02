@@ -69,6 +69,8 @@ function room_interact()
 		{
 			text = "npc_dummy";
 			sprite_index = spr_npc_dummy;
+			if (global.flag[5] == true)
+				destroy(id);
 		}
 	}
 	if (room == room_corridors_5 && x == 60 && y == 60)
@@ -813,11 +815,11 @@ function room_solid() // i really really really fucking hate this how could i ma
 				image_index = 4;
 			y += 20;
 		}
-		if (x == 55 && y == 135)
+		if (x == 185 && y == 140)
 		{
-			x += 2;
-			y -= 2;
+			y -= 10;
 			sprite_index = spr_overworld_brokenfloor;
+			depth = -bbox_top;
 		}
 		if (x == 60 && y == 30)
 		{

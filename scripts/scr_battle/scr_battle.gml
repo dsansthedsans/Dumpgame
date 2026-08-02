@@ -965,7 +965,7 @@ function battle_attack()
 			{
 				global.flag[69] = 0.5;
 				stage += 1;
-				delay = (120 - 30);
+				delay = (120 - 30 - 15);
 				audio_play(snd_whip_crack, false, VOLUME_SOUND);
 			}
 			else if (stage == 6)

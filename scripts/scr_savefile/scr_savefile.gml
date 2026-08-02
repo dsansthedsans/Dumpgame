@@ -41,7 +41,7 @@ function savefile_write()
 	file_text_write_real(_file, global.chara_world);
 	file_text_writeln(_file);
 	
-	file_text_write_real(_file, global.chara_murder);
+	file_text_write_real(_file, chara_murder());
 	file_text_writeln(_file);
 	
 	for (var i = 0; i < global.item_length; i++)
@@ -55,13 +55,18 @@ function savefile_write()
 		file_text_write_string(_file, json_stringify(global.itemDropped[i]));
 		file_text_writeln(_file);
 	}
-	
 	for (var i = 0; i < array_length(global.flag); i++)
 	{
 		file_text_write_string(_file, global.flag[i]);
 		file_text_writeln(_file);
 	}
-	
+	for (var w = 0; w < array_length(global.world_curpopulation); w++)
+	{
+		file_text_write_string(_file, global.world_curpopulation[w]);
+		file_text_writeln(_file);
+		file_text_write_string(_file, global.world_sparedpopulation[w]);
+		file_text_writeln(_file);
+	}
 	file_text_close(_file);
 	}
 }
@@ -109,7 +114,6 @@ function savefile_read(_savefile)
 		
 		savefile_murder = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		for (var i = 0; i < global.item_length; i++)
 		{
 			savefile_item[i] = file_text_read_real(_file);
@@ -127,7 +131,13 @@ function savefile_read(_savefile)
 			savefile_flag[i] = file_text_read_string(_file);
 			file_text_readln(_file);
 		}
-		
+		for (var w = 0; w < array_length(global.world_curpopulation); w++)
+		{
+			savefile_curpop[w] = file_text_read_real(_file);
+			file_text_readln(_file);
+			savefile_sparedpop[w] = file_text_read_real(_file);
+			file_text_readln(_file);
+		}
 		file_text_close(_file);
 	}
 	thisfile = _file;
@@ -150,13 +160,17 @@ function savefile_load(_savefile)
 		global.chara_armor = savefile_armor;
 		global.chara_room = savefile_room;
 		global.chara_world = savefile_world;
-		global.chara_murder = savefile_murder;
 		for (var i = 0; i < global.item_length; i++)
 			global.item[i] = savefile_item[i];
 		for (var i = 0; i < global.itemDropped_lengthMax; i++)
 			global.itemDropped[i] = savefile_itemDropped[i];
 		for (var i = 0; i < array_length(global.flag); i++)
 			global.flag[i] = savefile_flag[i];
+		for (var i = 0; i < array_length(global.world_curpopulation); i++)
+		{
+			global.world_curpopulation[i] = savefile_curpop[i];
+			global.world_sparedpopulation[i] = savefile_sparedpop[i];
+		}
 	}
 }
 function savefile_erase(_savefile)

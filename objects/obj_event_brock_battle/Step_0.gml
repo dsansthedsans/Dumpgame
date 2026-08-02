@@ -259,6 +259,7 @@ else if (global.flag[37] == 1 && global.flag[39] == 0)
 {
 	if (con == 0 && exists(chara) == true && exists(m6) == true && m6.active == true && is_undefined(brock) == false && exists(brock) == true)
 	{
+		global.flag[39] = 0.5;
 		screenpos(cam_x, cam_y);
 		gate_draw = true;
 		gate_height = 0//gate_heightMax;

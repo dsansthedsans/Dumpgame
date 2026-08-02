@@ -311,7 +311,7 @@ function start_flags()
 	global.flag[3] = 0; // left room_corridors_2 after MEE6's event
 	
 	global.flag[4] = 0; // finished MEE6's pre-dummy event
-	global.flag[5] = 0; // MEE6's pre-dummy question result
+	global.flag[5] = 0; // KILLED DUMMY !!!!!!!!!!!!!
 	global.flag[6] = 0; // started Dummy's battle
 	global.flag[7] = 0; // finished MEE6's post-dummy event
 	
@@ -358,7 +358,7 @@ function start_flags()
 	global.flag[38] = 0; // killed Broken Clock
 	global.flag[39] = 0; // finished Broken Clock's event
 	
-	global.flag[40] = 0; // opened door after dummy
+	global.flag[40] = 0; // (((UNUSED)))
 	
 	global.flag[41] = 0; // left room_corridors_12 after Broken Clock's battle
 	
@@ -401,6 +401,9 @@ function start_flags()
 	global.flag[68] = 0; // TALKED ARMSGUY CAVE 3
 	
 	global.flag[69] = 0; // RHONHEY BATTLE MEE6 EVENT #1
+	
+	global.flag[70] = false; // talked to ROOM BORDER
+	global.flag[71] = 0; // TALKED TO cellphone developer
 }
 function start_music()
 {
@@ -557,7 +560,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_11;
+		var _rm = room_corridors_17;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)
@@ -596,8 +599,6 @@ function CHANGE_GAME()
 			if (_lvl >= 1)
 			{
 				global.flag[0] = true; // finished getting up event
-				global.flag[66] = 1;
-				global.flag[69] = 1;
 				if (_rm >= room_corridors_2)
 				{
 					global.flag[64] = 1;
@@ -619,7 +620,6 @@ function CHANGE_GAME()
 				global.flag[6] = 1; // started Dummy's battle
 				global.flag[7] = 1; // finished MEE6's post-dummy event
 				global.flag[17] = 1; // left room_corridors_3_5
-				global.flag[40] = 1; // opened door after dummy
 				global.achievement[ACHIEVEMENT_M6TOY] = 1;
 			}
 			if (_lvl >= 3.5)

@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":182.43918,
+  "duration":178.13705,
   "exportDir":"",
   "name":"mus_battle_dummy",
   "parent":{
