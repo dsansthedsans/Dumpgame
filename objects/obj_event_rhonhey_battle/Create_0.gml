@@ -1,8 +1,8 @@
 event_inherited();
 chara = obj_chara;
 
-global.flag[66] = 1;
-global.flag[69] = 1;
+//global.flag[66] = 1;
+//global.flag[69] = 1;
 
 if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 {
@@ -50,7 +50,7 @@ if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 else if (global.flag[2] == false && global.flag[66] >= 1 && global.flag[66] < 2 && global.flag[69] == 1)
 {
 	screenpos(0, 0);
-	alarm[2] = 120;
+	alarm[2] = 90;
 	chara_facing(UP);
 	chara_change(-1, false, false, true, false, false, false);
 	chara.x = (room_width / 2);

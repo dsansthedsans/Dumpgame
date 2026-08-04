@@ -255,14 +255,13 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 		}
 	}
 }
-else if (global.flag[37] == 1 && global.flag[39] == 0)
+else if (global.flag[37] == 1 && global.flag[39] < 1)
 {
 	if (con == 0 && exists(chara) == true && exists(m6) == true && m6.active == true && is_undefined(brock) == false && exists(brock) == true)
 	{
-		global.flag[39] = 0.5;
 		screenpos(cam_x, cam_y);
 		gate_draw = true;
-		gate_height = 0//gate_heightMax;
+		gate_height = gate_heightMax;
 		chara_change(-1, false, false, true, false, false, false);
 		chara_facing(UP);
 		chara.x = chara_jumpX;
@@ -283,7 +282,7 @@ else if (global.flag[37] == 1 && global.flag[39] == 0)
 		}
 		else
 			destroy(brock);
-		con = 1;
+		con += 1;
 		alarm[2] = 60;
 	}
 	else if (con == 2)
@@ -307,6 +306,7 @@ else if (global.flag[37] == 1 && global.flag[39] == 0)
 	}
 	else if (con == 4)
 	{
+		global.flag[39] = 0.5;
 		writer("event_brock_battle_3");
 		con = 5;
 	}
@@ -317,7 +317,7 @@ else
 		destroy(brock);
 	destroy(id);
 }
-if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0) || (global.flag[37] == 1 && global.flag[39] == 0)
+if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0) || (global.flag[37] == 1 && global.flag[39] < 1)
 {
 	if (aftercon == 2 && is_undefined(brock) == false && exists(brock) == true)
 	{

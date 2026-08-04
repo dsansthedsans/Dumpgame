@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":127.05959,
+  "duration":124.47585,
   "exportDir":"",
   "name":"mus_battle_troll",
   "parent":{

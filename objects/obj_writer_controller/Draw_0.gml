@@ -323,11 +323,13 @@ for (var c = 1; c < (text_length + 1); c++)
 	var _floaty = 0;
 	if (shaking > 0 && shake_change == 1)
 	{
-		if (shaking == 1) || (shaking == 2)
+		if (shaking == 1) || (shaking == 2) || (shaking == 4)
 		{
 			var _amt = 0.5;
 			if (shaking == 2)
 				_amt = 0.75;
+			if (shaking == 4)
+				_amt = 1;
 			shake_x[c] = choose(_amt, 0);
 			shake_y[c] = choose(_amt, 0);
 		}

@@ -428,39 +428,29 @@ function battle_getattack()
 		
 		if (enemy_type[i] == 6) // Broken Clock
 		{
-			// get attack
-			enemy_attack[i] = battle_round;
-			if (battle_round > 3)
-				enemy_attack[i] = irandom_range(0, 3);
-			
-			// get turntime and box info
-			if (enemy_attack[i] == 1)
-				battle_turntime = 480;
-			else if (enemy_attack[i] == 2) || (enemy_attack[i] == 3)
+			if (enemy_spare[i] < 100)
 			{
-				if (enemy_attack[i] == 3)
+				enemy_attack[i] = battle_round;
+				if (battle_round > 3)
+					enemy_attack[i] = irandom_range(0, 3);
+				if (enemy_attack[i] == 1)
+					battle_turntime = 480;
+				else if (enemy_attack[i] == 2) || (enemy_attack[i] == 3)
 				{
-					box_nextw = 188;
-					box_nexth = 188;
+					if (enemy_attack[i] == 3)
+					{
+						box_nextw = 188;
+						box_nexth = 188;
+					}
+					battle_turntime = 600;
+					heart_nexty = (box_nexty + (box_nexth / 3));
 				}
-				battle_turntime = 600;
-				heart_nexty = (box_nexty + (box_nexth / 3));
 			}
-			
-			// can spare
-			if (enemy_spare[i] >= 100)
+			else
 			{
-				enemy_attack[i] = 0;
-				box_nextx = box_defaultx;
-				box_nexty = box_defaulty;
-				box_nextw = box_defaultw;
-				box_nexth = box_defaulth;
-				heart_nextx = box_nextx;
-				heart_nexty = box_nexty;
-				battle_turntime = 0;
+				enemy_attack[i] = -1;
+				battle_turntime = 60;
 			}
-			
-			
 		}
 		
 		if (enemy_type[i] == 7) // Rhonhey
@@ -809,7 +799,7 @@ function battle_attack()
 				ball =
 				{
 					objects : [],
-					speed : 0.002,
+					speed : 0.003,
 					length : 6,
 					distance : ((32 / 2) + 8),
 					angle : 180,

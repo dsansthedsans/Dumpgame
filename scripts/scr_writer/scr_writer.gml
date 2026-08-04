@@ -801,6 +801,7 @@ function TEXT()
 			else
 				break;
 		}
+		msg[0] = $"{get_text("event_brock_battle_2_0")}{global.chara_name};D.";
 		msg_sound[0] = snd_writer_brock;
 		msg_format[0] = "textbox_top";
 	}

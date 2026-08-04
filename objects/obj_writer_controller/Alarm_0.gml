@@ -44,10 +44,14 @@ if (text_length <= (string_length(msg[page]) - 1))
 	if (_playsnd == 1 && msg_sound[page] > -1)
 	{
 		var _snd = msg_sound[page];
-		if (_snd != snd_writer_dsans && _snd != snd_writer_gabee) || ((_snd == snd_writer_dsans || _snd == snd_writer_gabee) && playsnd == 1)
-			audio_play(msg_sound[page], 0, VOLUME_SOUND);
+		if ((_snd == snd_writer_gabee && playsnd == false) == false && (_snd == snd_writer_dsans && playsnd == false) == false)
+		{
+			var _snd_pitch = 1;
+			//if (_snd == snd_writer_gabee) || (_snd == snd_writer_dsans)
+				_snd_pitch += random_range(-0.05, 0.05);
+			audio_play(msg_sound[page], 0, VOLUME_SOUND, , , , _snd_pitch);
+		}
 		playsnd = !playsnd;
-			
 		if (global.indebug == 1 && global.debug_hud == true)
 			debug("writer_sound (" + string(text_length) + ")");
 	}
