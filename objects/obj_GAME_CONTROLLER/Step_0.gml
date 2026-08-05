@@ -70,6 +70,11 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 	if (keyboard_check_pressed(ord("M")) == 1)
 	{
 		global.world_curpopulation[chara_world()] = clamp((global.world_curpopulation[chara_world()] + (1 * ((keyboard_check(vk_backspace) == true) ? 1 : -1))), 0, global.world_maxpopulation[chara_world()]);
+		if (keyboard_check(ord("T")) == true)
+		{
+			global.world_curpopulation[chara_world()] = 0;
+			global.flag[22] = true;
+		}
 		global.chara_exp = (3 * (global.world_maxpopulation[WORLD_CORRIDORS] - global.world_curpopulation[WORLD_CORRIDORS]));
 	}
 	if (keyboard_check(ord("P")) == 1) // party

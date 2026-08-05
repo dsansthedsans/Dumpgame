@@ -60,7 +60,7 @@ if (con == 6)
 	if (chara.x >= 810)
 	{
 		chara_stop();
-		alarm[2] = 60;
+		alarm[2] = round(60 * 1.5);
 		con = 8;
 	}
 }
@@ -93,12 +93,19 @@ if (con == 15)
 {
 	writer("event_gabee_chase.1", -1, -1);
 	con = 16;
+	if (chara_murder() >= 2)
+	{
+		con = 21;
+		num = 0;
+		zz = 0;
+		ii = 0;
+	}
+	for (var i = 0; i < 6; i++)
+		bullet[i] = -1;
 }
 if (con == 16 && exists(thiswriter) == 0)
 {
 	audio_play(snd_launch, 0, VOLUME_SOUND);
-	for (var i = 0; i < 6; i++)
-		bullet[i] = -1;
 	for (var i = 0; i < 3; i++)
 	{
 		marker((m6.x - 20 + (20 * i)), (game.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
@@ -121,7 +128,8 @@ if (con == 17)
 }
 if (con == 18)
 {
-	chara_facing(LEFT);
+	if (chara_murder() < 2)
+		chara_facing(LEFT);
 	m6.facing = -1;
 	m6.sprite_index = spr_m6_u_sit;
 	for (var i = 0; i < 3; i++)
@@ -141,7 +149,6 @@ if (con == 19)
 		num = 0;
 		zz = 0;
 		ii = 0;
-		aftercon = 1;
 		
 		m6.y = 240;
 		m6.depth = -m6.bbox_bottom;
@@ -158,9 +165,11 @@ if (con == 19)
 		global.flag[2] = 0;
 		alarm[2] = round(45 + 7.5);
 		con = 20;
+		if (chara_murder() >= 2)
+			con = 35.5;
 	}
 }
-if (con >= 21 && con % 2 == 1 && con <= 31)
+if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter != -1 && exists(thiswriter) == false)))
 {
 	var _y = (chara.y - chara.sprite_height - 30);
 	if (zz == 1)
@@ -188,6 +197,7 @@ if (con >= 21 && con % 2 == 1 && con <= 31)
 	audio_play(snd_appearBullet, 0, VOLUME_SOUND);
 	alarm[2] = 6;
 	con += 1;
+	aftercon = 1;
 }
 if (con == 33)
 {
@@ -215,6 +225,8 @@ if (con == 36)
 		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		alarm[4] = 45;
 		con = 36.25;
+		if (chara_murder() >= 2)
+			con = 15.75;
 	}
 }
 if (con == 36.5)
@@ -353,6 +365,8 @@ if (con == 46)
 		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		alarm[2] = 120;
 		con = 47;
+		if (chara_murder() >= 2)
+			con = 53;
 	}
 }
 if (con >= 48 && con <= 52 && con % 2 == 0)
@@ -407,7 +421,7 @@ if (con == 60)
 }
 if (aftercon == 1)
 {
-	for (var i = 0; i < bullet_length; i++)
+	for (var i = 0; i < 6; i++)
 	{
 		if (bullet[i] != -1 && exists(bullet[i]) == 1)
 		{

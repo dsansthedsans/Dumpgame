@@ -246,8 +246,10 @@ if (active == 1)
 			afterimage();
 		
 		//draw_self();
-		var _shake_offsetX = ((clamp((irandom(-25) + 1), 0, 1) * choose(-1, 1)) * tense);
-		var _shake_offsetY = ((clamp((irandom(-25) + 1), 0, 1) * choose(-1, 1)) * tense);
+		var _shake_distanceX = choose(1, 1, 1, 2);
+		var _shake_distanceY = choose(1, 1, 1, 2);
+		var _shake_offsetX = ((clamp((irandom(-20) + 1), 0, 1) * choose(-_shake_distanceX, _shake_distanceX)) * tense);
+		var _shake_offsetY = ((clamp((irandom(-20) + 1), 0, 1) * choose(-_shake_distanceY, _shake_distanceY)) * tense);
 		draw_sprite_ext(sprite_index, image_index, x + _shake_offsetX, y + _shake_offsetY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 		
 		// lines

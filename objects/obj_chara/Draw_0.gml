@@ -8,17 +8,19 @@ if (xscale < 1) || (yscale < 1)
 	xscale = lerp(xscale, 1, 0.3);
 	yscale = lerp(yscale, 1, 0.3);
 }
-if (global.chara_facing != -1 && global.chara_facing != FALLEN && global.chara_facing != SIT) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
+if (global.chara_facing != -1 && global.chara_facing != SIT) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 {
 	var _extrayfactor = 0;
 	if (image_index >= 1 && image_index < 2) || (image_index >= 3 && image_index < 4)
 		_extrayfactor = 1;
-	if (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
+	if (global.chara_facing == FALLEN) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 		_extrayfactor = 0;
+	if (inwater == true)
+		_extrayfactor += 2;
 	if (chara_murder() >= 1)
 	{
 		var _sprite = spr_chara_genoshadow;
-		if (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
+		if (sprite_index == spr_chara_fallen) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 			_sprite = asset_get_index($"{sprite_get_name(sprite_index)}_genoshadow");
 		draw_sprite_ext(_sprite, global.chara_facing, x, (y + _extrayfactor), xscale, yscale, image_angle, image_blend, (image_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
 	}

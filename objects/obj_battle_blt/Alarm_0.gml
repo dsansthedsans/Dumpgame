@@ -334,12 +334,13 @@ if (type >= 6.21 && type <= 6.23)
 }
 if (type == 6.24)
 {
-	sprite_index = spr_battle_blt_lightingpixel;
+	sprite_index = spr_battle_blt_lightningpixel;
 	image_yscale = 200;
 	image_xscale = 1;
 	image_angle = (point_direction(x, y, targetx, targety) + 90);
 	image_blend = c_white;
-	image_speed = 1;
+	if (global.visualeff == true)
+		image_speed = 1;
 	alarm[1] = 7;
 	fadeout = 0;
 	dmg += 2;

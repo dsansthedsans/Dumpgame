@@ -47,7 +47,7 @@ if (text_length <= (string_length(msg[page]) - 1))
 		if ((_snd == snd_writer_gabee && playsnd == false) == false && (_snd == snd_writer_dsans && playsnd == false) == false)
 		{
 			var _snd_pitch = 1;
-			//if (_snd == snd_writer_gabee) || (_snd == snd_writer_dsans)
+			if (_snd != snd_writer_0 && _snd != snd_writer_1)
 				_snd_pitch += random_range(-0.05, 0.05);
 			audio_play(msg_sound[page], 0, VOLUME_SOUND, , , , _snd_pitch);
 		}

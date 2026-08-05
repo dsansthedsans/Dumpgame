@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":34.638367,
+  "duration":44.30771,
   "exportDir":"",
   "name":"mus_event_brock_sad",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_event_brock_sad.mp3",
+  "soundFile":"mus_event_brock_sad.ogg",
   "volume":1.0,
 }

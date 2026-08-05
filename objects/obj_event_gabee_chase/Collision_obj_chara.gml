@@ -7,8 +7,6 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 	if (global.flag[2] == 1)
 		m6 = global.party[0];
 	
-	bullet_length = 6;
-	
 	bullet_time[0] = 32;
 	bullet_time[1] = 48;
 	bullet_time[2] = 32;
@@ -25,6 +23,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 	eyes_alpha = 1;
 	eyes_y = 100;
 	jumpsnd = 0;
+	thiswriter = -1;
 	
 	gate =
 	{

@@ -127,23 +127,24 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			}
 		}
 		// Gabee's chase
-		if (room == room_corridors_18)
+		if (room == room_corridors_18 && exists(obj_event_gabee_chase) == true)
 		{
-			music_set(0, -1);
-			music_fadeouttime_old[0] = 5;
-			music_fadeouttime_old[1] = 5;
-			if ((exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 9) == false)
+			if (chara_murder() < 2) || (chara_murder() >= 2 && obj_event_gabee_chase.con >= 8)
+				music_set(0, -1);
+			if (obj_event_gabee_chase.con < 8)
 			{
 				music_set(1, snd_ambient_wind, , 2, true, 0.75, , 2);
 				global.music_volumetype[1] = VOLUME_SOUND;
 			}
+			music_fadeouttime_old[0] = 5;
+			music_fadeouttime_old[1] = 5;
 			if (global.flag[60] == 1 && global.flag[61] == 0)
 			{
 				music_set(0, mus_hurry_intro, , , , , false);
 				if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_1)
 				{
 					music_set(0, mus_hurry_loop_1);
-					if (exists(obj_event_gabee_chase) == 1 && obj_event_gabee_chase.con >= 45)
+					if (obj_event_gabee_chase.con >= 45)
 					{
 						global.music_pitch[0] = music_pitch_old[0];
 						global.music_pitch[0] = lerp(global.music_pitch[0], 0, 0.025);
@@ -160,7 +161,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		if (room >= room_cave_1 && global.flag[62] >= 0.5 && global.flag[71] != 0.5)
 		{
 			if (global.flag[62] == 0.5)
-				music_set(0, mus_event_chapter2, , , , 0.5 + 0.25, false);
+				music_set(0, mus_event_chapter2, , , , (0.5 + 0.25 - (0.025 * (chara_murder() >= 1))), false);
 			music_set(1, snd_ambient_wind, , 2, true, 0.5, , 4);
 			music_set(2, snd_impactTitle, , 2, true, 0.35, , 4);
 			global.music_volumetype[1] = VOLUME_SOUND;
@@ -169,12 +170,12 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		if (room == room_cave_2)
 		{
 			if (global.flag[71] != 0.5)
-				music_set(0, mus_cave_echo, (0.5 * ((room_height - obj_chara.y) / room_height)),,,,, 1);
+				music_set(0, mus_cave_echo, (0.5 * ((room_height - obj_chara.y) / room_height)),,, (1 - (0.025 * (chara_murder() >= 1))),, 1);
 			music_set(2, -1);
 		}
 		if (room >= room_cave_3 && room <= room_cave_3)
 		{
-			music_set(0, mus_cave,,,,,, 2);
+			music_set(0, mus_cave,,,, (1 - (0.025 * (chara_murder() >= 1))),, 2);
 			music_set(2, snd_ambient_water, , 2, true, , , 4);
 			global.music_volumetype[2] = VOLUME_SOUND;
 		}

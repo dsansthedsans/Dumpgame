@@ -93,13 +93,13 @@ function TEXT()
 	
 	// room_corridors_1
 	if (text == "room_lamp")
-		msg[0] = get_text("room_lamp_0");
+		msg[0] = get_text($"room_lamp_0{(chara_murder() < 1) ? "" : "_geno"}");
 	if (text == "room_brokenlamp")
-		msg[0] = get_text(text);
+		msg[0] = get_text($"{text}{(chara_murder() < 1) ? "" : "_geno"}");
 	
 	// room_corridors_1_5
 	if (string_starts_with(text, "room_rockpile_") == true)
-		msg[0] = get_text($"room_rockpile_{string_char_at(text, string_length(text))}_0");
+		msg[0] = get_text($"room_rockpile_{clamp(string_char_at(text, string_length(text)), 0, (1 - (chara_murder >= 1)))}_0");
 	// obj_event_rhonhey_battle
 	if (string_starts_with(text, "event_rhonhey_battle_") == true)
 	{
@@ -1101,6 +1101,12 @@ function TEXT()
 			msg_face[5] = spr_dialogface_m6_pleased;
 			msg_sound[0] = snd_writer_m6;
 			msg_talker[0] = global.party[0];
+			if (chara_murder() >= 1)
+			{
+				msg[m] = get_text($"event_gabee_chase.0.{m}_geno");
+				msg[m+1] = get_text($"event_gabee_chase.0.{m+1}_geno");
+				msg_face[m] = spr_dialogface_m6_angry;
+			}
 			break;
 			case 1:
 			msg_face[0] = spr_dialogface_m6_neutralTense;
