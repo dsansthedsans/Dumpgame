@@ -21,9 +21,23 @@
 <br>
 <h2>Features</h2>
 <ul>
-  <li>Original art, story and characters created almost entirely by one person, me, <b>dsansthedsans</b>...!</li>
   <li>An amazing original soundtrack fully composed and arranged by <b>migel8022</b>!</li>
+  <li>Endearing new characters designed and written almost entirely by me, <b>dsansthedsans</b>!
+    <ul>
+      <li><b>Armsguy</b>, a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
+      <li><b>Trashguy</b>, a mysterious creature who lives inside a trash can for being too scared to face life head-on. They usually stick close to an Armsguy.</li>
+      <li><b>Flitcher</b>, a reptile-like monster who's unaware of his own existence for most of the time. There's not much to say about him.</li>
+      <li><b>Broken Clock</b>, a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two arrogant teenagers, he unconsciously pushes people away and hurts those around him. He has nothing to lose besides his life.</li>
+      <li><b>And more</b>...!</li>
+    </ul>
+  </li>
 </ul>
+
+
+
+ 
+
+
 <br>
 <h2>Development History</h2>
 <p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
@@ -45,7 +59,7 @@
 <br>
 <p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
 <br>
-<p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
+<p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
 <br>
 <h2>Never Asked Questions</h2>
 <h3>Is Dumpgame still in development?</h3>
@@ -100,4 +114,4 @@
   <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
 </ul>
-<br>
+<p align="left"><a href="https://www.youtube.com/watch?v=XpqVHrP_XEs" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_chara_sit/caf2cdde-d65a-44cf-b9a2-c0aa5adb4988.png" height="32" alt="If you're reading this, I messed up somehow."></a></p>
