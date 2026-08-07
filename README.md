@@ -1,10 +1,10 @@
-<h1>README UNDER CONSTRUCTION !!!!!!<br>ALSO the download of 1.5.0-demo will be available SOON........................................</h1>
+<h1>README UNDER CONSTRUCTION !!!!!!<br>ALSO the download of 2.0.0-demo will be available SOON........................................</h1>
 <br>
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsansthedsans and migel8022</strong></h3>
 <p align="center">
   <img src="https://img.shields.io/badge/status-cancelled-white?labelColor=40ff6d" alt="Status">
-  <img src="https://img.shields.io/badge/version-1.5.0--demo-white?labelColor=40ff6d" alt="Version">
+  <img src="https://img.shields.io/badge/version-2.0.0--demo-white?labelColor=40ff6d" alt="Version">
   <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="License">
   <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/Itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
@@ -91,9 +91,10 @@
   <li>YoYo Games</li>
   <li>Image-Line Software</li>
   <li>Peyton Burnham</li>
-  <li>Anis Belkacem</li>
-  <li>HybridTeacher</li>
+  <li>maxdefolsch</li>
+  <li>HushBugger</li>
   <li>Mãe Gamer</li>
+  <li>HybridTeacher</li>
   <li>Babakinha</li>
   <li>sam06tanb</li>
   <li>NuggetFrango</li>
