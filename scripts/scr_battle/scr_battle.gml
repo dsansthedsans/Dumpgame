@@ -661,6 +661,7 @@ function battle_attack()
 					var _y = (_body.y - _body_h + 25);
 					create(_x, _y, obj_battle_blt);
 					thisobj.type = 6;
+					thisobj.myself = myself;
 					delay = 0;
 					amt += 1;
 				}
@@ -679,6 +680,7 @@ function battle_attack()
 			{
 				bltvideo = create(box_x, box_y, obj_battle_blt);
 				bltvideo.type = 6.15;
+				bltvideo.myself = myself;
 				bltpos = 0;
 				for (var i = 0; i < 100; i++)
 					thisblt[i] = -1;
@@ -693,6 +695,7 @@ function battle_attack()
 					create((box_x - (box_w / 2) + irandom(box_w)), (box_y - (box_h / 2) + 20), obj_battle_blt);
 					thisobj.type = 6.1;
 					thisobj.bltvideo = bltvideo;
+					thisobj.myself = myself;
 					thisblt[bltpos] = thisobj;
 					bltpos += 1;
 					delay = 0;
@@ -730,6 +733,7 @@ function battle_attack()
 					create(controller.box_nextx, controller.box_nexty, obj_battle_blt);
 					thisobj.type = (6.2 + (i / 100));
 					thisobj.spd = (choose(i, -i) * 1.75);
+					thisobj.myself = myself;
 				}
 				time = 60;
 				stage = 1;
@@ -769,6 +773,7 @@ function battle_attack()
 				thisobj.type = 6.24;
 				thisobj.targetx = danger_x2;
 				thisobj.targety = danger_y2;
+				thisobj.myself = myself;
 				
 				time = 60 - (10 * (controller.battle_round > 2));
 				stage = 1;
@@ -1063,15 +1068,13 @@ function battle_attack()
 	}
 	
 }
-function battle_sparecloud(_instance)
+function battle_sparecloud(_instance, _xdif = 0, _ydif = 0)
 {
 	var _enemy = argument0;
-	
 	for (var i = 0; i < 10; i++)
 	{
-		var _x = (_enemy.x + (_enemy.sprite_width / 2));
-		var _y = (_enemy.y + (_enemy.sprite_height / 2));
-		
+		var _x = (_enemy.x + (_enemy.sprite_width / 2) + _xdif);
+		var _y = (_enemy.y + (_enemy.sprite_height / 2) + _ydif);
 		cloud = instance_create_layer(_x, _y, "Instances", obj_battle_sparecloud);
 		cloud.direction = irandom(360);
 	}

@@ -93,10 +93,19 @@ if (active == 1)
 			if (controller.level_heard != 0)
 			{
 				emotion = controller.level_heard;
-				controller.enemy_spare[myself] = 0;
-				if (emotion == 2)
+				switch (emotion)
+				{
+					case 1:
+					controller.enemy_spare[myself] = 0;
+					audio_play(snd_jingleFail, false, VOLUME_SOUND);
+					break;
+					case 2:
 					controller.enemy_spare[myself] = 100;
+					audio_play(snd_jingleSucess, false, VOLUME_SOUND);
+					break;
+				}
 			}
+			
 		}
 		else if (usedact == 1 && exists(thiswriter) == 0 && controller.enemy_target == myself)
 		{

@@ -69,7 +69,7 @@ if (active == 1)
 	{
 		image_alpha = 0.5;
 		destroy(body);
-		battle_sparecloud(id);
+		battle_sparecloud(id, -(sprite_width / 2), -(sprite_height / 2));
 		if (audio_playing(snd_launchSparkles) == false)
 			audio_play(snd_launchSparkles, 0, VOLUME_SOUND);
 		global.chara_spares += 1;

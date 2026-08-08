@@ -31,6 +31,7 @@ event_user(0);
 
 geno = 0;
 convince = 0;
+negotiate = 0;
 bubbledelay = 0;
 fightattempt = 0;
 

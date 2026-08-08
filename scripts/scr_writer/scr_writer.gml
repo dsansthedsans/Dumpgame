@@ -1254,12 +1254,16 @@ function TEXT()
 				var _num = irandom_range(8, 10);
 				msg[0] = get_text("battle_bubble_armsguy_" + string(_num));	
 			}
+			if (text == "battle_bubble_armsguy4")
+			{
+				var _num = irandom_range(11, 13);
+				msg[0] = get_text("battle_bubble_armsguy_" + string(_num));	
+			}
 			if (text == "battle_bubble_armsguy2") || (text == "battle_bubble_armsguy3")
 			{
 				var _act = "clean";
 				if (text == "battle_bubble_armsguy3")
 					_act = "punch";
-			
 				var _num = irandom(2);
 				msg[0] = get_text("battle_bubble_armsguy_" + string(_act) + "_" + string(_num));
 			}
@@ -1406,7 +1410,7 @@ function TEXT()
 			if (_type == 6)
 			{
 				_name = "brock";
-				_max = 9;
+				_max = 10;
 			}
 			if (_type == 7)
 			{
@@ -1431,6 +1435,7 @@ function TEXT()
 				var _num = irandom(_max);
 				msg[0] = get_text("battle_main_" + string(_name) + "_" + string(_num));
 			}
+			//msg[0] = get_text("battle_main_" + string(_name) + "_" + string(controller.battle_round));
 			if (msg[0] == undefined)
 				msg[0] = "* Salenis";
 			
@@ -1725,38 +1730,23 @@ function TEXT()
 				}
 			}
 			
-			if (text == "battle_act_armsguy0") // Armsguy
+			if (string_starts_with(text, "battle_act_armsguy") == true) // Armsguy
 			{
-				msg[0] = get_text("battle_act_result_armsguy_0_0");
-				msg[1] = get_text("battle_act_result_armsguy_0_1");
+				for (var i = 0; i < 2; i++)
+					msg[i] = get_text($"battle_act_result_armsguy_{string_char_at(text, string_length(text))}_{i}");
 			}
-			if (text == "battle_act_armsguy1")
-				msg[0] = get_text("battle_act_result_armsguy_1");
-			if (text == "battle_act_armsguy2")
-				msg[0] = get_text("battle_act_result_armsguy_2");
 			
-			if (text == "battle_act_trashguy0") // Trashguy
+			if (string_starts_with(text, "battle_act_trashguy") == true) // Trashguy
 			{
-				msg[0] = get_text("battle_act_result_trashguy_0_0");
-				msg[1] = get_text("battle_act_result_trashguy_0_1");
+				for (var i = 0; i < 2; i++)
+					msg[i] = get_text($"battle_act_result_trashguy_{string_char_at(text, string_length(text))}_{i}");
 			}
-			if (text == "battle_act_trashguy1_0")
-				msg[0] = get_text("battle_act_result_trashguy_1_0");
-			if (text == "battle_act_trashguy1_1")
-				msg[0] = get_text("battle_act_result_trashguy_1_1");
-			if (text == "battle_act_trashguy2")
-				msg[0] = get_text("battle_act_result_trashguy_2");
 			
-			if (text == "battle_act_flitcher0") // Flitcher
+			if (string_starts_with(text, "battle_act_flitcher") == true) // Flitcher
 			{
-				msg[0] = get_text("battle_act_result_flitcher_0_0");
-				msg[1] = get_text("battle_act_result_flitcher_0_1");
-				//msg[2] = get_text("battle_act_result_flitcher_0_2");
+				for (var i = 0; i < 2; i++)
+					msg[i] = get_text($"battle_act_result_flitcher_{string_char_at(text, string_length(text))}_{i}");
 			}
-			if (text == "battle_act_flitcher1")
-				msg[0] = get_text("battle_act_result_flitcher_1");
-			if (text == "battle_act_flitcher2")
-				msg[0] = get_text("battle_act_result_flitcher_2");
 			
 			if (text == "battle_act_eyecrush0") // Eyecrush
 			{
@@ -1819,22 +1809,23 @@ function TEXT()
 				
 				if (controller.enemy_spare[enemy.myself] < 100) // normal
 				{
-					if (text == "battle_act_brock0")
-					{
-						msg[0] = get_text("battle_act_result_brock_0_0_" + string(_geno));
-						msg[1] = get_text("battle_act_result_brock_0_1_" + string(_geno));
-					}
+					var _msg_postfix = "";
 					if (text == "battle_act_brock1")
 					{
-						msg[0] = get_text("battle_act_result_brock_1_0_" + string(_geno));
-						msg[1] = get_text("battle_act_result_brock_1_1_" + string(_geno));
+						_msg_postfix = $"_{enemy.negotiate}";
+						enemy.negotiate = clamp((enemy.negotiate + 1), 0, 2);
 					}
-					if (text == "battle_act_brock2")
-						msg[0] = get_text("battle_act_result_brock_2_" + string(_geno));
+					for (var m = 0; m < 99; m++)
+					{	
+						var _msg = get_text($"battle_act_result_brock_{string_char_at(text, string_length(text))}_{m}{_msg_postfix}");
+						if (_msg == undefined)
+							break;
+						msg[m] = _msg;
+					}
 					if (text == "battle_act_brock3")
 					{
 						var _page = 0;
-						msg[_page] = get_text($"battle_act_result_brock_3_{_page}_" + string(_geno));
+						msg[_page] = get_text($"battle_act_result_brock_3_{_page}");
 						_page += 1;
 						question[_page] = "";
 						question_option[1] = get_text($"battle_act_result_brock_3_{_page}_" + string(_convince) + "_1");
@@ -1850,12 +1841,12 @@ function TEXT()
 							|| (_convince == 4 && _result == 1)
 							{
 								_right = 1;
-								audio_play(snd_battle_mercy_sucess, 0, VOLUME_SOUND)
+								audio_play(snd_jingleSucess, 0, VOLUME_SOUND)
 								controller.enemy_spare[enemy.myself] += 20;
 								enemy.convince += 1;
 							}
 							else
-								audio_play(snd_battle_mercy_fail, 0, VOLUME_SOUND)
+								audio_play(snd_jingleFail, 0, VOLUME_SOUND)
 							_page += 1;
 							for (var i = 0; i < 99; i++)
 							{

@@ -88,24 +88,20 @@ if (active == 1)
 		// act used
 		if (controller.battle_usedact == 1 && usedact == 0 && controller.enemy_target == myself)
 		{
-			var _id = controller.level_heard;
-			if (_id == 1)
-				_id = string(_id) + "_" + string(emptied);
-			writer("battle_act_trashguy" + string(_id), -1, -1);
+			writer($"battle_act_trashguy{controller.level_heard}", -1, -1);
 			usedact = 1;
 		
 			if (controller.level_heard == 1)
 			{
-				if (emptied == 0)
-				{
-					emptied = 1;
-					kicked = 0;
-				}
-				else
-					alreadyempty = 1;
+				emptied = 1;
+				kicked = 0;
+				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 			}
 			else if (controller.level_heard == 2)
+			{
 				kicked = 1;
+				audio_play(snd_jingleFail, false, VOLUME_SOUND);
+			}
 		}
 		else if (usedact == 1 && exists(thiswriter) == 0 && controller.enemy_target == myself)
 		{
@@ -121,7 +117,7 @@ if (active == 1)
 		if (controller.createbubble == 1 && createbubble == 1)
 		{
 			var _text = "battle_bubble_trashguy0";
-			if (controller.battle_usedact == 1 && controller.enemy_target == myself && controller.level_heard != 0 && alreadyempty == 0)
+			if (controller.battle_usedact == 1 && controller.enemy_target == myself && controller.level_heard != 0)
 			{
 				if (controller.level_heard == 1)
 					_text = "battle_bubble_trashguy3";

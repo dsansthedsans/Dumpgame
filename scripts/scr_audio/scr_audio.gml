@@ -67,7 +67,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.5;
 		if (_asset == snd_murder)
 			_volume *= 0.5;
-		if (_asset == snd_battle_mercy_fail)
+		if (_asset == snd_jingleFail)
 			_volume *= 0.5;
 		if (_asset == snd_battle_danger)
 			_volume *= 0.75;
@@ -120,6 +120,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 1.25;
 		if (_asset == mus_battle_brock)
 			_volume *= 1.25;
+		if (_asset == mus_event_brock_sad)
+			_volume *= 1.5;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)
@@ -133,8 +135,8 @@ function audio_pitch(_audio, _pitch)
 		_asset = audio_sound_get_asset(_asset);
 	if (_asset == snd_bird_startfly)
 		_pitch *= irandom_range(1.25, 1.35);
-	if (_asset == mus_event_rhonhey_battle)
-		_pitch *= 0.75;
+	if (_asset == mus_event_rhonhey_battle) || (_asset == mus_event_brock_sad)
+		_pitch *= 1.25;
 	audio_sound_pitch(_audio, _pitch);
 }
 function audio_play(_audio, _loop = false, _volume_type = VOLUME_MASTER, _gain = 1, _gain_time = 0, _gain_fadein = 0, _pitch = 1)

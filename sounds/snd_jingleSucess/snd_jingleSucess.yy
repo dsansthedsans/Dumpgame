@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_battle_mercy_fail",
+  "%Name":"snd_jingleSucess",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.7546485,
+  "duration":0.84931976,
   "exportDir":"",
-  "name":"snd_battle_mercy_fail",
+  "name":"snd_jingleSucess",
   "parent":{
     "name":"[!] audio",
     "path":"folders/[!] audio.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_battle_mercy_fail.wav",
+  "soundFile":"snd_jingleSucess.wav",
   "volume":1.0,
 }

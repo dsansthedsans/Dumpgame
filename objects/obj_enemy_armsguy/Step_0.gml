@@ -93,9 +93,16 @@ if (active == 1)
 			{
 				punched = 0;
 				tookslime = 1;
+				controller.enemy_spare[myself] = 0;
+				audio_play(snd_jingleFail, false, VOLUME_SOUND);
 			}
 			else if (controller.level_heard == 2)
+			{
 				punched = 1;
+				tookslime = 0;
+				controller.enemy_spare[myself] = 100;
+				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
+			}
 		}
 		else if (usedact == 1 && exists(thiswriter) == 0 && controller.enemy_target == myself)
 		{
@@ -118,29 +125,23 @@ if (active == 1)
 				else if (controller.level_heard == 2)
 					_text = "battle_bubble_armsguy3";
 			}
-			if (_text = "battle_bubble_armsguy0" && controller.enemy_spare[myself] >= 100)
-				_text = "battle_bubble_armsguy1";
+			if (_text = "battle_bubble_armsguy0")
+			{
+				if (punched == 1)
+					_text = "battle_bubble_armsguy1";
+				else if (tookslime == 1)
+					_text = "battle_bubble_armsguy4";
+			}
 			
 			writer(_text, bubble_x, bubble_y);
 			createbubble = 2;
 			returnmain = 0;
-		
-			if (tookslime == 1)
-			{
-				controller.enemy_spare[myself] = 0;
-				body.sprite_index = spr_enemy_armsguy_angry;
-			}
-			if (punched == 1)
-			{
-				controller.enemy_spare[myself] = 100;
-				body.sprite_index = spr_enemy_armsguy_happy;
-			}
 		}
 		else if (createbubble == 2 && exists(thiswriter) == 0)
 		{
-			if (tookslime == 1)
-				body.sprite_index = spr_enemy_armsguy;
-			tookslime = 0;
+			//if (tookslime == 1)
+			//	body.sprite_index = spr_enemy_armsguy;
+			//tookslime = 0;
 			
 			createbubble = 0;
 			startattack = 1;
@@ -152,6 +153,15 @@ if (active == 1)
 			startattack = 0;
 			returnmain = 1;
 			usedact = 0;
+		}
+		
+		if (hurt == 0)
+		{
+			body.sprite_index = spr_enemy_armsguy;
+			if (tookslime == 1)
+				body.sprite_index = spr_enemy_armsguy_angry;
+			else if (punched == 1)
+				body.sprite_index = spr_enemy_armsguy_happy;
 		}
 	}
 }

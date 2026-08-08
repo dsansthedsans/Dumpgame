@@ -261,7 +261,7 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 	{
 		screenpos(cam_x, cam_y);
 		gate_draw = true;
-		gate_height = gate_heightMax;
+		gate_height = 0;
 		chara_change(-1, false, false, true, false, false, false);
 		chara_facing(UP);
 		chara.x = chara_jumpX;

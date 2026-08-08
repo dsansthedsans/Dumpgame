@@ -54,7 +54,7 @@ if (msg[page] != "%%%") || (question[page] != "%%%")
 			create_notification("monstninja");
 		}
 	}
-	if (text == "battle_act_brock3" && enemy.convince >= 5 && page >= 10)
+	if (text == "battle_act_brock3" && enemy.convince >= 5 && page >= 11)
 		enemy.body.tense = true;
 }
 else

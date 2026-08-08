@@ -116,7 +116,7 @@ if (msg_format[page] == "bubble")
 
 // draw text
 shaking = 0;
-floating = 0;
+floating = -1;
 myfloat += 0.175;
 for (var c = 1; c < (text_length + 1); c++)
 {
@@ -217,7 +217,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			}
 			if (string_char_at(msg[page], c + 1) == "F" && _cancheck == 1) 
 			{
-				text_color[0] = #EE145B;
+				text_color[0] = c_fuchsia;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) 
@@ -268,7 +268,7 @@ for (var c = 1; c < (text_length + 1); c++)
 		if (string_char_at(msg[page], (c + 1)) == "D" && _cancheck == 1) // reset
 		{
 			shaking = 0;
-			floating = 0;
+			floating = -1;
 			_cancheck = 0;
 		}
 		if (string_char_at(msg[page], (c + 1)) == "S" && _cancheck == 1) // shake
@@ -346,7 +346,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			}
 		}
 	}
-	if (floating > 0)
+	if (floating >= 0)
 	{ 
 		var _floatx = (sin((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 		var _floaty = (cos((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));

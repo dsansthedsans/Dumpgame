@@ -349,6 +349,8 @@ if (type == 6.24)
 	audio_play(snd_explosion2, 0, VOLUME_SOUND);
 	shakescreen(5, 5);
 }
+if (type >= 6 && type < 7)
+	dmg -= clamp(controller.enemy_obj[myself].negotiate, 0, 1);
 
 if (type == 13)
 {
