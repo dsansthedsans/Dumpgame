@@ -39,7 +39,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 	{
 		cam_speedX = (cam_offsetX / cam_time);
 		cam_speedY = (cam_offsetY / cam_time);
-		if (abs(game.cam_x - cam_x) > abs(cam_speedX) && abs(game.cam_y - cam_y) > abs(cam_speedY))
+		if ((game.cam_x - cam_x) > (cam_speedX) && abs(game.cam_y - cam_y) > abs(cam_speedY))
 		{
 			game.cam_x += cam_speedX;
 			game.cam_y += cam_speedY;
@@ -261,7 +261,7 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 	{
 		screenpos(cam_x, cam_y);
 		gate_draw = true;
-		gate_height = 0;
+		gate_height = (gate_heightMax * !DEBUG_SKIP);
 		chara_change(-1, false, false, true, false, false, false);
 		chara_facing(UP);
 		chara.x = chara_jumpX;
@@ -295,8 +295,14 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 		}
 		else if (round(gate_height) <= 0)
 		{
-			con = 3;
-			alarm[2] = 120;
+			if (global.flag[38] == false)
+				con = 3;
+			else
+			{
+				global.flag[39] = 0.75;
+				con = 6;
+			}
+			alarm[2] = (60 * 2);
 			gate_height = 0;
 			if (audio_playing(snd_option_movehold) == true)
 				audio_stop(snd_option_movehold);
@@ -308,14 +314,75 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 	{
 		global.flag[39] = 0.5;
 		writer("event_brock_battle_3");
-		con = 5;
+		con += 1;
+	}
+	else if (con == 5 && exists(thiswriter) == false)
+	{
+		global.flag[39] = 0.75;
+		con += 1;
+		aftercon += 1;
+		alarm[2] = (60 * 4);
+	}
+	if (aftercon == 3 && brock != undefined && exists(brock) == true)
+	{
+		brock.gravity = 0.025;
+		brock.gravity_direction = 90;
+		brock.hspeed += 0.03;
+		if (brock.y <= -20)
+		{
+			aftercon += 1;
+			destroy(brock);
+			brock = undefined;
+		}
+	}
+	if (con == 7)
+	{
+		//if (global.flag[38] == true && chara_murder() >= 1)
+		//	global.flag[39] = (0.75 + 0.125);
+		writer("event_brock_battle_4");
+		chara_facing(LEFT);
+		party_facing(0, RIGHT);
+		con += 1;
+	}
+	else if (con == 8 && exists(thiswriter) == false)
+	{
+		con += 1;
+		m6.image_speed = chara.wimgspeed;
+		m6.image_index = 1;
+		movetopoint((chara.x - 20), chara.y, (cam_time / 2), m6);
+		cam_offsetX = (game.cam_charax - game.cam_x);
+		cam_offsetY = (game.cam_charay - game.cam_y);
+	}
+	else if (con == 9)
+	{
+		if (exists(thismover) == false)
+			party_stop(0);
+		cam_speedX = (cam_offsetX / cam_time);
+		cam_speedY = (cam_offsetY / cam_time);
+		if (global.indebug == true)
+			debug($"game.cam_charax = {game.cam_charax} | game.cam_x = {game.cam_x} | cam_speedX = {cam_speedX} | game.cam_charay = {game.cam_charay} | game.cam_camy = {game.cam_y} | cam_speedY = {cam_speedY}");
+		if ((game.cam_charax - game.cam_x) >= cam_speedX && (game.cam_charay - game.cam_y) >= cam_speedY)
+		{
+			game.cam_x += cam_speedX;
+			game.cam_y += cam_speedY;
+		}
+		else
+		{
+			game.cam_x = game.cam_charax;
+			game.cam_y = game.cam_charay;
+			global.flag[39] = true;
+			global.flag[41] = true;
+			chara_facing(DOWN);
+			chara_change(-1, true, true, false, true, true, true);
+			party_change(0, 1, LEFT);
+			con += 1;
+		}
 	}
 }
 else
 {
 	if (is_undefined(brock) == false && exists(brock) == true)
 		destroy(brock);
-	destroy(id);
 }
 if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0) || (global.flag[37] == 1 && global.flag[39] < 1)
 {

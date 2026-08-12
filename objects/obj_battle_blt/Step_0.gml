@@ -1,44 +1,13 @@
-
 if (active == 1)
 {
-	if (type == 2000) // Toilet
-	{
-		image_alpha += 0.1;
-		
-		if (exists(thismover) == 0 && stage == 0 && delay <= 0)
-		{
-			direction = point_direction(x, y, obj_battle_heart.x, obj_battle_heart.y);
-			image_index = 2;
-			image_angle = (direction + 90);
-			speed = 4;
-			stage = 1;
-			audio_play(snd_launch, 0, VOLUME_SOUND);
-		}
-		else if (exists(thismover) == 0 && delay > 0)
-			delay -= 1;
-		
-		if (stage == 1)
-		{
-			var _y = (controller.box_y + (controller.box_h / 2) - 20);
-			if (y >= _y && x > (controller.box_x - (controller.box_w / 2)) && x < (controller.box_x + (controller.box_w / 2)))
-			{
-				y = _y;
-				speed = 0;
-				image_index = 3;
-				image_angle = 0;
-				audio_play(snd_splat, 0, VOLUME_SOUND);
-				stage = 2;
-			}
-		}
-	}
-	
-	if (type == -1) // test
+	// TESTGUY
+	if (type == -1)
 	{
 		if (stage == 0)
 		{
 			delay += 1;
 			image_alpha += 0.1;
-			if (delay >= 60)
+			if (delay >= 30)
 			{
 				audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 				delay = 0;
@@ -48,28 +17,29 @@ if (active == 1)
 		else if (stage == 1)
 		{
 			gravity = 0.1;
-			if (y >= (controller.box_y + (controller.box_h / 2)) - 40)
+			if (y >= (controller.box_y + (controller.box_h / 2) - sprite_height))
 			{
 				vspeed = 0;
 				gravity = 0;
 				audio_play(snd_impact, 0, VOLUME_SOUND);
+				shakescreen(2, 2);
 				stage = 2;
 			}	
 		}
 		else if (stage == 2)
 		{
 			delay += 1;
-			if (delay >= 30)
+			if (delay >= 15)
 			{
 				gravity = 0.1;
 				stage = 3;
 			}
 		}
-		else if (stage == 3 && y >= (room_height + 40))
+		else if (stage == 3 && y >= room_height)
 			destroy(id);
 	}
-	
-	if (type == 1) // Dummy
+	// Dummy
+	if (type == 1)
 	{
 		if (global.chara_curhp <= 2)
 			can_damage = 0;
@@ -97,8 +67,8 @@ if (active == 1)
 			}
 		}
 	}
-	
-	if (type == 2.1) // Armsguy
+	// Armsguy
+	if (type == 2.1)
 	{
 		if (stage == 0)
 		{
@@ -131,8 +101,8 @@ if (active == 1)
 		else if (delay > 0)
 			delay -= 1;
 	}
-	
-	if (type == 3.0) // Trashguy
+	// Trashguy
+	if (type == 3.0)
 	{
 		if (image_xscale < 2 && image_yscale < 2)
 		{
@@ -196,8 +166,8 @@ if (active == 1)
 			}
 		}
 	}
-	
-	if (type >= 4.0 && type <= 4.2) // Flitcher
+	// Flitcher
+	if (type >= 4.0 && type <= 4.2)
 	{
 		siner += 0.1;
 		if (type == 4.0)
@@ -207,8 +177,8 @@ if (active == 1)
 		else if (type == 4.2)
 			vspeed = (sin(siner + pos) * 0.75);
 	}
-	
-	if (type == 5.1) // Eyecrush
+	// Eyecrush (UNUSED)
+	if (type == 5.1)
 	{
 		if (stage == 0)
 		{
@@ -253,10 +223,13 @@ if (active == 1)
 		if (speed < 8)
 			speed += 0.25;
 	}
-	
-	if (type == 6.0) // Broken Clock
+	// Broken Clock
+	if (type == 6.0)
 	{
-		speed += 0.05;
+		var _speed_add = 0.05;
+		if (controller.enemy_obj[myself].negotiate >= 2)
+			_speed_add *= 0.75;
+		speed += _speed_add;
 		afterimage();
 	}
 	if (type == 6.1)
@@ -271,11 +244,9 @@ if (active == 1)
 					audio_play(snd_launch, 0, VOLUME_SOUND);
 				playsnd = 1;
 			}
-		
 			if (image_alpha < 1)
 				image_alpha += 0.05;
 			image_angle += angleamt;
-			
 			pospos += 1;
 			xpos[pospos] = x;
 			ypos[pospos] = y;
@@ -347,6 +318,8 @@ if (active == 1)
 			var _time = 27;
 			if (controller.battle_round > 3)
 				_time = 22;
+			if (controller.enemy_obj[myself].negotiate >= 2)
+				_time += 5;
 			dx1 = (x - (sw / 2) + 2);
 			dy1 = (y - (sh / 2) + 2);
 			dx2 = (nextx + (sw / 2) - 2);
@@ -373,6 +346,8 @@ if (active == 1)
 			var _time = 20;
 			if (controller.battle_round > 3)
 				_time = 15;
+			if (controller.enemy_obj[myself].negotiate >= 2)
+				_time += 5;
 			if (delay >= _time)
 			{
 				x = nextx;
@@ -397,7 +372,7 @@ if (active == 1)
 		}
 		fadeout = 1;
 	}
-	
+	// Rhonhey (MEE6's Encounter)
 	if (type == 13 && image_alpha < 1)
 	{
 		if (delaydelay > 0)
@@ -417,14 +392,35 @@ if (active == 1)
 			}
 		}
 	}
+	// Toilet
+	if (type == 2000)
+	{
+		image_alpha += 0.1;
+		
+		if (exists(thismover) == 0 && stage == 0 && delay <= 0)
+		{
+			direction = point_direction(x, y, obj_battle_heart.x, obj_battle_heart.y);
+			image_index = 2;
+			image_angle = (direction + 90);
+			speed = 4;
+			stage = 1;
+			audio_play(snd_launch, 0, VOLUME_SOUND);
+		}
+		else if (exists(thismover) == 0 && delay > 0)
+			delay -= 1;
+		
+		if (stage == 1)
+		{
+			var _y = (controller.box_y + (controller.box_h / 2) - 20);
+			if (y >= _y && x > (controller.box_x - (controller.box_w / 2)) && x < (controller.box_x + (controller.box_w / 2)))
+			{
+				y = _y;
+				speed = 0;
+				image_index = 3;
+				image_angle = 0;
+				audio_play(snd_splat, 0, VOLUME_SOUND);
+				stage = 2;
+			}
+		}
+	}
 }
-
-
-
-
-
-
-
-
-
-

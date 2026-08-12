@@ -293,7 +293,7 @@ if (con == 41)
 			}
 			if (s == 2)
 			{
-				for (var z = 0; z < 9; z++)
+				for (var z = 0; z < 10; z++)
 				{
 					for (var i = 0; i < 5; i++)
 					{

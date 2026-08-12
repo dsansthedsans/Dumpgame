@@ -248,12 +248,12 @@ function room_interact()
 			sprite_index = spr_npc_flitcher;
 			depth = -(bbox_bottom + 10);
 			text = "npc_flitcher_exit";
-			if (chara_murder() >= 2)
+			if (global.world_curpopulation[chara_world()] <= 0)
 				destroy(id);
 		}
 		if (x == 240 && y == 270)
 		{
-			if (chara_murder() < 2)
+			if (global.world_curpopulation[chara_world()] > 0)
 				destroy(id);
 		}
 		if (x == 785 && y == 380)
@@ -261,7 +261,7 @@ function room_interact()
 			sprite_index = spr_npc_armsguy_lifting;
 			image_speed = 1;
 			text = "npc_armsguy_exit_lifting";
-			if (chara_murder() >= 2)
+			if (global.world_curpopulation[chara_world()] <= 0)
 				destroy(id);
 		}
 		if (x == 150 && y == 155)
@@ -279,7 +279,7 @@ function room_interact()
 		{
 			sprite_index = spr_npc_armsguy;
 			text = "npc_cave_armsguy";
-			if (chara_murder() >= 2)
+			if (global.world_curpopulation[WORLD_CORRIDORS] <= 0)
 				destroy(id);
 		}
 		if (x == 130 && y == 50)
@@ -859,6 +859,9 @@ function room_solid() // i really really really fucking hate this how could i ma
 			y += 20;
 		}
 	}
+	
+	if (chara_murder() >= 1)
+		leaf_fall = 0;
 }
 function room_nonsolid()
 {
@@ -891,7 +894,7 @@ function room_nonsolid()
 		else if (y == 240)
 		{
 			sprite_index = spr_overworld_finalcorridor_wallabove;
-			depth = -1000;
+			depth = -room_height;
 		}
 	}
 }

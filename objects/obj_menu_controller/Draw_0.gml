@@ -26,8 +26,8 @@ if (global.menu_lvl == 5)
 			_asset_alpha = ((savefile_murder < 2) ? 0.5 : 1);
 		if (savefile_world == WORLD_CORRIDORS)
 		{
-			if (_asset_sprite == spr_m6_d && (savefile_flag[2] == false || savefile_armor == ITEM_BOWL))
-			|| (_asset_sprite == spr_m6_sit && (savefile_flag[2] == false || savefile_armor != ITEM_BOWL))
+			if (_asset_sprite == spr_m6_d && (savefile_flag[2] == false || (savefile_armor == ITEM_BOWL && savefile_murder < 1) == false))
+			|| (_asset_sprite == spr_m6_sit && (savefile_flag[2] == false || (savefile_armor == ITEM_BOWL && savefile_murder < 1) == true))
 			|| (_asset_sprite == spr_npc_dummy && (savefile_flag[6] == false || savefile_flag[7] == false))
 			|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && savefile_flag[48] == false)
 			|| (_asset_sprite == spr_npc_brock && (savefile_flag[38] == true || savefile_flag[39] == false))

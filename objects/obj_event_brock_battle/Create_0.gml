@@ -40,4 +40,9 @@ brockBrick = [];
 thiswriter = undefined;
 
 //////////////////
-//global.flag[37] = 1;
+DEBUG_SKIP = false;
+if (DEBUG_SKIP == true)
+{
+	global.flag[37] = 1;
+	global.flag[38] = 1;
+}

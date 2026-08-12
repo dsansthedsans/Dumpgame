@@ -47,9 +47,6 @@ if (myid == "brockwin")
 {
 	achievement_id = ACHIEVEMENT_BROCKWIN;
 	mytype = 0;
-	
-	if (global.chara_murder >= 2)
-		achievement_snd = -1;
 }
 if (myid == "puzzlemaster")
 {

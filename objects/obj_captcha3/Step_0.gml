@@ -183,9 +183,12 @@ if (timer.active == true)
 		}
 		timer.milliseconds = ((timer.seconds > 0) ? timer.millisecondsTotal : 0);
 		timer.seconds = clamp((timer.seconds - 1), 0, timer.seconds);
-		timer.color_green = 255;
-		timer.scale = 1.25;
-		audio_play(snd_impactBump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
+		if (chara_murder() < 1)
+		{
+			timer.color_green = 255;
+			timer.scale = 1.25;
+			audio_play(snd_impactBump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
+		}
 		audio_play(snd_writer_0, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
 	}
 }

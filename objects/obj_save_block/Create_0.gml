@@ -1,6 +1,4 @@
-
 event_inherited();
-
 depth = -bbox_bottom;
 visible = 1;
 image_alpha = 1;

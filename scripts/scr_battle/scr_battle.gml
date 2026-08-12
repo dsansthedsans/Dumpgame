@@ -38,82 +38,35 @@ function battle_getgroup()
 function battle_setupgroup()
 {
 	defaultx[0] = box_x;
-	
 	defaultx[1] = (box_x - 120);
 	defaultx[2] = (box_x + 120);
-	
 	defaultx[3] = (box_x - 200);
 	defaultx[4] = box_x;
 	defaultx[5] = (box_x + 200);
 	for (var i = 0; i < array_length(defaultx); i++)
 		defaultx[i] = round(defaultx[i]);
-	
 	defaulty = round(box_y - (box_h / 2) - box_borderw - 20);
-	
 	battle_bg = spr_battle_bg_corridors;
 	if (global.chara_world == WORLD_CAVERNS)
 		battle_bg = spr_battle_bg_cave;
 	battle_music = mus_battle_1;
-	
-	if (battle_group == -4) // Test
-	{
-		
-		enemy_type[0] = -1;
-		enemy_obj[0] = instance_create_layer(defaultx[1], defaulty, "Instances", obj_enemy_test);
-		
-		enemy_type[1] = -1;
-		enemy_obj[1] = instance_create_layer(defaultx[2], defaulty, "Instances", obj_enemy_test);
-	}
-	if (battle_group == -3)
-	{
-		enemy_type[0] = -1;
-		enemy_obj[0] = instance_create_layer((defaultx[3] - 20), defaulty, "Instances", obj_enemy_test);
-		
-		enemy_type[1] = -1;
-		enemy_obj[1] = instance_create_layer((defaultx[2] - 20), defaulty, "Instances", obj_enemy_test);
-	}
-	if (battle_group == -2)
-	{
-		enemy_type[0] = -1;
-		enemy_obj[0] = instance_create_layer(-20, -20, "Instances", obj_enemy_test);
-	}
-	if (battle_group == -1)
+	battle_flee = false;
+	if (battle_group == -1) // TESTGUY
 	{
 		battle_bg = spr_battle_bg_corridors;
-		
 		enemy_type[0] = -1;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_test);
 	}
-	
-	if (battle_group == 13) // Rhonhey
-	{
-		battle_music = mus_event_rhonhey_battle;
-		button_active = false;
-		enemy_type[0] = 7;
-		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
-		heart.x = box_defaultx;
-		heart.y = round(box_defaulty + (160 / 3));
-		assist.active = false;
-		assist.x = (room_width * 1.5);
-		assist.y = (room_height * 0.5);
-		assist.objectSpeedMax = 14;
-		assist.slide = false;
-		assist.heal = 99;
-		assist.audio_volume = 0.5;
-		assist.destroyBullets = false;
-	}
-	
 	if (battle_group == 0) // But nobody came.
 	{
 		battle_music = -1;
-		if (global.flag[22] == false)
-			audio_play(snd_murder, 0, VOLUME_SOUND);
+		//if (global.flag[22] == false)
+		//	audio_play(snd_jingleOminous, 0, VOLUME_SOUND);
 		global.flag[22] = true;
 	}
 	if (battle_group == 1) // Dummy
 	{
 		battle_bg = spr_battle_bg_dummy;
-		battle_flee = 0;
 		battle_music = mus_battle_dummy;
 		
 		enemy_type[0] = 1;
@@ -139,80 +92,90 @@ function battle_setupgroup()
 		enemy_type[0] = 5;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_eyecrush);	
 	}
-	
 	if (battle_group == 6) // Broken Clock
 	{
-		battle_flee = 0;
 		battle_music = mus_battle_brock;
 		enemy_type[0] = 6;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + sprite_get_width(spr_enemy_brock_body)), (room_height / 2), "Instances", obj_enemy_brock);
 		obj_battle_bg.waveSpeed /= 2;
 	}
-	
 	if (battle_group == 7) // Armsguy, Armsguy
 	{	
+		battle_flee = true;
 		enemy_type[0] = 2;
 		enemy_obj[0] = instance_create_layer(defaultx[1], defaulty, "Instances", obj_enemy_armsguy);
-		
 		enemy_type[1] = 2;
 		enemy_obj[1] = instance_create_layer(defaultx[2], defaulty, "Instances", obj_enemy_armsguy);	
 	}
 	if (battle_group == 8) // Trashguy, Armsguy
 	{	
+		battle_flee = true;
 		enemy_type[0] = 3;
 		enemy_obj[0] = instance_create_layer(defaultx[1], defaulty, "Instances", obj_enemy_trashguy);
-		
 		enemy_type[1] = 2;
 		enemy_obj[1] = instance_create_layer(defaultx[2], defaulty, "Instances", obj_enemy_armsguy);
 	}
 	if (battle_group == 9) // Armsguy, Flitcher
 	{	
+		battle_flee = true;
 		enemy_type[0] = 2;
 		enemy_obj[0] = instance_create_layer(defaultx[1], defaulty, "Instances", obj_enemy_armsguy);
-		
 		enemy_type[1] = 4;
 		enemy_obj[1] = instance_create_layer(defaultx[2], defaulty, "Instances", obj_enemy_flitcher);	
 	}
 	if (battle_group == 10) // Eyecrush, Armsguy (UNUSED)
 	{
+		battle_flee = true;
 		enemy_type[0] = 5;
 		enemy_obj[0] = instance_create_layer(defaultx[1], defaulty, "Instances", obj_enemy_eyecrush);
-		
 		enemy_type[1] = 2;
 		enemy_obj[1] = instance_create_layer(defaultx[2], defaulty, "Instances", obj_enemy_armsguy);
 	}
 	if (battle_group == 11) // Eyecrush, Flitcher (UNUSED)
 	{
+		battle_flee = true;
 		enemy_type[0] = 5;
 		enemy_obj[0] = instance_create_layer(defaultx[1], defaulty, "Instances", obj_enemy_eyecrush);
-		
 		enemy_type[1] = 4;
 		enemy_obj[1] = instance_create_layer(defaultx[2], defaulty, "Instances", obj_enemy_flitcher);
 	}
 	if (battle_group == 12) // Armsguy, Trashguy, Flitcher
 	{
+		battle_flee = true;
 		enemy_type[0] = 2;
 		enemy_obj[0] = instance_create_layer(defaultx[3] + 20, defaulty, "Instances", obj_enemy_armsguy);
-		
 		enemy_type[1] = 3;
 		enemy_obj[1] = instance_create_layer(defaultx[4] + 25, defaulty, "Instances", obj_enemy_trashguy);
-		
 		enemy_type[2] = 4;
 		enemy_obj[2] = instance_create_layer(defaultx[5] - 5, defaulty, "Instances", obj_enemy_flitcher);
 	}
-	
+	if (battle_group == 13) // Rhonhey (MEE6)
+	{
+		battle_music = mus_event_rhonhey_battle;
+		button_active = false;
+		enemy_type[0] = 7;
+		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
+		heart.x = box_defaultx;
+		heart.y = round(box_defaulty + (160 / 3));
+		assist.active = false;
+		assist.x = (room_width * 1.5);
+		assist.y = (room_height * 0.5);
+		assist.objectSpeedMax = 14;
+		assist.slide = false;
+		assist.heal = 99;
+		assist.audio_volume = 0.5;
+		assist.destroyBullets = false;
+	}
 	if (battle_group == 14) // Rhonhey
 	{
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
 	}
-	
 	if (battle_group == 1000) // TROLLFACE
 	{
-		//battle_flee = 0;
-		battle_music = mus_battle_troll;
 		battle_bg = spr_battle_bg_troll;
 		obj_battle_bg.waveSpeed /= 2;
+		battle_music = mus_battle_troll;
 		enemy_type[0] = 1000;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_troll);
 	}
@@ -233,45 +196,20 @@ function battle_enemy()
 			enemy_obj[i].myself = i;
 			enemy_obj[i].hpwidth = 100;
 			enemy_obj[i].hurtsound = snd_shriekFrog;
-		
-			if (enemy_type[i] == 2000) // Toilet
+			if (enemy_type[i] == -1) // TESTGUY
 			{
-				enemy_name[i] = "Toilet";
-				enemy_curhp[i] = 1000;
-				enemy_maxhp[i] = 1000;
-				enemy_atk[i] = 10;
-				enemy_def[i] = 10;
-				enemy_reward_exp[i] = 100;
-				enemy_reward_mny[i] = 100;
-				enemy_obj[i].hpwidth = 200;
-				enemy_act[i, 1] = "Flush";
-			}
-			if (enemy_type[i] == -1000) // Sans
-			{
-				enemy_name[i] = "Sans";
-				enemy_curhp[i] = 1;
-				enemy_maxhp[i] = 1;
-				enemy_atk[i] = 1;
-				enemy_def[i] = 1;
-			}
-			
-			if (enemy_type[i] == -1) || (enemy_type[i] == -10) // test
-			{
-				enemy_name[i] = "TESTE 1";
-				if (enemy_type[i] == -10)
-					enemy_name[i] = "TESTE 2";
+				enemy_name[i] = "TESTGUY";
 				enemy_curhp[i] = 50;
 				enemy_maxhp[i] = 50;
 				enemy_atk[i] = 0;
-				enemy_def[i] = -100;
-				enemy_reward_exp[i] = 300;
+				enemy_def[i] = 0;
+				enemy_reward_exp[i] = 99999999;
 				enemy_reward_mny[i] = 200;
 				enemy_act[i, 1] = "Plead";
 				enemy_act[i, 2] = "Challenge";
 				enemy_act[i, 3] = "Convince";
 				enemy_act[i, 4] = "Kick";
 			}
-		
 			if (enemy_type[i] == 1) // Dummy
 			{
 				enemy_name[i] = "Dummy";
@@ -335,7 +273,6 @@ function battle_enemy()
 				enemy_act[i, 1] = get_text("unused_battle_act_eyecrush_1");
 				enemy_act[i, 2] = get_text("unused_battle_act_eyecrush_2");
 			}
-			
 			if (enemy_type[i] == 6) // Broken Clock
 			{
 				enemy_name[i] = "Broken Clock";
@@ -350,7 +287,6 @@ function battle_enemy()
 				enemy_act[i, 3] = get_text("battle_act_brock_3");
 				enemy_obj[i].hurtsound = snd_impactBreak;
 			}
-			
 			if (enemy_type[i] == 7) // Rhonhey
 			{
 				enemy_name[i] = "Rhonhey";
@@ -364,7 +300,6 @@ function battle_enemy()
 				enemy_act[i, 2] = get_text("battle_act_rhonhey_2");
 				enemy_act[i, 3] = get_text("battle_act_rhonhey_3");
 			}
-			
 			if (enemy_type[i] == 1000) // TROLLFACE
 			{
 				enemy_name[i] = "TROLLFACE";
@@ -376,6 +311,18 @@ function battle_enemy()
 				enemy_reward_mny[i] = 100;
 				enemy_obj[i].hurtsound = snd_shriekTroll;
 			}
+			if (enemy_type[i] == 2000) // Toilet
+			{
+				enemy_name[i] = "Toilet";
+				enemy_curhp[i] = 1000;
+				enemy_maxhp[i] = 1000;
+				enemy_atk[i] = 10;
+				enemy_def[i] = 10;
+				enemy_reward_exp[i] = 100;
+				enemy_reward_mny[i] = 100;
+				enemy_obj[i].hpwidth = 200;
+				enemy_act[i, 1] = "Flush";
+			}
 		}
 	}
 }
@@ -384,26 +331,11 @@ function battle_getattack()
 	box_nextw = 160;
 	box_nexth = 160;
 	battle_turntime = 450;
-	
 	heart_nextx = -1;
 	heart_nexty = -1;
-	
 	for (var i = 0; i < enemy_length; i++)
 	{
 		enemy_attack[i]	= irandom(1);
-		
-		if (enemy_type[i] == 2000) // Toilet
-		{
-			enemy_attack[i] = 0;
-			battle_turntime = 600;
-		}
-		
-		if (enemy_type[i] == 5555) // empty
-		{
-			enemy_attack[i] = 1;
-			battle_turntime = 600;
-		}
-	
 		if (enemy_type[i] == 2) // Armsguy
 		{
 			if (i == 1 && enemy_type[(i - 1)] == 3 && enemy_attack[(i - 1)] == 1)
@@ -425,7 +357,6 @@ function battle_getattack()
 				box_nexth = 120;
 			}
 		}
-		
 		if (enemy_type[i] == 6) // Broken Clock
 		{
 			if (enemy_spare[i] < 100)
@@ -452,14 +383,17 @@ function battle_getattack()
 				battle_turntime = 60;
 			}
 		}
-		
 		if (enemy_type[i] == 7) // Rhonhey
 		{
 			enemy_attack[i] = 0;
 			heart_nexty = round(box_nexty + (box_nexth / 3));
 		}
+		if (enemy_type[i] == 2000) // Toilet
+		{
+			enemy_attack[i] = 0;
+			battle_turntime = 600;
+		}
 	}
-	
 	if (heart_nextx == -1)
 		heart_nextx = box_nextx;
 	if (heart_nexty == -1)
@@ -470,22 +404,18 @@ function battle_getattack()
 function battle_attack()
 {
 	// vars: time (1), amt (0), stage (0), delay (999), siner (0), controller and box_ (myself, enemy (type), attack)
-	if (enemy == -1) || (enemy == -10) // test
+	if (enemy == -1) // test
 	{
-		if (attack == 0)
+		delay += 1;
+		if (delay >= 30)
 		{
-			delay += 1;
-			if (delay >= 30)
-			{
-				var _x = (box_x - (box_w / 2) + (40 * irandom(3)));
-				var _y = (box_y - (box_h / 2) - box_borderw - 40);
-				create(_x, _y, obj_battle_blt);
-				thisobj.type = -1;
-				delay = 0;
-			}
+			var _x = (box_x - (box_w / 2) + (40 * irandom(3)));
+			var _y = (box_y - (box_h / 2) - box_borderw - (sprite_get_height(spr_battle_blt_test) * 2));
+			create(_x, _y, obj_battle_blt);
+			thisobj.type = -1;
+			delay = 0;
 		}
 	}
-	
 	if (enemy == 1) // Dummy
 	{
 		var _x = choose((box_x - box_w), (box_x + box_w));
@@ -643,7 +573,6 @@ function battle_attack()
 			time = (irandom_range(20, 35) + (normaltime * 2));
 		}
 	}
-	
 	if (enemy == 6) // Broken Clock
 	{
 		var _body = controller.enemy_obj[myself].body;
@@ -732,7 +661,7 @@ function battle_attack()
 				{
 					create(controller.box_nextx, controller.box_nexty, obj_battle_blt);
 					thisobj.type = (6.2 + (i / 100));
-					thisobj.spd = (choose(i, -i) * 1.75);
+					thisobj.spd = ((choose(i, -i) * 1.75) * (1 - (0.125 * (controller.enemy_obj[myself].negotiate >= 2))));
 					thisobj.myself = myself;
 				}
 				time = 60;
@@ -762,6 +691,8 @@ function battle_attack()
 				var _time = 45;
 				if (controller.battle_round > 2)
 					_time = 40;
+				if (controller.enemy_obj[myself].negotiate >= 2)
+					_time += 5;
 				battle_danger(1, danger_x1, danger_y1, danger_x2, danger_y2, _time);
 				
 				time = _time;
@@ -775,12 +706,15 @@ function battle_attack()
 				thisobj.targety = danger_y2;
 				thisobj.myself = myself;
 				
-				time = 60 - (10 * (controller.battle_round > 2));
+				time = 60;
+				if (controller.battle_round > 2)
+					time -= 10;
+				if (controller.enemy_obj[myself].negotiate >= 2)
+					time += 10;
 				stage = 1;
 			}
 		}
 	}
-	
 	if (enemy == 7) // Rhonhey
 	{
 		if (attack == 0)
@@ -1054,7 +988,6 @@ function battle_attack()
 			}
 		}
 	}
-	
 	if (enemy == 2000) // Toilet
 	{
 		if (attack == 0)

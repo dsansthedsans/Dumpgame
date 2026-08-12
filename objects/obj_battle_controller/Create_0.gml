@@ -99,8 +99,12 @@ for (var i = 0; i < enemy_length; i++)
 	enemy_reward_exp[i] = 0;
 	enemy_reward_mny[i] = 0;
 	for (var z = 0; z < 6; z++)
+	{
 		enemy_act[i, z] = "";
-	enemy_act[i, 0] = "Check";
+		enemy_act_enabled[i, z] = true;
+	}
+	enemy_act[i, 0] = get_text("battle_act_0");
+	
 }
 
 assist =

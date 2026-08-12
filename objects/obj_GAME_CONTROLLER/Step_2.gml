@@ -1,26 +1,29 @@
 
 chara = obj_chara;
-if (exists(chara) == 1 && global.chara_camera_move == 1)
+if (exists(chara) == 1)
 {
-	var _cam_spd = cam_spd;
-	cam_charax = (chara.x - 160);
-	cam_charay = (chara.y - round(chara.sprite_height / 2) - 120);
-	if (global.chara_cutscene == true && global.chara_facing == SIT && is_undefined(chara.lastcol) == false && exists(chara.lastcol) == true && chara.lastcol.object_index == obj_interact_block && chara.lastcol.result == 1)
+	cam_charax = clamp((chara.x - 160), 0, (room_width - 320));
+	cam_charay = clamp((chara.y - round(chara.sprite_height / 2) - 120), 0, (room_height - 240));
+	if (global.chara_camera_move == 1)
 	{
-		_cam_spd /= 2;
-		cam_charax = (chara.lastcol.x + (chara.lastcol.sprite_width / 2) - 160);
-		cam_charay = (chara.lastcol.y + (chara.lastcol.sprite_height / 2) - 120);
-	}
-	if (cam_spdJump == true) || (global.visualeff == false)
-		_cam_spd = 1;
-	cam_x = lerp(cam_x, clamp(cam_charax, 0, (room_width - 320)), _cam_spd);
-	cam_y = lerp(cam_y, clamp(cam_charay, 0, (room_height - 240)), _cam_spd);
-	if (exists(obj_room_transition) == false) || (exists(obj_room_transition) == true && obj_room_transition.altcon >= 2)
-		cam_spdJump = false;
+		var _cam_spd = cam_spd;
+		if (global.chara_cutscene == true && global.chara_facing == SIT && is_undefined(chara.lastcol) == false && exists(chara.lastcol) == true && chara.lastcol.object_index == obj_interact_block && chara.lastcol.result == 1)
+		{
+			_cam_spd /= 2;
+			cam_charax = clamp((chara.lastcol.x + (chara.lastcol.sprite_width / 2) - 160), 0, (room_width - 320));
+			cam_charay = clamp((chara.lastcol.y + (chara.lastcol.sprite_height / 2) - 120), 0, (room_height - 240));
+		}
+		if (cam_spdJump == true) || (global.visualeff == false)
+			_cam_spd = 1;
+		cam_x = lerp(cam_x, cam_charax, _cam_spd);
+		cam_y = lerp(cam_y, cam_charay, _cam_spd);
+		if (exists(obj_room_transition) == false) || (exists(obj_room_transition) == true && obj_room_transition.altcon >= 2)
+			cam_spdJump = false;
 	
-	// custom
-	if (room == room_corridors_18)
-		cam_y = clamp(cam_y, 60, (room_height - 240));
+		// custom
+		if (room == room_corridors_18)
+			cam_y = clamp(cam_y, 60, (room_height - 240));
+	}
 }
 var _xx = cam_x;
 var _yy = cam_y;

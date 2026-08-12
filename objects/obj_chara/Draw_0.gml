@@ -15,14 +15,14 @@ if (global.chara_facing != -1 && global.chara_facing != SIT) || (sprite_index ==
 		_extrayfactor = 1;
 	if (global.chara_facing == FALLEN) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 		_extrayfactor = 0;
-	if (inwater == true)
-		_extrayfactor += 2;
+	//if (inwater == true)
+	//	_extrayfactor += 2;
 	if (chara_murder() >= 1)
 	{
 		var _sprite = spr_chara_genoshadow;
 		if (sprite_index == spr_chara_fallen) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 			_sprite = asset_get_index($"{sprite_get_name(sprite_index)}_genoshadow");
-		draw_sprite_ext(_sprite, global.chara_facing, x, (y + _extrayfactor), xscale, yscale, image_angle, image_blend, (image_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
+		draw_sprite_ext(_sprite, global.chara_facing, x, (_chara_y + _extrayfactor), xscale, yscale, image_angle, image_blend, (image_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
 	}
 	var _armor = 0;
 	var _armor_x = -20;

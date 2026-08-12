@@ -10,3 +10,4 @@ if (hp_alpha > 0)
 	surface_reset_target();
 	draw_surface_ext(hp_surface, game.cam_x, game.cam_y, 0.5, 0.5, 0, c_white, hp_alpha);
 }
+draw_set_alpha(1);

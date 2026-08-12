@@ -68,14 +68,14 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				music_set(0, mus_corridors_geno)
 		}
 		// Broken Clock
-		if (room == room_corridors_11)
+		if (room == room_corridors_11 && global.flag[39] != (0.75 + 0.125))
 		{
-			if (global.flag[37] == 0.25) || (global.flag[37] >= 0.75 && global.flag[39] == 0) || (global.flag[39] == 1 && global.flag[41] == 0)
+			if (global.flag[37] == 0.25) || (global.flag[37] >= 0.75 && global.flag[39] == 0) || (global.flag[39] == 0.75) || (global.flag[39] == 1 && global.flag[41] == 0)
 				music_set(0, -1);
 			if (global.flag[37] == 0.5)
 				music_set(0, mus_event_brock_mad, , , , , , 0);
 			else if (global.flag[39] == 0.5)
-				music_set(0, mus_event_brock_sad);
+				music_set(0, mus_event_brock_sad_placeholder);
 			//else if (global.flag[37] == 1 && global.flag[39] == 0)
 			//	music_set(0, mus_event_brock_sad, , , , 0.75 + 0.125 + 0.125);
 		}
@@ -90,7 +90,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_0) || (music_old[0] == mus_hurry_loop_1)
 				{
 					music_set(0, mus_hurry_loop_0, , , , , , 0);
-					if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds < obj_captcha3.timer.fog.secondsMin)
+					if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds < obj_captcha3.timer.fog.secondsMin && chara_murder() < 1)
 					{
 						var _sec = obj_captcha3.timer.seconds;
 						var _secMin = obj_captcha3.timer.fog.secondsMin;
@@ -143,7 +143,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				music_set(0, mus_hurry_intro, , , , , false);
 				if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_1)
 				{
-					music_set(0, mus_hurry_loop_1);
+					music_set(0, mus_hurry_loop_1,,,, (1 - (0.025 * (chara_murder() >= 1))));
 					if (obj_event_gabee_chase.con >= 45)
 					{
 						global.music_pitch[0] = music_pitch_old[0];
@@ -193,6 +193,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 }
 else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 {
+	control = obj_battle_controller;
 	for (var i = 0; i < (global.music_length - 2); i++)
 	{
 		music_paused[i] = true;
@@ -201,13 +202,24 @@ else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 			music_set(i, -1);
 			music_fadeouttime_old[0] = 0;
 		}
-		if (global.music[i] == mus_corridors_geno)
+		if (global.music[i] == mus_corridors_geno && ((exists(control) == false && global.battle_nextgroup == 0) || (exists(control) == true && control.battle_music == -1)))
 			music_paused[i] = false;
 	}
-	if (exists(obj_battle_controller) == true)
+	if (exists(control) == true)
 	{
-		control = obj_battle_controller;
-		music_set(3, control.battle_music, 1, 0, 0, (1 - (0.025 * (chara_murder() == 1))), 1, 0.5);
+		var _pitch = (1 - (0.025 * (chara_murder() >= 1)));
+		switch (control.battle_music)
+		{
+			case mus_event_rhonhey_battle:
+			_pitch = 0.75;
+			break;
+			case mus_battle_brock:
+			_pitch = 1;
+			break;
+		}
+		if (control.battle_music == mus_battle_brock)
+			_pitch = 1;
+		music_set(3, control.battle_music, 1, 0, 0, _pitch, 1, 0.5);
 		if (control.battle_group == 6)
 			global.music_fadeouttime[3] = 7.5;
 		//if (control.battle_group == 13)

@@ -50,7 +50,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		if (keyboard_check(vk_tab) == 1)
 			global.battle_nextgroup = 13;
 		if (keyboard_check(vk_space) == 1)
-			global.battle_nextgroup = 12;
+			global.battle_nextgroup = -1;
 		battle();
 	}
 	if (keyboard_check_pressed(vk_numpad7) == 1)

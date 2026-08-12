@@ -270,15 +270,23 @@ if (battle_lvl == 3.0 && press_enter == 1) // item (select)
 
 if (battle_lvl == 2.1 && press_enter == 1) // act 2 (select)
 {
-	if (global.writer != -1)
-		destroy(global.writer);
-	audio_play(snd_option_select, 0, VOLUME_SOUND);
-	level_heard = level_pos;
-	button_select = 0;
-	heart.x = -20;
-	heart.y = -20;
-	battle_lvl = 10;
-	battle_usedact = 1;
+	if (enemy_act_enabled[enemy_target, level_pos] == true)
+	{
+		if (global.writer != -1)
+			destroy(global.writer);
+		audio_play(snd_option_select, 0, VOLUME_SOUND);
+		level_heard = level_pos;
+		button_select = 0;
+		heart.x = -20;
+		heart.y = -20;
+		battle_lvl = 10;
+		battle_usedact = 1;
+	}
+	else
+	{
+		audio_play(snd_option_cantselect, 0, VOLUME_SOUND);
+		shakescreen(2, 2);
+	}
 	press_enter = 0;
 }
 if (battle_lvl == 2.0 && press_enter == 1) // act 1 (select)

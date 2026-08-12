@@ -99,7 +99,7 @@ function TEXT()
 	
 	// room_corridors_1_5
 	if (string_starts_with(text, "room_rockpile_") == true)
-		msg[0] = get_text($"room_rockpile_{clamp(string_char_at(text, string_length(text)), 0, (1 - (chara_murder >= 1)))}_0");
+		msg[0] = get_text($"room_rockpile_{clamp(string_char_at(text, string_length(text)), 0, (1 - (chara_murder() >= 1)))}_0");
 	// obj_event_rhonhey_battle
 	if (string_starts_with(text, "event_rhonhey_battle_") == true)
 	{
@@ -210,7 +210,8 @@ function TEXT()
 	if (text == "room_m6_brokenwall")
 	{
 		msg[0] = get_text("room_m6_brokenwall_0");
-		msg[1] = get_text("room_m6_brokenwall_1");
+		if (chara_murder() < 1)
+			msg[1] = get_text("room_m6_brokenwall_1");
 		msg_format[0] = "textbox_bottom";
 		achievement_add(ACHIEVEMENT_M6TOY);
 	}
@@ -247,10 +248,11 @@ function TEXT()
 	}
 	if (text == "room_rulesbook")
 	{
-		for (var m = 0; m < 3; m++)
-			msg[m] = get_text($"room_rulesbook_{m}");
+		msg[0] = get_text($"room_rulesbook_0");
 		if (chara_murder() < 1)
 		{
+			for (var m = 1; m < 3; m++)
+				msg[m] = get_text($"room_rulesbook_{m}");
 			question[m] = get_text($"room_rulesbook_{m}.0");
 			if (global.flag[67] > 0)
 				question[m] = $"{get_text("room_rulesbook_" + string(m) + ".1_0")}{(global.flag[67] + 1)}{get_text("room_rulesbook_" + string(m) + ".1_" + string(clamp(global.flag[67], 1, 3)))}"
@@ -275,7 +277,7 @@ function TEXT()
 		}
 	}
 	if (text == "room_deadlamp")
-		msg[0] = get_text("room_deadlamp");
+		msg[0] = get_text($"{text}{(chara_murder() < 1) ? "" : "_geno"}");
 		
 	// room_corridors_3_5
 	if (text == "event_m6_predummy_0")
@@ -764,46 +766,80 @@ function TEXT()
 	// room_corridors_11
 	if (text == "room_preclocksign")
 	{
-		for (var i = 0; i < 4; i++)
+		for (var i = 0; i < 5; i++)
 			msg[i] = get_text("room_preclocksign_" + string(i));
 	}
 	
 	// obj_event_brock_battle
-	if (text == "event_brock_battle_0")
+	if (string_starts_with(text, "event_brock_battle_") == true && text != "event_brock_battle_4")
 	{
+		var _text_index = string_char_at(text, string_length(text));
 		for (var i = 0; i < 99; i++)
 		{
-			var _curmsg = get_text("event_brock_battle_0_" + string(i));
-			if (_curmsg != undefined)
-				msg[i] = _curmsg;
+			var _msg = get_text($"event_brock_battle_{_text_index}_{i}");
+			if (_msg != undefined)
+				msg[i] = _msg;
 			else
 				break;
 		}
-		msg_format[0] = "textbox_top";
 		msg_sound[0] = snd_writer_brock;
-		msg_face[2] = spr_dialogface_m6_angry;
-		msg_sound[2] = snd_writer_m6;
-		msg_talker[2] = global.party[0];
-	}
-	if (text == "event_brock_battle_1")
-	{
-		msg[0] = get_text("event_brock_battle_1_0");
 		msg_format[0] = "textbox_top";
-		msg_sound[0] = snd_writer_brock;
+		switch (_text_index)
+		{
+			case 0:
+			msg_face[2] = spr_dialogface_m6_angry;
+			msg_sound[2] = snd_writer_m6;
+			msg_talker[2] = global.party[0];
+			break;
+			case 2:
+			msg[0] = $"{get_text("event_brock_battle_2_0")}{global.chara_name};D.";
+			break;
+			case 3:
+			msg[2] = $"+F0* ... :@@{global.chara_name};D...^2&{msg[2]}";
+			break;
+		}
 	}
-	if (text == "event_brock_battle_2")
+	if (text == "event_brock_battle_4")
 	{
 		for (var i = 0; i < 99; i++)
 		{
-			var _curmsg = get_text("event_brock_battle_2_" + string(i));
-			if (_curmsg != undefined)
-				msg[i] = _curmsg;
+			var _msg = get_text($"event_brock_battle_{string_char_at(text, string_length(text))}_{global.flag[38]}_{i}");
+			if (_msg != undefined)
+			{
+				if (i == 2)
+				{
+					question[i] = _msg;
+					for (var z = 1; z <= 2; z++)
+						question_option[z] = get_text($"event_brock_battle_{string_char_at(text, string_length(text))}_{global.flag[38]}_{i}_{z}");
+					continue;
+				}
+				msg[i] = _msg;
+			}
 			else
 				break;
 		}
-		msg[0] = $"{get_text("event_brock_battle_2_0")}{global.chara_name};D.";
-		msg_sound[0] = snd_writer_brock;
-		msg_format[0] = "textbox_top";
+		msg_sound[0] = snd_writer_m6;
+		msg_talker[0] = global.party[0];
+		if (global.flag[38] == false)
+		{
+			msg_face[0] = spr_dialogface_m6_angry;
+			msg_face[2] = -1;
+			msg_sound[2] = snd_writer_0;
+			msg_talker[2] = -1;
+			msg_face[3] = spr_dialogface_m6_angry;
+			msg_sound[3] = snd_writer_m6;
+			msg_talker[3] = global.party[0];
+		}
+		else 
+		{
+			msg_face[0] = spr_dialogface_m6_default;
+			//if (chara_murder() >= 1)
+			//{
+			//	msg[i] = get_text($"event_brock_battle_4_1_{i}_geno");
+			//	msg[i+1] = get_text($"event_brock_battle_4_1_{i+1}_geno");
+			//	msg_face[i] = spr_dialogface_m6_angry;
+			//}
+		}
 	}
 	if (text == "unused_event_brock_prebattle_6_genotest")
 	{
@@ -815,77 +851,13 @@ function TEXT()
 		msg[4] = "* IN A FIGHT AGAINST ME...";
 		msg[5] = "* YOU'LL NEVER WIN!";
 	}
-	if (text == "event_brock_battle_3")
-	{
-		for (var i = 0; i < 99; i++)
-		{
-			var _curmsg = get_text("event_brock_battle_3_" + string(i));
-			if (_curmsg != undefined)
-				msg[i] = _curmsg;
-			else
-				break;
-		}
-		msg_sound[0] = snd_writer_brock;
-		msg_format[0] = "textbox_top";
-	}
-	if (text == "event_brock_battle_4")
-	{
-		for (var i = 0; i < 99; i++)
-		{
-			var _bonuscheck = "";
-			if (i >= 2 && i <= 4)
-				_bonuscheck = "_" + string(global.flag[38]);
-				
-			var _curmsg = get_text("event_brock_postbattle_1_" + string(i) + string(_bonuscheck));
-			if (_curmsg != undefined)
-				msg[i] = _curmsg;
-			else
-				break;
-		}
-		
-		msg_face[0] = spr_dialogface_m6_angry;
-		if (global.flag[38] == 0)
-		{
-			msg_face[2] = spr_dialogface_m6_neutral;
-			msg_face[3] = spr_dialogface_m6_angry;
-		}
-		else
-		{
-			msg_face[2] = spr_dialogface_m6_neutral;
-			msg_face[3] = spr_dialogface_m6_default;
-		}
-		msg_sound[0] = snd_writer_m6;
-		msg_talker[0] = obj_event_brock_postbattle.m6;
-		msg_format[0] = "textbox_top";
-	}
-	if (text == "event_brock_battle_5")
-	{
-		msg[0] = get_text("event_brock_postbattle_2_0_0");
-		msg_face[0] = spr_dialogface_m6_angry;
-		if (global.flag[38] == 1)
-		{
-			msg[0] = get_text("event_brock_postbattle_2_0_1");
-			msg_face[0] = spr_dialogface_m6_default;
-		}
-		msg_sound[0] = snd_writer_m6;
-		msg_talker[0] = obj_event_brock_postbattle.m6;
-		msg_format[0] = "textbox_top";
-	}
-	
-	// unused_room_corridors_13
+	// room_corridors_13
 	if (text == "unused_room_postclocksign")
 	{
 		msg[0] = "* \"Hey!\"^1&* \"Did you have fun?\"";
 		msg[1] = "* \"Actually,^1 don't mind answering,^1 I'm just a sign.\"";
 		msg[2] = "* \"But we hope you did!\"";
 	}
-	if (text == "unused_room_maurice")
-	{
-		msg[0] = "* (It's a rock in the format of a head.)";
-		msg[1] = "* (The name \"Maurice\" is engraved in its forehead.)";
-	}
-	
-	// room_corridors_13
 	if (text == "npc_armsguy_postbrock")
 	{
 		if (global.flag[49] == 0)
@@ -896,7 +868,7 @@ function TEXT()
 			{
 				msg[3] = "* ";
 				msg_face[3] = spr_dialogface_m6_angry;
-				msg_sound[3] = snd_writer_m6;
+				msg_sound[3] = snd_writer_m6_angry;
 				msg_talker[3] = obj_party;
 			}
 			global.flag[49] = 1;
@@ -907,6 +879,11 @@ function TEXT()
 				msg[i] = get_text($"npc_armsguy_postbrock_1_{i}");
 		}
 		msg_talker[0] = obj_chara.mycol;
+	}
+	if (text == "unused_room_maurice")
+	{
+		msg[0] = "* (It's a rock in the format of a head.)";
+		msg[1] = "* (The name \"Maurice\" is engraved in its forehead.)";
 	}
 	
 	// room_corridors_14
@@ -1050,8 +1027,9 @@ function TEXT()
 			{
 				msg_skip[0] = false;
 				msg_sound[0] = snd_writer_1;
-				msg_font[0] = global.fnt_dsans;
+				msg_font[0] = global.fnt_comic;
 				msg_talker[0] = obj_chara.mycol;
+				msg_type[0] = "tense";
 				global.flag[44] = 0.5;
 			}
 		}
@@ -1348,6 +1326,8 @@ function TEXT()
 			
 			var _groupname = "";
 			var _group = controller.battle_group;
+			if (_group == -1)
+				_groupname = "test";
 			if (_group == 2)
 				_groupname = "armsguy";
 			if (_group == 3)
@@ -1387,6 +1367,11 @@ function TEXT()
 			
 			var _max = 0;
 			var _name = "";
+			if (_type == -1)
+			{
+				_name = "test";
+				_max = 2;
+			}
 			if (_type == 2)
 			{
 				_name = "armsguy";
@@ -1547,21 +1532,24 @@ function TEXT()
 		if (text == "battle_actlist")
 		{
 			target = controller.enemy_target;
-			
 			for (var i = 0; i < 6; i++)
 			{
 				act_name[i] = "";
 				act_space[i] = "";
-				
 				if (controller.enemy_act[target, i] != "")
 				{	
-					act_name[i] = "   * " + string(controller.enemy_act[target, i]);
-						
+					var _act_namePrefix = "";
+					var _act_namePostfix = "";
+					if (controller.enemy_act_enabled[target, i] == false)
+					{
+						_act_namePrefix = ";G";
+						_act_namePostfix = ";D";
+					}
+					act_name[i] = $"   {_act_namePrefix}* {string(controller.enemy_act[target, i])}{_act_namePostfix}";
 					for (var z = 0; z < (11 - string_length(controller.enemy_act[target, i])); z++)
 						act_space[i] += " ";
 				}
 			}
-
 			msg[0] = string(act_name[0]) + string(act_space[0]) + string(act_name[1]) + "&!" + string(act_name[2]) + string(act_space[2]) + string(act_name[3]) + "&!" + string(act_name[4]) + string(act_space[4]) + string(act_name[5])
 			msg_autoskip[0] = 1;
 		}
@@ -1605,7 +1593,7 @@ function TEXT()
 			if (controller.battle_flee == 0)
 				_flee = ";G";
 			
-			msg[0] = "   " + string(_spare) + "* Spare;D&!   " + string(_flee) + "* Flee";	
+			msg[0] = "   " + string(_spare) + $"* {get_text("battle_mercy_0")};D&!   " + string(_flee) + $"* {get_text("battle_mercy_1")}";	
 			msg_autoskip[0] = 1;
 		}
 		
@@ -1663,9 +1651,7 @@ function TEXT()
 		// act
 		if (string_starts_with(text, "battle_act_") == 1)
 		{
-			// "* [---] - [- ATK | - DEF]^1 &* [---]"
 			msg_next[0] = 1;
-			
 			if (text == "battle_act_toilet0") // Toilet
 			{
 				msg[0] = "* Toilet - [?? ATK | ?? DEF]^1 &* A giant toilet.";
@@ -1681,24 +1667,23 @@ function TEXT()
 				msg[4] = "* (It smiles and thanks you for freeing it.)";
 				msg[5] = "* (You feel like a weight has been lifted from your shoulders.)";
 			}
-			if (text == "battle_act_sans0") // Sans
-				msg[0] = "* Sans - [1 ATK - 1 DEF]^1&* Sans Undertale!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
-			
-			if (text == "battle_act_test0") // Test
-				msg[0] = "* TESTE - [0 ATK - 0 DEF]^1&* Likes to be tested on.^1&* Or not,^1 I don't really care.";
-			if (text == "battle_act_test1")
+			if (string_starts_with(text, "battle_act_test") == true) // TESTGUY
 			{
-				msg[0] = "* i fucking hate TESTE";
-				msg[1] = "why";
-				msg[2] = "* shut up";
-				
-				msg_format[1] = "bubble";
-				msg_font[1] = global.fnt_dotum;
-				
-				msg_format[2] = "battlebox";
-				msg_font[2] = fnt_main_big;
+				for (var m = 0; m < 99; m++)
+				{
+					var _msg = get_text($"battle_act_result_test_{string_char_at(text, string_length(text))}_{m}");
+					if (_msg == undefined)
+						break;
+					msg[m] = _msg;
+				}
+				if (text == "battle_act_test1")
+				{
+					msg_format[1] = "bubble";
+					msg_font[1] = global.fnt_dotum;
+					msg_format[2] = "battlebox";
+					msg_font[2] = fnt_main_big;
+				}
 			}
-			
 			if (text == "battle_act_dummy0") // Dummy
 			{
 				for (var i = 0; i < 3; i++)
@@ -1724,31 +1709,30 @@ function TEXT()
 					_screamed = clamp(_screamed, 0, 3);
 					msg[2] = get_text("battle_act_result_dummy_2_2_" + string(_screamed));
 					msg_face[2] = spr_dialogface_m6_sassy;
-					if (_screamed == 3)
-						msg_face[2] = spr_dialogface_m6_angry;
 					msg_sound[2] = snd_writer_m6;
+					if (_screamed == 3)
+					{
+						msg_face[2] = spr_dialogface_m6_angry;
+						msg_sound[2] = snd_writer_m6_angry;
+					}
 				}
 			}
-			
 			if (string_starts_with(text, "battle_act_armsguy") == true) // Armsguy
 			{
 				for (var i = 0; i < 2; i++)
 					msg[i] = get_text($"battle_act_result_armsguy_{string_char_at(text, string_length(text))}_{i}");
 			}
-			
 			if (string_starts_with(text, "battle_act_trashguy") == true) // Trashguy
 			{
 				for (var i = 0; i < 2; i++)
 					msg[i] = get_text($"battle_act_result_trashguy_{string_char_at(text, string_length(text))}_{i}");
 			}
-			
 			if (string_starts_with(text, "battle_act_flitcher") == true) // Flitcher
 			{
 				for (var i = 0; i < 2; i++)
 					msg[i] = get_text($"battle_act_result_flitcher_{string_char_at(text, string_length(text))}_{i}");
 			}
-			
-			if (text == "battle_act_eyecrush0") // Eyecrush
+			if (text == "battle_act_eyecrush0") // Eyecrush (UNUSED)
 			{
 				msg[0] = get_text("unused_battle_act_result_eyecrush_0_0");
 				msg[1] = get_text("unused_battle_act_result_eyecrush_0_1");
@@ -1765,7 +1749,84 @@ function TEXT()
 				if (text == "battle_act_eyecrush2_1")
 					msg[1] = get_text("unused_battle_act_result_eyecrush_2_1_1");
 			}
-			
+			if (string_starts_with(text, "battle_act_brock") == 1) // Broken Clock
+			{
+				var _geno = enemy.geno;
+				var _convince = enemy.convince;
+				
+				if (controller.enemy_spare[enemy.myself] < 100) // normal
+				{
+					var _msg_postfix = "";
+					if (text == "battle_act_brock1")
+					{
+						_msg_postfix = $"_{enemy.negotiate}";
+						if (enemy.negotiate < 2)
+							audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
+						enemy.negotiate = clamp((enemy.negotiate + 1), 0, 2);
+						if (enemy.negotiate >= 2)
+							controller.enemy_act_enabled[enemy.myself, 1] = false;
+					}
+					for (var m = 0; m < 99; m++)
+					{	
+						var _msg = get_text($"battle_act_result_brock_{string_char_at(text, string_length(text))}_{m}{_msg_postfix}");
+						if (_msg == undefined)
+							break;
+						msg[m] = _msg;
+					}
+					if (text == "battle_act_brock3")
+					{
+						var _page = 0;
+						msg[_page++] = get_text($"battle_act_result_brock_3_{_page}");
+						question[_page] = "";
+						question_option[1] = get_text($"battle_act_result_brock_3_{_page}_" + string(_convince) + "_1");
+						question_option[2] = get_text($"battle_act_result_brock_3_{_page}_" + string(_convince) + "_2");
+						var _result = question_result[_page++];
+						if (_result != 0)
+						{
+							for (var m = 0; m < 99; m++)
+							{	
+								var _msg = get_text($"battle_bubble_brock_convince_{_convince}_{_result}_{m}");
+								if (_msg == undefined)
+									break;
+								msg[_page + m] = _msg;
+							}
+							msg_font[_page] = global.fnt_dotum;
+							msg_sound[_page] = snd_writer_brock;
+							msg_format[_page] = "bubble";
+							if (_convince >= 4)
+								msg_type[_page + 9] = "tense";
+							enemy.body.movement = 1;
+							var _bool = false;
+							var _bool_sound = snd_jingleFail;
+							if (_convince == 0 && _result == 1)
+							|| (_convince == 1 && _result == 1)
+							|| (_convince == 2 && _result == 2)
+							|| (_convince == 3 && _result == 1)
+							|| (_convince == 4 && _result == 1)
+							{
+								_bool = true;
+								_bool_sound = snd_jingleSucess;
+								controller.enemy_spare[enemy.myself] += 20;
+								enemy.convince += 1;
+							}
+							audio_play(_bool_sound, 0, VOLUME_SOUND)
+							var _msg = get_text($"battle_act_result_brock_3_2_{_bool}");
+							if (_msg != undefined && ((_bool == false) || (_bool == true && _convince < 4)))
+							{
+								var _msg_prefix = get_text($"battle_act_result_brock_3_2_{_bool}_prefix");
+								if (_msg_prefix == undefined) || (_convince > 0)
+									_msg_prefix = "";
+								msg[_page+m] = $"{_msg_prefix}{_msg}";
+								msg_font[_page+m] = fnt_main_big;
+								msg_sound[_page+m] = snd_writer_0;
+								msg_format[_page+m] = "battlebox";
+							}
+						}
+					}
+				}
+				else // convinced
+					msg[0] = get_text("battle_act_result_brock_convinced");
+			}
 			if (text == "battle_act_rhonhey0") // Rhonhey
 				msg[0] = get_text("battle_act_result_rhonhey_0");
 			if (text == "battle_act_rhonhey1")
@@ -1801,83 +1862,15 @@ function TEXT()
 				else
 					msg[0] = get_text("battle_act_result_rhonhey_3_1");
 			}
-
-			if (string_starts_with(text, "battle_act_brock") == 1) // Broken Clock
+			if (string_starts_with(text, "battle_act_troll") == true) // TROLLFACE
 			{
-				var _geno = enemy.geno;
-				var _convince = enemy.convince;
-				
-				if (controller.enemy_spare[enemy.myself] < 100) // normal
+				for (var m = 0; m < 99; m++)
 				{
-					var _msg_postfix = "";
-					if (text == "battle_act_brock1")
-					{
-						_msg_postfix = $"_{enemy.negotiate}";
-						enemy.negotiate = clamp((enemy.negotiate + 1), 0, 2);
-					}
-					for (var m = 0; m < 99; m++)
-					{	
-						var _msg = get_text($"battle_act_result_brock_{string_char_at(text, string_length(text))}_{m}{_msg_postfix}");
-						if (_msg == undefined)
-							break;
-						msg[m] = _msg;
-					}
-					if (text == "battle_act_brock3")
-					{
-						var _page = 0;
-						msg[_page] = get_text($"battle_act_result_brock_3_{_page}");
-						_page += 1;
-						question[_page] = "";
-						question_option[1] = get_text($"battle_act_result_brock_3_{_page}_" + string(_convince) + "_1");
-						question_option[2] = get_text($"battle_act_result_brock_3_{_page}_" + string(_convince) + "_2");
-						if (question_result[_page] != 0)
-						{
-							var _result = question_result[_page];
-							var _right = 0;
-							if (_convince == 0 && _result == 1)
-							|| (_convince == 1 && _result == 1)
-							|| (_convince == 2 && _result == 2)
-							|| (_convince == 3 && _result == 1)
-							|| (_convince == 4 && _result == 1)
-							{
-								_right = 1;
-								audio_play(snd_jingleSucess, 0, VOLUME_SOUND)
-								controller.enemy_spare[enemy.myself] += 20;
-								enemy.convince += 1;
-							}
-							else
-								audio_play(snd_jingleFail, 0, VOLUME_SOUND)
-							_page += 1;
-							for (var i = 0; i < 99; i++)
-							{
-								var _curmsg = get_text("battle_bubble_brock_convince_" + string(_convince) + "_" + string(_right) +  "_" + string(i));
-								if (is_undefined(_curmsg) == false)
-									msg[(i + _page)] = _curmsg;
-								else
-								{
-									var _id = get_text($"battle_act_result_brock_3_2_{_right}");
-									if (is_undefined(_id) == false && (_right == 1 && _convince > 0) == false)
-									{
-										var _lastpage = (i + _page);
-										msg[_lastpage] = _id;
-										msg_font[_lastpage] = fnt_main_big;
-										msg_sound[_lastpage] = snd_writer_0;
-										msg_format[_lastpage] = "battlebox";
-									}
-									break;
-								}
-							}
-							msg_font[_page] = global.fnt_dotum;
-							msg_sound[_page] = snd_writer_brock;
-							msg_format[_page] = "bubble";
-							if (_convince >= 4)
-								msg_type[_page + 9] = "tense";
-							enemy.body.movement = 1;
-						}
-					}
+					var _msg = get_text($"battle_act_result_troll_{string_char_at(text, string_length(text))}_{m}");
+					if (_msg == undefined)
+						break;
+					msg[m] = _msg;
 				}
-				else // convinced
-					msg[0] = get_text("battle_act_result_brock_convinced");
 			}
 		}
 	}

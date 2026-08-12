@@ -21,9 +21,10 @@ function START_GAME()
 	start_achievements();
 	
 	global.c_dump = #32FF62;
+	global.c_mention = #6B70B2;
 	global.fnt_dmg = font_add_sprite_ext(spr_fnt_dmg, "BCEIKLMOQRSU 0123456789", 1, 0);
 	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- ", 0, 0);
-	global.fnt_dsans = font_add_sprite_ext(spr_fnt_dsans, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
+	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
 	global.debug_hud = false;
 	
@@ -172,7 +173,6 @@ function start_chara()
 	
 	global.chara_room = 0;
 	global.chara_world = WORLD_CORRIDORS;
-	global.chara_murder = 0;
 	
 	
 	// informações que não tem que salvar
@@ -358,11 +358,11 @@ function start_flags()
 	global.flag[38] = 0; // killed Broken Clock
 	global.flag[39] = 0; // finished Broken Clock's event
 	
-	global.flag[40] = 0; // (((UNUSED)))
+	global.flag[40] = 0; // got Corridors' "but nobody came" (PLAYED OMINOUS JINGLE SOUND)
 	
 	global.flag[41] = 0; // left room_corridors_12 after Broken Clock's battle
 	
-	global.flag[42] = 0; // (((UNUSED)))
+	global.flag[42] = 0; // finished Broken Clock's event (PLAYED OMINOUS/LUMINOUS JINGLE SOUND)
 	
 	global.flag[43] = 0; // ARMSGUY lifting unused_room_corridors_17
 	global.flag[44] = 0; // FLITCHER unused_room_corridors_17 WEIRD VERY WEIRD

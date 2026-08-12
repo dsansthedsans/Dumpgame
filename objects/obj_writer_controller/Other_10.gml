@@ -46,6 +46,8 @@ if (msg_format[page] == "textbox") || (msg_format[page] == "textbox_bottom") || 
 	}
 	if (msg_type[page] == "notawake")
 		text_y = 120;
+	if (msg_type[page] == "tense")
+		text_speed = 4;
 	
 	
 	// change text_x if there's face
@@ -53,7 +55,7 @@ if (msg_format[page] == "textbox") || (msg_format[page] == "textbox_bottom") || 
 		text_x = (16 + 11 + sprite_get_width(msg_face[page]) + 8);
 	
 	// change position based on font
-	if (msg_font[page] == global.fnt_dsans)
+	if (msg_font[page] == global.fnt_comic)
 	{
 		text_x -= 2;
 		text_y += 2;

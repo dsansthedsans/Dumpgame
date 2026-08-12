@@ -29,3 +29,4 @@ for (var i = 0; i < 4; i++)
 depth = -15500;
 alarm[0] = load_time;
 image_alpha = 0;
+murder_alpha = 0;

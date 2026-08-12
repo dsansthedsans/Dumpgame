@@ -188,7 +188,7 @@ else if (result == 3) // mouse hole
 	if (con == 1)
 	{
 		var _audio = choose(snd_npc_rat_0a, snd_npc_rat_1e, snd_npc_rat_2o);
-		if (audio_playing(_audio) == 0 && global.chara_murder < 2)
+		if (audio_playing(_audio) == 0 && chara_murder() < 2)
 			audio_play(_audio, 0, VOLUME_SOUND, , , , 2);
 		chara_change(-1, 1, 1, -1, 1, 1, 1);
 		con = 0;

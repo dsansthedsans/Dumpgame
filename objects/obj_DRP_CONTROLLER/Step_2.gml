@@ -123,7 +123,7 @@ if (ready == 1)
 		else
 		{
 			face = "face0";
-			if (global.chara_murder >= 2)
+			if (chara_murder() >= 2)
 				face = "face1";
 			var _name = "\"" + string(global.chara_name) + "\"";
 			if (_name == "\"\"")

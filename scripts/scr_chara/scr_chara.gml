@@ -148,7 +148,10 @@ function chara_stats()
 		global.chara_nextexp = 99999;
 	}
 	if (global.chara_lvl != _oldlvl)
-	    lvlup = 1;
+	{
+	    audio_play(snd_lvlup, false, VOLUME_SOUND);
+		debug("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+	}
 	
 	// vida, ataque e defesa
 	global.chara_atk = (8 + (global.chara_lvl * 2));
@@ -353,83 +356,34 @@ function chara_world_name(_world)
 function chara_murder()
 {
 	var _murder = 0;
-	if (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
-	{
+	if (_murder == 0 && global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
 		_murder = 1;
-		if (global.world_curpopulation[WORLD_CORRIDORS] <= 0 && global.flag[22] == true)
+	if (_murder == 1 && global.world_curpopulation[WORLD_CORRIDORS] <= 0 && global.flag[22] == true)
+	{
+		_murder = 2;
+		if (global.flag[40] == false && global.chara_move == true)
 		{
-			_murder = 2;
-			if (global.flag[38] == true)
-				_murder = 3;
+			global.flag[40] = true;
+			audio_play(snd_jingleOminous, false, VOLUME_SOUND);
 		}
 	}
-	global.chara_murder = _murder;
+	if (_murder == 2 && global.flag[39] == true)
+	{
+		_murder = 3;
+		if (global.flag[38] == false)
+			_murder = 1;
+		if (global.flag[42] == false && global.chara_move == true)
+		{
+			audio_play(((global.flag[38] == true) ? snd_jingleOminous : snd_jingleLuminous), false, VOLUME_SOUND);
+			global.flag[42] = true;
+		}
+	}
 	return _murder;
-	
-	/*
-	// matou metade dos monstros dos corredores
-	if (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2) && global.chara_murder == 0)
-		global.chara_murder = 1;
-	
-	// "but nobody came" dos corredores
-	if (global.flag[22] == 1)
-	{
-		global.chara_murder = 2;
-			
-		// play sound
-		if (global.flag[23] == 0 && exists(obj_chara) == 1 && global.chara_move == 1)
-		{
-			audio_play(snd_murder, 0, VOLUME_SOUND);
-			global.flag[23] = 1;
-		}
-	}
-	
-	// matou o broken clock
-	if (global.chara_murder == 2 && global.flag[38] == 1)
-		global.chara_murder = 3; // som toca quando consegue conquista
-	*/
-	
-	// "but nobody came" das cavernas
-	/*
-	if (global.world_curpopulation[WORLD_CAVERNS] <= (global.world_maxpopulation[WORLD_CAVERNS] / 2) && global.chara_murder == 3)
-	{
-		global.chara_murder = 4;
-	}
-	*/
-	
-	/*
-	var _curpop = global.world_curpopulation[global.chara_world];
-	var _maxpop = global.world_maxpopulation[global.chara_world];
-	var _killed = (_maxpop - _curpop);
-	global.chara_murder = 0;
-	
-	// Corridors
-	if (global.chara_world == WORLD_CORRIDORS)
-	{
-		// entire population
-		if (_killed >= _maxpop && global.flag[22] == 1 && global.flag[37] == 0)
-		{
-			global.chara_murder = 2;
-			
-			// sound
-			if (global.flag[23] == 0 && exists(obj_chara) == 1 && global.chara_move == 1)
-			{
-				audio_play(snd_murder, 0, 0);
-				global.flag[23] = 1;
-			}
-		}
-		
-		// Broken Clock
-		if (global.chara_murder == 2 && global.flag[38] == 1)
-			global.chara_murder = 3;
-			// sound plays when getting the achievement
-	}
-	*/
 }
 
 function chara_hp(_amt)
 {
-	global.chara_curhp += argument0;
+	global.chara_curhp += _amt;
 	global.chara_curhp = clamp(global.chara_curhp, 0, global.chara_maxhp);
 	audio_play(snd_heal, 0, VOLUME_SOUND);
 }
@@ -437,12 +391,13 @@ function chara_stepping()
 {
 	stepplay = 0;
 	stepvolume = 1;
-	if (global.chara_murder >= 2)
+	if (chara_murder() >= 2)
 	|| (room == room_corridors_1_5)
 	|| (room == room_corridors_2)
+	|| (room == room_corridors_11 && global.flag[39] == true && global.flag[41] == false)
 	|| (room == room_corridors_14 && global.flag[50] > 0 && global.flag[50] < 1)
 	|| (room == unused_room_corridors_16_B)
-	|| (room == room_corridors_18) 
+	|| (room == room_corridors_18)
 	|| (room >= room_cave_1)
 	|| (room >= room_cave_2 && room <= room_cave_3)
 	|| (inwater == 1)

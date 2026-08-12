@@ -234,7 +234,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			// custom
 			if (string_char_at(msg[page], c + 1) == "@" && _cancheck == 1) // mention
 			{
-				text_color[0] = #6B70B2;
+				text_color[0] = global.c_mention;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "U" && _cancheck == 1) // dumpcolor
@@ -308,7 +308,7 @@ for (var c = 1; c < (text_length + 1); c++)
 	}
 	
 	// custom hspace
-	if (msg_font[page] == global.fnt_dsans)
+	if (msg_font[page] == global.fnt_comic)
 	{
 		var _cur = string_char_at(msg[page], c);
 		var _next = string_char_at(msg[page], (c + 1));
@@ -346,7 +346,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			}
 		}
 	}
-	if (floating >= 0)
+	if (floating >= 0 && global.visualeff == true)
 	{ 
 		var _floatx = (sin((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 		var _floaty = (cos((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));

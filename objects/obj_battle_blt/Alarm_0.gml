@@ -1,10 +1,8 @@
 /// @descr get type
-
 can_damage = true;
 outside_box = false; // if 0, image_scale won't matter
 destroy_on_impact = true;
 assist_can_destroy = true;
-
 image_xscale = 2;
 image_yscale = 2;
 image_alpha = 1;
@@ -15,29 +13,16 @@ stage = 0;
 delay = 0;
 siner = 0;
 dmg = 2;
-
-if (type == 2000)
+// TESTGUY
+if (type == -1)
 {
-	delay = 60;
-	outside_box = 1;
-	destroy_on_impact = 0;
-	
-	sprite_index = unused_spr_battle_blt_mysteriousball;
-	image_xscale = 1;
-	image_yscale = 1;
+	sprite_index = spr_battle_blt_test;
 	image_alpha = 0;
-	image_index = irandom(1);
-	
-	targetx = choose((room_width / 4) - irandom(60), (room_width / 1.5) + irandom(60));
-	targety = irandom_range(80, ((room_height / 2) - 40));
-	movetopoint(targetx, targety, 60, id);
-	//direction = point_direction(x, y, targetx, targety);
-	//speed = 2;
+	outside_box = true;
+	audio_play(snd_appearBullet, false, VOLUME_SOUND);
 }
-if (type == -1) // test
-	image_alpha = 0;
-	
-if (type == 1) // Dummy
+// Dummy
+if (type == 1)
 {
 	sprite_index = spr_battle_blt_gear;
 	image_xscale = 1;
@@ -48,8 +33,8 @@ if (type == 1) // Dummy
 	outside_box = 1;
 	dmg = 0;
 }
-
-if (type == 2.0) // Armsguy
+// Armsguy
+if (type == 2.0)
 {
 	gravity_direction = 270;
 	sprite_index = spr_battle_blt_drop;
@@ -76,8 +61,8 @@ if (type == 2.1)
 	targetx = obj_battle_heart.x;
 	basegrav = gravity;
 }
-
-if (type == 3.0) // Trashguy
+// Trashguy
+if (type == 3.0)
 {
 	hspeed = random_range(-0.5, 0.5);
 	if (myself == 0)
@@ -129,6 +114,7 @@ if (type == 3.1)
 	can_damage = 0;
 	outside_box = 1;
 	destroy_on_impact = 0;
+	assist_can_destroy = false;
 
 	if (myside == 1)
 	{
@@ -137,8 +123,8 @@ if (type == 3.1)
 		myspeed = -5;
 	}	
 }
-
-if (type >= 4.0 && type <= 4.2) // Flitcher
+// Flitcher
+if (type >= 4.0 && type <= 4.2)
 {	
 	sprite_index = choose(spr_battle_blt_eye1, spr_battle_blt_eye1, spr_battle_blt_eye2);
 	image_xscale = 1;
@@ -163,8 +149,8 @@ if (type >= 4.0 && type <= 4.2) // Flitcher
 	if (type == 4.2)
 		dmg += 1;
 }
-
-if (type == 5.0) // Eyecrush
+// Eyecrush (UNUSED)
+if (type == 5.0)
 {
 	image_xscale = 1;
 	image_yscale = 1;
@@ -203,8 +189,8 @@ if (type == 5.15)
 	speed = 4;
 	outside_box = 1;
 }
-
-if (type == 6.0) // Broken Clock
+// Broken Clock
+if (type == 6.0)
 {
 	speed = 1;
 	direction = point_direction(x, y, obj_battle_heart.x, obj_battle_heart.y);
@@ -226,18 +212,20 @@ if (type == 6.1)
 	image_index = irandom(4);
 	image_angle = irandom(360);
 	sprite_index = spr_battle_blt_brick;
-	
 	vspeed = -choose(3, 5);
 	gravity = 0.1;
+	if (controller.enemy_obj[myself].negotiate >= 2)
+	{
+		vspeed *= 0.875;
+		gravity *= 0.75;
+	}
 	if (x < controller.box_x)
 		hspeed = irandom_range(0, 1);
 	else
 		hspeed = irandom_range(0, -1);
-	
 	playsnd = 1;
 	angleamt = choose(1, -1);
 	audio_play(snd_launch, 0, VOLUME_SOUND);
-	
 	pospos = 0;
 	for (var i = 0; i < 1000; i++)
 	{
@@ -351,7 +339,7 @@ if (type == 6.24)
 }
 if (type >= 6 && type < 7)
 	dmg -= clamp(controller.enemy_obj[myself].negotiate, 0, 1);
-
+// Rhonhey (MEE6's Encounter)
 if (type == 13)
 {
 	sprite_index = spr_battle_blt_rhonhey_ball;
@@ -361,6 +349,25 @@ if (type == 13)
 	//dmg += 2;
 	outside_box = true;
 	destroy_on_impact = false;
+}
+// Toilet
+if (type == 2000)
+{
+	delay = 60;
+	outside_box = 1;
+	destroy_on_impact = 0;
+	
+	sprite_index = unused_spr_battle_blt_mysteriousball;
+	image_xscale = 1;
+	image_yscale = 1;
+	image_alpha = 0;
+	image_index = irandom(1);
+	
+	targetx = choose((room_width / 4) - irandom(60), (room_width / 1.5) + irandom(60));
+	targety = irandom_range(80, ((room_height / 2) - 40));
+	movetopoint(targetx, targety, 60, id);
+	//direction = point_direction(x, y, targetx, targety);
+	//speed = 2;
 }
 
 
