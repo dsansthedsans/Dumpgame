@@ -26,11 +26,11 @@
 </ul>
 <h3>Characters</h3>
 <ul>
-  <li><b>MEE6</b>, a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
-  <li><b>Armsguy</b>, a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
-  <li><b>Trashguy</b>, a mysterious creature who lives inside a trash can for being too scared to face life head-on. They usually stick close to an Armsguy.</li>
-  <li><b>Flitcher</b>, a reptile-like monster who's unaware of its own existence for most of the time. There's not much to say about it.</li>
-  <li><b>Broken Clock</b>, a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he unconsciously pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
+  <li><b>MEE6</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_m6_d/529077fe-59e6-4690-bc88-4794d561d86b.png" height="32" align="top"> , a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
+  <li><b>Armsguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_armsguy/b3a84e52-745d-4bc2-9db0-ad11a317eb49.png" height="32" align="top"> , a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
+  <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face life head-on. They usually stick close to an Armsguy.</li>
+  <li><b>Flitcher</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_flitcher/ca904f51-ea94-45e0-8699-841141abe37c.png" height="32" align="top"> , a reptile-like monster who's unaware of its own existence for most of the time. There's not much to say about it.</li>
+  <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he unconsciously pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
   <li><b>And more</b>...?</li>
 </ul>
 
@@ -69,7 +69,7 @@
 <h3>Is Dumpgame incomplete?</h3>
 <blockquote>Yes, very. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
 <h3>Is Dumpgame still associated with Dumpster Friends?</h3>
-<blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server.</blockquote>
+<blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
 <h3>Is Dumpgame associated with  UNDERTALE, Discord or MEE6?</h3>
 <blockquote>No, Dumpgame is not associated with UNDERTALE, Discord or MEE6.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
@@ -116,4 +116,4 @@
   <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
 </ul>
-<p align="left"><a href="https://www.youtube.com/watch?v=XpqVHrP_XEs" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_chara_sit/caf2cdde-d65a-44cf-b9a2-c0aa5adb4988.png" height="32" alt="If you're reading this, I messed up somehow."></a></p>
+<p align="left"><a href="https://www.youtube.com/watch?v=XpqVHrP_XEs" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/unused_spr_happybirthday_cake/4f9da4cb-90b0-45e4-8fd7-d0ced2ef0c62.png" height="24" alt="If you're reading this, I messed up somehow."></a></p>
