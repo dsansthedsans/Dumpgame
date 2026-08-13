@@ -12,26 +12,28 @@
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children.</p>
+<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p>
 <br>
 
 > [!IMPORTANT]
 > Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
 
 <br>
-<h2>Features</h2>
+<h1>Features</h1>
 <ul>
+  <li>Original art, story and characters created almost entirely by <b>dsansthedsans</b>!</li>
   <li>An amazing original soundtrack fully composed and arranged by <b>migel8022</b>!</li>
-  <li>Endearing new characters designed and written almost entirely by me, <b>dsansthedsans</b>!
-    <ul>
-      <li><b>Armsguy</b>, a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
-      <li><b>Trashguy</b>, a mysterious creature who lives inside a trash can for being too scared to face life head-on. They usually stick close to an Armsguy.</li>
-      <li><b>Flitcher</b>, a reptile-like monster who's unaware of his own existence for most of the time. There's not much to say about him.</li>
-      <li><b>Broken Clock</b>, a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two arrogant teenagers, he unconsciously pushes people away and hurts those around him. He has nothing to lose besides his life.</li>
-      <li><b>And more</b>...!</li>
-    </ul>
-  </li>
 </ul>
+<h3>Characters</h3>
+<ul>
+  <li><b>MEE6</b>, a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
+  <li><b>Armsguy</b>, a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
+  <li><b>Trashguy</b>, a mysterious creature who lives inside a trash can for being too scared to face life head-on. They usually stick close to an Armsguy.</li>
+  <li><b>Flitcher</b>, a reptile-like monster who's unaware of its own existence for most of the time. There's not much to say about it.</li>
+  <li><b>Broken Clock</b>, a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he unconsciously pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
+  <li><b>And more</b>...?</li>
+</ul>
+
 
 
 
@@ -39,7 +41,7 @@
 
 
 <br>
-<h2>Development History</h2>
+<h1>Development History</h1>
 <p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
 <p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
 <p>I was 11 years old at the time.</p>
@@ -61,9 +63,9 @@
 <br>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
 <br>
-<h2>Never Asked Questions</h2>
+<h1>Never Asked Questions</h1>
 <h3>Is Dumpgame still in development?</h3>
-<blockquote>No. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>"Development History"</b></a>.</blockquote>
+<blockquote>No. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
 <blockquote>Yes, very. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
 <h3>Is Dumpgame still associated with Dumpster Friends?</h3>
@@ -73,28 +75,28 @@
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, NOTHING related to Dumpgame is AI-generated, not even this README. The ONLY exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
-<blockquote>Will you trust me if I say no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>VirusTotal</b></a>, reliable security vendors like Google, Microsoft, Avast, Bitdefender, Malwarebytes, Kaspersky, AVG and ESET won't flag the file as malicious.</blockquote>
+<blockquote>Would you trust me if I said no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>VirusTotal</b></a>, reliable security vendors like Google, Microsoft, Bitdefender, Malwarebytes, Kaspersky, Avast, AVG and ESET won't flag the file as malicious.</blockquote>
 <h3>Why "Dumpgame"?</h3>
-<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">"<b>Development History</b>"</a>.</blockquote>
+<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
 <h3>Why open-source?</h3>
 <blockquote>A shark plushie asked me to. I'm not sure why, though.</blockquote>
 <h3>Why Brazil?</h3>
 <blockquote>I'd also like to know.</blockquote>
 <h3>Why GameMaker?</h3>
-<blockquote>I searched for "make a game" on Google and clicked the first link I could find, no questions asked. (Lie)</blockquote>
+<blockquote>I searched for "make a game" on Google and clicked the first link I could find, no questions asked. <b>(Lie)</b></blockquote>
 <br>
-<h2>Credits</h2>
+<h1>Credits</h1>
 <ul>
   <li>dsansthedsans<i> 〜 Programmer, Artist, Concept Artist, Animator, Writer, Designer, Localization</i></li>
   <li>migel8022<i> 〜 Composer, Sound Designer, Concept Artist for Broken Clock, Tester</i></li>
 </ul>
-<h4>Contributors & Testers</h4>
+<h3>Contributors & Testers</h3>
 <ul>
   <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy (two of the most important non-player characters of the game)</i></li>
   <li>☭Comunista☭<i> 〜 Concept Art Assistance for MEE6 (the most important non-player character of the game)</i></li>
   <li>fer10tanb<i> 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</i></li>
 </ul>
-<h4>Special Thanks</h4>
+<h3>Special Thanks</h3>
 <ul>
   <li>Toby Fox</li>
   <li>Temmie Chang</li>
