@@ -12,7 +12,8 @@
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p>
+<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children.</p>
+<p>Are you strong enough to go home while everybody tries to kill you?</p>
 <br>
 
 > [!IMPORTANT]
@@ -33,13 +34,14 @@
   <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he unconsciously pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
   <li><b>And more</b>...?</li>
 </ul>
-
-
-
-
- 
-
-
+<br>
+<h1>Install Instructions</h1>
+<ol>
+  <li>Download the <code>.zip</code> of the latest version <a href="https://dsansthedsans.itch.io/dumpgame" target="_blank"><b>here</b></a></li>
+  <li>In your Downloads folder, right-click the <code>.zip</code> and extract it</li>
+  <li>In the extracted folder, open the <code>.exe</code></li>
+</ol>
+<p>No external files are required.</p>
 <br>
 <h1>Development History</h1>
 <p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
@@ -116,4 +118,4 @@
   <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
 </ul>
-<p align="left"><a href="https://www.youtube.com/watch?v=XpqVHrP_XEs" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/unused_spr_happybirthday_cake/4f9da4cb-90b0-45e4-8fd7-d0ced2ef0c62.png" height="24" alt="If you're reading this, I messed up somehow."></a></p>
+<p align="left"><a href="https://www.youtube.com/watch?v=XpqVHrP_XEs" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/unused_spr_happybirthday_cake/4f9da4cb-90b0-45e4-8fd7-d0ced2ef0c62.png" height="16" alt="If you're reading this, I messed up somehow."></a></p>
