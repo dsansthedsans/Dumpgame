@@ -1,9 +1,11 @@
 event_inherited();
 chara = obj_chara;
-
-//global.flag[66] = 1;
-//global.flag[69] = 1;
-
+DEBUG_SKIP = (false * global.indebug);
+if (DEBUG_SKIP == true)
+{
+	global.flag[66] = 1;
+	global.flag[69] = 1;
+}
 if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 {
 	for (var t = 0; t < 3; t++)
@@ -55,10 +57,9 @@ else if (global.flag[2] == false && global.flag[66] >= 1 && global.flag[66] < 2 
 	chara_change(-1, false, false, true, false, false, false);
 	chara.x = (room_width / 2);
 	chara.y = global.chara_lasty;
+	if (DEBUG_SKIP == true)
+		chara.y = (200 + (chara.sprite_height / 2));
 	m6 = marker((room_width / 2), 160, spr_m6_d_talk, 1, 1, 1, 0, 0, 0, c_white, -160);
-	
-	///////////////////////////
-	chara.y = (200 + (chara.sprite_height / 2));
 }
 else
 	destroy(id);

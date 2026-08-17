@@ -12,6 +12,7 @@ function START_GAME()
 	
 	global.game_startroom[0] = room_menu;
 	global.game_startroom[1] = room_corridors_1 //room_intro;
+	global.ACHIEVEMENT_ENABLED = false;
 	TEXTDATA_EN();
 	start_maininfo();
 	start_music();
@@ -21,7 +22,8 @@ function START_GAME()
 	start_achievements();
 	
 	global.c_dump = #32FF62;
-	global.c_mention = #6B70B2;
+	global.c_mention[0] = #5865F2; //#5865F2//#6B70B2;
+	global.c_mention[1] = #A8BAFE; //#5865F2//#6B70B2;
 	global.fnt_dmg = font_add_sprite_ext(spr_fnt_dmg, "BCEIKLMOQRSU 0123456789", 1, 0);
 	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- ", 0, 0);
 	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
@@ -299,10 +301,6 @@ function start_item()
 }
 function start_flags()
 {
-	global.testflag[0] = 0; // finished event0
-	
-	
-	// flags
 	global.flag[0] = 0; // finished getting up event
 	
 	global.flag[1] = 0; // finished first MEE6's event
@@ -495,6 +493,7 @@ function start_settings()
 }
 function start_achievements()
 {
+	
 	#macro ACHIEVEMENT_M6TOY		0
 	#macro ACHIEVEMENT_SBHELMET		1
 	#macro ACHIEVEMENT_MONSTNINJA	2
@@ -505,17 +504,15 @@ function start_achievements()
 	#macro ACHIEVEMENT_NOTREALONE	7
 	#macro ACHIEVEMENT_REALONE		8
 	#macro ACHIEVEMENT_RESTART		9
-	
 	global.achievement_total = 0;
-	
 	for (var i = 0; i < 99; i++)
 	{
-		var z = get_text("achievement_name_" + string(i));
+		var z = get_text("unused_achievement_name_" + string(i));
 		if (z != undefined)
 		{
 			global.achievement[i] = 0;
 			global.achievement_name[i] = z;
-			global.achievement_desc[i] = get_text("achievement_desc_" + string(i));
+			global.achievement_desc[i] = get_text("unused_achievement_desc_" + string(i));
 		}
 		else
 		{
@@ -523,33 +520,13 @@ function start_achievements()
 			break;
 		}	
 	}
-	
-	if (file_exists($"{global.game_directory}achievements.txt") == 0)
-		achievements_write();
-	else
-		achievements_read();
-	
-	/*
-	global.achievement_total = 0;
-	global.achievement_achieved = 0;
-	for (var i = 0; i < 99; i++)
+	if (global.ACHIEVEMENT_ENABLED == true)
 	{
-		var _ach = get_text("achievement_name_" + string(i));
-		if (_ach != undefined)
-		{
-			global.achievement[i] = 0;
-			if (global.achievement[i] == 1)
-				global.achievement_achieved += 1;
-			global.achievement_name[i] = _ach;
-			global.achievement_desc[i] = get_text("achievement_desc_" + string(i));
-		}
+		if (file_exists($"{global.game_directory}achievements.txt") == 0)
+			achievements_write();
 		else
-		{
-			global.achievement_total = i;
-			break;
-		}
+			achievements_read();
 	}
-	*/
 }
 
 function CHANGE_GAME()
@@ -560,7 +537,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_11;
+		var _rm = room_corridors_1_5;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)

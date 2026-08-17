@@ -75,7 +75,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			if (global.flag[37] == 0.5)
 				music_set(0, mus_event_brock_mad, , , , , , 0);
 			else if (global.flag[39] == 0.5)
-				music_set(0, mus_event_brock_sad_placeholder);
+				music_set(0, mus_event_brock_sad);
 			//else if (global.flag[37] == 1 && global.flag[39] == 0)
 			//	music_set(0, mus_event_brock_sad, , , , 0.75 + 0.125 + 0.125);
 		}
@@ -228,6 +228,11 @@ else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 }
 else if (room == room_over)
 {
+	for (var i = 0; i < global.music_length; i++)
+	{
+		if (music_old[i] > -1 && music_audio[i] > -1)
+			music_fadeouttime_old[i] = 0;
+	}
 	music_set(0, -1);
 	music_set(1, -1);
 	music_set(2, -1);

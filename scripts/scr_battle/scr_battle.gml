@@ -744,7 +744,7 @@ function battle_attack()
 					angle : 180,
 					angleOffset : 90,
 					angleSpeed : 0,
-					angleSpeed_max : -8,
+					angleSpeed_max : -9,
 					appear :
 					{
 						asset : snd_appearSword,
@@ -786,14 +786,14 @@ function battle_attack()
 						id : undefined,
 						pitch : undefined,
 						pitchMin : 0.5,
-						pitchMax : 3,
+						pitchMax : 3.5,
 						pitchSpeed : 0.00375,
 					},
 					object : undefined,
 					bubble_offsetX : 0,
 					bubble_offsetY : 0,
 				};
-				mee6.object = marker(-20, -20, spr_enemy_m6_default, 1, 2, 2, 0, 0, 0, c_white, controller.battle_depth[1]);
+				mee6.object = marker(-20, -20, spr_enemy_m6_default, 1, 2, 2, 0, 1, 0, c_white, controller.battle_depth[1]);
 				mee6.object.x = (room_width + (sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale));
 				mee6.object.y = controller.defaulty;
 				mee6.bubble_offsetX = (-((sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale) / 2));
@@ -851,7 +851,10 @@ function battle_attack()
 						heart.x = (ball.objects[b].x + lengthdir_x((ball.objects[b].sprite_width / 2), (_angle - ball.angleOffset)));
 						heart.y = (ball.objects[b].y + lengthdir_y((ball.objects[b].sprite_height / 2), (_angle - ball.angleOffset)));
 						if (mee6.buildup.id == undefined)
+						{
 							mee6.buildup.id = audio_play(mee6.buildup.asset, true, VOLUME_SOUND);
+							audio_play(snd_buildupCymbal, false, VOLUME_SOUND, (1.5 - 0.125),,, 0.75);
+						}
 						if (mee6.buildup.pitch == undefined)
 							mee6.buildup.pitch = mee6.buildup.pitchMin;
 						mee6.buildup.pitch += mee6.buildup.pitchSpeed;
@@ -878,6 +881,7 @@ function battle_attack()
 								audio_stop(ball.rotate.id);
 							if (mee6.buildup.id != undefined && audio_playing(mee6.buildup.id) == true)
 								audio_stop(mee6.buildup.id);
+							audio_stop(snd_buildupCymbal);
 							break;
 						}
 					}

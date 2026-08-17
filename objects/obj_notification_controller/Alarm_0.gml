@@ -81,51 +81,7 @@ if (mytype == 0 && achievement_id != -1) // achievement
 //else if (mytype == 1) // message
 //	audio_play(snd_notification_message, 0, VOLUME_SOUND);	
 //else
-{
-	global.notification[myself] = 0;
-	instance_destroy();
-}
-
-/*
-// set text info
-text_font = fnt_mars_6;
-draw_set_font(text_font);
-text_w = string_width(text);
-text_h = string_height(text);
-
-// get image info
-image_w = 0;
-image_h = 0;
-if (image != 0)
-{
-	image_w = (sprite_get_width(image) * myscale);	
-	image_h = (sprite_get_height(image) * myscale);
-}
-
-// set box info
-box_xoff = (10 * myscale);
-box_yoff = (10 * myscale);
-box_x = camera_get_view_width(view_camera[0]);
-box_y = 0;
-box_w = (text_w + (box_xoff * 2));
-if (image != 0)
-	box_w = (text_w + (box_xoff * 3) + image_w);
-box_w *= myscale;
-box_h = ((text_h + (box_yoff * 2) + box_h_bonus) * myscale);
-box_border_w = (2 * myscale);
-box_outline_w = ((!(myscale - 1) + 1) / 2);
-orig_box_x = box_x;
-
-var _bonusy = 0;
-for (var i = 0; i < 10; i++)
-{
-	if (global.notification[i] != 0 && i != myself && global.notification[i].active == 1)
-		_bonusy += (global.notification[i].box_h);
-}
-box_y += _bonusy;
-*/
-
-
-
-
-
+//{
+//	global.notification[myself] = 0;
+//	instance_destroy();
+//}

@@ -103,92 +103,47 @@ function TEXT()
 	// obj_event_rhonhey_battle
 	if (string_starts_with(text, "event_rhonhey_battle_") == true)
 	{
+		var _text_index = string_char_at(text, string_length(text));
 		for (var m = 0; m < 99; m++)
 		{
-			var _msg = get_text($"event_rhonhey_battle_{string_char_at(text, string_length(text))}_{m}");
+			var _msg = get_text($"event_rhonhey_battle_{_text_index}_{m}");
 			if (_msg == undefined)
 				break;
 			msg[m] = _msg;
 		}
-		msg_face[0] = spr_dialogface_m6_default;
+		msg_face[0] = spr_dialogface_m6_neutral;
 		msg_sound[0] = snd_writer_m6;
 		if (instance_exists(obj_event_rhonhey_battle) == true && exists(obj_event_rhonhey_battle.m6) == true)
 			msg_talker[0] = obj_event_rhonhey_battle.m6;
+		switch (_text_index)
+		{
+			case 0:
+			msg_face[1] = spr_dialogface_m6_default;
+			msg_face[2] = spr_dialogface_m6_thinking;
+			msg_face[3] = spr_dialogface_m6_default;
+			break;
+		}
+		
+		
 	}
 	// obj_event_m6_start
-	if (text == "event_m6_start_0") || (text == "event_m6_start_1") || (text == "event_m6_start_2") || (text == "event_m6_start_3") || (text == "event_m6_start_4")
+	if (string_starts_with(text, "event_m6_meet_") == true)
 	{
-		// get idnum
-		var _idnum = 0;
-		if (text == "event_m6_start_1")
-			_idnum = 1;
-		else if (text == "event_m6_start_2")
-			_idnum = 2;
-		else if (text == "event_m6_start_3")
-			_idnum = 3;
-		else if (text == "event_m6_start_4")
-			_idnum = 4;
-			
-		// get messages
-		for (var z = 0; z < 99; z++)
+		var _text_index = string_char_at(text, string_length(text));
+		for (var m = 0; m < 99; m++)
 		{
-			if (_idnum != 3) || (_idnum == 3 && z != 8)
-			{
-				var _bonuscheck = "";
-				if (_idnum == 3 && z >= 9 && z <= 10)
-					_bonuscheck = "_" + string(question_result[8]);
-					
-				var _curmsg = get_text("event_m6_start_" + string(_idnum) + "_" + string(z) + string(_bonuscheck));
-				if (_curmsg != undefined)
-					msg[z] = _curmsg;
-			}
-			else
-			{
-				question[8] = get_text("event_m6_start_3_8");
-				question_option[1] = get_text("event_m6_start_3_8_1");
-				question_option[2] = get_text("event_m6_start_3_8_2");
-			}
+			var _msg = get_text($"event_m6_meet_{_text_index}_{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
 		}
-			
-		// get text info
-		msg_sound[0] = snd_writer_m6;
-		msg_talker[0] = obj_marker;
-		
-		if (_idnum == 0)
+		switch (_text_index)
 		{
-			msg_face[0] = spr_dialogface_m6_neutral;
-			msg_face[2] = spr_dialogface_m6_neutralTense;
-			msg_face[3] = spr_dialogface_m6_neutral;
+			case 1:
+			msg_skip[0] = false;
+			msg_next[2] = false;
+			break;
 		}
-		else if (_idnum == 1)
-		{
-			msg_face[0] = spr_dialogface_m6_default;
-			msg_face[2] = spr_dialogface_m6_neutral;
-			msg_face[10] = spr_dialogface_m6_default;
-		}
-		else if (_idnum == 2)
-			msg_face[0] = spr_dialogface_m6_neutral;
-		else if (_idnum == 3)
-		{
-			msg_face[0] = spr_dialogface_m6_neutral;
-				
-			msg_face[8] = -1;
-			msg_sound[8] = snd_writer_0;
-			msg_talker[8] = -1;
-			
-			msg_face[9] = spr_dialogface_m6_default;
-			if (question_result[8] == 2)
-			{
-				msg_face[9] = spr_dialogface_m6_sassy;
-				msg_face[10] = spr_dialogface_m6_default;
-				msg_skip[9] = false;
-				msg_skip[10] = true;
-			}
-			msg_sound[9] = snd_writer_m6;
-			msg_talker[9] = obj_marker;
-		}
-		else if (_idnum == 4)
-			msg_face[0] = spr_dialogface_m6_default;
 	}
 	
 	// room_corridors_2
@@ -213,7 +168,11 @@ function TEXT()
 		if (chara_murder() < 1)
 			msg[1] = get_text("room_m6_brokenwall_1");
 		msg_format[0] = "textbox_bottom";
-		achievement_add(ACHIEVEMENT_M6TOY);
+		if (global.ACHIEVEMENT_ENABLED == true && global.achievement[ACHIEVEMENT_M6TOY]  == false)
+		{
+			achievement_add(ACHIEVEMENT_M6TOY);
+			create_notification("m6toy");
+		}
 	}
 	
 	// save point
@@ -494,7 +453,7 @@ function TEXT()
 					global.item[global.item_last] = ITEM_BOWL;
 					audio_play(snd_item, 0, VOLUME_SOUND);
 						
-					if (global.achievement[ACHIEVEMENT_SBHELMET] == 0)
+					if (global.ACHIEVEMENT_ENABLED == true && global.achievement[ACHIEVEMENT_SBHELMET] == 0)
 					{
 						global.achievement[ACHIEVEMENT_SBHELMET] = 1;
 						create_notification("sbhelmet");
@@ -771,16 +730,29 @@ function TEXT()
 	}
 	
 	// obj_event_brock_battle
-	if (string_starts_with(text, "event_brock_battle_") == true && text != "event_brock_battle_4")
+	if (string_starts_with(text, "event_brock_battle_") == true)
 	{
 		var _text_index = string_char_at(text, string_length(text));
 		for (var i = 0; i < 99; i++)
 		{
-			var _msg = get_text($"event_brock_battle_{_text_index}_{i}");
-			if (_msg != undefined)
-				msg[i] = _msg;
-			else
+			var _msg_id = $"event_brock_battle_{_text_index}_{i}";
+			if (_text_index == 4)
+			{
+				_msg_id += $"_{global.flag[38]}";
+				//if (global.flag[38] == false && i >= 3)
+				//	_msg_id += $"_{question_result[2]}";
+			}
+			var _msg = get_text(_msg_id);
+			if (_msg == undefined)
 				break;
+			if (_text_index == 4 && global.flag[38] == false && i == 2)
+			{
+				question[i] = _msg;
+				for (var z = 1; z <= 2; z++)
+					question_option[z] = get_text($"{_msg_id}_{z}");
+				continue;
+			}
+			msg[i] = _msg;
 		}
 		msg_sound[0] = snd_writer_brock;
 		msg_format[0] = "textbox_top";
@@ -792,53 +764,35 @@ function TEXT()
 			msg_talker[2] = global.party[0];
 			break;
 			case 2:
-			msg[0] = $"{get_text("event_brock_battle_2_0")}{global.chara_name};D.";
+			msg[1] = $"+S1* :@@{global.chara_name};D!!!!!!^1&!{msg[1]}";
 			break;
 			case 3:
 			msg[2] = $"+F0* ... :@@{global.chara_name};D...^2&{msg[2]}";
 			break;
-		}
-	}
-	if (text == "event_brock_battle_4")
-	{
-		for (var i = 0; i < 99; i++)
-		{
-			var _msg = get_text($"event_brock_battle_{string_char_at(text, string_length(text))}_{global.flag[38]}_{i}");
-			if (_msg != undefined)
+			case 4:
+			msg_sound[0] = snd_writer_m6;
+			msg_talker[0] = global.party[0];
+			if (global.flag[38] == false)
 			{
-				if (i == 2)
-				{
-					question[i] = _msg;
-					for (var z = 1; z <= 2; z++)
-						question_option[z] = get_text($"event_brock_battle_{string_char_at(text, string_length(text))}_{global.flag[38]}_{i}_{z}");
-					continue;
-				}
-				msg[i] = _msg;
+				msg_face[0] = spr_dialogface_m6_neutral;
+				msg_face[2] = -1;
+				msg_sound[2] = snd_writer_0;
+				msg_talker[2] = -1;
+				msg_face[3] = spr_dialogface_m6_angry;
+				msg_sound[3] = snd_writer_m6_angry;
+				msg_talker[3] = global.party[0];
 			}
-			else
-				break;
-		}
-		msg_sound[0] = snd_writer_m6;
-		msg_talker[0] = global.party[0];
-		if (global.flag[38] == false)
-		{
-			msg_face[0] = spr_dialogface_m6_angry;
-			msg_face[2] = -1;
-			msg_sound[2] = snd_writer_0;
-			msg_talker[2] = -1;
-			msg_face[3] = spr_dialogface_m6_angry;
-			msg_sound[3] = snd_writer_m6;
-			msg_talker[3] = global.party[0];
-		}
-		else 
-		{
-			msg_face[0] = spr_dialogface_m6_default;
-			//if (chara_murder() >= 1)
-			//{
-			//	msg[i] = get_text($"event_brock_battle_4_1_{i}_geno");
-			//	msg[i+1] = get_text($"event_brock_battle_4_1_{i+1}_geno");
-			//	msg_face[i] = spr_dialogface_m6_angry;
-			//}
+			else 
+			{
+				msg_face[0] = spr_dialogface_m6_default;
+				//if (chara_murder() >= 1)
+				//{
+				//	msg[i] = get_text($"event_brock_battle_4_{i}_1_geno");
+				//	msg[i+1] = get_text($"event_brock_battle_4_{i+1}_1_geno");
+				//	msg_face[i] = spr_dialogface_m6_angry;
+				//}
+			}
+			break;
 		}
 	}
 	if (text == "unused_event_brock_prebattle_6_genotest")
@@ -866,7 +820,7 @@ function TEXT()
 				msg[i] = get_text($"npc_armsguy_postbrock_0_{i}");
 			if (global.flag[2] == true && exists(global.party[0]) == true)
 			{
-				msg[3] = "* ";
+				msg[3] = "* ...";
 				msg_face[3] = spr_dialogface_m6_angry;
 				msg_sound[3] = snd_writer_m6_angry;
 				msg_talker[3] = obj_party;
@@ -1405,7 +1359,13 @@ function TEXT()
 			if (_type == 1000)
 			{
 				_name = "troll";
-				_max = 10;
+				for (var m = 0; m < 99; m++)
+				{
+					var _msg = get_text("battle_main_" + string(_name) + "_" + string(m));
+					if (_msg == undefined)
+						break;
+				}
+				_max = (m - 1);
 			}
 			if (_type == 2000)
 			{
@@ -1417,7 +1377,7 @@ function TEXT()
 				msg[0] = get_text("battle_main_" + string(_groupname));
 			else // normal
 			{
-				var _num = irandom(_max);
+				var _num = irandom(_max); // _max - controller.battle_round + 1
 				msg[0] = get_text("battle_main_" + string(_name) + "_" + string(_num));
 			}
 			//msg[0] = get_text("battle_main_" + string(_name) + "_" + string(controller.battle_round));
@@ -1652,21 +1612,7 @@ function TEXT()
 		if (string_starts_with(text, "battle_act_") == 1)
 		{
 			msg_next[0] = 1;
-			if (text == "battle_act_toilet0") // Toilet
-			{
-				msg[0] = "* Toilet - [?? ATK | ?? DEF]^1 &* A giant toilet.";
-				msg[1] = "* A disgusting smell comes from the inside of it.";
-				msg[2] = "* The toilet is too big for you to see what is causing the smell.";
-			}
-			if (text == "battle_act_toilet1") // Toilet
-			{
-				msg[0] = "* (You flushed the toilet.)";
-				msg[1] = "* (Suddenly,^1 the smell stops.)";
-				msg[2] = "* (Then,^1 you understand.)";
-				msg[3] = "* (The toilet^4 is finally^4 free.)";
-				msg[4] = "* (It smiles and thanks you for freeing it.)";
-				msg[5] = "* (You feel like a weight has been lifted from your shoulders.)";
-			}
+			
 			if (string_starts_with(text, "battle_act_test") == true) // TESTGUY
 			{
 				for (var m = 0; m < 99; m++)
@@ -1703,17 +1649,17 @@ function TEXT()
 			{
 				for (var i = 0; i < 2; i++)
 					msg[i] = get_text("battle_act_result_dummy_2_" + string(i));
-				if (controller.enemy_obj[0].stage >= 3)
+				if (controller.enemy_obj[0].stage == 5)
 				{
 					var _screamed = controller.enemy_obj[0].screamed;
-					_screamed = clamp(_screamed, 0, 3);
-					msg[2] = get_text("battle_act_result_dummy_2_2_" + string(_screamed));
-					msg_face[2] = spr_dialogface_m6_sassy;
-					msg_sound[2] = snd_writer_m6;
-					if (_screamed == 3)
+					_screamed = clamp(_screamed, 0, 4);
+					msg[i] = get_text("battle_act_result_dummy_2_2_" + string(_screamed));
+					msg_face[i] = spr_dialogface_m6_sassy;
+					msg_sound[i] = snd_writer_m6;
+					if (_screamed == 4)
 					{
-						msg_face[2] = spr_dialogface_m6_angry;
-						msg_sound[2] = snd_writer_m6_angry;
+						msg_face[i] = spr_dialogface_m6_angry;
+						msg_sound[i] = snd_writer_m6_angry;
 					}
 				}
 			}
@@ -1867,6 +1813,17 @@ function TEXT()
 				for (var m = 0; m < 99; m++)
 				{
 					var _msg = get_text($"battle_act_result_troll_{string_char_at(text, string_length(text))}_{m}");
+					if (_msg == undefined)
+						break;
+					msg[m] = _msg;
+				}
+			}
+			if (string_starts_with(text, "battle_act_toilet") == true) // Toilet
+			{
+				var _text_index = string_char_at(text, string_length(text));
+				for (var m = 0; m < 99; m++)
+				{
+					var _msg = get_text($"battle_act_result_toilet_{_text_index}_{m}");
 					if (_msg == undefined)
 						break;
 					msg[m] = _msg;

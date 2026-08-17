@@ -187,9 +187,9 @@ if (timer.active == true)
 		{
 			timer.color_green = 255;
 			timer.scale = 1.25;
+			audio_play(snd_writer_0, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
 			audio_play(snd_impactBump, false, VOLUME_SOUND, , , , (1 + (0.25 * !(timer.seconds % 2))));
 		}
-		audio_play(snd_writer_0, false, VOLUME_SOUND, 1.5, , , (1 + (0.25 * !(timer.seconds % 2))));
 	}
 }
 // Buttons & Reset button

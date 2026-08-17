@@ -287,7 +287,7 @@ if (active == 1)
 			switch (global.flag[69])
 			{
 				case 0.125:
-				offsetY = lerp(offsetY, round(35 * 2.5), 0.003);
+				offsetY = lerp(offsetY, round(35 * 2.5), 0.0035);
 				head_sprite = spr_enemy_rhonhey_head_downEat;
 				head_image = 0;
 				if (exists(controller.heart) == true)

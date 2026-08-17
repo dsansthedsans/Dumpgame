@@ -230,11 +230,17 @@ for (var c = 1; c < (text_length + 1); c++)
 				text_color[0] = orig_text_color;
 				_cancheck = 0;
 			}
-		
+			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) 
+			{
+				text_color[0] = c_grey;
+				_cancheck = 0;
+			}
+			
 			// custom
 			if (string_char_at(msg[page], c + 1) == "@" && _cancheck == 1) // mention
 			{
-				text_color[0] = global.c_mention;
+				text_color[0] = global.c_mention[0];
+				text_color[1] = global.c_mention[1];
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "U" && _cancheck == 1) // dumpcolor
@@ -495,6 +501,8 @@ if (question[page] != "%%%" && writing == 0)
 		question_optx[i] *= _scale;
 		if (question[page] == "" && msg_type[page] != "savepoint")
 			question_opty[i] = (orig_text_y + (letter_yspace * 1.5));
+		else if (string_letters(question[page]) == "" && room != room_battle)
+			question_opty[i] -= round(12.5);
 		question_optx[i] = round(question_optx[i]);
 		question_opty[i] = round(question_opty[i]);
 		i += 1;

@@ -36,6 +36,14 @@ brock_floatSiner = 0;
 brock_floatSlow = false;
 brockShock_draw = false;
 brockShock_image = 0;
+brockHands_draw = false;
+brockHands_length = 3;
+for (var h = 0; h < brockHands_length; h++)
+{
+	brockHands_scaleY[h] = (8 - h);
+	brockHands_angle[h] = random(360);
+	brockHands_angleSpeed[h] = (random_range(0.125, 0.5) * choose(-1, 1));
+}
 brockBrick = [];
 thiswriter = undefined;
 
@@ -44,5 +52,5 @@ DEBUG_SKIP = false;
 if (DEBUG_SKIP == true)
 {
 	global.flag[37] = 1;
-	global.flag[38] = 1;
+	//global.flag[38] = 1;
 }

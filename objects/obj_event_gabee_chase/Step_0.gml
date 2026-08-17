@@ -93,7 +93,7 @@ if (con == 15)
 {
 	writer("event_gabee_chase.1", -1, -1);
 	con = 16;
-	if (chara_murder() >= 2)
+	if (global.world_curpopulation[chara_world()] <= 0)
 	{
 		con = 21;
 		num = 0;
@@ -128,7 +128,7 @@ if (con == 17)
 }
 if (con == 18)
 {
-	if (chara_murder() < 2)
+	if (global.world_curpopulation[chara_world()] > 0)
 		chara_facing(LEFT);
 	m6.facing = -1;
 	m6.sprite_index = spr_m6_u_sit;
@@ -165,7 +165,7 @@ if (con == 19)
 		global.flag[2] = 0;
 		alarm[2] = round(45 + 7.5);
 		con = 20;
-		if (chara_murder() >= 2)
+		if (global.world_curpopulation[chara_world()] <= 0)
 			con = 35.5;
 	}
 }
@@ -225,7 +225,7 @@ if (con == 36)
 		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		alarm[4] = 45;
 		con = 36.25;
-		if (chara_murder() >= 2)
+		if (global.world_curpopulation[chara_world()] <= 0)
 			con = 15.75;
 	}
 }
@@ -365,7 +365,7 @@ if (con == 46)
 		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		alarm[2] = 120;
 		con = 47;
-		if (chara_murder() >= 2)
+		if (global.world_curpopulation[chara_world()] <= 0)
 			con = 53;
 	}
 }

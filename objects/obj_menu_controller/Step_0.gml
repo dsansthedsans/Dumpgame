@@ -112,12 +112,12 @@ if (move == 1)
 		// título
 		if (global.menu_lvl == 0)
 		{
-			// jogar/continuar
+			// jogar/continuar/creditos
 			if (option_pos != (option_length[0] - 1))
 			{
 				global.menu_lvl = (option_pos + 1);
-				//if (global.menu_lvl == 1 && global.hasfile == 1)
-				//	global.menu_lvl = 5;
+				if (option_pos == 2 && global.ACHIEVEMENT_ENABLED == false)
+					global.menu_lvl = 4;
 				option_pos = 0;
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
 				event_user(5);
@@ -132,7 +132,7 @@ if (move == 1)
 		else if (global.menu_lvl > 0 && option_pos == 0)
 		{
 			// normal
-			if (global.menu_lvl < 5)
+			if (global.menu_lvl < (4 + global.ACHIEVEMENT_ENABLED))
 			{
 				option_pos = (global.menu_lvl - 1);
 				global.menu_lvl = 0;
@@ -141,6 +141,12 @@ if (move == 1)
 			// específico
 			else
 			{	
+				if (global.menu_lvl == 4 && global.ACHIEVEMENT_ENABLED == false)
+				{
+					option_pos = 2;
+					global.menu_lvl = 0;
+				}
+				
 				// controles
 				if (global.menu_lvl == 6)
 				{
@@ -206,11 +212,11 @@ if (move == 1)
 				global.showfps = !global.showfps;
 			if (_pos == 10)
 				global.showsw = !global.showsw;
-			if (_pos == 11)
+			if (_pos == 11 && global.ACHIEVEMENT_ENABLED == false)
 				global.hidenotif = !global.hidenotif;
-			if (_pos == 12)
+			if (_pos == 12 - !global.ACHIEVEMENT_ENABLED)
 				global.drpenabled = !global.drpenabled;
-			if (_pos == 13)
+			if (_pos == 13 - !global.ACHIEVEMENT_ENABLED)
 				global.fastmenu = !global.fastmenu;
 
 			event_user(1);

@@ -129,7 +129,7 @@ if (lvl == 3)
 	var _iy = (_cy + bg_y[3] + title_bgh + 16);
 	
 	// nome
-	draw_text_color(_imx, _iy, $"@{global.chara_name}", c_white, c_white, global.c_mention, global.c_mention, 1);
+	draw_text_color(_imx, _iy, $"@{global.chara_name}", global.c_mention[1], global.c_mention[1], global.c_mention[0], global.c_mention[0], 1);
 	
 	// informações
 	draw_set_halign(fa_left);

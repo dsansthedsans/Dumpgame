@@ -85,7 +85,7 @@ if (controller.enemy_type[myself] != 0)
 		else if (controller.level_heard == 2)
 		{
 			body.stage = 2;
-			if (stage >= 3)
+			if (stage >= 5)
 				screamed += 1;
 		}
 		

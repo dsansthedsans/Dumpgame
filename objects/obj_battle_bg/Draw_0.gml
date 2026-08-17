@@ -13,5 +13,5 @@ if (exists(controller) == true && controller.battle_bg != -1)
 			draw_sprite_part_ext(sprite_index, 0, w, 0, 1, sprite_get_height(sprite_index), (image_xscale * w), (sin((w / waveWidth) - (waveSiner / waveSpeed)) * waveHeight), image_xscale, image_yscale, image_blend, image_alpha);
 	}
 }
-else
-	destroy(id);
+//else
+//	destroy(id);

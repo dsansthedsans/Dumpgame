@@ -1,13 +1,3 @@
-
-/*
-if (global.resetfile == 1)
-{
-	GAME_START();
-	TEMPFILE_LOAD();
-	global.fastmenu = 1;
-}
-*/
-//PRESS ENTER TO SKIP GAME OVER TIPO HOLD ALT TO HIDE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 depth = -1000;
 screenpos(0, 0);
 if (global.savefile_selected != -1)
@@ -19,7 +9,7 @@ lvl = @"
 		0 = Title
 		1 = Select file
 		2 = Settings
-		3 = Achievements
+		3 = Achievements (UNUSED)
 		4 = Credits
 		5 = Play (Continue)
 		6 = Controls

@@ -85,6 +85,7 @@ if (active == 1)
 			if (controller.level_heard == 1)
 			{
 				flushed = 1;
+				controller.battle_music = -1;
 				audio_play(unused_snd_toilet_flush, , VOLUME_SOUND);
 			}
 			usedact = 1;

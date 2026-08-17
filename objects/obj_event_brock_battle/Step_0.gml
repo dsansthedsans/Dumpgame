@@ -66,6 +66,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 			}
 			brock.image_alpha = (brock_jumpAlpha / 2);
 			brockShock_draw = true;
+			brockHands_draw = true;
 			audio_play(snd_impactSwing, 0, VOLUME_SOUND);
 			shakescreen(4, 4);
 			for (var i = 0; i < instance_number(obj_overworld_solid); i++)
@@ -135,13 +136,16 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 	}
 	if (aftercon == 1)
 	{
-		brock.x = lerp(brock.x, brock_jumpX, brock_jumpSpeed);
-		brock.y = lerp(brock.y, brock_jumpY, brock_jumpSpeed);
+		var _jumpSpeed = brock_jumpSpeed;
+		if (con >= 14)
+			_jumpSpeed /= 2;
+		brock.x = lerp(brock.x, brock_jumpX, _jumpSpeed);
+		brock.y = lerp(brock.y, brock_jumpY, _jumpSpeed);
 		brock.vspeed = 0;
-		brock.image_alpha = lerp(brock.image_alpha, brock_jumpAlpha, brock_jumpSpeed);
-		brock.image_xscale = lerp(brock.image_xscale, brock_jumpScaleX, brock_jumpSpeed);
-		brock.image_yscale = lerp(brock.image_yscale, brock_jumpScaleY, brock_jumpSpeed);
-		if (point_distance(brock.x, brock.y, brock_jumpX, brock_jumpY) <= 1)
+		brock.image_alpha = lerp(brock.image_alpha, brock_jumpAlpha, _jumpSpeed);
+		brock.image_xscale = lerp(brock.image_xscale, brock_jumpScaleX, _jumpSpeed);
+		brock.image_yscale = lerp(brock.image_yscale, brock_jumpScaleY, _jumpSpeed);
+		if (point_distance(brock.x, brock.y, brock_jumpX, brock_jumpY) <= 0.75)
 		{
 			brock.x = brock_jumpX;
 			brock.y = brock_jumpY;
@@ -182,7 +186,6 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 			alarm[2] = m6_seriousDelay;
 			aftercon = 3;
 		}
-	
 	}
 	if (aftercon == 3)
 	{
@@ -241,6 +244,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 	{
 		brock.x = lerp(brock.x, chara.x, 0.1);
 		brock.y = lerp(brock.y, chara.y, 0.1);
+		brock.vspeed = 0;
 		aftercon = 0;
 		with (chara)
 		{
@@ -251,6 +255,8 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 				global.battle_nextgroup = 6;
 				battle();
 				other.con = 18;
+				other.brockShock_draw = false;
+				other.brockHands_draw = false;
 			}
 		}
 	}
@@ -278,6 +284,7 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 			brock.image_xscale = brock_jumpScaleX;
 			brock.image_yscale = brock_jumpScaleY;
 			brock_floatSlow = true;
+			brockHands_draw = true;
 			aftercon = 2;
 		}
 		else
@@ -320,8 +327,9 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 	{
 		global.flag[39] = 0.75;
 		con += 1;
-		aftercon += 1;
 		alarm[2] = (60 * 4);
+		aftercon += 1;
+		brock.vspeed = 0;
 	}
 	if (aftercon == 3 && brock != undefined && exists(brock) == true)
 	{
@@ -372,6 +380,11 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 			game.cam_y = game.cam_charay;
 			global.flag[39] = true;
 			global.flag[41] = true;
+			if (global.ACHIEVEMENT_ENABLED == true && global.achievement[ACHIEVEMENT_BROCKWIN] == false)
+			{
+				achievement_add(ACHIEVEMENT_BROCKWIN);
+				create_notification("brockwin");
+			}
 			chara_facing(DOWN);
 			chara_change(-1, true, true, false, true, true, true);
 			party_change(0, 1, LEFT);
