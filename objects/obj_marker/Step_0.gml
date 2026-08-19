@@ -11,9 +11,9 @@ if (sprite_index == spr_dumpparticle_heart)
 	if (x <= -20) || (x >= (room_width + 20)) || (y <= -20) || (image_alpha <= 0)
 		destroy(id);	
 }
-if (sprite_index == spr_singlepixel && room == unused_room_happybirthday)
+if (sprite_index == spr_singlepixel && room == room_corridors_2)
 {
 	siner += 0.1;
 	hspeed = sin(siner) * sinermult;	
-	image_angle += choose(-2, 2);
+	//image_angle += choose(-2, 2);
 }

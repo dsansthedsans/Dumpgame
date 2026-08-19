@@ -793,7 +793,7 @@ function battle_attack()
 					bubble_offsetX : 0,
 					bubble_offsetY : 0,
 				};
-				mee6.object = marker(-20, -20, spr_enemy_m6_default, 1, 2, 2, 0, 1, 0, c_white, controller.battle_depth[1]);
+				mee6.object = marker(-20, -20, spr_enemy_m6_leftMad, 1, 2, 2, 0, 1, 0, c_white, controller.battle_depth[1]);
 				mee6.object.x = (room_width + (sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale));
 				mee6.object.y = controller.defaulty;
 				mee6.bubble_offsetX = (-((sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale) / 2));
@@ -918,7 +918,7 @@ function battle_attack()
 			{
 				var _mee6_targetX = round(controller.box_defaultx + (controller.box_defaultw / 2.5));
 				if (mee6.object.x > _mee6_targetX)
-					mee6.object.x -= 2;
+					mee6.object.x -= 4;
 				var _rhonhey_targetX = (controller.box_defaultx - (controller.box_defaultw / 2.5));
 				if (controller.enemy_obj[myself].body.x > _rhonhey_targetX)
 				{
@@ -932,7 +932,7 @@ function battle_attack()
 					stage += 1;
 				}
 			}
-			else if (stage == 9)
+			if (stage == 9)
 			{
 				writer("battle_bubble_m6_1", (mee6.object.x + mee6.bubble_offsetX), (mee6.object.y + mee6.bubble_offsetY));
 				stage += 1;
@@ -990,6 +990,7 @@ function battle_attack()
 					stage += 1;
 				}
 			}
+			
 		}
 	}
 	if (enemy == 2000) // Toilet

@@ -29,3 +29,5 @@ spared = 0;
 event_user(0);
 
 emotion = 0;
+if (chara_murder() >= 1)
+	emotion = 1;

@@ -35,3 +35,5 @@ event_user(0);
 
 tookslime = 0;
 punched = 0;
+if (chara_murder() >= 1)
+	tookslime = true;

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Dumpgame_51",
-    "path":"Dumpgame_51.yyp",
+    "name":"Dumpgame",
+    "path":"Dumpgame.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

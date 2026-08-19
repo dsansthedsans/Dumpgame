@@ -12,45 +12,27 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 	// draw textbox
 	if (msg_type[page] != "intro" && msg_type[page] != "notawake")
 	{
-		var _xx = 16;
-		var _yy = 160;
+		textbox_x = 16;
+		textbox_y = 160;
 		if (msg_format[page] == "textbox_top")
-			_yy = 5;
-		var _ww = 289;
-		var _hh = 76;
+			textbox_y = 5;
+		textbox_width = 289;
+		textbox_height = 76;
 		if (msg_type[page] == "savepoint") // save point
 		{
-			_xx = 53;
-			_yy = 58;
-			_ww = 213;
-			_hh = 88;
+			textbox_x = 53;
+			textbox_y = 58;
+			textbox_width = 213;
+			textbox_height = 88;
 		}
-		draw_sprite_stretched_ext(spr_writer_textbox, 0, (_bonusx + _xx), (_bonusy + _yy), _ww, _hh, textbox_color, alpha);
+		draw_sprite_stretched_ext(spr_writer_textbox, 0, (_bonusx + textbox_x), (_bonusy + textbox_y), textbox_width, textbox_height, textbox_color, alpha);
 	}
 	
 	// draw face
 	if (msg_face[page] > -1)
 	{
 		face_index += 0.1;
-		draw_sprite_ext(msg_face[page], face_index, (_bonusx + 27), (_bonusy + _yy + 14), 1, 1, 0, c_white, alpha);
-	}
-	
-	// manage talker
-	if (msg_talker[page] > -1)
-	{
-		if (writing == 1)
-			msg_talker[page].image_speed = 0.2 + (0.15 / 2);
-		else
-		{
-			msg_talker[page].image_speed = 0;
-			msg_talker[page].image_index = 0;
-		}
-		talkerpage = page;
-	}
-	else if (talkerpage != -1)
-	{
-		msg_talker[talkerpage].image_speed = 0;
-		msg_talker[talkerpage].image_index = 0;
+		draw_sprite_ext(msg_face[page], face_index, (_bonusx + 27), (_bonusy + textbox_y + 14), 1, 1, 0, c_white, alpha);
 	}
 	
 	// desenhar informações do jogador no ponto de save
@@ -76,6 +58,10 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 			_room = chara_room_name(savefile_room);
 		}
 		
+		var _xx = textbox_x;
+		var _yy = textbox_y;
+		var _ww = textbox_width;
+		var _hh = textbox_height;
 		var _hspace = 17;
 		var _vspace = 12;
 		var _uppery = (_bonusy + _yy + _vspace);
@@ -113,6 +99,25 @@ if (msg_format[page] == "battlebox")
 }
 if (msg_format[page] == "bubble")
 	draw_sprite_ext(bubble_spr, 0, bubble_x, bubble_y, 1, 1, 0, c_white, alpha);
+if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg_format[page] == "textbox_top" || msg_format[page] == "bubble")
+{
+	if (msg_talker[page] > -1)
+	{
+		if (writing == 1)
+			msg_talker[page].image_speed = 0.2;
+		else
+		{
+			msg_talker[page].image_speed = 0;
+			msg_talker[page].image_index = 0;
+		}
+		talkerpage = page;
+	}
+	else if (talkerpage != -1)
+	{
+		msg_talker[talkerpage].image_speed = 0;
+		msg_talker[talkerpage].image_index = 0;
+	}
+}
 
 // draw text
 shaking = 0;
@@ -198,8 +203,6 @@ for (var c = 1; c < (text_length + 1); c++)
 		if (string_char_at(msg[page], c) == _key && string_char_at(msg[page], (c + 1)) != "\\")
 		{
 			var _cancheck = 1;
-			
-			// normal colors
 			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) 
 			{
 				text_color[0] = c_yellow;
@@ -230,13 +233,21 @@ for (var c = 1; c < (text_length + 1); c++)
 				text_color[0] = orig_text_color;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) 
+			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1)
 			{
 				text_color[0] = c_grey;
 				_cancheck = 0;
 			}
-			
-			// custom
+			if (string_char_at(msg[page], c + 1) == "E" && _cancheck == 1) 
+			{
+				text_color[0] = c_green;
+				_cancheck = 0;
+			}
+			if (string_char_at(msg[page], c + 1) == "O" && _cancheck == 1) 
+			{
+				text_color[0] = #F29948;
+				_cancheck = 0;
+			}
 			if (string_char_at(msg[page], c + 1) == "@" && _cancheck == 1) // mention
 			{
 				text_color[0] = global.c_mention[0];
@@ -253,7 +264,6 @@ for (var c = 1; c < (text_length + 1); c++)
 				text_color[0] = #4986B7;
 				_cancheck = 0;
 			}
-
 			if (_cancheck == 0)
 			{
 				if (_key == ";")

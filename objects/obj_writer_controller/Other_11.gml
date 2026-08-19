@@ -59,11 +59,11 @@ if (msg[page] != "%%%") || (question[page] != "%%%")
 }
 else
 {
-	if (global.chara_cutscene == 0 && exists(obj_chara_menu) == 0)
-	{
-		//chara_change(-1, 1, -1, -1, -1, -1, -1);
-		//global.chara_move = 1;
-	}
+	//if (global.chara_cutscene == 0 && exists(obj_chara_menu) == 0)
+	//{
+	//	chara_change(-1, 1, -1, -1, -1, -1, -1);
+	//	global.chara_move = 1;
+	//}
 	if (msg_talker[(page - 1)] > -1)
 	{
 		msg_talker[(page - 1)].image_speed = 0;

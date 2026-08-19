@@ -9,7 +9,7 @@ if (DEBUG_SKIP == true)
 if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 {
 	for (var t = 0; t < 3; t++)
-		thing_object[t] = marker(0, 0, spr_event_rhonhey_thing_0, 1, 1, 1, 0, 0, 0, c_white, -room_height);
+		thing_object[t] = marker(0, 0, spr_event_rhonhey_battle_thing_0, 1, 1, 1, 0, 0, 0, c_white, -room_height);
 	with (thing_object[0])
 	{
 		x = 40;
@@ -29,7 +29,7 @@ if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 		x = 160;
 		y = (80 + 10);
 		direction = 270;
-		sprite_index = spr_event_rhonhey_thing_1;
+		sprite_index = spr_event_rhonhey_battle_thing_1;
 		image_speed = 1;
 		image_blend = c_black;
 	}

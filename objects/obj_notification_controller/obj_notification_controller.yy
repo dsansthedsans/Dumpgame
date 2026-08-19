@@ -11,8 +11,8 @@
   "name":"obj_notification_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dumpgame_51",
-    "path":"Dumpgame_51.yyp",
+    "name":"Dumpgame",
+    "path":"Dumpgame.yyp",
   },
   "parentObjectId":null,
   "persistent":true,

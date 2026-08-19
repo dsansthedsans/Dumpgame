@@ -36,3 +36,8 @@ event_user(0);
 kicked = 0;
 emptied = 0;
 alreadyempty = 0;
+if (chara_murder() >= 1)
+{
+	kicked = true;
+	controller.enemy_spare[myself] = 100;
+}
