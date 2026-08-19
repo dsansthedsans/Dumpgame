@@ -1,10 +1,10 @@
-<h1>README UNDER CONSTRUCTION !!!!!!<br>ALSO the download of 2.0.0-demo will be available SOON........................................</h1>
+<h1>README UNDER CONSTRUCTION !!!!!!<br>the download of the new version will be available SOON........................................!</h1>
 <br>
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsansthedsans and migel8022</strong></h3>
 <p align="center">
   <img src="https://img.shields.io/badge/status-cancelled-white?labelColor=40ff6d" alt="Status">
-  <img src="https://img.shields.io/badge/version-2.0.0--demo-white?labelColor=40ff6d" alt="Version">
+  <img src="https://img.shields.io/badge/version-0.5.0-white?labelColor=40ff6d" alt="Version">
   <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="License">
   <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/Itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
@@ -12,7 +12,7 @@
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children.</p>
+<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children.</p> <!--"In this RPG, you control a [...]" from UNDERTALE's Steam description-->
 <p>Are you strong enough to go home while everybody tries to kill you?</p>
 <br>
 
@@ -29,9 +29,9 @@
 <ul>
   <li><b>MEE6</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_m6_d/529077fe-59e6-4690-bc88-4794d561d86b.png" height="32" align="top"> , a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
   <li><b>Armsguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_armsguy/b3a84e52-745d-4bc2-9db0-ad11a317eb49.png" height="32" align="top"> , a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
-  <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face life head-on. They usually stick close to an Armsguy.</li>
+  <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face danger head-on. They usually stick close to an Armsguy.</li><!--"[...] to face danger head-on" from "UNDERTALE"-->
   <li><b>Flitcher</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_flitcher/ca904f51-ea94-45e0-8699-841141abe37c.png" height="32" align="top"> , a reptile-like monster who's unaware of its own existence for most of the time. There's not much to say about it.</li>
-  <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he unconsciously pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
+  <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock_full/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he unconsciously pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
   <li><b>And more</b>...?</li>
 </ul>
 <br>
@@ -44,7 +44,7 @@
 <p>No external files are required.</p>
 <br>
 <h1>Development History</h1>
-<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p>
+<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p><!--"Long ago, two races ruled over Earth" from "UNDERTALE"-->
 <p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
 <p>I was 11 years old at the time.</p>
 <br>
@@ -65,6 +65,10 @@
 <br>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
 <br>
+<p>Insert 4th generation here.</p>
+<p>Many years later...</p><!--from "UNDERTALE"-->
+<p>Insert 5th generation here.</p>
+<br>
 <h1>Never Asked Questions</h1>
 <h3>Is Dumpgame still in development?</h3>
 <blockquote>No. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
@@ -72,8 +76,8 @@
 <blockquote>Yes, very. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
 <h3>Is Dumpgame still associated with Dumpster Friends?</h3>
 <blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
-<h3>Is Dumpgame associated with  UNDERTALE, Discord or MEE6?</h3>
-<blockquote>No, Dumpgame is not associated with UNDERTALE, Discord or MEE6.</blockquote>
+<h3>Is Dumpgame associated with Toby Fox, MEE6 and Discord?</h3>
+<blockquote>No, Dumpgame is not associated with Toby Fox, MEE6 or Discord. It's just an UNDERTALE fangame.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, NOTHING related to Dumpgame is AI-generated, not even this README. The ONLY exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
@@ -94,8 +98,8 @@
 </ul>
 <h3>Contributors & Testers</h3>
 <ul>
-  <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy (two of the most important non-player characters of the game)</i></li>
-  <li>☭Comunista☭<i> 〜 Concept Art Assistance for MEE6 (the most important non-player character of the game)</i></li>
+  <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy</i></li>
+  <li>☭Comunista☭<i> 〜 Concept Art Assistance for MEE6</i></li>
   <li>fer10tanb<i> 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</i></li>
 </ul>
 <h3>Special Thanks</h3>
@@ -118,4 +122,4 @@
   <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
 </ul>
-<p align="left"><a href="https://www.youtube.com/watch?v=XpqVHrP_XEs" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/unused_spr_happybirthday_cake/4f9da4cb-90b0-45e4-8fd7-d0ced2ef0c62.png" height="16" alt="If you're reading this, I messed up somehow."></a></p>
+<p align="left"><a href="https://www.youtube.com/watch?v=XpqVHrP_XEs" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/unused_spr_happybirthday_cake/4f9da4cb-90b0-45e4-8fd7-d0ced2ef0c62.png" height="16" alt="If you're reading this, I messed up somehow."></a></p><!--"If you are reading this, I messed up somehow" from "UNDERTALE"-->
