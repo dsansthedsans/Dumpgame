@@ -24,7 +24,6 @@ if (global.flag[2] == true && control.assist.active == true)
 	else	
 		ds_list_clear(touched);
 	ds_list_destroy(touching);
-	
 }
 if (_damage == false && image_alpha > 0)
 	image_alpha -= 0.05;

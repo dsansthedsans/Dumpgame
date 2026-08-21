@@ -61,6 +61,28 @@ if (type == 2.1)
 	targetx = obj_battle_heart.x;
 	basegrav = gravity;
 }
+if (type == 2.2)
+{
+	depth += 1;
+	image_alpha = 0;
+	sprite_index = spr_singlepixel;
+	image_yscale = -2;
+	outside_box = true;
+	can_damage = false;
+	destroy_on_impact = false;
+	touching = undefined;
+	touching_length = 0;
+	touched = ds_list_create();
+	for (var i = 0; i < instance_number(obj_battle_blt); i++)
+	{
+		var _blt = instance_find(obj_battle_blt, i);
+		if (_blt.type == 2.2 && _blt != id)
+		{
+			destroy(id);
+			break;
+		}
+	}
+}
 // Trashguy
 if (type == 3.0)
 {
@@ -98,7 +120,7 @@ if (type == 3.1)
 {
 	x = (controller.box_x - (controller.box_w / 2) - controller.box_borderw);
 	y = controller.box_y;
-	depth = controller.battle_depth[1];
+	//depth = controller.battle_depth[1];
 	image_alpha = 0.25;
 	image_xscale = 2;
 	if (myside == 1)
@@ -219,6 +241,11 @@ if (type == 6.1)
 		vspeed *= 0.875;
 		gravity *= 0.75;
 	}
+	//if (controller.enemy_obj[myself].insultTurns > 0)
+	//{
+	//	vspeed *= 0.875;
+	//	gravity *= 0.75;
+	//}
 	if (x < controller.box_x)
 		hspeed = irandom_range(0, 1);
 	else

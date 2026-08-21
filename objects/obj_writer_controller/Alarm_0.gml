@@ -3,8 +3,94 @@
 if (text_length <= (string_length(msg[page]) - 1))
 {
 	text_length += 1;
-	
 	var _playsnd = 1;
+	switch (string_char_at(msg[page], text_length))
+	{
+		// Whitespace
+		case " ":
+		_playsnd = false;
+		break;
+		// Line break
+		case "&":
+		if (string_char_at(msg[page], (text_length + 1)) != "\\")
+		{
+			_playsnd = false;
+			text_length += 1;
+		}
+		break;
+		// Pauses
+		case "^":
+		if (string_char_at(msg[page], (text_length + 1)) != "\\")
+		{
+			switch (string_char_at(msg[page], (text_length + 1)))
+			{
+				case "1":
+				text_speed += 15;
+				break;
+				case "2":
+				text_speed += 30;
+				break;
+				case "3":
+				text_speed += 7;
+				break;
+				case "4":
+				text_speed += 60;
+				break;
+			}
+			_playsnd = false;
+			text_length += 1;
+		}
+		break;
+		// Colors
+		case ":":
+		case ";":
+		if (string_char_at(msg[page], (text_length + 1)) != "\\")
+		{
+			_playsnd = false;
+			text_length += 1;
+		}
+		break;
+		// Effects
+		case "+":
+		if (string_char_at(msg[page], (text_length + 1)) != "\\")
+		{
+			_playsnd = false;
+			text_length += 1;
+		}
+		break;
+		// Special character
+		case "\\":
+		_playsnd = false;
+		text_length += 1;
+		break;
+	}
+	switch (string_char_at(msg[page], (text_length - 1)))
+	{
+		case "&":
+		case "^":
+		case ":":
+		case ";":
+		case "+":
+		if (string_char_at(msg[page], text_length) == "!" && string_char_at(msg[page], (text_length - 1)) == "&")
+		|| (string_char_at(msg[page], text_length) != "//")
+		{
+			_playsnd = false;
+			text_length += 1;
+		}
+		break;
+	}
+	switch (string_char_at(msg[page], (text_length - 2)))
+	{
+		case "+":
+		if (string_char_at(msg[page], (text_length - 1)) != "//")
+		{
+			_playsnd = false;
+			text_length += 1;
+		}
+		break;
+	}
+	
+	/*
 	if (string_char_at(msg[page], text_length) == " ")
 		_playsnd = 0;
 	if (string_char_at(msg[page], (text_length + 1)) != "\\" && (string_char_at(msg[page], text_length) == ":" || string_char_at(msg[page], text_length) == ";")) 
@@ -20,9 +106,13 @@ if (text_length <= (string_length(msg[page]) - 1))
 		text_length += 2;
 	}
 	if (string_char_at(msg[page], text_length) != "\\" && (string_char_at(msg[page], (text_length - 1)) == "&" || string_char_at(msg[page], (text_length - 1)) == "+"))
+	{
 		_playsnd = 0;
-	
-	if (string_char_at(msg[page], (text_length + 2)) != "\\" && string_char_at(msg[page], (text_length + 1)) == "^")
+		if (string_char_at(msg[page], (text_length - 1)) == "&" && string_char_at(msg[page], text_length) == "!")
+			text_length += 1;
+	}
+	// pauses
+	if (string_char_at(msg[page], (text_length + 1)) == "^" && string_char_at(msg[page], (text_length + 2)) != "\\")
 	{
 		if (string_char_at(msg[page], (text_length + 2)) == "1")
 			text_speed += 15;
@@ -40,6 +130,7 @@ if (text_length <= (string_length(msg[page]) - 1))
 	}
 	if (string_char_at(msg[page], text_length) != "\\" && string_char_at(msg[page], (text_length - 1)) == "^")
 		_playsnd = 0;
+	*/
 	
 	if (_playsnd == 1 && msg_sound[page] > -1)
 	{

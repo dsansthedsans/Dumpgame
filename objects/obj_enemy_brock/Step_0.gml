@@ -143,6 +143,8 @@ if (active == 1)
 			startattack = 0;
 			returnmain = 1;
 			usedact = 0;
+			if (insultTurns > 0)
+				insultTurns -= 1;
 		}
 	}
 }

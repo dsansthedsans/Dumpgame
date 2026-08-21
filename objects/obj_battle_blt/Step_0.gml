@@ -101,6 +101,30 @@ if (active == 1)
 		else if (delay > 0)
 			delay -= 1;
 	}
+	if (type == 2.2)
+	{
+		touching = ds_list_create();
+		touching_length = instance_place_list(x, y, obj_battle_blt, touching, true);
+		if (touching_length > 0)
+		{
+		    for (var i = 0; i < touching_length; ++i)
+		    {
+				if (ds_list_find_index(touched, touching[| i]) == -1 && touching[| i].object_index == obj_battle_blt && touching[| i].active == true && touching[| i].type == 2.0)
+				{
+					if (image_alpha == 1)
+						image_yscale -= 2;
+					image_alpha = 1;
+					can_damage = true;
+					ds_list_add(touched, touching[| i]);
+					destroy(touching[| i]);
+					audio_play(snd_step_water, 0, VOLUME_SOUND);
+				}
+		    }
+		}
+		else	
+			ds_list_clear(touched);
+		ds_list_destroy(touching);
+	}
 	// Trashguy
 	if (type == 3.0)
 	{
@@ -229,6 +253,8 @@ if (active == 1)
 		var _speed_add = 0.05;
 		if (controller.enemy_obj[myself].negotiate >= 2)
 			_speed_add *= 0.75;
+		//if (controller.enemy_obj[myself].insultTurns > 0)
+		//	_speed_add *= 0.75;
 		speed += _speed_add;
 		afterimage();
 	}
@@ -320,6 +346,8 @@ if (active == 1)
 				_time = 22;
 			if (controller.enemy_obj[myself].negotiate >= 2)
 				_time += 5;
+			if (controller.enemy_obj[myself].insultTurns > 0)
+				_time += 5;
 			dx1 = (x - (sw / 2) + 2);
 			dy1 = (y - (sh / 2) + 2);
 			dx2 = (nextx + (sw / 2) - 2);
@@ -347,6 +375,8 @@ if (active == 1)
 			if (controller.battle_round > 3)
 				_time = 15;
 			if (controller.enemy_obj[myself].negotiate >= 2)
+				_time += 5;
+			if (controller.enemy_obj[myself].insultTurns > 0)
 				_time += 5;
 			if (delay >= _time)
 			{

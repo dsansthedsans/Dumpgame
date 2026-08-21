@@ -380,7 +380,7 @@ function battle_getattack()
 			else
 			{
 				enemy_attack[i] = -1;
-				battle_turntime = 60;
+				battle_turntime = 90;
 			}
 		}
 		if (enemy_type[i] == 7) // Rhonhey
@@ -430,6 +430,12 @@ function battle_attack()
 	{
 		if (attack == 0)
 		{
+			if (stage == 0)
+			{
+				create(-20, -20, obj_battle_blt);
+				thisobj.type = 2.2;
+				stage = 1;
+			}
 			var _x = (box_x - (box_w / 2) + irandom(box_w));
 			var _y = (box_y - (box_h / 2) - 15);
 			create(_x, _y, obj_battle_blt);
@@ -446,6 +452,8 @@ function battle_attack()
 			
 			time = (irandom_range(45, 60) + normaltime);
 		}
+		time += (5 * controller.enemy_obj[myself].punched);
+		time -= (5 * controller.enemy_obj[myself].tookslime);
 	}
 	if (enemy == 3) // Trashguy
 	{
@@ -463,6 +471,8 @@ function battle_attack()
 			audio_play(snd_impactBump, 0, VOLUME_SOUND);
 			
 			time = (irandom_range(15, 25) + normaltime);
+			time += (5 * controller.enemy_obj[myself].emptied);
+			time -= (5 * controller.enemy_obj[myself].kicked);
 		}
 		if (attack == 1)
 		{
@@ -491,6 +501,8 @@ function battle_attack()
 			create(_x, _y, obj_battle_blt)
 			thisobj.type = (4 + (attack / 10));
 			time = irandom_range(20, 30) + (normaltime * 2);
+			time += (5 * (controller.enemy_obj[myself].emotion == 2));
+			time -= (5 * (controller.enemy_obj[myself].emotion == 1));
 		}
 		if (attack == 2)
 		{
@@ -618,7 +630,7 @@ function battle_attack()
 			}
 			if (stage == 1)
 			{
-				var _delay = 15 - (4 * (controller.battle_round > 1));
+				var _delay = 15 - (4 * (controller.battle_round > 1)) + (4 * (controller.enemy_obj[myself].insultTurns > 0));
 				if (delay >= _delay)
 				{
 					create((box_x - (box_w / 2) + irandom(box_w)), (box_y - (box_h / 2) + 20), obj_battle_blt);
@@ -693,6 +705,8 @@ function battle_attack()
 					_time = 40;
 				if (controller.enemy_obj[myself].negotiate >= 2)
 					_time += 5;
+				if (controller.enemy_obj[myself].insultTurns > 0)
+					_time += 5;
 				battle_danger(1, danger_x1, danger_y1, danger_x2, danger_y2, _time);
 				
 				time = _time;
@@ -710,6 +724,8 @@ function battle_attack()
 				if (controller.battle_round > 2)
 					time -= 10;
 				if (controller.enemy_obj[myself].negotiate >= 2)
+					time += 10;
+				if (controller.enemy_obj[myself].insultTurns > 0)
 					time += 10;
 				stage = 1;
 			}

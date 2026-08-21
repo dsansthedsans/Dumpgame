@@ -511,7 +511,7 @@ if (question[page] != "%%%" && writing == 0)
 		question_optx[i] *= _scale;
 		if (question[page] == "" && msg_type[page] != "savepoint")
 			question_opty[i] = (orig_text_y + (letter_yspace * 1.5));
-		else if (string_letters(question[page]) == "" && room != room_battle)
+		if (string_letters(question[page]) == "" && room != room_battle && msg_type[page] != "savepoint")
 			question_opty[i] -= round(12.5);
 		question_optx[i] = round(question_optx[i]);
 		question_opty[i] = round(question_opty[i]);

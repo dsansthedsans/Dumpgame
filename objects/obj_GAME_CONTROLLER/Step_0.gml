@@ -37,8 +37,8 @@ if (string_ends_with(string_upper(keyboard_string), "HUNTER2") == true)
 if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 {
 	chara = obj_chara;
-	if (keyboard_check_pressed(vk_space) == true && room == room_loading)
-		alarm[0] = load_time;
+	if (keyboard_check_pressed(vk_space) == true)
+		writer("fuckinghell");
 	if (keyboard_check_pressed(ord("R")) == 1) // reiniciar jogo
 		game_restart();	
 	if (keyboard_check_pressed(ord("E")) == 1 && instance_exists(obj_chara) == 1) // entrar em batalha
@@ -50,7 +50,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		if (keyboard_check(vk_tab) == 1)
 			global.battle_nextgroup = 13;
 		if (keyboard_check(vk_space) == 1)
-			global.battle_nextgroup = 1;
+			global.battle_nextgroup = 12;
 		battle();
 	}
 	if (keyboard_check_pressed(vk_numpad7) == 1)

@@ -34,6 +34,8 @@ convince = 0;
 negotiate = 0;
 bubbledelay = 0;
 fightattempt = 0;
+insult = 0;
+insultTurns = 0;
 
 if (global.indebug == true && global.debug_hud == true)
 {

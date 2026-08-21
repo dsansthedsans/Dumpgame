@@ -5,7 +5,7 @@ function START_GAME()
 	display_set_gui_maximise(2, 2);
 	load_time = 180//irandom_range(180, 240);
 	
-	global.game_version = "v2.0.0-demo";
+	global.game_version = "v0.5.0";
 	global.game_directory = $"{working_directory}{global.game_version}\\";
 	if (directory_exists(global.game_directory) == false)
 		directory_create(global.game_directory);

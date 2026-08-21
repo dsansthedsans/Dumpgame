@@ -25,6 +25,8 @@ function get_text(_id)
 
 function TEXT()
 {
+	if (text == "fuckinghell") {msg[0] = get_text("battle_bubble_brock_insult_1_0")};
+	
 	// intro
 	if (text == "intro")
 	{
@@ -1689,18 +1691,29 @@ function TEXT()
 				if (controller.enemy_spare[enemy.myself] < 100) // normal
 				{
 					var _text_index = real(string_char_at(text, string_length(text)));
-					var _text_postfix = "";
-					if (_text_index == 1)
-					{
-						_text_postfix = $"_{enemy.negotiate}";
-						if (enemy.negotiate < 2)
-							audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
-						enemy.negotiate = clamp((enemy.negotiate + 1), 0, 2);
-						if (enemy.negotiate >= 2)
-							controller.enemy_act_enabled[enemy.myself, 1] = false;
-					}
 					for (var m = 0; m < 99; m++)
 					{	
+						var _text_postfix = "";
+						switch (_text_index)
+						{
+							case 1:
+							_text_postfix = $"_{enemy.negotiate}";
+							break;
+							case 2:
+							var _insult_page = 1;
+							if (m == _insult_page)
+							{
+								for (var i = 0; i < 99; i++)
+								{	
+									if (get_text($"battle_act_result_brock_{_text_index}_{_insult_page}_{i}") == undefined)
+										break;
+								}
+								var _insult_index = enemy.insult;
+								if (_insult_index > (i - 1))
+									_insult_index = irandom(i - 1);
+							}
+							break;
+						}
 						var _msg = get_text($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}");
 						if (_msg == undefined)
 							break;
@@ -1708,17 +1721,47 @@ function TEXT()
 					}
 					switch (_text_index)
 					{
-						case 2:
-						for (var i = 0; i < 99; i++)
-						{	
-							if (get_text($"battle_act_result_brock_{_text_index}_{m - 1}_{i}") == undefined)
-								break;
-						}
-						var _insult_index = controller.battle_round;
-						if (controller.battle_round > (i - 1))
-							_insult_index = irandom(i - 1);
-						msg[m - 1] = string_replace_all(msg[m - 1], "[insult]", get_text($"battle_act_result_brock_{_text_index}_{m - 1}_{_insult_index}"));
+						// "Negotiate"
+						case 1:
+						if (enemy.negotiate < 2)
+							audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
+						enemy.negotiate = clamp((enemy.negotiate + 1), 0, 2);
+						if (enemy.negotiate >= 2)
+							controller.enemy_act_enabled[enemy.myself, 1] = false;
 						break;
+						// "Insult"
+						case 2:
+						audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
+						msg[_insult_page] = string_replace_all(msg[_insult_page], "[insult]", get_text($"battle_act_result_brock_{_text_index}_{_insult_page}_{_insult_index}"));
+						var _page = (m - 2);
+						var _msg_result = [msg[_page], msg[_page + 1]];
+						for (var m = 0; m < 99; m++)
+						{	
+							var _msg = get_text($"battle_bubble_brock_insult_{enemy.insult}_{m}");
+							if (_msg == undefined)
+								break;
+							msg[_page + m] = _msg;
+						}
+						msg_font[_page] = global.fnt_dotum;
+						msg_sound[_page] = snd_writer_brock;
+						msg_format[_page] = "bubble";
+						enemy.body.movement = 1;
+						msg_font[_page + m] = fnt_main_big;
+						msg_sound[_page + m] = snd_writer_0;
+						msg_format[_page + m] = "battlebox";
+						for (var i = 0; i < 2; i++)
+						{
+							if (i == 0 && enemy.insult > 0)
+								continue;
+							msg[_page + m] = _msg_result[i];
+							m += 1;
+						}
+						enemy.insult += 1;
+						if (enemy.insult >= 7)
+							controller.enemy_act_enabled[enemy.myself, 2] = false;
+						enemy.insultTurns = 2;
+						break;
+						// "Convince"
 						case 3:
 						var _page = 0;
 						msg[_page++] = get_text($"battle_act_result_brock_3_{_page}");
@@ -1837,7 +1880,7 @@ function TEXT()
 	}
 	
 	// subtle shake
-	if (msg_format[page] == "battlebox" && (controller.battle_group == 6 || controller.battle_group == 1000) && controller.enemy_spare[0] < 100)
+	if (msg_format[page] == "battlebox" && (controller.battle_group == 6 || controller.battle_group == 1000) && controller.enemy_spare[0] < 100 && chara_murder() < 1)
 	{
 		var i = page;
 		while (msg[i] != "%%%" && (msg_format[i] == "battlebox" || msg_format[i] == -2))
