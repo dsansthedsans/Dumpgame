@@ -12,8 +12,11 @@
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns. In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children.</p> <!--"In this RPG, you control a [...]" from UNDERTALE's Steam description-->
-<p>Are you strong enough to go home while everybody tries to kill you?</p>
+<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--"In this RPG, you control a [...]" from UNDERTALE's Steam description-->
+<br>
+<h1>About</h1>
+<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns.</p>
+<p>The most recent version of Dumpgame, available on both GitHub and Itch.io, is <b>only a demo</b>. The development of the full game has been canceled since 2024. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</p>
 <br>
 
 > [!IMPORTANT]
@@ -52,18 +55,20 @@
 <br>
 <p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation".</p>
 <br>
-<p align="center"><img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
+<p align="center"><img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"><img src="README-ASSETS/GEN1-EVENT-INTRO.gif" height="295" alt="Video of Dumpgame in early development showing the opening sequence"></p>
 <p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295"></p>
 <p align="center"><img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
 <p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until May of the same year.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
-<p align="center"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
+<p align="center"><img src="README-ASSETS/GEN2-ROOM-CORR1.gif" height="295" alt="Video of Dumpgame in early development showing the first room"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"></p>
+<p align="center"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
 <p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
 <br>
-<p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
+<p align="center"><img src="README-ASSETS/GEN3-WRITER-GUY.gif" height="295" alt="Video of Dumpgame in early development showing a test dialog"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
+<p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
 <br>
 <p>Insert 4th generation here.</p>
 <p>Many years later...</p><!--from "UNDERTALE"-->
@@ -76,7 +81,7 @@
 <blockquote>Yes, very. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
 <h3>Is Dumpgame still associated with Dumpster Friends?</h3>
 <blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
-<h3>Is Dumpgame associated with Toby Fox, MEE6 and Discord?</h3>
+<h3>Is Dumpgame associated with Toby Fox, MEE6 or Discord?</h3>
 <blockquote>No, Dumpgame is not associated with Toby Fox, MEE6 or Discord. It's just an UNDERTALE fangame.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, NOTHING related to Dumpgame is AI-generated, not even this README. The ONLY exception is GitHub's commit messages.</blockquote>
@@ -93,7 +98,7 @@
 <br>
 <h1>Credits</h1>
 <ul>
-  <li>dsansthedsans<i> 〜 Programmer, Artist, Concept Artist, Animator, Writer, Designer, Localization</i></li>
+  <li>dsansthedsans<i> 〜 Programmer, Artist, Concept Artist, Animator, Writer, Sound Design Assistance, Localization</i></li>
   <li>migel8022<i> 〜 Composer, Sound Designer, Concept Artist for Broken Clock, Tester</i></li>
 </ul>
 <h3>Contributors & Testers</h3>
