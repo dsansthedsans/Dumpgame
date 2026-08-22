@@ -38,7 +38,10 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 {
 	chara = obj_chara;
 	if (keyboard_check_pressed(vk_space) == true)
-		writer("fuckinghell");
+	{
+		global.item[global.item_last] = ITEM_PACE;
+		global.chara_armor = -1;
+	}
 	if (keyboard_check_pressed(ord("R")) == 1) // reiniciar jogo
 		game_restart();	
 	if (keyboard_check_pressed(ord("E")) == 1 && instance_exists(obj_chara) == 1) // entrar em batalha

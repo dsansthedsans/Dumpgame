@@ -6,7 +6,11 @@ option[0, 2] = "CELL";
 option_length[0] = 2;
 
 for (var i = 0; i < global.item_length; i++)
+{
 	option[1, i] = item_name(global.item[i], "");
+	if (global.item[i] == -1)
+		option[1, i] = undefined;
+}
 option_length[1] = global.item_length;
 
 for (var i = 0; i < 3; i++)

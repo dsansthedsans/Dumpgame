@@ -6,6 +6,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 	characolorvalue = 255;
 	if (global.flag[2] == 1)
 		m6 = global.party[0];
+	m6_surprise = undefined;
 	
 	bullet_time[0] = 32;
 	bullet_time[1] = 48;

@@ -284,6 +284,7 @@ function start_item()
 	#macro ITEM_BOWL 3
 	#macro ITEM_KUNAI 4
 	#macro ITEM_CHOCO 5
+	#macro ITEM_PACE 6
 	
 	#macro ITEM_TYPE_CONSUMABLE 1
 	#macro ITEM_TYPE_WEAPON 2
@@ -297,7 +298,6 @@ function start_item()
 	global.itemDropped_lengthMax = 99;
 	for (var i = 0; i < global.itemDropped_lengthMax; i++)
 		global.itemDropped[i] = {};
-	
 }
 function start_flags()
 {

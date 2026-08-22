@@ -1,0 +1,1 @@
+itemDropped_create(itemDropped_add(ITEM_PACE, 497, 190, spr_event_brock_battle_itemDropped,, 1));

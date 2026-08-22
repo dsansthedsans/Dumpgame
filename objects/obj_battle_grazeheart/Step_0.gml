@@ -16,6 +16,8 @@ if (global.flag[2] == true && control.assist.active == true)
 					ds_list_add(touched, touching[| i]);
 					with (control)
 						assist.curr = clamp((assist.curr + assist.speed), 0, assist.max);
+					if (audio_playing(snd_battle_graze) == true)
+						audio_stop(snd_battle_graze);
 					audio_play(snd_battle_graze, 0, VOLUME_SOUND);
 				}
 			}

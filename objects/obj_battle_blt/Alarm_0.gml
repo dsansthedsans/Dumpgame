@@ -12,7 +12,7 @@ active = 1;
 stage = 0;
 delay = 0;
 siner = 0;
-dmg = 2;
+dmg = 3;
 // TESTGUY
 if (type == -1)
 {
@@ -70,6 +70,7 @@ if (type == 2.2)
 	outside_box = true;
 	can_damage = false;
 	destroy_on_impact = false;
+	assist_can_destroy = false;
 	touching = undefined;
 	touching_length = 0;
 	touched = ds_list_create();

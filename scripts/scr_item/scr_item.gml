@@ -12,7 +12,7 @@ function item_organize()
 function item_id(_item)
 {
 	var _id = argument0;
-	var _idname = "";
+	var _idname = "none";
 	if (_id == ITEM_STICK)
 		_idname = "stick";
 	if (_id == ITEM_BANDAGE)
@@ -25,6 +25,8 @@ function item_id(_item)
 		_idname = "kunai";
 	if (_id == ITEM_CHOCO)
 		_idname = "choco";
+	if (_id == ITEM_PACE)
+		_idname = "pace";
 	return _idname;
 }
 function item_type(_item)
@@ -33,7 +35,7 @@ function item_type(_item)
 	var _type = ITEM_TYPE_CONSUMABLE;
 	if (_id == ITEM_STICK) || (_id == ITEM_KUNAI)
 		_type = ITEM_TYPE_WEAPON;
-	if (_id == ITEM_BANDAGE) || (_id == ITEM_BOWL)
+	if (_id == ITEM_BANDAGE) || (_id == ITEM_BOWL) || (_id == ITEM_PACE)
 		_type = ITEM_TYPE_ARMOR;
 	return _type;
 }
@@ -43,18 +45,26 @@ function item_value(_item)
 	var _value = 0;
 	
 	if (_id == ITEM_CANDY)
+	{
 		_value = 7;
+		if (irandom_range(1, 7) == 7)
+		{
+			_value = 10;
+			audio_play(snd_jingleSpell, false, VOLUME_SOUND);
+		}
+	}
+	if (_id == ITEM_CHOCO)
+		_value = 14;
 	if (_id == ITEM_BOWL) || (_id == ITEM_KUNAI)
 		_value = 3;
-	if (_id == ITEM_CHOCO)
-		_value = 12;
-		
+	if (_id == ITEM_PACE)
+		_value = 6;
 	return _value;
 }
 function item_name(_item, _type)
 {
-	var _name = "item_name_" + string(item_id(argument0));
-	if (argument1 != "" && get_text(string(_name) + "_" + string(argument1)) != "")
+	var _name = "item_name_" + string(item_id(_item));
+	if (_type != "" && get_text($"{_name}_{_type}") != "")
 		_name += "_" + string(argument1);
 	return get_text(_name);
 }
@@ -76,10 +86,10 @@ function item_use()
 		var _amt = item_value(_item);
 		chara_hp(_amt);
 		global.chara_heals += 1;
-		var _rest = string(get_text("item_use_1")) + string(_amt) + " HP.)";
+		var _rest = string(get_text("item_use_1")) + string(_amt) + " HP;D.)";
 		if (global.chara_curhp >= global.chara_maxhp)
 			_rest = get_text("item_use_2")
-		msg[0] = string(get_text("item_use_0")) + ":Y" + string(item_name(_item, "")) + ";D.)^1" + string(_rest);
+		msg[0] = string(get_text("item_use_0")) + ":Y" + string(item_name(_item, "")) + ";D.)^3" + string(_rest);
 		global.item[_pos] = -1;
 	}
 	if (item_type(_item) == ITEM_TYPE_WEAPON) || (item_type(_item) == ITEM_TYPE_ARMOR)
@@ -97,7 +107,7 @@ function item_use()
 		msg[0] = string(get_text("item_equip")) + ":Y" + string(item_name(_item, "")) + ";D.)";
 	}
 }
-function itemDropped_add(_item, _x = obj_chara.x, _y = obj_chara.y)
+function itemDropped_add(_item, _x = obj_chara.x, _y = obj_chara.y, _sprite = spr_itemDropped, _image = _item, _image_speed = 0, _depth = -_y)
 {
 	for (var i = 0; i < global.itemDropped_lengthMax; i++)
 	{
@@ -108,6 +118,9 @@ function itemDropped_add(_item, _x = obj_chara.x, _y = obj_chara.y)
 				room : room,
 				x : _x,
 				y : _y,
+				sprite : _sprite,
+				image : _image,
+				image_speed : _image_speed,
 				item : _item,
 			}
 			break;
@@ -117,11 +130,13 @@ function itemDropped_add(_item, _x = obj_chara.x, _y = obj_chara.y)
 }
 function itemDropped_create(_index)
 {
-	create(global.itemDropped[_index].x, global.itemDropped[_index].y, obj_interact_block);
+	var _itemDropped = global.itemDropped[_index];
+	create(_itemDropped.x, _itemDropped.y, obj_interact_block);
 	thisobj.visible = 1;
-	thisobj.sprite_index = spr_itemDropped;
-	thisobj.image_speed = 0;
-	thisobj.image_index = global.itemDropped[_index].item;
+	//thisobj.depth = _itemDropped.depth;
+	thisobj.sprite_index = _itemDropped.sprite;
+	thisobj.image_speed = _itemDropped.image_speed;
+	thisobj.image_index = _itemDropped.image;
 	thisobj.result = 5;
 	thisobj.itemDropped_arrayPos = _index;
 }

@@ -108,7 +108,7 @@ if (con == 16 && exists(thiswriter) == 0)
 	audio_play(snd_launch, 0, VOLUME_SOUND);
 	for (var i = 0; i < 3; i++)
 	{
-		marker((m6.x - 20 + (20 * i)), (game.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
+		marker((m6.x - 20 + (20 * i)), (game.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, -room_height*3 /*(m6.depth + 1)*/);
 		thismarker.image_angle = point_direction(thismarker.x, thismarker.y, m6.x, m6.y);
 		thismarker.direction = thismarker.image_angle;
 		thismarker.speed = 4;
@@ -171,10 +171,12 @@ if (con == 19)
 }
 if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter != -1 && exists(thiswriter) == false)))
 {
+	//if (m6_surprise == undefined)
+	//	m6_surprise = surprise(m6);
 	var _y = (chara.y - chara.sprite_height - 30);
 	if (zz == 1)
 		_y = (chara.y + 30)
-	marker((chara.x - 20 + (20 * ii)), _y, spr_battle_blt_kunai, 0, 1, 1, 0, 0, 0, c_white, (chara.depth - 1));
+	marker((chara.x - 20 + (20 * ii)), _y, spr_battle_blt_kunai, 0, 1, 1, 0, 0, 0, c_white, -room_height*3 /*(chara.depth - 1)*/);
 	thismarker.image_angle = point_direction(thismarker.x, thismarker.y, chara.x, (chara.y - (chara.sprite_height / 2)));
 	thismarker.direction = thismarker.image_angle;
 	bullet[num] = thismarker;
@@ -195,7 +197,7 @@ if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter
 	num += 1;
 	
 	audio_play(snd_appearBullet, 0, VOLUME_SOUND);
-	alarm[2] = 6;
+	alarm[2] = (6 + (2 * (global.world_curpopulation[chara_world()] <= 0)));
 	con += 1;
 	aftercon = 1;
 }
@@ -206,6 +208,8 @@ if (con == 33)
 }
 if (con == 35)
 {
+	if (m6_surprise != undefined && exists(m6_surprise) == true)
+		destroy(m6_surprise);
 	for (var i = 0; i < 6; i++)
 		bullet[i].speed = 6;
 	audio_play(snd_launch, 0, VOLUME_SOUND);
@@ -365,7 +369,7 @@ if (con == 46)
 		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		alarm[2] = 120;
 		con = 47;
-		if (global.world_curpopulation[chara_world()] <= 0)
+		if (chara_murder() >= 3) //(global.world_curpopulation[chara_world()] <= 0)
 			con = 53;
 	}
 }
@@ -400,20 +404,20 @@ if (con == 55)
 		depth = -5000;
 		audio_stop(thisaudio);
 		audio_play(snd_impactDeep, 0, VOLUME_SOUND);
-		alarm[2] = 300;
-		con = 56;
+		alarm[2] = (60 * 6);
+		con = 59; //56;
 	}
 }
-if (con == 57)
-{
-	writer("event_gabee_chase.3", -1, -1);
-	con = 58;
-}
-if (con == 58 && exists(thiswriter) == 0)
-{
-	alarm[2] = 180;
-	con = 59;
-}
+//if (con == 57)
+//{
+//	writer("event_gabee_chase.3", -1, -1);
+//	con = 58;
+//}
+//if (con == 58 && exists(thiswriter) == 0)
+//{
+//	alarm[2] = 180;
+//	con = 59;
+//}
 if (con == 60)
 {
 	room_goto(room_cave_1);

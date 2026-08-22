@@ -65,7 +65,13 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		{
 			music_set(0, mus_corridors, , , , (1 - (0.025 * (chara_murder() == 1))));
 			if (chara_murder() >= 2)
-				music_set(0, mus_corridors_geno)
+			{
+				music_set(0, mus_corridors_geno,,,, (1 + (0.025 * (chara_murder() == 3))))
+				if (global.flag[40] == false)
+					music_paused[0] = true;
+			}
+			if (audio_playing(snd_jingleLuminous) == true) || (audio_playing(snd_jingleOminous) == true)
+				music_paused[0] = true;
 		}
 		// Broken Clock
 		if (room == room_corridors_11 && global.flag[39] != (0.75 + 0.125))
@@ -75,7 +81,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			if (global.flag[37] == 0.5)
 				music_set(0, mus_event_brock_mad, , , , , , 0);
 			else if (global.flag[39] == 0.5)
-				music_set(0, mus_event_brock_sad);
+				music_set(0, mus_event_brock_sad_placeholder);
 			//else if (global.flag[37] == 1 && global.flag[39] == 0)
 			//	music_set(0, mus_event_brock_sad, , , , 0.75 + 0.125 + 0.125);
 		}

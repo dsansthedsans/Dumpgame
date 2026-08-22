@@ -363,6 +363,7 @@ function chara_murder()
 		_murder = 2;
 		if (global.flag[40] == false && global.chara_move == true)
 		{
+			chara_facing(DOWN);
 			global.flag[40] = true;
 			audio_play(snd_jingleOminous, false, VOLUME_SOUND);
 		}
@@ -402,4 +403,12 @@ function chara_stepping()
 	|| (room >= room_cave_2 && room <= room_cave_3)
 	|| (inwater == 1)
 		stepplay = 1;
+}
+
+function chara_invtime()
+{
+	var _invtime = 60;
+	if (global.chara_armor == ITEM_PACE)
+		_invtime *= 1.5;
+	return _invtime;
 }

@@ -13,5 +13,5 @@ if (canhurt == 1 && invtime <= 0 && other.active == 1)
 	audio_play(snd_impactHurt, 0, VOLUME_SOUND);
 	shakescreen(2, 2);
 	destroy(other);
-	invtime = 60;
+	invtime = chara_invtime();
 }

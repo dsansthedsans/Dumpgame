@@ -203,27 +203,32 @@ for (var c = 1; c < (text_length + 1); c++)
 		if (string_char_at(msg[page], c) == _key && string_char_at(msg[page], (c + 1)) != "\\")
 		{
 			var _cancheck = 1;
-			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) 
+			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) // yellow ("HP"; "MERCY")
 			{
 				text_color[0] = c_yellow;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "R" && _cancheck == 1)
+			if (string_char_at(msg[page], c + 1) == "R" && _cancheck == 1) // red ("ATTACK"; negative status)
 			{
-				text_color[0] = c_red;
+				text_color[0] = merge_color(c_red, c_white, 0.125);;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "L" && _cancheck == 1) 
+			if (string_char_at(msg[page], c + 1) == "B" && _cancheck == 1) // blue ("DEFENSE")
 			{
-				text_color[0] = c_lime;
+				text_color[0] = merge_color(c_blue, c_white, 0.25);
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "F" && _cancheck == 1) 
+			if (string_char_at(msg[page], c + 1) == "F" && _cancheck == 1) // pink ("SPEED")
 			{
 				text_color[0] = c_fuchsia;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) 
+			if (string_char_at(msg[page], c + 1) == "P" && _cancheck == 1) // purple ("INV. FRAMES")
+			{
+				text_color[0] = merge_color(merge_color(c_purple, c_blue, 0.375), c_white, 0.25);
+				_cancheck = 0;
+			}
+			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) // grey ("Corridors")
 			{
 				text_color[0] = c_grey;
 				_cancheck = 0;
@@ -233,17 +238,12 @@ for (var c = 1; c < (text_length + 1); c++)
 				text_color[0] = orig_text_color;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1)
-			{
-				text_color[0] = c_grey;
-				_cancheck = 0;
-			}
-			if (string_char_at(msg[page], c + 1) == "E" && _cancheck == 1) 
+			if (string_char_at(msg[page], c + 1) == "E" && _cancheck == 1) // green ("trashiest")
 			{
 				text_color[0] = c_green;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "O" && _cancheck == 1) 
+			if (string_char_at(msg[page], c + 1) == "O" && _cancheck == 1) // orange ("new member")
 			{
 				text_color[0] = #F29948;
 				_cancheck = 0;
@@ -254,7 +254,7 @@ for (var c = 1; c < (text_length + 1); c++)
 				text_color[1] = global.c_mention[1];
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "U" && _cancheck == 1) // dumpcolor
+			if (string_char_at(msg[page], c + 1) == "U" && _cancheck == 1) // dumpcolor (positive status)
 			{
 				text_color[0] = global.c_dump;
 				_cancheck = 0;
@@ -301,7 +301,7 @@ for (var c = 1; c < (text_length + 1); c++)
 		if (_cancheck == 0)
 			_candraw = 0;
 	}
-	if (string_char_at(msg[page], (c - 1)) == "+") || (string_char_at(msg[page], (c - 2)) == "+")
+	if (string_char_at(msg[page], (c - 1)) == "+" && string_char_at(msg[page], c) != "\\") || (string_char_at(msg[page], (c - 2)) == "+" && string_char_at(msg[page], (c - 1)) != "\\")
 		_candraw = 0;
 	
 	// remove characters

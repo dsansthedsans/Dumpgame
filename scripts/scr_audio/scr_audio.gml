@@ -1,5 +1,5 @@
 
-function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
+function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD I HATE THIS 
 {
 	var _asset = _audio;
 	if (audio_sound_get_asset(_asset) != undefined)
@@ -89,6 +89,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type)
 			_volume *= 0.625;
 		if (_asset == snd_bellFlower)
 			_volume *= 1.5;
+		if (_asset == snd_jingleSpell)
+			_volume *= 0.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{

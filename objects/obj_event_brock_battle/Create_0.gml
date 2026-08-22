@@ -1,8 +1,8 @@
 event_inherited();
 game = obj_GAME_CONTROLLER;
-cam_time = 120;
 cam_x = 340;
 cam_y = 70;
+cam_time = round(60 * 2.5);
 cam_offsetX = undefined;
 cam_offsetY = undefined;
 gate_draw = false;
@@ -48,9 +48,9 @@ brockBrick = [];
 thiswriter = undefined;
 
 //////////////////
-DEBUG_SKIP = false * global.indebug;
+DEBUG_SKIP = true * global.indebug;
 if (DEBUG_SKIP == true)
 {
 	global.flag[37] = 1;
-	//global.flag[38] = 1;
+	global.flag[38] = 1;
 }

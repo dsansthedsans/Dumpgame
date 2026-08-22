@@ -163,8 +163,8 @@ if (lvl == 3)
 		draw_text((_irx - info_maxw), (_iy + 80 + (15 * i)), info[i]);
 		
 		// arma e armadura
-	draw_text(_ilx, (_iy + 120), $"{get_text("charamenu_stat_weapon")}  " + string(global.chara_wname) + " (+" + string(global.chara_wstrength) + ")");
-	draw_text(_ilx, (_iy + 135), $"{get_text("charamenu_stat_armor")}   " + string(global.chara_aname) + ((global.chara_armor != -1) ? " (+" + string(global.chara_astrength) + ")" : ""));
+	draw_text(_ilx, (_iy + 120), $"{get_text("charamenu_stat_weapon")}  " + string(item_name(global.chara_weapon, "small")) + " (+" + string(global.chara_wstrength) + ")");
+	draw_text(_ilx, (_iy + 135), $"{get_text("charamenu_stat_armor")}   " + string(item_name(global.chara_armor, "small")) + ((global.chara_armor != -1) ? " (+" + string(global.chara_astrength) + ")" : ""));
 }	
 // indicador das opções
 if (thiswriter == -1 && lvl != 3)

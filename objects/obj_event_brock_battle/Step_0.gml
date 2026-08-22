@@ -288,7 +288,10 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 			aftercon = 2;
 		}
 		else
+		{
+			event_user(0);
 			destroy(brock);
+		}
 		con += 1;
 		alarm[2] = 60;
 	}
@@ -322,8 +325,23 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 		global.flag[39] = 0.5;
 		writer("event_brock_battle_3");
 		con += 1;
+		altcon = 1;
 	}
-	else if (con == 5 && exists(thiswriter) == false)
+	if (altcon == 1)
+	{
+		if (exists(thiswriter) == true && thiswriter.page >= 7) || (exists(thiswriter) == false)
+		{
+			if (global.item[global.item_last] == -1)
+			{
+				global.item[global.item_last] = ITEM_PACE;
+				audio_play(snd_item, 0, VOLUME_SOUND);
+			}
+			else
+				event_user(0);
+			altcon = 0;
+		}
+	}
+	if (con == 5 && exists(thiswriter) == false)
 	{
 		global.flag[39] = 0.75;
 		con += 1;

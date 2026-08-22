@@ -60,6 +60,7 @@ function battle_setupgroup()
 	if (battle_group == 0) // But nobody came.
 	{
 		battle_music = -1;
+		battle_bg = -1;
 		//if (global.flag[22] == false)
 		//	audio_play(snd_jingleOminous, 0, VOLUME_SOUND);
 		global.flag[22] = true;
@@ -95,9 +96,10 @@ function battle_setupgroup()
 	if (battle_group == 6) // Broken Clock
 	{
 		battle_music = mus_battle_brock;
+		obj_battle_bg.waveSpeed /= 2;
+		battle_serious = true;
 		enemy_type[0] = 6;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + sprite_get_width(spr_enemy_brock_body)), (room_height / 2), "Instances", obj_enemy_brock);
-		obj_battle_bg.waveSpeed /= 2;
 	}
 	if (battle_group == 7) // Armsguy, Armsguy
 	{	
@@ -173,9 +175,10 @@ function battle_setupgroup()
 	}
 	if (battle_group == 1000) // TROLLFACE
 	{
+		battle_music = mus_battle_troll;
 		battle_bg = spr_battle_bg_troll;
 		obj_battle_bg.waveSpeed /= 2;
-		battle_music = mus_battle_troll;
+		battle_serious = true;
 		enemy_type[0] = 1000;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_troll);
 	}
@@ -281,7 +284,7 @@ function battle_enemy()
 				enemy_atk[i] = 10;
 				enemy_def[i] = 99999;
 				enemy_reward_exp[i] = 15;
-				enemy_reward_mny[i] = 10;
+				enemy_reward_mny[i] = 20;
 				enemy_act[i, 1] = get_text("battle_act_brock_1");
 				enemy_act[i, 2] = get_text("battle_act_brock_2");
 				enemy_act[i, 3] = get_text("battle_act_brock_3");

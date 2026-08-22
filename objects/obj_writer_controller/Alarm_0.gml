@@ -71,8 +71,8 @@ if (text_length <= (string_length(msg[page]) - 1))
 		case ":":
 		case ";":
 		case "+":
-		if (string_char_at(msg[page], text_length) == "!" && string_char_at(msg[page], (text_length - 1)) == "&")
-		|| (string_char_at(msg[page], text_length) != "//")
+		if (string_char_at(msg[page], (text_length - 1)) == "&" && string_char_at(msg[page], text_length) == "!")
+		|| (string_char_at(msg[page], text_length) != "\\")
 		{
 			_playsnd = false;
 			text_length += 1;
@@ -82,7 +82,7 @@ if (text_length <= (string_length(msg[page]) - 1))
 	switch (string_char_at(msg[page], (text_length - 2)))
 	{
 		case "+":
-		if (string_char_at(msg[page], (text_length - 1)) != "//")
+		if (string_char_at(msg[page], (text_length - 1)) != "\\")
 		{
 			_playsnd = false;
 			text_length += 1;

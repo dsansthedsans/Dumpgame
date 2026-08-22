@@ -25,8 +25,6 @@ function get_text(_id)
 
 function TEXT()
 {
-	if (text == "fuckinghell") {msg[0] = get_text("battle_bubble_brock_insult_1_0")};
-	
 	// intro
 	if (text == "intro")
 	{
@@ -85,6 +83,12 @@ function TEXT()
 		itemDropped_create(itemDropped_add(global.item[_pos]));
 		global.item[_pos] = -1;
 	}
+	
+	// dropped item
+	if (text == "itemDropped_pickup")
+		msg[0] = string(get_text("item_pickup")) + string(infoArray[0]) + ";D.)";
+	if (text == "itemDropped_cantpickup")
+		msg[0] = get_text("item_cantpickup");
 	
 	// room_corridors_1
 	if (text == "room_lamp")
@@ -736,6 +740,8 @@ function TEXT()
 		for (var i = 0; i < 99; i++)
 		{
 			var _msg_id = $"event_brock_battle_{_text_index}_{i}";
+			if (_text_index == 3 && i == 7)
+				_msg_id += $"_{(global.item[global.item_last] == -1)}";
 			if (_text_index == 4)
 			{
 				_msg_id += $"_{global.flag[38]}";
@@ -768,6 +774,11 @@ function TEXT()
 			break;
 			case 3:
 			msg[2] = $"+F0* ... :@@{global.chara_name};D...^2&{msg[2]}";
+			if (global.item[global.item_last] == -1)
+			{
+				msg_sound[7] = snd_writer_0;
+				msg_sound[8] = snd_writer_brock;
+			}
 			break;
 			case 4:
 			msg_sound[0] = snd_writer_m6;
@@ -785,12 +796,12 @@ function TEXT()
 			else 
 			{
 				msg_face[0] = spr_dialogface_m6_default;
-				//if (chara_murder() >= 1)
-				//{
-				//	msg[i] = get_text($"event_brock_battle_4_{i}_1_geno");
-				//	msg[i+1] = get_text($"event_brock_battle_4_{i+1}_1_geno");
-				//	msg_face[i] = spr_dialogface_m6_angry;
-				//}
+				if (chara_murder() >= 1)
+				{
+					msg[i] = get_text($"event_brock_battle_4_{i}_1_geno");
+					msg[i+1] = get_text($"event_brock_battle_4_{i+1}_1_geno");
+					msg_face[i] = spr_dialogface_m6_angry;
+				}
 			}
 			break;
 		}
@@ -1110,12 +1121,6 @@ function TEXT()
 		}
 		global.flag[70] = true;
 	}
-	
-	// dropped item
-	if (text == "itemDropped_pickup")
-		msg[0] = string(get_text("item_pickup")) + string(infoArray[0]) + ";D.)";
-	if (text == "itemDropped_cantpickup")
-		msg[0] = get_text("item_cantpickup");
 	
 	if (string_starts_with(text, "battle_bubble") == 1) // bubble
 	{
@@ -1796,6 +1801,8 @@ function TEXT()
 								_bool_sound = snd_jingleSucess;
 								controller.enemy_spare[enemy.myself] += 20;
 								enemy.convince += 1;
+								if (enemy.convince >= 5)
+									controller.enemy_act_enabled[enemy.myself, 3] = false;
 							}
 							audio_play(_bool_sound, 0, VOLUME_SOUND)
 							var _msg = get_text($"battle_act_result_brock_3_2_{_bool}");

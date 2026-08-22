@@ -54,6 +54,7 @@ if (con == 10)
 }
 if (con == 12)
 {
+	chara_stop();
 	chara_facing(DOWN);
 	global.chara_camera_move = 1;
 	chara.y -= 10;
