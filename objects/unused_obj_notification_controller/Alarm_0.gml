@@ -69,8 +69,8 @@ if (mytype == 0 && achievement_id != -1) // achievement
 {
 	text = global.achievement_name[achievement_id];
 	
-	image = spr_achievement_image;
-	image_border = spr_achievement_border;
+	image = unused_spr_achievement_image;
+	image_border = unused_spr_achievement_border;
 	
 	box_h_bonus = 5;
 	

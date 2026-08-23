@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_notification_controller",
+  "%Name":"unused_obj_notification_controller",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -8,11 +8,11 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_notification_controller",
+  "name":"unused_obj_notification_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dumpgame",
-    "path":"Dumpgame.yyp",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "parentObjectId":null,
   "persistent":true,

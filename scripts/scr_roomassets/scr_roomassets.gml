@@ -60,7 +60,10 @@ function room_interact()
 			text = "room_deadlamp";
 		
 		if (x == 150 && y == 300)
+		{
+			y += 20;
 			text = "room_rulesbook";
+		}
 	}
 	if (r == room_corridors_3_5)
 	{
@@ -273,6 +276,8 @@ function room_interact()
 		if (x == 140 && y == 120)
 			text = "room_finalcorridor_sign";
 	}
+	if (room == room_cave_1 && x == 185 && y == 70)
+		text = "room_rockpile_0";
 	if (room == room_cave_3)
 	{
 		if (x == 205 && y == 295)
@@ -374,7 +379,10 @@ function room_solid() // i really really really fucking hate this how could i ma
 			if (x == 260 && y == 240)
 				image_index = 4;
 			if (x == 150 && y == 260)
+			{
+				y += 20;
 				image_index = 7;
+			}
 		}
 		
 		// sign
@@ -815,9 +823,8 @@ function room_solid() // i really really really fucking hate this how could i ma
 				image_index = 4;
 			y += 20;
 		}
-		if (x == 185 && y == 140)
+		if (x == 185 && y == 130)
 		{
-			y -= 10;
 			sprite_index = spr_overworld_brokenfloor;
 			depth = -bbox_top;
 		}

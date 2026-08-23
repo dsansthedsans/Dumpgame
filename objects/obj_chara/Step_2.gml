@@ -15,24 +15,23 @@ if (global.flag[2] == 1 && exists(obj_party) == 0) // create MEE6
 
 // iniciar batalha
 global.chara_encounter = 1;
-var r = room;
-if (r == room_corridors_1)
-|| (r == room_corridors_1_5)
-|| (r == room_corridors_2)
-|| (r == room_corridors_3 && global.flag[17] == 0)
-|| (r == room_corridors_3_5 && global.flag[17] == 0)
-|| (r == room_corridors_4 && global.flag[18] == 0)
+if (room == room_corridors_1)
+|| (room == room_corridors_1_5)
+|| (room == room_corridors_2)
+|| (room == room_corridors_3 && global.flag[17] == 0)
+|| (room == room_corridors_3_5 && global.flag[17] == 0)
+|| (room == room_corridors_4 && global.flag[18] == 0)
 //|| (r == room_corridors_5 && global.flag[15] == 1 && global.flag[16] == 0)
-|| (r == room_corridors_5_A && global.flag[11] == 0)
-|| (r == room_corridors_5_B && global.flag[14] == 0)
+|| (room == room_corridors_5_A && global.flag[11] == 0)
+|| (room == room_corridors_5_B && global.flag[14] == 0)
 //|| (r == room_corridors_9 && global.flag[34] == false)
-|| (r == room_corridors_14 && global.flag[50] < 1)
-|| (r == unused_room_corridors_16_A)
-|| (r == unused_room_corridors_16_B)
+|| (room == room_corridors_14 && global.flag[50] < 1)
+|| (room == unused_room_corridors_16_A)
+|| (room == unused_room_corridors_16_B)
 //|| (r == room_corridors_17)
-|| (r == room_corridors_18)
-|| (r >= room_cave_1)
-|| (global.world_sparedpopulation[global.chara_world] == global.world_maxpopulation[global.chara_world] && global.world_curpopulation[global.chara_world] == global.world_maxpopulation[global.chara_world])
+|| (room == room_corridors_18)
+|| (array_get_index(global.room_order, room) >= array_get_index(global.room_order, room_cave_1))
+//|| (global.world_sparedpopulation[global.chara_world] == global.world_maxpopulation[global.chara_world] && global.world_curpopulation[global.chara_world] == global.world_maxpopulation[global.chara_world])
 	global.chara_encounter = 0;
 if (global.chara_encounter == 1)
 {

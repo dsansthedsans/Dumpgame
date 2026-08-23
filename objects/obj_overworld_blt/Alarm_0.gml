@@ -8,6 +8,8 @@ image_index = 0;
 active = 1;
 delay = 0;
 dmg = 4;
+can_damage = true;
+destroy_on_impact = true;
 
 if (type >= 1 && type < 2) // Gabee's chase
 {

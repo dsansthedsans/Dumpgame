@@ -222,12 +222,12 @@ function TEXTDATA_EN()
 	ds_map_add(t, "item_name_kunai_serious",		"Knife");
 	ds_map_add(t, "item_name_pace_serious",			"Pacemaker");
 	ds_map_add(t, "item_desc_stick",		"* \"Broomstick\" [:R0 ATK;D]^3&* (Feels like it's&about to break.)");
-	ds_map_add(t, "item_desc_bandage",		"* \"Bandage\" [:B0 DEF;D]^3&* (There's a drawing of&a blonde woman on it.)"); // Barbie
-	ds_map_add(t, "item_desc_candy",		"* \"Cheap Candy\" [:Y+\\7 HP;D]^3&* (:U1/7;D chance to restore additional :YHP;D when eaten.)");
-	ds_map_add(t, "item_desc_bowl",			"* \"Candy Bowl\" [:B3 DEF;D]^3&* (:U1/7;D chance to fully block damage when hurt.)");
-	ds_map_add(t, "item_desc_choco",		"* \"Chocolate Bar\" [:Y+\\14 HP;D]^3&* (Very sticky,^3 but lactose-free.)");
+	ds_map_add(t, "item_desc_bandage",		"* \"Bandage\" [:B0 DEF;D]^3&* (There's a drawing of&a blonde woman on it.)"); // references Barbie
+	ds_map_add(t, "item_desc_candy",		"* \"Cheap Candy\" [:Y+\\7 HP;D]^3&* (:U1/7;D chance to restore additional :YHP;D when eaten.)"); // "+7 HP" and "1/7 chance" references 7-Belo
+	ds_map_add(t, "item_desc_bowl",			"* \"Candy Bowl\" [:B3 DEF;D]^3&* (:U1/7;D chance to fully block damage when hurt.)");// "1/7 chance" references 7-Belo
+	ds_map_add(t, "item_desc_choco",		"* \"Chocolate Bar\" [:Y+\\14 HP;D]^3&* (Very sticky,^3 but lactose-free.)"); // "+14 HP" is the double of Cheap Candy's "+7 HP", and this item references "Nestlé Classic Duo" (double chocolate bar)
 	ds_map_add(t, "item_desc_kunai",		"* \"Kunai\" [:R3 ATK;D]^3&* (Looks like a knife.)");
-	ds_map_add(t, "item_desc_pace",			"* \"Temporary Pacemaker\" [:B6 DEF;D]^3&* (Increases the duration of :PINVINCIBILITY FRAMES;D by :U50%;D.)");
+	ds_map_add(t, "item_desc_pace",			"* \"Temporary Pacemaker\" [:B6 DEF;D]^3&* (Increases the duration of :PINVINCIBILITY FRAMES;D by :U50%;D.)"); // "Temporary" references Broken Clock, but also explains why the player can equip the item without surgery; "Pacemaker" references both Broken Clock and the player's SOUL
 	ds_map_add(t, "item_equip", "* (You equipped ");
 	ds_map_add(t, "item_use_0", "* (You used ");
 	ds_map_add(t, "item_use_1", "&* (You restored :Y");
@@ -344,14 +344,25 @@ function TEXTDATA_EN()
 	ds_map_add(t, $"unused_event_theguys_meet_2_{i++}", "* our private,^1&private space.");
 	ds_map_add(t, $"unused_event_theguys_meet_2_{i++}", "* So,^1 In Conclusion ...");
 	ds_map_add(t, $"unused_event_theguys_meet_2_{i++}", "* We are going to kill you.");
+	var z = 0;
 	var i = 0;
-	ds_map_add(t, $"event_m6_meet_0_{i++}", "* hello chickens.");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* Hey there,^3 :@@[name];D!");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* Welcome to the :E+F0trashiest+D0;D :@Discord server;D you have ever seen...");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* ");
+	z += 1;
 	var i = 0;
-	ds_map_add(t, $"event_m6_meet_1_{i++}", "* Hey there,^3 :@@[name];D!");
-	ds_map_add(t, $"event_m6_meet_1_{i++}", "* Welcome to the :E+F0trashiest+D0;D :@Discord server;D you have ever seen...");
-	ds_map_add(t, $"event_m6_meet_1_{i++}", "* ");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* My name is :6MEE6;D.^1&* I am a :6ROBOT;D designed to guide and assist you!");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* Eu soube que você não tinha a intenção de se juntar ao servidor.");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* Mas!^1 Não se preocupe!^1&* Lembre-se,^1 estou aqui para ajudá-lo!");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* Bom,^1 vamos aos detalhes!");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* O Dumpster Friends pode ser dividido entre três grandes áreas principais:\\ ...");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* Os Corredores, ...");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* ... a Cidade Central, ...");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* ... e o Reino Administrativo.");
 	var i = 0;
-	ds_map_add(t, $"event_m6_meet_2_{i++}", "* My name is :6MEE6;D.^1&* I am a :6ROBOT;D created to guide and assist you!");
+	ds_map_add(t, $"event_m6_meet_teachInfo_{i++}", "Corridors");
+	ds_map_add(t, $"event_m6_meet_teachInfo_{i++}", "Central\nCity");
+	ds_map_add(t, $"event_m6_meet_teachInfo_{i++}", "Admin\nRealm");
 	/*
 	ds_map_add(t, "event_m6_start_1_0", "* Hello,^3 new member.^1&* Welcome to the world&of ;UDumpster Friends;D!");
 	ds_map_add(t, "event_m6_start_1_1", "* My name is :6MEE6;D.^1&* I am a :6ROBOT;D made&to help you.");
@@ -740,7 +751,7 @@ function TEXTDATA_EN()
 	ds_map_add(t, $"cellphone_developer_{i++}", "* Knowing someone you've never met,^1 and most certainly never will,^1 has changed you forever.");
 	ds_map_add(t, $"cellphone_developer_{i++}", "* In a good way,^3 of course!");
 	ds_map_add(t, $"cellphone_developer_{i++}", "* ...");
-	ds_map_add(t, $"cellphone_developer_{i++}", "* Well,^2 I just wanted to say...");
+	ds_map_add(t, $"cellphone_developer_{i++}", "* I just wanted to say...");
 	ds_map_add(t, $"cellphone_developer_{i++}", "* You made a snowman&really happy...!"); // from "UNDERTALE"
 	ds_map_add(t, $"cellphone_developer_{i++}", "* (Click...)");
 	// room_cave_3
@@ -779,6 +790,7 @@ function TEXTDATA_EN()
 	ds_map_add(t, "battle_won_1", " EXP;D and :U$");
 	ds_map_add(t, "battle_won_2", "^1&* (Your :YLVL;D increased.)");
 	var i = 0;
+	ds_map_add(t, $"battle_flee_{i++}", "* Waddle waddle."); // from "The Duck Song"
 	ds_map_add(t, $"battle_flee_{i++}", "* I'll kill you."); // from "The Office"
 	ds_map_add(t, $"battle_flee_{i++}", "* Happy go to hell."); // from "House M.D."
 	ds_map_add(t, $"battle_flee_{i++}", "* I have places to go."); // from "UNDERTALE"
@@ -805,19 +817,6 @@ function TEXTDATA_EN()
 	ds_map_add(t, $"unused_battle_flee_{i++}", "* I've got better stuff to do."); // from "UNDERTALE"
 	ds_map_add(t, $"unused_battle_flee_{i++}", "* Don't slow me down."); // from "UNDERTALE"
 	ds_map_add(t, $"unused_battle_flee_{i++}", "* I'm outta here."); // from "UNDERTALE"
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* Don't talk to me.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* Leave me alone.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* Not a chance.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* I don't have time for this.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* I'd love not to.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* Goodbye!");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* Hell no.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* See ya.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* I don't think so.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* Can you not?");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* I didn't sign up for this.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* Give me a break.");
-	ds_map_add(t, $"unused_battle_flee_{i++}", "* You can wait.");
 	ds_map_add(t, $"battle_flee_geno", "* In my way."); // from "UNDERTALE"
 	ds_map_add(t, "battle_nobody", "* But nobody came."); // from "UNDERTALE"
 	// TESTGUY's battle
@@ -921,7 +920,7 @@ function TEXTDATA_EN()
 	ds_map_add(t, "battle_bubble_armsguy_5", "+F1... What?^1&\"Leg Day\"?");
 	ds_map_add(t, "battle_bubble_armsguy_6", "+F1Me Stronger Than You.");
 	ds_map_add(t, "battle_bubble_armsguy_7", "+F1Want Break You Legs?");
-	ds_map_add(t, "battle_bubble_armsguy_8", "+F1Good Job Bro.");
+	ds_map_add(t, "battle_bubble_armsguy_8", "+F1Goo Job Bro.");
 	ds_map_add(t, "battle_bubble_armsguy_9", "+F1Me Believe In You Potential.");
 	ds_map_add(t, "battle_bubble_armsguy_10", "+F1That How&You Do It.");
 	ds_map_add(t, "battle_bubble_armsguy_11", "+F1You Dumbass.");
@@ -969,10 +968,10 @@ function TEXTDATA_EN()
 	// Flitcher's battle
 	ds_map_add(t, "battle_main_flitcher", "* (Flitcher suddenly appears&in your way.)");
 	ds_map_add(t, "battle_main_flitcher_geno", "* (You step into Flitcher's way.)");
-	ds_map_add(t, "battle_main_flitcher_0", "* (Flitcher stares blankly to north and south.)");
-	ds_map_add(t, "battle_main_flitcher_1", "* (Flitcher is moving its tongue unconsciously.)");
+	ds_map_add(t, "battle_main_flitcher_0", "* (Flitcher stares blankly&to north and south.)");
+	ds_map_add(t, "battle_main_flitcher_1", "* (Flitcher is moving its&tongue unconsciously.)");
 	ds_map_add(t, "battle_main_flitcher_2", "* (Flitcher is daydreaming.)");
-	ds_map_add(t, "battle_main_flitcher_3", "* (Flitcher doesn't seem to know why it's here.)"); // from "UNDERTALE"
+	ds_map_add(t, "battle_main_flitcher_3", "* (Flitcher doesn't seem&to know why it's here.)"); // from "UNDERTALE"
 	ds_map_add(t, "battle_main_flitcher_4", "* (Flitcher is just there.)");
 	ds_map_add(t, "battle_main_flitcher_5", "* (Flitcher doesn't think,^3 therefore it isn't.)");
 	ds_map_add(t, "battle_act_flitcher_1", "Talk");
@@ -1191,7 +1190,7 @@ function TEXTDATA_EN()
 	ds_map_add(t, "battle_main_troll", "* (TROLLFACE stands in the way.)");
 	var i = 0;
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is laughing&at his own jokes.)");
-	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is gently touching your hair.)");
+	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is gently&touching your hair.)");
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is laughing uncomfortably loud.)");
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is sharing overly intimate secrets.)");
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is whispering inappropriate compliments.)");

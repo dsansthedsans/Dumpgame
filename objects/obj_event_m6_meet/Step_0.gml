@@ -8,22 +8,20 @@ if (con == 1)
 }
 if (con == 2 && chara.y <= 195)
 {
-	con += 1;
-	alarm[2] = 30;
+	global.flag[1] = 0.5;
+	if (DEBUG_SKIP == false)
+	{
+		con = 6;
+		alarm[2] = round(60 * 1);
+	}
+	else
+	{
+		con = 13;
+		alarm[2] = 1;
+	}
 	chara.depth = -chara.bbox_bottom;
 	chara.vspeed = 0;
 	chara_stop();
-}
-else if (con == 4)
-{
-	global.flag[1] = 0.5;
-	writer("event_m6_meet_0", -1, -1);
-	con += 1;
-}
-else if (con == 5 && exists(thiswriter) == 0)
-{
-	con += 1;
-	alarm[2] = 60;
 }
 else if (con == 7)
 {
@@ -35,35 +33,37 @@ else if (con == 7)
 else if (con == 9)
 {
 	global.flag[1] = 0.75;
-	writer("event_m6_meet_1", -1, -1);
+	writer("event_m6_meet_0", -1, -1);
 	con += 1;
 }
-else if (con == 10 && exists(thiswriter) == true && thiswriter.page == 2 && title_length < 2)
+else if (con == 10 && exists(thiswriter) == true && thiswriter.page == 2)
 {
-	title_active = true;
+	if (title_active == false)
+		title_active = true;
 	title_delay[title_length] -= 1;
 	if (title_delay[title_length] <= 0)
 	{
 		title_length += 1;
-		audio_play(snd_writer_m6, false, VOLUME_SOUND,,,, (1 - (0.125 * (title_length - 1))));
-		audio_play(snd_impactTitle, false, VOLUME_SOUND);
-		shakescreen(2, 2);
 		switch (title_length)
 		{
 			case 1:
+			audio_play(snd_impactTitle, false, VOLUME_SOUND);
 			audio_play(snd_voiceFriends, false, VOLUME_SOUND);
+			shakescreen(2, 2);
 			break;
 			case 2:
 			con += 1;
-			alarm[2] = round(60 * 3);
-			confetti_active = true;
+			alarm[2] = round(60 * 2.5);
+			confetti_active = global.visualeff;
+			audio_play(snd_impactTitle, false, VOLUME_SOUND);
 			audio_play(snd_crowdCheer, false, VOLUME_SOUND);
 			audio_play(snd_crowdApplause, false, VOLUME_SOUND);
+			shakescreen(2, 2);
 			break;
 		}
 	}
 }
-if (confetti_active == true && global.visualeff == true)
+if (confetti_active == true)
 {
 	if (confetti_time > 0)
 	{
@@ -86,28 +86,36 @@ if (confetti_active == true && global.visualeff == true)
 		}
 	}
 }
-else if (confetti_active && global.visualeff == false)
-	confetti_active = false;
 if (con == 12)
 {
-	title_active = false;
 	with (thiswriter)
 		event_user(1);
 	con += 1;
-	alarm[2] = 30;
+	alarm[2] = round(60 * 1.5);
+	title_active = false;
+	cutout_alphaTarget = 0;
 }
-if (con == 14)
+else if (con == 14)
 {
-	cutout_alpha -= (1 / 60);
-	if (cutout_alpha <= 0)
+	global.flag[1] = 0.75;
+	writer("event_m6_meet_1");
+	con += 1;
+}
+if (con == 15)
+{
+	if (exists(thiswriter) == true)
+	{
+		if (thiswriter.page >= 4)
+		{
+			teach_active = true;
+			teachInfo_length = (thiswriter.page - 4);
+		}
+	}
+	else
 	{
 		con += 1;
-		alarm[2] = 60;
-		cutout_active = false;
+		teachBg_alphaTarget = 0;
+		for (var i = 0; i < teachInfo_lengthMax; i++)
+			teachInfo_alphaTarget[i] = 0;
 	}
-}
-else if (con == 16)
-{
-	writer("event_m6_meet_2");
-	con += 1;
 }

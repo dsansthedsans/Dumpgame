@@ -369,8 +369,8 @@ if (con == 46)
 		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
 		alarm[2] = 120;
 		con = 47;
-		if (chara_murder() >= 3) //(global.world_curpopulation[chara_world()] <= 0)
-			con = 53;
+		//if (chara_murder() >= 3)
+		//	con = 53;
 	}
 }
 if (con >= 48 && con <= 52 && con % 2 == 0)
@@ -404,7 +404,7 @@ if (con == 55)
 		depth = -5000;
 		audio_stop(thisaudio);
 		audio_play(snd_impactDeep, 0, VOLUME_SOUND);
-		alarm[2] = (60 * 6);
+		alarm[2] = (60 * 8);
 		con = 59; //56;
 	}
 }

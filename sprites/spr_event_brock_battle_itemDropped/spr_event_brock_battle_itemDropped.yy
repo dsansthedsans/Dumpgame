@@ -16,6 +16,8 @@
     {"$GMSpriteFrame":"v1","%Name":"148904db-0b35-4309-be0c-95f4e34f5408","name":"148904db-0b35-4309-be0c-95f4e34f5408","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"96db1a58-df19-4087-a653-5d69984be6f6","name":"96db1a58-df19-4087-a653-5d69984be6f6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"ef57b3a3-4512-4e81-87c2-66f21898df2b","name":"ef57b3a3-4512-4e81-87c2-66f21898df2b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a30aba49-d579-4bbc-bcd9-b1f31a1f1fa7","name":"a30aba49-d579-4bbc-bcd9-b1f31a1f1fa7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9f876176-a592-484c-982e-2a948b400413","name":"9f876176-a592-484c-982e-2a948b400413","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -28,8 +30,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Dumpgame",
-    "path":"Dumpgame.yyp",
+    "name":"[!] sprites",
+    "path":"folders/[!] sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -52,7 +54,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":4.0,
+    "length":6.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -83,6 +85,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ef57b3a3-4512-4e81-87c2-66f21898df2b","path":"sprites/spr_event_brock_battle_itemDropped/spr_event_brock_battle_itemDropped.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c9a2fe9b-7ffd-4291-b48c-3d5d1efec85c","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a30aba49-d579-4bbc-bcd9-b1f31a1f1fa7","path":"sprites/spr_event_brock_battle_itemDropped/spr_event_brock_battle_itemDropped.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"cbf59306-37c5-4d12-9499-34ec7a8de3c4","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9f876176-a592-484c-982e-2a948b400413","path":"sprites/spr_event_brock_battle_itemDropped/spr_event_brock_battle_itemDropped.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d56cf201-ff9d-4d61-8d8f-8f80d7d41d7b","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

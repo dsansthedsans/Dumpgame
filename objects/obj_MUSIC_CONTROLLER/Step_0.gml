@@ -10,6 +10,7 @@ for (var i = 0; i < global.music_length; i++)
 }
 // musica id 0-2 (overworld) 3 (batalha)
 
+var _room_curr = array_get_index(global.room_order, room);
 if (room == room_menu)
 {
 	for (var i = 0; i < global.music_length; i++)
@@ -38,7 +39,7 @@ if (room == room_intro)
 }
 if (room != room_battle && exists(obj_battle_quicker) == false && room != room_over)
 {
-	if (room >= room_corridors_1 && room <= room_corridors_18)
+	if (_room_curr >= array_get_index(global.room_order, room_corridors_1) && _room_curr <= array_get_index(global.room_order, room_corridors_18))
 	{	
 		music_set(0, -1);
 		music_set(1, -1);
@@ -61,8 +62,9 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		else if (room == room_corridors_2 && global.flag[1] == 0.75)
 			music_set(0, mus_event_m6);
 		// Entrance
-		if (room >= room_corridors_3 && room <= room_corridors_18)
+		if (_room_curr >= array_get_index(global.room_order, room_corridors_3) && _room_curr <= array_get_index(global.room_order, room_corridors_18))
 		{
+			debug("!!!!!!!!!!!!!!!!!!!!!!");
 			music_set(0, mus_corridors, , , , (1 - (0.025 * (chara_murder() == 1))));
 			if (chara_murder() >= 2)
 			{
@@ -71,7 +73,10 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 					music_paused[0] = true;
 			}
 			if (audio_playing(snd_jingleLuminous) == true) || (audio_playing(snd_jingleOminous) == true)
+			{
 				music_paused[0] = true;
+				debug("holy cheese and creackers");
+			}
 		}
 		// Broken Clock
 		if (room == room_corridors_11 && global.flag[39] != (0.75 + 0.125))
@@ -159,12 +164,12 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			}
 		}
 	}
-	if (room >= room_cave_1 && room <= room_cave_3)
+	if (_room_curr >= array_get_index(global.room_order, room_cave_1) && _room_curr <= array_get_index(global.room_order, room_cave_3))
 	{
 		music_set(0, -1);
 		music_set(1, -1);
 		music_set(2, -1);
-		if (room >= room_cave_1 && global.flag[62] >= 0.5 && global.flag[71] != 0.5)
+		if (_room_curr >= array_get_index(global.room_order, room_cave_1) && global.flag[62] >= 0.5 && global.flag[71] != 0.5)
 		{
 			if (global.flag[62] == 0.5)
 				music_set(0, mus_event_chapter2, , , , (0.5 + 0.25 - (0.025 * (chara_murder() >= 1))), false);
@@ -179,7 +184,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				music_set(0, mus_cave_echo, (0.5 * ((room_height - obj_chara.y) / room_height)),,, (1 - (0.025 * (chara_murder() >= 1))),, 1);
 			music_set(2, -1);
 		}
-		if (room >= room_cave_3 && room <= room_cave_3)
+		if (room == room_cave_3)
 		{
 			music_set(0, mus_cave,,,, (1 - (0.025 * (chara_murder() >= 1))),, 2);
 			music_set(2, snd_ambient_water, , 2, true, , , 4);

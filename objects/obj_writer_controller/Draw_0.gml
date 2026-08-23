@@ -230,7 +230,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			}
 			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) // grey ("Corridors")
 			{
-				text_color[0] = c_grey;
+				text_color[0] = c_gray;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "D" && _cancheck == 1) 
@@ -373,8 +373,9 @@ for (var c = 1; c < (text_length + 1); c++)
 		draw_set_halign(fa_left);
 		draw_set_font(msg_font[page]);
 		draw_set_alpha(alpha);
-		//draw_text_outline(round(_bonusx + text_x), round(_bonusy + text_y), string_char_at(msg[page], c), text_color[0], 1, c_black);
-		draw_text_color(((_bonusx + round(text_x) + shake_x[c] + _floatx)), (_bonusy + round(text_y) + shake_y[c] + _floaty), string_char_at(msg[page], c), text_color[1], text_color[1], text_color[0], text_color[0], alpha);
+		var _text_x = (_bonusx + round(text_x) + shake_x[c] + _floatx);
+		var _text_y = (_bonusy + round(text_y) + shake_y[c] + _floaty)
+		draw_text_color(_text_x, _text_y, string_char_at(msg[page], c), text_color[1], text_color[1], text_color[0], text_color[0], alpha);
 		text_x += letter_xspace;
 	}
 }

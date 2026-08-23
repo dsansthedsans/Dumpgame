@@ -26,8 +26,15 @@ if (global.menu_lvl == 5)
 			_asset_alpha = ((savefile_murder < 2) ? 0.5 : 1);
 		if (savefile_world == WORLD_CORRIDORS)
 		{
+			/*
 			if (_asset_sprite == spr_m6_d && (savefile_flag[2] == false || (savefile_armor == ITEM_BOWL && savefile_murder < 1) == false))
 			|| (_asset_sprite == spr_m6_sit && (savefile_flag[2] == false || (savefile_armor == ITEM_BOWL && savefile_murder < 1) == true))
+			*/
+			if (_asset_sprite == spr_m6_d && savefile_flag[2] == false)
+			|| (_asset_sprite == spr_m6_d && savefile_flag[2] == true && savefile_armor == ITEM_BOWL && savefile_murder < 1)
+			|| (_asset_sprite == spr_m6_sit && savefile_flag[2] == false)
+			|| (_asset_sprite == spr_m6_sit && savefile_flag[2] == true && savefile_armor != ITEM_BOWL)
+			|| (_asset_sprite == spr_m6_sit && savefile_flag[2] == true && savefile_armor == ITEM_BOWL && savefile_murder >= 1)
 			|| (_asset_sprite == spr_npc_dummy && (savefile_flag[6] == false || savefile_flag[7] == false))
 			|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && savefile_flag[48] == false)
 			|| (_asset_sprite == spr_npc_brock && (savefile_flag[38] == true || savefile_flag[39] == false))
@@ -194,14 +201,14 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 	if (global.menu_lvl == 3)
 	{
 		// foto da conquista
-		var _image_spr = spr_achievement_image;
+		var _image_spr = unused_spr_achievement_image;
 		var _image_sc = 3;
 		var _image_w = (sprite_get_width(_image_spr) * _image_sc);
 		var _image_h = (sprite_get_height(_image_spr) * _image_sc);
 		var _image_x = (_bg_x + (_bg_w / 2) - (_image_w / 2));
 		var _image_y = (_bg_y + 40);
 		draw_sprite_ext(_image_spr, _pos, _image_x, _image_y, _image_sc, _image_sc, 0, c_white, (option_alpha * alpha));
-		draw_sprite_ext(spr_achievement_border, 0, _image_x, _image_y, _image_sc, _image_sc, 0, c_white, (option_alpha * alpha));
+		draw_sprite_ext(unused_spr_achievement_border, 0, _image_x, _image_y, _image_sc, _image_sc, 0, c_white, (option_alpha * alpha));
 	
 		// nome da conquista
 		draw_set_font(fnt_main_spaced_big);

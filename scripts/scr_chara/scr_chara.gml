@@ -187,7 +187,7 @@ function chara_inwhat()
 	global.inbattle = 0;
 	global.ingameover = 0;
 	
-	if (room > room_over && room < room_event_cat)
+	if (array_get_index(global.room_order, room) > array_get_index(global.room_order, room_over) && array_get_index(global.room_order, room) < array_get_index(global.room_order, room_event_cat))
 		global.ingame = 1;
 	else if (room == room_menu)
 		global.inmenu = 1;
@@ -337,7 +337,7 @@ function chara_room_name(_room)
 function chara_world()
 {
 	var _world = WORLD_CORRIDORS;
-	if (room >= room_cave_1 && room <= room_cave_3)
+	if (array_get_index(global.room_order, room) >= array_get_index(global.room_order, room_cave_1) && array_get_index(global.room_order, room) <= array_get_index(global.room_order, room_cave_3))
 		_world = WORLD_CAVERNS;
 	global.chara_world = _world;
 	return _world;
@@ -363,7 +363,6 @@ function chara_murder()
 		_murder = 2;
 		if (global.flag[40] == false && global.chara_move == true)
 		{
-			chara_facing(DOWN);
 			global.flag[40] = true;
 			audio_play(snd_jingleOminous, false, VOLUME_SOUND);
 		}
@@ -399,10 +398,39 @@ function chara_stepping()
 	|| (room == room_corridors_14 && global.flag[50] > 0 && global.flag[50] < 1)
 	|| (room == unused_room_corridors_16_B)
 	|| (room == room_corridors_18)
-	|| (room >= room_cave_1)
-	|| (room >= room_cave_2 && room <= room_cave_3)
+	|| (array_get_index(global.room_order, room) >= array_get_index(global.room_order, room_cave_1))
 	|| (inwater == 1)
 		stepplay = 1;
+}
+function chara_damage()
+{
+	if (other.can_damage == 1)
+	{
+		var _dmg = clamp((other.dmg - floor((global.chara_def + global.chara_astrength - 10) / 2)), 1, global.chara_maxhp);
+		if (global.chara_armor == ITEM_BOWL && irandom_range(1, 7) == 7)
+			_dmg = 0;
+		if (_dmg > 0)
+		{
+			audio_play(snd_impactHurt, 0, VOLUME_SOUND);
+			var _shake = (2 * (global.inbattle + 1));
+			shakescreen(_shake, _shake);
+		}
+		else
+			audio_play(snd_impactPan, 0, VOLUME_SOUND);
+		global.chara_curhp = clamp((global.chara_curhp - _dmg), 0, global.chara_maxhp);
+		if (global.chara_curhp > 0)
+		{
+			image_speed = 0.4;
+			invtime = chara_invtime();
+		}
+		else
+		{
+			persistent = true;
+			room_goto(room_over);
+		}
+	}
+	if (other.destroy_on_impact == 1)
+		destroy(other);
 }
 
 function chara_invtime()

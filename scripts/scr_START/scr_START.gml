@@ -29,6 +29,7 @@ function START_GAME()
 	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
 	global.debug_hud = false;
+	global.room_order = [room_loading, room_menu, room_intro, room_battle, room_over, room_corridors_1, room_corridors_1_5, room_corridors_2, room_corridors_3, room_corridors_3_5, room_corridors_4, room_corridors_5, room_corridors_5_A, room_corridors_5_B, room_corridors_6, room_corridors_7, room_corridors_8, room_corridors_9, room_corridors_10, room_corridors_11, room_corridors_13, room_corridors_14, room_corridors_17, room_corridors_18, room_cave_1, room_cave_2, room_cave_3, room_event_cat];
 	
 		// notification
 	for (var i = 0; i < 10; i++)
@@ -537,7 +538,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_11;
+		var _rm = room_corridors_2;
 		if (_rm != -1)
 		{
 			if (_rm > room_menu)

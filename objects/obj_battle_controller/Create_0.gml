@@ -124,6 +124,8 @@ assist =
 	destroyBullets : true,
 }
 
+charainfo_active = true;
+
 battle_getgroup();
 create(0, 0, obj_battle_bg);
 battle_setupgroup();

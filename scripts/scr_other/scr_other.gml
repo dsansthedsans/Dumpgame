@@ -166,7 +166,7 @@ function create_notification(_id)
 {
 	if (global.hidenotif == 0 && global.notification[9] == 0)
 	{
-		notif = instance_create_layer(-40, -40, "Instances", obj_notification_controller);
+		notif = instance_create_layer(-40, -40, "Instances", unused_obj_notification_controller);
 		notif.myid = argument0;
 		
 		var i = 0;
@@ -331,6 +331,21 @@ function draw_text_outline(_x, _y, _string, _color, _outline_width, _outline_col
 	
 	draw_set_color(_mycolor);
 	draw_text(_myx, _myy, _mytext);
+}
+function draw_text_outline_color(_x, _y, _string, _color_1, _color_2, _color_3, _color_4, _alpha, _outline_width, _outline_color)
+{
+	draw_set_alpha(_alpha);
+	draw_set_color(_outline_color);
+	draw_text((_x - _outline_width), (_y - _outline_width), _string);
+	draw_text((_x + _outline_width), (_y - _outline_width), _string);
+	draw_text((_x - _outline_width), (_y + _outline_width), _string);
+	draw_text((_x + _outline_width), (_y + _outline_width), _string);
+	draw_text((_x + _outline_width), _y, _string);
+	draw_text((_x - _outline_width), _y, _string);
+	draw_text(_x, (_y - _outline_width), _string);
+	draw_text(_x, (_y + _outline_width), _string);
+	
+	draw_text_color(_x, _y, _string, _color_1, _color_2, _color_3, _color_4, _alpha);
 }
 function draw_text_outline_ext(_x, _y, _string, _color, _sep, _w, _outline_width, _outline_color)
 {

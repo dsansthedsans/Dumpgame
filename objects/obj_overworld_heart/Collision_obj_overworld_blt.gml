@@ -1,17 +1,2 @@
-
 if (canhurt == 1 && invtime <= 0 && other.active == 1)
-{
-	var _dmg = clamp((other.dmg - floor((global.chara_def + global.chara_astrength - 10) / 2)), 0, global.chara_maxhp);
-	global.chara_curhp = clamp((global.chara_curhp - _dmg), 0, global.chara_maxhp);
-	if (global.chara_curhp <= 0 && (global.indebug == true && global.debug_hud == true) == false)
-	{
-		persistent = true;
-		room_goto(room_over);
-	}
-	else
-		image_speed = 0.4;
-	audio_play(snd_impactHurt, 0, VOLUME_SOUND);
-	shakescreen(2, 2);
-	destroy(other);
-	invtime = chara_invtime();
-}
+	chara_damage();

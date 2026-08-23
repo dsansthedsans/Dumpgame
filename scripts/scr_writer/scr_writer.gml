@@ -134,18 +134,35 @@ function TEXT()
 			var _msg = get_text($"event_m6_meet_{_text_index}_{m}");
 			if (_msg == undefined)
 				break;
+			//switch (_text_index)
+			//{
+			//	case 2:
+			//	if (m == 4)
+			//	{
+			//		question[m] = _msg;
+			//		for (var a = 1; a <= 2; a++)
+			//			question_option[a] = get_text($"event_m6_meet_{_text_index}_{m}_{a}");
+			//		continue;
+			//	}
+			//	break;
+			//}
 			msg[m] = _msg;
 		}
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_writer_m6;
+		msg_format[0] = "textbox_bottom";
+		if (exists(obj_event_m6_meet) == true)
+			msg_talker[0] = obj_event_m6_meet.m6;
 		switch (_text_index)
 		{
-			case 1:
+			case 0:
 			msg[0] = string_replace_all(msg[0], "[name]", $"{global.chara_name}");	
 			msg_skip[0] = false;
 			msg_next[2] = false;
-			//msg_sound[2] = -1;
-			msg_format[0] = "textbox_bottom";
+			msg_sound[2] = -1;
+			break;
+			case 1:
+			msg_type[0] = "event_m6_meet_teach";
 			break;
 		}
 	}

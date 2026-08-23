@@ -1,4 +1,3 @@
-
 function battle()
 {
 	global.chara_move = 0;
@@ -16,7 +15,7 @@ function battle_getgroup()
 	if (global.chara_world == WORLD_CORRIDORS) // corridors
 	{
 		battle_group = irandom_range(2, 4);
-		if (global.world_curpopulation[global.chara_world] > 1)
+		if (global.world_curpopulation[global.chara_world] > 1 && global.world_curpopulation[global.chara_world] != ((global.world_maxpopulation[global.chara_world] / 2) + 1))
 		{
 			battle_group = choose(irandom_range(2, 4), irandom_range(7, 9));
 			if (global.flag[37] == 1 && global.flag[39] == 1)
@@ -59,17 +58,17 @@ function battle_setupgroup()
 	}
 	if (battle_group == 0) // But nobody came.
 	{
-		battle_music = -1;
-		battle_bg = -1;
 		//if (global.flag[22] == false)
 		//	audio_play(snd_jingleOminous, 0, VOLUME_SOUND);
 		global.flag[22] = true;
+		battle_music = -1;
+		battle_bg = -1;
+		charainfo_active = false;
 	}
 	if (battle_group == 1) // Dummy
 	{
 		battle_bg = spr_battle_bg_dummy;
 		battle_music = mus_battle_dummy;
-		
 		enemy_type[0] = 1;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_dummy);	
 	}
@@ -181,6 +180,7 @@ function battle_setupgroup()
 		battle_serious = true;
 		enemy_type[0] = 1000;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_troll);
+		assist.active = false;
 	}
 	if (battle_group == 2000) // Toilet
 	{
@@ -325,6 +325,36 @@ function battle_enemy()
 				enemy_reward_mny[i] = 100;
 				enemy_obj[i].hpwidth = 200;
 				enemy_act[i, 1] = "Flush";
+			}
+		}
+	}
+}
+function battle_enemy_allAngry()
+{
+	var _control = obj_battle_controller;
+	if (exists(_control) == true)
+	{
+		for (var e = 0; e < _control.enemy_length; e++)
+		{
+			switch (_control.enemy_type[e])
+			{
+				// Armsguy
+				case 2:
+				_control.enemy_obj[e].punched = 0;
+				_control.enemy_obj[e].tookslime = 1;
+				_control.enemy_spare[e] = 0;
+				break;
+				// Trashguy
+				case 3:
+				_control.enemy_obj[e].kicked = 1;
+				_control.enemy_obj[e].emptied = 0;
+				_control.enemy_spare[e] = 100;
+				break;
+				// Flitcher
+				case 4:
+				_control.enemy_obj[e].emotion = 1;
+				_control.enemy_spare[e] = 0;
+				break;
 			}
 		}
 	}

@@ -48,13 +48,21 @@ if (global.chara_cutscene == 0 && global.chara_pause_game == 1 && exists(obj_roo
 
 
 // movimento, colisão, animação e geração de passos
+if (position_meeting(x, y, obj_water_block) == false)
+	inwater = false;
+else
+{
+	if (inwater == false)
+		audio_play(snd_heartpulse1, , VOLUME_SOUND, 0.5);
+	inwater = true;
+}
 if (global.chara_move == 1)
 {
 	// correr
 	running = 0;
 	curspeed = wspeed;
 	curimgspeed = wimgspeed;
-	if (global.chara_run == 1 && ((hold_shift == 1 && global.autorun == 0) || (global.autorun == 1 && hold_shift == 0)) && place_meeting(x, y, obj_walk_block) == 0)
+	if (global.chara_run == 1 && ((hold_shift == 1 && global.autorun == 0) || (global.autorun == 1 && hold_shift == 0)) && place_meeting(x, y, obj_walk_block) == 0 && inwater == false)
 	{
 		running = 1;
 		global.chara_runtime += 1;
@@ -317,14 +325,6 @@ else
 	}
 	afktime = 0;
 	moving = 0;
-}
-if (position_meeting(x, y, obj_water_block) == false)
-	inwater = false;
-else
-{
-	if (inwater == false)
-		audio_play(snd_heartpulse1, , VOLUME_SOUND, 0.5);
-	inwater = true;
 }
 
 

@@ -91,6 +91,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 1.5;
 		if (_asset == snd_jingleSpell)
 			_volume *= 0.5;
+		if (_asset == snd_keyreset)
+			_volume *= 0.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{

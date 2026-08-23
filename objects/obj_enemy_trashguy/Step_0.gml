@@ -49,6 +49,7 @@ if (active == 1)
 			controller.battle_expreward += controller.enemy_reward_exp[myself];
 			controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 			controller.enemy_type[myself] = 0;
+			battle_enemy_allAngry();
 			create(x, y, obj_battle_vapor);
 			destroy(body);
 		}
@@ -57,7 +58,6 @@ if (active == 1)
 			body.sprite_index = spr_enemy_trashguy;
 			createbubble = 1;
 		}
-		
 		event_user(0);
 	}
 
@@ -100,6 +100,7 @@ if (active == 1)
 			else if (controller.level_heard == 2)
 			{
 				kicked = 1;
+				emptied = 0;
 				audio_play(snd_jingleFail, false, VOLUME_SOUND);
 			}
 		}
