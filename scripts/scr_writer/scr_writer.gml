@@ -84,6 +84,30 @@ function TEXT()
 		global.item[_pos] = -1;
 	}
 	
+	// save point
+	if (text == "savepoint")
+	{
+		var p = 0;
+		if (room == room_corridors_3)
+		{
+			msg[0] = "* (Seeing the dusty gray stairs and the colorful flowers in the grass, ...)";
+			msg[1] = "* (... you realize that this is just the beginning to something big.)";
+			msg[2] = "* (And that you probably shouldn't have left home.)";
+			p = 3;
+		}
+		msg[p] = get_text("savepoint_def0");
+		question[p+1] = get_text("savepoint_def1");
+		question_option[1] = get_text("savepoint_def1_1");
+		question_option[2] = get_text("savepoint_def1_2");
+		msg_type[p+1] = "savepoint";
+		if (question_result[p+1] == 1)
+		{
+			msg[p+2] = "";
+			msg_type[p+2] = "savepoint";
+			filesaved = 1;
+		}
+	}
+	
 	// dropped item
 	if (text == "itemDropped_pickup")
 		msg[0] = string(get_text("item_pickup")) + string(infoArray[0]) + ";D.)";
@@ -162,7 +186,10 @@ function TEXT()
 			msg_sound[2] = -1;
 			break;
 			case 1:
-			msg_type[0] = "event_m6_meet_teach";
+			break;
+			case 2:
+			msg_face[0] = spr_dialogface_m6_neutralTense;
+			msg_face[3] = spr_dialogface_m6_neutral;
 			break;
 		}
 	}
@@ -196,30 +223,6 @@ function TEXT()
 		}
 	}
 	
-	// save point
-	if (text == "savepoint")
-	{
-		var p = 0;
-		if (room == room_corridors_3)
-		{
-			msg[0] = "* (Seeing the dusty gray stairs and the colorful flowers in the grass, ...)";
-			msg[1] = "* (... you realize that this is just the beginning to something big.)";
-			msg[2] = "* (And that you probably shouldn't have left home.)";
-			p = 3;
-		}
-		msg[p] = get_text("savepoint_def0");
-		question[p+1] = get_text("savepoint_def1");
-		question_option[1] = get_text("savepoint_def1_1");
-		question_option[2] = get_text("savepoint_def1_2");
-		msg_type[p+1] = "savepoint";
-		if (question_result[p+1] == 1)
-		{
-			msg[p+2] = "";
-			msg_type[p+2] = "savepoint";
-			filesaved = 1;
-		}
-	}
-		
 	// room_corridors_3
 	if (text == "unused_room_stairssign")
 	{
@@ -247,6 +250,7 @@ function TEXT()
 					if (global.flag[67] > 0)
 						msg_skip[m+2] = false;
 					global.flag[67] += 1;
+					audio_play(snd_interact_rulesbook, 0, VOLUME_SOUND);
 				}
 				else
 				{
@@ -444,7 +448,7 @@ function TEXT()
 					}
 					global.flag[19] -= 1;
 					global.item[global.item_last] = ITEM_CANDY;
-					audio_play(snd_item, 0, VOLUME_SOUND);
+					audio_play(snd_interact_item, 0, VOLUME_SOUND);
 				}
 				else
 					msg[2] = get_text("room_candybowl_2");
@@ -472,7 +476,7 @@ function TEXT()
 					msg_skip[4] = 1;
 					global.flag[20] = 1;
 					global.item[global.item_last] = ITEM_BOWL;
-					audio_play(snd_item, 0, VOLUME_SOUND);
+					audio_play(snd_interact_item, 0, VOLUME_SOUND);
 						
 					if (global.ACHIEVEMENT_ENABLED == true && global.achievement[ACHIEVEMENT_SBHELMET] == 0)
 					{
@@ -727,7 +731,7 @@ function TEXT()
 					msg[3] = get_text("room_chocobowl_3_0");
 					global.flag[36] = 1;
 					global.item[global.item_last] = ITEM_CHOCO;
-					audio_play(snd_item, 0, VOLUME_SOUND);
+					audio_play(snd_interact_item, 0, VOLUME_SOUND);
 				}
 				else
 					msg[3] = get_text("room_chocobowl_3_1");
@@ -790,7 +794,7 @@ function TEXT()
 			msg[1] = $"+S1* :@@{global.chara_name};D!!!!!!^1&!{msg[1]}";
 			break;
 			case 3:
-			msg[2] = $"+F0* ... :@@{global.chara_name};D...^2&{msg[2]}";
+			msg[2] = $"+F0* :@@{global.chara_name};D...^2&{msg[2]}";
 			if (global.item[global.item_last] == -1)
 			{
 				msg_sound[7] = snd_writer_0;
@@ -1027,7 +1031,6 @@ function TEXT()
 	{
 		for (var m = 0; m < (1 + (chara_murder() < 1)); m++)
 			msg[m] = get_text($"room_corridors_17_egg.{m}");
-		
 	}
 	
 	// room_corridors_18
@@ -1154,27 +1157,25 @@ function TEXT()
 				msg[m] = _msg;
 			}
 		}
-		if (string_starts_with(text, "battle_bubble_m6_") == true)
+		
+		if (text == "battle_bubble_dummy") // Dummy
+		{
+			msg[0] = "+F1......";
+			if (controller.battle_usedact == 1 && controller.level_heard == 1 && controller.enemy_obj[0].stage == 6)
+				msg[0] = "+F1.....!";
+		}
+		if (string_starts_with(text, "battle_bubble_m6_dummy_") == true) // MEE6 (Dummy)
 		{
 			var _index = string_char_at(text, string_length(text));
 			for (var m = 0; m < 99; m++)
 			{
-				var _msg = get_text($"battle_bubble_m6_{_index}_{m}");
+				var _msg = get_text($"battle_bubble_m6_dummy_{_index}_{m}");
 				if (_msg == undefined)
 					break;
 				msg[m] = _msg;
 			}
 			msg_type[0] = 5;
 			msg_sound[0] = snd_writer_m6;
-			control = obj_battle_controller;
-			if (exists(control) == true && control.attackobj[0] != -1 && exists(control.attackobj[0]) == true)
-				msg_talker[0] = control.attackobj[0].mee6.object;
-		}
-		if (text == "battle_bubble_dummy") // Dummy
-		{
-			msg[0] = "+F1......";
-			if (controller.battle_usedact == 1 && controller.level_heard == 1 && controller.enemy_obj[0].stage == 6)
-				msg[0] = "+F1.....!";
 		}
 		if (string_starts_with(text, "battle_bubble_armsguy") == 1) // Armsguy
 		{
@@ -1269,6 +1270,22 @@ function TEXT()
 				for (var i = 0; i < 3; i++)
 					msg[i] = get_text("battle_bubble_brock_fight_" + string(i) + "_0");
 			}
+		}
+		if (string_starts_with(text, "battle_bubble_m6_rhonhey_") == true) // MEE6 (Rhonhey)
+		{
+			var _index = string_char_at(text, string_length(text));
+			for (var m = 0; m < 99; m++)
+			{
+				var _msg = get_text($"battle_bubble_m6_rhonhey_{_index}_{m}");
+				if (_msg == undefined)
+					break;
+				msg[m] = _msg;
+			}
+			msg_type[0] = 5;
+			msg_sound[0] = snd_writer_m6;
+			control = obj_battle_controller;
+			if (exists(control) == true && control.attackobj[0] != -1 && exists(control.attackobj[0]) == true)
+				msg_talker[0] = control.attackobj[0].mee6.object;
 		}
 	}
 	else if (string_starts_with(text, "battle_") == 1) // battlebox
@@ -1388,10 +1405,11 @@ function TEXT()
 			}
 			else // normal
 			{
-				var _num = irandom(_max) //_max - controller.battle_round + 1
+				var _num = (controller.battle_round - 1);
+				if (_num > _max)
+					_num = irandom(_max);
 				msg[0] = get_text("battle_main_" + string(_name) + "_" + string(_num));
 			}
-			//msg[0] = get_text("battle_main_" + string(_name) + "_" + string(controller.battle_round));
 			if (msg[0] == undefined)
 				msg[0] = "* Salenis";
 			

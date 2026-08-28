@@ -362,7 +362,7 @@ if (type == 6.24)
 	dmg += 2;
 	outside_box = 1;
 	destroy_on_impact = 0;
-	audio_play(snd_explosion2, 0, VOLUME_SOUND);
+	audio_play(snd_explosionLightning, 0, VOLUME_SOUND);
 	shakescreen(5, 5);
 }
 if (type >= 6 && type < 7)
@@ -374,7 +374,7 @@ if (type == 13)
 	image_xscale = 1;
 	image_yscale = image_xscale;
 	image_alpha = 0;
-	//dmg += 2;
+	dmg -= 1;
 	outside_box = true;
 	destroy_on_impact = false;
 }

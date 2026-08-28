@@ -35,7 +35,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.75 - 0.125;
 		if (_asset == snd_heartpulse2)
 			_volume *= 0.75;
-		if (_asset == snd_explosion1)
+		if (_asset == snd_explosionRealistic)
 			_volume = 0.75;
 		if (_asset == snd_ambient_wind)
 			_volume *= 0.5;
@@ -47,7 +47,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_launch) || (_asset == snd_launch_reverse)
 			_volume *= 0.75;
-		if (_asset == snd_explosion2)
+		if (_asset == snd_explosionLightning)
 			_volume *= 0.375;
 		if (_asset == snd_writer_gabee) || (_asset == snd_writer_dsans)
 			_volume /= 5;
@@ -71,7 +71,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_battle_danger)
 			_volume *= 0.75;
-		if (_asset == snd_save)
+		if (_asset == snd_interact_save)
 			_volume *= 0.75;
 		if (_asset == snd_heal)
 			_volume *= 1 - 0.125;
@@ -91,8 +91,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 1.5;
 		if (_asset == snd_jingleSpell)
 			_volume *= 0.5;
-		if (_asset == snd_keyreset)
+		if (_asset == snd_option_keyreset)
 			_volume *= 0.5;
+		if (_asset == snd_interact_rulesbook) || (_asset == snd_meowmeowmeow)
+			_volume *= 0.25;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{

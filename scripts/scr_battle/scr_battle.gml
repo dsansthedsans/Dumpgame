@@ -71,6 +71,9 @@ function battle_setupgroup()
 		battle_music = mus_battle_dummy;
 		enemy_type[0] = 1;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_dummy);	
+		button_active = false;
+		heart.x = box_defaultx;
+		heart.y = round(box_defaulty + (160 / 3));
 	}
 	if (battle_group == 2) // Armsguy
 	{
@@ -282,9 +285,9 @@ function battle_enemy()
 				enemy_curhp[i] = 50;
 				enemy_maxhp[i] = 50;
 				enemy_atk[i] = 10;
-				enemy_def[i] = 99999;
-				enemy_reward_exp[i] = 15;
-				enemy_reward_mny[i] = 20;
+				enemy_def[i] = 9999999;
+				enemy_reward_exp[i] = 12; // 12 as in a 12-hour clock
+				enemy_reward_mny[i] = 24; // 24 as in the length of a day, the 24-hour cycle
 				enemy_act[i, 1] = get_text("battle_act_brock_1");
 				enemy_act[i, 2] = get_text("battle_act_brock_2");
 				enemy_act[i, 3] = get_text("battle_act_brock_3");
@@ -369,6 +372,12 @@ function battle_getattack()
 	for (var i = 0; i < enemy_length; i++)
 	{
 		enemy_attack[i]	= irandom(1);
+		if (enemy_type[i] == 1) // Dummy
+		{
+			enemy_attack[i] = button_active;
+			if (enemy_attack[i] == 0)
+				battle_turntime = 0;
+		}
 		if (enemy_type[i] == 2) // Armsguy
 		{
 			if (i == 1 && enemy_type[(i - 1)] == 3 && enemy_attack[(i - 1)] == 1)
@@ -437,6 +446,32 @@ function battle_getattack()
 function battle_attack()
 {
 	// vars: time (1), amt (0), stage (0), delay (999), siner (0), controller and box_ (myself, enemy (type), attack)
+	if (enemy == 1 && attack == 0) || (enemy == 7)
+	{
+		mee6 =
+		{
+			stage : 0,
+			delay : round(60 * 6),
+			buildup :
+			{
+				asset : snd_buildupComputer,
+				id : undefined,
+				pitch : undefined,
+				pitchMin : 0.5,
+				pitchMax : 3.5,
+				pitchSpeed : 0.00375,
+			},
+			object : undefined,
+			bubble_offsetX : 0,
+			bubble_offsetY : 0,
+		};
+		mee6.object = marker(-20, -20, spr_enemy_m6_leftMad, 1, 2, 2, 0, 1, 0, c_white, controller.battle_depth[1]);
+		mee6.object.x = (room_width + (sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale));
+		mee6.object.y = controller.defaulty;
+		mee6.bubble_offsetX = (-((sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale) / 2));
+		mee6.bubble_offsetY = -(((sprite_get_height(mee6.object.sprite_index) * mee6.object.image_yscale) / 2) - round(35 / 4));
+		mee6.bubble_maxX = (room_width - round(35 / 4));
+	}
 	if (enemy == -1) // test
 	{
 		delay += 1;
@@ -451,13 +486,50 @@ function battle_attack()
 	}
 	if (enemy == 1) // Dummy
 	{
-		var _x = choose((box_x - box_w), (box_x + box_w));
-		var _y = irandom_range(box_y - (box_h / 2), (box_y + (box_h / 2)));
-		create(_x, _y, obj_battle_blt);
-		thisobj.type = 1;
+		if (attack == 0)
+		{
+			if (stage == 0)
+			{
+				stage += 1;
+				delay = 30;
+			}
+			else if (stage == 1)
+			{
+				if (delay > 0)
+					delay -= 1;
+				else
+					stage += 1;
+			}
+			if (stage == 2)
+			{
+				writer("battle_bubble_m6_dummy_0", clamp((mee6.object.x + mee6.bubble_offsetX), 0, mee6.bubble_maxX), (mee6.object.y + mee6.bubble_offsetY));
+				stage += 1;
+				delay = 60;
+			}
+			if (stage == 3 && exists(thiswriter) == false)
+			{
+				if (delay > 0)
+					delay -= 1;
+				else
+					stage += 1;
+			}
+			if (stage == 4)
+			{
+				controller.button_active = true;
+				stage += 1;
+				audio_play(snd_bellFlower, false, VOLUME_SOUND);
+			}
+		}
+		if (attack == 1)
+		{
+			var _x = choose((box_x - box_w), (box_x + box_w));
+			var _y = irandom_range(box_y - (box_h / 2), (box_y + (box_h / 2)));
+			create(_x, _y, obj_battle_blt);
+			thisobj.type = 1;
 		
-		time = (irandom_range(30, 50) - (controller.enemy_obj[0].stage * 3));
-		time = clamp(time, 1, 60);
+			time = (irandom_range(30, 50) - (controller.enemy_obj[0].stage * 3));
+			time = clamp(time, 1, 60);
+		}
 	}
 	if (enemy == 2) // Armsguy
 	{
@@ -825,28 +897,6 @@ function battle_attack()
 					thisobj.delaydelay = (10 * b);
 				};
 				ball.appear.id = audio_play(ball.appear.asset, false, VOLUME_SOUND);
-				mee6 =
-				{
-					stage : 0,
-					delay : round(60 * 6),
-					buildup :
-					{
-						asset : snd_buildupComputer,
-						id : undefined,
-						pitch : undefined,
-						pitchMin : 0.5,
-						pitchMax : 3.5,
-						pitchSpeed : 0.00375,
-					},
-					object : undefined,
-					bubble_offsetX : 0,
-					bubble_offsetY : 0,
-				};
-				mee6.object = marker(-20, -20, spr_enemy_m6_leftMad, 1, 2, 2, 0, 1, 0, c_white, controller.battle_depth[1]);
-				mee6.object.x = (room_width + (sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale));
-				mee6.object.y = controller.defaulty;
-				mee6.bubble_offsetX = (-((sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale) / 2));
-				mee6.bubble_offsetY = -(((sprite_get_height(mee6.object.sprite_index) * mee6.object.image_yscale) / 2) - round(35 / 4));
 			}
 			else if (stage == 3)
 			{
@@ -960,14 +1010,14 @@ function battle_attack()
 			else if (stage == 7)
 			{
 				global.flag[69] = 0.625;
-				writer("battle_bubble_m6_0", clamp((mee6.object.x + mee6.bubble_offsetX), 0, (room_width - round(35 / 4))), (mee6.object.y + mee6.bubble_offsetY));
+				writer("battle_bubble_m6_rhonhey_0", clamp((mee6.object.x + mee6.bubble_offsetX), 0, mee6.bubble_maxX), (mee6.object.y + mee6.bubble_offsetY));
 				stage += 1;
 			}
 			else if (stage == 8 && exists(thiswriter) == false)
 			{
 				var _mee6_targetX = round(controller.box_defaultx + (controller.box_defaultw / 2.5));
 				if (mee6.object.x > _mee6_targetX)
-					mee6.object.x -= 4;
+					mee6.object.x -= 3;
 				var _rhonhey_targetX = (controller.box_defaultx - (controller.box_defaultw / 2.5));
 				if (controller.enemy_obj[myself].body.x > _rhonhey_targetX)
 				{
@@ -983,7 +1033,7 @@ function battle_attack()
 			}
 			if (stage == 9)
 			{
-				writer("battle_bubble_m6_1", (mee6.object.x + mee6.bubble_offsetX), (mee6.object.y + mee6.bubble_offsetY));
+				writer("battle_bubble_m6_rhonhey_1", (mee6.object.x + mee6.bubble_offsetX), (mee6.object.y + mee6.bubble_offsetY));
 				stage += 1;
 				delay = 60;
 			}
@@ -1015,7 +1065,7 @@ function battle_attack()
 			}
 			else if (stage == 13)
 			{
-				writer("battle_bubble_m6_2", (mee6.object.x + mee6.bubble_offsetX), (mee6.object.y + mee6.bubble_offsetY));
+				writer("battle_bubble_m6_rhonhey_2", (mee6.object.x + mee6.bubble_offsetX), (mee6.object.y + mee6.bubble_offsetY));
 				stage += 1;
 				delay = 60;
 			}
@@ -1038,8 +1088,7 @@ function battle_attack()
 						alarm[0] = 30;
 					stage += 1;
 				}
-			}
-			
+			}			
 		}
 	}
 	if (enemy == 2000) // Toilet
@@ -1052,8 +1101,7 @@ function battle_attack()
 			thisobj.type = 2000;
 			time = 30;
 		}
-	}
-	
+	}	
 }
 function battle_sparecloud(_instance, _xdif = 0, _ydif = 0)
 {

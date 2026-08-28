@@ -6,7 +6,7 @@ mystage = 0;
 mytimer = 120;
 mycolor = c_white;
 achievement_id = -1;
-achievement_snd = snd_notification_achievement;
+achievement_snd = unused_snd_notification_achievement;
 
 // set basics
 text = "Salenis";

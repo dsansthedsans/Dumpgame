@@ -199,7 +199,7 @@ function surprise(_obj)
 }
 function explosion(_x, _y)
 {
-	audio_play(snd_explosion1, false, VOLUME_SOUND);
+	audio_play(snd_explosionRealistic, false, VOLUME_SOUND);
 	return marker(argument0, argument1, spr_explosion1, 1, 1, 1, 1, 0, 0, c_white, -1000);
 }
 function afterimage()

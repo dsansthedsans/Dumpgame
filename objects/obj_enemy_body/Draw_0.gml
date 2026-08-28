@@ -234,7 +234,7 @@ if (active == 1)
 					vspeed = 0;
 					gravity = 0;
 					image_alpha = 0;
-					audio_play(snd_explosion3, 0, VOLUME_SOUND);
+					audio_play(snd_explosionEcho, 0, VOLUME_SOUND);
 					shakescreen(6, 6);
 					stage = 2;
 				}

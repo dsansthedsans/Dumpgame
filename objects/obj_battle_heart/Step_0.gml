@@ -46,6 +46,7 @@ if (exists(controller) == true)
 	}
 	graze.x = x;
 	graze.y = y;
+	debug($"x = {x} | y = {y}");
 }
 
 /*

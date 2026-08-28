@@ -64,7 +64,6 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		// Entrance
 		if (_room_curr >= array_get_index(global.room_order, room_corridors_3) && _room_curr <= array_get_index(global.room_order, room_corridors_18))
 		{
-			debug("!!!!!!!!!!!!!!!!!!!!!!");
 			music_set(0, mus_corridors, , , , (1 - (0.025 * (chara_murder() == 1))));
 			if (chara_murder() >= 2)
 			{

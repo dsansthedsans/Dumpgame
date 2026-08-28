@@ -92,17 +92,19 @@ if (active == 1)
 		
 			if (controller.level_heard == 1)
 			{
-				punched = 0;
-				tookslime = 1;
 				controller.enemy_spare[myself] = 0;
 				audio_play(snd_jingleFail, false, VOLUME_SOUND);
+				punched = 0;
+				tookslime = 1;
 			}
 			else if (controller.level_heard == 2)
 			{
-				punched = 1;
-				tookslime = 0;
 				controller.enemy_spare[myself] = 100;
 				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
+				punched = 1;
+				punchtime = 60;
+				audio_play(snd_impactPunch, false, VOLUME_SOUND);
+				tookslime = 0;
 			}
 		}
 		else if (usedact == 1 && exists(thiswriter) == 0 && controller.enemy_target == myself)
@@ -162,7 +164,25 @@ if (active == 1)
 			if (tookslime == 1)
 				body.sprite_index = spr_enemy_armsguy_angry;
 			else if (punched == 1)
+			{
 				body.sprite_index = spr_enemy_armsguy_happy;
+				if (punchtime > 0)
+				{
+					x = normal_x;
+					y = normal_y;
+					x += choose(-hurt_amt/2, hurt_amt/2);
+					y += choose(-hurt_amt/2, hurt_amt/2);
+					body.x = (x + body_xdif);
+					body.y = (y + body_ydif);
+					if (hurt_amt > 0)
+						hurt_amt -= (0.075 * 2);
+					else
+						hurt_amt = 0;
+					punchtime -= 1;
+					if (punchtime == 0)
+						event_user(0);
+				}
+			}
 		}
 	}
 }

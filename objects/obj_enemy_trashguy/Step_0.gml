@@ -93,15 +93,19 @@ if (active == 1)
 		
 			if (controller.level_heard == 1)
 			{
-				emptied = 1;
-				kicked = 0;
+				controller.enemy_spare[myself] = 100;
 				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
+				kicked = 0;
+				emptied = 1;
 			}
 			else if (controller.level_heard == 2)
 			{
-				kicked = 1;
-				emptied = 0;
+				controller.enemy_spare[myself] = 100;
 				audio_play(snd_jingleFail, false, VOLUME_SOUND);
+				kicked = 1;
+				kicktime = 60;
+				audio_play(snd_impactGrab, false, VOLUME_SOUND);
+				emptied = 0;
 			}
 		}
 		else if (usedact == 1 && exists(thiswriter) == 0 && controller.enemy_target == myself)
@@ -135,9 +139,6 @@ if (active == 1)
 			writer(_text, bubble_x, bubble_y);
 			createbubble = 2;
 			returnmain = 0;
-		
-			if (emptied == 1) || (kicked == 1)
-				controller.enemy_spare[myself] = 100;
 		}
 		else if (createbubble == 2 && exists(thiswriter) == 0)
 		{
@@ -151,6 +152,26 @@ if (active == 1)
 			startattack = 0;
 			returnmain = 1;
 			usedact = 0;
+		}
+		
+		if (hurt == 0 && kicked == true)
+		{
+			if (kicktime > 0)
+			{
+				x = normal_x;
+				y = normal_y;
+				x += choose(-hurt_amt, hurt_amt);
+				y += choose(-hurt_amt, hurt_amt);
+				body.x = (x + body_xdif);
+				body.y = (y + body_ydif);
+				if (hurt_amt > 0)
+					hurt_amt -= (0.075 * 2);
+				else
+					hurt_amt = 0;
+				kicktime -= 1;
+				if (kicktime == 0)
+					event_user(0);
+			}
 		}
 	}
 }

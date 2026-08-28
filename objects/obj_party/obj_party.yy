@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_m6_d",
-    "path":"sprites/spr_m6_d/spr_m6_d.yy",
+    "name":"spr_m6_d_default",
+    "path":"sprites/spr_m6_d_default/spr_m6_d_default.yy",
   },
   "spriteMaskId":null,
   "visible":true,

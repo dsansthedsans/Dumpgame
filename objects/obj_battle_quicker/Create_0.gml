@@ -9,8 +9,23 @@ heart_x = chara.x;
 heart_y = (chara.y - (chara.sprite_height / 2));
 heart_move = 0;
 heart_alpha = 0;
-heart_targetx = (camera_get_view_x(view_camera[0]) + (((global.battle_nextgroup != 13) ? 50 : 319) / 2));
-heart_targety = (camera_get_view_y(view_camera[0]) + (((global.battle_nextgroup != 13) ? 451 : 373) / 2));
+switch (global.battle_nextgroup)
+{
+	case 1:
+	heart_targetx = 319;
+	heart_targety = 320;
+	break;
+	case 13:
+	heart_targetx = 319;
+	heart_targety = 373;
+	break;
+	default:
+	heart_targetx = 50;
+	heart_targety = 451;
+	break;
+}
+heart_targetx = (camera_get_view_x(view_camera[0]) + (heart_targetx / 2));
+heart_targety = (camera_get_view_y(view_camera[0]) + (heart_targety / 2));
 marker(heart_x, heart_y, spr_battle_heart, heart_alpha, 0.5, 0.5, 0, 0, 0, global.c_dump, -20000);
 heart = thismarker;
 
@@ -18,7 +33,7 @@ switch_amt = 0;
 switch_max = 6;
 
 nobody = 0;
-if (global.battle_nextgroup == 1) || (global.world_curpopulation[global.chara_world] <= 0 && global.battle_nextgroup == 0)
+if /*(global.battle_nextgroup == 1) ||*/ (global.world_curpopulation[global.chara_world] <= 0 && global.battle_nextgroup == 0)
 	nobody = 1;
 
 audio_stop(snd_victory);

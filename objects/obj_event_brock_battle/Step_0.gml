@@ -334,7 +334,7 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 			if (global.item[global.item_last] == -1)
 			{
 				global.item[global.item_last] = ITEM_PACE;
-				audio_play(snd_item, 0, VOLUME_SOUND);
+				audio_play(snd_interact_item, 0, VOLUME_SOUND);
 			}
 			else
 				event_user(0);

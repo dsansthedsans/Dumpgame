@@ -19,27 +19,34 @@ function party_type(_type)
 	sprite[RIGHT, 0] = -1;
 	sprite[UP, 0] = -1;
 	sprite[DOWN, 0] = -1;
-
 	sprite[LEFT, 1] = -1;
 	sprite[RIGHT, 1] = -1;
 	sprite[UP, 1] = -1;
 	sprite[DOWN, 1] = -1;
-	
 	if (argument0 == "m6")
 	{
-		sprite[LEFT, 0] = spr_m6_l;
-		sprite[RIGHT, 0] = spr_m6_r;
+		sprite[LEFT, 0] = spr_m6_l_default;
+		sprite[RIGHT, 0] = spr_m6_r_default;
 		sprite[UP, 0] = spr_m6_u;
-		sprite[DOWN, 0] = spr_m6_d;
-		sprite[SIT, 0] = spr_m6_sit;
-
-		sprite[LEFT, 1] = spr_m6_l_talk;
-		sprite[RIGHT, 1] = spr_m6_r_talk;
+		sprite[DOWN, 0] = spr_m6_d_default;
+		sprite[LEFT, 1] = spr_m6_l_defaultTalk;
+		sprite[RIGHT, 1] = spr_m6_r_defaultTalk;
 		sprite[UP, 1] = spr_m6_u_talk;
-		sprite[DOWN, 1] = spr_m6_d_talk;
-		sprite[SIT, 1] = spr_m6_sit;
+		sprite[DOWN, 1] = spr_m6_d_defaultTalk;
+		sprite[SIT, 0] = spr_m6_d_defaultSit;
+		sprite[SIT, 1] = sprite[SIT, 0];
+		if (global.flag[37] == true && global.flag[38] == false)
+		{
+			sprite[LEFT, 0] = spr_m6_l_neutral;
+			sprite[RIGHT, 0] = spr_m6_r_neutral;
+			sprite[DOWN, 0] = spr_m6_d_neutral;
+			sprite[LEFT, 1] = spr_m6_l_neutralTalk;
+			sprite[RIGHT, 1] = spr_m6_r_neutralTalk;
+			sprite[DOWN, 1] = spr_m6_d_neutralTalk;
+			sprite[SIT, 0] = spr_m6_d_neutralSit;
+			sprite[SIT, 1] = sprite[SIT, 0];
+		}
 	}
-	
 	debug("--- Created obj_party with type \"" + string(argument0) + "\"");
 }
 
@@ -90,17 +97,17 @@ function party_type()
 	if (type == "m6")
 	{
 		pos = 20;
-		sprite[LEFT]	= spr_m6_l;
-		sprite[RIGHT]	= spr_m6_r;
+		sprite[LEFT]	= spr_m6_l_default;
+		sprite[RIGHT]	= spr_m6_r_default;
 		sprite[UP]		= spr_m6_u;
-		sprite[DOWN]	= spr_m6_d;
-		sprite[SIT]		= spr_m6_sit;
+		sprite[DOWN]	= spr_m6_d_default;
+		sprite[SIT]		= spr_m6_d_defaultSit;
 		if (_talking == 1)
 		{
-			sprite[LEFT]	= spr_m6_l_talk;
-			sprite[RIGHT]	= spr_m6_r_talk;
+			sprite[LEFT]	= spr_m6_l_defaultTalk;
+			sprite[RIGHT]	= spr_m6_r_defaultTalk;
 			sprite[UP]		= spr_m6_u_talk;
-			sprite[DOWN]	= spr_m6_d_talk;	
+			sprite[DOWN]	= spr_m6_d_defaultTalk;	
 		}
 	}
 	

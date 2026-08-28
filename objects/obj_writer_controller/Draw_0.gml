@@ -577,7 +577,7 @@ if (question[page] != "%%%" && writing == 0)
 			if (question_result[page] == 1)
 			{
 				savefile_write();
-				audio_play(snd_save, 0, VOLUME_SOUND);
+				audio_play(snd_interact_save, 0, VOLUME_SOUND);
 			}
 			else if (question_result[page] == 2)
 				audio_play(snd_option_return, 0, VOLUME_SOUND);

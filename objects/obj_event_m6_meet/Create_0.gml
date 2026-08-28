@@ -19,14 +19,14 @@ teachBg_offsetY = 0;
 teachBg_offsetSpeed = 0.125;
 teachBg_alpha = 0;
 teachBg_alphaTarget = (0.5 + 0.125);
-teachBg_alphaSpeed = 0.05;
+teachBg_alphaSpeed = 0.025;
 teachInfo_sprite = spr_event_m6_meet_teachIcon_placeholder;
 teachInfo_length = 0;
 teachInfo_lengthMax = 3;
 teachInfo_alpha = [0, 0, 0];
 teachInfo_alphaTarget = [1, 1, 1];
-teachInfo_alphaSpeed = 0.1;
-teachInfo_textColor = [c_gray, #4986B7, merge_color(c_yellow, c_white, 0.5)];
+teachInfo_alphaSpeed = 0.05;
+teachInfo_textColor = [(#748CAB), (#4986B7), merge_color(c_yellow, c_white, 0.5)];
 DEBUG_SKIP = (true * global.indebug);
 if (DEBUG_SKIP == true)
 {
@@ -38,7 +38,7 @@ if (global.flag[2] == false && global.flag[1] == false && global.flag[66] == 2 &
 	con = 1;
 	chara_facing(UP);
 	chara_change(-1, 0, 0, 1, 0, 0, 1);
-	m6 = marker((room_width / 2), 135, spr_m6_d_talk, 1, 1, 1, 0, 0, 0, c_white, -160);
+	m6 = marker((room_width / 2), 135, spr_m6_d_defaultTalk, 1, 1, 1, 0, 0, 0, c_white, -160);
 }
 else
 	instance_destroy();

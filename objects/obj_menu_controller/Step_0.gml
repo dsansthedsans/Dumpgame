@@ -358,7 +358,7 @@ if (move == 1)
 		{
 			start_controls();
 			event_user(1);
-			audio_play(snd_keyreset, 0, VOLUME_SOUND);
+			audio_play(snd_option_keyreset, 0, VOLUME_SOUND);
 		}
 	}
 }
@@ -415,7 +415,7 @@ if (global.menu_lvl == 6)
 	{
 		CONTROLS_START();
 		event_user(1);
-		audio_play(snd_keyreset, 0, 0);
+		audio_play(snd_option_keyreset, 0, 0);
 	}
 	
 	// changing a keybind

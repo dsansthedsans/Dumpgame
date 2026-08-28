@@ -43,7 +43,7 @@ function achievement_add(_id)
 	{
 		global.achievement[i] = 1;
 		achievements_write();
-		audio_play(snd_notification_achievement, 0, VOLUME_SOUND);
+		audio_play(unused_snd_notification_achievement, 0, VOLUME_SOUND);
 	}
 }
 function achievement_achieved()

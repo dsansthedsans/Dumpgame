@@ -3,13 +3,11 @@ function START_GAME()
 {		
 	randomize();
 	display_set_gui_maximise(2, 2);
-	load_time = 180//irandom_range(180, 240);
-	
+	load_time = 180;
 	global.game_version = "v0.5.0";
 	global.game_directory = $"{working_directory}{global.game_version}\\";
 	if (directory_exists(global.game_directory) == false)
 		directory_create(global.game_directory);
-	
 	global.game_startroom[0] = room_menu;
 	global.game_startroom[1] = room_corridors_1 //room_intro;
 	global.ACHIEVEMENT_ENABLED = false;
@@ -20,123 +18,17 @@ function START_GAME()
 	start_writer();
 	start_settings();
 	start_achievements();
-	
 	global.c_dump = #32FF62;
 	global.c_mention[0] = #5865F2; //#5865F2//#6B70B2;
 	global.c_mention[1] = #A8BAFE; //#5865F2//#6B70B2;
 	global.fnt_dmg = font_add_sprite_ext(spr_fnt_dmg, "BCEIKLMOQRSU 0123456789", 1, 0);
-	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- ", 0, 0);
+	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- @", 0, 0);
 	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
 	global.debug_hud = false;
 	global.room_order = [room_loading, room_menu, room_intro, room_battle, room_over, room_corridors_1, room_corridors_1_5, room_corridors_2, room_corridors_3, room_corridors_3_5, room_corridors_4, room_corridors_5, room_corridors_5_A, room_corridors_5_B, room_corridors_6, room_corridors_7, room_corridors_8, room_corridors_9, room_corridors_10, room_corridors_11, room_corridors_13, room_corridors_14, room_corridors_17, room_corridors_18, room_cave_1, room_cave_2, room_cave_3, room_event_cat];
-	
-		// notification
 	for (var i = 0; i < 10; i++)
 		global.notification[i] = 0;
-	
-	/*
-
-	
-	// others
-	global.ingame = 0;
-	global.inmenu = 0;
-	global.inintro = 0;
-	global.inbattle = 0;
-	global.ingameover = 0;
-	global.ingameend = 0;
-	global.indebug = 0;
-	global.leavingbattle = 0;
-	global.fastmenu = 0;
-	global.resetfile = 0;
-	global.hasfile = 0;
-	*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*
-	// dropped item
-	global.droppeditem_length = 99;
-	global.droppeditem_pickupname = "";
-	for (var i = 0; i < 99; i++)
-	{
-		global.droppeditem[i] = -1;
-		global.droppeditem_x[i] = -20;
-		global.droppeditem_y[i] = -20;
-		global.droppeditem_room[i] = -1;
-	}
-	*/
-	
-	/*
-	#macro ITEM_BROOMSTICK 1
-	#macro ITEM_BANDAGE 2
-	#macro ITEM_7BELO 3
-	#macro ITEM_CANDYBOWL 4
-	#macro ITEM_BATONGAROTO 5
-	#macro ITEM_KUNAI 6
-	#macro ITEM_OLDHAMMER 7
-	#macro INVENTORY_SLOT_TYPE_WEAPON 1
-	#macro INVENTORY_SLOT_TYPE_ARMOR 2
-	#macro INVENTORY_SLOT_TYPE_CONSUMABLE 3
-	
-	global.inventory_length = 6;
-	global.inventory_lastslot = (global.inventory_length - 1);
-	for (var i = 0; i < global.inventory_length; i++)
-	{
-		global.inventory_slot[i] = 0;
-		global.inventory_slot_type[i] = 0; // 1 = WEAPON; 2 = ARMOR; 3 = CONSUMABLE;
-		global.inventory_slot_name[i] = "";
-		global.inventory_slot_desc[i] = "";
-	}
-	
-	// dropped item
-	global.droppeditem_myid = -1;
-	global.droppeditem_mypos = -1;
-	global.droppeditem_maxlength = 999;
-	global.droppeditem_pickupname = "";
-	for (var i = 0; i < global.droppeditem_maxlength; i++)
-	{
-		global.droppeditem[i] = 0;
-		global.droppeditem_x[i] = -20;
-		global.droppeditem_y[i] = -20;
-		global.droppeditem_room[i] = 0;
-		global.droppeditem_name[i] = "Salenis";
-		global.droppeditem_exists[i] = 0;
-	}
-	*/
-	
-	// camera
-	
-	/*
-	global.camera_shake_active = 0gl
-	obal.camera_shake_intensity = 0;
-	*/
-	
-	// writer
-	
-	// music
-	/*
-	#macro MUSIC_NORMAL 0
-	#macro MUSIC_AMBIENCE 1
-	global.music_length = 2;
-	for (var i = 0; i < global.music_length; i++)
-	{
-		global.music[i] = -1;
-		global.music_loop[i] = 0;
-		global.music_gain[i] = 0;
-		global.music_pitch[i] = 0;
-		global.music_volume[i] = 0;
-		global.music_audio[i] = -1;
-		global.music_pos[i] = 0;
-	}
-	*/
 }
 
 function start_maininfo()
@@ -538,14 +430,11 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_2;
+		var _rm = room_corridors_11;
 		if (_rm != -1)
 		{
-			if (_rm > room_menu)
-			{
-				global.savefile_selected = 0;
-				window_set_caption("Dumpgame");
-			}
+			global.savefile_selected = 0;
+			window_set_caption("Dumpgame");
 			global.game_startroom[0] = _rm;
 			
 			// pegar em qual nível que o jogador está

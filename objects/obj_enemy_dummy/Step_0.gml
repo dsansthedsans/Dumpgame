@@ -81,12 +81,14 @@ if (controller.enemy_type[myself] != 0)
 			stage = 6;
 			body.stage = 1;
 			controller.enemy_spare[myself] = 100;
+			audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 		}
 		else if (controller.level_heard == 2)
 		{
 			body.stage = 2;
 			if (stage >= 5)
 				screamed += 1;
+			audio_play(snd_jingleFail, false, VOLUME_SOUND);
 		}
 		
 		usedact = 1;
@@ -102,16 +104,28 @@ if (controller.enemy_type[myself] != 0)
 		createbubble = 1;
 
 	// create bubble
-	if (controller.createbubble == 1 && createbubble == 1)
+	if (controller.button_active == false)
 	{
-		writer("battle_bubble_dummy", bubble_x, bubble_y);
-		createbubble = 2;
-		returnmain = 0;
+		if (controller.createbubble == 1 && createbubble == 1)
+		{
+			createbubble = 0;
+			returnmain = 0;
+			startattack = 1;
+		}
 	}
-	else if (createbubble == 2 && exists(thiswriter) == 0)
+	else
 	{
-		createbubble = 0;
-		startattack = 1;
+		if (controller.createbubble == 1 && createbubble == 1)
+		{
+			writer("battle_bubble_dummy", bubble_x, bubble_y);
+			createbubble = 2;
+			returnmain = 0;
+		}
+		else if (createbubble == 2 && exists(thiswriter) == 0)
+		{
+			createbubble = 0;
+			startattack = 1;
+		}
 	}
 
 	// start attack

@@ -34,6 +34,7 @@ spared = 0;
 event_user(0);
 
 kicked = 0;
+kicktime = 0;
 emptied = 0;
 if (chara_murder() >= 1)
 {

@@ -139,15 +139,14 @@ else if (result == 1) // Bench
 		if (global.flag[2] == 1)
 		{
 			party_stop(0);
+			party_facing(0, SIT);
 			party_change(0, -1, -1);
 			m6 = global.party[0];
 			m6_oldx = m6.x;
 			m6_oldy = m6.y;
-			m6_oldsprite = m6.sprite_index;
 			m6.x = (x + (sprite_width / 2) - 11);
 			m6.y = (y + 10);
 			m6.depth = -m6.bbox_bottom - 20;
-			m6.sprite_index = spr_m6_sit;
 			m6.xscale = 0.75;
 			m6.yscale = 0.5;
 			chara.x += 11;
@@ -172,10 +171,10 @@ else if (result == 1) // Bench
 			{
 				m6.x = m6_oldx;
 				m6.y = m6_oldy;
-				m6.sprite_index = m6_oldsprite;
 				m6.depth = -m6.bbox_bottom;
 				m6.xscale = 0.75;
 				m6.yscale = 0.5;
+				party_facing(0, DOWN);
 				party_change(0, 0, -1);
 			}
 			audio_play(snd_splat_reversed, 0, VOLUME_SOUND);
@@ -187,7 +186,7 @@ else if (result == 3) // mouse hole
 {
 	if (con == 1)
 	{
-		var _audio = choose(snd_npc_rat_0a, snd_npc_rat_1e, snd_npc_rat_2o);
+		var _audio = choose(snd_interact_rat_0a, snd_interact_rat_1e, snd_interact_rat_2o);
 		if (audio_playing(_audio) == 0 && chara_murder() < 2)
 			audio_play(_audio, 0, VOLUME_SOUND, , , , 2);
 		chara_change(-1, 1, 1, -1, 1, 1, 1);
@@ -289,7 +288,7 @@ else if (result == 5) // itemDropoed
 			writer("itemDropped_pickup", -1, -1, [item_name(global.item[global.item_last], "")]);
 			visible = false;
 			image_alpha = 0;
-			audio_play(snd_item, 0, VOLUME_SOUND);
+			audio_play(snd_interact_item, 0, VOLUME_SOUND);
 		}
 		else
 			writer("itemDropped_cantpickup", -1, -1);

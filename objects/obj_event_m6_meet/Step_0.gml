@@ -9,7 +9,8 @@ if (con == 1)
 if (con == 2 && chara.y <= 195)
 {
 	global.flag[1] = 0.5;
-	if (DEBUG_SKIP == false)
+	var _DEBUG_SKIP = true;
+	if (DEBUG_SKIP == false) || (DEBUG_SKIP == true && _DEBUG_SKIP == false)
 	{
 		con = 6;
 		alarm[2] = round(60 * 1);
@@ -101,21 +102,59 @@ else if (con == 14)
 	writer("event_m6_meet_1");
 	con += 1;
 }
-if (con == 15)
+else if (con == 15)
 {
 	if (exists(thiswriter) == true)
 	{
 		if (thiswriter.page >= 4)
 		{
 			teach_active = true;
-			teachInfo_length = (thiswriter.page - 4);
+			teachInfo_length = clamp((thiswriter.page - 4), 0, 3);
 		}
 	}
 	else
 	{
 		con += 1;
+		alarm[2] = 120;
 		teachBg_alphaTarget = 0;
 		for (var i = 0; i < teachInfo_lengthMax; i++)
 			teachInfo_alphaTarget[i] = 0;
+	}
+}
+else if (con == 17)
+{
+	con += 1;
+	m6.sprite_index = spr_m6_l_neutral;
+	m6.image_speed = (chara.wimgspeed / 2);
+	m6.image_index = 1;
+}
+else if (con == 18)
+{
+	m6.x -= (chara.wspeed / 4);
+	if (m6.x <= 120)
+	{
+		con += 1;
+		alarm[2] = 60;
+		m6.sprite_index = spr_m6_l_neutralTalk;
+		m6.image_speed = 0;
+		m6.image_index = 0;
+	}
+}
+else if (con == 20)
+{
+	writer("event_m6_meet_2");
+	con += 1;
+}
+else if (con == 21)
+{
+	if (exists(thiswriter) == true)
+	{
+		if (thiswriter.page >= 3)
+			m6.sprite_index = spr_m6_d_neutralTalk;
+	}
+	else
+	{
+		con += 1;
+		m6.sprite_index = spr_m6_l_neutralTalk;
 	}
 }

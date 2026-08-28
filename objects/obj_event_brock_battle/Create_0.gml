@@ -52,5 +52,5 @@ DEBUG_SKIP = (false * global.indebug);
 if (DEBUG_SKIP == true)
 {
 	global.flag[37] = 1;
-	global.flag[38] = 1;
+	global.flag[38] = 0;
 }

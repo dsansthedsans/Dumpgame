@@ -1,3 +1,4 @@
+// i really really really fucking hate this how could i make something this terrible
 function room_interact()
 {
 	var r = room;
@@ -127,6 +128,7 @@ function room_interact()
 		if (x == 185 && y == 185)
 		{
 			text = "npc_armsguy_lost";
+			x += 10;
 			sprite_index = spr_npc_armsguy;
 			if (global.world_curpopulation[WORLD_CORRIDORS] <= 0)
 				destroy(id);
@@ -136,6 +138,7 @@ function room_interact()
 		if (x == 210 && y == 195)
 		{
 			text = "npc_trashguy_lost2";
+			x += 10;
 			sprite_index = spr_npc_trashguy;
 			if (global.world_curpopulation[WORLD_CORRIDORS] <= 0) || (global.flag[48] == 0)
 				destroy(id);
@@ -268,7 +271,11 @@ function room_interact()
 				destroy(id);
 		}
 		if (x == 150 && y == 155)
+		{
 			text = "room_corridors_17_egg";
+			if (chara_murder() >= 1)
+				destroy(id);
+		}
 	}
 	if (room == room_corridors_18)
 	{
@@ -291,7 +298,7 @@ function room_interact()
 			text = "room_border";
 	}
 }
-function room_solid() // i really really really fucking hate this how could i make something this terrible
+function room_solid()
 {
 	// corridors
 	if (room == room_corridors_1)
@@ -572,8 +579,9 @@ function room_solid() // i really really really fucking hate this how could i ma
 		// tree
 		if (x == 70 && y == 80) || (x == 190 && y == 60)
 		{
+			y += 20;
 			sprite_index = spr_overworld_tree;
-			image_index = 1;
+			//image_index = 1;
 		}
 		
 		// pillar door
@@ -720,39 +728,39 @@ function room_solid() // i really really really fucking hate this how could i ma
 		if (x == 140 && y == 40)
 			sprite_index = unused_spr_overworld_brokenbutton;
 	}
-	if (room == room_corridors_17)
-	{
-		// lamp
-		if ((x == 130 || x == 250 || x == 410 || x == 530 || x == 690 || x == 810) && (y == 60 || y == 280)) || (x == 410 && y == 90)
-		{
-			sprite_index = spr_overworld_lamp;
-			if (x == 410 && y == 90)
-				image_index = 1;
-			if (x == 810 && y == 60) || (x == 250 && y == 280)
-				image_index = 2;
-		}
+	//if (room == room_corridors_17)
+	//{
+	//	// lamp
+	//	if ((x == 130 || x == 250 || x == 410 || x == 530 || x == 690 || x == 810) && (y == 60 || y == 280)) || (x == 410 && y == 90)
+	//	{
+	//		sprite_index = spr_overworld_lamp;
+	//		if (x == 410 && y == 90)
+	//			image_index = 1;
+	//		if (x == 810 && y == 60) || (x == 250 && y == 280)
+	//			image_index = 2;
+	//	}
 		
-		// tree
-		if (x == 100 && y == 90) || (x == 270 && y == 60) || (x == 290 && y == 150) || (x == 520 && y == 160) || (x == 650 && y == 50) || (x == 800 && y == 150) || (x == 420 && y == 270) || (x == 510 && y == 370)
-		{
-			sprite_index = spr_overworld_tree;
-			leaf_fall = 1;
-		}
+	//	// tree
+	//	if (x == 100 && y == 90) || (x == 270 && y == 60) || (x == 290 && y == 150) || (x == 520 && y == 160) || (x == 650 && y == 50) || (x == 800 && y == 150) || (x == 420 && y == 270) || (x == 510 && y == 370)
+	//	{
+	//		sprite_index = spr_overworld_tree;
+	//		leaf_fall = 1;
+	//	}
 	
-		// rock
-		if (x == 130 && y == 205) || (x == 280 && y == 125) || (x == 530 && y == 215) || (x == 750 && y == 95) || (x == 820 && y == 215) || (x == 450 && y == 340) || (x == 520 && y == 420)
-		{
-			sprite_index = spr_overworld_rock;
-			if (x == 750 && y == 95) || (x == 520 && y == 420)
-				image_index = 1;
-			if (x == 130 && y == 205) || (x == 530 && y == 215)
-				image_index = 3;
-		}
+	//	// rock
+	//	if (x == 130 && y == 205) || (x == 280 && y == 125) || (x == 530 && y == 215) || (x == 750 && y == 95) || (x == 820 && y == 215) || (x == 450 && y == 340) || (x == 520 && y == 420)
+	//	{
+	//		sprite_index = spr_overworld_rock;
+	//		if (x == 750 && y == 95) || (x == 520 && y == 420)
+	//			image_index = 1;
+	//		if (x == 130 && y == 205) || (x == 530 && y == 215)
+	//			image_index = 3;
+	//	}
 	
-		// pillar door
-		if (x == 430 && y == 5)
-			sprite_index = spr_overworld_pillardoor;
-	}
+	//	// pillar door
+	//	if (x == 430 && y == 5)
+	//		sprite_index = spr_overworld_pillardoor;
+	//}
 	if (room == room_corridors_17)
 	{
 		if (x == 430 && y == 10)
@@ -785,7 +793,11 @@ function room_solid() // i really really really fucking hate this how could i ma
 			sprite_index = spr_overworld_bench;
 		// Egg
 		if (x == 150 && y == 155)
+		{
 			sprite_index = spr_overworld_egg;
+			if (chara_murder() >= 1)
+				destroy(id);
+		}
 	}
 	if (room == room_corridors_18)
 	{
