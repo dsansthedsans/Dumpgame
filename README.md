@@ -25,17 +25,19 @@
 <br>
 <h1>Features</h1>
 <ul>
-  <li>Original art, story and characters created almost entirely by <b>dsansthedsans</b>!</li>
+  <li>Original art, story, world and characters created almost entirely by <b>dsansthedsans</b>!</li>
   <li>An amazing original soundtrack fully composed and arranged by <b>migel8022</b>!</li>
 </ul>
+<h3>Story</h3>
+<p>[...]</p>
 <h3>Characters</h3>
 <ul>
-  <li><b>MEE6</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_m6_d/529077fe-59e6-4690-bc88-4794d561d86b.png" height="32" align="top"> , a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
+  <li><b>MEE6</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_m6_d_default/ebb7cb05-88c9-4651-bf96-40c399ca001c.png" height="32" align="top"> , a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
   <li><b>Armsguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_armsguy/b3a84e52-745d-4bc2-9db0-ad11a317eb49.png" height="32" align="top"> , a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
   <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face danger head-on. They usually stick close to an Armsguy.</li><!--"[...] to face danger head-on" from "UNDERTALE"-->
   <li><b>Flitcher</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_flitcher/ca904f51-ea94-45e0-8699-841141abe37c.png" height="32" align="top"> , a reptile-like monster who's unaware of its own existence for most of the time. There's not much to say about it.</li>
-  <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock_full/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he unconsciously pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
-  <li><b>And more</b>...?</li>
+  <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock_full/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
+  <li><b>And more</b>...? <i>(Only in the upcoming <b>v0.6.0</b>, sadly...)</i></li>
 </ul>
 <br>
 <h1>Install Instructions</h1>
@@ -51,28 +53,34 @@
 <p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
 <p>I was 11 years old at the time.</p>
 <br>
-<p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Screenshot of Dumpgame in early development"></p>
+<p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Image of Dumpgame in early development"></p>
 <br>
-<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation".</p>
+<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". [...]</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"><img src="README-ASSETS/GEN1-EVENT-INTRO.gif" height="295" alt="Video of Dumpgame in early development showing the opening sequence"></p>
-<p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295"></p>
+<p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295" alt="Image of Dumpgame in early development showing a save point's text box"></p>
 <p align="center"><img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
-<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until May of the same year.</p>
+<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until late May of the same year. [...]</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
 <p align="center"><img src="README-ASSETS/GEN2-ROOM-CORR1.gif" height="295" alt="Video of Dumpgame in early development showing the first room"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"></p>
-<p align="center"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
+<p align="center"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Image of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
 <p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN3-WRITER-GUY.gif" height="295" alt="Video of Dumpgame in early development showing a test dialog"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
 <br>
-<p>Insert 4th generation here.</p>
-<p>Many years later...</p><!--from "UNDERTALE"-->
-<p>Insert 5th generation here.</p>
+<p>It was only in November 2022 that I went back to making the actual game. ["4th generation"] [...] At this point, Dumpgame began to look pretty similar to what it is today.</p>
+<br>
+<p align="center"><img src="README-ASSETS/GEN4-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
+<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR5B.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage"><img src="README-ASSETS/GEN4-ROOM-CORR11.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"></p>
+<p align="center"><img src="README-ASSETS/GEN4-BATTLE-GROUP8.gif" height="295" alt="Video of Dumpgame in early development showing Trashguy and Armsguy's battle"></p>
+<br>
+<p><i>Many years later...</i></p><!--"Many years later" from "UNDERTALE"-->
+<p>["5th generation"]</p>
+<p>Dumpgame is just another random UNDERTALE fangame. There's nothing special about it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
 <br>
 <h1>Never Asked Questions</h1>
 <h3>Is Dumpgame still in development?</h3>
@@ -94,7 +102,7 @@
 <h3>Why Brazil?</h3>
 <blockquote>I'd also like to know.</blockquote>
 <h3>Why GameMaker?</h3>
-<blockquote>I searched for "make a game" on Google and clicked the first link I could find, no questions asked. <b>(Lie)</b></blockquote>
+<blockquote>I searched for "make a game" on Google and clicked the first link I could find, no questions asked. (Lie)</blockquote>
 <br>
 <h1>Credits</h1>
 <ul>
@@ -106,6 +114,7 @@
   <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy</i></li>
   <li>☭Comunista☭<i> 〜 Concept Art Assistance for MEE6</i></li>
   <li>fer10tanb<i> 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</i></li>
+  <li>Babakinha<i> 〜 Programming Assistance</i></li>
 </ul>
 <h3>Special Thanks</h3>
 <ul>
@@ -122,7 +131,6 @@
   <li>HushBugger</li>
   <li>Mãe Gamer</li>
   <li>HybridTeacher</li>
-  <li>Babakinha</li>
   <li>sam06tanb</li>
   <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
