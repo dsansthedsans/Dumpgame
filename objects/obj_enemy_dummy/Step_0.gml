@@ -19,7 +19,8 @@ if (hurt == 1 && hurt_time < 60)
 		controller.enemy_curhp[myself] -= obj_battle_fighttarget.dmg;
 		create(-20, -20, obj_battle_dmgwriter);
 	}
-	
+	if (hurt_time == 20 && hurtsound != undefined)
+		audio_play(hurtsound, 0, VOLUME_SOUND);
 	x = normal_x;
 	y = normal_y;
 	x += choose(-hurt_amt, hurt_amt);

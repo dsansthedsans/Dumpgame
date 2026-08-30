@@ -83,13 +83,26 @@ function item_use()
 	var _item = global.item[_pos];
 	if (item_type(_item) == ITEM_TYPE_CONSUMABLE)
 	{
-		var _amt = item_value(_item);
-		chara_hp(_amt);
-		global.chara_heals += 1;
-		var _rest = string(get_text("item_use_1")) + string(_amt) + " HP;D.)";
-		if (global.chara_curhp >= global.chara_maxhp)
-			_rest = get_text("item_use_2")
-		msg[0] = string(get_text("item_use_0")) + ":Y" + string(item_name(_item, "")) + ";D.)^3" + string(_rest);
+		switch(_item)
+		{
+			// Brick
+			case ITEM_BRICK:
+			for (var i = 0; i < 2; i++)
+				msg[i] = get_text($"item_brick_use_{i}");
+			msg_face[1] = spr_dialogface_m6_confused;
+			msg_sound[1] = snd_writer_m6;
+			break;
+			// All
+			default:
+			global.chara_heals += 1;
+			var _amt = item_value(_item);
+			chara_hp(_amt);
+			var _rest = string(get_text("item_use_1")) + string(_amt) + " HP;D.)";
+			if (global.chara_curhp >= global.chara_maxhp)
+				_rest = get_text("item_use_2")
+			msg[0] = string(get_text("item_use_0")) + ":Y" + string(item_name(_item, "")) + ";D.)^3" + string(_rest);
+			break;
+		}
 		global.item[_pos] = -1;
 	}
 	if (item_type(_item) == ITEM_TYPE_WEAPON) || (item_type(_item) == ITEM_TYPE_ARMOR)

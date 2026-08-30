@@ -147,7 +147,7 @@ draw_rectangle((_x1 - box_borderw - 2), (_y1 - box_borderw - 2), (_x2 + box_bord
 draw_rectangle_outline(_x1, _y1, _x2, _y2, c_black, box_borderw, c_white);
 
 // draw enemy's hp and spare bar
-if (battle_lvl == 1.0) || (battle_lvl == 2.0) || (battle_lvl == 2.1 && exists(global.writer_old) == 1)
+if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == false) || (battle_lvl == 2.1 && exists(global.writer_old) == 1)
 {
 	for (var i = 0; i < 3; i++)
 	{
@@ -188,6 +188,8 @@ if (battle_lvl == 1.0) || (battle_lvl == 2.0) || (battle_lvl == 2.1 && exists(gl
 			draw_text_outline((_x1 + 50), (_y1 + 11), string(round(_amt)) + "%", c_white, 2, c_black);
 		}
 	}
+	if (battle_group == 1)
+		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "pt"))), (box_x + (box_w / 4) + (box_w / 8) - 20 + irandom(1)), (box_y + 16 + irandom(1)), 1, 1, 0, c_white, 1);
 }
 
 draw_set_alpha(1);

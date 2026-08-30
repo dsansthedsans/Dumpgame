@@ -178,6 +178,7 @@ function start_item()
 	#macro ITEM_KUNAI 4
 	#macro ITEM_CHOCO 5
 	#macro ITEM_PACE 6
+	#macro ITEM_BRICK 7
 	
 	#macro ITEM_TYPE_CONSUMABLE 1
 	#macro ITEM_TYPE_WEAPON 2
@@ -430,7 +431,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_11;
+		var _rm = room_corridors_4;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;

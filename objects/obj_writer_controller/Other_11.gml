@@ -45,6 +45,11 @@ if (msg[page] != "%%%") || (question[page] != "%%%")
 	alarm[0] = text_speed;
 	
 	// custom
+	if (text == "battle_main" && exists(obj_battle_controller) == true && obj_battle_controller.battle_group == 1 && obj_battle_controller.enemy_obj[0].stage == 7 && msg[page + 2] == "%%%")
+	{
+		global.item[global.item_last] = ITEM_BRICK;
+		audio_play(snd_interact_item, 0, VOLUME_SOUND);
+	}
 	if (text == "npc_armsguy_lost" && global.flag[47] == 1 && page == 5)
 	{
 		audio_play(snd_interact_item, 0, VOLUME_SOUND);

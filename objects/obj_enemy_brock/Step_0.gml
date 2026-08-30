@@ -83,7 +83,7 @@ if (active == 1)
 	if (controller.enemy_spare[myself] >= 100)
 	{
 		controller.battle_music = -1;
-		controller.enemy_def[myself] = -10293;
+		controller.enemy_def[myself] = -9999999//-10293;
 		obj_battle_bg.waveFreeze = true;
 	}
 	else

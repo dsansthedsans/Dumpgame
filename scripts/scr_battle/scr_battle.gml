@@ -73,7 +73,7 @@ function battle_setupgroup()
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_dummy);	
 		button_active = false;
 		heart.x = box_defaultx;
-		heart.y = round(box_defaulty + (160 / 3));
+		heart.y = box_defaulty;
 	}
 	if (battle_group == 2) // Armsguy
 	{
@@ -227,6 +227,7 @@ function battle_enemy()
 				enemy_reward_mny[i] = 0;
 				enemy_act[i, 1] = get_text("battle_act_dummy_1");
 				enemy_act[i, 2] = get_text("battle_act_dummy_2");
+				enemy_obj[i].hurtsound = snd_shriekCat;
 			}
 			if (enemy_type[i] == 2) // Armsguy
 			{
@@ -375,8 +376,9 @@ function battle_getattack()
 		if (enemy_type[i] == 1) // Dummy
 		{
 			enemy_attack[i] = button_active;
-			if (enemy_attack[i] == 0)
-				battle_turntime = 0;
+			if (global.indebug == true && global.debug_hud == true)
+				enemy_attack[i] = 1;
+			battle_turntime *= enemy_attack[i];
 		}
 		if (enemy_type[i] == 2) // Armsguy
 		{
@@ -446,7 +448,7 @@ function battle_getattack()
 function battle_attack()
 {
 	// vars: time (1), amt (0), stage (0), delay (999), siner (0), controller and box_ (myself, enemy (type), attack)
-	if (enemy == 1 && attack == 0) || (enemy == 7)
+	if (enemy == 1 && attack == 0 && stage == 1) || (enemy == 7 && stage == 1)
 	{
 		mee6 =
 		{

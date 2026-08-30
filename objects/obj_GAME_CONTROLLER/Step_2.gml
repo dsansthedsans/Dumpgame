@@ -21,6 +21,8 @@ if (exists(chara) == 1)
 			cam_spdJump = false;
 	
 		// custom
+		if (room == room_corridors_4)
+			cam_x = clamp(cam_x, 300, (room_width - 320));
 		if (room == room_corridors_18)
 			cam_y = clamp(cam_y, 60, (room_height - 240));
 	}

@@ -514,7 +514,8 @@ function draw_battle_bar(__value_text, __value_current, __value_max, __bar_x, __
 	/*Internal border + Max value bar*/draw_rectangle_outline(_bar_x, _bar_y, (_bar_x + __bar_widthMax), (_bar_y + _bar_height), __bar_color_max, _bar_borderInternal_size, c_black);	
 	if (_bar_widthCurr > 0)
 		/*Current value bar*/draw_rectangle_color(_bar_x, _bar_y, (_bar_x + _bar_widthCurr), (_bar_y + _bar_height), __bar_color_current, __bar_color_current, __bar_color_current, __bar_color_current, false);
-	/*Values*/draw_text_outline(_bar_value_x, _bar_value_y, __value_text, c_white, 2, c_black);
+	if (__value_text != undefined)
+		/*Value text*/draw_text_outline(_bar_value_x, _bar_value_y, __value_text, c_white, 2, c_black);
 }
 
 function debug(_string)

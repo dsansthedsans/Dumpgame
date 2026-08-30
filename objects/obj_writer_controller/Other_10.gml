@@ -77,7 +77,8 @@ if (msg_format[page] == "battlebox")
 	if (msg_type[page] == "nobody")
 	{
 		letter_xspace = 8;
-		//text_speed = 3;
+		if (chara_world() == WORLD_CORRIDORS && global.flag[40] == false)
+			text_speed = 3;
 	}	
 		
 	// change text_x if there's face

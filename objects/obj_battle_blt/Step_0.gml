@@ -41,31 +41,19 @@ if (active == 1)
 	// Dummy
 	if (type == 1)
 	{
-		if (global.chara_curhp <= 2)
-			can_damage = 0;
-		
-		if (stage == 0)
-		{
-			image_alpha += 0.05;
-			if (image_alpha >= 1)
-				stage = 1;
-		}
-		else if (stage == 1)
-		{
-			if (delay >= 45)
-			{
-				direction = point_direction(x, y, obj_battle_heart.x, obj_battle_heart.y)
-				speed = 3;
-				stage = 2;	
-			}
-			else
-			{
-				siner += 0.1;
-				x += sin(siner);
-				y += cos(siner);
-				delay += 1;
-			}
-		}
+		if (global.chara_curhp <= ceil(global.chara_maxhp / 10))
+			can_damage = false;
+		image_alpha = lerp(image_alpha, 1, 0.25);
+		scale_x_vel += (target_xscale - image_xscale) * spring_force;
+		image_xscale += scale_x_vel;
+		scale_x_vel *= damping;
+		scale_y_vel += (target_yscale - image_yscale) * spring_force;
+		image_yscale += scale_y_vel;
+		scale_y_vel *= damping;
+		target_xscale = lerp(target_xscale, 2, 0.1);
+		target_yscale = lerp(target_yscale, 2, 0.1);
+		speed += speedadd;
+		image_angle += (speed * angmult);
 	}
 	// Armsguy
 	if (type == 2.1)

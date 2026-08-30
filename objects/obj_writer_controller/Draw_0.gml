@@ -228,9 +228,9 @@ for (var c = 1; c < (text_length + 1); c++)
 				text_color[0] = merge_color(merge_color(c_purple, c_blue, 0.375), c_white, 0.25);
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) // grey ("Corridors")
+			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) // gray ("Corridors")
 			{
-				text_color[0] = c_gray;
+				text_color[0] = #748CAB;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "D" && _cancheck == 1) 

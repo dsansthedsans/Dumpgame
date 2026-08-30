@@ -25,13 +25,20 @@ if (type == -1)
 if (type == 1)
 {
 	sprite_index = spr_battle_blt_gear;
-	image_xscale = 1;
-	image_yscale = 1;
-	image_alpha = 0;
 	image_speed = 1;
-	audio_play(snd_writer_1, 0, VOLUME_SOUND);
+	image_alpha = 0;
+	direction = point_direction(x, y, controller.heart.x, controller.heart.y);
+	dmg = 1;
 	outside_box = 1;
-	dmg = 0;
+	target_xscale = 1;
+	target_yscale = 3;
+	scale_x_vel = 0;
+	scale_y_vel = 0;
+	spring_force = 0.15;
+	damping = 0.85;
+	angmult = choose(-1, 1);
+	speedadd = random_range(0.01, 0.03);
+	audio_play(snd_splatBubble, false, VOLUME_SOUND,,,, (1.25 + random_range(-0.1, 0.1)));
 }
 // Armsguy
 if (type == 2.0)
@@ -41,13 +48,11 @@ if (type == 2.0)
 	image_xscale = 1;
 	image_yscale = 1;
 	gravity = 0.035;
-	
 	if (x < 320)
 		hspeed = random_range(0, 1);
 	else 
 		hspeed = random_range(0, -1);
-		
-	var _toheart = choose(0, 0, 1);
+	var _toheart = choose(0, 1);
 	if (_toheart == 1)
 		direction = point_direction(x, y, obj_battle_heart.x, obj_battle_heart.y);
 }

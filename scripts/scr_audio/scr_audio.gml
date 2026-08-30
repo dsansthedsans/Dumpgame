@@ -95,6 +95,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_interact_rulesbook) || (_asset == snd_meowmeowmeow)
 			_volume *= 0.25;
+		if (_asset == snd_shriekCat)
+			_volume *= 0.5;
+		if (_asset == snd_splatBubble)
+			_volume *= 0.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{

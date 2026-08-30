@@ -87,13 +87,24 @@ function TEXT()
 	// save point
 	if (text == "savepoint")
 	{
-		var p = 0;
-		if (room == room_corridors_3)
+		var _text_index = undefined;
+		switch (room)
 		{
-			msg[0] = "* (Seeing the dusty gray stairs and the colorful flowers in the grass, ...)";
-			msg[1] = "* (... you realize that this is just the beginning to something big.)";
-			msg[2] = "* (And that you probably shouldn't have left home.)";
-			p = 3;
+			case room_corridors_4_old:
+			case room_corridors_4:
+			_text_index = 0;
+			break;
+		}
+		var p = 0;
+		if (_text_index != undefined && chara_murder() < 1)
+		{
+			for (var p = 0; p < 99; p++)
+			{
+				var _msg = get_text($"savepoint_{_text_index}_{p}");
+				if (_msg == undefined)
+					break;
+				msg[p] = _msg;
+			}
 		}
 		msg[p] = get_text("savepoint_def0");
 		question[p+1] = get_text("savepoint_def1");
@@ -357,11 +368,15 @@ function TEXT()
 		for (var i = 0; i < 99; i++)
 		{
 			var _curmsg = get_text("npc_armsguy1_" + string(global.flag[24]) + "_" + string(i));
-			if (_curmsg != undefined)
-				msg[i] = _curmsg;
+			if (_curmsg == undefined)
+				break;
+			msg[i] = _curmsg;
 		}
 		if (global.flag[24] == 0)
-			global.flag[24] = 1;	
+		{
+			msg[0] = string_replace_all(msg[0], "[name]", $":@@{global.chara_name};D")
+			global.flag[24] = 1;
+		}
 		msg_talker[0] = obj_chara.mycol;
 	}
 	
@@ -1465,6 +1480,28 @@ function TEXT()
 			if (controller.battle_group == 1) // Dummy
 			{
 				var _enemy = controller.enemy_obj[0];
+				var _stage = (floor(_enemy.stage / 2) * 2);
+				for (var _length = 0; _length < 99; _length++)
+				{
+					if (get_text($"battle_main_dummy_{_stage}_{_length}") == undefined)
+						break;
+				}
+				if (_enemy.stage % 2 == 0)
+				{
+					for (var i = 0; i < _length; i++)
+						msg[i] = get_text($"battle_main_dummy_{_stage}_{i}");
+					msg_next[0] = true;
+					msg_face[0] = spr_dialogface_m6_default;
+					msg_sound[0] = snd_writer_m6;
+					_enemy.stage += 1;
+				}
+				else
+					msg[0] = get_text($"battle_main_dummy_{_stage}_{_length - 1}");
+				msg_next[_length - 1] = 0;
+				msg_face[_length - 1] = -1;
+				msg_sound[_length - 1] = snd_writer_1;
+				
+				/*
 				var _finalpage = 6;
 				if (_enemy.stage == 2) || (_enemy.stage == 3)
 					_finalpage = 4;
@@ -1497,6 +1534,7 @@ function TEXT()
 				}
 				else
 					msg[0] = get_text("battle_main_dummy_" + string(_enemy.stage - 1) + "_" + string(_finalpage));
+				*/
 			}
 		}
 		

@@ -77,19 +77,18 @@ function room_interact()
 				destroy(id);
 		}
 	}
-	if (room == room_corridors_5 && x == 60 && y == 60)
-		text = "room_captcha_mainsign_1";
-	if (room == room_corridors_5_A && x == 260 && y == 140) || (room == room_corridors_5_B && x == 20 && y == 140)
-		text = "room_captcha_guidesign_1";
-	if (room == room_corridors_5_A && x == 90 && y == 190)
+	if (room == room_corridors_4 && x == 470 && y == 190)
 	{
-		x -= 5;
-		y -= 5;
 		sprite_index = spr_npc_armsguy;
 		text = "npc_armsguy1";
 		if (global.world_curpopulation[WORLD_CORRIDORS] < global.world_maxpopulation[WORLD_CORRIDORS])
 			destroy(id);
 	}
+	if (room == room_corridors_5 && x == 60 && y == 60)
+		text = "room_captcha_mainsign_1";
+	if (room == room_corridors_5_A && x == 260 && y == 140) || (room == room_corridors_5_B && x == 20 && y == 140)
+		text = "room_captcha_guidesign_1";
+	
 	if (room == room_corridors_6)
 	{
 		if (x == 150 && y == 125)
@@ -411,6 +410,32 @@ function room_solid()
 			sprite_index = spr_overworld_bigdoor_closed;
 	}
 	if (room == room_corridors_4)
+	{
+		// lamps
+		if (y == 100)
+		|| (x == 620 && y == 40) || (x == 760 && y == 70)
+		{
+			sprite_index = spr_overworld_lamp;
+			if (x == 380 && y == 100)
+				image_index = 2;
+			if (x == 760 && y == 70)
+				image_index = 1;
+		}	
+		// trees
+		if (x == 350 && y == 180) || (x == 370 && y == 120) || (x == 470 && y == 90) || (x == 500 && y == 210)
+		|| (x == 610 && y == 40) || (x == 720 && y == 60) || (x == 750 && y == 150)
+		{
+			sprite_index = spr_overworld_tree;
+			leaf_fall = 1;
+			if (x == 350 && y == 180)
+			|| (x == 720 && y == 60)
+			{
+				image_index = 1;
+				leaf_fall = 0;
+			}
+		}
+	}
+	if (room == room_corridors_4_old)
 	{
 		// lamp
 		if (x == 280 && y == 160) || (x == 400 && y == 100) || (x == 520 && y == 100) || (x == 650 && y == 40) || (x == 770 && y == 70)
