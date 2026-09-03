@@ -58,56 +58,6 @@ if (global.menu_lvl >= 0)
 	var l = global.menu_lvl;
 	if !(global.menu_lvl == 0 && keyboard_check(vk_alt) == 1) // esconder hud
 		draw_sprite_stretched_ext(spr_menu_optbg, 0, option_bgx[l], option_bgy[l], option_bgw[l], option_bgh[l], c_white, (option_alpha * alpha));
-
-	/*
-	var _xx = 0;
-	var _yy = 0;
-	var _ww = 0;
-	var _hh = 0;
-	draw_set_font(fnt_main_big);
-	var _optw = menu_option_width[global.menu_lvl, 0];
-	var _opth = string_height(string_upper(menu_option[global.menu_lvl, 0]));
-	var _hspace = (40 + sprite_get_width(spr_heart_small));
-	var _vspace = 30;
-
-	if (global.menu_lvl == 0) || (global.menu_lvl == 4) || (global.menu_lvl == 5)
-	{
-		_xx = (320 - (_optw / 2) - _hspace);
-		_yy = (menu_option_y[global.menu_lvl, 0] - (_opth / 2) - _vspace);
-		_ww = ((_hspace * 2) + _optw)
-		if (global.menu_lvl == 4)
-			_ww -= 4;
-		_hh = abs((menu_option_y[global.menu_lvl, (menu_option_length[global.menu_lvl] - 1)] + (_opth / 2) + _vspace) - _yy)
-	}
-	else if (global.menu_lvl == 1)
-	{
-		_xx = (menu_option_x[global.menu_lvl, 0] - (_optw / 2) - _hspace);
-		_yy = (menu_option_y[global.menu_lvl, 0] - (_opth / 2) - _vspace);
-		_ww = (room_width - (_xx * 2))
-		_hh = ((_vspace * 2) + _opth);
-	
-	}
-	else if (global.menu_lvl == 2) || (global.menu_lvl == 6)
-	{
-		var _string = "YES";
-		if (global.menu_lvl == 6)
-			_string = "[Right Arrow]";
-	
-		_xx = (320 - ((_optw + string_width("  " + string(_string))) / 2) - _hspace);
-		_yy = -40;
-		_ww = (_optw + string_width("  " + string(_string)) + (_hspace * 2));
-		_hh = 720;
-	}
-	else if (global.menu_lvl == 3)
-	{
-		_xx = -40;
-		_yy = -40;
-		_ww = (120 + menu_option_width[3, 0]);
-		_hh = 720;	
-	}
-
-	draw_sprite_stretched_ext(spr_menu_textbox, 0, _xx, _yy, _ww, _hh, c_white, (menu_option_alpha * menu_alpha));
-	*/
 }
 
 

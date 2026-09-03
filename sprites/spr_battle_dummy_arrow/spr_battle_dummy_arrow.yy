@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Dumpgame",
-    "path":"Dumpgame.yyp",
+    "name":"battle",
+    "path":"folders/[!] sprites/battle.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

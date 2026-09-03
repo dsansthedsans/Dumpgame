@@ -77,7 +77,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 1 - 0.125;
 		if (_asset == snd_victory)
 			_volume *= 0.75;
-		if (_asset == snd_pedronstro)
+		if (_asset == snd_creepyPedronstro)
 			_volume *= 0.5;
 		if (_asset == snd_879)
 			_volume *= 0.5;
@@ -99,6 +99,14 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_splatBubble)
 			_volume *= 0.5;
+		if (_asset == snd_jingleHypnosis)
+			_volume *= 0.5;
+		if (_asset == snd_creepyCave)
+			_volume *= (0.75 - 0.125);
+		if (_asset == snd_jingleLevel)
+			_volume *= 0.75;
+		if (_asset == snd_writer_armsguy)
+			_volume *= 1;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{

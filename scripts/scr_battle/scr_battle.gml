@@ -58,8 +58,8 @@ function battle_setupgroup()
 	}
 	if (battle_group == 0) // But nobody came.
 	{
-		//if (global.flag[22] == false)
-		//	audio_play(snd_jingleOminous, 0, VOLUME_SOUND);
+		if (global.flag[22] == false)
+			audio_play(snd_creepyCave, 0, VOLUME_SOUND,,,, 0.75);
 		global.flag[22] = true;
 		battle_music = -1;
 		battle_bg = -1;

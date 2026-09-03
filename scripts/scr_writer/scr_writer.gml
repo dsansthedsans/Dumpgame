@@ -94,6 +94,9 @@ function TEXT()
 			case room_corridors_4:
 			_text_index = 0;
 			break;
+			case room_corridors_8:
+			_text_index = 1;
+			break;
 		}
 		var p = 0;
 		if (_text_index != undefined && chara_murder() < 1)
@@ -106,10 +109,10 @@ function TEXT()
 				msg[p] = _msg;
 			}
 		}
-		msg[p] = get_text("savepoint_def0");
-		question[p+1] = get_text("savepoint_def1");
-		question_option[1] = get_text("savepoint_def1_1");
-		question_option[2] = get_text("savepoint_def1_2");
+		msg[p] = get_text("savepoint_all_0");
+		question[p+1] = get_text("savepoint_all_1");
+		question_option[1] = get_text("savepoint_all_1_1");
+		question_option[2] = get_text("savepoint_all_1_2");
 		msg_type[p+1] = "savepoint";
 		if (question_result[p+1] == 1)
 		{
@@ -377,6 +380,7 @@ function TEXT()
 			msg[0] = string_replace_all(msg[0], "[name]", $":@@{global.chara_name};D")
 			global.flag[24] = 1;
 		}
+		msg_sound[0] = snd_writer_armsguy;
 		msg_talker[0] = obj_chara.mycol;
 	}
 	
@@ -551,6 +555,7 @@ function TEXT()
 		if (global.flag[45] == 0 && global.flag[48] == 0)
 		{
 			msg[0] = $"{get_text("npc_armsguy_lost_0_0_0_0")}{global.chara_name}{get_text("npc_armsguy_lost_0_0_0_1")}";
+			msg_sound[0] = snd_writer_armsguy;
 			for (var i = 1; i < 99; i++)
 			{
 				var _curmsg = get_text("npc_armsguy_lost_0_0_" + string(i));
@@ -567,6 +572,7 @@ function TEXT()
 					}
 				}
 			}
+			msg_sound[i] = snd_writer_0;
 			msg_talker[i] = -1;
 			msg_talker[i+1] = obj_chara.mycol;
 			var _result = question_result[i];
@@ -578,6 +584,7 @@ function TEXT()
 			}
 			else if (_result == 2)
 				msg[i+1] = get_text("npc_armsguy_lost_0_2_0");
+			msg_sound[i+1] = snd_writer_armsguy;
 		}
 		else
 		{
@@ -608,7 +615,9 @@ function TEXT()
 					}
 					if (_full == 0)
 					{
+						msg_sound[5] = snd_writer_0;
 						msg_talker[5] = -1;
+						msg_sound[6] = snd_writer_armsguy;
 						msg_talker[6] = obj_chara.mycol;
 						global.flag[47] = 1;
 						global.item[global.item_last] = ITEM_KUNAI;
@@ -617,71 +626,8 @@ function TEXT()
 				else
 					msg[0] = get_text("npc_armsguy_lost_1_2_0");
 			}
+			msg_sound[0] = snd_writer_armsguy;
 		}
-			
-		#region
-		/*
-		if (global.flag[45] == 0 && global.flag[46] == 0)
-		{
-			msg[0] = "* Hey,^1 You.";
-			msg[1] = "* You're A New Member,^1 Right?";
-			msg[2] = "* Can You Help Me With Something?";
-			msg[3] = "* My Buddy Got Stuck In The Middle Of Captcha's Stage 2.";
-			msg[4] = "* He Asked Me To Look For Help.";
-			msg[5] = "* I'll Give You A Reward For It.^1&* Don't Worry.";
-			question[6] = "* (Do you want to help Armsguy?)";
-			question_option[1] = "Yes";
-			question_option[2] = "No";
-				
-			mytalk[6] = 0;
-			mytalk[7] = obj_chara.mycol;
-			
-			var _result = question_result[6];
-			if (_result == 1)
-			{
-				msg[7] = "* Sweet.";
-				msg[8] = "* I'll Be Waiting For You Guys Right Here.";
-				msg[9] = "* I'm Too Afraid Of Heights To Get Near Those Puzzles.";
-				global.flag[45] = 1;
-			}
-			else if (_result == 2)
-			{
-				msg[7] = "* That's Alright.";
-				msg[8] = "* I Guess I'll Look For Someone Else.";
-			}
-		}
-		else
-		{
-			if (global.flag[46] == 0)
-			{
-				msg[0] = "* Do You Even Know Where The Captcha's Second Stage Is?";
-				msg[1] = "* It's Right Up There.^1&* After That Door With Pillars.";
-			}
-			else
-			{
-				if (global.flag[47] = 0)
-				{
-					msg[0] = "* Thank You,^1 Human.";
-					msg[1] = "* As I Promised,^1 I'll Give You A Reward.";
-					msg[2] = "* I'm Not Sure If You'll Use This,^1 But I Found It Around Here.";
-					msg[3] = "* It Looks Like A Knife,^1 But Weirder.";
-					msg[4] = "* Here.^1&* It's All Yours.";
-					msg[5] = "* (You got the :YKunai;D.)";
-					msg[6] = "* Hope You Enjoy It.";
-					mytalk[5] = 0;
-					mytalk[6] = obj_chara.mycol;
-					global.flag[47] = 1;
-				}
-				else
-				{
-					msg[0] = "* What?^1&* Didn't Like It?";
-					msg[1] = "* ...^2 Sorry.";
-				}
-			}
-		}
-		*/
-		#endregion
-			
 		msg_talker[0] = obj_chara.mycol;
 	}
 	if (text == "npc_trashguy_lost2")
@@ -879,6 +825,7 @@ function TEXT()
 			for (var i = 0; i < 3; i++)
 				msg[i] = get_text($"npc_armsguy_postbrock_1_{i}");
 		}
+		msg_sound[0] = snd_writer_armsguy;
 		msg_talker[0] = obj_chara.mycol;
 	}
 	if (text == "unused_room_maurice")
@@ -973,6 +920,7 @@ function TEXT()
 				break;
 			msg[m] = _msg;
 		}
+		msg_sound[0] = snd_writer_armsguy;
 		msg_talker[0] = obj_chara.mycol;
 		global.flag[57] = 1;
 	}
@@ -997,6 +945,7 @@ function TEXT()
 				break;
 			msg[m] = _msg;
 		}
+		msg_sound[0] = snd_writer_armsguy;
 		msg_talker[0] = obj_chara.mycol;
 		if (global.flag[23] == false)
 		{
@@ -1040,6 +989,7 @@ function TEXT()
 	if (text == "npc_armsguy_exit_lifting")
 	{
 		msg[0] = get_text($"npc_armsguy_exit_lifting_{clamp(global.flag[43], 0, 4)}_0");
+		msg_sound[0] = snd_writer_armsguy;
 		global.flag[43] = (real(global.flag[43]) + 1);
 	}
 	if (text == "room_corridors_17_egg")
@@ -1137,11 +1087,10 @@ function TEXT()
 				question[m] = _msg;
 				question_option[1] = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.1");
 				question_option[2] = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.2");
-				msg_talker[m] = -1;
-				msg_talker[m+1] = obj_chara.mycol;
 				_questioned = m;
 			}
 		}
+		msg_sound[0] = snd_writer_armsguy;
 		msg_talker[0] = obj_chara.mycol;
 		global.flag[68] = true;
 	}
@@ -1196,7 +1145,7 @@ function TEXT()
 		{
 			if (controller.battle_group >= 7)
 				msg_type[0] = 4;
-			
+			msg_sound[0] = snd_writer_armsguy;
 			if (text == "battle_bubble_armsguy0") // Armsguy
 			{
 				var _num = irandom(7);
@@ -1493,6 +1442,32 @@ function TEXT()
 					msg_next[0] = true;
 					msg_face[0] = spr_dialogface_m6_default;
 					msg_sound[0] = snd_writer_m6;
+					switch (_enemy.stage)
+					{
+						case 0:
+						msg_face[0] = spr_dialogface_m6_pleased;
+						msg_face[1] = spr_dialogface_m6_default;
+						msg_face[_length - 2] = spr_dialogface_m6_sassy;
+						break;
+						case 2:
+						msg_face[0] = spr_dialogface_m6_pleased;
+						msg_face[1] = spr_dialogface_m6_default;
+						msg_face[2] = spr_dialogface_m6_thinking;
+						msg_face[3] = spr_dialogface_m6_default;
+						break;
+						case 6:
+						msg_face[4] = spr_dialogface_m6_thinking;
+						msg_face[5] = spr_dialogface_m6_default;
+						msg_face[6] = -1;
+						msg_sound[6] = snd_writer_1;
+						msg_face[7] = spr_dialogface_m6_default;
+						msg_sound[7] = snd_writer_m6;
+						break;
+						case 8:
+						msg_face[0] = spr_dialogface_m6_confused;
+						msg_face[1] = spr_dialogface_m6_default;
+						break;
+					}
 					_enemy.stage += 1;
 				}
 				else
@@ -1637,7 +1612,7 @@ function TEXT()
 					if (lvlup == 1)
 					{
 						lvlup = get_text("battle_won_2");
-						audio_play(snd_lvlup, 0, VOLUME_SOUND);
+						audio_play(snd_jingleLevel, 0, VOLUME_SOUND);
 						debug("--- level up !!!! Yay!! Yay!!! Yiippee!! Woaahoo!!! Hehehaha!!!! Hahahehehihoho  Yay ha!!!!!");
 					}
 				}

@@ -28,11 +28,11 @@ if (warning == 0)
 		if (option_pos == i)
 			_color = c_yellow;
 		draw_set_color(_color);
-		draw_text((_cx + option_x[i]), (_cy + option_y[i]), option[i]);
+		draw_text(round(_cx + option_x[i]), round(_cy + option_y[i]), option[i]);
 	}
 
 	// indicador das opções
-	draw_sprite_ext(spr_heart_small, 0, (_cx + option_x[option_pos] - (string_width(option[option_pos]) / 2) - 10), (_cy + option_y[option_pos]), 1, 1, 0, c_white, alpha);
+	draw_sprite_ext(spr_battle_heart, 0, (_cx + option_x[option_pos] - (string_width(option[option_pos]) / 2) - 10), (_cy + option_y[option_pos] + 1), (1 / 2), (1 / 2), 0, global.c_dump, alpha);
 }
 else
 {
@@ -51,9 +51,9 @@ else
 		if (warning_option_pos == i)
 			_color = c_yellow;
 		draw_set_color(_color);
-		draw_text((_cx + warning_option_x[i]), (_cy + warning_option_y[i]), warning_option[i]);
+		draw_text(round(_cx + warning_option_x[i]), round(_cy + warning_option_y[i]), warning_option[i]);
 	}
 
 	// indicador das opções
-	draw_sprite_ext(spr_heart_small, 0, (_cx + warning_option_x[warning_option_pos] - (string_width(warning_option[warning_option_pos]) / 2) - 10), (_cy + warning_option_y[warning_option_pos]), 1, 1, 0, c_white, alpha);
+	draw_sprite_ext(spr_battle_heart, 0, (_cx + warning_option_x[warning_option_pos] - (string_width(warning_option[warning_option_pos]) / 2) - 10), (_cy + warning_option_y[warning_option_pos]), (1 / 2), (1 / 2), 0, global.c_dump, alpha);
 }

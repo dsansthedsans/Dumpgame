@@ -91,7 +91,6 @@ if (controller.enemy_type[myself] != 0)
 				screamed += 1;
 			audio_play(snd_jingleFail, false, VOLUME_SOUND);
 		}
-		
 		usedact = 1;
 	}
 	else if (usedact == 1 && exists(thiswriter) == 0 && controller.enemy_target == myself)
@@ -99,6 +98,9 @@ if (controller.enemy_type[myself] != 0)
 		usedact = 2;
 		createbubble = 1;
 	}
+	// item used
+	if (controller.battle_useditem == true && stage == 7)
+		stage = 8;
 
 	// nothing
 	if (controller.battle_lvl == 10 && controller.enemy_target != myself && createbubble == 0)

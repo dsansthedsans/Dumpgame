@@ -27,7 +27,7 @@ if (active == 1)
 		shock_x = x;
 		shock_y = (y - (sprite_height / 2) + 8);
 		shock_index += (sprite_get_speed(spr_enemy_brock_shock) / 60);
-		shock_alpha = lerp(shock_alpha, shock_alphaTrue * !tense, 0.25);
+		shock_alpha = lerp(shock_alpha, shock_alphaTrue * !tense, 0.025);
 		draw_sprite_ext(spr_enemy_brock_shock, (shock_index * global.visualeff), shock_x, shock_y, image_xscale, image_yscale, image_angle, image_blend, shock_alpha);
 		
 		// body

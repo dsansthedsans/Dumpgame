@@ -21,6 +21,7 @@ battle_expreward = 0;
 battle_mnyreward = 0;
 battle_turntime = 0;
 battle_usedact = 0;
+battle_useditem = 0;
 battle_bg = -1;
 depth = battle_depth[0];
 x = -20;

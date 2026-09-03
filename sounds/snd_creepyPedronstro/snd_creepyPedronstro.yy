@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_lvlup",
+  "%Name":"snd_creepyPedronstro",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.3510203,
+  "duration":3.3177097,
   "exportDir":"",
-  "name":"snd_lvlup",
+  "name":"snd_creepyPedronstro",
   "parent":{
     "name":"[!] audio",
     "path":"folders/[!] audio.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_lvlup.mp3",
+  "soundFile":"snd_creepyPedronstro.ogg",
   "volume":1.0,
 }

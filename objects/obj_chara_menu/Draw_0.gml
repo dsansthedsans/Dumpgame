@@ -13,13 +13,14 @@ draw_sprite_stretched(spr_writer_textbox, 0, (_cx + bg_x[0]), (_cy + bg_y[0]), b
 var _bg1_di = 10;
 draw_set_valign(fa_top);
 
-var _name_y = (_cy + bg_y[0] + _bg1_di);
-draw_set_font(fnt_main_spaced);
+var _name_y = (_cy + bg_y[0] + _bg1_di - 3);
+draw_set_font(fnt_main);
 draw_set_halign(fa_center);
 draw_text_width((_cx + bg_x[0] + (bg_w[0] / 2)), _name_y, string(global.chara_name), (bg_w[0] - (_bg1_di * 2)));
 
 var _info1 = "lvl\nhp\n$";
 var _info2 = string(global.chara_lvl) + "\n" + string(global.chara_curhp) + "/" + string(global.chara_maxhp) + "\n" + string(global.chara_money);
+//draw_set_font(fnt_main_spaced);
 var _info_y = (_name_y + string_height(global.chara_name) + (_bg1_di / 2) - 2);
 draw_set_font(fnt_mars_6);
 draw_set_halign(fa_left);
@@ -173,6 +174,6 @@ if (thiswriter == -1 && lvl != 3)
 	var _bonusy = 0;
 	if (_font == fnt_main_spaced)
 		_bonusy = -2;
-	draw_sprite_ext(spr_heart_small, 0, (_cx + option_x[lvl, option_pos] - 11), (_cy + option_y[lvl, option_pos] + 8 + _bonusy), 1, 1, 0, c_white, alpha);
+	draw_sprite_ext(spr_battle_heart, 0, (_cx + option_x[lvl, option_pos] - 11), (_cy + option_y[lvl, option_pos] + 8 + _bonusy + 0), (1 / 2), (1 / 2), 0, global.c_dump, alpha);
 }
 draw_set_alpha(1);

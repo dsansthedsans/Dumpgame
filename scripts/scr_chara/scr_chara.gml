@@ -149,7 +149,7 @@ function chara_stats()
 	}
 	if (global.chara_lvl != _oldlvl)
 	{
-	    audio_play(snd_lvlup, false, VOLUME_SOUND);
+	    audio_play(snd_jingleLevel, false, VOLUME_SOUND);
 	}
 	
 	// vida, ataque e defesa

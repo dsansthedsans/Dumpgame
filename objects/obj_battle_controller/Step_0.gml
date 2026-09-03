@@ -453,6 +453,7 @@ if (battle_lvl == 12 && button_active == true)
 		battle_oldmainmsg = "%%%";
 		battle_turntime = 0;
 		battle_usedact = 0;
+		battle_useditem = 0;
 		battle_round += 1;
 		enemy_target = -1;
 		level_heard = -1;

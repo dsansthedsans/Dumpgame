@@ -27,6 +27,8 @@ function item_id(_item)
 		_idname = "choco";
 	if (_id == ITEM_PACE)
 		_idname = "pace";
+	if (_id == ITEM_BRICK)
+		_idname = "brick";
 	return _idname;
 }
 function item_type(_item)
@@ -59,6 +61,8 @@ function item_value(_item)
 		_value = 3;
 	if (_id == ITEM_PACE)
 		_value = 6;
+	if (_id == ITEM_BRICK)
+		_value = 0;
 	return _value;
 }
 function item_name(_item, _type)
@@ -87,10 +91,21 @@ function item_use()
 		{
 			// Brick
 			case ITEM_BRICK:
-			for (var i = 0; i < 2; i++)
-				msg[i] = get_text($"item_brick_use_{i}");
-			msg_face[1] = spr_dialogface_m6_confused;
-			msg_sound[1] = snd_writer_m6;
+			for (var i = 0; i < (1 + (chara_murder() < 1)); i++)
+			{
+				var _text_postfix = "_0";
+				if (i == 0 && chara_murder() >= 1) || (i == 1 && global.flag[2] == true && exists(obj_battle_controller) == true && obj_battle_controller.battle_group == 1 && chara_murder() < 1)
+				{
+					_text_postfix = "_1";
+					if (i == 1)
+					{
+						msg_face[i] = spr_dialogface_m6_thinking;
+						msg_sound[i] = snd_writer_m6_tense;
+					}
+				}
+				msg[i] = get_text($"item_brick_use_{i}{_text_postfix}");
+			}
+			audio_play(snd_jingleHypnosis, false, VOLUME_SOUND);
 			break;
 			// All
 			default:

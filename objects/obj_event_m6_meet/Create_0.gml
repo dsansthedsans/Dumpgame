@@ -13,6 +13,7 @@ confetti_active = false;
 confetti_objects = [];
 confetti_time = 180;
 teach_active = false;
+teach_activePage = undefined;
 teachBg_sprite = spr_event_m6_meet_teach;
 teachBg_offsetX = 0;
 teachBg_offsetY = 0;

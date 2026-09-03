@@ -55,7 +55,7 @@ mainopt_heartx[0] = (mainopt_x[0] - string_width(mainopt[0]) - 20);
 mainopt_heartx[1] = mainopt_x[1];
 mainopt_heartx[2] = (mainopt_x[2] - 20);
 
-var _hspace = (40 + sprite_get_width(spr_heart_small));
+var _hspace = (40 + sprite_get_width(spr_battle_heart));
 var _vspace = 30;
 mainopt_bgx = (mainopt_heartx[0] + 20 - _hspace);
 mainopt_bgy = (mainopt_y - (string_height(mainopt[0]) / 2) - _vspace);

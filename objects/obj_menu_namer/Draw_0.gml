@@ -58,7 +58,7 @@ draw_set_alpha(controller.alpha);
 draw_sprite_stretched(spr_menu_optbg, 0, _bg_x, _bg_y, _bg_w, _bg_h);
 
 // desenhar indicad
-draw_sprite_ext(spr_heart_small, 0, (option_x[option_pos[0], option_pos[1]] - 2), (option_y[option_pos[0], option_pos[1]] - 1), 3, 3, 0, c_white, (controller.alpha * 0.5));
+draw_sprite_ext(spr_battle_heart, 0, (option_x[option_pos[0], option_pos[1]] - 1), (option_y[option_pos[0], option_pos[1]] - 1), (3 / 2), (3 / 2), 0, global.c_dump, (controller.alpha * 0.5));
 
 // desenhar opções
 draw_set_font(fnt_main_spaced_big);

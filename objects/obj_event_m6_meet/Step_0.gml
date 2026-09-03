@@ -106,11 +106,13 @@ else if (con == 15)
 {
 	if (exists(thiswriter) == true)
 	{
-		if (thiswriter.page >= 4)
+		if (teach_activePage == undefined && string_char_at(thiswriter.msg[thiswriter.page], string_length(thiswriter.msg[thiswriter.page])) == ":")
 		{
 			teach_active = true;
-			teachInfo_length = clamp((thiswriter.page - 4), 0, 3);
+			teach_activePage = thiswriter.page;
 		}
+		else if (teach_activePage != undefined)
+			teachInfo_length = clamp((thiswriter.page - teach_activePage), 0, 3);
 	}
 	else
 	{

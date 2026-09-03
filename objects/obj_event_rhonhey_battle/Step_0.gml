@@ -5,7 +5,7 @@ if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 		global.flag[66] += 0.25;
 		con += 1;
 		thing_object[(con - 2)].speed = 4;
-		audio_play(snd_pedronstro, false, VOLUME_SOUND,,,, (1 + (0.5 * con)));
+		audio_play(snd_creepyPedronstro, false, VOLUME_SOUND,,,, (1 + (0.5 * con)));
 	}
 	if (con == 3 && chara.bbox_top <= 200 && global.chara_move == true)
 	{
@@ -36,7 +36,7 @@ if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 		if (audio_playing(snd_879) == false)
 		{
 			xscream = audio_play(snd_879, true, VOLUME_SOUND, , , , (0.5 + 0.125));
-			audio_play(snd_pedronstro, false, VOLUME_SOUND,,,, 1.5);
+			audio_play(snd_creepyPedronstro, false, VOLUME_SOUND,,,, 1.5);
 		}
 		audio_pitch(xscream, (audio_sound_get_pitch(xscream) + 0.01));
 		thing_object[2].speed = 9;
@@ -47,7 +47,7 @@ if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 			battle();
 			con = 10;
 			audio_stop(snd_879);
-			audio_stop(snd_pedronstro);
+			audio_stop(snd_creepyPedronstro);
 		}
 	}
 }

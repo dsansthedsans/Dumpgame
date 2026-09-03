@@ -88,7 +88,6 @@ function room_interact()
 		text = "room_captcha_mainsign_1";
 	if (room == room_corridors_5_A && x == 260 && y == 140) || (room == room_corridors_5_B && x == 20 && y == 140)
 		text = "room_captcha_guidesign_1";
-	
 	if (room == room_corridors_6)
 	{
 		if (x == 150 && y == 125)

@@ -85,7 +85,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		draw_set_valign(fa_bottom);
 		draw_set_halign(fa_center);
 		if (filesaved == 1)
-			draw_text(_middlex, _savedy, get_text("savepoint_def2"));
+			draw_text(_middlex, _savedy, get_text("savepoint_all_2"));
 	}
 }
 if (msg_format[page] == "battlebox")
@@ -203,7 +203,7 @@ for (var c = 1; c < (text_length + 1); c++)
 		if (string_char_at(msg[page], c) == _key && string_char_at(msg[page], (c + 1)) != "\\")
 		{
 			var _cancheck = 1;
-			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) // yellow ("HP"; "MERCY")
+			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) // yellow ("HP"; "MERCY"; "Admin Realm")
 			{
 				text_color[0] = c_yellow;
 				_cancheck = 0;
@@ -257,6 +257,11 @@ for (var c = 1; c < (text_length + 1); c++)
 			if (string_char_at(msg[page], c + 1) == "U" && _cancheck == 1) // dumpcolor (positive status)
 			{
 				text_color[0] = global.c_dump;
+				_cancheck = 0;
+			}
+			if (string_char_at(msg[page], c + 1) == "6" && _cancheck == 1) // m6
+			{
+				text_color[0] = #4986B7;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "6" && _cancheck == 1) // m6
@@ -564,7 +569,7 @@ if (question[page] != "%%%" && writing == 0)
 		var _xx = (question_optx[question_pos] - _xalign);
 	var _yy = question_opty[question_pos];
 	
-	draw_sprite_ext(spr_heart_small, 0, _xx, _yy, _scale, _scale, 0, c_white, alpha);
+	draw_sprite_ext(spr_battle_heart, 0, _xx, ceil(_yy + 0), (_scale / 2), (_scale / 2), 0, global.c_dump, alpha);
 	
 	// select
 	if (question_pos != 0 && press_enter == 1)
