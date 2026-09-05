@@ -1,4 +1,4 @@
-<h1>README UNDER CONSTRUCTION !!!!!!<br>the download of the new version will be available SOON........................................!</h1>
+<h1>README UNDER CONSTRUCTION<br>The download of the new version will be available SOON</h1>
 <br>
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsansthedsans and migel8022</strong></h3>
@@ -7,22 +7,20 @@
   <img src="https://img.shields.io/badge/version-0.5.0-white?labelColor=40ff6d" alt="Version">
   <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="License">
   <img src="https://img.shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
-  <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/Itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
+  <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
+  <a href="https://gamejolt.com/games/dumpgame/1097311" target="_blank"><img src="https://img.shields.io/badge/Game Jolt-ccff00?logo=gamejolt&logoColor=black" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
+<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns.</p>
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
 <p>In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--"In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
 <br>
 
-> [!NOTE]  
-> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fangame. All mentions of Discord, MEE6, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would refuse the opportunity to do so if presented. <!--"It is purely a fan game" from "Yume 2kki"; "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE 2"-->
+> [!IMPORTANT]  
+> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fangame. All mentions of Discord, MEE6, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented. <!--"It is purely a fan game" from "Yume 2kki"; "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE 2"-->
 
-<br>
-<h1>About</h1>
-<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns.</p>
-<p>The most recent version of Dumpgame, available on both GitHub and Itch.io, is <b>only a demo</b>. The development of the full game has been canceled since 2024. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</p>
 <br>
 <h1>Features</h1>
 <ul>
