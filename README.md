@@ -6,27 +6,29 @@
   <img src="https://img.shields.io/badge/status-cancelled-white?labelColor=40ff6d" alt="Status">
   <img src="https://img.shields.io/badge/version-0.5.0-white?labelColor=40ff6d" alt="Version">
   <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="License">
+  <img src="https://img.shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
   <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/Itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--"In this RPG, you control a [...]" from UNDERTALE's Steam description-->
+<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--"In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
+<br>
+
+> [!NOTE]  
+> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fangame. All mentions of Discord, MEE6, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would refuse the opportunity to do so if presented. <!--"It is purely a fan game" from "Yume 2kki"; "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE 2"-->
+
 <br>
 <h1>About</h1>
 <p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns.</p>
 <p>The most recent version of Dumpgame, available on both GitHub and Itch.io, is <b>only a demo</b>. The development of the full game has been canceled since 2024. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</p>
 <br>
-
-> [!IMPORTANT]
-> Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
-
-<br>
 <h1>Features</h1>
 <ul>
   <li>Original art, story, world and characters created almost entirely by <b>dsansthedsans</b>!</li>
   <li>An amazing original soundtrack fully composed and arranged by <b>migel8022</b>!</li>
+  <li>Obligatory puzzles. Lots and lots of obligatory puzzles.</li> <!--"Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
 </ul>
 <h3>Story</h3>
 <p>[...]</p>
@@ -89,8 +91,6 @@
 <blockquote>Yes, very. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
 <h3>Is Dumpgame still associated with Dumpster Friends?</h3>
 <blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
-<h3>Is Dumpgame associated with Toby Fox, MEE6 or Discord?</h3>
-<blockquote>No, Dumpgame is not associated with Toby Fox, MEE6 or Discord. It's just an UNDERTALE fangame.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, NOTHING related to Dumpgame is AI-generated, not even this README. The ONLY exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
@@ -106,14 +106,14 @@
 <br>
 <h1>Credits</h1>
 <ul>
-  <li>dsansthedsans<i> 〜 Programmer, Artist, Concept Artist, Animator, Writer, Sound Design Assistance, Localization</i></li>
-  <li>migel8022<i> 〜 Composer, Sound Designer, Concept Artist for Broken Clock, Tester</i></li>
+  <li>dsansthedsans<i> 〜 Programmer, Artist, Concept Artist, Animator, Sound Design Assistance, Writer, Localization, Tester</i></li>
+  <li>migel8022<i> 〜 Composer, Sound Design Assistance, Concept Artist for Broken Clock, Tester</i></li>
 </ul>
 <h3>Contributors & Testers</h3>
 <ul>
   <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy</i></li>
   <li>☭Comunista☭<i> 〜 Concept Art Assistance for MEE6</i></li>
-  <li>fer10tanb<i> 〜 Soundtrack Assistance, Concept Art Assistance for Broken Clock</i></li>
+  <li>fer10tanb<i> 〜 Composing Assistance, Concept Art Assistance for Broken Clock</i></li>
   <li>Babakinha<i> 〜 Programming Assistance</i></li>
 </ul>
 <h3>Special Thanks</h3>
@@ -124,6 +124,9 @@
   <li>Arsi "Hakita" Patala</li>
   <li>Mojang Studios</li>
   <li>Playdead</li>
+  <li>Anis Belkacem</li>
+  <li>Brendan Rius</li>
+  <li>Carlos Ramirez</li>
   <li>YoYo Games</li>
   <li>Image-Line Software</li>
   <li>Peyton Burnham</li>
