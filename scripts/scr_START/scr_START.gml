@@ -296,6 +296,9 @@ function start_flags()
 	
 	global.flag[70] = false; // talked to ROOM BORDER
 	global.flag[71] = 0; // TALKED TO cellphone developer
+	
+	for (var i = 72; i <= 99; i++)
+		global.flag[i] = undefined;
 }
 function start_music()
 {
@@ -431,7 +434,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_4;
+		var _rm = room_corridors_18;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;

@@ -21,7 +21,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 1.25;
 		if (_asset == snd_bird_startfly)
 			_volume /= 2;
-		if (_asset == snd_step1) || (_asset == snd_step2)
+		if (_asset == snd_step_0) || (_asset == snd_step_1)
 			_volume *= (0.5 + 0.125);
 		if (_asset == snd_impactGrab)
 			_volume *= 0.5;
@@ -101,12 +101,16 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_jingleHypnosis)
 			_volume *= 0.5;
-		if (_asset == snd_creepyCave)
-			_volume *= (0.75 - 0.125);
+		if (_asset == snd_creepyReulaspiravech)
+			_volume *= 1.25;
 		if (_asset == snd_jingleLevel)
 			_volume *= 0.75;
 		if (_asset == snd_writer_armsguy)
 			_volume *= 1;
+		if (_asset == snd_stingFear)
+			_volume *= 0.5;
+		if (_asset == snd_stepKnight)
+			_volume *= (0.25 * 0.75);
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -151,8 +155,18 @@ function audio_pitch(_audio, _pitch)
 	var _asset = _audio;
 	if (audio_sound_get_asset(_asset) != undefined)
 		_asset = audio_sound_get_asset(_asset);
-	if (_asset == snd_bird_startfly)
+	switch (_asset)
+	{
+		case snd_bird_startfly:
 		_pitch *= irandom_range(1.25, 1.35);
+		break;
+		case snd_step_0:
+		case snd_step_1:
+		case snd_stepWater:
+		case snd_stepKnight:
+		_pitch += (0.05 * choose(-1, 1));
+		break;
+	}
 	audio_sound_pitch(_audio, _pitch);
 }
 function audio_play(_audio, _loop = false, _volume_type = VOLUME_MASTER, _gain = 1, _gain_time = 0, _gain_fadein = 0, _pitch = 1)

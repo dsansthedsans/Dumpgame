@@ -39,6 +39,7 @@ if (room == room_intro)
 }
 if (room != room_battle && exists(obj_battle_quicker) == false && room != room_over)
 {
+	// Corridors
 	if (_room_curr >= array_get_index(global.room_order, room_corridors_1) && _room_curr <= array_get_index(global.room_order, room_corridors_18))
 	{	
 		music_set(0, -1);
@@ -60,7 +61,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			global.music_volumetype[1] = VOLUME_SOUND;
 		}
 		else if (room == room_corridors_2 && global.flag[1] == 0.75)
-			music_set(0, mus_event_m6);
+			music_set(0, mus_event_m6, , , , , , 3);
 		// Entrance
 		if (_room_curr >= array_get_index(global.room_order, room_corridors_3) && _room_curr <= array_get_index(global.room_order, room_corridors_18))
 		{
@@ -153,7 +154,9 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				music_set(0, mus_hurry_intro, , , , , false);
 				if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_1)
 				{
-					music_set(0, mus_hurry_loop_1,,,, (1 - (0.025 * (chara_murder() >= 1))));
+					if (audio_playing(snd_buildupComputer) == true)
+						audio_stop(snd_buildupComputer);
+					music_set(0, mus_hurry_loop_1,,,, (1 - (0.025 * (chara_murder() == 1)) + (0.025 * (chara_murder() >= 2))));
 					if (obj_event_gabee_chase.con >= 45)
 					{
 						global.music_pitch[0] = music_pitch_old[0];
@@ -163,6 +166,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			}
 		}
 	}
+	// Caverns
 	if (_room_curr >= array_get_index(global.room_order, room_cave_1) && _room_curr <= array_get_index(global.room_order, room_cave_3))
 	{
 		music_set(0, -1);
@@ -217,7 +221,15 @@ else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 	}
 	if (exists(control) == true)
 	{
-		var _pitch = (1 - (0.025 * (chara_murder() >= 1)));
+		var _pitch = 1;
+		if (chara_murder() >= 1)
+		{
+			_pitch -= 0.025;
+			if (chara_murder() == 1 && global.flag[39] == false)
+				_pitch -= random(0.025);
+			debug(_pitch);
+		}
+		var _fadeout = 0.5;
 		switch (control.battle_music)
 		{
 			case mus_event_rhonhey_battle:
@@ -225,13 +237,10 @@ else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 			break;
 			case mus_battle_brock:
 			_pitch = 1;
+			_fadeout = 7.5;
 			break;
 		}
-		if (control.battle_music == mus_battle_brock)
-			_pitch = 1;
-		music_set(3, control.battle_music, 1, 0, 0, _pitch, 1, 0.5);
-		if (control.battle_group == 6)
-			global.music_fadeouttime[3] = 7.5;
+		music_set(3, control.battle_music, 1, 0, 0, _pitch, 1, _fadeout);
 		//if (control.battle_group == 13)
 		//	music_set(4, snd_ambient_wind, 0.5, , , 0.25);
 	}

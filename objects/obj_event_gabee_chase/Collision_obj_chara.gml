@@ -1,12 +1,13 @@
 
-if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
+if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0 && global.flag[2] == true && global.party[0] != -1)
 {
 	game = obj_GAME_CONTROLLER;
 	chara = obj_chara;
 	characolorvalue = 255;
-	if (global.flag[2] == 1)
-		m6 = global.party[0];
+	m6 = global.party[0];
 	m6_surprise = undefined;
+	m6_stepstage = 1;
+	m6_canEscape = false;
 	
 	bullet_time[0] = 32;
 	bullet_time[1] = 48;
@@ -37,6 +38,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0)
 		heightTime : 30,
 		object : undefined,
 	}
+	buildup_pitch = 0.5;
 	
 	var _skip = 0;
 	if (_skip == 1)

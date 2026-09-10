@@ -82,12 +82,20 @@ if (con == 13)
 	if (game.cam_x <= (chara.x - ((chara.x - m6.x) / 2) - 160))
 	{
 		game.cam_x = round(game.cam_x);
-		alarm[2] = 60;
-		con = 14;
+		alarm[4] = round(60 * 1.5);
+		con = 13.25;
 	}
 	else
 		game.cam_x -= 0.5;
 	screenpos(game.cam_x, game.cam_y);
+}
+if (con == 13.5)
+{
+	party_facing(0, -1);
+	m6.sprite_index = spr_m6_r_sadTalk;
+	audio_play(snd_splatBubble, false, VOLUME_SOUND);
+	alarm[2] = round(60 * 1.5);
+	con = 14;
 }
 if (con == 15)
 {
@@ -114,65 +122,97 @@ if (con == 16 && exists(thiswriter) == 0)
 		thismarker.speed = 4;
 		bullet[i] = thismarker;
 	}
+	//if (global.world_curpopulation[chara_world()] > 0)
+	//	audio_play(snd_stingFear, 0, VOLUME_SOUND);
 	con = 17;
 }
 if (con == 17)
 {
 	with (bullet[1])
 	{
-		if (y >= (other.m6.y - 80))
+		if (y >= (other.m6.y - 80 - (40 * (global.world_curpopulation[chara_world()] <= 0) * other.m6_canEscape)))
+		{
 			party_facing(0, UP);
-		if (place_meeting(x, y, other.m6) == 1)
+			if (other.m6_surprise == undefined)
+			{
+				other.m6_surprise = surprise(other.m6);
+				audio_play(snd_surprise, false, VOLUME_SOUND);
+			}
+		}
+		if (place_meeting(x, y, other.m6) == 1) || (global.world_curpopulation[chara_world()] <= 0 && y >= (other.m6.y - 60) && other.m6_canEscape == true)
 			other.con = 18;
 	}
 }
 if (con == 18)
 {
-	if (global.world_curpopulation[chara_world()] > 0)
-		chara_facing(LEFT);
-	m6.facing = -1;
-	m6.sprite_index = spr_m6_u_sit;
-	for (var i = 0; i < 3; i++)
+	if (global.world_curpopulation[chara_world()] > 0) || (global.world_curpopulation[chara_world()] <= 0 && m6_canEscape == false)
 	{
-		destroy(bullet[i]);
-		bullet[i] = -1;
+		chara_facing(LEFT);
+		m6.facing = -1;
+		m6.sprite_index = spr_m6_u_sit;
+		for (var i = 0; i < 3; i++)
+		{
+			destroy(bullet[i]);
+			bullet[i] = -1;
+		}
+		audio_play(snd_impactSwing, 0, VOLUME_SOUND, 1.5);
+		shakescreen(4, 4);
+		//audio_play(snd_buildupComputer, true, VOLUME_SOUND);
 	}
-	audio_play(snd_impactSwing, 0, VOLUME_SOUND, 1.5);
-	shakescreen(4, 4);
+	else
+	{
+		party_facing(0, LEFT);
+		m6.image_speed = chara.rimgspeed[0];
+		m6.image_index = 1;
+	}
 	con = 19;
+	if (m6_surprise != undefined && exists(m6_surprise) == true)
+		destroy(m6_surprise);
 }
 if (con == 19)
 {
-	m6.y += 4;
-	if (m6.y >= 240)
+	if (global.world_curpopulation[chara_world()] > 0) || (global.world_curpopulation[chara_world()] <= 0 && m6_canEscape == false)
+		m6.y += 4;
+	else
+		m6.x -= chara.rspeed[0];
+	if (global.world_curpopulation[chara_world()] > 0 && m6.y >= 240)
+	|| (global.world_curpopulation[chara_world()] <= 0 && m6.y >= 240 && m6_canEscape == false)
+	|| (global.world_curpopulation[chara_world()] <= 0 && m6.x <= (game.cam_x - 10))
 	{
-		num = 0;
-		zz = 0;
-		ii = 0;
-		
-		m6.y = 240;
-		m6.depth = -m6.bbox_bottom;
-		m6.sprite_index = spr_m6_broken;
-		with (m6)
-			shakeobj_small();
-		audio_play(snd_impact, 0, VOLUME_SOUND);
-		audio_play(snd_impactShake, 0, VOLUME_SOUND, 2);
-		shakescreen(6, 6);
-		
-		create((m6.x - 10), (m6.y - 15), obj_solid_block);
-		thisobj.image_yscale = 0.75;
-		
+		if (global.world_curpopulation[chara_world()] > 0) || (global.world_curpopulation[chara_world()] <= 0 && m6_canEscape == false)
+		{
+			num = 0;
+			zz = 0;
+			ii = 0;
+			m6.y = 240;
+			m6.depth = -m6.bbox_bottom;
+			m6.sprite_index = spr_m6_broken;
+			with (m6)
+				shakeobj_small();
+			audio_play(snd_impact, 0, VOLUME_SOUND);
+			audio_play(snd_impactShake, 0, VOLUME_SOUND, 2);
+			shakescreen(6, 6);
+			create((m6.x - 10), (m6.y - 15), obj_solid_block);
+			thisobj.image_yscale = 0.75;
+		}
 		global.flag[2] = 0;
-		alarm[2] = round(45 + 7.5);
+		alarm[2] = round(45 + 7.5 - (25 * (global.world_curpopulation[chara_world()] <= 0) * m6_canEscape));
 		con = 20;
-		if (global.world_curpopulation[chara_world()] <= 0)
+		if (global.world_curpopulation[chara_world()] <= 0 && m6_canEscape == true)
+		{
+			destroy(global.party[0]);
+			global.party[0] = -1;
 			con = 35.5;
+		}
 	}
+}
+if (audio_playing(snd_buildupComputer) == true)
+{
+	audio_pitch(snd_buildupComputer, buildup_pitch);
+	buildup_pitch = clamp((buildup_pitch + 0.005), 0, 2.5);
 }
 if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter != -1 && exists(thiswriter) == false)))
 {
-	//if (m6_surprise == undefined)
-	//	m6_surprise = surprise(m6);
 	var _y = (chara.y - chara.sprite_height - 30);
 	if (zz == 1)
 		_y = (chara.y + 30)
@@ -282,7 +322,7 @@ if (con == 41)
 				create((chara.x - 130), obj_overworld_heart.y /*(200 + irandom_range(-40, 40))*/, obj_overworld_blt);
 				thisobj.type = 1.0;
 				bullet_time[0] -= 2;
-				bullet_time[0] = clamp(bullet_time[0], 22, 32);
+				bullet_time[0] = clamp(bullet_time[0], (22 - (2 * (global.world_curpopulation[chara_world()] <= 0))), 32);
 			}
 			if (s == 1)
 			{
@@ -293,7 +333,7 @@ if (con == 41)
 				}
 				bullet_format[1] = !bullet_format[1];
 				bullet_time[1] -= 4;
-				bullet_time[1] = clamp(bullet_time[1], 24, 48);
+				bullet_time[1] = clamp(bullet_time[1], (24 - (4 * (global.world_curpopulation[chara_world()] <= 0))), 48);
 			}
 			if (s == 2)
 			{

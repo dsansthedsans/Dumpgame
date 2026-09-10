@@ -174,6 +174,9 @@ function room_interact()
 		// sign
 		if (x == 30 && y == 95)
 			text = "room_preclocksign";
+		
+		if (x == 480 && y == 120)
+			text = "room_trollwall";
 	}
 	if (room == room_corridors_13)
 	{
@@ -281,8 +284,13 @@ function room_interact()
 		if (x == 140 && y == 120)
 			text = "room_finalcorridor_sign";
 	}
-	if (room == room_cave_1 && x == 185 && y == 70)
+	if (room == room_cave_1)
+	{
+		if ( x == 185 && y == 70)
 		text = "room_rockpile_0";
+		if (x == 120 && y == 130)
+			text = "room_leafbed";
+	}
 	if (room == room_cave_3)
 	{
 		if (x == 205 && y == 295)
@@ -678,12 +686,11 @@ function room_solid()
 			if (x == 810 && y == 90)
 				image_index = 1;
 		}
-		// bricks
-		if (x == 525 && y == 115) || (x == 445 && y == 135) || (x == 495 && y == 135)
+		if (x == 520 && y == 140)
 		{
-			sprite_index = spr_overworld_corridorsbricks;
-			if (x == 525 && y == 115)
-				image_xscale = -1;
+			image_alpha = 0;
+			if (global.flag[39] == true)
+				destroy(id);
 		}
 	}
 	if (room == room_corridors_13)
@@ -921,6 +928,16 @@ function room_nonsolid()
 		if (x == 120 && y == 140)
 			sprite_index = spr_overworld_m6_papers;
 		depth = 0;
+	}
+	if (room == room_corridors_11)
+	{
+		// bricks
+		if (x == 525 && y == 115) || (x == 445 && y == 135) || (x == 495 && y == 135)
+		{
+			sprite_index = spr_overworld_corridorsbricks;
+			if (x == 525 && y == 115)
+				image_xscale = -1;
+		}
 	}
 	if (room == unused_room_corridors_16_B)
 	{

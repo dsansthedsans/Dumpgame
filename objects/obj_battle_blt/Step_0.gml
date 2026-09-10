@@ -105,7 +105,7 @@ if (active == 1)
 					can_damage = true;
 					ds_list_add(touched, touching[| i]);
 					destroy(touching[| i]);
-					audio_play(snd_step_water, 0, VOLUME_SOUND);
+					audio_play(snd_stepWater, 0, VOLUME_SOUND);
 				}
 		    }
 		}

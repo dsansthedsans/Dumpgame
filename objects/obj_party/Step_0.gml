@@ -1,6 +1,8 @@
 
 if (active == 1)
 {
+	party_type(type);
+	
 	// movimento normal
 	if (movetype == 0)
 	{
@@ -81,6 +83,23 @@ if (active == 1)
 			sprite_index = sprite[facing, talking];
 		moving = 0;
 	}
+	
+	chara_stepping();
+	if (stepplay == 1 && talking == false)
+	{
+		if (floor(image_index) == 1) || (floor(image_index) == 3)
+		{
+			if (stepstage == 1)
+			{
+				var _snd = snd_stepKnight;
+				audio_play(_snd, false, VOLUME_SOUND,,,, (1 + (0.05 * (chara.rspeed_pos + 1) * (chara.curspeed == chara.rspeed[chara.rspeed_pos]))));
+				stepstage = 0;
+			}
+		}
+		else
+			stepstage = 1;
+	}
+
 }
 
 

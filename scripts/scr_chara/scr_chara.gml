@@ -398,7 +398,6 @@ function chara_hp(_amt)
 function chara_stepping()
 {
 	stepplay = 0;
-	stepvolume = 1;
 	if (chara_murder() >= 2)
 	|| (room == room_corridors_1_5)
 	|| (room == room_corridors_2)
@@ -407,7 +406,7 @@ function chara_stepping()
 	|| (room == unused_room_corridors_16_B)
 	|| (room == room_corridors_18)
 	|| (array_get_index(global.room_order, room) >= array_get_index(global.room_order, room_cave_1))
-	|| (inwater == 1)
+	|| (object_index == obj_chara && inwater == 1)
 		stepplay = 1;
 }
 function chara_damage()

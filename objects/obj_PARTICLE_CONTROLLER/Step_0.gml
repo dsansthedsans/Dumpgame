@@ -21,7 +21,7 @@ if (room == room_corridors_18 && global.flag[61] == 0 && global.flag[2] == 0 && 
 	if (delay <= 0 && num < particle_length)
 	{
 		marker((m6.x - (m6.sprite_width / 4) + 2), (m6.y - (m6.sprite_height / 2) - 4), spr_particle_smoke, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
-		thismarker.speed = choose(0.4, 0.65);
+		thismarker.speed = choose(0.4, 0.65) * 0.75;
 		thismarker.direction = (90 + irandom_range(-20, 20));
 		particle[num] = thismarker;
 		num += 1;

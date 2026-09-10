@@ -23,7 +23,7 @@ for (var i = 0; i < 3; i++)
 }
 
 // option indicator
-draw_sprite_ext(spr_battle_heart, 0, mainopt_heartx[mainopt_pos], mainopt_y, 1, 1, 0, global.c_dump, 1);
+draw_sprite_ext(spr_battle_heart_broken, 0, mainopt_heartx[mainopt_pos], mainopt_y, 1, 1, 0, global.c_dump, 1);
 
 // bg
 if (con >= 9 && bg_alpha > 0)

@@ -1,6 +1,8 @@
 event_inherited();
 depth = -room_height;
 m6 = undefined;
+m6_stepstage = 1;
+m6_stepsound = 0;
 cutout_active = false;
 cutout_alpha = 1;
 cutout_alphaTarget = 1;
@@ -39,7 +41,9 @@ if (global.flag[2] == false && global.flag[1] == false && global.flag[66] == 2 &
 	con = 1;
 	chara_facing(UP);
 	chara_change(-1, 0, 0, 1, 0, 0, 1);
-	m6 = marker((room_width / 2), 135, spr_m6_d_defaultTalk, 1, 1, 1, 0, 0, 0, c_white, -160);
+	party_create(-20, -20, "m6", -1);
+	m6 = global.party[0];
+	//m6 = marker((room_width / 2), 135, spr_m6_d_defaultTalk, 1, 1, 1, 0, 0, 0, c_white, -160);
 }
 else
 	instance_destroy();

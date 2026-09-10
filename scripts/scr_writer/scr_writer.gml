@@ -97,6 +97,15 @@ function TEXT()
 			case room_corridors_8:
 			_text_index = 1;
 			break;
+			case room_corridors_11:
+			_text_index = 2;
+			break;
+			case room_corridors_13:
+			_text_index = 3;
+			break;
+			case room_corridors_17:
+			_text_index = 4;
+			break;
 		}
 		var p = 0;
 		if (_text_index != undefined && chara_murder() < 1)
@@ -136,7 +145,9 @@ function TEXT()
 	
 	// room_corridors_1_5
 	if (string_starts_with(text, "room_rockpile_") == true)
-		msg[0] = get_text($"room_rockpile_{clamp(string_char_at(text, string_length(text)), 0, (1 - (chara_murder() >= 1)))}_0");
+	{
+		msg[0] = get_text($"room_rockpile_{string_char_at(text, string_length(text))}_0");
+	}
 	// obj_event_rhonhey_battle
 	if (string_starts_with(text, "event_rhonhey_battle_") == true)
 	{
@@ -202,8 +213,9 @@ function TEXT()
 			case 1:
 			break;
 			case 2:
-			msg_face[0] = spr_dialogface_m6_neutralTense;
-			msg_face[3] = spr_dialogface_m6_neutral;
+			msg_face[0] = spr_dialogface_m6_sadTense;
+			msg_face[3] = spr_dialogface_m6_sad;
+			msg_sound[0] = snd_writer_m6_tense;
 			break;
 		}
 	}
@@ -714,6 +726,17 @@ function TEXT()
 		for (var i = 0; i < 5; i++)
 			msg[i] = get_text("room_preclocksign_" + string(i));
 	}
+	if (text == "room_trollwall")
+	{
+		for (var i = 0; i < 99; i++)
+		{
+			var _msg_id = $"room_trollwall_{i}";
+			var _msg = get_text(_msg_id);
+			if (_msg == undefined)
+				break;
+			msg[i] = _msg;
+		}
+	}
 	
 	// obj_event_brock_battle
 	if (string_starts_with(text, "event_brock_battle_") == true)
@@ -1037,10 +1060,10 @@ function TEXT()
 			}
 			break;
 			case 1:
-			msg_face[0] = spr_dialogface_m6_neutralTense;
-			msg_face[1] = spr_dialogface_m6_neutral;
-			msg_face[2] = spr_dialogface_m6_neutralTense;
-			msg_face[3] = spr_dialogface_m6_neutral;
+			msg_face[0] = spr_dialogface_m6_sadTense;
+			msg_face[1] = spr_dialogface_m6_sad;
+			msg_face[2] = spr_dialogface_m6_sadTense;
+			msg_face[3] = spr_dialogface_m6_sad;
 			msg_sound[0] = snd_writer_m6_tense;
 			msg_talker[0] = global.party[0];
 			break;
@@ -1050,6 +1073,9 @@ function TEXT()
 			break;
 		}
 	}
+	// room_cave_1
+	if (text == "room_leafbed")
+		msg[0] = get_text($"room_leafbed_0");
 	// room_cave_2
 	if (text == "cellphone_developer")
 	{
@@ -1063,7 +1089,6 @@ function TEXT()
 		msg_sound[2] = snd_writer_dsans;
 		msg_sound[m-1] = snd_writer_0;
 	}
-	
 	// room_cave_3
 	if (text == "npc_cave_armsguy")
 	{
@@ -1071,7 +1096,6 @@ function TEXT()
 		for (var m = 0; m < 99; m++)
 		{
 			var _msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}");
-			debug($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}");
 			if (_questioned != undefined)
 			{
 				_msg = get_text($"room_cave_3_npc_armsguy.{global.flag[68]}.{m}.{question_result[_questioned]}");
@@ -1092,6 +1116,11 @@ function TEXT()
 		}
 		msg_sound[0] = snd_writer_armsguy;
 		msg_talker[0] = obj_chara.mycol;
+		if (_questioned != undefined)
+		{
+			msg_sound[_questioned + 1] = snd_writer_armsguy;
+			msg_talker[_questioned + 1] = obj_chara.mycol;
+		}
 		global.flag[68] = true;
 	}
 	if (text == "room_border")
@@ -1209,20 +1238,18 @@ function TEXT()
 		}
 		if (string_starts_with(text, "battle_bubble_brock") == 1) // Broken Clock
 		{
-			msg_sound[0] = snd_writer_brock;
-			
+			msg_sound[0] = snd_writer_brock;	
 			if (text == "battle_bubble_brock0") // normal
 			{
-				var _geno = enemy.geno;
-				var _round = clamp(controller.battle_round, 0, 9);
+				var _round = clamp(controller.battle_round, 0, 10);
 				if (controller.enemy_spare[enemy.myself] >= 100)
 				{
-					_round = 9;
+					_round = 10;
 					msg_type[0] = "tense";
 				}
 				for (var i = 0; i < 99; i++)
 				{
-					var _curmsg = get_text("battle_bubble_brock_" + string(_round) + "_" + string(i) + "_" +  string(_geno));
+					var _curmsg = get_text("battle_bubble_brock_" + string(_round) + "_" + string(i));
 					if (_curmsg != undefined)
 						msg[i] = _curmsg;
 					else
@@ -1232,7 +1259,7 @@ function TEXT()
 			if (text == "battle_bubble_brock1") // fight attempt
 			{
 				for (var i = 0; i < 3; i++)
-					msg[i] = get_text("battle_bubble_brock_fight_" + string(i) + "_0");
+					msg[i] = get_text("battle_bubble_brock_fight_" + string(i));
 			}
 		}
 		if (string_starts_with(text, "battle_bubble_m6_rhonhey_") == true) // MEE6 (Rhonhey)

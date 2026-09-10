@@ -104,14 +104,17 @@ if (global.indebug == 1)
 		var _str_flag_0 = "";
 		var _str_flag_1 = "";
 		var _str_flag_2 = "";
+		var _str_flag_3 = "";
 		for (var f = 0; f < array_length(global.flag); f++)
 		{
 			if (f <= 28)
 				_str_flag_0 += $"flag[{f}]:  {global.flag[f]}\n";
 			else if (f >= 29 && f <= 57)
 				_str_flag_1 += $"flag[{f}]:  {global.flag[f]}\n";
-			else if (f >= 58 && f <= array_length(global.flag))
+			else if (f >= 58 && f <= 86)
 				_str_flag_2 += $"flag[{f}]:  {global.flag[f]}\n";
+			else if (f >= 87 && f <= array_length(global.flag))
+				_str_flag_3 += $"flag[{f}]:  {global.flag[f]}\n";
 		}
 		draw_set_alpha(1);
 		draw_set_font(fnt_main);
@@ -119,6 +122,7 @@ if (global.indebug == 1)
 		draw_text_outline_transformed((_cx + 5), (_cy + 3), _str_flag_0, c_orange, 0.5, c_black, 0.5, 0.5, 0);
 		draw_text_outline_transformed((_cx + 5 + (string_width(_str_flag_0) / 2) + 5), (_cy + 3), _str_flag_1, c_orange, 0.5, c_black, 0.5, 0.5, 0);
 		draw_text_outline_transformed((_cx + 5 + (string_width(_str_flag_0) / 2) + 5 + (string_width(_str_flag_1) / 2) + 5), (_cy + 3), _str_flag_2, c_orange, 0.5, c_black, 0.5, 0.5, 0);
+		draw_text_outline_transformed((_cx + 5 + (string_width(_str_flag_0) / 2) + 5 + (string_width(_str_flag_1) / 2) + 5 + (string_width(_str_flag_2) / 2) + 5), (_cy + 3), _str_flag_3, c_orange, 0.5, c_black, 0.5, 0.5, 0);
 	}
 }
 

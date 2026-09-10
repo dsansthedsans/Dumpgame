@@ -1,6 +1,6 @@
 if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 {
-	if (con == 0 && obj_chara.x >= ((room_width / 2) + 10) && global.chara_move == 1)
+	if (con == 0 && obj_chara.x >= ((room_width / 2) + 10) && obj_chara.y >= 190 && global.chara_move == 1)
 	{
 		depth = -room_height;
 		cam_offsetX = (cam_x - game.cam_x);
@@ -16,9 +16,9 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 		m6_surprise = surprise(m6);
 		with (m6)
 			shakeobj_small();
-		for (var i = 0; i < instance_number(obj_overworld_solid); i++)
+		for (var i = 0; i < instance_number(obj_overworld_nonsolid); i++)
 		{
-			var _brickpile = instance_find(obj_overworld_solid, i);
+			var _brickpile = instance_find(obj_overworld_nonsolid, i);
 			if (_brickpile.sprite_index == spr_overworld_corridorsbricks)
 				shakeobj(_brickpile, 2, 2, 0.1);
 		}

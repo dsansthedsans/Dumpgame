@@ -7,7 +7,7 @@ image_speed = 0;
 image_index = 0;
 active = 1;
 delay = 0;
-dmg = 4;
+dmg = 3;
 can_damage = true;
 destroy_on_impact = true;
 

@@ -381,20 +381,18 @@ if (stepplay == 1)
 	{
 		if (stepstage == 1)
 		{
-			var _snd = snd_step1;
+			var _snd = snd_step_0;
 			if (stepsound == 1)
-				_snd = snd_step2;
+				_snd = snd_step_1;
+			stepsound = !stepsound;
 			if (inwater == true)
-				_snd = snd_step_water;
-			audio_play(_snd, 0, VOLUME_SOUND, stepvolume, , , (1 + random_range(-0.025, 0.025) + (0.05 * (rspeed_pos + 1) * (curspeed == rspeed[rspeed_pos]))));
+				_snd = snd_stepWater;
+			audio_play(_snd, false, VOLUME_SOUND,,,, (1 + (0.05 * (rspeed_pos + 1) * (curspeed == rspeed[rspeed_pos]))));
 			stepstage = 0;
 		}
 	}
 	else
-	{
-		stepsound = 0;
 		stepstage = 1;
-	}
 }
 
 
@@ -748,11 +746,11 @@ if (chara_getsteps() == 1 && global.chara_facing != -1) // step sounds
 		if (playstep == 1)
 		{
 			mystep = !mystep;
-			mysound = snd_step1;
+			mysound = snd_step_0;
 			if (mystep == 1)
-				mysound = snd_step2;
+				mysound = snd_step_1;
 			if (inwater == 1)
-				mysound = snd_step_water;
+				mysound = snd_stepWater;
 			if (mysound != -1)
 				audio_play(mysound, 0, VOLUME_SOUND);
 			playstep = 0;
@@ -1111,9 +1109,9 @@ if (chara_gettense() == 1 && global.chara_facing != -1)
 		{
 			mystep = !mystep;
 			if (mystep == 0)
-				var _sound = snd_step1;
+				var _sound = snd_step_0;
 			else
-				var _sound = snd_step2;
+				var _sound = snd_step_1;
 			if (audio_is_playing(_sound) == 1)
 				audio_stop_sound(_sound);
 			audio_play(_sound, 0, 0);
