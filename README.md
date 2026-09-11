@@ -1,4 +1,4 @@
-<h1>README UNDER CONSTRUCTION<br>The download of the new version will be available SOON</h1>
+<h1>README UNDER CONSTRUCTION !!!!<br>The download of the new version will be available SOON...!</h1>
 <br>
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsansthedsans and migel8022</strong></h3>
@@ -11,6 +11,7 @@
   <a href="https://gamejolt.com/games/dumpgame/1097311" target="_blank"><img src="https://img.shields.io/badge/Game Jolt-ccff00?logo=gamejolt&logoColor=black" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
+<br>
 <p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns.</p>
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
@@ -20,6 +21,9 @@
 
 > [!IMPORTANT]  
 > Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fangame. All mentions of Discord, MEE6, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented. <!--"It is purely a fan game" from "Yume 2kki"; "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE 2"-->
+
+> [!CAUTION]
+> Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
 
 <br>
 <h1>Features</h1>
@@ -55,7 +59,7 @@
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Image of Dumpgame in early development"></p>
 <br>
-<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". [...]</p>
+<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". At this point, the game was ugly, stiff and it barely worked.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"><img src="README-ASSETS/GEN1-EVENT-INTRO.gif" height="295" alt="Video of Dumpgame in early development showing the opening sequence"></p>
 <p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295" alt="Image of Dumpgame in early development showing a save point's text box"></p>
@@ -72,15 +76,21 @@
 <p align="center"><img src="README-ASSETS/GEN3-WRITER-GUY.gif" height="295" alt="Video of Dumpgame in early development showing a test dialog"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
 <br>
-<p>It was only in November 2022 that I went back to making the actual game. ["4th generation"] [...] At this point, Dumpgame began to look pretty similar to what it is today.</p>
+<p>It was only in November 2022 that I went back to making the actual game. The "4th generation" was basically me reprogramming, redrawing, rewriting and redesigning everything over a year until I felt it was good enough. On November 2023, <code>v0.4.0</code> was released. At this point, Dumpgame began to look pretty similar to what it is today.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN4-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
-<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR5B.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage"><img src="README-ASSETS/GEN4-ROOM-CORR11.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"></p>
+<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR5B_0.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage"><img src="README-ASSETS/GEN4-ROOM-CORR11.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"></p>
 <p align="center"><img src="README-ASSETS/GEN4-BATTLE-GROUP8.gif" height="295" alt="Video of Dumpgame in early development showing Trashguy and Armsguy's battle"></p>
+<!--<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR1.png" height="295" alt="Image of Dumpgame in early development showing the first room">-->
+<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR3.png" height="295" alt="Image of Dumpgame in early development showing the Rules Book room"><img src="README-ASSETS/GEN4-ROOM-CORR4.png" height="295" alt="Image of Dumpgame in early development showing the room where trees appear for the first time"></p>
+<!--<p align="center"><img src="README-ASSETS/GEN4-BATTLE-DUMMY.png" height="295" alt="Image of Dumpgame in early development showing Dummy's battle"><img src="README-ASSETS/GEN4-BATTLE-GROUP9.png" height="295" alt="Image of Dumpgame in early development showing a battle against Armsguy and Flitcher"></p>
+<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR5B_1.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage"><img src="README-ASSETS/GEN4-ROOM-CORR7.png" height="295" alt="Image of Dumpgame in early development showing the bench corridor room"></p>-->
+<p align="center"><img src="README-ASSETS/GEN4-EVENT-BROCK-BATTLE.png" height="295" alt="Image of Dumpgame in early development showing Broken Clock's battle event"><!--<img src="README-ASSETS/GEN4-BATTLE-BROCK.png" height="295" alt="Image of Dumpgame in early development showing Broken Clock's battle">--></p>
 <br>
 <p><i>Many years later...</i></p><!--"Many years later" from "UNDERTALE"-->
 <p>["5th generation"]</p>
 <p>Dumpgame is just another random UNDERTALE fangame. There's nothing special about it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
+<!--<br><p align="center"><img src="README-ASSETS/CHARA-EVOLUTION.png" alt="Image showing all versions of the player's sprite" width="266"></p>-->
 <br>
 <h1>Never Asked Questions</h1>
 <h3>Is Dumpgame still in development?</h3>
@@ -121,7 +131,10 @@
   <li>Tophat Interactive</li>
   <li>Arsi "Hakita" Patala</li>
   <li>Mojang Studios</li>
+  <li>Facepunch Studios</li>
   <li>Playdead</li>
+  <li>KIKIYAMA (ききやま)</li>
+  <li>Discord</li>
   <li>Anis Belkacem</li>
   <li>Brendan Rius</li>
   <li>Carlos Ramirez</li>
