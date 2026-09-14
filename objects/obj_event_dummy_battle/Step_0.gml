@@ -15,10 +15,12 @@ if (global.flag[2] == true && global.flag[4] == false && global.flag[6] == false
 		m6.sprite_index = spr_m6_u;
 		con += 1;
 	}
-	if (con == 2 && chara.y <= 190 && m6.y <= 190)
+	if (con == 2 && chara.y <= 180 && m6.y <= 180)
 	{
+		m6.x = round(m6.x);
 		chara.vspeed = 0;
 		chara_stop();
+		m6.y = round(m6.y);
 		m6.vspeed = 0;
 		party_stop(0);
 		alarm[2] = 30;
@@ -26,7 +28,7 @@ if (global.flag[2] == true && global.flag[4] == false && global.flag[6] == false
 	}
 	if (con == 4)
 	{
-		writer("event_m6_predummy_0", -1, -1);
+		writer("event_dummy_battle_0", -1, -1);
 		con += 1;
 	}
 	if (con == 5 && instance_exists(thiswriter) == 0)
@@ -45,16 +47,19 @@ else if (global.flag[2] == true && global.flag[4] == true && global.flag[6] == t
 		con += 1;
 		alarm[2] = 60;
 		chara.x = (160 - 10);
-		chara.y = 190;
+		chara.y = 180;
 		chara_facing(UP);
 		party_change(0, -1, -1);
 		party_facing(0, UP);
 		m6.x = (160 + 10);
-		m6.y = 190;
+		m6.y = 180;
 	}
 	else if (con == 3)
 	{
-		writer($"event_m6_predummy_1_{global.flag[5]}");
+		var _text_index = (1 + (1 * global.flag[5]));
+		if (global.flag[5] == false && global.item[0] == ITEM_BRICK)
+			_text_index = 3;
+		writer($"event_dummy_battle_{_text_index}");
 		con += 1;
 	}
 	else if (con == 4 && exists(thiswriter) == false)
@@ -72,28 +77,10 @@ else if (global.flag[2] == true && global.flag[4] == true && global.flag[6] == t
 	}
 	else if (con == 8)
 	{
-		global.flag[7] = 1;
+		global.flag[7] = true;
 		chara_facing(DOWN);
 		chara_change(-1, true, true, false, true, true, true);
 		party_change(0, 1, RIGHT);
 		con += 1;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

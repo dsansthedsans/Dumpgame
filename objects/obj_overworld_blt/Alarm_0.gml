@@ -27,7 +27,7 @@ if (type >= 1 && type < 2) // Gabee's chase
 		delay = 0;
 		spd = 1.5;
 	}
-	image_angle = direction;
+	image_angle = (direction - 90);
 }
 
 /*

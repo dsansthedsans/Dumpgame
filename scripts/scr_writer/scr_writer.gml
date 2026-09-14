@@ -14,12 +14,10 @@ function get_text(_id)
 {
 	var _msg = "";
 	var _key = argument0;
-	
-	if (global.lang == "en")
-		_msg = ds_map_find_value(global.textdata_en, _key);
-	else if (global.lang == "pt")
+	if (global.lang == "pt" && global.textdata_pt != -1)
 		_msg = ds_map_find_value(global.textdata_pt, _key);
-	
+	else
+		_msg = ds_map_find_value(global.textdata_en, _key);
 	return _msg;
 }
 
@@ -290,50 +288,35 @@ function TEXT()
 		msg[0] = get_text($"{text}{(chara_murder() < 1) ? "" : "_geno"}");
 		
 	// room_corridors_3_5
-	if (text == "event_m6_predummy_0")
+	if (string_starts_with(text, "event_dummy_battle_") == true)
 	{
-		for (var m = 0; m < 99; m++)
+		var _text_index = string_char_at(text, string_length(text));
+		for (var i = 0; i < 99; i++)
 		{
-			var _curmsg = get_text("event_m6_predummy_0_" + string(m));
-			if (_curmsg == undefined)
+			var _msg_id = $"event_dummy_battle_{_text_index}_{i}";
+			var _msg = get_text(_msg_id);
+			if (_msg == undefined)
 				break;
-			msg[m] = _curmsg;
+			msg[i] = _msg;
 		}
 		msg_face[0] = spr_dialogface_m6_default;
-		msg_face[3] = spr_dialogface_m6_neutral;
-		msg_face[4] = spr_dialogface_m6_default;
-		msg_face[7] = spr_dialogface_m6_neutral;
-		msg_face[8] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_writer_m6;
-	}
-	if (text == "event_m6_predummy_1")
-	{
-		for (var m = 0; m < 3; m++)
-			msg[m] = get_text("event_m6_predummy_1_" + string(m));
-		msg_face[0] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_writer_m6;
-			
-		question[3] = get_text("event_m6_predummy_1_3");
-		question_option[1] = get_text("event_m6_predummy_1_3_1");
-		question_option[2] = get_text("event_m6_predummy_1_3_2");
-		msg_face[3] = -1;
-		msg_sound[3] = snd_writer_0;
-			
-		msg[4] = get_text("event_m6_predummy_1_" + string(question_result[3]) + "_4");
-		msg[5] = get_text("event_m6_predummy_1_" + string(question_result[3]) + "_5");
-		msg_face[4] = spr_dialogface_m6_default;
-		msg_sound[4] = snd_writer_m6;
-			
-		if (question_result[3] == 1)
+		msg_format[0] = "textbox_top";
+		switch (_text_index)
 		{
-			//msg[6] = string(get_text("event_m6_predummy_1_1_6_0")) + string_upper(key_name(global.keybind[04])) + string(get_text("event_m6_predummy_1_1_6_1")) + string_upper(key_name(global.keybind[05])) + string(get_text("event_m6_predummy_1_1_6_2"));
-			//msg_face[6] = -1;
-			//msg_sound[6] = snd_writer_0;
+			case 1:
+			msg_face[0] = spr_dialogface_m6_pleased;
+			msg_face[1] = spr_dialogface_m6_sassy;
+			msg_face[2] = spr_dialogface_m6_default;
+			break;
+			case 2:
+			msg_face[0] = spr_dialogface_m6_sassy;
+			msg_face[1] = spr_dialogface_m6_default;
+			break;
+			case 3:
+			msg_face[0] = spr_dialogface_m6_angry;
+			break;
 		}
-		else if (question_result[3] == 2)
-			msg_face[4] = spr_dialogface_m6_neutral;
-			
-		global.flag[5] = question_result[3];		
 	}
 	if (text == "npc_dummy")
 	{
@@ -351,32 +334,9 @@ function TEXT()
 				battle();
 			}
 		}
-		else if (global.flag[4] == true && global.flag[6] == true && global.flag[7] == true && chara_murder() < 0)
-		{
-			msg[0] = "* ......";
-			if (irandom_range(1, 100) == 100)
-				msg[0] = "* .....!";
-		}
+		else if (global.flag[4] == true && global.flag[6] == true && global.flag[7] == true && chara_murder() <= 0)
+			msg[0] = "* .....!";
 	}
-	if (text == "event_m6_postdummy")
-	{
-		msg[0] = get_text("event_m6_postdummy_0");
-		msg[1] = get_text("event_m6_postdummy_1");
-		msg[2] = get_text("event_m6_postdummy_2");
-		msg_face[0] = spr_dialogface_m6_default;
-		msg_face[1] = spr_dialogface_m6_sassy;
-		msg_face[2] = spr_dialogface_m6_default;
-		msg_sound[0] = snd_writer_m6;
-	}
-	if (text == "event_m6_dummydoor")
-	{
-		msg[0] = get_text("event_m6_dummydoor_0");
-		msg[1] = get_text("event_m6_dummydoor_1_" + string(global.flag[5]));
-		msg[2] = get_text("event_m6_dummydoor_2");
-		msg_face[0] = spr_dialogface_m6_neutral;
-		msg_sound[0] = snd_writer_m6;
-	}
-	
 	// room_corridors_4
 	if (text == "npc_armsguy1")
 	{
@@ -395,8 +355,7 @@ function TEXT()
 		msg_sound[0] = snd_writer_armsguy;
 		msg_talker[0] = obj_chara.mycol;
 	}
-	
-	// obj_event_m6_captcha1_0
+	// room_corridors_5
 	if (text == "event_m6_captcha1_0")
 	{
 		for (var i = 0; i < 4; i++)
@@ -407,8 +366,6 @@ function TEXT()
 		msg_sound[0] = snd_writer_m6;
 		msg_format[0] = "textbox_bottom";
 	}
-		
-	// room_corridors_5
 	if (text == "room_captcha_mainsign_1")
 	{
 		for (var i = 0; i < 4; i++)
@@ -632,7 +589,7 @@ function TEXT()
 						msg_sound[6] = snd_writer_armsguy;
 						msg_talker[6] = obj_chara.mycol;
 						global.flag[47] = 1;
-						global.item[global.item_last] = ITEM_KUNAI;
+						global.item[global.item_last] = ITEM_TRIDENT;
 					}
 				}
 				else
@@ -775,10 +732,10 @@ function TEXT()
 			msg_talker[2] = global.party[0];
 			break;
 			case 2:
-			msg[1] = $"+S1* :@@{global.chara_name};D!!!!!!^1&!{msg[1]}";
+			msg[1] = string_replace_all(msg[1], "[name]", global.chara_name);
 			break;
 			case 3:
-			msg[2] = $"+F0* :@@{global.chara_name};D...^2&{msg[2]}";
+			msg[2] = string_replace_all(msg[2], "[name]", global.chara_name);
 			if (global.item[global.item_last] == -1)
 			{
 				msg_sound[7] = snd_writer_0;
@@ -1235,6 +1192,7 @@ function TEXT()
 		{
 			msg[0] = "+F1...";
 			msg_type[0] = 3;
+			msg_sound[0] = -1;
 		}
 		if (string_starts_with(text, "battle_bubble_brock") == 1) // Broken Clock
 		{

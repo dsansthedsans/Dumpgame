@@ -300,13 +300,13 @@ function movetopoint_facing(_x, _y, _movemax, _obj, _facingvar)
 		global.party_facing[0] = _result;	
 }
 
-function draw_text_width(_x, _y, _string, _total_width)
+function draw_text_width(_x, _y, _string, _total_width, _colors = [c_white, c_white], _alpha = 1)
 {
     var _stringxscale = 1;
     var _stringwidth = string_width(argument2);
     if (_stringwidth >= argument3)
         _stringxscale = (argument3 / _stringwidth);
-    draw_text_transformed(argument0, argument1, argument2, _stringxscale, 1, 0);
+    draw_text_transformed_color(argument0, argument1, argument2, _stringxscale, 1, 0, _colors[1], _colors[1], _colors[0], _colors[0], _alpha);
 }
 
 function draw_text_outline(_x, _y, _string, _color, _outline_width, _outline_color)

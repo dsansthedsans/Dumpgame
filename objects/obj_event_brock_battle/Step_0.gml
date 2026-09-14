@@ -69,9 +69,9 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 			brockHands_draw = true;
 			audio_play(snd_impactSwing, 0, VOLUME_SOUND);
 			shakescreen(4, 4);
-			for (var i = 0; i < instance_number(obj_overworld_solid); i++)
+			for (var i = 0; i < instance_number(obj_overworld_nonsolid); i++)
 			{
-				var _brickpile = instance_find(obj_overworld_solid, i);
+				var _brickpile = instance_find(obj_overworld_nonsolid, i);
 				if (_brickpile.sprite_index == spr_overworld_corridorsbricks)
 					shakeobj(_brickpile, 4, 4, 0.1);
 			}

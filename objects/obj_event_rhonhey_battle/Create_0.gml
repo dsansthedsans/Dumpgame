@@ -1,6 +1,6 @@
 event_inherited();
 chara = obj_chara;
-DEBUG_SKIP = (false * global.indebug);
+DEBUG_SKIP = (true * global.indebug);
 if (DEBUG_SKIP == true)
 {
 	global.flag[66] = 1;

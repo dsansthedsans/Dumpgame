@@ -39,6 +39,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0 && global.f
 		object : undefined,
 	}
 	buildup_pitch = 0.5;
+	fearstingy = false;
 	
 	var _skip = 0;
 	if (_skip == 1)

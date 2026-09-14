@@ -157,7 +157,7 @@ else if (con == 22)
 	party_facing(0, -1);
 	m6.sprite_index = spr_m6_l_sadTalk;
 	con += 1;
-	alarm[2] = round(60 * 1);
+	alarm[2] = round(60 * 1.5);
 	audio_play(snd_splatBubble, false, VOLUME_SOUND);
 }
 else if (con == 24)

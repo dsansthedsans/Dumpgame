@@ -49,8 +49,9 @@ if (con == 5 && chara.x >= 720)
 	chara_change(-1, false, false, true, false, false, true);
 	chara_facing(RIGHT);
 	party_change(0, -1, -1);
-	party_facing(0, RIGHT);
+	party_facing(0, -1);
 	party_stop(0);
+	m6.sprite_index = spr_m6_r_sad_talk;
 	con = 6;
 }
 if (con == 6)
@@ -92,7 +93,7 @@ if (con == 13)
 if (con == 13.5)
 {
 	party_facing(0, -1);
-	m6.sprite_index = spr_m6_r_sadTalk;
+	m6.sprite_index = spr_m6_r_sadTense_talk;
 	audio_play(snd_splatBubble, false, VOLUME_SOUND);
 	alarm[2] = round(60 * 1.5);
 	con = 14;
@@ -111,20 +112,29 @@ if (con == 15)
 	for (var i = 0; i < 6; i++)
 		bullet[i] = -1;
 }
-if (con == 16 && exists(thiswriter) == 0)
+if ((con == 16 || con == 21) && exists(thiswriter) == true)
 {
-	audio_play(snd_launch, 0, VOLUME_SOUND);
-	for (var i = 0; i < 3; i++)
+	m6.sprite_index = spr_m6_r_sadTense_talk;
+	if (thiswriter.page == 1) || (thiswriter.page == 3)
+		m6.sprite_index = spr_m6_r_sad_talk;
+}
+if (con == 16)
+{
+	if (exists(thiswriter) == 0)
 	{
-		marker((m6.x - 20 + (20 * i)), (game.cam_y - 10), spr_battle_blt_kunai, 1, 1, 1, 0, 0, 0, c_white, -room_height*3 /*(m6.depth + 1)*/);
-		thismarker.image_angle = point_direction(thismarker.x, thismarker.y, m6.x, m6.y);
-		thismarker.direction = thismarker.image_angle;
-		thismarker.speed = 4;
-		bullet[i] = thismarker;
+		audio_play(snd_launch, 0, VOLUME_SOUND);
+		for (var i = 0; i < 3; i++)
+		{
+			marker((m6.x - 20 + (20 * i)), (game.cam_y - 10), spr_battle_blt_trident, 1, 1, 1, 0, 0, 0, c_white, -room_height*3 /*(m6.depth + 1)*/);
+			thismarker.direction = point_direction(thismarker.x, thismarker.y, m6.x, m6.y);
+			thismarker.image_angle = (thismarker.direction - 90);
+			thismarker.speed = 4;
+			bullet[i] = thismarker;
+		}
+		if (global.world_curpopulation[chara_world()] > 0 && fearstingy == true)
+			audio_play(unused_snd_stingFear, 0, VOLUME_SOUND);
+		con = 17;
 	}
-	//if (global.world_curpopulation[chara_world()] > 0)
-	//	audio_play(snd_stingFear, 0, VOLUME_SOUND);
-	con = 17;
 }
 if (con == 17)
 {
@@ -198,10 +208,13 @@ if (con == 19)
 		global.flag[2] = 0;
 		alarm[2] = round(45 + 7.5 - (25 * (global.world_curpopulation[chara_world()] <= 0) * m6_canEscape));
 		con = 20;
-		if (global.world_curpopulation[chara_world()] <= 0 && m6_canEscape == true)
+		if (global.world_curpopulation[chara_world()] <= 0)
 		{
-			destroy(global.party[0]);
-			global.party[0] = -1;
+			if (m6_canEscape == true)
+			{
+				destroy(global.party[0]);
+				global.party[0] = -1;
+			}
 			con = 35.5;
 		}
 	}
@@ -216,9 +229,9 @@ if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter
 	var _y = (chara.y - chara.sprite_height - 30);
 	if (zz == 1)
 		_y = (chara.y + 30)
-	marker((chara.x - 20 + (20 * ii)), _y, spr_battle_blt_kunai, 0, 1, 1, 0, 0, 0, c_white, -room_height*3 /*(chara.depth - 1)*/);
-	thismarker.image_angle = point_direction(thismarker.x, thismarker.y, chara.x, (chara.y - (chara.sprite_height / 2)));
-	thismarker.direction = thismarker.image_angle;
+	marker((chara.x - 20 + (20 * ii)), _y, spr_battle_blt_trident, 0, 1, 1, 0, 0, 0, c_white, -room_height*3 /*(chara.depth - 1)*/);
+	thismarker.direction = point_direction(thismarker.x, thismarker.y, chara.x, (chara.y - (chara.sprite_height / 2)));
+	thismarker.image_angle = (thismarker.direction - 90);
 	bullet[num] = thismarker;
 	
 	if (ii == 2)
@@ -239,6 +252,16 @@ if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter
 	audio_play(snd_appearBullet, 0, VOLUME_SOUND);
 	alarm[2] = (6 + (2 * (global.world_curpopulation[chara_world()] <= 0)));
 	con += 1;
+	if (aftercon == 0)
+	{
+		if (global.world_curpopulation[chara_world()] > 0)
+		{
+			if (fearstingy == true)
+				audio_play(unused_snd_stingFear, 0, VOLUME_SOUND,,,, 1.125);
+		}
+		else
+			party_facing(0, RIGHT);
+	}
 	aftercon = 1;
 }
 if (con == 33)

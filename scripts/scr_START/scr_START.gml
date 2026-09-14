@@ -11,7 +11,7 @@ function START_GAME()
 	global.game_startroom[0] = room_menu;
 	global.game_startroom[1] = room_corridors_1 //room_intro;
 	global.ACHIEVEMENT_ENABLED = false;
-	TEXTDATA_EN();
+	TEXTDATA();
 	start_maininfo();
 	start_music();
 	start_party();
@@ -175,7 +175,7 @@ function start_item()
 	#macro ITEM_BANDAGE 1
 	#macro ITEM_CANDY 2
 	#macro ITEM_BOWL 3
-	#macro ITEM_KUNAI 4
+	#macro ITEM_TRIDENT 4
 	#macro ITEM_CHOCO 5
 	#macro ITEM_PACE 6
 	#macro ITEM_BRICK 7
@@ -434,7 +434,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_18;
+		var _rm = room_corridors_3_5;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;
@@ -487,7 +487,6 @@ function CHANGE_GAME()
 			if (_lvl >= 3)
 			{
 				global.flag[4] = 1; // finished MEE6's pre-dummy event
-				global.flag[5] = 1; // MEE6's pre-dummy question result
 				global.flag[6] = 1; // started Dummy's battle
 				global.flag[7] = 1; // finished MEE6's post-dummy event
 				global.flag[17] = 1; // left room_corridors_3_5
@@ -526,7 +525,7 @@ function CHANGE_GAME()
 				global.flag[47] = 1; // got reward from armsguy
 				global.flag[48] = 1; // talked to trashguy
 				global.item[4] = ITEM_STICK;
-				global.chara_weapon = ITEM_KUNAI;
+				global.chara_weapon = ITEM_TRIDENT;
 				global.achievement[ACHIEVEMENT_MONSTNINJA] = 1;
 			}
 			if (_lvl >= 5)

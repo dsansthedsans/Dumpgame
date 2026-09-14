@@ -80,7 +80,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		
 		draw_set_valign(fa_top);
 		draw_set_halign(fa_left);
-		draw_text_width(_leftx, _bottomy, string(_world) + " - " + string(_room), (_ww - (_hspace * 2)));
+		draw_text_width(_leftx, _bottomy, string(_world) + " - " + string(_room), (_ww - (_hspace * 2)), [_color, _color], 1);
 		
 		draw_set_valign(fa_bottom);
 		draw_set_halign(fa_center);
@@ -203,7 +203,7 @@ for (var c = 1; c < (text_length + 1); c++)
 		if (string_char_at(msg[page], c) == _key && string_char_at(msg[page], (c + 1)) != "\\")
 		{
 			var _cancheck = 1;
-			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) // yellow ("HP"; "MERCY"; "Admin Realm")
+			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) // yellow ("HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]")
 			{
 				text_color[0] = c_yellow;
 				_cancheck = 0;
@@ -223,7 +223,7 @@ for (var c = 1; c < (text_length + 1); c++)
 				text_color[0] = c_fuchsia;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "P" && _cancheck == 1) // purple ("INV. FRAMES")
+			if (string_char_at(msg[page], c + 1) == "P" && _cancheck == 1) // purple ("INVINCIBILITY FRAMES")
 			{
 				text_color[0] = merge_color(merge_color(c_purple, c_blue, 0.375), c_white, 0.25);
 				_cancheck = 0;
@@ -254,14 +254,14 @@ for (var c = 1; c < (text_length + 1); c++)
 				text_color[1] = global.c_mention[1];
 				_cancheck = 0;
 			}
+			if (string_char_at(msg[page], c + 1) == "V" && _cancheck == 1) // mention 2 ("ACTIVITIES")
+			{
+				text_color[0] = global.c_mention[0];
+				_cancheck = 0;
+			}
 			if (string_char_at(msg[page], c + 1) == "U" && _cancheck == 1) // dumpcolor (positive status)
 			{
 				text_color[0] = global.c_dump;
-				_cancheck = 0;
-			}
-			if (string_char_at(msg[page], c + 1) == "6" && _cancheck == 1) // m6
-			{
-				text_color[0] = #4986B7;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "6" && _cancheck == 1) // m6
@@ -342,7 +342,7 @@ for (var c = 1; c < (text_length + 1); c++)
 	// execute effects
 	var _floatx = 0;
 	var _floaty = 0;
-	if (shaking > 0 && shake_change == 1)
+	if (shaking > 0 && shake_change == 1 && global.visualeff == true)
 	{
 		if (shaking == 1) || (shaking == 2) || (shaking == 4)
 		{

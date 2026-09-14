@@ -16,7 +16,7 @@ draw_set_valign(fa_top);
 var _name_y = (_cy + bg_y[0] + _bg1_di - 3);
 draw_set_font(fnt_main);
 draw_set_halign(fa_center);
-draw_text_width((_cx + bg_x[0] + (bg_w[0] / 2)), _name_y, string(global.chara_name), (bg_w[0] - (_bg1_di * 2)));
+draw_text_width((_cx + bg_x[0] + (bg_w[0] / 2)), _name_y, $"@{global.chara_name}", (bg_w[0] - (_bg1_di * 2)), [global.c_mention[0], global.c_mention[1]], alpha);
 
 var _info1 = "lvl\nhp\n$";
 var _info2 = string(global.chara_lvl) + "\n" + string(global.chara_curhp) + "/" + string(global.chara_maxhp) + "\n" + string(global.chara_money);

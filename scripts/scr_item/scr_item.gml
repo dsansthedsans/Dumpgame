@@ -21,8 +21,8 @@ function item_id(_item)
 		_idname = "candy";
 	if (_id == ITEM_BOWL)
 		_idname = "bowl";
-	if (_id == ITEM_KUNAI)
-		_idname = "kunai";
+	if (_id == ITEM_TRIDENT)
+		_idname = "trident";
 	if (_id == ITEM_CHOCO)
 		_idname = "choco";
 	if (_id == ITEM_PACE)
@@ -35,7 +35,7 @@ function item_type(_item)
 {
 	var _id = argument0;
 	var _type = ITEM_TYPE_CONSUMABLE;
-	if (_id == ITEM_STICK) || (_id == ITEM_KUNAI)
+	if (_id == ITEM_STICK) || (_id == ITEM_TRIDENT)
 		_type = ITEM_TYPE_WEAPON;
 	if (_id == ITEM_BANDAGE) || (_id == ITEM_BOWL) || (_id == ITEM_PACE)
 		_type = ITEM_TYPE_ARMOR;
@@ -57,7 +57,7 @@ function item_value(_item)
 	}
 	if (_id == ITEM_CHOCO)
 		_value = 14;
-	if (_id == ITEM_BOWL) || (_id == ITEM_KUNAI)
+	if (_id == ITEM_BOWL) || (_id == ITEM_TRIDENT)
 		_value = 3;
 	if (_id == ITEM_PACE)
 		_value = 6;

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_battle_blt_kunai",
-    "path":"sprites/spr_battle_blt_kunai/spr_battle_blt_kunai.yy",
+    "name":"spr_battle_blt_trident",
+    "path":"sprites/spr_battle_blt_trident/spr_battle_blt_trident.yy",
   },
   "spriteMaskId":null,
   "visible":true,

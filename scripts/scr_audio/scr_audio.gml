@@ -66,7 +66,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 		if (_asset == snd_alarm)
 			_volume *= 1.5;
 		if (_asset == snd_jingleOminous)
-			_volume *= 0.5;
+			_volume *= (0.5 - 0.125);
 		if (_asset == snd_jingleFail)
 			_volume *= 0.5;
 		if (_asset == snd_battle_danger)
@@ -86,7 +86,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 		if (_asset == snd_appearSword) || (_asset == snd_rotate)
 			_volume *= 0.75;
 		if (_asset == snd_buildupComputer)
-			_volume *= 0.625;
+			_volume *= 0.75;
 		if (_asset == snd_bellFlower)
 			_volume *= 1.5;
 		if (_asset == snd_jingleSpell)
@@ -107,10 +107,14 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.75;
 		if (_asset == snd_writer_armsguy)
 			_volume *= 1;
-		if (_asset == snd_stingFear)
+		if (_asset == unused_snd_stingFear)
 			_volume *= 0.5;
 		if (_asset == snd_stepKnight)
-			_volume *= (0.25 * 0.75);
+			_volume *= (0.25 * (0.75 - 0.125));
+		if (_asset == snd_impactTitle)
+			_volume *= 0.75;
+		if (_asset == snd_buildupCymbal)
+			_volume *= (0.75 + 0.125);
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -165,6 +169,12 @@ function audio_pitch(_audio, _pitch)
 		case snd_stepWater:
 		case snd_stepKnight:
 		_pitch += (0.05 * choose(-1, 1));
+		break;
+	}
+	switch (_asset)
+	{
+		case snd_stepWater:
+		_pitch -= 0.25;
 		break;
 	}
 	audio_sound_pitch(_audio, _pitch);

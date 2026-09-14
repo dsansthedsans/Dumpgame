@@ -361,7 +361,7 @@ if (global.menu_lvl == 1)
 			draw_set_color(_color);
 			draw_set_valign(fa_top);
 			draw_set_halign(fa_left);
-			draw_text_width((_x2 + _di), (_y + _di), ("\"" + string(_name) + "\" - [LVL " + string(_lvl) + "]\n" + string(_world) + " - " + string(_room)), (_w2 - (_di * 2)));
+			draw_text_width((_x2 + _di), (_y + _di), ("\"" + string(_name) + "\" - [LVL " + string(_lvl) + "]\n" + string(_world) + " - " + string(_room)), (_w2 - (_di * 2)), [_color, _color], option_alpha * alpha);
 		}
 		else // save não existe
 		{

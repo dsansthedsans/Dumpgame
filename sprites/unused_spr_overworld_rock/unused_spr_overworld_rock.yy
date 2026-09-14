@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_overworld_rock",
+  "%Name":"unused_spr_overworld_rock",
   "bboxMode":2,
   "bbox_bottom":19,
   "bbox_left":0,
@@ -24,19 +24,19 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"a15369a1-9b6c-499c-a3a9-3753e2ceb9d2","blendMode":0,"displayName":"default","isLocked":false,"name":"a15369a1-9b6c-499c-a3a9-3753e2ceb9d2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_overworld_rock",
+  "name":"unused_spr_overworld_rock",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"overworld",
-    "path":"folders/[!] sprites/overworld.yy",
+    "name":"[!] UNUSED !!!!!",
+    "path":"folders/[!] UNUSED !!!!!.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_overworld_rock",
+    "%Name":"unused_spr_overworld_rock",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -60,7 +60,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_overworld_rock",
+    "name":"unused_spr_overworld_rock",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -72,16 +72,16 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0ab6b7d4-153d-48d4-8ce5-1d9be5128903","path":"sprites/spr_overworld_rock/spr_overworld_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0ab6b7d4-153d-48d4-8ce5-1d9be5128903","path":"sprites/unused_spr_overworld_rock/unused_spr_overworld_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"33d66d08-cc3d-4739-8d49-a05f775f4001","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c6e169a9-3015-4a5f-80d5-dfe4ad141999","path":"sprites/spr_overworld_rock/spr_overworld_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c6e169a9-3015-4a5f-80d5-dfe4ad141999","path":"sprites/unused_spr_overworld_rock/unused_spr_overworld_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"bf376a76-04d1-45b5-ba43-e115f6747032","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"707431e2-99ad-4162-b208-81c2cdf4dafd","path":"sprites/spr_overworld_rock/spr_overworld_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"707431e2-99ad-4162-b208-81c2cdf4dafd","path":"sprites/unused_spr_overworld_rock/unused_spr_overworld_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"709a1d80-c6c7-4186-9bc1-d2605c5cf123","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"653aa62e-8fe5-427f-83b8-baa5ab772cd7","path":"sprites/spr_overworld_rock/spr_overworld_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"653aa62e-8fe5-427f-83b8-baa5ab772cd7","path":"sprites/unused_spr_overworld_rock/unused_spr_overworld_rock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"1c514627-85a6-4dae-94f7-dbbd29543495","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
