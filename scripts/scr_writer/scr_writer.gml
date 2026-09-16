@@ -115,16 +115,16 @@ function TEXT()
 					break;
 				msg[p] = _msg;
 			}
+			msg[p++] = get_text("savepoint_all_0");
 		}
-		msg[p] = get_text("savepoint_all_0");
-		question[p+1] = get_text("savepoint_all_1");
+		question[p] = get_text("savepoint_all_1");
 		question_option[1] = get_text("savepoint_all_1_1");
 		question_option[2] = get_text("savepoint_all_1_2");
-		msg_type[p+1] = "savepoint";
-		if (question_result[p+1] == 1)
+		msg_type[p] = "savepoint";
+		if (question_result[p] == 1)
 		{
-			msg[p+2] = "";
-			msg_type[p+2] = "savepoint";
+			msg[p+1] = "";
+			msg_type[p+1] = "savepoint";
 			filesaved = 1;
 		}
 	}
@@ -310,8 +310,8 @@ function TEXT()
 			msg_face[2] = spr_dialogface_m6_default;
 			break;
 			case 2:
-			msg_face[0] = spr_dialogface_m6_sassy;
-			msg_face[1] = spr_dialogface_m6_default;
+			//msg_face[0] = spr_dialogface_m6_sassy;
+			//msg_face[1] = spr_dialogface_m6_default;
 			break;
 			case 3:
 			msg_face[0] = spr_dialogface_m6_angry;

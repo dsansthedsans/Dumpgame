@@ -168,6 +168,9 @@ function audio_pitch(_audio, _pitch)
 		case snd_step_1:
 		case snd_stepWater:
 		case snd_stepKnight:
+		case snd_explosionRealistic:
+		case snd_explosionLightning:
+		case snd_explosionEcho:
 		_pitch += (0.05 * choose(-1, 1));
 		break;
 	}

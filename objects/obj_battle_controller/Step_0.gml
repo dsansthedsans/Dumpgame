@@ -532,8 +532,8 @@ if (assist.active == true)
 					speed  = other.assist.objectSpeedMax;
 					direction = point_direction(x, y, other.heart.x, other.heart.y);
 				}
-				image_alpha = lerp(image_alpha, 1, (0.075 * 2));
-				image_angle += ((speed * sign(_angleDifference)) * 2);
+				image_alpha = lerp(image_alpha, 1, ((global.visualeff == true) ? (0.075 * 2) : 1));
+				image_angle += ((speed * sign(_angleDifference)) * 2 * global.visualeff);
 				if (place_meeting(x, y, other.heart) == true)
 				{
 					with (other)
@@ -560,10 +560,11 @@ if (assist.active == true)
 			if (active == false)
 			{
 				speed = 0;
-				image_alpha = lerp(image_alpha, 0, 0.1);
-				image_xscale = lerp(image_xscale, 1, 0.1);
-				image_yscale = lerp(image_yscale, 1, 0.1);
-				image_angle += 1;
+				var _spd = ((global.visualeff == true) ? 0.1 : 1)
+				image_alpha = lerp(image_alpha, 0, _spd);
+				image_xscale = lerp(image_xscale, 1, _spd);
+				image_yscale = lerp(image_yscale, 1, _spd);
+				image_angle += (1 * global.visualeff);
 				if (image_alpha <= 0.1)
 				{
 					other.assist.object = undefined;

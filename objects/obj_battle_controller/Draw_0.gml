@@ -189,7 +189,7 @@ if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == fal
 		}
 	}
 	if (battle_group == 1)
-		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "pt"))), (box_x + (box_w / 4) + (box_w / 8) - 20 + irandom(1)), (box_y + 16 + irandom(1)), 1, 1, 0, c_white, 1);
+		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "pt"))), (box_x + (box_w / 4) + (box_w / 8) - 20 + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 1, 1, 0, c_white, 1);
 }
 
 draw_set_alpha(1);

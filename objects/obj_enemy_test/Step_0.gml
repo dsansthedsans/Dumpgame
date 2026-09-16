@@ -17,6 +17,7 @@ if (hurt == 1 && hurt_time < 60)
 	{
 		controller.enemy_curhp[myself] -= obj_battle_fighttarget.dmg;
 		create(-20, -20, obj_battle_dmgwriter);
+		battle_enemy_hurtAmt();
 	}
 	if (hurt_time == 20)
 		audio_play(hurtsound, false, VOLUME_SOUND);
@@ -43,7 +44,8 @@ else if (hurt_time >= 60)
 		controller.battle_expreward += controller.enemy_reward_exp[myself];
 		controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 		controller.enemy_type[myself] = 0;
-		create(x, y, obj_battle_vapor);
+		if (global.visualeff == true)
+				create(x, y, obj_battle_vapor);
 		destroy(body);
 	}
 	else

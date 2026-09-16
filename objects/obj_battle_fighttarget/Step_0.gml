@@ -5,7 +5,7 @@ if (speed != 0)
 	{
 		x = round(x);
 		speed = 0;
-		image_speed = 0.4;
+		image_speed = (0.4 * global.visualeff);
 		alarm[0] = 1;
 		theirdef = controller.enemy_def[target];
 		mystat = (global.chara_wstrength + global.chara_atk);
@@ -15,7 +15,9 @@ if (speed != 0)
 			postx = (640 - x);
 		xfactor = (postx / 320);
 		dmg = (dmg * (xfactor * 3));
-		xscale = 1.25;
+		if (global.chara_weapon == ITEM_TRIDENT && x >= (320 - item_trident_lightningDistance) && x <= (320 + item_trident_lightningDistance) && controller.enemy_type[target] != 6)
+			dmg *= 1.5;
+		xscale = 1.35;
 		/*if (postx >= (320 - 10))
 		{
 			dmg *= 1.25;

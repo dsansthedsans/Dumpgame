@@ -2,15 +2,7 @@ function TEXTDATA()
 {
 	/*
 	
-	
-	
-	AJEITAR DIALOGOS BROKEN CLOCK (EFEITOS [SHAKE E FLOAT AO MESMO TEMPO?])
-	
-	
-	
-	
-	
-	
+	TRADUZIR PARA PORTUGUES::::::::::::FAZER FUNÇÃO COM TRES ARGUMENTOS::::UM TEXT_ID, OS OUTROS DOIS TEXT VALUE (PARA "i++" FUNCIONAR)
 	
 	
 	RAT NPC
@@ -243,7 +235,7 @@ function TEXTDATA()
 	ds_map_add(t, "item_desc_candy",		"* \"Cheap Candy\" [:Y+\\7 HP;D]^3&* (:U1/7;D chance to restore additional :YHP;D when eaten.)"); // "+7 HP" and "1/7 chance" references the Brazilian candy "7-Belo"
 	ds_map_add(t, "item_desc_bowl",			"* \"Candy Bowl\" [:B3 DEF;D]^3&* (:U1/7;D chance to fully block damage when hurt.)");// "1/7 chance" references the Brazilian candy "7-Belo"
 	ds_map_add(t, "item_desc_choco",		"* \"Chocolate Bar\" [:Y+\\14 HP;D]^3&* (Very sticky,^3 but lactose-free.)"); // "+14 HP" is the double of Cheap Candy's "+7 HP", and this item references "Nestlé Classic Duo" (double chocolate bar)
-	ds_map_add(t, "item_desc_trident",		"* \"Enchanted Trident\" [:R3 ATK;D]^3&* (Summons a lightning when :RATTACKing;D at the center mark.)");
+	ds_map_add(t, "item_desc_trident",		"* \"Enchanted Trident\" [:R3 ATK;D]^3&* (Summons a lightning when :RATTACKing;D at the center mark.)"); // references Minecraft's "Trident" item with "Channeling" enchantment;
 	ds_map_add(t, "item_desc_pace",			"* \"Temporary Pacemaker\" [:B6 DEF;D]^3&* (Increases the duration of :PINVINCIBILITY FRAMES;D by :U50%;D.)"); // "Temporary" references Broken Clock, but also explains why the player can equip the item without surgery; "Pacemaker" references both Broken Clock and the player's SOUL
 	ds_map_add(t, "item_desc_brick",		"* \"Concrete Brick\" [:Y+\\0 HP;D]^3&* (Tasty,^1 delicious,^1 divine.)");
 	ds_map_add(t, "item_equip", "* (You equipped ");
@@ -298,7 +290,7 @@ function TEXTDATA()
 	ds_map_add(t, "charapause_0", "Resume");
 	ds_map_add(t, "charapause_1", "Main Menu");
 	ds_map_add(t, "charapause_2", "Quit Game");
-	ds_map_add(t, "charapause_warning_title", "Are you sure?\nUnsaved progress\nwill be ERASED."); // "ERASE" and "DO NOT" from "UNDERTALE"
+	ds_map_add(t, "charapause_warning_title", "Are you sure?\nUnsaved progress\nwill be ERASED."); // inspired by "ERASE" and "DO NOT" from "UNDERTALE"
 	ds_map_add(t, "charapause_warning_0", "No");
 	ds_map_add(t, "charapause_warning_1", "Yes");
 	// Game Over
@@ -682,7 +674,7 @@ function TEXTDATA()
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* Even after EVERYTHING&I've done to HURT you?!"); // inspired by "After everything I have done to hurt you..." from "UNDERTALE"
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* :@@[name];D...^2&* You shouldn't say&sorry,^1 Y'KNOW...");
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* You REALLY shouldn't.^3^3&* You haven't done&ANYTHING wrong.");
-	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* But I have,^1 and&I understand if&you HATE me."); // inspired by "I understand if you hate me" from "UNDERTALE"
+	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* But I have,^1 and&I understand if&you hate me."); // inspired by "I understand if you hate me" from "UNDERTALE"
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* There's NO excuse for&how I treated you."); // inspired by "There's no excuse for what I've done" from "UNDERTALE"
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* Please,^1 take this.^1&* You deserve it way&more than me."); // If you wish to go home, you'll need this.; Make it up to you
 	ds_map_add(t, $"event_brock_battle_3_{i}_1", "* (You got :YTemporary Pacemaker;D.)");
@@ -733,9 +725,13 @@ function TEXTDATA()
 	ds_map_add(t, "room_captcha_guidesign_3_3_1", "* \"Restart the puzzle by stepping on the 'X' button.\"");
 	ds_map_add(t, "room_captcha_endsign_3_0", "* \"Thank you for completing stage three of reCAPTCHA's verification.\"");
 	ds_map_add(t, "room_captcha_endsign_3_1", "* \"You are now free to&access the server.\"");
+	i = 0;
+	ds_map_add(t, $"captcha3_buttonsWord_{i++}", "MISUNDERSTANDING");
+	ds_map_add(t, $"captcha3_buttonsWord_{i++}", "INCOMPREHENSIBLE");
+	ds_map_add(t, $"captcha3_buttonsWord_{i++}", "RESPONSIBILITIES");
 	// room_corridors_17
 	i = 0;
-	ds_map_add(t, $"savepoint_4_{i++}", "* (Seeing monsters peacefully living their day-to-day lives...)");
+	ds_map_add(t, $"savepoint_4_{i++}", "* (Seeing monsters you've met peacefully living their day-to-day lives...)");
 	ds_map_add(t, $"savepoint_4_{i++}", "* (.)");
 	z = 0;
 	i = 0;

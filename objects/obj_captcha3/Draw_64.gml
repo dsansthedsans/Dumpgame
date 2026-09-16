@@ -1,6 +1,6 @@
 // Timer
-timer.alpha = lerp(timer.alpha, timer.active, 0.15);
-if (timer.fog.active == true && timer.seconds <= timer.fog.secondsMin && chara_murder() < 1)
+timer.alpha = lerp(timer.alpha, timer.active, ((global.visualeff == true) ? 0.15 : 1));
+if (timer.fog.active == true && timer.seconds <= timer.fog.secondsMin && chara_murder() < 1 && global.visualeff == true)
 {
 	// Fog
 	timer.fog.alpha = clamp((timer.fog.alpha + (timer.fog.alpha_max / timer.fog.alpha_time)), 0, timer.fog.alpha_max);
@@ -14,8 +14,8 @@ if (timer.fog.active == true && timer.seconds <= timer.fog.secondsMin && chara_m
 	draw_set_alpha(_fog_alpha * timer.alpha);
 	draw_rectangle_colour(-20, -20, (20 + room_width + 20), (20 + room_height + 20), timer.fog.color, timer.fog.color, timer.fog.color, timer.fog.color, false);
 }
-timer.color_green = lerp(timer.color_green, 0, 0.05);
-timer.scale = lerp(timer.scale, 1, 0.1);
+timer.color_green = lerp(timer.color_green, 0, ((global.visualeff == true) ? 0.05 : 1));
+timer.scale = lerp(timer.scale, 1, ((global.visualeff == true) ? 0.1 : 1));
 draw_set_color(merge_color(make_color_rgb(255, timer.color_green, 0), c_white, 0.2));
 if (chara_murder() >= 1)
 	draw_set_color(c_white);

@@ -1,0 +1,12 @@
+controller = obj_battle_controller;
+target = controller.enemy_target;
+enemy = controller.enemy_obj[target];
+image_xscale = 2;
+image_yscale = 2;
+x = enemy.orig_x;
+y = (enemy.orig_y - (enemy.sprite_height / 2) - (sprite_height / 2));
+depth = (controller.battle_depth[8] - 50);
+image_speed = (1 * global.visualeff);
+image_blend = c_white;
+audio_play(snd_explosionLightning,, VOLUME_SOUND,,,, 1.25);
+shakescreen(5, 5);

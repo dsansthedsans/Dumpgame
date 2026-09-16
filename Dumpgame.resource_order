@@ -38,6 +38,7 @@
     {"name":"obj_battle_fighttarget","order":8,"path":"objects/obj_battle_fighttarget/obj_battle_fighttarget.yy",},
     {"name":"obj_battle_grazeheart","order":9,"path":"objects/obj_battle_grazeheart/obj_battle_grazeheart.yy",},
     {"name":"obj_battle_heart","order":10,"path":"objects/obj_battle_heart/obj_battle_heart.yy",},
+    {"name":"obj_battle_item_trident_lightning","order":17,"path":"objects/obj_battle_item_trident_lightning/obj_battle_item_trident_lightning.yy",},
     {"name":"obj_battle_knife","order":11,"path":"objects/obj_battle_knife/obj_battle_knife.yy",},
     {"name":"obj_battle_quicker","order":12,"path":"objects/obj_battle_quicker/obj_battle_quicker.yy",},
     {"name":"obj_battle_sparecloud","order":13,"path":"objects/obj_battle_sparecloud/obj_battle_sparecloud.yy",},

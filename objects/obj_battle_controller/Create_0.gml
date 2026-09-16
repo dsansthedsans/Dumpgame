@@ -60,10 +60,10 @@ hp_color[1] = #DD2929;
 gui_alpha = 1;
 
 // box
-box_x = round((room_width / 2) - 1);
+box_x = (room_width / 2);
 box_y = round(room_width / 2);
-box_w = 564;
-box_h = 129;
+box_w = (564 - 1);
+box_h = (128 - 1);
 box_nextx = box_x;
 box_nexty = box_y;
 box_nextw = box_w;
@@ -72,7 +72,7 @@ box_defaultx = box_x;
 box_defaulty = box_y;
 box_defaultw = box_w;
 box_defaulth = box_h;
-box_borderw = 5;
+box_borderw = 4;
 
 // heart
 heart = create(-20, -20, obj_battle_heart);

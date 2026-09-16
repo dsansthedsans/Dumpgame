@@ -64,6 +64,7 @@
     {"id":{"name":"obj_battle_fighttarget","path":"objects/obj_battle_fighttarget/obj_battle_fighttarget.yy",},},
     {"id":{"name":"obj_battle_grazeheart","path":"objects/obj_battle_grazeheart/obj_battle_grazeheart.yy",},},
     {"id":{"name":"obj_battle_heart","path":"objects/obj_battle_heart/obj_battle_heart.yy",},},
+    {"id":{"name":"obj_battle_item_trident_lightning","path":"objects/obj_battle_item_trident_lightning/obj_battle_item_trident_lightning.yy",},},
     {"id":{"name":"obj_battle_knife","path":"objects/obj_battle_knife/obj_battle_knife.yy",},},
     {"id":{"name":"obj_battle_quicker","path":"objects/obj_battle_quicker/obj_battle_quicker.yy",},},
     {"id":{"name":"obj_battle_sparecloud","path":"objects/obj_battle_sparecloud/obj_battle_sparecloud.yy",},},

@@ -178,6 +178,11 @@ if (timer.active == true)
 			moveable.object.canmove = 0;
 			global.flag[50] = 0;
 			global.chara_cutscene = false;
+			if (global.chara_move == true)
+			{
+				global.chara_open_menu = true;
+				global.chara_pause_game = true;
+			}
 			if (chara_murder() < 1)
 				audio_play(snd_trombone, 0, VOLUME_SOUND);
 		}

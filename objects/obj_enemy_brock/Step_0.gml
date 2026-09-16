@@ -21,6 +21,7 @@ if (active == 1)
 			dmg = obj_battle_fighttarget.dmg
 			controller.enemy_curhp[myself] -= dmg;
 			create(-20, -20, obj_battle_dmgwriter);
+			battle_enemy_hurtAmt();
 		}
 
 		hurt_stage = 0;

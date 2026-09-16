@@ -5,8 +5,8 @@ else
 	draw_sprite_part_ext(sprite_index, image_index, 0, 0, sprite_width, (sprite_height - 2), (x - (sprite_width / 2) + 0.5), (_chara_y - (sprite_height - 2) - 2), xscale, yscale, image_blend, image_alpha);	
 if (xscale < 1) || (yscale < 1)
 {
-	xscale = lerp(xscale, 1, 0.3);
-	yscale = lerp(yscale, 1, 0.3);
+	xscale = lerp(xscale, 1, ((global.visualeff == true) ? 0.3 : 1));
+	yscale = lerp(yscale, 1, ((global.visualeff == true) ? 0.3 : 1));
 }
 if (global.chara_facing != -1 && global.chara_facing != SIT) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 {

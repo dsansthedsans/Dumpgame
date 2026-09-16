@@ -1,6 +1,14 @@
 
 debugalarm = 0;
 
+press_l = false;
+press_r = false;
+press_u = false;
+press_d = false;
+press_shift = false;
+press_enter = false;
+hold_ctrl = false;
+
 global.chara_move = 0;
 page = 0;
 text = global.writer_text;
@@ -64,6 +72,13 @@ filesaved = 0;
 
 // get text and new values
 TEXT();
+if (question[page] != "%%%")
+{
+	msg[page] = question[page];
+	if (msg[page] == "")
+		writing = false;
+	question_active = 1;
+}
 event_user(0);
 event_user(2);
 event_user(3);

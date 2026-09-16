@@ -3,7 +3,7 @@
 for (var i = 0; i < instance_number(obj_overworld_solid); i++)
 {
 	treeobj = instance_find(obj_overworld_solid, i);
-	if (treeobj.leaf_fall == 1 && treeobj.leaf_create == 1)
+	if (treeobj.leaf_fall == 1 && treeobj.leaf_create == 1 && global.visualeff == true)
 	{
 		var _x = (treeobj.x + 30 + choose(irandom_range(-11, -20), irandom_range(11, 20)));
 		var _y = (treeobj.y + 35);
@@ -14,7 +14,7 @@ for (var i = 0; i < instance_number(obj_overworld_solid); i++)
 }
 
 // fumaça do mee6
-if (room == room_corridors_18 && global.flag[61] == 0 && global.flag[2] == 0 && global.party[0] != -1)
+if (room == room_corridors_18 && global.flag[61] == 0 && global.flag[2] == 0 && global.party[0] != -1 && global.visualeff == true)
 {
 	m6 = global.party[0];
 	

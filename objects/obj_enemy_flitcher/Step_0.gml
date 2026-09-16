@@ -21,6 +21,7 @@ if (active == 1)
 		{
 			controller.enemy_curhp[myself] -= obj_battle_fighttarget.dmg;
 			create(-20, -20, obj_battle_dmgwriter);
+			battle_enemy_hurtAmt();
 		}
 		if (hurt_time == 20)
 			audio_play(hurtsound, 0, VOLUME_SOUND);
@@ -50,7 +51,8 @@ if (active == 1)
 			controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 			controller.enemy_type[myself] = 0;
 			battle_enemy_allAngry();
-			create(x, y, obj_battle_vapor);
+			if (global.visualeff == true)
+				create(x, y, obj_battle_vapor);
 			destroy(body);
 		}
 		else
@@ -149,7 +151,7 @@ if (active == 1)
 				body.sprite_index = spr_enemy_flitcher_scared;
 				body.image_speed = 1;
 				canshake = choose(0, 0, 0, 1);
-				if (canshake == 1)
+				if (canshake == 1 && global.visualeff == true)
 				{
 					xshake = choose(0, 1);
 					yshake = choose(0, 1);

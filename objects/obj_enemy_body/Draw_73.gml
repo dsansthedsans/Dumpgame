@@ -1,8 +1,10 @@
 if (active == true)
 {
+	event_user(0);
 	// Rhonhey
 	if (type == 7)
 	{
+		event_user(0);
 		// Head
 		for (var i = 1; i >= 0; i--)
 		{
@@ -14,4 +16,6 @@ if (active == true)
 			draw_sprite_ext(head_sprite, ((i * (sprite_get_number(head_sprite) / 2)) + floor(head_image)), _head_x, _head_y, 2, 2, head_angle, c_white, image_alpha);
 		}
 	}
+	event_user(1);
+	item_trident_lightningFog = !item_trident_lightningFog;
 }

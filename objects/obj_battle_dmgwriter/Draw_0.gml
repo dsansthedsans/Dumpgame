@@ -1,10 +1,10 @@
-myalpha = lerp(myalpha, !fade, (0.25 - (0.125 * fade)));
+myalpha = lerp(myalpha, !fade, ((global.visualeff == true) ? (0.25 - (0.125 * fade)) : 1));
 if (fade == true && abs(0 + myalpha) <= 0.1)
 	destroy(id);
 // bar
 if (drawbar == 1)
 {
-	apphp = lerp(apphp, curhp, 0.15);
+	apphp = lerp(apphp, curhp, ((global.visualeff == true) ? 0.15 : 1));
 	draw_battle_bar($"{clamp(round((apphp / maxhp) * 100), 0, 100)}%", apphp, controller.enemy_maxhp[target], myx, myy, controller.enemy_obj[target].hpwidth, mycolor_cur, mycolor_max, myalpha);
 }
 // dmg

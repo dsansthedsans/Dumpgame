@@ -1,5 +1,6 @@
 if (active == 1)
 {
+	event_user(0);
 	draw_set_alpha(image_alpha);
 	if (type == 2000) // Toilet
 	{
@@ -203,16 +204,17 @@ if (active == 1)
 		{
 			if (stage == 0)
 			{
-				vspeed = -4;
-				hspeed = 0.65;
-				gravity = 0.1;
+				mult = 0.875;
+				vspeed = -4 * mult;
+				hspeed = 0.65 * mult;
+				gravity = 0.1 * mult;
 				sprite_index = spr_enemy_brock_dead;
 				stage = 1;
 			}
 			else if (stage == 1)
 			{
 				var _maxy = (controller.box_y - (controller.box_h / 2) - (sprite_height / 2) + 20);
-				image_angle -= 0.5;
+				image_angle -= 0.5 * mult;
 				if (y >= _maxy)
 				{
 					if (global.visualeff == 1)
@@ -266,14 +268,14 @@ if (active == 1)
 		// lines
 		for (var i = 0; i < 3; i++)
 		{
-			line_time[i] += ((line_amt[i] / (i + 1)) * line_side[i]);
+			line_time[i] += ((line_amt[i] / (i + 1)) * line_side[i] * global.visualeff);
 			draw_sprite_ext(line_spr, i, x + _shake_offsetX, y + _shake_offsetY, image_xscale, image_yscale, (line_time[i] + image_angle), c_white, image_alpha);
 		}
 		
 		// explosion
 		if (movement == 5 && stage >= 2)
 		{	
-			var _rd = random(0.3);
+			var _rd = (random(0.3) * global.visualeff);
 			var _yy = (controller.box_y - (controller.box_h / 2) + 4);
 			var _xsc = (3.5 - explosion_alpha * 1.8 + _rd);
 			var _scy = (3.8 - explosion_alpha * 2 + _rd);
@@ -406,6 +408,7 @@ if (active == 1)
 		// head
 		draw_sprite_part_ext(_head_spr, head_image, 0, 0, _head_width, 25, _head_x, _head_y, _head_scale, _head_scale, c_white, 1);
 	}
+	event_user(1);
 }
 
 

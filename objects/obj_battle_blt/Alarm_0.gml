@@ -30,13 +30,13 @@ if (type == 1)
 	direction = point_direction(x, y, controller.heart.x, controller.heart.y);
 	dmg = 1;
 	outside_box = 1;
-	target_xscale = 1;
-	target_yscale = 3;
+	target_xscale = ((global.visualeff == true) ? 1 : 2);
+	target_yscale = ((global.visualeff == true) ? 3 : 2);
 	scale_x_vel = 0;
 	scale_y_vel = 0;
 	spring_force = 0.15;
 	damping = 0.85;
-	angmult = choose(-1, 1);
+	angmult = (choose(-1, 1) * global.visualeff);
 	speedadd = random_range(0.01, 0.03);
 	audio_play(snd_splatBubble, false, VOLUME_SOUND,,,, (1.25 + random_range(-0.1, 0.1)));
 }

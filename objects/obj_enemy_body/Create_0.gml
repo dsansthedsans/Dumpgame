@@ -15,3 +15,4 @@ randomx = 0;
 randomy = 0;
 delay = 0;
 siner = 0;
+item_trident_lightningFog = true;

@@ -32,6 +32,8 @@ function battle_getgroup()
 		battle_group = 0;
 	if (global.battle_nextgroup != 0) // override battlegroup with nextgroup
 		battle_group = global.battle_nextgroup;
+	else if (global.indebug == true && global.debug_hud == true)
+		battle_group = 12;
 	global.battle_nextgroup = 0;
 }
 function battle_setupgroup()
@@ -361,6 +363,13 @@ function battle_enemy_allAngry()
 				break;
 			}
 		}
+	}
+}
+function battle_enemy_hurtAmt()
+{
+	if (exists(obj_battle_item_trident_lightning) == true)
+	{
+		hurt_amt *= 2;
 	}
 }
 function battle_getattack()

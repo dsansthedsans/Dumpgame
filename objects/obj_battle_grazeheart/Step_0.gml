@@ -10,7 +10,7 @@ if (global.flag[2] == true && control.assist.active == true)
 			if (touching[| i].object_index == obj_battle_blt && touching[| i].active == true && touching[| i].can_damage == true)
 			{
 				_damage = true;
-				image_alpha = 1;
+				image_alpha = (1 * global.visualeff);
 				if (ds_list_find_index(touched, touching[| i]) == -1)
 				{
 					ds_list_add(touched, touching[| i]);
@@ -28,4 +28,4 @@ if (global.flag[2] == true && control.assist.active == true)
 	ds_list_destroy(touching);
 }
 if (_damage == false && image_alpha > 0)
-	image_alpha -= 0.05;
+	image_alpha -= (0.05 + (0.95 * !global.visualeff));

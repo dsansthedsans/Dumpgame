@@ -238,9 +238,9 @@ function shakeobj(_obj, _xint, _yint, _intlower)
 {
 	shaker = instance_create_layer(0, 0, "Instances", obj_shakeobj)
 	shaker.obj = argument0;
-	shaker.xint = argument1;
-	shaker.yint = argument2;
-	shaker.intlower = argument3;
+	shaker.xint = (argument1 * global.visualeff);
+	shaker.yint = (argument2 * global.visualeff);
+	shaker.intlower = (argument3 * global.visualeff);
 }
 function shakeobj_small() 
 {
@@ -254,8 +254,8 @@ function screenpos(_x, _y)
 }
 function shakescreen(_xint, _yint)
 {
-	obj_GAME_CONTROLLER.cam_shake_xint += argument0;
-	obj_GAME_CONTROLLER.cam_shake_yint += argument1;
+	obj_GAME_CONTROLLER.cam_shake_xint += (argument0 * global.visualeff);
+	obj_GAME_CONTROLLER.cam_shake_yint += (argument1 * global.visualeff);
 	obj_GAME_CONTROLLER.cam_shake_stage = 1;
 }
 

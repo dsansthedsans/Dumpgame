@@ -22,6 +22,7 @@ if (active == 1)
 			create(-20, -20, obj_battle_dmgwriter);
 			audio_play(hurtsound, 0, VOLUME_SOUND);
 			audio_sound_set_track_position(thisaudio, 0.25);
+			battle_enemy_hurtAmt();
 		}
 		x = normal_x;
 		y = normal_y;
@@ -45,7 +46,8 @@ if (active == 1)
 			controller.battle_expreward += controller.enemy_reward_exp[myself];
 			controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 			controller.enemy_type[myself] = 0;
-			create(x, y, obj_battle_vapor);
+			if (global.visualeff == true)
+				create(x, y, obj_battle_vapor);
 			destroy(body);
 		}
 		else

@@ -45,24 +45,27 @@ function item_value(_item)
 {
 	var _id = argument0;
 	var _value = 0;
-	
-	if (_id == ITEM_CANDY)
+	switch (_id)
 	{
+		// "Cheap Candy"
+		case ITEM_CANDY:
 		_value = 7;
 		if (irandom_range(1, 7) == 7)
 		{
 			_value = 10;
 			audio_play(snd_jingleSpell, false, VOLUME_SOUND);
 		}
-	}
-	if (_id == ITEM_CHOCO)
-		_value = 14;
-	if (_id == ITEM_BOWL) || (_id == ITEM_TRIDENT)
+		break;
+		// "Candy Bowl"; "Enchanted Trident"
+		case ITEM_BOWL:
+		case ITEM_TRIDENT:
 		_value = 3;
-	if (_id == ITEM_PACE)
-		_value = 6;
-	if (_id == ITEM_BRICK)
-		_value = 0;
+		break;
+		// "Chocolate Bar"
+		case ITEM_CHOCO:
+		_value = 14;
+		break;
+	}
 	return _value;
 }
 function item_name(_item, _type)

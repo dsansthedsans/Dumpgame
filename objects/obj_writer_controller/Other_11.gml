@@ -36,6 +36,8 @@ if (msg[page] != "%%%") || (question[page] != "%%%")
 	if (question[page] != "%%%")
 	{
 		msg[page] = question[page];
+		if (msg[page] == "")
+			writing = false;
 		question_active = 1;
 	}
 	

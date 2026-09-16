@@ -427,7 +427,8 @@ function chara_damage()
 		global.chara_curhp = clamp((global.chara_curhp - _dmg), 0, global.chara_maxhp);
 		if (global.chara_curhp > 0)
 		{
-			image_speed = 0.4;
+			image_speed = (0.4 * global.visualeff);
+			image_index = 1;
 			invtime = chara_invtime();
 		}
 		else
