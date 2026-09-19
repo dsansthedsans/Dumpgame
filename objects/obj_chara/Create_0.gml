@@ -47,7 +47,7 @@ running = 0;
 friskdance = 1;
 inwater = 0;
 
-
+pausechange = false;
 maxsteps = 9999;
 battlecon = 0;
 

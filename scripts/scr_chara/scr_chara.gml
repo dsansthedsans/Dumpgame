@@ -190,7 +190,7 @@ function chara_inwhat()
 		global.ingame = 1;
 	else if (room == room_menu)
 		global.inmenu = 1;
-	else if (room == room_intro)
+	else if (room == room_event_story)
 		global.inintro = 1;
 	else if (room == room_battle)
 		global.inbattle = 1;
@@ -382,6 +382,8 @@ function chara_murder()
 			_murder = 1;
 		if (global.flag[42] == false && global.chara_move == true)
 		{
+			if (audio_playing(snd_jingleOminous) == true)
+				audio_stop(snd_jingleOminous);
 			audio_play(((global.flag[38] == true) ? snd_jingleOminous : snd_jingleLuminous), false, VOLUME_SOUND);
 			global.flag[42] = true;
 		}
@@ -398,7 +400,7 @@ function chara_hp(_amt)
 function chara_stepping()
 {
 	stepplay = 0;
-	if (chara_murder() >= 2)
+	if (global.world_curpopulation[chara_world()] <= 0 && global.flag[40] == false) || (chara_murder() >= 2)
 	|| (room == room_corridors_1_5)
 	|| (room == room_corridors_2)
 	|| (room == room_corridors_11 && global.flag[39] == true && global.flag[41] == false)

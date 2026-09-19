@@ -5,69 +5,60 @@ function savefile_write()
 	var _file = file_text_open_write(global.game_directory + string(_file_name));
 	if (_file != -1)
 	{
-	file_text_write_string(_file, global.chara_name);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_money);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_lvl);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_exp);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_spares);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_kills);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_heals);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_deaths);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_weapon);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_armor);
-	file_text_writeln(_file);
-	
-	file_text_write_string(_file, room_get_name(global.chara_room));
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, global.chara_world);
-	file_text_writeln(_file);
-	
-	file_text_write_real(_file, chara_murder());
-	file_text_writeln(_file);
-	
-	for (var i = 0; i < global.item_length; i++)
-	{
-		file_text_write_real(_file, global.item[i]);
+		file_text_write_string(_file, global.chara_name);
 		file_text_writeln(_file);
-	}
-	
-	for (var i = 0; i < global.itemDropped_lengthMax; i++)
-	{
-		file_text_write_string(_file, json_stringify(global.itemDropped[i]));
+		file_text_write_real(_file, global.chara_money);
 		file_text_writeln(_file);
-	}
-	for (var i = 0; i < array_length(global.flag); i++)
-	{
-		file_text_write_string(_file, global.flag[i]);
+		file_text_write_real(_file, global.chara_lvl);
 		file_text_writeln(_file);
-	}
-	for (var w = 0; w < array_length(global.world_curpopulation); w++)
-	{
-		file_text_write_string(_file, global.world_curpopulation[w]);
+		file_text_write_real(_file, global.chara_exp);
 		file_text_writeln(_file);
-		file_text_write_string(_file, global.world_sparedpopulation[w]);
+		file_text_write_real(_file, global.chara_spares);
 		file_text_writeln(_file);
-	}
-	file_text_close(_file);
+		file_text_write_real(_file, global.chara_kills);
+		file_text_writeln(_file);
+		file_text_write_real(_file, global.chara_heals);
+		file_text_writeln(_file);
+		file_text_write_real(_file, global.chara_deaths);
+		file_text_writeln(_file);
+		file_text_write_real(_file, global.chara_weapon);
+		file_text_writeln(_file);
+		file_text_write_real(_file, global.chara_armor);
+		file_text_writeln(_file);
+		file_text_write_string(_file, room_get_name(global.chara_room));
+		file_text_writeln(_file);
+		file_text_write_real(_file, global.chara_world);
+		file_text_writeln(_file);
+		file_text_write_real(_file, chara_murder());
+		file_text_writeln(_file);
+		for (var i = 0; i < array_length(global.chara_stopwatch.time); i++)
+		{
+			file_text_write_string(_file, global.chara_stopwatch.time[i]);
+			file_text_writeln(_file);
+		}
+		for (var i = 0; i < global.item_length; i++)
+		{
+			file_text_write_real(_file, global.item[i]);
+			file_text_writeln(_file);
+		}
+		for (var i = 0; i < global.itemDropped_lengthMax; i++)
+		{
+			file_text_write_string(_file, json_stringify(global.itemDropped[i]));
+			file_text_writeln(_file);
+		}
+		for (var i = 0; i < array_length(global.flag); i++)
+		{
+			file_text_write_string(_file, global.flag[i]);
+			file_text_writeln(_file);
+		}
+		for (var w = 0; w < array_length(global.world_curpopulation); w++)
+		{
+			file_text_write_string(_file, global.world_curpopulation[w]);
+			file_text_writeln(_file);
+			file_text_write_string(_file, global.world_sparedpopulation[w]);
+			file_text_writeln(_file);
+		}
+		file_text_close(_file);
 	}
 }
 function savefile_read(_savefile)
@@ -78,54 +69,45 @@ function savefile_read(_savefile)
 	{
 		savefile_name = file_text_read_string(_file);
 		file_text_readln(_file);
-		
 		savefile_money = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_lvl = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_exp = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_spares = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_kills = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_heals = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_deaths = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_weapon = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_armor = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_room = asset_get_index(file_text_read_string(_file));
 		file_text_readln(_file);
-		
 		savefile_world = file_text_read_real(_file);
 		file_text_readln(_file);
-		
 		savefile_murder = file_text_read_real(_file);
 		file_text_readln(_file);
+		for (var i = 0; i < array_length(global.chara_stopwatch.time); i++)
+		{
+			savefile_stopwatch_time[i] = file_text_read_real(_file);
+			file_text_readln(_file);
+		}
 		for (var i = 0; i < global.item_length; i++)
 		{
 			savefile_item[i] = file_text_read_real(_file);
 			file_text_readln(_file);
 		}
-		
 		for (var i = 0; i < global.itemDropped_lengthMax; i++)
 		{
 			savefile_itemDropped[i] = json_parse(file_text_read_string(_file));
 			file_text_readln(_file);
 		}
-		
 		for (var i = 0; i < array_length(global.flag); i++)
 		{
 			savefile_flag[i] = file_text_read_string(_file);
@@ -160,6 +142,7 @@ function savefile_load(_savefile)
 		global.chara_armor = savefile_armor;
 		global.chara_room = savefile_room;
 		global.chara_world = savefile_world;
+		global.chara_stopwatch.time = savefile_stopwatch_time;
 		for (var i = 0; i < global.item_length; i++)
 			global.item[i] = savefile_item[i];
 		for (var i = 0; i < global.itemDropped_lengthMax; i++)

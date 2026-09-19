@@ -30,13 +30,13 @@ teachInfo_alpha = [0, 0, 0];
 teachInfo_alphaTarget = [1, 1, 1];
 teachInfo_alphaSpeed = 0.05;
 teachInfo_textColor = [(#748CAB), (#4986B7), merge_color(c_yellow, c_white, 0.5)];
-DEBUG_SKIP = (true * global.indebug);
+DEBUG_SKIP = (false * global.indebug);
 if (DEBUG_SKIP == true)
 {
 	global.flag[66] = 2;
 	global.flag[69] = 1;
 }
-if (global.flag[2] == false && global.flag[1] == false && global.flag[66] == 2 && global.flag[69] == true)
+if (global.flag[66] == 2 && global.flag[69] == true && global.flag[1] == false && global.flag[2] == false)
 {
 	con = 1;
 	chara_facing(UP);

@@ -134,7 +134,7 @@ function TEXTDATA()
 	ds_map_add(t, $"menu_name_3",		"MEE6");
 	ds_map_add(t, $"menu_namemsg_3",		"I suggest you choose\na different name.");
 	ds_map_add(t, $"menu_name_4",		"Armsguy");
-	ds_map_add(t, $"menu_namemsg_4",		"I Know, My Name Cool.\nBut Not For Ya.");
+	ds_map_add(t, $"menu_namemsg_4",		"I Know, Me Name Cool.\nBut Not For Ya.");
 	ds_map_add(t, $"menu_name_5",		"Trashguy");
 	ds_map_add(t, $"menu_namemsg_5",		"...okay, i guess...");
 	ds_map_add(t, $"menu_name_6",		"Flitcher");
@@ -183,7 +183,12 @@ function TEXTDATA()
 	ds_map_add(t, $"unused_achievement_desc_{a++}",			"Kill every monster from Caverns before reaching its exit");
 	ds_map_add(t, $"unused_achievement_name_{a}",		"A Great Partner");
 	ds_map_add(t, $"unused_achievement_desc_{a++}",			"Erase a save file");
-	// Intro/Opening
+	// Opening story
+	i = 0;
+	ds_map_add(t, $"event_story_{i++}", "Long ago,^1 a group of&!high school students&!made a Discord server."); // "Not long ago" references "Long ago, [...]" from "UNDERTALE"
+	ds_map_add(t, $"event_story_{i++}", "Year after year,^1 the&!community grew as new&!members joined the server.\\");
+	ds_map_add(t, $"event_story_{i++}", "One day,^1 the owner of the server did someting bazooingas.");
+	ds_map_add(t, $"event_story_{i++}", "A few years later..."); // "A few years later" references "Many years later" from "UNDERTALE"
 	/*
 	ds_map_add(t, "intro_0", "Long ago,^1 three friends had met each other during class.^2");
 	ds_map_add(t, "intro_1", "After some time,^1 they decided to create a server in Discord.^2");
@@ -197,10 +202,31 @@ function TEXTDATA()
 	ds_map_add(t, "intro_9", "When the boy was trying to get the ball,^1 he fell inside the dumpster.");
 	ds_map_add(t, "intro_10", "The bottom of the dumpster opened,^1 revealing a giant portal.");
 	ds_map_add(t, "intro_11", "The boy fell inside the portal and he was taken to another world.^2");
-	Not long ago, a group of high school students created a server on Discord.
-	Year after year, the community grew as new members joined the server.
-	A few years later...
-	BRAZIL 202X
+	*/
+	/*
+	msg[0] = "Long ago,^1 three friends&!met each other&!during class."; //"Long ago,^1 two races&!ruled over Earth:^1&!HUMANS and MONSTERS."
+	msg[1] = "After some time,^1 they&!decided to create a&!server in Discord.";
+	msg[2] = "As months went by,^1&!new members joined&!the server.";
+	msg[3] = "One day,^1 the server's&!owner was conducting&!experiments in his room.";
+	msg[4] = "But it went very,^1&!very wrong.";
+	msg[5] = "Many years later^2^3.^2^3.^2^3.";
+	msg[6] = "    CEARÁ,^1 BRAZIL";
+	msg[7] = "A brazilian boy was&!playing soccer alone&!in a football pitch.";
+	msg[8] = "Suddenly,^1 a white flash&!of light came from a&!dumpster nearby.";
+	msg[9] = "Curious, the boy approached the&!dumpster to search the&!origin of the light."
+	msg[10] = "He was then gone as if&!nothing happened.";
+	*/
+	/*
+	msg[0] = "Long ago,^1 a group of&!three friends created&!a server in Discord.^2^3";
+	msg[1] = "As the months went by,^1&!new members joined&!the server.^2^3";
+	msg[2] = "One day,^1 the server's&!owner was conducting&!experiments in his room.^2^3";
+	msg[3] = "But it all went very,^1&!very wrong.^2^3";
+	msg[4] = "Several years later^2^3.^2^3.^2^3.^2^1";
+	msg[5] = "        BRAZIL&       2022^2^3";
+	msg[6] = "A boy was playing soccer&!alone in a football&!pitch.";
+	msg[7] = "Suddenly,^1 a white flash&!of light came from a&!dumpster nearby.";
+	msg[8] = "The boy&!slowly approached the dumpster.";
+	msg[9] = "He was then gone as if&!nothing had happened.";
 	*/
 	// Items
 	ds_map_add(t, "item_name_none",			"None");
@@ -316,7 +342,7 @@ function TEXTDATA()
 	i = 0;
 	ds_map_add(t, $"event_rhonhey_battle_0_{i++}", "* My apologies for not interrupting earlier.");
 	ds_map_add(t, $"event_rhonhey_battle_0_{i++}", "* I was not expecting&a :Onew member;D to&join the server!");
-	ds_map_add(t, $"event_rhonhey_battle_0_{i++}", "* Hmmm...^1&* I assume you did not receive an invite?");
+	ds_map_add(t, $"event_rhonhey_battle_0_{i++}", "* Hmmm...^1&* I assume you did not receive an invite...?");
 	ds_map_add(t, $"event_rhonhey_battle_0_{i++}", "* You must be so lost&and confused.^1 Come with me to the next room!"); // inspired by "You must be so lost and confused" from "UNDERTALE"
 	ds_map_add(t, $"event_rhonhey_battle_0_{i++}", "* All of your questions will be answered."); // inspired by "Bear with me, Marty, all your questions will be answered" from "Back to the Future" (1985)
 	// room_corridors_2
@@ -328,11 +354,13 @@ function TEXTDATA()
 	z += 1;
 	i = 0;
 	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* My name is :6MEE6;D.^1&* I am a :6ROBOT;D designed&to guide and assist you!");
-	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* My mission is to help you get settled into the server.");
-	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* To begin with,^1 we must analyze the anatomy behind this world.");
+	ds_map_add(t, $"event_m6_meet_{z}_{i}", "* My mission is to help you not need my help.");
+	ds_map_add(t, $"unused_event_m6_meet_{z}_{i}", "* My mission is to help you not need my help.");
+	ds_map_add(t, $"unused_event_m6_meet_{z}_{i++}", "* My mission is to fulfill your requests and help you accomplish your goals.");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* To begin with,^1 let us analyze the anatomy behind this world.");
 	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* :UDumpster Friends;D can be divided into three primary regions\\:");
 	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* The :GCorridors;D,^1 where&:Onew members;D appear and verify their identity.");
-	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* The :BCentral City;D,^1 the city at the center.");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* The :BCentral City;D,^1 a friendly neighborhood for all members alike."); // "friendly heighborhood" inspired by "Spider-Man: Brand New Day"
 	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* And the :YAdmin Realm;D,^1 restricted to those&who manage the server.");
 	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* If you wish to return to your world,^1 we must reach :YAdmin Realm;D.");
 	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* There,^3 we will find the only known exit in :UDumpster Friends;D.");
@@ -344,11 +372,12 @@ function TEXTDATA()
 	i = 0;
 	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* It has been precisely&12 months,^1 23 days,^3&and 6 hours, ..."); // I was born on December (12th month) 23rd, at 6 a.m.
 	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* ... since the :YAdmins;D publicly declared the :GCorridors;D as abandoned.");
-	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* Challenging mechanisms have blocked me from moving to :BCentral City;D.");
-	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* You,^1 however,^1 may be able to set us free.");
-	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* I strongly believe that you are the answer [to all my problems]."); // "* I strongly believe that you are sufficiently capable "
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* Puzzles I am unable to solve have blocked me from exiting the :GCorridors;D.");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* You,^1 however,^1 may be able to solve them!");
+	ds_map_add(t, $"event_m6_meet_{z}_{i++}", "* I strongly believe that .");
+	ds_map_add(t, $"unused_event_m6_meet_{z}_{i++}", "* Hey.^1 Look.^1 My system does not understand sarcasm,^1 all right?");
 	// My knowledge and your strength together could ease our adventure.
-	// Hey. Look. My system does not understand sarcasm, all right?
+	// 
 	/*
 	ds_map_add(t, "event_m6_start_1_0", "* Hello,^3 new member.^1&* Welcome to the world&of ;UDumpster Friends;D!");
 	ds_map_add(t, "event_m6_start_1_1", "* My name is :6MEE6;D.^1&* I am a :6ROBOT;D made&to help you.");
@@ -481,38 +510,29 @@ function TEXTDATA()
 	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* An :VACTIVITY;D is a multiplayer game and social experience."); // "Activities are multiplayer games and social experiences [...]" from "Discord Developer Platform"
 	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* The most relevant :VACTIVITY;D today is :Y[Battle Together];D.");
 	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* It is crucial that you understand how this :VACTIVITY;D works.");
-	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* Approach the training dummy and start&:Y[Battle Together];D.");
-	ds_map_add(t, $"unused_event_dummy_battle_0_{i++}", "* You see,^1 in this world,^1 spontaneous generation is real.");
-	ds_map_add(t, $"unused_event_dummy_battle_0_{i++}", "* It is common for aggressive beasts to arise from non-living matter.");
+	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* You see,^1 in this world,^1 spontaneous generation is real.");
+	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* Aggressive beasts commonly arise from non-living matter.");
+	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* These creatures are wired to submit others to that :VACTIVITY;D.");
+	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* Therefore,^1 you will need to be prepared for this kind of situation."); // inspired by "You will need to be prepared for this situation" from "UNDERTALE"
+	ds_map_add(t, $"event_dummy_battle_0_{i++}", "* Approach the training dummy and subject it&to :Y[Battle Together];D.");
+	ds_map_add(t, $"unused_event_dummy_battle_0_{i++}", "* ... similar to how you were assaulted by that snake-like creature.");
 	i = 0;
-	ds_map_add(t, $"event_dummy_battle_1_{i++}", "* Splendid! [...]"); // inspired by "Splendid! I am proud of you, little one." from "UNDERTALE"
-	ds_map_add(t, $"event_dummy_battle_1_{i++}", "* It is almost like you already had seen this somewhere else...!"); // references "UNDERTALE"
-	ds_map_add(t, $"event_dummy_battle_1_{i++}", "* In any way,^1 let us proceed with our adventure!");
+	ds_map_add(t, $"npc_dummy_{i++}", "* (It's a training dummy.)");
+	ds_map_add(t, $"npc_dummy_{i}", "* (Battle the dummy?)");
+	ds_map_add(t, $"npc_dummy_{i}_1", "Yes");
+	ds_map_add(t, $"npc_dummy_{i}_2", "No");
+	i = 0;
+	ds_map_add(t, $"event_dummy_battle_1_{i++}", "* Excellent work,^3&:Onew member;D!");
+	ds_map_add(t, $"event_dummy_battle_1_{i++}", "* It was almost as if you had already played it&somewhere else...!"); // references "UNDERTALE"
+	ds_map_add(t, $"event_dummy_battle_1_{i++}", "* Regardless,^1 you are ready to defend yourself in case of danger.");
+	ds_map_add(t, $"event_dummy_battle_1_{i++}", "* We may now proceed&with our adventure!"); // inspired by "Let us move to the next room" from "UNDERTALE"
 	i = 0;
 	ds_map_add(t, $"event_dummy_battle_2_{i++}", "* You may have taken my \"fight back\" statement too literally.");
-	ds_map_add(t, $"event_dummy_battle_2_{i++}", "* Nonetheless,^1 you have won :Y[Battle Together];D.^1&* That is what matters.");
-	ds_map_add(t, $"event_dummy_battle_2_{i++}", "* Let us proceed with&our adventure.");
+	ds_map_add(t, $"event_dummy_battle_2_{i++}", "* Nonetheless,^3 you have won :Y[Battle Together];D.^1&* That is what matters.");
+	ds_map_add(t, $"event_dummy_battle_2_{i++}", "* Let us proceed with&our adventure!");
 	i = 0;
 	ds_map_add(t, $"event_dummy_battle_3_{i++}", "* You were not supposed&to :Y[Spare];D it yet.");
-	ds_map_add(t, $"event_dummy_battle_3_{i++}", "* Will I have to remind you to make use of :U[ITEM];D when necessary?");
-	/*
-	ds_map_add(t, "event_m6_predummy_0_0", "* As I said before,^1 the :RCorridors;D are full of monsters.");
-	ds_map_add(t, "event_m6_predummy_0_1", "* It is necessary that you learn how to protect yourself from them.");
-	ds_map_add(t, "event_m6_predummy_0_2", "* Usually,^1 they would not be dangerous to you in any way.");
-	ds_map_add(t, "event_m6_predummy_0_3", "* These monsters can start a :YBattle;D with you whenever they like.");
-	ds_map_add(t, "event_m6_predummy_0_4", "* A :YBATTLE;D is a challenge between two or more users.");
-	ds_map_add(t, "event_m6_predummy_0_5", "* The objective of each player is to :Rkill;D or&:Yspare;D the opponent.");
-	ds_map_add(t, "event_m6_predummy_0_6", "* If you enter in a :YBATTLE;D and the enemy wants&to :Rkill;D you, ...");
-	ds_map_add(t, "event_m6_predummy_0_7", "* ... you might not survive if you do not know how to win.");
-	ds_map_add(t, "event_m6_predummy_0_8", "* It is crucial that you understand how this challenge works.");
-	ds_map_add(t, "event_m6_predummy_1_0", "* This dummy here is used to practice :YBATTLES;D.");
-	ds_map_add(t, "event_m6_predummy_1_1", "* Would you like to enter in a :YBATTLE;D with the dummy?");
-	ds_map_add(t, "event_m6_predummy_1_2", "* I would guide you throughout the entire challenge.");
-	*/
-	ds_map_add(t, "npc_dummy_0", "* (It's a training dummy.)");
-	ds_map_add(t, "npc_dummy_1", "* (Battle the dummy?)");
-	ds_map_add(t, "npc_dummy_1_1", "Yes");
-	ds_map_add(t, "npc_dummy_1_2", "No");
+	ds_map_add(t, $"event_dummy_battle_3_{i++}", "* Must I remind you to use :U[ITEM];D when necessary?");
 	// room_corridors_4
 	i = 0;
 	ds_map_add(t, $"savepoint_0_{i++}", "* (Seeing dust on the colorless stairs and colorful flowers&in the grass...)\\");
@@ -529,21 +549,21 @@ function TEXTDATA()
 	i = 0;
 	ds_map_add(t, $"npc_armsguy1_{z}_{i++}", "* Lemme Tell Ya Sumthin Bro."); // inspired by "Let me tell you something, man" from "The Walking Dead"
 	ds_map_add(t, $"npc_armsguy1_{z}_{i++}", "* Be Cool With Monsters.^1&* They Hurt Ya Because&They Scared Bro!");
-	ds_map_add(t, $"npc_armsguy1_{z}_{i++}", "* If Ya Don Hurt&Them,^1 Ya Cool.");
+	ds_map_add(t, $"npc_armsguy1_{z}_{i++}", "* If Ya Don Hurt&Em,^1 Ya Cool.");
 	// room_corridors_5
 	ds_map_add(t, "event_m6_captcha1_0_0", "* This is the door that has trapped me here for all of this time.");
 	ds_map_add(t, "event_m6_captcha1_0_1", "* I have never understood the reason behind the puzzles' difficulty.");
-	ds_map_add(t, "event_m6_captcha1_0_2", "* In any way,^1 I believe you should read the sign next to the door.");
+	ds_map_add(t, "event_m6_captcha1_0_2", "* Regardless,^1 I believe that you should read the sign next to the door.");
 	ds_map_add(t, "event_m6_captcha1_0_3", "* It may help you find the answer to the puzzles!");
 	ds_map_add(t, "room_captcha_mainsign_1_0", "* \"reCAPTCHA\\:  Stage 1/3\"");
 	ds_map_add(t, "room_captcha_mainsign_1_1", "* \"Before accessing the server,^1 you need to complete a quick verification check.\"");
 	ds_map_add(t, "room_captcha_mainsign_1_2", "* \"This helps prevent automated systems from accessing&the platform.\"");
 	ds_map_add(t, "room_captcha_mainsign_1_3", "* \"Please solve two simple puzzles to confirm you&are a human.\"");
-	ds_map_add(t, "event_m6_captcha1_1_0", "* You opened the door?!");
-	ds_map_add(t, "event_m6_captcha1_1_1", "* I knew you would!");
-	ds_map_add(t, "event_m6_captcha1_1_2", "* Thank you,^1 new member.");
-	ds_map_add(t, "event_m6_captcha1_1_3", "* Unfortunately,^1 this is not the only door you will have to open.");
-	ds_map_add(t, "event_m6_captcha1_1_4", "* But,^1 let us keep going!");
+	i = 0;
+	ds_map_add(t, $"event_m6_captcha1_1_{i++}", "* You have solved the puzzles?!");
+	ds_map_add(t, $"event_m6_captcha1_1_{i++}", "* I knew you would!^3&* Thank you,^1 :Onew member;D!");
+	ds_map_add(t, $"event_m6_captcha1_1_{i++}", "* Unfortunately,^1 there will be more puzzles for you to solve."); //this is not the only door you will have to open
+	ds_map_add(t, $"event_m6_captcha1_1_{i++}", "* Nonetheless,^1 let us carry on with our journey!");
 	// room_corridors_5_A, room_corridors_5_B
 	ds_map_add(t, "room_captcha_guidesign_1_0", "* \"Step on the buttons to&enter what is shown above.\"");
 	ds_map_add(t, "room_captcha_guidesign_1_1", "* \"Restart the puzzle by stepping on the 'X' button.\"");
@@ -583,6 +603,7 @@ function TEXTDATA()
 	ds_map_add(t, "room_relaxsign_1", "* \"Why not take a break?\"^3&* \"Make yourself comfortable!\"");
 	ds_map_add(t, "room_relaxsign_2", "* \"Signed,^1 your local&Dumpster Friend\"");
 	ds_map_add(t, "room_bench_geno_0", "* (It's a bench.)");
+	ds_map_add(t, "room_benchCardboard_0", "* (It's a conveniently-shaped&cardboard cutout.)"); // inspired by "quick, behind that conveniently-shaped lamp" from "UNDERTALE"
 	ds_map_add(t, "npc_trashguy_0", "* (It's a normal trash can.)");
 	ds_map_add(t, "npc_trashguy_1", "* (Actually,^3 it's a gruesome hungry creature pretending&to be a normal trash can...)");
 	ds_map_add(t, "npc_trashguy_2", "* (Life really takes some&wild turns sometimes...!)");
@@ -607,11 +628,11 @@ function TEXTDATA()
 	ds_map_add(t, "npc_armsguy_lost_1_1_0", "* Goo Job Bro.");
 	ds_map_add(t, "npc_armsguy_lost_1_1_1", "* Me Said,^3 Me Give Ya Gift.");
 	ds_map_add(t, "npc_armsguy_lost_1_1_0__", "* Yo Bro.");
-	ds_map_add(t, "npc_armsguy_lost_1_1_1__", "* Ya Helped Me Dumbass Buddy.^1&* Me Give Ya Gift.");
+	ds_map_add(t, "npc_armsguy_lost_1_1_1__", "* Ya Helped Me Dumbass Buddy.^3&* Me Give Ya Gift.");
 	ds_map_add(t, "npc_armsguy_lost_1_1_2", "* Me Don Know Wat Is,^1 But&Me Found It Around Here.");
 	ds_map_add(t, "npc_armsguy_lost_1_1_3", "* Very Weird Thing.");
 	ds_map_add(t, "npc_armsguy_lost_1_1_4_0", "* Here.^1&* All Ya.");
-	ds_map_add(t, "npc_armsguy_lost_1_1_5_0", "* (You got :YKunai;D.)");
+	ds_map_add(t, "npc_armsguy_lost_1_1_5_0", "* (You got :YEnchanted Trident;D.)");
 	ds_map_add(t, "npc_armsguy_lost_1_1_4_1", "* Ya Have No Space?");
 	ds_map_add(t, "npc_armsguy_lost_1_1_5_1", "* Dump Sumthin And Me Give Ya Gift.");
 	ds_map_add(t, "npc_armsguy_lost_1_2_0", "* Wat?^3 Didn Like It?^2&* Deal With It");
@@ -620,7 +641,7 @@ function TEXTDATA()
 	ds_map_add(t, "event_m6_captcha2_0", "* Here comes more extremely difficult puzzles for you.");
 	ds_map_add(t, "event_m6_captcha2_1", "* The faster we go,^3&the sooner we leave&this place.");
 	ds_map_add(t, "room_captcha_mainsign_2_0", "* \"reCAPTCHA\\:  Stage 2/3\"");
-	ds_map_add(t, "room_captcha_mainsign_2_1", "* \"Please solve three puzzles to confirm you are a human.\"");
+	ds_map_add(t, "room_captcha_mainsign_2_1", "* \"Please solve three puzzles&to confirm you are a human.\"");
 	ds_map_add(t, "room_captcha_guidesign_2_0", "* \"Push the box to the 'X'&on the white path.\"");
 	ds_map_add(t, "room_captcha_guidesign_1_0", "* \"Enter the name of the image shown above.\"");
 	ds_map_add(t, "room_captcha_guidesign_1_1", "* \"Stepping on a button will type its respective letter.\"");
@@ -628,8 +649,8 @@ function TEXTDATA()
 	ds_map_add(t, "npc_trashguy_lost1_0", "* ...you solved the puzzle...?");
 	ds_map_add(t, "npc_trashguy_lost1_1", "* ...now i can go back and meet my friend...");
 	ds_map_add(t, "npc_trashguy_lost1_2", "* ...thank you...");
-	ds_map_add(t, "event_m6_postcaptcha2_0", "* How do you solve&them so easily?!");
-	ds_map_add(t, "event_m6_postcaptcha2_1", "* In any way,^1 let us keep going!");
+	ds_map_add(t, "event_m6_postcaptcha2_0", "* How are you able to solve them so easily?!");
+	ds_map_add(t, "event_m6_postcaptcha2_1", "* Regardless,^1 let us proceed with our adventure!");
 	// room_corridors_10
 	ds_map_add(t, "room_chocobowl_0", "* (It's a seriously damaged chocolate bowl.)");
 	ds_map_add(t, "room_chocobowl_1", "* (There's only one chocolate left,^1 lying on the floor.)");
@@ -645,7 +666,7 @@ function TEXTDATA()
 	ds_map_add(t, "room_preclocksign_0", "* \"Hey!\"^1&* \"Don't worry,^3 you're almost there.^3 Just a few rooms away!\"");
 	ds_map_add(t, "room_preclocksign_1", "* \"Why not speed up a&bit and finish early?\"^1&* \"Think of it like this\\:\\\"");
 	ds_map_add(t, "room_preclocksign_2", "* \"Brick by brick,^3 you make a bridge.^1 In the blink of an eye,^3 you'll save time!\"");
-	ds_map_add(t, "room_preclocksign_3", "* \"Does that make sense?\"^1&* \"Don't mind answering,^3&I'm just a sign.\""); // "does that make sense?" from "UNDERTALE"
+	ds_map_add(t, "room_preclocksign_3", "* \"Does that make sense?\"^1&* \"Don't mind answering,^3&I'm just a sign.\""); // inspired by "does that make sense?" from "UNDERTALE"
 	ds_map_add(t, "room_preclocksign_4", "* \"Signed,^1 your local&Dumpster Friend\"");
 	i = 0;
 	ds_map_add(t, $"savepoint_2_{i++}", "* (hello)");
@@ -656,36 +677,37 @@ function TEXTDATA()
 	ds_map_add(t, $"unused_genodialog_0_{i++}", "* (But nobody came.)");
 	ds_map_add(t, "unused_genofeeling", ";R* (Something tells you that you shouldn't continue yet.)");
 	i = 0;
-	ds_map_add(t, $"event_brock_battle_0_{i++}", "+F0+S1* DID YOU REALLY THINK I WOULDN'T SEE YOU?!?");
+	ds_map_add(t, $"event_brock_battle_0_{i++}", "+F0+S1* DID'YA REALLY THINK&I WOULDN'T SEE YOU?!?");
 	ds_map_add(t, $"event_brock_battle_0_{i++}", "+F0+S1* EVEN AFTER EVERYTH()");
 	ds_map_add(t, $"event_brock_battle_0_{i++}", "* You are breaking the server's rules,^3 wild clock creature!"); // MEE6 attempts to interrupt Broken Clock the same way he successfully interrupted Rhonhey 
 	ds_map_add(t, $"event_brock_battle_0_{i++}", "* You cannot trap us he()");
 	var i = 0;
 	ds_map_add(t, $"event_brock_battle_1_{i++}", "+F0+S1* SHUT UP!!!!!!!!!!");
 	i = 0;
-	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0* So...^2 Where WERE we.^1&* ... Oh,^3 RIGHT!!"); // "... NOW, WHERE WERE WE? OH YES." from "UNDERTALE"
-	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* :@@[name];D!!!!!!^1&* DID YOU REALLY THINK I'D JUST LET YOU IGNORE MY EXISTENCE?!?");
-	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* ABSOLUTELY NO WAY,^1 BUDDY.^3&* NOT AFTER EVERYTHING YOU HUMANS DID TO ME.");
+	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0* So...^2 Where WERE we.^1&* ... HMM,^3 RIGHT!!"); // inspired by "... NOW, WHERE WERE WE? OH YES." and "HMM? So you're ASKIN' me to move over?" from "UNDERTALE"
+	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* :@@[name];D!!!!!!^1&* DID'YA REALLY THINK I'D JUST LET'YA IGNORE MY EXISTENCE?!?");
+	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* ABSOLUTELY NO WAY,^1 BUDDY.^3&* NOT AFTER EVERYTHING&YOU HUMANS DID TO ME.");
 	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* I'VE BEEN COUNTING DOWN&THE SECONDS UNTIL THIS DAY,^1 RIGHT HERE,^3 FOR MONTHS!!!!!!");
-	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* YOU WOULDN'T WANT TO RUIN THIS MOMENT FOR ME,^3 WOULD YOU?!?");
-	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* TIME TO DIE,^3 LITTLE BUDDY...!"); // "Time to die" from "Blade Runner"
+	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* YOU WOULDN'T WANNA RUIN THIS MOMENT FOR ME,^3 WOULD'YA?!?");
+	ds_map_add(t, $"event_brock_battle_2_{i++}", "+F0+S1* TIME TO DIE,^3 LITTLE BUDDY...!"); // inspired by "Time to die" from "Blade Runner"
 	i = 0;
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* You...^2 You SPARED me...?");
-	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* Even after EVERYTHING&I've done to HURT you?!"); // inspired by "After everything I have done to hurt you..." from "UNDERTALE"
+	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* Even after EVERYTHING&I've done to HURT'ya?!?"); // inspired by "After everything I have done to hurt you..." from "UNDERTALE"
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* :@@[name];D...^2&* You shouldn't say&sorry,^1 Y'KNOW...");
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* You REALLY shouldn't.^3^3&* You haven't done&ANYTHING wrong.");
 	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* But I have,^1 and&I understand if&you hate me."); // inspired by "I understand if you hate me" from "UNDERTALE"
-	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* There's NO excuse for&how I treated you."); // inspired by "There's no excuse for what I've done" from "UNDERTALE"
-	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* Please,^1 take this.^1&* You deserve it way&more than me."); // If you wish to go home, you'll need this.; Make it up to you
+	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* There's NO excuse&for how I treat'ya."); // inspired by "There's no excuse for what I've done" from "UNDERTALE"
+	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* The LEAST I can do&is TRY to make it&up to you."); // inspired by "The least I can do is return them" from "UNDERTALE"
+	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* You wanna LEAVE&the server,^1 RIGHT?^1&* You could use some help.");
+	ds_map_add(t, $"event_brock_battle_3_{i++}", "+F0* Take this.^1&* It's PROBABLY better&than what'ya have there.");
 	ds_map_add(t, $"event_brock_battle_3_{i}_1", "* (You got :YTemporary Pacemaker;D.)");
-	ds_map_add(t, $"event_brock_battle_3_{i}_0", "+F0* I'll,^1 UH...^2 Leave it in&the brick pile,^1 M'KAY...?");
-	ds_map_add(t, $"event_brock_battle_3_{++i}", "+F0* WELL,^2 I've wasted&enough of your time."); // references "waste one's time" idiom
-	ds_map_add(t, $"event_brock_battle_3_{++i}", "+F0* Take care,^1 little buddy...^1&* ... Sorry for,^1 Y'KNOW...");
-	ds_map_add(t, $"unused_event_brock_battle_3_{i++}", "+F0* The least I can do is&get out of your way."); // inspired by "The least I can do is return them" from "UNDERTALE"
+	ds_map_add(t, $"event_brock_battle_3_{i}_0", "+F0* I'll,^1 UH...^2 Leave it in&the brick pile,^1 M'KAY...?"); // inspired by "HMM? So you're ASKIN' me to move over?" from "UNDERTALE"
+	ds_map_add(t, $"event_brock_battle_3_{++i}", "+F0* WELL,^2 I've wasted&enough of your time."); // "I've wasted enough of your time" references "waste one's time" idiom
+	ds_map_add(t, $"event_brock_battle_3_{++i}", "+F0* Watch your back,^1&little buddy...^1&* ... Sorry for,^1 Y'KNOW..."); // "Watch your back" references a watch, a wristwatch
 	i = 0;
 	ds_map_add(t, $"event_brock_battle_4_{i++}_0", "* In my opinion,^3 your decision to spare that thing was a mistake.");
 	ds_map_add(t, $"event_brock_battle_4_{i++}_0", "* What if it changes its mind and returns to murder us both?");
-	ds_map_add(t, $"event_brock_battle_4_{i}_0", "     ");
+	ds_map_add(t, $"event_brock_battle_4_{i}_0", "          ");
 	ds_map_add(t, $"event_brock_battle_4_{i}_0_1", "Not going\nto happen");
 	ds_map_add(t, $"event_brock_battle_4_{i}_0_2", "Sorry");
 	ds_map_add(t, $"event_brock_battle_4_{++i}_0", "* ...");
@@ -710,12 +732,13 @@ function TEXTDATA()
 	ds_map_add(t, $"npc_armsguy_postbrock_{z}_{i++}", "* Why He Angry At Ya?");
 	i = 0;
 	ds_map_add(t, $"savepoint_3_{i++}", "* (Seeing mythical creatures like muscular slimes and flying clocks...)");
-	ds_map_add(t, $"savepoint_3_{i++}", "* (You tell yourself that it must all just be a bad dream.)"); // "It must have all just been a bad dream" from "EarthBound (MOTHER 2)"
+	ds_map_add(t, $"savepoint_3_{i++}", "* (You tell yourself that&it must all just be&a bad dream.)"); // inspired by "It must have all just been a bad dream" from "EarthBound (MOTHER 2)"
 	i = 0;
-	ds_map_add(t, $"unused_npc_flitcher_postbrock_{i++}", "* (Flitcher is staring into the abyss,^1 thinking.)^1&* (That is,^3 if it thinks.)");
-	ds_map_add(t, $"unused_npc_flitcher_postbrock_{i++}", "* (Perhaps Flitcher is waiting for an answer.)");
-	ds_map_add(t, $"unused_npc_flitcher_postbrock_{i++}", "* (Or,^1 perhaps,^1 Flitcher is carrying the weight of knowing the answer.)");
-	ds_map_add(t, $"unused_npc_flitcher_postbrock_{i++}", "* (Does it matter?)");
+	ds_map_add(t, $"npc_flitcher_postbrock_{i++}", "* (Flitcher is staring into&the abyss,^1 thinking...)^1&* (That is,^3 if it thinks.)");
+	ds_map_add(t, $"npc_flitcher_postbrock_{i++}", "* (Perhaps Flitcher is waiting for an answer...)");
+	ds_map_add(t, $"npc_flitcher_postbrock_{i++}", "* (Or,^1 perhaps,^1 Flitcher has been carrying the weight&of knowing the answer...)");
+	ds_map_add(t, $"npc_flitcher_postbrock_{i++}", "* (...)^4&* (It doesn't really matter.)"); // inspired by "Tra la la. What's my name? ... It doesn't really matter." from "UNDERTALE"
+	ds_map_add(t, $"npc_flitcher_postbrock_{i++}_geno", "* (It's a Flitcher.)");
 	// room_corridors_14
 	ds_map_add(t, "room_captcha_mainsign_3_0", "* \"reCAPTCHA\\:  Stage 3/3\"");
 	ds_map_add(t, "room_captcha_mainsign_3_1", "* \"Please solve three puzzles to confirm you are a human.\"");
@@ -732,7 +755,7 @@ function TEXTDATA()
 	// room_corridors_17
 	i = 0;
 	ds_map_add(t, $"savepoint_4_{i++}", "* (Seeing monsters you've met peacefully living their day-to-day lives...)");
-	ds_map_add(t, $"savepoint_4_{i++}", "* (.)");
+	ds_map_add(t, $"savepoint_4_{i++}", "* (You realize this world might not be as weird as you originally thought.)");
 	z = 0;
 	i = 0;
 	ds_map_add(t, $"npc_armsguy_exit_{z}_{i++}", "* Ya Da New Member?^1&* Bro Dat Cool.^3&* Ya Da First Since Da Raid!");
@@ -742,7 +765,7 @@ function TEXTDATA()
 	i = 0;
 	ds_map_add(t, $"npc_armsguy_exit_{z}_{i++}", "* Meeseeks Not Say Of Da Raid??");
 	ds_map_add(t, $"npc_armsguy_exit_{z}_{i++}", "* Bro Da Raid Was Nuts!^3&* Da Corridor There&Broken Totally.");
-	ds_map_add(t, $"npc_armsguy_exit_{z}_{i++}", "* Da Humans Kill Me Grandma!^1&* But Me Cool Now."); // from "Trolls". Not sure why I added this
+	ds_map_add(t, $"npc_armsguy_exit_{z}_{i++}", "* Da Humans Kill Me Grandma!^1&* But Me Cool Now."); // inspired by "Singing killed my grandma" from "Trolls"
 	ds_map_add(t, "npc_trashguy_exit_fishing_0_0", "* ...hi...");
 	ds_map_add(t, "npc_trashguy_exit_fishing_0_1", "* ...what...?^1&* ...im not fishing...");
 	ds_map_add(t, "npc_trashguy_exit_fishing_0_2", "* ...i was throwing trash down there but i threw something important on accident...");
@@ -752,7 +775,7 @@ function TEXTDATA()
 	ds_map_add(t, "npc_armsguy_exit_fishing_0_0", "* Wat Up.^1&* Me Just Waitin This Smartass Here Get Thing Back.");
 	ds_map_add(t, "npc_armsguy_exit_fishing_0_1", "* Big Waste Of Time!^3&* How Dat Fall There Anyway!?");
 	ds_map_add(t, "npc_armsguy_exit_fishing_0_2", "* ...i already told you&i dont know...");
-	ds_map_add(t, "npc_armsguy_exit_fishing_1_0", "* This Intolerable!"); // from "Indiana Jones and the Last Crusade"
+	ds_map_add(t, "npc_armsguy_exit_fishing_1_0", "* This Intolerable!"); // inspired by "This is intolerable" from "Indiana Jones and the Last Crusade"
 	ds_map_add(t, "npc_armsguy_exit_lifting_0_0", "* Me Don Talk Now.^3&* I Gyming.");
 	ds_map_add(t, "npc_armsguy_exit_lifting_1_0", "* Me Say Me Don Talk&Now Dumbass!!!");
 	ds_map_add(t, "npc_armsguy_exit_lifting_2_0", "* Go Away Bro!!!!!!");
@@ -761,9 +784,9 @@ function TEXTDATA()
 	ds_map_add(t, "npc_flitcher_exit_0_0", "* (You wave to Flitcher.)^3&* (It waves back at you.)");
 	ds_map_add(t, "npc_flitcher_exit_0_1", "* (How did it wave back if it doesn't even have hands?)");
 	ds_map_add(t, "npc_flitcher_exit_0_2", "* (This is one of the weirdest mysteries of All Time.)");
-	ds_map_add(t, "npc_flitcher_exit_1_0", "* I^2 am^2 deeply disgusted^2&by^2 your existence");
+	ds_map_add(t, "npc_flitcher_exit_1_0", "+S3* Kill^2 me,^4 please...!");
 	ds_map_add(t, "unused_npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4&your existence.^4&* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
-	ds_map_add(t, "npc_flitcher_exit_geno_0", "* (It's Flitcher.)");
+	ds_map_add(t, "npc_flitcher_exit_geno_0", "* (It's a Flitcher.)");
 	ds_map_add(t, "room_corridors_17_egg.0", "* (It's an egg.)");
 	ds_map_add(t, "room_corridors_17_egg.1", "* (It's unclear why there's&an egg beside the tree.)"); // from "DELTARUNE"
 	// room_corridors_18
@@ -777,7 +800,7 @@ function TEXTDATA()
 	ds_map_add(t, "event_gabee_chase.0.0", "* This is it.");
 	ds_map_add(t, "event_gabee_chase.0.1", "* The exit is at the end of this corridor.");
 	ds_map_add(t, "event_gabee_chase.0.2", "* Before we continue,^1 I have a question for you.");
-	ds_map_add(t, "event_gabee_chase.0.3", "* You do remember how a :YBATTLE;D works,^2 correct?");
+	ds_map_add(t, "event_gabee_chase.0.3", "* You do remember how :Y[Battle Together];D&works,^2 correct?");
 	ds_map_add(t, "event_gabee_chase.0.4", "* ...");
 	ds_map_add(t, "event_gabee_chase.0.5", "* ...^3 No!^1 Nothing!^2&* I was curious,^1&that is all.");
 	ds_map_add(t, "event_gabee_chase.0.6_geno", "* ...^2 Excuse me?^1&* I have no reason&to lie to you.");
@@ -880,7 +903,7 @@ function TEXTDATA()
 	ds_map_add(t, $"unused_battle_flee_{i++}", "* Don't slow me down."); // from "UNDERTALE"
 	ds_map_add(t, $"unused_battle_flee_{i++}", "* I'm outta here."); // from "UNDERTALE"
 	ds_map_add(t, $"battle_flee_geno", "+S3* In my way."); // from "UNDERTALE"
-	ds_map_add(t, "battle_nobody", "+S3* But nobody came."); // from "UNDERTALE"
+	ds_map_add(t, "battle_nobody", "* But nobody came."); // from "UNDERTALE"
 	// TESTGUY's battle
 	ds_map_add(t, "battle_main_test", "* (Ugh...^1 That TESTGUY again?!)");
 	i = 0;
@@ -903,7 +926,7 @@ function TEXTDATA()
 	// Dummy's battle
 	z = 0;
 	i = 0;
-	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* There you go!^1&* Now we can begin&our lesson.");
+	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* There you go!^1&* Now we may begin&our lesson.");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* Have you noticed the :Ufour buttons;D at the bottom of the menu?");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* You can use them&to interact with&the enemies.");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* Try :RATTACKing;D the dummy through the leftmost button :U[FIGHT];D.");
@@ -932,39 +955,39 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* Prior to that,^1 it is essential that I tell you about :U[ITEM];D.");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* The :U[ITEM];D button permits\\&you to equip or consume items mid-game.");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* Due to your :YINVENTORY;D being empty,^1 the button is unavailable for use.");
-	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* I,^1 however,^1 can&concede you an item.");
+	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* I,^1 however,^1 can&concede you&an item.");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* (MEE6 picks up and&hands you a brick.)^3&* (You got :YConcrete Brick;D.)");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* Proceed with&interacting with&the brick through :U[ITEM];D.\\");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* MEE6 wants you to use :U[ITEM];D.");
 	z += 2;
 	i = 0;
-	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* That was perfect!^1&* Our lesson is complete.");
+	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* Splendid!^1&* Our lesson is complete."); // inspired by "Splendid! I am proud of you, little one." from "UNDERTALE"
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* Head to the rightmost button :U[MERCY];D and :Y[Spare];D Dummy.");
 	ds_map_add(t, $"battle_main_dummy_{z}_{i++}", "* MEE6 wants you to use :Y[Spare];D.");
 	ds_map_add(t, "battle_enemyname_dummy", "Dummy");
 	ds_map_add(t, "battle_act_dummy_1", "Talk");
 	ds_map_add(t, "battle_act_dummy_2", "Scream");
-	ds_map_add(t, "battle_act_result_dummy_0_0", "* \"Dummy\" [:R0 ATK;D | :B0 DEF;D]^3&* (A training dummy that&looks like a cat.)");
-	ds_map_add(t, "battle_act_result_dummy_0_1", "* (Their body is made out of cloth and artificial fur.)");
-	ds_map_add(t, "battle_act_result_dummy_0_2", "* (Even though they don't have much to say,^1 they're a great listener.)");
-	ds_map_add(t, "battle_act_result_dummy_1_0", "* (You try to talk with Dummy,^1 but you couldn't think of any conversation topics...)"); // from "UNDERTALE"
+	ds_map_add(t, "battle_act_result_dummy_0_0", "* \"Dummy\" [:R0 ATK;D | :B0 DEF;D]^3&* (A training dummy made&to look like a cat.)");
+	ds_map_add(t, "battle_act_result_dummy_0_1", "* (Her body is made out of&cloth and artificial fur.)");
+	ds_map_add(t, "battle_act_result_dummy_0_2", "* (Even though she don't have much to say,^1 she's a great listener.)");
+	ds_map_add(t, "battle_act_result_dummy_1_0", "* (You try to talk with Dummy,^1 but you can't think of any&conversation topics...)"); // from "UNDERTALE"
 	ds_map_add(t, "battle_act_result_dummy_1_1_0_0", "* (You have a passing conversation about&");
 	ds_map_add(t, "battle_act_result_dummy_1_1_0_1_0", "cats");
 	ds_map_add(t, "battle_act_result_dummy_1_1_0_1_1", "dogs");
 	ds_map_add(t, "battle_act_result_dummy_1_1_0_1_2", "birds");
 	ds_map_add(t, "battle_act_result_dummy_1_1_0_1_3", "bees");
 	ds_map_add(t, "battle_act_result_dummy_1_1_0_2", " with Dummy.)");
-	ds_map_add(t, "battle_act_result_dummy_1_1_1", "* (The blush on their face&seems to get redder...)^3&* (Dummy's :YMERCY;D up :U100%;D!)");
+	ds_map_add(t, "battle_act_result_dummy_1_1_1", "* (The blush on her face&seems to get redder...)^3&* (Dummy's :YMERCY;D up :U100%;D!)");
 	ds_map_add(t, "battle_act_result_dummy_2_0", "* (You loudly scream&to Dummy's face.)");
-	ds_map_add(t, "battle_act_result_dummy_2_1", "* (Tears flow down out&of their eyes.)");
+	ds_map_add(t, "battle_act_result_dummy_2_1", "* (Tears flow down&out of her eyes.)");
 	i = 0;
 	ds_map_add(t, $"battle_act_result_dummy_2_2_{i++}", "* That was the&wrong option.");
-	ds_map_add(t, $"battle_act_result_dummy_2_2_{i++}", "* You are an interesting individual.");
+	ds_map_add(t, $"battle_act_result_dummy_2_2_{i++}", "* You are an \"interesting\" individual."); // inspired by "You are an... 'interesting' child." from "UNDERTALE"
 	ds_map_add(t, $"battle_act_result_dummy_2_2_{i++}", "* I knew your kind was&excessive,^1 but nothing near this.");
 	ds_map_add(t, $"battle_act_result_dummy_2_2_{i++}", "* Out of curiosity,^1 were you ever dropped on your head as an infant?");
 	ds_map_add(t, $"battle_act_result_dummy_2_2_{i++}", "* ...");
 	i = 0;
-	ds_map_add(t, $"battle_bubble_m6_dummy_0_{i++}", "When you were tortured by that terrible creature, ..."); // "What a terrible creature, torturing such a poor, innocent youth" from "UNDERTALE"
+	ds_map_add(t, $"battle_bubble_m6_dummy_0_{i++}", "When you were tortured by that terrible creature, ..."); // inspired by "What a terrible creature, torturing such a poor, innocent youth" from "UNDERTALE"
 	ds_map_add(t, $"battle_bubble_m6_dummy_0_{i++}", "... your only option was to dodge its attacks.");
 	ds_map_add(t, $"battle_bubble_m6_dummy_0_{i++}", "I will concede you the ;@@Member;D role,^1 which permits you to fight back.");
 	ds_map_add(t, $"battle_bubble_m6_dummy_0_{i++}", "Hold on a moment.");
@@ -980,10 +1003,14 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_main_armsguy_{i++}", "* (Armsguy is munching&on a dirty needle.)"); // by Mawri
 	ds_map_add(t, $"battle_main_armsguy_{i++}", "* (Armsguy is punching the air in an attempt to intimidate you.)");
 	ds_map_add(t, $"battle_main_armsguy_{i++}", "* (Armsguy is calling the other monsters in the room to watch him destroy you.)");
-	ds_map_add(t, "battle_act_armsguy_1", "Take Slime");
+	ds_map_add(t, "battle_act_armsguy_1", "Touch Arms");
+	ds_map_add(t, "unused_battle_act_armsguy_1", "Take Slime");
 	ds_map_add(t, "battle_act_armsguy_2", "Fake Punch"); // "Fake Attack" from "UNDERTALE"
-	ds_map_add(t, "battle_act_result_armsguy_0_0", "* \"Armsguy\" [:R5 ATK;D | :B4 DEF;D]^3&* (A slime with arms who came to life inside a trash bag.)");
-	ds_map_add(t, "battle_act_result_armsguy_0_1", "* (He likes bodybuilding,^3 strength,^3 arms and slime.)");
+	i = 0;
+	ds_map_add(t, $"battle_act_result_armsguy_0_{i++}", "* \"Armsguy\" [:R5 ATK;D | :B4 DEF;D]^3&* (A slime with arms who came&to life inside a trash bag.)");
+	ds_map_add(t, $"battle_act_result_armsguy_0_{i++}", "* (He's obsessed with his own arms and can't accept being weaker than you.)");
+	ds_map_add(t, $"battle_act_result_armsguy_0_{i++}", "* (He's also a masochist...?)");
+	ds_map_add(t, $"unused_battle_act_result_armsguy_0_{i++}", "* (He likes bodybuilding,^3 strength,^3 arms and slime.)");
 	ds_map_add(t, "battle_act_result_armsguy_1_0", "* (You try to take some slime from Armsguy's arms,^3 but he slaps your hand away...)");
 	ds_map_add(t, "battle_act_result_armsguy_1_1", "* (Armsguy's :YMERCY;D down :R100%;D.)");
 	ds_map_add(t, "battle_act_result_armsguy_2_0", "* (You punch Armsguy's face pretending to use your&full strength...)");
@@ -1003,7 +1030,7 @@ function TEXTDATA()
 	ds_map_add(t, "battle_bubble_armsguy_12", "+F1Hit Da Road,^1 Jackass."); // from "Hit the Road Jack"
 	ds_map_add(t, "battle_bubble_armsguy_13", "+F1I Kill Ya.");
 	ds_map_add(t, "battle_bubble_armsguy_clean_0", "+F1Back Off Dumbass!!!!");
-	ds_map_add(t, "battle_bubble_armsguy_clean_1", "+F1Take Ya Hands Off Me!!!!");
+	ds_map_add(t, "battle_bubble_armsguy_clean_1", "+F1Take Ya Hands Off Me Arms!!!!");
 	ds_map_add(t, "battle_bubble_armsguy_clean_2", "+F1Don Touch Me Arms!!!!");
 	ds_map_add(t, "battle_bubble_armsguy_punch_0", "+F1Ouch!!^1 Keep Going.");
 	ds_map_add(t, "battle_bubble_armsguy_punch_1", "+F1Mweheheh!!^1 Me Like It!");
@@ -1028,7 +1055,7 @@ function TEXTDATA()
 	ds_map_add(t, "battle_bubble_trashguy_0", "+F1...i cant handle this smell...");
 	ds_map_add(t, "battle_bubble_trashguy_1", "+F1...i just want all this trash to go away...");
 	ds_map_add(t, "battle_bubble_trashguy_2", "+F1...this smell is terrible...");
-	ds_map_add(t, "battle_bubble_trashguy_3", "+F1...i think im going to fall over...");
+	ds_map_add(t, "battle_bubble_trashguy_3", "+F1...i think im gonna fall over...");
 	ds_map_add(t, "battle_bubble_trashguy_4", "+F1...why do they always put trash in here...?");
 	ds_map_add(t, "battle_bubble_trashguy_5", "+F1...this is so much better...");
 	ds_map_add(t, "battle_bubble_trashguy_6", "+F1...youre a nice person...");
@@ -1090,15 +1117,16 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_main_brock_{i++}", "* (MEE6 is insulting Broken Clock under his nonexistent breath.)");
 	ds_map_add(t, $"battle_main_brock_{i++}", "* (MEE6 throws leaves at&Broken Clock and misses&every one of them.)");
 	ds_map_add(t, $"battle_main_brock_{i++}", "* (You feel your hair being pulled by static eletricity.)");
+	ds_map_add(t, $"battle_main_brock_{i++}", "* (You feel the power of&1.21 gigawatts coursing&through your nervous system.)"); // "1.21 gigawatts" references "Back to the Future" (1985)
 	ds_map_add(t, $"battle_main_brock_{i++}", "* (Reading this doesn't seem&like the best use of time.)"); // from "UNDERTALE"
-	ds_map_add(t, "battle_act_result_brock_0_0", "* \"Broken Clock\" [:R12 ATK;D | :B0 DEF;D]^3&* \"A malfunctioning analog clock possessed by a ghost.\""); // "12" references a 12-hour clock
-	ds_map_add(t, "battle_act_result_brock_0_1", "* \"He has nothing to lose&besides his life.\"");
+	ds_map_add(t, "battle_act_result_brock_0_0", "* \"Broken Clock\" [:R12 ATK;D | :B0 DEF;D]^3&* (A malfunctioning analog clock possessed by a ghost.)"); // "12" references a 12-hour clock
+	ds_map_add(t, "battle_act_result_brock_0_1", "* (He has nothing to lose&besides his life.)");
 	ds_map_add(t, "battle_act_brock_1", "Negotiate");
 	ds_map_add(t, "battle_act_result_brock_1_0_0", "* (You promise Broken Clock to spare him if he spares you...)");
 	ds_map_add(t, "battle_act_result_brock_1_1_0", "* (He considers the possibility.)^3&* (Broken Clock's :RATTACK;D down!)");
 	ds_map_add(t, "battle_act_result_brock_1_0_1", "* (You propose handing over your weapon to Broken Clock...)");
 	ds_map_add(t, "battle_act_result_brock_1_1_1", "* (He declines it,^3 but likes&that you tried anyway.)^3&* (Broken Clock's :FSPEED;D down!)");
-	ds_map_add(t, "battle_act_brock_2", "Insult"); // from "UNDERTALE"
+	ds_map_add(t, "battle_act_brock_2", "Insult"); // inspired by "Insult" and "Threat" from "UNDERTALE"
 	var m = 0;
 	ds_map_add(t, $"battle_act_result_brock_2_{m}", "* (You stare Broken Clock right in the eyes and shout...)"); 
 	ds_map_add(t, $"battle_act_result_brock_2_{++m}", "* (... \"You're [insult]\".)");
@@ -1143,7 +1171,7 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2ALL THEY WANT IS POWER,^1 MONEY,^1 FAME,^1 WOMEN,^2 ...^2&+D0+F1Or whatever.");
 	z += 1;
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2LET ME GIVE YOU AN EXAMPLE.");
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2LET ME GIVE'YA AN EXAMPLE.");
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2TWO NEW MEMBERS CAME IN AND DESTROYED THE CORRIDORS.");
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2AND IF THAT&WASN'T ENOUGH,^1&THEY BROKE ME.");
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2WITHOUT ANY REGRET!!!!");
@@ -1152,7 +1180,7 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2THEN,^3 THE LEADERS&OF THIS WORLD ABANDONED THIS PLACE.");
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2THE CORRIDORS WERE DESTROYED AND ALMOST USELESS.");
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2ALL THOSE NEW MEMBERS DID WAS&DESTROY PART OF&OUR WORLD!!!!");
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2DO YOU UNDERSTAND WHAT I'M TRYING TO SAY?!?");
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2DO YOU UNDERSTAND WHAT I'M TRY'NA TO SAY?!?");
 	z += 1;
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2HUMANS WILL DO THE WORST THINGS IF THEY FEEL ENTITLED ENOUGH.");
@@ -1160,12 +1188,12 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2THEY DID ALL THAT JUST FOR FUN!!!!");
 	z += 1;
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2YOU'RE A NEW MEMBER,^3 JUST&LIKE THEM.");
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2HOW WOULD I KNOW IF YOU DIDN'T COME HERE TO KILL ME?!?");
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2YOU'RE A&NEW MEMBER,^3&JUST LIKE'EM.");
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2HOW WOULD I KNOW IF YOU DIDN'T C'MERE TO&KILL ME?!?");
 	z += 1;
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2TO BE HONEST,^1 I DON'T WANT TO&KILL YOU.");
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2BUT I ALSO DON'T WANT YOU TO TAKE AN INNOCENT LIFE.");
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2TO BE HONEST,^1 I DON'T WANNA&KILL'YA.");
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2BUT I ALSO DON'T WANT'YA TO TAKE AN INNOCENT LIFE.");
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2WHETHER IT'S MINE OR ANY OTHER MONSTER'S.");
 	z += 1;
 	i = 0;
@@ -1175,55 +1203,55 @@ function TEXTDATA()
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2IT'S NOT MY FAULT IF YOU'RE NOT CONVINCING&ENOUGH."); // hints convincing Broken Clock to win the battle
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2YOU'RE NOT A BOOK.^1 I CAN'T EXACTLY \"READ\" YOU.");
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2I HAVE NO OPTION BUT TO JUDGE YOU BY YOUR COVER.");
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2I HAVE NO OPTION BUT TO JUDGE'YA&BY YOUR COVER.");
 	z += 1;
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2NOTHING IS GOING TO CHANGE IF YOU DO NOTHING!!!!"); // hints convincing Broken Clock to win the battle
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2NOTHING IS GONNA CHANGE IF'YA DO NOTHING!!!!"); // hints convincing Broken Clock to win the battle
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2I HAVE ALL THE&TIME IN THE WORLD,^3 Y'KNOW.");
-	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2I CAN STAND HERE AND FIGHT YOU UNTIL THE&END OF TIME."); // inspired by "even if it means we have to stand here until the end of time" from "UNDERTALE"
+	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2I CAN STAND HERE AND FIGHT'YA UNTIL THE END OF TIME."); // inspired by "even if it means we have to stand here until the end of time" from "UNDERTALE"
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S2YOUR LIFE IS&IN YOUR OWN&HANDS NOW."); // references the hands of an analog clock
 	z += 1;
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_{z}_{i++}", "+F1+S4...");
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_fight_{i++}", "+F1+S2WHAT?!^1 DID YOU REALLY TRY TO&HURT ME?!?");
+	ds_map_add(t, $"battle_bubble_brock_fight_{i++}", "+F1+S2WHAT?!^1 DID'YA REALLY TRY TO&HURT ME?!?");
 	ds_map_add(t, $"battle_bubble_brock_fight_{i++}", "+F1+S2ARE YOU BLIND?!?!^1 ;RYOU CAN'T HIT ME WHILE IM FLYING;D!!!");
 	ds_map_add(t, $"battle_bubble_brock_fight_{i++}", "+F1+S2NOT WITH THAT&USELESS THING&YOU HAVE.");
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_convince_0_1_{i++}", "+F1+S2YOU DON'T WANT&TO HURT ME?!?");
+	ds_map_add(t, $"battle_bubble_brock_convince_0_1_{i++}", "+F1+S2YOU DON'T WANNA HURT ME?!?");
 	ds_map_add(t, $"battle_bubble_brock_convince_0_1_{i++}", "+F1+S2IF THAT'S TRUE,^3&WHY DO YOU HAVE A WEAPON WITH YOU?!?");
 	ds_map_add(t, $"battle_bubble_brock_convince_0_1_{i++}", "+F1+S2IS IT...^2^1&+D0+F1Is it just for SELF-DEFENSE...?");
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_convince_0_2_{i++}", "+F1+S2I'M GONNA BE&OKAY?!^1 REALLY?!?^1&HOW DO YOU KNOW?!?\\");
+	ds_map_add(t, $"battle_bubble_brock_convince_0_2_{i++}", "+F1+S2I'M GONNA BE&OKAY?!^1 REALLY?!?^1&HOW D'YA KNOW?!?\\");
 	ds_map_add(t, $"battle_bubble_brock_convince_0_2_{i++}", "+F1+S2BECAUSE RIGHT NOW I'M FAR FROM BEING SLIGHTLY \"OKAY\".");
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_convince_1_1_{i++}", "+F1+S2HOW DON'T YOU KNOW&WHERE YOU ARE?!?");
 	ds_map_add(t, $"battle_bubble_brock_convince_1_1_{i++}", "+F1+S2YOU WEREN'T INVITED BY ANYONE?!?");
 	ds_map_add(t, $"battle_bubble_brock_convince_1_1_{i++}", "+F1+S2I...^2^1+D0+F1 I didn't&know THAT..."); // slightly inspired by "You're gonna have to try a little harder than THAT" from "UNDERTALE"
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_convince_1_2_{i++}", "+F1+S2AND HOW WOULD YOU HELP ME,^1 EXACTLY?!?\\");
+	ds_map_add(t, $"battle_bubble_brock_convince_1_2_{i++}", "+F1+S2AND HOW WOULD'YA HELP ME,^1 EXACTLY?!?\\");
 	ds_map_add(t, $"battle_bubble_brock_convince_1_2_{i++}", "+F1+S2YOU'RE A CHILD,^1 FOR FUCK'S SAKE.");
 	ds_map_add(t, $"battle_bubble_brock_convince_1_2_{i++}", "+F1+S2I REALLY DOUBT THAT YOU CAN&FIX ME.");
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_convince_2_1_{i++}", "+F1+S2OH,^1 BUT YOU WILL.^1&IT'S JUST&A MATTER&OF TIME."); // references "be [only/just] a matter of time" idiom
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_convince_2_2_{i++}", "+F1+S2YOU...^2&+D0+F1You just want&to go HOME...?");
+	ds_map_add(t, $"battle_bubble_brock_convince_2_2_{i++}", "+F1+S2YOU...^2&+D0+F1You just wanna&go HOME...?");
 	ds_map_add(t, $"battle_bubble_brock_convince_2_2_{i++}", "+F1Well,^2 THEN...");
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_convince_3_1_{i++}", "+F1B-but you DIDN'T,^1 you didn't BOTHER me at ALL...");
 	ds_map_add(t, $"battle_bubble_brock_convince_3_1_{i++}", "+F1It's just...");
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_convince_3_2_{i++}", "+F1+S2TELL ME,^1 HOW COULD YOU POSSIBLY KNOW HOW I'M FEELING?!?");
-	ds_map_add(t, $"battle_bubble_brock_convince_3_2_{i++}", "+F1+S2IF THAT WERE TRUE,^1 YOU WOULD'VE LET ME KILL YOU ALREADY!!!!");
+	ds_map_add(t, $"battle_bubble_brock_convince_3_2_{i++}", "+F1+S2TELL ME,^1 HOW COULD'YA POSSIBLY KNOW HOW I'M FEELING?!?");
+	ds_map_add(t, $"battle_bubble_brock_convince_3_2_{i++}", "+F1+S2IF THAT WERE TRUE,^1 YOU WOULD'VE LET ME KILL'YA ALREADY!!!!");
 	i = 0;
-	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1D-did you...");
-	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1Did you say&you're SORRY...?");
-	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1But,^2 WHY?!^1 You...");
+	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1D-did'ya...");
+	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1Did'ya say&you're SORRY...?");
+	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1But,^2 WHY?!?^1 You...");
 	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1You haven't done ANYTHING to me.");
 	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1You're NOT the one who broke me.");
 	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1You're just a KID.\\");
 	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1I'M the one that's HURTING you.");
-	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1I'M the one that's TRYING to KILL you.\\");
+	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1I'M the one that's TRY'na KILL you.\\");
 	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1I-I'M the one that's...");
 	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1+S4T-that's,^2 uh...");
 	ds_map_add(t, $"battle_bubble_brock_convince_4_1_{i++}", "+F1+S4That's...");
@@ -1234,14 +1262,14 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_bubble_brock_convince_4_2_{i++}", "+F1+S2OH,^1 GO FUCK YOURSELF.");
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_insult_0_{i++}", "+F1+S2... SERIOUSLY?!");
-	ds_map_add(t, $"battle_bubble_brock_insult_0_{i++}", "+F1+S2YOU'RE AT THE PEAK OF YOUR IMMATURITY AND THAT'S WHAT YOU SAY?!?");
+	ds_map_add(t, $"battle_bubble_brock_insult_0_{i++}", "+F1+S2YOU'RE AT THE PEAK OF YOUR IMMATURITY AND THAT'S WHAT'YA SAY?!?");
 	ds_map_add(t, $"battle_bubble_brock_insult_0_{i++}", "+F1...^2 Way to go,^1&I GUESS...?");
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_insult_1_{i++}", "+F1... Bwahahah!^1&What does THAT&even MEAN?!");
-	ds_map_add(t, $"battle_bubble_brock_insult_1_{i++}", "+F1Are you just saying RANDOM things to make&me LAUGH?!");
+	ds_map_add(t, $"battle_bubble_brock_insult_1_{i++}", "+F1Are'ya just saying RANDOM things to make me LAUGH?!");
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_insult_2_{i++}", "+F1... No,^3 seriously,^1 WHAT does&THAT mean?!");
-	ds_map_add(t, $"battle_bubble_brock_insult_2_{i++}", "+F1Are you saying that I'm SINGLE because I'm FILTHY?!");
+	ds_map_add(t, $"battle_bubble_brock_insult_2_{i++}", "+F1Are'ya saying that I'm SINGLE because I'm FILTHY?!");
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_insult_3_{i++}", "+F1... Oh,^1 PLEASE.^1 You're not&even TRYING.");
 	i = 0;
@@ -1253,7 +1281,7 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_bubble_brock_insult_5_{i++}", "+F1That was beautiful.");
 	i = 0;
 	ds_map_add(t, $"battle_bubble_brock_insult_6_{i++}", "+F1+S2... OH,^1 FOR&FUCK'S SAKE.^3&YOU WERE DOING&SO WELL!!!!");
-	ds_map_add(t, $"battle_bubble_brock_insult_6_{i++}", "+F1+S2HOW COULD YOU POSSIBLY GO FROM SATAN TO FUCKING DING-A-LING??!?!?");
+	ds_map_add(t, $"battle_bubble_brock_insult_6_{i++}", "+F1+S2HOW COULD'YA POSSIBLY GO FROM SATAN TO FUCKING DING-A-LING??!?!?");
 	// Armsguy, Trashguy, Flitcher & Eyecrush's battles
 	ds_map_add(t, "battle_main_armsguy_armsguy", "* (Armsguys jump in your way!)");
 	ds_map_add(t, "battle_main_armsguy_armsguy_geno", "* (You step into Armsguys' way.)");
@@ -1287,16 +1315,16 @@ function TEXTDATA()
 	ds_map_add(t, "battle_act_rhonhey_2", "Threat"); // from "UNDERTALE"
 	ds_map_add(t, "battle_act_rhonhey_3", "Terrorize");  // from "UNDERTALE"
 	ds_map_add(t, "battle_act_result_rhonhey_0", "* \"Rhonhey\" [:R?? ATK;D | :B?? DEF;D]^3&* [No data available.]"); // "No data available" from "UNDERTALE"
-	ds_map_add(t, "battle_act_result_rhonhey_1_0_0", "* (You punched Rhonhey in the face with all the strength&you had.)");
-	ds_map_add(t, "battle_act_result_rhonhey_1_0_1_0", "* (Rhonhey is getting uncomfortable around you.)");
-	ds_map_add(t, "battle_act_result_rhonhey_1_0_1_1", "* (You've made Rhonhey uncomfortable.)");
-	ds_map_add(t, "battle_act_result_rhonhey_1_1", "* (Punching Rhonhey won't make him any more uncomfortable.)");
+	ds_map_add(t, "battle_act_result_rhonhey_1_0", "* (You punch Rhonhey in the face with all the strength you have...)");
+	ds_map_add(t, "battle_act_result_rhonhey_1_1_0", "* (Rhonhey is getting uncomfortable around you.)");
+	ds_map_add(t, "battle_act_result_rhonhey_1_1_1", "* (You've made Rhonhey uncomfortable.)");
+	ds_map_add(t, "battle_act_result_rhonhey_1_1_2", "* (But punching Rhonhey won't make him any more uncomfortable.)");
 	ds_map_add(t, "battle_act_result_rhonhey_2_0", "* (You tell Rhonhey that you're going to rip one of his eyeballs out.)");
 	ds_map_add(t, "battle_act_result_rhonhey_2_1", "* (Rhonhey didn't understand&what you said.)^1&* (Nothing happened.)"); // from "UNDERTALE"
-	ds_map_add(t, "battle_act_result_rhonhey_3_0_0", "* (You screamed at the top of your lungs while throwing&rocks at Rhonhey.)");
-	ds_map_add(t, "battle_act_result_rhonhey_3_0_1_0", "* (Rhonhey is getting miserable around you.)");
-	ds_map_add(t, "battle_act_result_rhonhey_3_0_1_1", "* (You've made Rhonhey miserable.)");
-	ds_map_add(t, "battle_act_result_rhonhey_3_1", "* (Terrorizing Rhonhey won't make him any more miserable.)");
+	ds_map_add(t, "battle_act_result_rhonhey_3_0", "* (You scream at the top of your lungs while throwing rocks at Rhonhey.)");
+	ds_map_add(t, "battle_act_result_rhonhey_3_1_0", "* (Rhonhey is getting miserable around you.)");
+	ds_map_add(t, "battle_act_result_rhonhey_3_1_1", "* (You've made Rhonhey miserable.)");
+	ds_map_add(t, "battle_act_result_rhonhey_3_2_2", "* (But terrorizing Rhonhey won't make him any more miserable.)");
 	// TROLLFACE's battle (WORK IN PROGRESS, v0.6.0)
 	ds_map_add(t, "battle_main_troll", "* (TROLLFACE stands in the way.)");
 	i = 0;
@@ -1305,6 +1333,7 @@ function TEXTDATA()
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is blatantly&staring at your hips.)"); // inspired by "Quit staring at my hips" from "EarthBound (MOTHER 2)"
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is sharing overly intimate secrets.)");
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is whispering inappropriate compliments.)");
+	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE is chanting&words in an language&you don't recognize.)");
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE sneezes and&doesn't cover his nose.)"); // inspired by "Jerry sneezes without covering its nose" from "UNDERTALE
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE spits in his&hands and fixes his hair.)");
 	ds_map_add(t, $"battle_main_troll_{i++}", "* (TROLLFACE suddenly proposes going somewhere more private.)");

@@ -134,7 +134,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 4;
 		if (_asset == mus_cave)
 			_volume *= 1.125;
-		if (_asset == mus_hurry_intro)
+		if (_asset == mus_hurry_intro_0)
 			_volume *= 2;
 		if (_asset == mus_hurry_loop_0) || (_asset == mus_hurry_loop_1)
 			_volume *= (1.5 - 0.125);
@@ -168,10 +168,13 @@ function audio_pitch(_audio, _pitch)
 		case snd_step_1:
 		case snd_stepWater:
 		case snd_stepKnight:
+		_pitch += (0.05 * choose(-1, 1));
+		break;
 		case snd_explosionRealistic:
 		case snd_explosionLightning:
 		case snd_explosionEcho:
-		_pitch += (0.05 * choose(-1, 1));
+		case snd_battle_item_trident_lightningSummon:
+		_pitch += (random(0.125) * choose(-1, 1));
 		break;
 	}
 	switch (_asset)

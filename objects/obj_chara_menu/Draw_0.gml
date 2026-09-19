@@ -4,33 +4,28 @@ var _cy = obj_GAME_CONTROLLER.cam_y;
 draw_set_alpha(alpha);
 draw_set_color(c_white);
 
-
 // fundo das informações principais
 draw_sprite_stretched(spr_writer_textbox, 0, (_cx + bg_x[0]), (_cy + bg_y[0]), bg_w[0], bg_h[0]);
 
-
 // informações principais
-var _bg1_di = 10;
-draw_set_valign(fa_top);
-
-var _name_y = (_cy + bg_y[0] + _bg1_di - 3);
 draw_set_font(fnt_main);
+draw_set_valign(fa_top);
 draw_set_halign(fa_center);
-draw_text_width((_cx + bg_x[0] + (bg_w[0] / 2)), _name_y, $"@{global.chara_name}", (bg_w[0] - (_bg1_di * 2)), [global.c_mention[0], global.c_mention[1]], alpha);
-
-var _info1 = "lvl\nhp\n$";
-var _info2 = string(global.chara_lvl) + "\n" + string(global.chara_curhp) + "/" + string(global.chara_maxhp) + "\n" + string(global.chara_money);
-//draw_set_font(fnt_main_spaced);
+var _bg1_di = 10;
+var _name_y = (_cy + bg_y[0] + _bg1_di - 3);
 var _info_y = (_name_y + string_height(global.chara_name) + (_bg1_di / 2) - 2);
-draw_set_font(fnt_mars_6);
+draw_text_width((_cx + bg_x[0] + (bg_w[0] / 2)), _name_y + 1, $"@{global.chara_name}", (bg_w[0] - (_bg1_di * 2)), [global.c_mention[0], global.c_mention[1]], alpha);
+draw_set_font(global.fnt_mars);
 draw_set_halign(fa_left);
-draw_text((_cx + bg_x[0] + _bg1_di), _info_y, _info1);
-draw_text((_cx + bg_x[0] + _bg1_di + 25), _info_y, _info2);
-
+info[0] = "LVL  " + string(global.chara_lvl);
+info[1] = "HP   " + string(global.chara_curhp) + "/" + string(global.chara_maxhp);
+info[2] = "$    " + string(global.chara_money);
+info_maxw = string_width("XXX  XXXXX");
+for (var i = 0; i < 3; i++)
+	draw_text_width((_cx + bg_x[0] + _bg1_di + 1), (_info_y + ((string_height("SALENIS") + 2) * i)), info[i], info_maxw, [c_white, c_white], alpha);
 
 // fundo das opções principais
 draw_sprite_stretched(spr_writer_textbox, 0, (_cx + bg_x[1]), (_cy + bg_y[1]), bg_w[1], bg_h[1]);
-
 
 // opções principais
 for (var i = 0; i < option_length[0]; i++)
@@ -133,35 +128,30 @@ if (lvl == 3)
 	draw_text_color(_imx, _iy, $"@{global.chara_name}", global.c_mention[1], global.c_mention[1], global.c_mention[0], global.c_mention[0], 1);
 	
 	// informações
+	info_maxw = string_width("XXXXX   XX");
 	draw_set_halign(fa_left);
 	
 		// esquerda (primeiro)
-	draw_text(_ilx, (_iy + 25), "HP   " + string(global.chara_curhp) + "/" + string(global.chara_maxhp));
-	draw_text(_ilx, (_iy + 40), "LVL  " + string(global.chara_lvl));
-	draw_text(_ilx, (_iy + 55), "ATK  " + string((global.chara_atk - 10) + global.chara_wstrength));
+	draw_text_width(_ilx, (_iy + 25), "HP   " + string(global.chara_curhp) + "/" + string(global.chara_maxhp), info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 40), "LVL  " + string(global.chara_lvl), info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 55), "ATK  " + string((global.chara_atk - 10) + global.chara_wstrength), info_maxw, [c_white, c_white], alpha);
 	
 		// direita (primeiro)
 	info[0] = "$    " + string(global.chara_money);
 	info[1] = "EXP  " + string(global.chara_exp) + "/" + string(global.chara_nextexp);
 	info[2] = "DEF  " + string((global.chara_def - 10) + global.chara_astrength);
 	for (var i = 0; i < 3; i++)
-		info_w[i] = string_width(info[i]);
-	info_maxw = max(info_w[0], info_w[1], info_w[2]);
-	for (var i = 0; i < 3; i++)
-		draw_text((_irx - info_maxw), (_iy + 25 + (15 * i)), info[i]);
+		draw_text_width((_irx - info_maxw), (_iy + 25 + (15 * i)), info[i], info_maxw, [c_white, c_white], alpha);
 	
 		// esquerda (segundo)
-	draw_text(_ilx, (_iy + 80), $"{get_text("charamenu_stat_spares")}  " + string(global.chara_spares));
-	draw_text(_ilx, (_iy + 95), $"{get_text("charamenu_stat_heals")}   " + string(global.chara_heals));
+	draw_text_width(_ilx, (_iy + 80), $"{get_text("charamenu_stat_spares")}  " + string(global.chara_spares), info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 95), $"{get_text("charamenu_stat_heals")}   " + string(global.chara_heals), info_maxw, [c_white, c_white], alpha);
 	
 		// direita (segundo)
 	info[0] = $"{get_text("charamenu_stat_kills")}   " + string(global.chara_kills);
 	info[1] = $"{get_text("charamenu_stat_deaths")}  " + string(global.chara_deaths);
 	for (var i = 0; i < 2; i++)
-		info_w[i] = string_width(info[i]);
-	info_maxw = max(info_w[0], info_w[1]);
-	for (var i = 0; i < 2; i++)
-		draw_text((_irx - info_maxw), (_iy + 80 + (15 * i)), info[i]);
+		draw_text_width((_irx - info_maxw), (_iy + 80 + (15 * i)), info[i], info_maxw, [c_white, c_white], 1);
 		
 		// arma e armadura
 	draw_text(_ilx, (_iy + 120), $"{get_text("charamenu_stat_weapon")}  " + string(item_name(global.chara_weapon, "small")) + " (+" + string(global.chara_wstrength) + ")");

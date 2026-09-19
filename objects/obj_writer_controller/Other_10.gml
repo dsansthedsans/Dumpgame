@@ -30,9 +30,9 @@ if (msg_format[page] == "textbox") || (msg_format[page] == "textbox_bottom") || 
 		text_color[i] = c_white;
 
 	// get type
-	if (msg_type[page] == "intro")
+	if (msg_type[page] == "event_story")
 	{
-		text_x = 60;
+		text_x = 60 + 5;
 		text_y = 160;
 		text_xend = 290;
 		text_speed = 4;
@@ -47,7 +47,10 @@ if (msg_format[page] == "textbox") || (msg_format[page] == "textbox_bottom") || 
 	if (msg_type[page] == "notawake")
 		text_y = 120;
 	if (msg_type[page] == "tense")
-		text_speed = 4;
+	{
+		letter_xspace *= 1.5;
+		text_speed = 8;
+	}
 	
 	
 	// change text_x if there's face

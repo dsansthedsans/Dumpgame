@@ -15,16 +15,12 @@ if (speed != 0)
 			postx = (640 - x);
 		xfactor = (postx / 320);
 		dmg = (dmg * (xfactor * 3));
-		if (global.chara_weapon == ITEM_TRIDENT && x >= (320 - item_trident_lightningDistance) && x <= (320 + item_trident_lightningDistance) && controller.enemy_type[target] != 6)
-			dmg *= 1.5;
-		xscale = 1.35;
-		/*if (postx >= (320 - 10))
+		if (global.chara_weapon == ITEM_TRIDENT && x >= (320 - item_trident_lightningDistance - 2) && x <= (320 + item_trident_lightningDistance) && controller.enemy_type[target] != 6)
 		{
-			dmg *= 1.25;
-			xscale = 1.5;
-			blend = 0.25;
-			audio_play(snd_impactSwing, , VOLUME_SOUND);
-		}*/
+			dmg *= 1.5;
+			audio_play(snd_battle_item_trident_lightningSummon, false, VOLUME_SOUND);
+		}
+		xscale = 1.35;
 		yscale = xscale;
 		dmg = round(clamp(dmg, 0, 999999999999999999));
 		create(-20, -20, obj_battle_knife);

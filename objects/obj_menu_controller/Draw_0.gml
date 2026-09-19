@@ -354,14 +354,14 @@ if (global.menu_lvl == 1)
 			var _lvl = savefile_lvl;
 			var _world = chara_world_name(savefile_world);
 			var _room = chara_room_name(savefile_room);
-			
+			var _string = $"@{_name} [LVL {_lvl}]\n{_world} - {_room}";
 			var _color = global.c_dump;
 			if (i == option_pos)
 				_color = c_yellow;
 			draw_set_color(_color);
 			draw_set_valign(fa_top);
 			draw_set_halign(fa_left);
-			draw_text_width((_x2 + _di), (_y + _di), ("\"" + string(_name) + "\" - [LVL " + string(_lvl) + "]\n" + string(_world) + " - " + string(_room)), (_w2 - (_di * 2)), [_color, _color], option_alpha * alpha);
+			draw_text_width((_x2 + _di), (_y + _di), _string, (_w2 - (_di * 2)), [_color, _color], option_alpha * alpha);
 		}
 		else // save não existe
 		{

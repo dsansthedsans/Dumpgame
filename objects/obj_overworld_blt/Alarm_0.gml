@@ -17,6 +17,7 @@ if (type >= 1 && type < 2) // Gabee's chase
 	image_alpha = 0;
 	delay = 30;
 	spd = 6;
+	dmg += 1;
 	chara_x = chara.x;
 	if (type == 1.1)
 		direction = 180

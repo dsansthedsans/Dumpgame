@@ -10,7 +10,7 @@ achievement_snd = unused_snd_notification_achievement;
 
 // set basics
 text = "Salenis";
-text_font = fnt_mars_6;
+text_font = global.fnt_mars;
 
 box_x = 0;
 box_y = 0;

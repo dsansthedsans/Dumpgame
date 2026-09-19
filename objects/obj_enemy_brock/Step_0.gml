@@ -30,7 +30,8 @@ if (active == 1)
 		hurt_time += 1;
 		if (controller.enemy_spare[myself] >= 100)
 		{
-			audio_play(hurtsound, 0, VOLUME_SOUND);
+			if (hurtsound != -1)
+				audio_play(hurtsound, 0, VOLUME_SOUND);
 			body.movement = 5;
 			hurt_time = 60;
 		}

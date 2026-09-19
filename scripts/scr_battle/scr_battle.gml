@@ -870,7 +870,7 @@ function battle_attack()
 				ball =
 				{
 					objects : [],
-					speed : 0.003,
+					speed : 0.0035,
 					length : 6,
 					distance : ((32 / 2) + 8),
 					angle : 180,

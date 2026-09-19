@@ -1,49 +1,4 @@
-	
-// deltarune style background
-/*
-if (battle_group == -2)
-{
-	var _yy = ((room_height / 2) + 205);
-	
-	// everything
-	if (battle_group == -2)
-	{	
-		// bg
-		draw_set_alpha(1);
-		draw_set_color(#1D141E);
-		draw_rectangle(-20, -20, (room_width + 20), (room_height + 20), 0);
-		
-		// rails
-		for (var i = 0; i < 3; i++)
-		{
-			draw_sprite_ext(spr_battle_spamtontest_rail, 0, spamtontest_rail_x[i], (_yy - 130), 2, 2, 0, c_white, 1);
-			draw_sprite_ext(spr_battle_spamtontest_rail, 0, spamtontest_rail_x[i], (_yy - 220), 2, 2, 0, c_white, 1);
-			draw_sprite_ext(spr_battle_spamtontest_rail, 0, spamtontest_rail_x[i], (_yy - 310), 2, 2, 0, c_white, 1);
-		
-			var _spd = 9;
-			spamtontest_rail_x[i] -= _spd;
-			if (spamtontest_rail_x[i] < -640)
-				spamtontest_rail_x[i] = (640 - _spd);
-		}
-		
-		// cart
-		spamtontest_cart_siner += 0.1;
-		spamtontest_cart_x += (sin(spamtontest_cart_siner / 2) * 1.25);
-		draw_sprite_ext(spr_battle_spamtontest_cart, 0, spamtontest_cart_x, (_yy - 234), 2, 2, 0, c_white, 1);
-		
-		// carlinhos
-		draw_sprite_ext(spr_carlos, 0, (spamtontest_cart_x - 15), (_yy - 253), 2, 2, 0, c_white, 1);
-		
-		// spamton neo
-		draw_sprite_ext(spr_battle_spamtontest, 0, (room_width / 1.3), (_yy - 250), 2, 2, 0, c_white, 1);
-	}
-	
-	// bg trans
-	draw_set_color(c_black);
-	draw_rectangle(-20, (_yy - 35), (room_width + 20), (room_height + 20), 0);
-	draw_sprite_ext(spr_battle_deltabgtrans, 0, 0, (_yy - 25), 160, 2, 0, c_white, 1);
-}
-*/
+
 var _alpha = 1;
 if (createbubble == 1) || (startattack == 1)
 	_alpha = 0.25;
@@ -63,75 +18,55 @@ for (var i = 0; i < button_length * button_active; i++)
 // draw chara info
 if (charainfo_active == true)
 {
-	if (button_active == true)
+	var _inbetween = (box_defaulty + round(box_defaulth / 2) + box_borderw);
+	_inbetween = (button_y[0] - round((button_y[0] - _inbetween) / 2));
+	if (button_active == false)
+		_inbetween = (box_y + round(box_h / 2) + box_borderw);
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_left);
+	draw_set_font(global.fnt_mars);
+	var _chara_icon_spr = spr_chara_d;
+	var _chara_icon_width = sprite_get_width(_chara_icon_spr);
+	var _chara_name_text = string_upper(global.chara_name);
+	var _chara_name_scale = 3;
+	var _chara_name_width = (string_width(_chara_name_text) * _chara_name_scale);
+	var _chara_name_xDist = ((_chara_icon_width * 2) - 2 + 8);
+	var _chara_bar_widthMax = (100 + (4 * (((string_upper(global.chara_name) != "FRISK") ? global.chara_lvl : 20) - 1)));
+	var _chara_bar_xDist = (_chara_name_width + 1 + 16);
+	var _chara_icon_x = (box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
+	if (button_active == false)
+		_chara_icon_x = (box_x - ((_chara_name_xDist + _chara_bar_xDist + _chara_bar_widthMax) / 2));
+	var _chara_icon_y = (_inbetween - (16 * button_active) + (3 * !button_active));
+	var _chara_icon_alpha = ((button_active == true) ? gui_alpha : 1);
+	var _chara_name_x = (_chara_icon_x + _chara_name_xDist);
+	var _chara_name_y = ((_chara_icon_y + 16) + 3);
+	var _chara_bar_x = (_chara_name_x + _chara_bar_xDist);
+	var _chara_bar_y = (box_y + round(box_h / 2) + box_borderw + 11);
+	var _chara_bar_alpha = 1;
+	/*chara_icon*/ draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, _chara_icon_width, 16, _chara_icon_x, _chara_icon_y, 2, 2, c_white, _chara_icon_alpha);
+	if (chara_murder() >= 1)
+		/*chara_icon_geno*/ draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, _chara_icon_width, 16, _chara_icon_x, _chara_icon_y, 2, 2, c_white, (_chara_icon_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
+	draw_set_alpha(_chara_icon_alpha);
+	/*chara_name*/ draw_text_outline_transformed(_chara_name_x, _chara_name_y, _chara_name_text, c_white, 2, c_black, _chara_name_scale, _chara_name_scale, 0);
+	/*chara_bar*/ draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, _chara_bar_widthMax, /*#FFDC31*/ #F29948, #DD2929, _chara_bar_alpha);
+	if (global.flag[2] == true && assist.active == true && button_active == true)
 	{
-		var _inbetween = (box_defaulty + round(box_defaulth / 2) + box_borderw);
-		_inbetween = (button_y[0] - round((button_y[0] - _inbetween) / 2));
 		draw_set_alpha(gui_alpha);
 		draw_set_valign(fa_middle);
 		draw_set_halign(fa_left);
-		draw_set_font(fnt_mars_18);
-		var _chara_icon_spr = spr_chara_d;
-		var _chara_icon_x = (box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
-		var _chara_name_text = global.chara_name;
-		var _chara_name_x = (_chara_icon_x + (sprite_get_width(_chara_icon_spr) * 2) - 2 + 8);
-		var _chara_bar_x = (_chara_name_x + string_width(_chara_name_text) + 1 + 16);
-		var _chara_bar_y = (box_y + round(box_h / 2) + box_borderw + 11);
-		draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, sprite_get_width(_chara_icon_spr), 16, _chara_icon_x, (_inbetween - 16), 2, 2, c_white, gui_alpha);
-		if (chara_murder() >= 1)
-			draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, sprite_get_width(_chara_icon_spr), 16, _chara_icon_x, (_inbetween - 16), 2, 2, c_white, (gui_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
-		draw_text_outline(_chara_name_x, (_inbetween + 4), _chara_name_text, c_white, 2, c_black);
-		draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, (100 + (5 * (global.chara_lvl - 1))), /*#FFDC31*/ #F29948, #DD2929, 1);
-		if (global.flag[2] == true && assist.active == true)
-		{
-			draw_set_alpha(gui_alpha);
-			draw_set_valign(fa_middle);
-			draw_set_halign(fa_left);
-			draw_set_font(fnt_mars_18);
-			var _m6_icon_spr = spr_m6_d_default;
-			if (global.flag[37] == true && global.flag[38] == false)
-				_m6_icon_spr = spr_m6_d_neutral;
-			var _m6_icon_x = (box_defaultx + round(box_defaultw / 2) + box_borderw + 2 - (sprite_get_width(_m6_icon_spr) * 2) + 1);
-			var _m6_name_text = "MEE6";
-			var _m6_name_x = (_m6_icon_x - string_width(_m6_name_text) + 5 - 8);
-			var _m6_bar_widthMax = 75;
-			var _m6_bar_x = (_m6_name_x - _m6_bar_widthMax - 16 - (2 + 4) - 1);
-			draw_sprite_part_ext(_m6_icon_spr, 0, 0, 1, sprite_get_width(_m6_icon_spr), 16, _m6_icon_x, (_inbetween - 16 + 2), 2, 2, c_white, gui_alpha);
-			draw_text_outline(_m6_name_x, (_inbetween + 4), _m6_name_text, c_white, 2, c_black);
-			draw_battle_bar($"{round(assist.curr)}%", assist.curr, assist.max, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, #4986B7, c_black, 1);
-		}
-	}
-	else
-	{
-		var _chara_icon_spr = spr_chara_d;
-		var _chara_icon_width = sprite_get_width(_chara_icon_spr);
-		var _chara_icon_height = 16;
-		var _chara_icon_scale = 2;
-		draw_set_font(fnt_mars_18);
-		var _chara_name_text = global.chara_name;
-		var _chara_name_gapX = 8;
-		var _chara_name_width = string_width(_chara_name_text);
-		var _chara_name_height = string_height(_chara_name_text);
-		draw_set_font(fnt_mars_12);
-		var _chara_bar_gapX = 10;
-		var _chara_bar_width = (100 + (5 * (global.chara_lvl - 1)));
-		var _chara_y = (box_y + round(box_h / 2) + box_borderw);
-		var _chara_width = ((_chara_icon_width * _chara_icon_scale) + _chara_name_gapX + _chara_name_width + _chara_bar_gapX + _chara_bar_width + 4);
-		var _chara_icon_x = (320 - (_chara_width / 2)); //(box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
-		var _chara_icon_y = (_chara_y + 12);
-		var _chara_name_x = (_chara_icon_x + (_chara_icon_width * _chara_icon_scale) - 2 + _chara_name_gapX);
-		var _chara_name_y = (_chara_icon_y + ((_chara_icon_height * _chara_icon_scale) / 2) + 4);
-		var _chara_bar_x = (_chara_name_x + _chara_name_width + 1 + _chara_bar_gapX);
-		var _chara_bar_y = (_chara_name_y - (_chara_name_height / 2));
-		draw_set_alpha(1);
-		draw_set_valign(fa_middle);
-		draw_set_halign(fa_left);
-		draw_set_font(fnt_mars_18);
-		draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, sprite_get_width(_chara_icon_spr), _chara_icon_height, round(_chara_icon_x), round(_chara_icon_y), _chara_icon_scale, _chara_icon_scale, c_white, 1);
-		if (chara_murder() >= 1)
-			draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, sprite_get_width(_chara_icon_spr), _chara_icon_height, round(_chara_icon_x), round(_chara_icon_y), _chara_icon_scale, _chara_icon_scale, c_white, ((chara_murder() == 1) ? 0.5 : 1));
-		draw_text_outline(round(_chara_name_x), round(_chara_name_y), _chara_name_text, c_white, 2, c_black);
-		draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, round(_chara_bar_x), round(_chara_bar_y), _chara_bar_width, /*#FFDC31*/ #F29948, #DD2929, 1);
+		draw_set_font(global.fnt_mars);
+		var _m6_icon_spr = spr_m6_d_default;
+		if (global.flag[37] == true && global.flag[38] == false)
+			_m6_icon_spr = spr_m6_d_neutral;
+		var _m6_icon_x = (box_defaultx + round(box_defaultw / 2) + box_borderw + 2 - (sprite_get_width(_m6_icon_spr) * 2) + 1);
+		var _m6_name_text = "MEE6";
+		var _m6_name_scale = 3;
+		var _m6_name_x = (_m6_icon_x - (string_width(_m6_name_text) * _m6_name_scale) + 5 - 8);
+		var _m6_bar_widthMax = 75;
+		var _m6_bar_x = (_m6_name_x - _m6_bar_widthMax - 16 - (2 + 4) + 1);
+		draw_sprite_part_ext(_m6_icon_spr, 0, 0, 1, sprite_get_width(_m6_icon_spr), 16, _m6_icon_x, (_inbetween - 16 + 2), 2, 2, c_white, gui_alpha);
+		draw_text_outline_transformed(_m6_name_x, (_inbetween + 3), _m6_name_text, c_white, 2, c_black, _m6_name_scale, _m6_name_scale, 0);
+		draw_battle_bar($"{round(assist.curr)}%", assist.curr, assist.max, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, #4986B7, c_black, 1);
 	}
 }
 
@@ -161,35 +96,14 @@ if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == fal
 				_maxamt = 100;
 			}
 			var _amt = ((_curamt / _maxamt) * 100);
-			
-			var _thislvl = (battle_lvl - 1);
-			
 			var _x1 = (box_x - (box_w / 2) + 335 + 40);
-			
 			var _y1 = (box_y - (box_h / 2) + 23 + (32 * i));
 			var _y2 = (_y1 + 17);
-			
-			var _outw1 = 4;
-			var _outw2 = (_outw1 / 2);
-			
-			draw_set_color(c_white);
-			draw_rectangle((_x1 - _outw1), (_y1 - _outw1), (_x1 + 100 + _outw1), (_y2 + _outw1), 0);
-			draw_rectangle_outline(_x1, _y1, (_x1 + 100), _y2, level_maxbarcolor[_thislvl], _outw2, c_black);
-		
-			if (_amt > 0) // current amount
-			{
-				draw_set_color(level_curbarcolor[_thislvl]);
-				draw_rectangle(_x1, _y1, (_x1 + _amt), _y2, 0);
-			}
-
-			draw_set_font(fnt_mars_12); // amount text
-			draw_set_valign(fa_middle);
-			draw_set_halign(fa_center);
-			draw_text_outline((_x1 + 50), (_y1 + 11), string(round(_amt)) + "%", c_white, 2, c_black);
+			draw_battle_bar($"{_amt}%", _curamt, _maxamt, _x1, _y1, 100, level_curbarcolor[(battle_lvl - 1)], level_maxbarcolor[(battle_lvl - 1)], 1);
 		}
 	}
 	if (battle_group == 1)
-		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "pt"))), (box_x + (box_w / 4) + (box_w / 8) - 20 + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 1, 1, 0, c_white, 1);
+		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "pt"))), /*(box_x + (box_w / 4) + (box_w / 8) - 20 + (irandom(1) * global.visualeff) - 20)*/ (_x1 + (100 / 2) + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 2, 2, 0, c_white, 1);
 }
 
 draw_set_alpha(1);

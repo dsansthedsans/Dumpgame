@@ -65,6 +65,10 @@ function item_value(_item)
 		case ITEM_CHOCO:
 		_value = 14;
 		break;
+		// "Temporary Pacemaker"
+		case ITEM_PACE:
+		_value = 6;
+		break;
 	}
 	return _value;
 }

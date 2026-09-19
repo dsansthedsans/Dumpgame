@@ -41,7 +41,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0 && global.f
 	buildup_pitch = 0.5;
 	fearstingy = false;
 	
-	var _skip = 0;
+	var _skip = false;
 	if (_skip == 1)
 	{
 		chara.x = 720;
@@ -49,7 +49,7 @@ if (global.chara_move == 1 && global.chara_cutscene == 0 && con == 0 && global.f
 		m6.x = 670;
 		m6.y = 200;
 		global.flag[59] = true;
-		_skip = 2;
+		//_skip = 2;
 		if (_skip == 2)
 		{
 			global.flag[2] = false

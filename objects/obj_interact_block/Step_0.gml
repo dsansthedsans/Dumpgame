@@ -18,7 +18,8 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 	{
 		if (result != 4)
 		{
-			chara_change(-1, 1, 1, -1, 1, 1, -1);
+			if (result != 0.125) || (result == 0.125 && global.flag[6] == false) || (result == 0.125 && global.flag[6] == true && global.flag[7] == true)
+				chara_change(-1, 1, 1, -1, 1, 1, -1);
 			alarm[2] = 4;
 			con = 3;
 		}

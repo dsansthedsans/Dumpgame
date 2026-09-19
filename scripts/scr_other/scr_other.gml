@@ -501,21 +501,22 @@ function draw_battle_bar(__value_text, __value_current, __value_max, __bar_x, __
 	draw_set_alpha(__bar_alpha);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_set_font(fnt_mars_12);
+	draw_set_font(global.fnt_mars);
 	var _bar_borderExternal_size = 4;
 	var _bar_borderInternal_size = 2;
+	var _bar_value_scale = 2;
 	var _bar_widthCurr = round((__value_current / __value_max) * __bar_widthMax);
-	var _bar_height = round(string_height("SALENIS") + 1);
+	var _bar_height = round((string_height("SALENIS") * _bar_value_scale) + 4);
 	var _bar_x = round(__bar_x);
 	var _bar_y = round(__bar_y);
 	var _bar_value_x = (_bar_x + round(__bar_widthMax / 2));
-	var _bar_value_y = (_bar_y + round(_bar_height / 2) + 3);
-	/*External border*/draw_rectangle_color((_bar_x - _bar_borderExternal_size), (_bar_y - _bar_borderExternal_size), (_bar_x + __bar_widthMax + _bar_borderExternal_size), (_bar_y + _bar_height + _bar_borderExternal_size), c_white, c_white, c_white, c_white, false);
-	/*Internal border + Max value bar*/draw_rectangle_outline(_bar_x, _bar_y, (_bar_x + __bar_widthMax), (_bar_y + _bar_height), __bar_color_max, _bar_borderInternal_size, c_black);	
+	var _bar_value_y = (_bar_y + round(_bar_height / 2) + 2);
+	/*External border*/draw_rectangle_color((_bar_x - _bar_borderExternal_size), (_bar_y - _bar_borderExternal_size), (_bar_x + __bar_widthMax + _bar_borderExternal_size), (_bar_y + _bar_height + _bar_borderExternal_size + 1), c_white, c_white, c_white, c_white, false);
+	/*Internal border + Max value bar*/draw_rectangle_outline(_bar_x, _bar_y, (_bar_x + __bar_widthMax), (_bar_y + _bar_height + 1), __bar_color_max, _bar_borderInternal_size, c_black);	
 	if (_bar_widthCurr > 0)
-		/*Current value bar*/draw_rectangle_color(_bar_x, _bar_y, (_bar_x + _bar_widthCurr), (_bar_y + _bar_height), __bar_color_current, __bar_color_current, __bar_color_current, __bar_color_current, false);
+		/*Current value bar*/draw_rectangle_color(_bar_x, _bar_y, (_bar_x + _bar_widthCurr), (_bar_y + _bar_height + 1), __bar_color_current, __bar_color_current, __bar_color_current, __bar_color_current, false);
 	if (__value_text != undefined)
-		/*Value text*/draw_text_outline(_bar_value_x, _bar_value_y, __value_text, c_white, 2, c_black);
+		/*Value text*/draw_text_outline_transformed(_bar_value_x, _bar_value_y, __value_text, c_white, 2, c_black, _bar_value_scale, _bar_value_scale, 0);
 }
 
 function debug(_string)

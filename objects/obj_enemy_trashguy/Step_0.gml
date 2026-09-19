@@ -52,7 +52,10 @@ if (active == 1)
 			controller.enemy_type[myself] = 0;
 			battle_enemy_allAngry();
 			if (global.visualeff == true)
+			{
 				create(x, y, obj_battle_vapor);
+				create(-20, -20, obj_battle_enemyHeartbreak);
+			}
 			destroy(body);
 		}
 		else

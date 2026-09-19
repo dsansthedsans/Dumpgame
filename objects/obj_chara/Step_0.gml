@@ -29,17 +29,20 @@ if (global.chara_cutscene == 0 && global.chara_open_menu == 1 && exists(obj_room
 
 
 // pausar jogo
+pausechange = false;
 if (global.chara_cutscene == 0 && global.chara_pause_game == 1 && exists(obj_room_transition) == false)
 {
 	pauseobj = obj_chara_pause;
 	if (exists(pauseobj) == 0 && press_esc == 1)
 	{
+		pausechange = true;
 		audio_play(snd_option_move, 0, VOLUME_SOUND);
 		chara_change(-1, 0, 0, -1, 0, 1, -1);
 		create(0, 0, pauseobj);
 	}
 	else if (exists(pauseobj) == 1 && ((press_esc == 1) || (press_shift == 1) || (pauseobj.press_enter == 1 && pauseobj.option_pos == 0)))
 	{
+		pausechange = true;
 		audio_play(snd_option_return, 0, VOLUME_SOUND);
 		chara_change(-1, 1, 1, -1, 1, 1, -1);
 		destroy(pauseobj);
@@ -332,8 +335,9 @@ else
 if (global.chara_move == 1 && global.chara_interact == 1)
 {
 	// blocos
-	if (press_enter == 1 && exists(obj_room_transition) == false)
+	if (press_enter == 1 && exists(obj_room_transition) == false && pausechange == false)
 	{
+		var _interacted = false;
 		for (var o = 0; o < 2; o++)
 		{
 			var _obj = obj_interact_parent;
@@ -364,36 +368,13 @@ if (global.chara_move == 1 && global.chara_interact == 1)
 						mycol = intlist[i][| _intpos];
 						mycol.con = 1;
 						lastcol = mycol;
+						_interacted = true;
 						break;
 					}
 				}
 			}
-			/*
-			var _obj = obj_interact_parent;
-			if (i == 1)
-				_obj = obj_solidinteract_parent;
-			lcol = collision_rectangle(x, (y - (sprite_height / 2) - 2), (x - (sprite_width / 2) - 2), y, _obj, 0, 1);
-			rcol = collision_rectangle(x, (y - (sprite_height / 2) - 2), (x + (sprite_width / 2) + 2), y, _obj, 0, 1);
-			ucol = collision_rectangle((x - (sprite_width / 3) - 2), y, (x + (sprite_width / 3) + 2), (y - (sprite_height / 2) - 2), _obj, 0, 1);
-			dcol = collision_rectangle((x - (sprite_width / 3) - 2), y, (x + (sprite_width / 3) + 2), (y + (sprite_height / 3) + 2), _obj, 0, 1);
-			mycol = 0;
-			if (global.chara_facing == LEFT	&& lcol > 0)
-				mycol = lcol;
-			if (global.chara_facing == RIGHT && rcol > 0)
-				mycol = rcol;
-			if (global.chara_facing == UP && ucol > 0)
-				mycol = ucol;
-			if (global.chara_facing == DOWN	&& dcol > 0)
-				mycol = dcol;
-			if (mycol != 0 && mycol.con == 0 )
-			{
-				chara_change(-1, 0, 0, -1, 0, 0, -1);
-				chara_stop();
-				mycol.con = 1;
-				lastcol = mycol;
+			if (_interacted == true)
 				break;
-			}
-			*/
 		}
 	}
 	

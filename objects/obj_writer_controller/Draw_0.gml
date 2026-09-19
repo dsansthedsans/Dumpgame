@@ -10,7 +10,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 	_bonusy = camera_get_view_y(view_camera[0]);
 	
 	// draw textbox
-	if (msg_type[page] != "intro" && msg_type[page] != "notawake")
+	if (msg_type[page] != "event_story" && msg_type[page] != "notawake")
 	{
 		textbox_x = 16;
 		textbox_y = 160;
@@ -38,11 +38,14 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 	// desenhar informações do jogador no ponto de save
 	if (msg_type[page] == "savepoint")
 	{
-		draw_set_font(fnt_main);
 		draw_set_alpha(1);
 		var _color = c_white;
+		var _name_colors = global.c_mention;
 		if (filesaved == 1)
+		{
 			_color = c_yellow;
+			_name_colors = [c_yellow, c_yellow];
+		}
 		draw_set_color(_color);
 		
 		savefile_read(global.savefile_selected);
@@ -52,12 +55,11 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		var _room = "[-------]";
 		if (thisfile != -1)
 		{
-			_name = savefile_name;
+			_name = $"@{savefile_name}";
 			_lvl = savefile_lvl;
 			_world = chara_world_name(savefile_world);
 			_room = chara_room_name(savefile_room);
 		}
-		
 		var _xx = textbox_x;
 		var _yy = textbox_y;
 		var _ww = textbox_width;
@@ -67,21 +69,20 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		var _uppery = (_bonusy + _yy + _vspace);
 		var _bottomy = (_uppery + 20);
 		var _savedy = (_bonusy + _yy + _hh - _vspace)
-		
 		var _leftx = (_bonusx + _xx + _hspace);
 		var _middlex = (_bonusx + _xx + (_ww / 2));
 		var _rightx = (_bonusx + _xx + _ww - _hspace);
-		
+		draw_set_font(fnt_main_spaced);
 		draw_set_valign(fa_top);
 		draw_set_halign(fa_left);
-		draw_text(_leftx, _uppery, _name);
+		draw_text_color(_leftx, _uppery, _name, _name_colors[1], _name_colors[1], _name_colors[0], _name_colors[0], 1);
 		draw_set_halign(fa_right);
 		draw_text(_rightx, _uppery, "LVL " + string(_lvl));
-		
+		draw_set_font(fnt_main);
 		draw_set_valign(fa_top);
 		draw_set_halign(fa_left);
 		draw_text_width(_leftx, _bottomy, string(_world) + " - " + string(_room), (_ww - (_hspace * 2)), [_color, _color], 1);
-		
+		draw_set_font(fnt_main_spaced);
 		draw_set_valign(fa_bottom);
 		draw_set_halign(fa_center);
 		if (filesaved == 1)

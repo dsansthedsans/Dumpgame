@@ -95,4 +95,14 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		if (keyboard_check_pressed(vk_numpad1) == 1)
 			party_change(0, 1, choose(LEFT, RIGHT, UP, DOWN));
 	}
+	if (keyboard_check(ord("Y")) == true)
+	{
+		var _amt = 1000 * clamp((global.chara_heals / 1000), 1, infinity);
+		global.chara_exp += _amt;
+		global.chara_money += _amt;
+		global.chara_spares += _amt;
+		global.chara_deaths += _amt;
+		global.chara_kills += _amt;
+		global.chara_heals += _amt;
+	}
 }

@@ -226,6 +226,8 @@ if (audio_playing(snd_buildupComputer) == true)
 }
 if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter != -1 && exists(thiswriter) == false)))
 {
+	if (global.world_curpopulation[chara_world()] > 0 && global.flag[60] == false)
+		global.flag[60] = true;
 	var _y = (chara.y - chara.sprite_height - 30);
 	if (zz == 1)
 		_y = (chara.y + 30)
@@ -293,7 +295,10 @@ if (con == 36)
 		alarm[4] = 45;
 		con = 36.25;
 		if (global.world_curpopulation[chara_world()] <= 0)
+		{
+			global.flag[60] = true;
 			con = 15.75;
+		}
 	}
 }
 if (con == 36.5)
@@ -304,7 +309,6 @@ if (con == 36.5)
 }
 if (con == 37)
 {
-	global.flag[60] = 1;
 	audio_play(snd_jump, 0, VOLUME_SOUND);
 	audio_pitch(thisaudio, 0.8);
 	eyes_jumpsnd = thisaudio;

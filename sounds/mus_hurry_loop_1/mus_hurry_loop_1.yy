@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":56.920815,
+  "duration":58.881134,
   "exportDir":"",
   "name":"mus_hurry_loop_1",
   "parent":{

@@ -19,4 +19,4 @@ if (side == 1)
 }
 depth = controller.battle_depth[4];
 image_speed = 0;
-item_trident_lightningDistance = 10;
+item_trident_lightningDistance = 6;

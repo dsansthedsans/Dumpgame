@@ -24,40 +24,18 @@ function get_text(_id)
 function TEXT()
 {
 	// intro
-	if (text == "intro")
+	if (text == "event_story")
 	{
-		/*
-		msg[0] = "Long ago,^1 three friends&!met each other&!during class."; //"Long ago,^1 two races&!ruled over Earth:^1&!HUMANS and MONSTERS."
-		msg[1] = "After some time,^1 they&!decided to create a&!server in Discord.";
-		msg[2] = "As months went by,^1&!new members joined&!the server.";
-		msg[3] = "One day,^1 the server's&!owner was conducting&!experiments in his room.";
-		msg[4] = "But it went very,^1&!very wrong.";
-		msg[5] = "Many years later^2^3.^2^3.^2^3.";
-		msg[6] = "    CEARÁ,^1 BRAZIL";
-		msg[7] = "A brazilian boy was&!playing soccer alone&!in a football pitch.";
-		msg[8] = "Suddenly,^1 a white flash&!of light came from a&!dumpster nearby.";
-		msg[9] = "Curious, the boy approached the&!dumpster to search the&!origin of the light."
-		msg[10] = "He was then gone as if&!nothing happened.";
-		*/
-		
-		
-		msg[0] = "Long ago,^1 a group of&!three friends created&!a server in Discord.^2^3";
-		msg[1] = "As the months went by,^1&!new members joined&!the server.^2^3";
-		msg[2] = "One day,^1 the server's&!owner was conducting&!experiments in his room.^2^3";
-		msg[3] = "But it all went very,^1&!very wrong.^2^3";
-		msg[4] = "Several years later^2^3.^2^3.^2^3.^2^1";
-		msg[5] = "        BRAZIL&       2022^2^3";
-		msg[6] = "A boy was playing soccer&!alone in a football&!pitch.";
-		msg[7] = "Suddenly,^1 a white flash&!of light came from a&!dumpster nearby.";
-		msg[8] = "The boy&!slowly approached the dumpster.";
-		msg[9] = "He was then gone as if&!nothing had happened.";
-		
-		//"Long ago, three friends met each other during class.";
-		// Muito tempo no passado, uma grande e bela amizade se iniciou durante uma aula.
-		
-		msg_skip[0] = 1;
-		msg_next[0] = 1;
-		msg_type[0] = "intro";
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = get_text($"event_story_{m}");
+			if (_msg == undefined)
+				break;
+			msg[m] = _msg;
+		}
+		msg_skip[0] = true//false;
+		msg_next[0] = true//false;
+		msg_type[0] = "event_story";
 		msg_sound[0] = snd_writer_1;
 	}
 	
@@ -304,14 +282,18 @@ function TEXT()
 		msg_format[0] = "textbox_top";
 		switch (_text_index)
 		{
+			case 0:
+			msg_face[4] = spr_dialogface_m6_thinking;
+			msg_face[7] = spr_dialogface_m6_neutral;
+			msg_face[8] = spr_dialogface_m6_default;
+			break;
 			case 1:
-			msg_face[0] = spr_dialogface_m6_pleased;
 			msg_face[1] = spr_dialogface_m6_sassy;
 			msg_face[2] = spr_dialogface_m6_default;
 			break;
 			case 2:
-			//msg_face[0] = spr_dialogface_m6_sassy;
-			//msg_face[1] = spr_dialogface_m6_default;
+			msg_face[0] = spr_dialogface_m6_sassy;
+			msg_face[1] = spr_dialogface_m6_default;
 			break;
 			case 3:
 			msg_face[0] = spr_dialogface_m6_angry;
@@ -329,8 +311,9 @@ function TEXT()
 			if (question_result[1] == 1)
 			{
 				global.flag[6] = true;
+				chara_change(-1, false, false, true, false, false, true);
 				global.battle_nextgroup = 1;
-				audio_stop(snd_option_select);
+				//audio_stop(snd_option_select);
 				battle();
 			}
 		}
@@ -386,9 +369,8 @@ function TEXT()
 			msg[i] = get_text("event_m6_captcha1_1_" + string(i));
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_face[1] = spr_dialogface_m6_pleased;
-		msg_face[2] = spr_dialogface_m6_default;
-		msg_face[2] = spr_dialogface_m6_defaultTense;
-		msg_face[2] = spr_dialogface_m6_default;
+		msg_face[2] = spr_dialogface_m6_neutral;
+		msg_face[3] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_writer_m6;
 		msg_talker[0] = global.party[0];
 		msg_format[0] = "textbox_bottom";
@@ -495,9 +477,9 @@ function TEXT()
 			msg[i] = get_text("room_relaxsign_" + string(i));
 	}
 	if (text == "room_bench_geno")
-	{
 		msg[0] = get_text("room_bench_geno_0");
-	}
+	if (text == "room_benchCardboard")
+		msg[0] = get_text("room_benchCardboard_0");
 	if (text == "room_benchlamp")
 	{
 		msg[0] = get_text("room_benchlamp_0");
@@ -702,7 +684,7 @@ function TEXT()
 		for (var i = 0; i < 99; i++)
 		{
 			var _msg_id = $"event_brock_battle_{_text_index}_{i}";
-			if (_text_index == 3 && i == 7)
+			if (_text_index == 3 && i == 9)
 				_msg_id += $"_{(global.item[global.item_last] == -1)}";
 			if (_text_index == 4)
 			{
@@ -738,8 +720,8 @@ function TEXT()
 			msg[2] = string_replace_all(msg[2], "[name]", global.chara_name);
 			if (global.item[global.item_last] == -1)
 			{
-				msg_sound[7] = snd_writer_0;
-				msg_sound[8] = snd_writer_brock;
+				msg_sound[9] = snd_writer_0;
+				msg_sound[10] = snd_writer_brock;
 			}
 			break;
 			case 4:
@@ -807,6 +789,14 @@ function TEXT()
 		}
 		msg_sound[0] = snd_writer_armsguy;
 		msg_talker[0] = obj_chara.mycol;
+	}
+	if (text == "npc_flitcher_postbrock")
+	{
+		var _geno = "";
+		if (chara_murder() >= 1)
+			_geno = "_geno";
+		for (var i = 0; i < (4 - (3 * (chara_murder() >= 1))); i++)
+			msg[i] = get_text($"npc_flitcher_postbrock_{i}{_geno}");
 	}
 	if (text == "unused_room_maurice")
 	{
@@ -945,7 +935,7 @@ function TEXT()
 	{
 		if (chara_murder() <= 0)
 		{
-			var _weird = (irandom_range(1, 5) == 1 && global.flag[44] == 0);
+			var _weird = (irandom_range(1, 10) == 1 && global.flag[44] == 0);
 			for (var m = 0; m < 99; m++)
 			{
 				var _msg = get_text($"npc_flitcher_exit_{_weird}_{m}");
@@ -957,7 +947,7 @@ function TEXT()
 			{
 				msg_skip[0] = false;
 				msg_sound[0] = -1;
-				msg_font[0] = global.fnt_comic;
+				//msg_font[0] = global.fnt_comic;
 				msg_talker[0] = obj_chara.mycol;
 				msg_type[0] = "tense";
 				global.flag[44] = 0.5;
@@ -1441,6 +1431,8 @@ function TEXT()
 						msg_face[3] = spr_dialogface_m6_default;
 						break;
 						case 6:
+						msg_face[1] = spr_dialogface_m6_pleased;
+						msg_face[2] = spr_dialogface_m6_default;
 						msg_face[4] = spr_dialogface_m6_thinking;
 						msg_face[5] = spr_dialogface_m6_default;
 						msg_face[6] = -1;
@@ -1449,7 +1441,7 @@ function TEXT()
 						msg_sound[7] = snd_writer_m6;
 						break;
 						case 8:
-						msg_face[0] = spr_dialogface_m6_confused;
+						msg_face[0] = spr_dialogface_m6_pleased;
 						msg_face[1] = spr_dialogface_m6_default;
 						break;
 					}
@@ -1606,7 +1598,10 @@ function TEXT()
 			}
 			else
 			{
-				msg[0] = get_text("battle_nobody");
+				msg[0] = "";
+				if (global.flag[40] == false)
+					msg[0] += "+S3";
+				msg[0] += get_text("battle_nobody");
 				msg_type[0] = "nobody";
 				msg_font[0] = fnt_main;
 				msg_skip[0] = 0;
@@ -1692,8 +1687,17 @@ function TEXT()
 			}
 			if (string_starts_with(text, "battle_act_armsguy") == true) // Armsguy
 			{
-				for (var i = 0; i < 2; i++)
-					msg[i] = get_text($"battle_act_result_armsguy_{string_char_at(text, string_length(text))}_{i}");
+				var _text_index = real(string_char_at(text, string_length(text)));
+				for (var m = 0; m < 99; m++)
+				{	
+					var _text_postfix = "";
+					var _msg = get_text($"battle_act_result_armsguy_{_text_index}_{m}");
+					if (_msg == undefined)
+						break;
+					msg[m] = _msg;
+				}
+				//for (var i = 0; i < 2; i++)
+				//	msg[i] = get_text($"battle_act_result_armsguy_{string_char_at(text, string_length(text))}_{i}");
 			}
 			if (string_starts_with(text, "battle_act_trashguy") == true) // Trashguy
 			{

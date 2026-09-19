@@ -49,7 +49,10 @@ if (active == 1)
 			controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 			controller.enemy_type[myself] = 0;
 			if (global.visualeff == true)
+			{
 				create(x, y, obj_battle_vapor);
+				create(-20, -20, obj_battle_enemyHeartbreak);
+			}
 			destroy(body);
 		}
 		else

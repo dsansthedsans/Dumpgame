@@ -80,8 +80,10 @@ if (con == 9) // options
 	// selection
 	if (press_enter == 1 && mainopt_pos != 1)
 	{
+		var _savefile_stopwatch_time = global.chara_stopwatch.time;
 		savefile_load(global.savefile_selected);
 		global.chara_deaths += 1;
+		global.chara_stopwatch.time = _savefile_stopwatch_time;
 		savefile_write();
 		global.chara_curhp = global.chara_maxhp;
 		chara_change(-1, 1,  1, 0, 1, 1, 1);

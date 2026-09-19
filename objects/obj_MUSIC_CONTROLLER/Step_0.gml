@@ -30,12 +30,11 @@ if (room == room_menu)
 			music_paused[0] = 1;
 	}
 }
-if (room == room_intro)
+if (room == room_event_story)
 {
-	global.music[0] = -1;
-	controller = obj_intro_controller;
-	if (controller.active == 1)
-		music_set(0, mus_event_intro);
+	music_set(0, -1);
+	if (exists(obj_writer_controller) == true)
+		music_set(0, mus_event_story_placeholder,,,, 0.875, false);
 }
 if (room != room_battle && exists(obj_battle_quicker) == false && room != room_over)
 {
@@ -67,12 +66,8 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		{
 			music_set(0, mus_corridors, , , , (1 - (0.025 * (chara_murder() == 1))));
 			if (chara_murder() >= 2)
-			{
 				music_set(0, mus_corridors_geno,,,, (1 + (0.025 * (chara_murder() == 3))))
-				if (global.flag[40] == false)
-					music_paused[0] = true;
-			}
-			if (audio_playing(snd_jingleLuminous) == true) || (audio_playing(snd_jingleOminous) == true)
+			if (global.world_curpopulation[chara_world()] <= 0 && global.flag[40] == false) || (audio_playing(snd_jingleLuminous) == true) || (audio_playing(snd_jingleOminous) == true)
 			{
 				music_paused[0] = true;
 				debug("holy cheese and creackers");
@@ -84,11 +79,15 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			if (global.flag[37] == 0.25) || (global.flag[37] >= 0.75 && global.flag[39] == 0) || (global.flag[39] == 0.75) || (global.flag[39] == 1 && global.flag[41] == 0)
 				music_set(0, -1);
 			if (global.flag[37] == 0.5)
+			{
 				music_set(0, mus_event_brock_mad, , , , , , 0);
+				music_paused[0] = false;
+			}
 			else if (global.flag[39] == 0.5)
-				music_set(0, mus_event_brock_sad_placeholder);
-			//else if (global.flag[37] == 1 && global.flag[39] == 0)
-			//	music_set(0, mus_event_brock_sad, , , , 0.75 + 0.125 + 0.125);
+			{
+				music_set(0, mus_event_brock_sad);
+				music_paused[0] = false;
+			}
 		}
 		// CAPTCHA 3
 		if (room == room_corridors_14 && chara_murder() < 2)
@@ -97,8 +96,8 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				music_set(0, -1);	
 			if (global.flag[50] == 0.5)
 			{
-				music_set(0, mus_hurry_intro, , , , , false);
-				if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_0) || (music_old[0] == mus_hurry_loop_1)
+				music_set(0, mus_hurry_intro_0, , , , , false);
+				if (music_old[0] == mus_hurry_intro_0 && audio_playing(mus_hurry_intro_0) == false) || (music_old[0] == mus_hurry_loop_0) || (music_old[0] == mus_hurry_loop_1)
 				{
 					music_set(0, mus_hurry_loop_0, , , , , , 0);
 					if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds < obj_captcha3.timer.fog.secondsMin && chara_murder() < 1)
@@ -151,12 +150,13 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			music_fadeouttime_old[1] = 5;
 			if (global.flag[60] == 1 && global.flag[61] == 0)
 			{
-				music_set(0, mus_hurry_intro, , , , , false);
-				if (music_old[0] == mus_hurry_intro && audio_playing(mus_hurry_intro) == false) || (music_old[0] == mus_hurry_loop_1)
+				music_set(0, mus_hurry_intro_1, , , , , false);
+				music_paused[0] = false;
+				if (music_old[0] == mus_hurry_intro_1 && audio_playing(mus_hurry_intro_1) == false) || (music_old[0] == mus_hurry_loop_1)
 				{
 					if (audio_playing(snd_buildupComputer) == true)
 						audio_stop(snd_buildupComputer);
-					music_set(0, mus_hurry_loop_1,,,, (1 - (0.025 * (chara_murder() == 1)) + (0.025 * (chara_murder() >= 2))));
+					music_set(0, mus_hurry_loop_1,,,,);//(1 - (0.025 * (chara_murder() == 1)) + (0.025 * (chara_murder() >= 2))));
 					if (obj_event_gabee_chase.con >= 45)
 					{
 						global.music_pitch[0] = music_pitch_old[0];
@@ -225,9 +225,8 @@ else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 		if (chara_murder() >= 1)
 		{
 			_pitch -= 0.025;
-			if (chara_murder() == 1 && global.flag[39] == false)
+			if (chara_murder() == 1)
 				_pitch -= random(0.025);
-			debug(_pitch);
 		}
 		var _fadeout = 0.5;
 		switch (control.battle_music)

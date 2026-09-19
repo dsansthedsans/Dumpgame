@@ -1,4 +1,10 @@
 event_inherited();
+DEBUG_SKIP = (true * global.indebug);
+if (DEBUG_SKIP == true)
+{
+	global.flag[4] = true;
+	global.flag[6] = true;
+}
 if (global.flag[2] == true && global.flag[4] == false && global.flag[6] == false && global.flag[7] == false)
 || (global.flag[2] == true && global.flag[4] == true && global.flag[6] == true && global.flag[7] == false)
 {

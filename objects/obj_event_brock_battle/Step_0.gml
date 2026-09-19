@@ -75,7 +75,8 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 				if (_brickpile.sprite_index == spr_overworld_corridorsbricks)
 					shakeobj(_brickpile, 4, 4, 0.1);
 			}
-			for (var i = 0; i < 8; i++)
+			brockBrick = [];
+			for (var i = 0; i < 8 * global.visualeff; i++)
 			{
 				marker(brock.x, brock.y, spr_npc_brock_brick, 1, 1, 1, 0, 0, irandom(360), c_white, 0);
 				brockBrick[i] = thismarker;
@@ -110,7 +111,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 			chara_stop();
 			party_stop(0);
 		}
-		for (var i = 0; i < array_length(brockBrick); i++)
+		for (var i = 0; i < array_length(brockBrick) * global.visualeff; i++)
 		{
 			if (exists(brockBrick[i]) == 1)
 			{
@@ -329,7 +330,7 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 	}
 	if (altcon == 1)
 	{
-		if (exists(thiswriter) == true && thiswriter.page >= 7) || (exists(thiswriter) == false)
+		if (exists(thiswriter) == true && thiswriter.page >= 9) || (exists(thiswriter) == false)
 		{
 			if (global.item[global.item_last] == -1)
 			{

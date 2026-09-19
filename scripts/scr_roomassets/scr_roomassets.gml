@@ -12,6 +12,12 @@ function room_interact()
 			text = "room_bench_geno";
 		}
 	}
+	if (room == room_corridors_7 && y == 150)
+	{
+		text = "room_benchCardboard";
+		if (chara_murder() >= 1)
+			text = "room_bench_geno";
+	}
 	// corridors
 	if (r == room_corridors_1)
 	{
@@ -33,7 +39,11 @@ function room_interact()
 			
 			// impressive rock pile
 			if (y == 485)
+			{
 				text = "room_rockpile_1";
+				if (chara_murder() >= 1)
+					text = "room_rockpile_0";
+			}
 		}
 	}
 	if (r == room_corridors_2)
@@ -72,6 +82,7 @@ function room_interact()
 		if (x == 160 && y == 140)
 		{
 			text = "npc_dummy";
+			result = 0.125;
 			sprite_index = spr_npc_dummy;
 			if (global.flag[5] == true)
 				destroy(id);
@@ -185,6 +196,14 @@ function room_interact()
 		{
 			text = "npc_armsguy_postbrock";
 			sprite_index = spr_npc_armsguy;
+			if (global.flag[38] == 1) || (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
+				destroy(id);
+		}
+		if (x == 240 && y == 150)
+		{
+			text = "npc_flitcher_postbrock";
+			x -= 10;
+			sprite_index = spr_npc_flitcher;
 			if (global.flag[38] == 1) || (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
 				destroy(id);
 		}
