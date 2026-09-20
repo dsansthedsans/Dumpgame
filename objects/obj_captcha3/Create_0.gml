@@ -83,7 +83,7 @@ timer =
 	},
 }
 // Buttons
-buttons_word = ((global.flag[55] == "") ? string_upper(choose(get_text("captcha3_buttonsWord_0"), get_text("captcha3_buttonsWord_1"), get_text("captcha3_buttonsWord_2"))) : global.flag[55]);
+buttons_word = ((global.flag[55] == "") ? string_upper(choose(textdata_get("captcha3_buttonsWord_0"), textdata_get("captcha3_buttonsWord_1"), textdata_get("captcha3_buttonsWord_2"))) : global.flag[55]);
 global.flag[55] = buttons_word;
 buttons_wordCurr = "";
 buttons_length = 16;

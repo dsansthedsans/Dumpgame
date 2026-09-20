@@ -43,7 +43,7 @@ draw_set_color(c_white);
 draw_set_alpha(0.25 * skipalpha);
 draw_set_valign(fa_bottom);
 draw_set_halign(fa_center);
-draw_text((room_width / 2), (room_height - 2), $"{get_text("gameover_skip_0")}{string_upper(key_name(global.keybind[04]))}{get_text("gameover_skip_1")}{string_upper(key_name(global.keybind[05]))}{get_text("gameover_skip_2")}");
+draw_text((room_width / 2), (room_height - 2), $"{textdata_get("gameover_skip_0")}{string_upper(key_name(global.keybind[04]))}{textdata_get("gameover_skip_1")}{string_upper(key_name(global.keybind[05]))}{textdata_get("gameover_skip_2")}");
 
 // heart
 draw_sprite_ext(heart_spr, 0, heart_x, heart_y, 1, 1, 0, heart_color, heart_alpha);

@@ -11,78 +11,115 @@ function item_organize()
 }
 function item_id(_item)
 {
-	var _id = argument0;
-	var _idname = "none";
-	if (_id == ITEM_STICK)
-		_idname = "stick";
-	if (_id == ITEM_BANDAGE)
-		_idname = "bandage";
-	if (_id == ITEM_CANDY)
-		_idname = "candy";
-	if (_id == ITEM_BOWL)
-		_idname = "bowl";
-	if (_id == ITEM_TRIDENT)
-		_idname = "trident";
-	if (_id == ITEM_CHOCO)
-		_idname = "choco";
-	if (_id == ITEM_PACE)
-		_idname = "pace";
-	if (_id == ITEM_BRICK)
-		_idname = "brick";
-	return _idname;
+	switch (_item)
+	{
+		// "Broomstick"
+		case ITEM_STICK:
+		return "stick";
+		break;
+		// "Bandage"
+		case ITEM_BANDAGE:
+		return "bandage";
+		break;
+		// "Concrete Brick"
+		case ITEM_BRICK:
+		return "brick";
+		break;
+		// "Cheap Candy"
+		case ITEM_CANDY:
+		return "candy";
+		break;
+		// "Candy Bowl"
+		case ITEM_BOWL:
+		return "bowl";
+		break;
+		// "Enchanted Trident"
+		case ITEM_TRIDENT:
+		return "trident";
+		break;
+		// "Chocolate Bar"
+		case ITEM_CHOCO:
+		return "choco";
+		break;
+		// "Temporary Pacemaker"
+		case ITEM_PACE:
+		return "pace";
+		break;
+		// "Metal Brick"
+		case ITEM_BRICK2:
+		return "brick2";
+		break;
+		// None
+		default:
+		return "none";
+		break;
+	}
 }
 function item_type(_item)
 {
-	var _id = argument0;
-	var _type = ITEM_TYPE_CONSUMABLE;
-	if (_id == ITEM_STICK) || (_id == ITEM_TRIDENT)
-		_type = ITEM_TYPE_WEAPON;
-	if (_id == ITEM_BANDAGE) || (_id == ITEM_BOWL) || (_id == ITEM_PACE)
-		_type = ITEM_TYPE_ARMOR;
-	return _type;
+	switch (_item)
+	{
+		// "Concrete Brick"; "Cheap Candy"; "Chocolate Bar"
+		case ITEM_BRICK:
+		case ITEM_CANDY:
+		case ITEM_CHOCO:
+		return ITEM_TYPE_CONSUMABLE;
+		break;
+		// "Broomstick"; "Enchanted Trident"
+		case ITEM_STICK:
+		case ITEM_TRIDENT:
+		return ITEM_TYPE_WEAPON;
+		break;
+		// "Bandage"; "Candy Bowl"; "Temporary Pacemaker"
+		case ITEM_BANDAGE:
+		case ITEM_BOWL:
+		case ITEM_PACE:
+		return ITEM_TYPE_ARMOR;
+		break;
+		// None
+		default:
+		return ITEM_TYPE_NONE;
+		break;
+	}
 }
 function item_value(_item)
 {
-	var _id = argument0;
-	var _value = 0;
-	switch (_id)
+	switch (_item)
 	{
+		// "Broomstick"; "Bandage"
+		case ITEM_STICK:
+		case ITEM_BANDAGE:
+		return 0;
+		break;
 		// "Cheap Candy"
 		case ITEM_CANDY:
-		_value = 7;
-		if (irandom_range(1, 7) == 7)
-		{
-			_value = 10;
+		var _extra = irandom_range(1, 7);
+		if (_extra == 7)
 			audio_play(snd_jingleSpell, false, VOLUME_SOUND);
-		}
+		return (7 + (3 * (_extra == 7)));
 		break;
 		// "Candy Bowl"; "Enchanted Trident"
 		case ITEM_BOWL:
 		case ITEM_TRIDENT:
-		_value = 3;
+		return 3;
 		break;
 		// "Chocolate Bar"
 		case ITEM_CHOCO:
-		_value = 14;
+		return 14;
 		break;
 		// "Temporary Pacemaker"
 		case ITEM_PACE:
-		_value = 6;
+		return 6;
 		break;
 	}
-	return _value;
 }
 function item_name(_item, _type)
 {
-	var _name = "item_name_" + string(item_id(_item));
-	if (_type != "" && get_text($"{_name}_{_type}") != "")
-		_name += "_" + string(argument1);
-	return get_text(_name);
-}
-function item_desc(_item)
-{
-	var _desc = "item_desc_" + string(item_id(argument0));
-	return get_text(_desc);
+	var _textID = $"item_name_{item_id(_item)}";
+	var _textID_type = $"{_textID}_{_type}";
+	if (_type != "" && textdata_get(_textID_type) != "")
+		return textdata_get(_textID_type);
+	return textdata_get(_textID);
 }
 function item_use()
 {
@@ -110,36 +147,44 @@ function item_use()
 						msg_sound[i] = snd_writer_m6_tense;
 					}
 				}
-				msg[i] = get_text($"item_brick_use_{i}{_text_postfix}");
+				msg[i] = textdata_get($"item_use_brick_{i}{_text_postfix}");
 			}
 			audio_play(snd_jingleHypnosis, false, VOLUME_SOUND);
 			break;
 			// All
 			default:
 			global.chara_heals += 1;
-			var _amt = item_value(_item);
-			chara_hp(_amt);
-			var _rest = string(get_text("item_use_1")) + string(_amt) + " HP;D.)";
-			if (global.chara_curhp >= global.chara_maxhp)
-				_rest = get_text("item_use_2")
-			msg[0] = string(get_text("item_use_0")) + ":Y" + string(item_name(_item, "")) + ";D.)^3" + string(_rest);
+			chara_hp(item_value(_item));
+			msg[0] = $"{textdata_get("item_use_0")} :Y{item_name(_item, "")};D.)^3&" + string((global.chara_curhp < global.chara_maxhp) ? $"{textdata_get("item_use_1")} :Y{item_value(_item)} HP;D.)" : $"{textdata_get("item_use_2")}");
 			break;
 		}
 		global.item[_pos] = -1;
 	}
 	if (item_type(_item) == ITEM_TYPE_WEAPON) || (item_type(_item) == ITEM_TYPE_ARMOR)
 	{
-		var _old = global.chara_weapon;
-		if (item_type(_item) == ITEM_TYPE_ARMOR)
+		if (item_type(_item) == ITEM_TYPE_WEAPON)
 		{
-			_old = global.chara_armor;
-			global.chara_armor = _item;
+			global.item[_pos] = global.chara_weapon;
+			global.chara_weapon = _item;
 		}
 		else
-			global.chara_weapon = _item;
-		global.item[_pos] = _old;
+		{
+			global.item[_pos] = global.chara_armor;
+			global.chara_armor = _item;
+		}
+		msg[0] = $"{textdata_get("item_equip")} :Y{item_name(_item, "")};D.)";
 		audio_play(snd_equip, 0, VOLUME_SOUND);
-		msg[0] = string(get_text("item_equip")) + ":Y" + string(item_name(_item, "")) + ";D.)";
+	}
+}
+function item_info()
+{
+	for (var i = 0; i < 99; i++)
+	{
+		var _textID = $"item_info_{item_id(global.item[obj_chara_menu.option_pos_old])}_{i}";
+		var _text = textdata_get(_textID);
+		if (_text == undefined) || (_text == "Salenis")
+			break;
+		msg[i] = _text;
 	}
 }
 function itemDropped_add(_item, _x = obj_chara.x, _y = obj_chara.y, _sprite = spr_itemDropped, _image = _item, _image_speed = 0, _depth = -_y)

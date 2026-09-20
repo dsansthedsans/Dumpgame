@@ -19,7 +19,7 @@ draw_set_font(global.fnt_mars);
 draw_set_halign(fa_left);
 info[0] = "LVL  " + string(global.chara_lvl);
 info[1] = "HP   " + string(global.chara_curhp) + "/" + string(global.chara_maxhp);
-info[2] = "$    " + string(global.chara_money);
+info[2] = $"{textdata_get("charamenu_main_info_money")}{global.chara_money}";
 info_maxw = string_width("XXX  XXXXX");
 for (var i = 0; i < 3; i++)
 	draw_text_width((_cx + bg_x[0] + _bg1_di + 1), (_info_y + ((string_height("SALENIS") + 2) * i)), info[i], info_maxw, [c_white, c_white], alpha);
@@ -132,30 +132,30 @@ if (lvl == 3)
 	draw_set_halign(fa_left);
 	
 		// esquerda (primeiro)
-	draw_text_width(_ilx, (_iy + 25), "HP   " + string(global.chara_curhp) + "/" + string(global.chara_maxhp), info_maxw, [c_white, c_white], alpha);
-	draw_text_width(_ilx, (_iy + 40), "LVL  " + string(global.chara_lvl), info_maxw, [c_white, c_white], alpha);
-	draw_text_width(_ilx, (_iy + 55), "ATK  " + string((global.chara_atk - 10) + global.chara_wstrength), info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 25), $"HP   {(global.chara_curhp >= 10) ? "" : "0"}{global.chara_curhp}/{global.chara_maxhp}", info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 40), $"LVL  {global.chara_lvl}", info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 55), $"{textdata_get("charamenu_stat_atk")}  {global.chara_atk - 10 + global.chara_wstrength}", info_maxw, [c_white, c_white], alpha);
 	
 		// direita (primeiro)
-	info[0] = "$    " + string(global.chara_money);
-	info[1] = "EXP  " + string(global.chara_exp) + "/" + string(global.chara_nextexp);
-	info[2] = "DEF  " + string((global.chara_def - 10) + global.chara_astrength);
+	info[0] = $"{textdata_get("charamenu_main_info_money")}{global.chara_money}";
+	info[1] = $"EXP  {(global.chara_exp >= 10) ? "" : "0"}{global.chara_exp}/{global.chara_nextexp}";
+	info[2] = $"DEF  {global.chara_def - 10 + global.chara_astrength}";
 	for (var i = 0; i < 3; i++)
 		draw_text_width((_irx - info_maxw), (_iy + 25 + (15 * i)), info[i], info_maxw, [c_white, c_white], alpha);
 	
 		// esquerda (segundo)
-	draw_text_width(_ilx, (_iy + 80), $"{get_text("charamenu_stat_spares")}  " + string(global.chara_spares), info_maxw, [c_white, c_white], alpha);
-	draw_text_width(_ilx, (_iy + 95), $"{get_text("charamenu_stat_heals")}   " + string(global.chara_heals), info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 80), $"{textdata_get("charamenu_stat_spares")}{(global.chara_spares >= 10) ? "" : " "}{global.chara_spares}", info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 95), $"{textdata_get("charamenu_stat_heals")}{(global.chara_heals >= 10) ? "" : " "}{global.chara_heals}", info_maxw, [c_white, c_white], alpha);
 	
 		// direita (segundo)
-	info[0] = $"{get_text("charamenu_stat_kills")}   " + string(global.chara_kills);
-	info[1] = $"{get_text("charamenu_stat_deaths")}  " + string(global.chara_deaths);
+	info[0] = $"{textdata_get("charamenu_stat_kills")}{(global.chara_kills >= 10) ? "" : " "}{global.chara_kills}";
+	info[1] = $"{textdata_get("charamenu_stat_deaths")}{(global.chara_deaths >= 10) ? "" : " "}{global.chara_deaths}";
 	for (var i = 0; i < 2; i++)
 		draw_text_width((_irx - info_maxw), (_iy + 80 + (15 * i)), info[i], info_maxw, [c_white, c_white], 1);
 		
 		// arma e armadura
-	draw_text(_ilx, (_iy + 120), $"{get_text("charamenu_stat_weapon")}  " + string(item_name(global.chara_weapon, "small")) + " (+" + string(global.chara_wstrength) + ")");
-	draw_text(_ilx, (_iy + 135), $"{get_text("charamenu_stat_armor")}   " + string(item_name(global.chara_armor, "small")) + ((global.chara_armor != -1) ? " (+" + string(global.chara_astrength) + ")" : ""));
+	draw_text(_ilx, (_iy + 120), $"{textdata_get("charamenu_stat_weapon")}" + string(item_name(global.chara_weapon, "small")) + " (+" + string(global.chara_wstrength) + ")");
+	draw_text(_ilx, (_iy + 135), $"{textdata_get("charamenu_stat_armor")}" + string(item_name(global.chara_armor, "small")) + ((global.chara_armor != -1) ? " (+" + string(global.chara_astrength) + ")" : ""));
 }	
 // indicador das opções
 if (thiswriter == -1 && lvl != 3)

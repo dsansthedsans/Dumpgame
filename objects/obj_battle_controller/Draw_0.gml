@@ -99,11 +99,11 @@ if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == fal
 			var _x1 = (box_x - (box_w / 2) + 335 + 40);
 			var _y1 = (box_y - (box_h / 2) + 23 + (32 * i));
 			var _y2 = (_y1 + 17);
-			draw_battle_bar($"{_amt}%", _curamt, _maxamt, _x1, _y1, 100, level_curbarcolor[(battle_lvl - 1)], level_maxbarcolor[(battle_lvl - 1)], 1);
+			draw_battle_bar($"{_amt}%", round(_curamt), round(_maxamt), _x1, _y1, 100, level_curbarcolor[(battle_lvl - 1)], level_maxbarcolor[(battle_lvl - 1)], 1);
 		}
 	}
 	if (battle_group == 1)
-		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "pt"))), /*(box_x + (box_w / 4) + (box_w / 8) - 20 + (irandom(1) * global.visualeff) - 20)*/ (_x1 + (100 / 2) + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 2, 2, 0, c_white, 1);
+		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "pt"))), /*(box_x + (box_w / 4) + (box_w / 8) - 20 + (irandom(1) * global.visualeff) - 20)*/ (_x1 + 75 + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 1, 1, 0, c_white, 1);
 }
 
 draw_set_alpha(1);

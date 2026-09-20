@@ -1,5 +1,5 @@
 event_inherited();
-DEBUG_SKIP = (true * global.indebug);
+DEBUG_SKIP = (false * global.indebug);
 if (DEBUG_SKIP == true)
 {
 	global.flag[4] = true;

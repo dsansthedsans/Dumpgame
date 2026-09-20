@@ -461,37 +461,6 @@ function room_solid()
 			}
 		}
 	}
-	if (room == room_corridors_4_old)
-	{
-		// lamp
-		if (x == 280 && y == 160) || (x == 400 && y == 100) || (x == 520 && y == 100) || (x == 650 && y == 40) || (x == 770 && y == 70)
-		{
-			sprite_index = spr_overworld_lamp;
-			if (x == 770 && y == 70)
-				image_index = 1;
-			if (x == 400 && y == 100)
-				image_index = 2;
-		}
-		
-		// tree
-		if (x == 380 && y == 110) || (x == 480 && y == 90) || (x == 480 && y == 210) || (x == 630 && y == 40) || (x == 740 && y == 150) || (x == 375 && y == 190)
-		{
-			sprite_index = spr_overworld_tree;	
-			leaf_fall = 1;
-			if (x == 375 && y == 190)
-			{
-				image_index = 1;
-				leaf_fall = 0;
-			}
-		}
-		//pilar
-		if (x == 110 && y == 130) || (x == 190 && y == 130)
-			sprite_index = spr_overworld_pillar;
-		
-		//signrock
-		if (x == 140 && y == 140)
-			sprite_index = spr_overworld_signRock;
-	}
 	if (room == room_corridors_5)
 	{
 		// lamp

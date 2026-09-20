@@ -22,7 +22,7 @@ if (global.indebug == 1)
 		+ "\nchara_open_menu:  " + string(global.chara_open_menu)
 		+ "\nchara_pause_game:  " + string(global.chara_pause_game)
 		+ "\nchara_camera_move:  " + string(global.chara_camera_move)
-		+ "\nchara_room:  " + string(chara_room_name(global.chara_room));
+		+ "\nchara_room:  " + string(room_name(global.chara_room));
 		if (exists(obj_chara) == 1)
 		{
 			_str_chara +=

@@ -27,7 +27,7 @@ function savefile_write()
 		file_text_writeln(_file);
 		file_text_write_string(_file, room_get_name(global.chara_room));
 		file_text_writeln(_file);
-		file_text_write_real(_file, global.chara_world);
+		file_text_write_real(_file, chara_world());
 		file_text_writeln(_file);
 		file_text_write_real(_file, chara_murder());
 		file_text_writeln(_file);
@@ -141,7 +141,6 @@ function savefile_load(_savefile)
 		global.chara_weapon = savefile_weapon;
 		global.chara_armor = savefile_armor;
 		global.chara_room = savefile_room;
-		global.chara_world = savefile_world;
 		global.chara_stopwatch.time = savefile_stopwatch_time;
 		for (var i = 0; i < global.item_length; i++)
 			global.item[i] = savefile_item[i];

@@ -58,14 +58,14 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 			_name = $"@{savefile_name}";
 			_lvl = savefile_lvl;
 			_world = chara_world_name(savefile_world);
-			_room = chara_room_name(savefile_room);
+			_room = room_name(savefile_room);
 		}
 		var _xx = textbox_x;
 		var _yy = textbox_y;
 		var _ww = textbox_width;
 		var _hh = textbox_height;
-		var _hspace = 17;
-		var _vspace = 12;
+		var _hspace = 20;
+		var _vspace = 15;
 		var _uppery = (_bonusy + _yy + _vspace);
 		var _bottomy = (_uppery + 20);
 		var _savedy = (_bonusy + _yy + _hh - _vspace)
@@ -77,16 +77,16 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		draw_set_halign(fa_left);
 		draw_text_color(_leftx, _uppery, _name, _name_colors[1], _name_colors[1], _name_colors[0], _name_colors[0], 1);
 		draw_set_halign(fa_right);
-		draw_text(_rightx, _uppery, "LVL " + string(_lvl));
+		draw_text(_rightx, _uppery, $"[LVL {_lvl}]");
 		draw_set_font(fnt_main);
 		draw_set_valign(fa_top);
 		draw_set_halign(fa_left);
-		draw_text_width(_leftx, _bottomy, string(_world) + " - " + string(_room), (_ww - (_hspace * 2)), [_color, _color], 1);
+		draw_text_width(_leftx + 1, _bottomy, string(_world) + " - " + string(_room), (_ww - (_hspace * 2) - 3), [_color, _color], 1);
 		draw_set_font(fnt_main_spaced);
 		draw_set_valign(fa_bottom);
 		draw_set_halign(fa_center);
 		if (filesaved == 1)
-			draw_text(_middlex, _savedy, get_text("savepoint_all_2"));
+			draw_text(_middlex + 3, _savedy, textdata_get("savepoint_all_2"));
 	}
 }
 if (msg_format[page] == "battlebox")
@@ -217,6 +217,11 @@ for (var c = 1; c < (text_length + 1); c++)
 			if (string_char_at(msg[page], c + 1) == "B" && _cancheck == 1) // blue ("DEFENSE")
 			{
 				text_color[0] = merge_color(c_blue, c_white, 0.25);
+				_cancheck = 0;
+			}
+			if (string_char_at(msg[page], c + 1) == "C" && _cancheck == 1) // violet ("Central City")
+			{
+				text_color[0] = merge_color(merge_color(c_purple, c_blue, 0.5), c_white, 0.35);
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "F" && _cancheck == 1) // pink ("SPEED")

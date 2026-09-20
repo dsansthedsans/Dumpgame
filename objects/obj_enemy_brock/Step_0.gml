@@ -75,7 +75,7 @@ if (active == 1)
 		if (audio_playing(snd_launchSparkles) == false)
 			audio_play(snd_launchSparkles, 0, VOLUME_SOUND);
 		global.chara_spares += 1;
-		global.world_sparedpopulation[global.chara_world] += 1;
+		global.world_sparedpopulation[chara_world()] += 1;
 		controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 		controller.enemy_type[myself] = 0;
 		spared = 0;

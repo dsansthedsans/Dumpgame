@@ -1,11 +1,4 @@
-
 ready = 0;
-
-details = "";
-state = "";
-face = "";
-face_info = "";
-
 drp = np_initdiscord("1144068271193215006", 0, 0);
 if (drp == 1)
 {

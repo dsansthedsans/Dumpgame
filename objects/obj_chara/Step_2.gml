@@ -35,10 +35,9 @@ if (room == room_corridors_1)
 	global.chara_encounter = 0;
 if (global.chara_encounter == 1)
 {
-	maxsteps = (2000 - (40 * (global.world_maxpopulation[global.chara_world] - global.world_curpopulation[global.chara_world])));
+	maxsteps = clamp((1600 - (50 * (global.world_maxpopulation[chara_world()] - global.world_curpopulation[chara_world()]))), 800, infinity);
 	if (chara_murder() >= 2 && chara_world() == WORLD_CORRIDORS)
-		maxsteps = 1000;
-	maxsteps = clamp(maxsteps, 1000, 9999);
+		maxsteps = 1200;
 	if (global.chara_steps >= maxsteps)
 	{
 		if (battlecon == 0 && global.chara_move == 1 && global.chara_interact == true && global.chara_cutscene == 0)

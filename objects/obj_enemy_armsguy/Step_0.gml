@@ -46,7 +46,7 @@ if (active == 1)
 			image_alpha = 0;
 			sprite_index = spr_enemy_armsguy_hurt;
 			global.chara_kills += 1;
-			global.world_curpopulation[global.chara_world] -= 1;
+			global.world_curpopulation[chara_world()] -= 1;
 			controller.battle_expreward += controller.enemy_reward_exp[myself];
 			controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 			controller.enemy_type[myself] = 0;

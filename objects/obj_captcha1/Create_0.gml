@@ -21,19 +21,19 @@ victory_delay = 0;
 // get word
 if (room == room_corridors_5_A)
 {
-	myword = choose(get_text("room_captcha1_0"), get_text("room_captcha1_1"), get_text("room_captcha1_2"), get_text("room_captcha1_3"));
+	myword = choose(textdata_get("room_captcha1_0"), textdata_get("room_captcha1_1"), textdata_get("room_captcha1_2"), textdata_get("room_captcha1_3"));
 	if (global.flag[9] == "")
 		global.flag[9] = myword;
 	else	
 		myword = global.flag[9];
 
-	if (myword == get_text("room_captcha1_0"))
+	if (myword == textdata_get("room_captcha1_0"))
 		myscreen = 0;
-	if (myword == get_text("room_captcha1_1"))
+	if (myword == textdata_get("room_captcha1_1"))
 		myscreen = 1;
-	if (myword == get_text("room_captcha1_2"))
+	if (myword == textdata_get("room_captcha1_2"))
 		myscreen = 2;
-	if (myword == get_text("room_captcha1_3"))
+	if (myword == textdata_get("room_captcha1_3"))
 		myscreen = 3;
 	if (global.lang == "pt")
 		myscreen += 4;

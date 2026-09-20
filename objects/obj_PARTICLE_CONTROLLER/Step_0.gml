@@ -14,7 +14,7 @@ for (var i = 0; i < instance_number(obj_overworld_solid); i++)
 }
 
 // fumaça do mee6
-if (room == room_corridors_18 && global.flag[61] == 0 && global.flag[2] == 0 && global.party[0] != -1 && global.visualeff == true)
+if (room == room_corridors_18 && global.flag[60] == true && global.flag[61] == 0 && global.flag[2] == 0 && global.party[0] != -1 && global.visualeff == true)
 {
 	m6 = global.party[0];
 	

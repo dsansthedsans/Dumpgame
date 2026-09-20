@@ -3,14 +3,12 @@ upper = 0;
 typing = 0;
 controller = obj_menu_controller;
 depth = (controller.depth - 1);
-
 // definir opções
 event_user(0);
 option_pos[0] = 3; // vertical
 option_oldpos[0] = -1;
 option_pos[1] = 2; // horizontal
 option_oldpos[1] = -1;
-
 // definir posições das opções
 base_dist = 44;
 base_x = (77 - 21);
@@ -43,13 +41,3 @@ for (var z = 0; z < array_length(option); z++)
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-

@@ -21,7 +21,7 @@ startcon = 0;
 startalpha = 1;
 
 
-warning_text = get_text("warning");
+warning_text = textdata_get("warning");
 warning_alpha = 0;
 
 

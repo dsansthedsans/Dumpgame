@@ -104,7 +104,7 @@ for (var i = 0; i < enemy_length; i++)
 		enemy_act[i, z] = "";
 		enemy_act_enabled[i, z] = true;
 	}
-	enemy_act[i, 0] = get_text("battle_act_0");
+	enemy_act[i, 0] = textdata_get("battle_act_0");
 	
 }
 

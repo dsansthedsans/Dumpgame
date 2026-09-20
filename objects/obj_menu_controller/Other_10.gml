@@ -7,8 +7,8 @@ for (var l = 0; l < 8; l++)
 		option[l, i] = "";
 		option_key[l, i] = "  ";
 		var _id = string(l) + "_" + string(i);
-		var _opt = get_text("menu_" + string(_id));
-		if (_opt != undefined)
+		var _opt = textdata_get("menu_" + string(_id));
+		if (_opt != undefined && _opt != "Salenis")
 		{
 			option[l, i] = string_upper(_opt);
 			option_w[l, i] = string_width(option[l, i]);
@@ -66,7 +66,7 @@ for (var l = 0; l < 8; l++)
 			}
 			
 			option_heartx[l, i] = (option_x[l, i] - (option_w[l, i] / 2) - 22);
-			
+		
 			option_bgx[l] = (option_x[l, 0] - (option_whigh[l] / 2) - 44 - 10);
 			option_bgy[l] = (option_y[l, 0] - 44);
 			option_bgw[l] = (44 + 10 + option_whigh[l] + 44 + 10);

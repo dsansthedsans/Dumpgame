@@ -1,6 +1,9 @@
 
 function START_GAME()
-{		
+{	
+	global.textdata_en = ds_map_create();
+	global.textdata_pt = ds_map_create();
+	
 	randomize();
 	display_set_gui_maximise(2, 2);
 	load_time = 180;
@@ -11,7 +14,7 @@ function START_GAME()
 	global.game_startroom[0] = room_menu;
 	global.game_startroom[1] = room_corridors_1 //room_intro;
 	global.ACHIEVEMENT_ENABLED = false;
-	TEXTDATA();
+	textdata();
 	start_maininfo();
 	start_music();
 	start_writer();
@@ -26,7 +29,7 @@ function START_GAME()
 	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
 	global.debug_hud = false;
-	global.room_order = [room_loading, room_menu, room_event_story, room_battle, room_over, room_corridors_1, room_corridors_1_5, room_corridors_2, room_corridors_3, room_corridors_3_5, room_corridors_4, room_corridors_5, room_corridors_5_A, room_corridors_5_B, room_corridors_6, room_corridors_7, room_corridors_8, room_corridors_9, room_corridors_10, room_corridors_11, room_corridors_13, room_corridors_14, room_corridors_17, room_corridors_18, room_cave_1, room_cave_2, room_cave_3, room_event_cat];
+	global.room_order = [room_loading, room_menu, room_story, room_battle, room_over, room_corridors_1, room_corridors_1_5, room_corridors_2, room_corridors_3, room_corridors_3_5, room_corridors_4, room_corridors_5, room_corridors_5_A, room_corridors_5_B, room_corridors_6, room_corridors_7, room_corridors_8, room_corridors_9, room_corridors_10, room_corridors_11, room_corridors_13, room_corridors_14, room_corridors_17, room_corridors_18, room_cave_1, room_cave_2, room_cave_3, room_cat];
 	for (var i = 0; i < 10; i++)
 		global.notification[i] = 0;
 }
@@ -68,7 +71,6 @@ function start_chara()
 	global.chara_armor = ITEM_BANDAGE;
 	
 	global.chara_room = 0;
-	global.chara_world = WORLD_CORRIDORS;
 	
 	global.chara_stopwatch =
 	{
@@ -179,22 +181,21 @@ function start_item()
 {
 	#macro ITEM_STICK 0
 	#macro ITEM_BANDAGE 1
-	#macro ITEM_CANDY 2
-	#macro ITEM_BOWL 3
-	#macro ITEM_TRIDENT 4
-	#macro ITEM_CHOCO 5
-	#macro ITEM_PACE 6
-	#macro ITEM_BRICK 7
-	
+	#macro ITEM_BRICK 2
+	#macro ITEM_CANDY 3
+	#macro ITEM_BOWL 4
+	#macro ITEM_TRIDENT 5
+	#macro ITEM_CHOCO 6
+	#macro ITEM_PACE 7
+	#macro ITEM_BRICK2 8
 	#macro ITEM_TYPE_CONSUMABLE 1
 	#macro ITEM_TYPE_WEAPON 2
 	#macro ITEM_TYPE_ARMOR 3
-	
+	#macro ITEM_TYPE_NONE 4
 	global.item_length = 6;
 	global.item_last = (global.item_length - 1);
 	for (var i = 0; i < global.item_length; i++)
 		global.item[i] = -1;
-	
 	global.itemDropped_lengthMax = 99;
 	for (var i = 0; i < global.itemDropped_lengthMax; i++)
 		global.itemDropped[i] = {};
@@ -370,7 +371,7 @@ function start_controls()
 }
 function start_settings()
 {
-	global.lang = "en"; // en, pt
+	global.lang = "enUS"; // enUS, ptBR
 	global.fullscreen = 0;
 	global.visualeff = 1;
 	global.autorun = 0;
@@ -410,12 +411,12 @@ function start_achievements()
 	global.achievement_total = 0;
 	for (var i = 0; i < 99; i++)
 	{
-		var z = get_text("unused_achievement_name_" + string(i));
+		var z = textdata_get("unused_achievement_name_" + string(i));
 		if (z != undefined)
 		{
 			global.achievement[i] = 0;
 			global.achievement_name[i] = z;
-			global.achievement_desc[i] = get_text("unused_achievement_desc_" + string(i));
+			global.achievement_desc[i] = textdata_get("unused_achievement_desc_" + string(i));
 		}
 		else
 		{
@@ -440,7 +441,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_11;
+		var _rm = room_cave_1;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;

@@ -1,5 +1,5 @@
 /// @descr desenhar título do nível
-var _title = string_upper(get_text("menu_" + string(global.menu_lvl) + "_title"));
+var _title = string_upper(textdata_get("menu_" + string(global.menu_lvl) + "_title"));
 var _title_stw = string_width(_title);
 var _title_sth = string_height(_title);
 var _title_xdi = 33;

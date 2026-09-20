@@ -167,12 +167,12 @@ function chara_stats()
 
 	// arma e armadura
 	var _weapon = global.chara_weapon;
-	global.chara_wname = get_text("item_name_none");
+	global.chara_wname = textdata_get("item_name_none");
 	global.chara_wstrength = item_value(_weapon);
 	if (_weapon != -1)
 		global.chara_wname = item_name(_weapon, "");
 	var _armor = global.chara_armor;
-	global.chara_aname = get_text("item_name_none");
+	global.chara_aname = textdata_get("item_name_none");
 	global.chara_astrength = item_value(_armor);
 	if (_armor != -1)
 		global.chara_aname = item_name(_armor, "");
@@ -186,11 +186,11 @@ function chara_inwhat()
 	global.inbattle = 0;
 	global.ingameover = 0;
 	
-	if (array_get_index(global.room_order, room) > array_get_index(global.room_order, room_over) && array_get_index(global.room_order, room) < array_get_index(global.room_order, room_event_cat))
+	if (array_get_index(global.room_order, room) > array_get_index(global.room_order, room_over) && array_get_index(global.room_order, room) < array_get_index(global.room_order, room_cat))
 		global.ingame = 1;
 	else if (room == room_menu)
 		global.inmenu = 1;
-	else if (room == room_event_story)
+	else if (room == room_story)
 		global.inintro = 1;
 	else if (room == room_battle)
 		global.inbattle = 1;
@@ -226,11 +226,6 @@ function chara_room()
 		{
 			xx = 460;
 			yy = 310;
-			if (rm == room_corridors_4_old)
-			{
-				xx = 160;
-				yy = 310;
-			}
 			global.flag[17] = 1;
 		}
 		if (room == room_corridors_5)
@@ -258,7 +253,7 @@ function chara_room()
 			yy = 290;
 		}
 		if (room == room_corridors_18)
-			rm = room_event_cat;
+			rm = room_cat;
 		if (room == room_cave_2)
 		{
 			xx = 160;
@@ -270,7 +265,7 @@ function chara_room()
 		rm = room_previous(room);
 		if (room == room_corridors_6)
 			rm = room_corridors_5;
-		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4_old) || (room == room_corridors_4) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == room_corridors_17) || (room == room_corridors_18)
+		if (room == room_corridors_1_5) || (room == room_corridors_2) || (room == room_corridors_3) || (room == room_corridors_3_5) || (room == room_corridors_4) || (room == room_corridors_5) || (room == room_corridors_6) || (room == room_corridors_9) || (room == room_corridors_10) || (room == room_corridors_11) || (room == room_corridors_14) || (room == room_corridors_17) || (room == room_corridors_18)
 		{
 			xx = 160;
 			yy = 100;
@@ -279,8 +274,6 @@ function chara_room()
 			if (room == room_corridors_5)
 			{
 				xx = 700;
-				if (rm == room_corridors_4_old)
-					xx = 720;
 			}
 			if (room == room_corridors_9 && global.flag[31] == 1 && global.flag[48] == 1)
 				global.flag[46] = 1;
@@ -337,28 +330,25 @@ function chara_room()
 	
 	room_go(rm, xx, yy);
 }
-function chara_room_name(_room)
-{
-	return get_text(room_get_name(argument0));
-}
 
 function chara_world()
 {
 	var _world = WORLD_CORRIDORS;
 	if (array_get_index(global.room_order, room) >= array_get_index(global.room_order, room_cave_1) && array_get_index(global.room_order, room) <= array_get_index(global.room_order, room_cave_3))
 		_world = WORLD_CAVERNS;
-	global.chara_world = _world;
 	return _world;
 }
 function chara_world_name(_world)
 {
-	var n = "";
-	var w = argument0;
-	if (w == WORLD_CORRIDORS)
-		n = get_text("world_name_corridors");
-	else if (w == WORLD_CAVERNS)
-		n = get_text("world_name_caverns");
-	return n;
+	switch (_world)
+	{
+		case WORLD_CORRIDORS:
+		return textdata_get("world_corridors");
+		break;
+		case WORLD_CAVERNS:
+		return textdata_get("world_caverns");
+		break;
+	}
 }
 
 function chara_murder()

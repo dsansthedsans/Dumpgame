@@ -233,6 +233,10 @@ function room_go(_room, _x, _y)
 	trans_obj.xx = _x;
 	trans_obj.yy = _y;
 }
+function room_name(_room)
+{
+	return textdata_get(room_get_name(argument0));
+}
 
 function shakeobj(_obj, _xint, _yint, _intlower)
 {
@@ -480,18 +484,18 @@ function draw_self_border()
 
 function draw_chapter_name(_alpha, _outlineWidth)
 {
-	var _number = get_text($"chapter_number_{global.chara_world}");
+	var _number = textdata_get($"chapter_number_{chara_world()}");
 	if (is_undefined(_number))
 		_number = "X";
-	var _name = get_text($"chapter_name_{global.chara_world}");
+	var _name = textdata_get($"chapter_name_{chara_world()}");
 	if (is_undefined(_name))
 		_name = "SALENIS";
 	draw_set_alpha(_alpha);
 	draw_set_font(fnt_main_spaced);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	//draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), $"{get_text("chapter_main")} {_number}\n\n{_name}", c_white, _outlineWidth, c_dkgrey);
-	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120 - 15), $"- {get_text("chapter_main")} {_number} -", c_white, _outlineWidth, c_dkgrey);
+	//draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120), $"{textdata_get("chapter_main")} {_number}\n\n{_name}", c_white, _outlineWidth, c_dkgrey);
+	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120 - 15), $"- {textdata_get("chapter_main")} {_number} -", c_white, _outlineWidth, c_dkgrey);
 	draw_set_font(fnt_main_spaced_big);
 	draw_text_outline((obj_GAME_CONTROLLER.cam_x + 160), (obj_GAME_CONTROLLER.cam_y + 120 + 10), $"{_name}", c_white, _outlineWidth, c_dkgrey);
 }

@@ -46,7 +46,7 @@ if (active == 1)
 			image_alpha = 0;
 			sprite_index = spr_enemy_trashguy_hurt;
 			global.chara_kills += 1;
-			global.world_curpopulation[global.chara_world] -= 1;
+			global.world_curpopulation[chara_world()] -= 1;
 			controller.battle_expreward += controller.enemy_reward_exp[myself];
 			controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 			controller.enemy_type[myself] = 0;
@@ -76,7 +76,7 @@ if (active == 1)
 		if (audio_playing(snd_launchSparkles) == false)
 			audio_play(snd_launchSparkles, 0, VOLUME_SOUND);
 		global.chara_spares += 1;
-		global.world_sparedpopulation[global.chara_world] += 1;
+		global.world_sparedpopulation[chara_world()] += 1;
 		controller.battle_mnyreward += controller.enemy_reward_mny[myself];
 		controller.enemy_type[myself] = 0;
 		spared = 0;

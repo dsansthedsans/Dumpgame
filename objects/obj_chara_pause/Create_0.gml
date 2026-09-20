@@ -2,7 +2,7 @@
 depth = -9500;
 move = 1;
 alpha = 1;
-title = get_text("charapause_title");
+title = textdata_get("charapause_title");
 
 
 // posições
@@ -26,7 +26,7 @@ title_y = (bg_y[1] + (bg_h[1] / 2));
 option_length = 3;
 for (var i = 0; i < option_length; i++)
 {
-	option[i] = string_upper(get_text("charapause_" + string(i)));
+	option[i] = string_upper(textdata_get("charapause_" + string(i)));
 	option_x[i] = round(bg_x[0] + (bg_w[0] / 2));
 	option_y[i] = round(bg_y[0] + (bg_h[0] / 2) - 6 + (20 * i));
 }
@@ -35,12 +35,12 @@ option_pos = 0;
 
 // warning
 warning = 0;
-warning_title = get_text("charapause_warning_title");
+warning_title = textdata_get("charapause_warning_title");
 warning_title_x = (bg_x[0] + (bg_w[0] / 2));
 warning_title_y = (bg_y[0] + (bg_h[0] / 2) - 10);
 for (var i = 0; i < 2; i++)
 {
-	warning_option[i] = get_text("charapause_warning_" + string(i));
+	warning_option[i] = textdata_get("charapause_warning_" + string(i));
 	warning_option_x[i] = (bg_x[0] + (bg_w[0] / 2) - 40 + (80 * i));
 	warning_option_y[i] = (warning_title_y + 40);
 }

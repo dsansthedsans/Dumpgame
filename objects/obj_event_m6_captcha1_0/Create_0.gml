@@ -1,6 +1,4 @@
-
 event_inherited();
-
 if (global.flag[2] == 1 && global.flag[8] == 0 && global.flag[15] == 0 && global.flag[16] == 0)
 {
 	con = 1;
@@ -16,4 +14,3 @@ if (global.flag[2] == 1 && global.flag[8] == 0 && global.flag[15] == 0 && global
 }
 else
 	instance_destroy();
-

@@ -52,7 +52,7 @@ if (msg[page] != "%%%") || (question[page] != "%%%")
 		global.item[global.item_last] = ITEM_BRICK;
 		audio_play(snd_interact_item, 0, VOLUME_SOUND);
 	}
-	if (text == "npc_armsguy_lost" && global.flag[47] == 1 && page == 5)
+	if (text == "npc_armsguy_lost" && global.flag[47] == 1 && page == 4)
 	{
 		audio_play(snd_interact_item, 0, VOLUME_SOUND);
 		if (global.ACHIEVEMENT_ENABLED == true && global.achievement[ACHIEVEMENT_MONSTNINJA] == 0)

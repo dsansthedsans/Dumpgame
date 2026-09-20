@@ -30,7 +30,7 @@ if (room == room_menu)
 			music_paused[0] = 1;
 	}
 }
-if (room == room_event_story)
+if (room == room_story)
 {
 	music_set(0, -1);
 	if (exists(obj_writer_controller) == true)
@@ -194,7 +194,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			global.music_volumetype[2] = VOLUME_SOUND;
 		}
 	}
-	if (room == room_event_cat)
+	if (room == room_cat)
 	{
 		music_set(0, -1);
 		music_set(1, -1);

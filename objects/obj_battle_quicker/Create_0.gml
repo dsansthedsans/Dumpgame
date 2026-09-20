@@ -33,7 +33,7 @@ switch_amt = 0;
 switch_max = 6;
 
 nobody = 0;
-if /*(global.battle_nextgroup == 1) ||*/ (global.world_curpopulation[global.chara_world] <= 0 && global.battle_nextgroup == 0)
+if /*(global.battle_nextgroup == 1) ||*/ (global.world_curpopulation[chara_world()] <= 0 && global.battle_nextgroup == 0)
 	nobody = 1;
 
 audio_stop(snd_victory);

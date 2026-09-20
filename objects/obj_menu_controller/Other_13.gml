@@ -24,9 +24,9 @@ name_list[0] = undefined;
 var i = 0;
 while (i < 16)
 {
-	if (get_text($"menu_name_{i}") != undefined)
+	if (textdata_get($"menu_name_{i}") != undefined)
 	{
-		name_list[i] = get_text($"menu_name_{i}");
+		name_list[i] = textdata_get($"menu_name_{i}");
 		i += 1;
 	}
 	else
@@ -36,7 +36,7 @@ for (var i = 0; i < array_length(name_list); i++)
 {
 	if (string_upper(name) == string_upper(name_list[i]))
 	{
-		msg = get_text("menu_namemsg_" + string(i));
+		msg = textdata_get("menu_namemsg_" + string(i));
 		block = name_block[i];
 	}
 }

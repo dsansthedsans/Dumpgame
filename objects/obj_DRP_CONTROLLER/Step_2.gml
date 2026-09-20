@@ -1,51 +1,16 @@
-
 if (ready == 1)
 {
 	if (global.drpenabled == 1)
 	{
-		details = "Salenis";
+		details = room_name(room);
 		state = "Salenis";
-	
-		// pegar informações
 		if (room == room_loading) // carregando
-		{
-			details = "Loading...";
-			state = "";
-		}
+			state = textdata_get("start");
 		else if (global.inmenu == 1) // menu
-		{
-			details = "In Main Menu";
-		
-			controller = obj_menu_controller;
-			var _savefile = (controller.play_save + 1);
-		
-			var l = global.menu_lvl;
-			if (l == 0)
-			{
-				state = "Title";
-				if (audio_playing(SND_OVOS) == 1)
-					state = "Ovos";
-			}
-			else if (l == 1)
-				state = "Selecting save file";
-			else if (l == 2)
-				state = "Settings";
-			else if (l == 3)
-				state = "Achievements - " + string(achievement_achieved()) + "/" + string(global.achievement_total) + "";
-			else if (l == 4)
-				state = "Credits - Page " + string(controller.credits_pos + 1) + "";
-			else if (l == 5)
-				state = "Continue game - File " + string(_savefile) + "";
-			else if (l == 6)
-				state = "Controls";
-			else if (l == 7)
-				state = "Writing name - File " + string(_savefile) + "";
-		}
+			state = textdata_get($"drp_state_menu_{global.menu_lvl}");
 		else if (global.inintro == 1) // intro
-		{
-			details = "Watching Intro";
 			state = "";
-			thatwriter = obj_intro_controller.thiswriter;
+			/*thatwriter = obj_intro_controller.thiswriter;
 			if (exists(thatwriter) == 1)
 			{
 				var _msg = thatwriter.msg[thatwriter.page];
@@ -55,15 +20,10 @@ if (ready == 1)
 				_msg = string_replace_all(_msg, "&!", " ");
 				_msg = string_replace_all(_msg, "&", "");
 				state = _msg;
-			}
-		}
+			}*/
 		else if (global.inbattle == 1) // batalha
 		{
-			details = "In Battle";
-			state = "";
-		
 			controller = obj_battle_controller;
-		
 			var _length = 0;
 			var _marked_pos = 0;
 			for (var i = 0; i < 3; i++)
@@ -88,55 +48,31 @@ if (ready == 1)
 					state = string(name[0]) + ", " + string(name[1]) + ", " + string(name[2]);
 			}
 			else if (controller.battle_won == 1)
-			{
-				state = "YOU WON!"
-				if (controller.battle_group == 0)
-					state = "But nobody came.";
-			}
+				state = textdata_get($"drp_state_battle_won_{controller.battle_group == 0}");
 			else if (controller.fleeing == 1) // flee
-				state = "Fleeing...";
+				state = textdata_get("drp_state_battle_fleeing");
 		}
 		else if (global.ingameover == 1) // Game over
-		{
-			details = "Game Over";
 			state = "";
-			thatwriter = obj_over_controller.thiswriter;
-			if (exists(thatwriter) == 1)
-			{
-			
-			}
-		}
 		else if (global.ingame == 1) // Overworld
 		{
-			details = chara_world_name(global.chara_world);
-			state = chara_room_name(room);
+			details = chara_world_name(chara_world());
+			state = room_name(room);
 		}
-
-		// ponto de interrogação (sem save)
-		if (global.savefile_selected == -1)
-		{
-			face = "noface";
-			face_info = "No save file selected";
-		}
-	
-		// rosto do carlinhos (com save)
-		else
+		face = "noface";
+		faceInfo = textdata_get($"drp_faceInfo_{global.savefile_selected != -1}");
+		if (global.savefile_selected != -1)
 		{
 			face = "face0";
 			if (chara_murder() >= 2)
 				face = "face1";
-			var _name = "\"" + string(global.chara_name) + "\"";
-			if (_name == "\"\"")
-				_name = "(UNNAMED)";
-			face_info = string(_name) + " - [LVL " + string(global.chara_lvl) + "]";
+			faceInfo = string_replace_all(faceInfo, "{name}", global.chara_name);
+			faceInfo = string_replace_all(faceInfo, "{lvl}", global.chara_lvl);
 		}
-		
-		// definir presence
-		np_setpresence_more(face_info, get_text("drp_description"), 0);
-		np_setpresence(state, details, "cover", face);		
+		np_setpresence(state, details, "cover", face);
+		np_setpresence_more(faceInfo, textdata_get("start"), 0);
 	}
 	else
 		np_clearpresence();	
 }
-
 np_update();

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_TEXTDATA",
+  "%Name":"scr_textdata",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_TEXTDATA",
+  "name":"scr_textdata",
   "parent":{
     "name":"[!] scripts",
     "path":"folders/[!] scripts.yy",

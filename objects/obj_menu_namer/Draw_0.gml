@@ -91,7 +91,7 @@ if (typing == 1)
 	draw_set_alpha(controller.alpha);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_text_outline((_bg_x + (_bg_w / 2)), (_bg_y + (_bg_h / 2) - 20), "TYPING MODE ENABLED\nPRESS [F10] TO QUIT", c_red, 2, c_black);
+	draw_text_outline((_bg_x + (_bg_w / 2)), (_bg_y + (_bg_h / 2) - 20), textdata_get("menu_namer_f10"), c_red, 2, c_black);
 }
 
 

@@ -44,7 +44,7 @@ bg_h[3] = (bg_h[2] + 9)				- 2;
 
 // títulos
 for (var i = 0; i < 3; i++)
-	title[i] = get_text($"charamenu_item_title_{i}");
+	title[i] = textdata_get($"charamenu_item_title_{i}");
 draw_set_font(fnt_main_spaced);
 title_bgh = (10 + string_height(title[0]) + 10);
 

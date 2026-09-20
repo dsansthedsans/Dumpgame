@@ -14,7 +14,7 @@ for (var i = 0; i < global.item_length; i++)
 option_length[1] = global.item_length;
 
 for (var i = 0; i < 3; i++)
-	option[2, i] = get_text($"charamenu_item_other_{i}");
+	option[2, i] = textdata_get($"charamenu_item_other_{i}");
 option_length[2] = 3;
 
 option[3, 0] = "";

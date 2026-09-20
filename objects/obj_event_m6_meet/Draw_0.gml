@@ -34,7 +34,7 @@ if (teach_active == true)
 		draw_set_font(fnt_main_spaced);
 		draw_set_valign(fa_top);
 		draw_set_halign(fa_center);
-		draw_text_outline_color(_teachInfo_x, (_teachInfo_y + (sprite_get_height(teachInfo_sprite) / 2) + 5), get_text($"event_m6_meet_teachInfo_{i}"), c_black, c_black, c_black, c_black, teachInfo_alpha[i], 1, c_white);
+		draw_text_outline_color(_teachInfo_x, (_teachInfo_y + (sprite_get_height(teachInfo_sprite) / 2) + 5), textdata_get($"event_m6_meet_teachInfo_{i}"), c_black, c_black, c_black, c_black, teachInfo_alpha[i], 1, c_white);
 	}
 }
 draw_set_alpha(1);
