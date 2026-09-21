@@ -14,6 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"264ed46b-d766-4372-b580-d218a4eff4ec","name":"264ed46b-d766-4372-b580-d218a4eff4ec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"66d0fcf5-b456-43ae-b2e0-6ed9ab327a9f","name":"66d0fcf5-b456-43ae-b2e0-6ed9ab327a9f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ff3fe62d-cfc4-4dea-9b59-1e2207624afb","name":"ff3fe62d-cfc4-4dea-9b59-1e2207624afb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"853b7051-3b39-4cc3-84ad-853b9faafa2e","name":"853b7051-3b39-4cc3-84ad-853b9faafa2e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -50,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -75,6 +77,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"66d0fcf5-b456-43ae-b2e0-6ed9ab327a9f","path":"sprites/spr_battle_button_act/spr_battle_button_act.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e7f488f9-80f7-47ac-a5b7-d6ee07c68c59","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ff3fe62d-cfc4-4dea-9b59-1e2207624afb","path":"sprites/spr_battle_button_act/spr_battle_button_act.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"e187da72-8302-447e-9fe3-118c7d115c62","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"853b7051-3b39-4cc3-84ad-853b9faafa2e","path":"sprites/spr_battle_button_act/spr_battle_button_act.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d98b0086-011c-48cb-8c59-64b78fb37f08","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

@@ -1,7 +1,7 @@
 if (con == 1)
 {
-	heart_x = (heart_xorig + (irandom(1) * choose(-1, 1) * global.visualeff));
-	heart_y = (heart_yorig + (irandom(1) * choose(-1, 1) * global.visualeff));
+	heart_x = (heart_xorig + (irandom(2) * choose(-1, 1) * global.visualeff));
+	heart_y = (heart_yorig + (irandom(2) * choose(-1, 1) * global.visualeff));
 }
 if (con == 2)
 {

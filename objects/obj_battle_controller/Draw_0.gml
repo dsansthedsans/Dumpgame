@@ -6,13 +6,12 @@ button_alpha = lerp(button_alpha, _alpha, 0.2);
 gui_alpha = lerp(gui_alpha, _alpha, 0.2);
 
 // draw buttons
-for (var i = 0; i < button_length * button_active; i++)
+for (var i = 0; i < (button_length * button_active); i++)
 {
-	var _index = 0;
-	if (i == button_pos && button_select == 1)
-		_index = 1;
-	
-	draw_sprite_ext(button_spr[i], _index, button_x[i], button_y[i], 2, 2, 0, button_color[_index], button_alpha);
+	var _index = (i == button_pos && button_select == 1);
+	if (global.lang == "ptBR" && i != 2)
+		_index += 2;
+	draw_sprite_ext(button_spr[i], _index, button_x[i], button_y[i], 2, 2, 0, button_color[(i == button_pos && button_select == 1)], button_alpha);
 }
 
 // draw chara info
@@ -103,7 +102,7 @@ if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == fal
 		}
 	}
 	if (battle_group == 1)
-		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "pt"))), /*(box_x + (box_w / 4) + (box_w / 8) - 20 + (irandom(1) * global.visualeff) - 20)*/ (_x1 + 75 + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 1, 1, 0, c_white, 1);
+		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "ptBR"))), (_x1 + 75 + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 1, 1, 0, c_white, 1);
 }
 
 draw_set_alpha(1);

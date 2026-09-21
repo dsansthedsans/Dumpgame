@@ -24,6 +24,7 @@ if (ready == 1)
 		else if (global.inbattle == 1) // batalha
 		{
 			controller = obj_battle_controller;
+			state = "";
 			var _length = 0;
 			var _marked_pos = 0;
 			for (var i = 0; i < 3; i++)

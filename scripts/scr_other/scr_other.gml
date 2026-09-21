@@ -485,10 +485,10 @@ function draw_self_border()
 function draw_chapter_name(_alpha, _outlineWidth)
 {
 	var _number = textdata_get($"chapter_number_{chara_world()}");
-	if (is_undefined(_number))
+	if (is_undefined(_number) || _number == "Salenis")
 		_number = "X";
-	var _name = textdata_get($"chapter_name_{chara_world()}");
-	if (is_undefined(_name))
+	var _name = string_upper(textdata_get($"chapter_name_{chara_world()}"));
+	if (is_undefined(_name) || _name == "Salenis")
 		_name = "SALENIS";
 	draw_set_alpha(_alpha);
 	draw_set_font(fnt_main_spaced);

@@ -24,9 +24,10 @@ name_list[0] = undefined;
 var i = 0;
 while (i < 16)
 {
-	if (textdata_get($"menu_name_{i}") != undefined)
+	var _name = textdata_get($"menu_name_{i}")
+	if (_name != undefined && _name != "Salenis")
 	{
-		name_list[i] = textdata_get($"menu_name_{i}");
+		name_list[i] = _name;
 		i += 1;
 	}
 	else

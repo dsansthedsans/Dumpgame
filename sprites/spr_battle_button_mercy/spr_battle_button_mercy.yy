@@ -14,6 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"264ed46b-d766-4372-b580-d218a4eff4ec","name":"264ed46b-d766-4372-b580-d218a4eff4ec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"4036a0ff-a587-49e8-afb1-ee871602b0f6","name":"4036a0ff-a587-49e8-afb1-ee871602b0f6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8c384681-138e-4709-adff-b5537ad79826","name":"8c384681-138e-4709-adff-b5537ad79826","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7ab7ddc3-eace-46f5-9c3d-b0f682e987ad","name":"7ab7ddc3-eace-46f5-9c3d-b0f682e987ad","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -50,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -75,6 +77,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4036a0ff-a587-49e8-afb1-ee871602b0f6","path":"sprites/spr_battle_button_mercy/spr_battle_button_mercy.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"08fd7867-d2a6-4379-bc83-b7b426f7b03c","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8c384681-138e-4709-adff-b5537ad79826","path":"sprites/spr_battle_button_mercy/spr_battle_button_mercy.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"7a562fa1-87e0-4002-9b6c-e4fcf9677922","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7ab7ddc3-eace-46f5-9c3d-b0f682e987ad","path":"sprites/spr_battle_button_mercy/spr_battle_button_mercy.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1da66c06-2f38-4e67-8de1-326ae17861c1","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

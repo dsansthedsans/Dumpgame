@@ -10,7 +10,7 @@ for (var l = 0; l < 8; l++)
 		var _opt = textdata_get("menu_" + string(_id));
 		if (_opt != undefined && _opt != "Salenis")
 		{
-			option[l, i] = string_upper(_opt);
+			option[l, i] = _opt;
 			option_w[l, i] = string_width(option[l, i]);
 			if (i == 0)
 				option_whigh[l] = option_w[l, i];

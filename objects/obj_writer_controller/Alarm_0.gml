@@ -4,23 +4,27 @@ if (text_length <= (string_length(msg[page]) - 1))
 {
 	text_length += 1;
 	var _playsnd = 1;
-	switch (string_char_at(msg[page], text_length))
+	var _length = 1;
+	for (var l = 0; l < _length; l++)
 	{
+		var _char = string_char_at(msg[page], text_length);
+		var _charNext = string_char_at(msg[page], (text_length + 1));
+		var _charLast = string_char_at(msg[page], (text_length - 1));
+		var _charLaster = string_char_at(msg[page], (text_length - 2));
 		// Whitespace
-		case " ":
-		_playsnd = false;
-		break;
-		// Line break
-		case "&":
-		if (string_char_at(msg[page], (text_length + 1)) != "\\")
-		{
+		if (_char == " ")
 			_playsnd = false;
+		// Line break
+		else if (_char == "&" && _charNext != "\\")
+		{
+			if (_charNext == "!")
+				text_length += 1;
 			text_length += 1;
+			_playsnd = false;
+			_length += 1;
 		}
-		break;
 		// Pauses
-		case "^":
-		if (string_char_at(msg[page], (text_length + 1)) != "\\")
+		else if (_char == "^" && _charNext != "\\")
 		{
 			switch (string_char_at(msg[page], (text_length + 1)))
 			{
@@ -37,34 +41,33 @@ if (text_length <= (string_length(msg[page]) - 1))
 				text_speed += 60;
 				break;
 			}
+			text_length += 2;
 			_playsnd = false;
-			text_length += 1;
+			_length += 1;
 		}
-		break;
 		// Colors
-		case ":":
-		case ";":
-		if (string_char_at(msg[page], (text_length + 1)) != "\\")
+		else if ((_char == ":" || _char == ";") && _charNext != "\\")
 		{
+			text_length += 2;
 			_playsnd = false;
-			text_length += 1;
+			_length += 1;
 		}
-		break;
 		// Effects
-		case "+":
-		if (string_char_at(msg[page], (text_length + 1)) != "\\")
+		else if (_char == "+" && _charNext != "\\")
 		{
+			text_length += 2;
 			_playsnd = false;
-			text_length += 1;
+			_length += 1;
 		}
-		break;
 		// Special character
-		case "\\":
-		_playsnd = false;
-		text_length += 1;
-		break;
+		else if (_char == "\\")
+		{
+			text_length += 1;
+			_playsnd = false;
+			_length += 1;
+		}
 	}
-	switch (string_char_at(msg[page], (text_length - 1)))
+	/*switch (string_char_at(msg[page], (text_length - 1)))
 	{
 		case "&":
 		case "^":
@@ -88,7 +91,7 @@ if (text_length <= (string_length(msg[page]) - 1))
 			text_length += 1;
 		}
 		break;
-	}
+	}*/
 	
 	/*
 	if (string_char_at(msg[page], text_length) == " ")

@@ -154,7 +154,8 @@ function TEXT()
 			question_option[2] = textdata_get($"room_rulesbook_{m}_2");
 			if (question_result[m] == 1)
 			{
-				if (textdata_get($"room_rulesbook_{m+2}-{global.flag[67]}") != undefined)
+				var _text = textdata_get($"room_rulesbook_{m+2}-{global.flag[67]}");
+				if (_text != undefined && _text != "Salenis")
 				{
 					msg[m+1] = textdata_get($"room_rulesbook_{m+1}.{(global.flag[67] > 0)}");
 					msg[m+2] = textdata_get($"room_rulesbook_{m+2}-{global.flag[67]}");
@@ -460,7 +461,7 @@ function TEXT()
 		for (var i = 0; i < 99; i++)
 		{
 			var _curmsg = textdata_get("npc_trashguy_" + string(i));
-			if (_curmsg != undefined)
+			if (_curmsg != undefined && _curmsg != "Salenis")
 				msg[i] = _curmsg;
 			else
 				break;
@@ -479,7 +480,7 @@ function TEXT()
 			for (var i = 1; i < 99; i++)
 			{
 				var _curmsg = textdata_get("npc_armsguy_lost_0_0_" + string(i));
-				if (_curmsg != undefined)
+				if (_curmsg != undefined && _curmsg != "Salenis")
 				{
 					if (i != 3)
 						msg[i] = _curmsg;
@@ -528,7 +529,7 @@ function TEXT()
 						if (i >= 3)
 							_bonus = "_" + string(_full);
 						var _curmsg = textdata_get("npc_armsguy_lost_1_1_" + string(i) + string(_bonus));
-						if (_curmsg != undefined)
+						if (_curmsg != undefined && _curmsg != "Salenis")
 							msg[i] = _curmsg;
 						else
 							break;
@@ -1162,7 +1163,7 @@ function TEXT()
 				for (var i = 0; i < 99; i++)
 				{
 					var _curmsg = textdata_get("battle_bubble_brock_" + string(_round) + "_" + string(i));
-					if (_curmsg != undefined)
+					if (_curmsg != undefined && _curmsg != "Salenis")
 						msg[i] = _curmsg;
 					else
 						break;
@@ -1301,9 +1302,11 @@ function TEXT()
 			if (controller.battle_round == 0) // first
 			{
 				var _msg_id = "battle_main_" + string(_groupname);
-				if (chara_murder() >= 1 && textdata_get($"{_msg_id}_geno") != undefined)
-					_msg_id += "_geno";
-				msg[0] = textdata_get(_msg_id);
+				var _msg_geno = textdata_get($"{_msg_id}_geno");
+				if (chara_murder() >= 1 && _msg_geno != undefined && _msg_geno != "Salenis")
+					msg[0] = _msg_geno;
+				else
+					msg[0] = textdata_get(_msg_id);
 				
 			}
 			else // normal
@@ -1375,48 +1378,51 @@ function TEXT()
 					if (_text == undefined) || (_text == "Salenis")
 						break;
 				}
-				if (_enemy.stage % 2 == 0)
+				if (_length > 0)
 				{
-					for (var i = 0; i < _length; i++)
-						msg[i] = textdata_get($"battle_main_dummy_{_stage}_{i}");
-					msg_next[0] = true;
-					msg_face[0] = spr_dialogface_m6_default;
-					msg_sound[0] = snd_writer_m6;
-					switch (_enemy.stage)
+					if (_enemy.stage % 2 == 0)
 					{
-						case 0:
-						msg_face[0] = spr_dialogface_m6_pleased;
-						msg_face[1] = spr_dialogface_m6_default;
-						msg_face[_length - 2] = spr_dialogface_m6_sassy;
-						break;
-						case 2:
-						msg_face[0] = spr_dialogface_m6_pleased;
-						msg_face[1] = spr_dialogface_m6_default;
-						msg_face[2] = spr_dialogface_m6_thinking;
-						msg_face[3] = spr_dialogface_m6_default;
-						break;
-						case 6:
-						msg_face[1] = spr_dialogface_m6_pleased;
-						msg_face[2] = spr_dialogface_m6_default;
-						msg_face[4] = spr_dialogface_m6_thinking;
-						msg_face[5] = spr_dialogface_m6_default;
-						msg_face[6] = -1;
-						msg_sound[6] = snd_writer_1;
-						msg_face[7] = spr_dialogface_m6_default;
-						msg_sound[7] = snd_writer_m6;
-						break;
-						case 8:
-						msg_face[0] = spr_dialogface_m6_pleased;
-						msg_face[1] = spr_dialogface_m6_default;
-						break;
+						for (var i = 0; i < _length; i++)
+							msg[i] = textdata_get($"battle_main_dummy_{_stage}_{i}");
+						msg_next[0] = true;
+						msg_face[0] = spr_dialogface_m6_default;
+						msg_sound[0] = snd_writer_m6;
+						switch (_enemy.stage)
+						{
+							case 0:
+							msg_face[0] = spr_dialogface_m6_pleased;
+							msg_face[1] = spr_dialogface_m6_default;
+							msg_face[_length - 2] = spr_dialogface_m6_sassy;
+							break;
+							case 2:
+							msg_face[0] = spr_dialogface_m6_pleased;
+							msg_face[1] = spr_dialogface_m6_default;
+							msg_face[2] = spr_dialogface_m6_thinking;
+							msg_face[3] = spr_dialogface_m6_default;
+							break;
+							case 6:
+							msg_face[1] = spr_dialogface_m6_pleased;
+							msg_face[2] = spr_dialogface_m6_default;
+							msg_face[4] = spr_dialogface_m6_thinking;
+							msg_face[5] = spr_dialogface_m6_default;
+							msg_face[6] = -1;
+							msg_sound[6] = snd_writer_1;
+							msg_face[7] = spr_dialogface_m6_default;
+							msg_sound[7] = snd_writer_m6;
+							break;
+							case 8:
+							msg_face[0] = spr_dialogface_m6_pleased;
+							msg_face[1] = spr_dialogface_m6_default;
+							break;
+						}
+						_enemy.stage += 1;
 					}
-					_enemy.stage += 1;
+					else
+						msg[0] = textdata_get($"battle_main_dummy_{_stage}_{_length - 1}");
+					msg_next[_length - 1] = 0;
+					msg_face[_length - 1] = -1;
+					msg_sound[_length - 1] = snd_writer_1;
 				}
-				else
-					msg[0] = textdata_get($"battle_main_dummy_{_stage}_{_length - 1}");
-				msg_next[_length - 1] = 0;
-				msg_face[_length - 1] = -1;
-				msg_sound[_length - 1] = snd_writer_1;
 				
 				/*
 				var _finalpage = 6;
@@ -1809,7 +1815,7 @@ function TEXT()
 							}
 							audio_play(_bool_sound, 0, VOLUME_SOUND)
 							var _msg = textdata_get($"battle_act_result_brock_3_2_{_bool}");
-							if (_msg != undefined && ((_bool == false) || (_bool == true && _convince < 4)))
+							if (_msg != undefined && _msg != "Salenis" && ((_bool == false) || (_bool == true && _convince < 4)))
 							{
 								var _msg_prefix = textdata_get($"battle_act_result_brock_3_2_{_bool}_prefix");
 								if (_msg_prefix == undefined) || (_msg_prefix == "Salenis") || (_convince > 0)

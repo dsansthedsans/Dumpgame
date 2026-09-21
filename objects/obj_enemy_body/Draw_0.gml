@@ -244,7 +244,7 @@ if (active == 1)
 			else if (stage == 2 && explosion_alpha == 0)
 			{
 				delay += 1;
-				if (delay >= (120 + 30))
+				if (delay >= (60 * 3))
 					stage = 3;
 			}
 			

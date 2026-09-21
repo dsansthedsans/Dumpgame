@@ -365,7 +365,7 @@ if (global.menu_lvl == 1)
 		}
 		else // save não existe
 		{
-			var _color = c_gray;
+			var _color = #748CAB;
 			if (i == option_pos)
 				_color = c_yellow;
 			draw_set_color(_color);
@@ -398,7 +398,7 @@ if (global.menu_lvl >= 0)
 			// opções
 			var _color = c_white;
 			if (l == 7 && i == 2 && block == 1)
-				_color = c_dkgray;
+				_color = #748CAB;
 			if (i == option_pos && controls_changing == 0)
 				_color = c_yellow;
 			if (l == 5 && i == 2 && play_erase > 0)

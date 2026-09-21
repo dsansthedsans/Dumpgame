@@ -14,6 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"264ed46b-d766-4372-b580-d218a4eff4ec","name":"264ed46b-d766-4372-b580-d218a4eff4ec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"27ffe4d4-3492-46cd-9ed1-85edd1a9755a","name":"27ffe4d4-3492-46cd-9ed1-85edd1a9755a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b5dc3eb8-67c4-4abf-b479-7c48af672381","name":"b5dc3eb8-67c4-4abf-b479-7c48af672381","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c2fa6917-50ad-4a50-bfb7-6cdfdb845ef2","name":"c2fa6917-50ad-4a50-bfb7-6cdfdb845ef2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -50,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -75,6 +77,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"27ffe4d4-3492-46cd-9ed1-85edd1a9755a","path":"sprites/spr_battle_button_fight/spr_battle_button_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"614095c7-e011-456f-9ff9-49b30593e293","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b5dc3eb8-67c4-4abf-b479-7c48af672381","path":"sprites/spr_battle_button_fight/spr_battle_button_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"305baec1-1047-4114-8c22-9d7862e010ab","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c2fa6917-50ad-4a50-bfb7-6cdfdb845ef2","path":"sprites/spr_battle_button_fight/spr_battle_button_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4f0c21e0-c1a5-4826-82ab-2189373194a7","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

@@ -346,7 +346,7 @@ function chara_world_name(_world)
 		return textdata_get("world_corridors");
 		break;
 		case WORLD_CAVERNS:
-		return textdata_get("world_caverns");
+		return textdata_get("world_cave");
 		break;
 	}
 }
