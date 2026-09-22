@@ -33,7 +33,7 @@ function battle_getgroup()
 	if (global.battle_nextgroup != 0) // override battlegroup with nextgroup
 		battle_group = global.battle_nextgroup;
 	else if (global.indebug == true && global.debug_hud == true)
-		battle_group = 12;
+		battle_group = 8;
 	global.battle_nextgroup = 0;
 }
 function battle_setupgroup()
@@ -558,6 +558,8 @@ function battle_attack()
 			thisobj.type = 2.0;
 			
 			time = (irandom_range(10, 15) + normaltime);
+			if (controller.battle_group == 7)
+				debug($"{time} AÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇP")
 		}
 		if (attack == 1)
 		{
@@ -566,7 +568,7 @@ function battle_attack()
 			create(_x, _y, obj_battle_blt);
 			thisobj.type = 2.1;
 			
-			time = (irandom_range(45, 60) + normaltime);
+			time = (irandom_range(45, 60) + (normaltime * 2));
 		}
 		time += (5 * controller.enemy_obj[myself].punched);
 		time -= (5 * controller.enemy_obj[myself].tookslime);

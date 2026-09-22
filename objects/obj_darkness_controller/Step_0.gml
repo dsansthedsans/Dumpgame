@@ -74,6 +74,6 @@ if (type == 3)
 		var _object = instance_find(all, o);
 		_object.image_blend = c_white
 		if (_object.sprite_index != spr_overworld_brokenfloor && _object.x <= (leftX + 2)) || (_object.x >= (rightX - 2)) || (_object.y <= (topY - 2)) || (_object.y >= (bottomY + 2))
-			_object.image_blend = c_gray;
+			_object.image_blend = global.c_gray;
 	}
 }

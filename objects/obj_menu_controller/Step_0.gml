@@ -101,7 +101,7 @@ if (move == 1)
 		audio_play(snd_option_move, 0, VOLUME_SOUND);
 		if (play_erase > 0)
 		{
-			option[5, 2] = string_upper(textdata_get("menu_5_2"));
+			option[5, 2] = textdata_get("menu_5_2");
 			play_erase = 0;	
 		}
 	}
@@ -202,6 +202,16 @@ if (move == 1)
 				option_pos = 0;
 				global.menu_lvl = 6;	
 			}
+			if (_pos == 2)
+			{
+				if (global.lang == "enUS")
+					global.lang = "ptBR";
+				else
+					global.lang = "enUS";
+				event_user(0);
+				settings_write();
+				start_achievements();
+			}
 			if (_pos == 3)
 				global.fullscreen = !global.fullscreen;
 			if (_pos == 4)
@@ -241,11 +251,11 @@ if (move == 1)
 				play_erase += 1;
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
 				if (play_erase == 1)
-					option[5, 2] = string_upper(textdata_get("menu_5_2_erase"));
+					option[5, 2] = textdata_get("menu_5_2_1");
 				if (play_erase == 2)
 				{
 					savefile_erase(play_save);
-					option[5, 2] = string_upper(textdata_get("menu_5_2"));
+					option[5, 2] = textdata_get("menu_5_2");
 					play_erase = 0;
 					option_pos = (play_save + 1);
 					global.menu_lvl = 1;
@@ -300,16 +310,16 @@ if (move == 1)
 	if (global.menu_lvl == 2) // configurações
 	{
 		// alterar idioma
-		if (option_pos == 2 && (press_l == 1 || press_r == 1))
-		{
-			if (global.lang == "enUS")
-				global.lang = "ptBR";
-			else
-				global.lang = "enUS";
-			event_user(0);
-			settings_write();
-			start_achievements();
-		}
+		//if (option_pos == 2 && (press_l == 1 || press_r == 1))
+		//{
+		//	if (global.lang == "enUS")
+		//		global.lang = "ptBR";
+		//	else
+		//		global.lang = "enUS";
+		//	event_user(0);
+		//	settings_write();
+		//	start_achievements();
+		//}
 		
 		// alterar volume
 		if (option_pos >= 5 && option_pos <= 7 && (hold_l == 1 || hold_r == 1))
@@ -351,16 +361,16 @@ if (move == 1)
 		if (_oldpos != credits_pos)
 			audio_play(snd_option_move, 0, VOLUME_SOUND);
 	}
-	if (global.menu_lvl == 6) // controles
-	{
+	//if (global.menu_lvl == 6) // controles
+	//{
 		// resetar controles
-		if (controls_changing == 0 && ((press_enter == 1 && option_pos == 1) || (keyboard_check_pressed(vk_f10) == 1)))
+		if (controls_changing == 0 && ((global.menu_lvl == 6 && press_enter == 1 && option_pos == 1) || (keyboard_check_pressed(vk_f10) == 1)))
 		{
 			start_controls();
 			event_user(1);
 			audio_play(snd_option_keyreset, 0, VOLUME_SOUND);
 		}
-	}
+	//}
 }
 namer_state = 0;
 
@@ -445,7 +455,7 @@ if (global.menu_lvl == 6)
 // ovos
 if (started == 1 && controls_changing == 0 && !(exists(obj_menu_namer) == 1 && obj_menu_namer.typing == 1))
 {
-	if (string_ends_with(string_upper(keyboard_string), "MIGEL") == 1 && ovos == 0)
+	if (string_ends_with(string_upper(keyboard_string), "OVOS") == 1 && ovos == 0)
 	{
 		audio_play(SND_OVOS, 0, VOLUME_SOUND);
 		ovos = 1;

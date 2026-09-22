@@ -7,7 +7,7 @@ for (var i = 0; i < 3; i++)
 {
 	var _color = c_white;
 	if (i == mainopt_pos)
-		_color = c_yellow;
+		_color = global.c_yellow;
 	
 	var _halign = fa_right;
 	if (i == 1)

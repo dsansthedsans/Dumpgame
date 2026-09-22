@@ -26,7 +26,7 @@ if (warning == 0)
 	{
 		var _color = c_white;
 		if (option_pos == i)
-			_color = c_yellow;
+			_color = global.c_yellow;
 		draw_set_color(_color);
 		draw_text(round(_cx + option_x[i]), round(_cy + option_y[i]), option[i]);
 	}
@@ -49,7 +49,7 @@ else
 	{
 		var _color = c_white;
 		if (warning_option_pos == i)
-			_color = c_yellow;
+			_color = global.c_yellow;
 		draw_set_color(_color);
 		draw_text(round(_cx + warning_option_x[i]), round(_cy + warning_option_y[i]), warning_option[i]);
 	}

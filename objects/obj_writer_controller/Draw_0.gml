@@ -43,14 +43,14 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		var _name_colors = global.c_mention;
 		if (filesaved == 1)
 		{
-			_color = c_yellow;
-			_name_colors = [c_yellow, c_yellow];
+			_color = global.c_yellow;
+			_name_colors = [global.c_yellow, global.c_yellow];
 		}
 		draw_set_color(_color);
 		
 		savefile_read(global.savefile_selected);
-		var _name = "[-----]";
-		var _lvl = "[-]"
+		var _name = "@[-----]";
+		var _lvl = "X"
 		var _world = "[---------]"
 		var _room = "[-------]";
 		if (thisfile != -1)
@@ -206,7 +206,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			var _cancheck = 1;
 			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) // yellow ("HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]")
 			{
-				text_color[0] = c_yellow;
+				text_color[0] = global.c_yellow;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "R" && _cancheck == 1) // red ("ATTACK"; negative status)
@@ -236,7 +236,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			}
 			if (string_char_at(msg[page], c + 1) == "G" && _cancheck == 1) // gray ("Corridors")
 			{
-				text_color[0] = #748CAB;
+				text_color[0] = global.c_gray;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "D" && _cancheck == 1) 
@@ -554,7 +554,7 @@ if (question[page] != "%%%" && writing == 0)
 			_font = fnt_main_big;
 		var _color = c_white;
 		if (i == question_pos)
-			_color = c_yellow;
+			_color = global.c_yellow;
 		draw_set_font(_font);
 		draw_text_color(question_optx[i], question_opty[i], question_option[i], _color, _color, _color, _color, alpha); 
 	}

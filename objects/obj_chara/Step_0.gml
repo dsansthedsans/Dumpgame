@@ -315,7 +315,8 @@ if (global.chara_move == 1)
 		image_speed = 0;
 		image_index = 0;
 		global.chara_runtime = 0;
-		afktime += 1;
+		if (global.CHARAFRISK_ENABLED == false) || (string_upper(global.chara_name) != "FRISK")
+			afktime += 1;
 		moving = 0;
 	}
 }

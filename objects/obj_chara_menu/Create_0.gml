@@ -60,13 +60,14 @@ for (var i = 0; i < option_length[1]; i++)
 	option_x[1, i] = (bg_x[2] + 5 + 22);
 	option_y[1, i] = (bg_y[2] + title_bgh + 10 + (20 * i))
 }
+draw_set_font(fnt_main);
+option_x[2, 0] = (bg_x[2] + 5 + 22);
+option_x[2, 1] = (bg_x[2] + (bg_w[2] / 2) - (string_width(option[2, 1]) / 2) - (string_width("A") / 2));
+option_x[2, 2] = (bg_x[2] + bg_w[2] - 5 - 22 - string_width(option[2, 2]) + (5 * (global.lang == "ptBR")));
 for (var i = 0; i < option_length[2]; i++)
 {
-	draw_set_font(fnt_main_spaced);
-	option_x[2, 0] = (bg_x[2] + 5 + 22);
-	option_x[2, 1] = (bg_x[2] + (bg_w[2] / 2) - (string_width(option[2, 1]) / 2) - (string_width("A") / 2));
-	option_x[2, 2] = (bg_x[2] + bg_w[2] - 5 - 22 - string_width(option[2, 2]));
-	option_y[2, i] = (bg_y[2] + bg_h[2] - (title_bgh / 2) - (string_height(option[2, 0]) / 2));
+	option_x[2, i] += 5;
+	option_y[2, i] = (bg_y[2] + bg_h[2] - (title_bgh / 2) - (string_height(option[2, 0]) / 2) - 1);
 }
 
 

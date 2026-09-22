@@ -29,7 +29,7 @@ teachInfo_lengthMax = 3;
 teachInfo_alpha = [0, 0, 0];
 teachInfo_alphaTarget = [1, 1, 1];
 teachInfo_alphaSpeed = 0.05;
-teachInfo_textColor = [(#748CAB), (#4986B7), merge_color(c_yellow, c_white, 0.5)];
+teachInfo_textColor = [(global.c_gray), (#4986B7), merge_color(global.c_yellow, c_white, 0.5)];
 DEBUG_SKIP = (true * global.indebug);
 if (DEBUG_SKIP == true)
 {

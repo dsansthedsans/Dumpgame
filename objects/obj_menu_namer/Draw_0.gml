@@ -40,7 +40,7 @@ for (var z = 0; z < _length_line; z++)
 			_color = c_orange;
 		if (z == option_pos[0] && i == option_pos[1]) // seleção
 		{
-			_color = c_yellow;
+			_color = global.c_yellow;
 			option_heartx = _x;
 			option_hearty = _y;
 		}
@@ -72,7 +72,7 @@ for (var z = 0; z < _length_line; z++)
 		if (z == 3 && i == 0 && upper == 1) // uppercase
 			_color = c_orange;
 		if (z == option_pos[0] && i == option_pos[1]) // seleção
-			_color = c_yellow;
+			_color = global.c_yellow;
 		
 		draw_set_color(_color);
 		draw_set_valign(fa_middle);
@@ -91,7 +91,7 @@ if (typing == 1)
 	draw_set_alpha(controller.alpha);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_text_outline((_bg_x + (_bg_w / 2)), (_bg_y + (_bg_h / 2) - 20), textdata_get("menu_namer_f10"), c_red, 2, c_black);
+	draw_text_outline((_bg_x + (_bg_w / 2) + (irandom(1) * choose(-1, 1) * global.visualeff)), (_bg_y + (_bg_h / 2) - 20 + (irandom(1) * choose(-1, 1) * global.visualeff)), textdata_get("menu_namer_f10"), c_red, 2, c_black);
 }
 
 

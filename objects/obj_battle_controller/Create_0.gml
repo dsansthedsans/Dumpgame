@@ -144,7 +144,7 @@ level_length[1] = (enemy_length - 1);
 level_length[2] = (enemy_length - 1);
 
 level_curbarcolor[0] = #27CC84;
-level_curbarcolor[1] = c_yellow;
+level_curbarcolor[1] = global.c_yellow;
 level_maxbarcolor[0] = #DD2929;
 level_maxbarcolor[1] = #B24A00//#CC6600;
 

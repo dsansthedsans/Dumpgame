@@ -4,7 +4,7 @@ active = 1;
 controller = obj_battle_controller;
 
 mycolor[0] = c_red;
-mycolor[1] = c_yellow;
+mycolor[1] = global.c_yellow;
 mycolor[2] = c_black;
 curcolor = 0;
 colorlength = array_length(mycolor);

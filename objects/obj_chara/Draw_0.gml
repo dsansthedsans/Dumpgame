@@ -8,7 +8,7 @@ if (xscale < 1) || (yscale < 1)
 	xscale = lerp(xscale, 1, ((global.visualeff == true) ? 0.3 : 1));
 	yscale = lerp(yscale, 1, ((global.visualeff == true) ? 0.3 : 1));
 }
-if (global.chara_facing != -1 && global.chara_facing != SIT) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
+if ((global.CHARAFRISK_ENABLED == true && string_upper(global.chara_name) == "FRISK") == false && global.chara_facing != -1 && global.chara_facing != SIT) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 {
 	var _extrayfactor = 0;
 	if (image_index >= 1 && image_index < 2) || (image_index >= 3 && image_index < 4)

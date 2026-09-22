@@ -19,18 +19,23 @@ if (global.menu_lvl == 5)
 		var _asset_x = layer_sprite_get_x(_assets[a]);
 		var _asset_y = layer_sprite_get_y(_assets[a]);
 		var _asset_alpha = layer_sprite_get_alpha(_assets[a]);
-		if (_asset_sprite == spr_chara_genoshadow && savefile_murder < 1)
+		if (_asset_sprite == spr_chara_d && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
+		|| (_asset_sprite == spr_charaFrisk_d && (global.CHARAFRISK_ENABLED == false || string_upper(savefile_name) != "FRISK"))
+		|| (_asset_sprite == spr_chara_genoshadow && savefile_murder < 1)
+		|| (_asset_sprite == spr_chara_genoshadow && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
 		|| (_asset_sprite == spr_mainchara_armor_candybowl && savefile_armor != ITEM_BOWL)
+		|| (_asset_sprite == spr_mainchara_armor_candybowl && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
 			continue;
 		else if (_asset_sprite == spr_chara_genoshadow && savefile_murder >= 1)
 			_asset_alpha = ((savefile_murder < 2) ? 0.5 : 1);
 		if (savefile_world == WORLD_CORRIDORS)
 		{
 			if (_asset_sprite == spr_m6_d_default && savefile_flag[2] == false)
-			|| (_asset_sprite == spr_m6_d_default && savefile_flag[2] == true && savefile_armor == ITEM_BOWL && savefile_murder < 1)
+			|| (_asset_sprite == spr_m6_d_default && savefile_flag[2] == true && savefile_armor == ITEM_BOWL && savefile_murder < 1 && (global.CHARAFRISK_ENABLED == false || string_upper(savefile_name) != "FRISK"))
 			|| (_asset_sprite == spr_m6_d_defaultSit && savefile_flag[2] == false)
 			|| (_asset_sprite == spr_m6_d_defaultSit && savefile_flag[2] == true && savefile_armor != ITEM_BOWL)
 			|| (_asset_sprite == spr_m6_d_defaultSit && savefile_flag[2] == true && savefile_armor == ITEM_BOWL && savefile_murder >= 1)
+			|| (_asset_sprite == spr_m6_d_defaultSit && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
 			|| (_asset_sprite == spr_npc_dummy && (savefile_flag[6] == false || savefile_flag[7] == false || savefile_flag[5] == true))
 			|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && (savefile_flag[48] == false || savefile_curpop[WORLD_CORRIDORS] <= 0))
 			|| (_asset_sprite == spr_npc_brock && (savefile_flag[38] == true || savefile_flag[39] == false))
@@ -80,7 +85,7 @@ if (global.menu_lvl == 7)
 	var _underline = "___________";
 	_underline = string_copy(_underline, 0, (11 - string_length(global.chara_name)));
 	
-	draw_set_color(c_gray);
+	draw_set_color(global.c_gray);
 	draw_set_halign(fa_right);
 	draw_text(((room_width / 2) + _brock), (room_height / 2), _underline);
 	
@@ -126,7 +131,7 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 	var _bg_h = (room_height - 120 - 30);
 	var _bg_col = c_white;
 	if (global.menu_lvl == 3 && global.achievement[_pos] == 1)
-		_bg_col = c_yellow;
+		_bg_col = global.c_yellow;
 	draw_sprite_stretched_ext(spr_menu_optbg, 0, _bg_x, _bg_y, _bg_w, _bg_h, _bg_col, alpha);
 
 	// setas
@@ -165,7 +170,7 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 		draw_text((_image_x + (_image_w / 2)), _name_y, _name);
 	
 		// descrição da conquista
-		draw_set_color(c_gray);
+		draw_set_color(global.c_gray);
 		draw_text_ext((_image_x + (_image_w / 2)), (_name_y + _name_h + 20), global.achievement_desc[_pos], -1, (_bg_w - 70));
 	
 		// outros
@@ -230,7 +235,7 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 				draw_text((_bg_x + (_bg_w / 2)), credits_y[_cur], textdata_get("menu_4_info_0_" + string(_cur)));
 			
 				draw_set_font(fnt_main_spaced_medium);
-				draw_set_color(merge_color(c_gray, c_ltgray, 0.5));
+				draw_set_color(merge_color(global.c_gray, c_white, 0.25));
 				draw_set_valign(fa_top);
 				draw_text_ext((_bg_x + (_bg_w / 2)), credits_y[(_cur + 1)],  textdata_get("menu_4_info_0_" + string(_cur + 1)), -1, (_bg_w - 60));
 			}
@@ -266,7 +271,7 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 				draw_set_valign(fa_middle);
 				draw_text((_bg_x + (_bg_w / 2)), credits_y[_cur], textdata_get("menu_4_info_1_" + string(_cur)));
 				
-				draw_set_color(merge_color(c_gray, c_ltgray, 0.75));
+				draw_set_color(merge_color(global.c_gray, c_white, 0.25));
 				draw_set_valign(fa_top);
 				draw_text_ext((_bg_x + (_bg_w / 2)), credits_y[(_cur + 1)],  textdata_get("menu_4_info_1_" + string(_cur + 1)), -1, (_bg_w - 60));
 			}
@@ -281,44 +286,6 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 			draw_set_halign(fa_center);
 			draw_text((_bg_x + (_bg_w / 2)), (_bg_y + (_bg_h / 2)), textdata_get("menu_4_info_2_0"));
 		}
-		
-		
-		/*
-		// dsans
-		var _00 = textdata_get("menu_4_info_0_0");
-		draw_set_color(c_white);
-		draw_set_valign(fa_middle);
-		draw_text((_bg_x + (_bg_w / 2)), (_bg_y + 40), _00);
-		
-		// (dsans)
-		var _01 = textdata_get("menu_4_info_0_1");
-		draw_set_color(c_gray);
-		draw_set_valign(fa_top);
-		draw_text_ext((_bg_x + (_bg_w / 2)), (_bg_y + 40 + 40 - (string_height("ABC") / 2)), _01, -1, (_bg_w - 60));
-		*/
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/*
-		// migel
-		draw_set_color(c_white);
-		draw_set_valign(fa_middle);
-		draw_text_ext((_bg_x + (_bg_w / 2)), (_bg_y + 40 + 40 - (string_height("ABC") / 2) + string_height(_01) + 40), textdata_get("menu_4_info_0_2"), -1, (_bg_w - 60));
-		
-		// (migel)
-		draw_set_color(c_gray);
-		draw_set_valign(fa_top);
-		draw_text_ext((_bg_x + (_bg_w / 2)), (_bg_y + 40 + 40 - (string_height("ABC") / 2) + string_height(_01) + 40 + 40), textdata_get("menu_4_info_0_3"), -1, (_bg_w - 60));
-		*/
 	}	
 }
 
@@ -357,7 +324,7 @@ if (global.menu_lvl == 1)
 			var _string = $"@{_name} [LVL {_lvl}]\n{_world} - {_room}";
 			var _color = global.c_dump;
 			if (i == option_pos)
-				_color = c_yellow;
+				_color = global.c_yellow;
 			draw_set_color(_color);
 			draw_set_valign(fa_top);
 			draw_set_halign(fa_left);
@@ -365,9 +332,9 @@ if (global.menu_lvl == 1)
 		}
 		else // save não existe
 		{
-			var _color = #748CAB;
+			var _color = global.c_gray;
 			if (i == option_pos)
-				_color = c_yellow;
+				_color = global.c_yellow;
 			draw_set_color(_color);
 			draw_set_valign(fa_middle);
 			draw_set_halign(fa_center);
@@ -398,9 +365,9 @@ if (global.menu_lvl >= 0)
 			// opções
 			var _color = c_white;
 			if (l == 7 && i == 2 && block == 1)
-				_color = #748CAB;
+				_color = global.c_gray;
 			if (i == option_pos && controls_changing == 0)
-				_color = c_yellow;
+				_color = global.c_yellow;
 			if (l == 5 && i == 2 && play_erase > 0)
 				_color = c_red;
 		
@@ -414,7 +381,7 @@ if (global.menu_lvl >= 0)
 			if (l == 6 && i == 1)
 				_color = c_red;
 			if (l == 6 && controls_changing == 1 && i == option_pos)
-				_color = c_yellow;
+				_color = global.c_yellow;
 		
 			draw_set_color(_color);
 			draw_text((_opt_x + option_w[l, i]), _opt_y, "  " + string_upper(option_key[l, i]));
@@ -463,5 +430,3 @@ if (global.menu_lvl <= 0)
 		draw_text((room_width - 5), (room_height - 2), textdata_get("menu_hidehud"));
 	}
 }
-
-

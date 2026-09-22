@@ -1,8 +1,9 @@
 
 function START_GAME()
 {	
-	global.textdata_en = ds_map_create();
-	global.textdata_pt = ds_map_create();
+	global.c_dump = #32FF62;
+	global.c_yellow = #FFF34B;
+	global.c_gray = #748CAB;
 	
 	randomize();
 	display_set_gui_maximise(2, 2);
@@ -14,13 +15,13 @@ function START_GAME()
 	global.game_startroom[0] = room_menu;
 	global.game_startroom[1] = room_corridors_1 //room_intro;
 	global.ACHIEVEMENT_ENABLED = false;
+	global.CHARAFRISK_ENABLED = false;
 	textdata();
 	start_maininfo();
 	start_music();
 	start_writer();
 	start_settings();
 	start_achievements();
-	global.c_dump = #32FF62;
 	global.c_mention[0] = #5865F2; //#5865F2//#6B70B2;
 	global.c_mention[1] = #A8BAFE; //#5865F2//#6B70B2;
 	global.fnt_mars = font_add_sprite_ext(spr_fnt_mars, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.!:$/%#", false, 0);
@@ -50,6 +51,8 @@ function start_maininfo()
 	
 	// start achievements
 	// load achievements
+	
+	
 }
 
 function start_chara()
@@ -441,7 +444,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_cave_1;
+		var _rm = room_corridors_8;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;

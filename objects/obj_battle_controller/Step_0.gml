@@ -66,14 +66,14 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 				level_pos = 0;
 		}
 		heart.x = round(box_x - (box_w / 2) + 35);
-		heart.y = round(box_y - (box_h / 2) + 30 + (32 * level_pos));
+		heart.y = round(box_y - (box_h / 2) + 30 + (32 * level_pos) + 2);
 		if (_oldpos != level_pos)
 			audio_play(snd_option_move, 0, VOLUME_SOUND);
 	}
 	if (battle_lvl == 2.1) || (battle_lvl == 3.0)
 	{
 		heart.x = round(box_x - (box_w / 2) + 35);
-		heart.y = round(box_y - (box_h / 2) + 30);
+		heart.y = round(box_y - (box_h / 2) + 30 + 2);
 		var _origpos = level_pos;
 		for (var i = 0; i < 6; i++)
 		{
@@ -180,7 +180,7 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 		if (press_u == 1) || (press_d == 1)
 			level_pos = !level_pos;		
 		heart.x = round(box_x - (box_w / 2) + 35);
-		heart.y = round(box_y - (box_h / 2) + 30 + (32 * level_pos));
+		heart.y = round(box_y - (box_h / 2) + 30 + (32 * level_pos) + 2);
 		if (_oldpos != level_pos)
 			audio_play(snd_option_move, 0, VOLUME_SOUND);
 	}

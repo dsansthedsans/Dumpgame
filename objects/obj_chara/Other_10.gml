@@ -6,6 +6,15 @@ sprite[UP]		= spr_chara_u;
 sprite[DOWN]	= spr_chara_d;
 sprite[FALLEN]	= spr_chara_fallen;
 sprite[SIT]		= spr_chara_sit;
+if (global.CHARAFRISK_ENABLED == true && string_upper(global.chara_name) == "FRISK")
+{
+	sprite[LEFT]	= spr_charaFrisk_l;
+	sprite[RIGHT]	= spr_charaFrisk_r;
+	sprite[UP]		= spr_charaFrisk_u;
+	sprite[DOWN]	= spr_charaFrisk_d;
+	sprite[FALLEN]	= spr_charaFrisk_fallen;
+	sprite[SIT]		= spr_charaFrisk_sit;
+}
 
 if (afktime >= afkmaxtime && chara_murder() < 1)
 {

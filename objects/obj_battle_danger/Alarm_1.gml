@@ -1,6 +1,6 @@
 /// @descr change color
 
-curcolor += 1;
+curcolor += 1 * global.visualeff;
 if (curcolor >= colorlength)
 	curcolor = 0;
 if (audio_playing(snd_battle_danger) == 0)

@@ -25,12 +25,14 @@ if (charainfo_active == true)
 	draw_set_halign(fa_left);
 	draw_set_font(global.fnt_mars);
 	var _chara_icon_spr = spr_chara_d;
+	if (global.CHARAFRISK_ENABLED == true && string_upper(global.chara_name) == "FRISK")
+		_chara_icon_spr = spr_charaFrisk_d;
 	var _chara_icon_width = sprite_get_width(_chara_icon_spr);
 	var _chara_name_text = string_upper(global.chara_name);
 	var _chara_name_scale = 3;
 	var _chara_name_width = (string_width(_chara_name_text) * _chara_name_scale);
 	var _chara_name_xDist = ((_chara_icon_width * 2) - 2 + 8);
-	var _chara_bar_widthMax = (100 + (4 * (((string_upper(global.chara_name) != "FRISK") ? global.chara_lvl : 20) - 1)));
+	var _chara_bar_widthMax = (100 + (4 * (((global.CHARAFRISK_ENABLED == false || string_upper(global.chara_name) != "FRISK") ? global.chara_lvl : 20) - 1)));
 	var _chara_bar_xDist = (_chara_name_width + 1 + 16);
 	var _chara_icon_x = (box_defaultx - round(box_defaultw / 2) - box_borderw - 2);
 	if (button_active == false)
@@ -98,7 +100,7 @@ if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == fal
 			var _x1 = (box_x - (box_w / 2) + 335 + 40);
 			var _y1 = (box_y - (box_h / 2) + 23 + (32 * i));
 			var _y2 = (_y1 + 17);
-			draw_battle_bar($"{_amt}%", round(_curamt), round(_maxamt), _x1, _y1, 100, level_curbarcolor[(battle_lvl - 1)], level_maxbarcolor[(battle_lvl - 1)], 1);
+			draw_battle_bar($"{round(_amt)}%", round(_curamt), round(_maxamt), _x1, _y1, 100, level_curbarcolor[(battle_lvl - 1)], level_maxbarcolor[(battle_lvl - 1)], 1);
 		}
 	}
 	if (battle_group == 1)

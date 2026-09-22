@@ -106,7 +106,7 @@ function textdata()
 	textdata_set($"menu_{z}_empty", "[EMPTY]", "[VAZIO]");
 	z += 1;
 	i = 0;
-	textdata_set($"menu_{z}_{i++}", "Back", "Voltar");
+	textdata_set($"menu_{z}_{i++}", textdata_get("menu_1_0", "enUS"), textdata_get("menu_1_0", "ptBR"));
 	textdata_set($"menu_{z}_{i++}", "Controls", "Controles");
 	textdata_set($"menu_{z}_{i++}", "Language", "Idioma");
 	textdata_set($"menu_{z}_{i++}", "Fullscreen", "Tela Cheia");
@@ -155,7 +155,7 @@ function textdata()
 	textdata_set($"menu_{z}_{i++}", "Back",		"Voltar");
 	textdata_set($"menu_{z}_{i++}", "Continue", "Continuar");
 	textdata_set($"menu_{z}_{i}",	"Erase",	"Apagar");
-	textdata_set($"menu_{z}_{i}_",	"Sure?",	"Mesmo?");
+	textdata_set($"menu_{z}_{i}_1",	string_upper("Sure?"), string_upper("Mesmo?"));
 	z += 1;
 	i = 0;
 	textdata_set($"menu_{z}_{i++}", "Back", "Voltar");
@@ -178,7 +178,7 @@ function textdata()
 	i = 0;
 	textdata_set($"menu_{z}_title", "Enter Your Username", "Digite Seu Nome de Usuário");
 	textdata_set($"menu_{z}_{i++}", "Back", "Voltar");
-	textdata_set($"menu_{z}_{i++}", "Write", "Editar");
+	textdata_set($"menu_{z}_{i++}", "Edit", "Editar");
 	textdata_set($"menu_{z}_{i++}", "Done", "Pronto");
 	i = 0;
 	textdata_set($"menu_namer_{i++}", "Uppercase", "Maiúsculo");
@@ -210,13 +210,13 @@ function textdata()
 	textdata_set($"menu_namemsg_{i++}", "... WHAT?!?", "... QUÊ?!?");
 	textdata_set($"menu_name_{i}", "CrazyCat");
 	textdata_set($"menu_namemsg_{i++}", ";)");
-	textdata_set($"menu_name_{i}", "", "dsans");
-	textdata_set($"menu_namemsg_{i++}", "Zero shits given.", "Tanto faz.");
-	textdata_set($"menu_name_{i}", "", "migel");
+	textdata_set($"menu_name_{i}", "dsans");
+	textdata_set($"menu_namemsg_{i++}", "Zero shits given.", "Tanto faz, honestamente.");
+	textdata_set($"menu_name_{i}", "migel");
 	textdata_set($"menu_namemsg_{i++}", "No Judgement");
-	textdata_set($"menu_name_{i}", "", "migel8022");
+	textdata_set($"menu_name_{i}", "migel8022");
 	textdata_set($"menu_namemsg_{i++}", textdata_get($"menu_namemsg_{i-1}", "enUS"));
-	textdata_set($"menu_name_{i}", "", "Frisk");
+	textdata_set($"menu_name_{i}", "Frisk");
 	textdata_set($"menu_namemsg_{i++}", "WARNING: This name will make the\ngame ridiculously easier.", "AVISO: Esse nome vai fazer o jogo\nridiculamente mais fácil."); // inspired by "UNDERTALE"
 	textdata_set($"menu_hidehud", "hold [ALT] to hide menu", "segure [ALT] para esconder menu");
 	i = 0;
@@ -242,6 +242,36 @@ function textdata()
 	textdata_set($"unused_achievement_desc_{i++}", "Kill every monster from Caverns before reaching its exit");
 	textdata_set($"unused_achievement_name_{i}", "Great Partner"); // references "Right. You are a great partner." from "UNDERTALE"
 	textdata_set($"unused_achievement_desc_{i++}", "Erase a save file");
+	textdata_set($"key_name_8", "Backspace");
+	textdata_set($"key_name_9", "Tab");
+	textdata_set($"key_name_13", "Enter");
+	textdata_set($"key_name_16", "Shift");
+	textdata_set($"key_name_17", "Ctrl");
+	textdata_set($"key_name_18", "Alt");
+	textdata_set($"key_name_27", "Esc");
+	textdata_set($"key_name_32", "Space Bar", "Barra de Espaço");
+	textdata_set($"key_name_37", "Left Arrow", "Seta para Esquerda");
+	textdata_set($"key_name_39", "Right Arrow", "Seta para Direita");
+	textdata_set($"key_name_38", "Up Arrow", "Seta para Cima");
+	textdata_set($"key_name_40", "Down Arrow", "Seta para Baixo");
+	textdata_set($"key_name_112", "F1");
+	textdata_set($"key_name_113", "F2");
+	textdata_set($"key_name_114", "F3");
+	textdata_set($"key_name_115", "F4");
+	textdata_set($"key_name_116", "F5");
+	textdata_set($"key_name_117", "F6");
+	textdata_set($"key_name_118", "F7");
+	textdata_set($"key_name_119", "F8");
+	textdata_set($"key_name_120", "F9");
+	textdata_set($"key_name_121", "F10");
+	textdata_set($"key_name_122", "F11");
+	textdata_set($"key_name_123", "F12");
+	textdata_set($"key_name_160", "Left Shift", "Shift Esquerdo");
+	textdata_set($"key_name_161", "Right Shift", "Shift Direito");
+	textdata_set($"key_name_162", "Left Ctrl", "Ctrl Esquerdo");
+	textdata_set($"key_name_163", "Right Ctrl", "Ctrl Direito");
+	textdata_set($"key_name_164", "Left Alt", "Alt Esquerdo");
+	textdata_set($"key_name_165", "Right Alt", "Alt Direito");
 	i = 0;
 	textdata_set($"drp_state_menu_{i++}", "Title", "Título");
 	textdata_set($"drp_state_menu_{i++}", textdata_get($"menu_{i}_title", "enUS"), textdata_get($"menu_{i}_title", "ptBR"));
@@ -342,7 +372,7 @@ function textdata()
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* Another method is through friendly conversation.", "* Outro método é através de conversas amigáveis."); // "[...] strike up a friendly conversation" from "UNDERTALE"
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* Within the :U[ACT];D button,^1 you can :Y[Check];D an enemy of your choice.", "* Dentro do botão :U[AGIR];D,^1 você pode :Y[Checar];D um inimigo de sua escolha.");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* The :Y[Check];D option provides more details about the chosen enemy.", "* A opção :Y[Checar];D fornece mais informações sobre o inimigo escolhido.");
-	textdata_set($"battle_main_dummy_{z}_{i++}", "* Simply put,^1 it is easier for it to like you if you know what it likes.", "* Em resumo,^1 é fácil fazê-lo\\ &gostar de você sabendo do que ele gosta.");
+	textdata_set($"battle_main_dummy_{z}_{i++}", "* Simply put,^1 it is easier for it to like you if you know what it likes.", "* Em resumo,^1 fazê-lo gostar de você é fácil sabendo do que ele gosta.");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* :6@MEE6;D wants you to use :Y[Check];D.\\", "* :6@MEE6;D quer que&você use :Y[Checar];D.");
 	z += 2;
 	i = 0;
@@ -354,11 +384,11 @@ function textdata()
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* There you go!^1 &* The opponent's name&is now :Yyellow;D.", "* Voilà!^1 &* O nome do oponente&está agora :Yamarelo;D.");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* This means you can :Y[Spare];D that enemy and&win :Y[Battle Together];D!\\", "* Isso significa que você pode :Y[Poupar];D Dummy e ganhar o jogo!");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* Prior to that,^1 it is essential that I tell you about :U[ITEM];D.", "* Antes disso,^1 é essencial que eu lhe apresente um pouco sobre :U[ITEM];D.");
-	textdata_set($"battle_main_dummy_{z}_{i++}", "* The :U[ITEM];D button permits\\&you to equip or consume items mid-game.", "* O botão :U[ITEM];D lhe permite equipar ou utilizar seus itens.");
+	textdata_set($"battle_main_dummy_{z}_{i++}", "* The :U[ITEM];D button permits\\&you to equip or consume items mid-game.", "* O botão :U[ITEM];D lhe permite equipar e utilizar seus itens.");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* Due to your :YINVENTORY;D being empty,^1 the button is unavailable for use.", "* Dado que seu :YINVENTÁRIO;D está vazio,^1 o botão&está indisponível.");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* I,^1 however,^1 can&concede you&an item.", "* Eu,^1 entretanto,^1 posso lhe conceder um item.");
-	textdata_set($"battle_main_dummy_{z}_{i++}", "* (:6@MEE6;D picks up and&hands you a brick.)^3 &* (You got :YConcrete Brick;D.)", "* (:6@MEE6;D pega e lhe entrega um tijolo.^3 Você conseguiu :YTijolo de Concreto;D.)");
-	textdata_set($"battle_main_dummy_{z}_{i++}", "* Proceed with&interacting with&the brick through :U[ITEM];D.\\", "* Prossiga interagindo&com o tijolo através&de :U[ITEM];D.");
+	textdata_set($"battle_main_dummy_{z}_{i++}", "* (:6@MEE6;D picks up and&hands you a brick.)^3 &* (You got :YConcrete Brick;D.)", "* (:6@MEE6;D lhe entrega um tijolo.)^3\\ &* (Você conseguiu :YTijolo de Concreto;D.)");
+	textdata_set($"battle_main_dummy_{z}_{i++}", "* Proceed with&interacting with&the brick through :U[ITEM];D.\\", "* Prossiga interagindo&com o tijolo através&do botão :U[ITEM];D.");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* :6@MEE6;D wants you to use :U[ITEM];D.", "* :6@MEE6;D quer que você use :U[ITEM];D.");
 	z += 2;
 	i = 0;
@@ -379,13 +409,13 @@ function textdata()
 	textdata_set("battle_act_result_dummy_1_1_0_1_3", "bees", "abelhas");
 	textdata_set("battle_act_result_dummy_1_1_0_2", " with Dummy.)", " com Dummy.)");
 	textdata_set("battle_act_result_dummy_1_1_1", "* (The blush on her face&seems to get redder...)^3 &* (Dummy's :YMERCY;D up :U100%;D!)", "* (O rosto dela parece&ficar mais rosa...)^3 &* (Sua :YPIEDADE;D cresceu :U100%;D!)");
-	textdata_set("battle_act_result_dummy_2_0", "* (You loudly scream&to Dummy's face.)", "* (Você grita na cara da Dummy.)");
+	textdata_set("battle_act_result_dummy_2_0", "* (You loudly scream&to Dummy's face.)", "* (Você grita na cara de Dummy.)");
 	textdata_set("battle_act_result_dummy_2_1", "* (Tears flow down&out of her eyes.)", "* (Lágrimas escorrem&de seus olhos.)");
 	i = 0;
 	textdata_set($"battle_act_result_dummy_2_2_{i++}", "* That was the&wrong option.", "* Essa é a opção errada.");
 	textdata_set($"battle_act_result_dummy_2_2_{i++}", "* You are an \"interesting\" individual.", "* Você é um indivíduo \"interessante\"."); // inspired by "You are an... 'interesting' child." from "UNDERTALE"
 	textdata_set($"battle_act_result_dummy_2_2_{i++}", "* I knew your kind was&excessive,^1 but nothing near this.", "* Eu sabia que sua espécie era excessiva,^1 mas nunca imaginei isso.");
-	textdata_set($"battle_act_result_dummy_2_2_{i++}", "* Out of curiosity,^1 were you ever dropped on your head as an infant?", "* Por curiosidade,^1 você já foi jogado de cabeça no chão na infância?");
+	textdata_set($"battle_act_result_dummy_2_2_{i++}", "* Out of curiosity,^1 were you ever dropped on your head as an infant?", "* Por curiosidade,^1 você foi jogado de cabeça no chão na infância?");
 	textdata_set($"battle_act_result_dummy_2_2_{i++}", "* ...");
 	i = 0;
 	textdata_set($"battle_bubble_m6_dummy_0_{i++}", "When you were tortured by that terrible creature, ...", "Quando você foi torturado pela aquela criatura terrível, ..."); // inspired by "What a terrible creature, torturing such a poor, innocent youth" from "UNDERTALE"
@@ -393,49 +423,48 @@ function textdata()
 	textdata_set($"battle_bubble_m6_dummy_0_{i++}", "I will concede you the ;@@Member;D role,^1 which permits you to fight back.", "Vou concedê-lo o cargo ;@@Membro;D,^1 o qual o permite revidar o ataque.");
 	textdata_set($"battle_bubble_m6_dummy_0_{i++}", "Hold on a moment.", "Aguarde um instante.");
 		// Armsguy's battle
-	textdata_set("battle_main_armsguy", "* (Armsguy jumps in your way!)");
-	textdata_set("battle_main_armsguy_geno", "* (You step into Armsguy's way.)");
+	textdata_set("battle_main_armsguy", "* (Armsguy jumps in your way!)", "* (Armsguy pula no seu caminho!)");
+	textdata_set("battle_main_armsguy_geno", "* (You step into Armsguy's way.)", "* (Você entra no caminho do Armsguy.)");
 	i = 0;
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy flexes his arms&too hard and pukes.)");
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy drinks his own sweat and realizes it isn't sweat.)");
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy kisses his own arm and gets slime around his mouth.)");
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy finds a wet sock inside his mouth and&throws it away.)");
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy pulls rotten&meat out of his mouth&and eats it again.)");
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is munching&on a dirty needle.)"); // by Mawri
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is punching the air in an attempt to intimidate you.)");
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is calling the other monsters in the room to watch him destroy you.)");
-	textdata_set("battle_act_armsguy_1", "Touch Arms");
-	textdata_set("unused_battle_act_armsguy_1", "Take Slime");
-	textdata_set("battle_act_armsguy_2", "Fake Punch"); // "Fake Attack" from "UNDERTALE"
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy flexes his arms&too hard and pukes.)", "* (Armsguy flexiona seus braços com muita força e vomita.)");
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy drinks his own sweat and realizes it isn't sweat.)", "* (Armsguy bebe seu próprio suor e percebe que não é suor.)");
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy kisses his own arm and gets slime around his mouth.)", "* (Armsguy beija o próprio braço e fica com slime na boca.)");
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy finds a wet sock inside his mouth and&throws it away.)", "* (Armsguy encontra uma meia molhada dentro da boca e&joga-a para longe.)");
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy pulls rotten&meat out of his mouth&and eats it again.)", "* (Armsguy puxa uma carne podre de dentro da boca e come-a de novo.)");
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is munching&on a dirty needle.)", "* (Armsguy está mastigando&uma seringa suja.)"); // inspired by "Armsguy munches on a dirty needle" by Mawri
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is punching the air in an attempt to intimidate you.)", "* (Armsguy está dando socos no ar na tentativa de te assustar.)");
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is calling the other monsters in the room to watch him destroy you.)", "* (Armsguy está chamando os outros monstros no quarto&para vê-lo te destruir.)");
+	textdata_set("battle_act_armsguy_1", "Take Slime", "Tirar Slime");
+	textdata_set("battle_act_armsguy_2", "Fake Punch", "Soco Falso"); // "Fake Attack" from "UNDERTALE"
 	i = 0;
-	textdata_set($"battle_act_result_armsguy_0_{i++}", "* \"Armsguy\" :R[5 ATK ;D| :B4 DEF];D^3 &* (A slime with arms who came&to life inside a trash bag.)");
-	textdata_set($"battle_act_result_armsguy_0_{i++}", "* (He's obsessed with his own arms and can't accept being weaker than you.)");
-	textdata_set($"battle_act_result_armsguy_0_{i++}", "* (He's also a masochist...?)");
+	textdata_set($"battle_act_result_armsguy_0_{i++}", "* \"Armsguy\" :R[5 ATK ;D| :B4 DEF];D^3 &* (A slime with arms who came&to life inside a trash bag.)", "* \"Armsguy\" :R[5 ATQ ;D| :B4 DEF];D^3 &* (Um slime com braços que nasceu dentro de um saco de lixo.)");
+	textdata_set($"battle_act_result_armsguy_0_{i++}", "* (He's obsessed with his own arms and can't accept being weaker than you.)", "* (Ele é obcecado pelos próprios braços e não aceita ser mais fraco que você.)");
+	textdata_set($"battle_act_result_armsguy_0_{i++}", "* (He's also a masochist...?)", "* (Ele também é masoquista...?)");
 	textdata_set($"unused_battle_act_result_armsguy_0_{i++}", "* (He likes bodybuilding,^3 strength,^3 arms and slime.)");
-	textdata_set("battle_act_result_armsguy_1_0", "* (You try to take some slime from Armsguy's arms,^3 but he slaps your hand away...)");
-	textdata_set("battle_act_result_armsguy_1_1", "* (Armsguy's :YMERCY;D down :R100%;D.)");
-	textdata_set("battle_act_result_armsguy_2_0", "* (You punch Armsguy's face pretending to use your&full strength...)");
-	textdata_set("battle_act_result_armsguy_2_1", "* (Armsguy's :YMERCY;D up :U100%;D!)");
-	textdata_set("battle_bubble_armsguy_0", "+F1Lemme Be Slimy.");
-	textdata_set("battle_bubble_armsguy_1", "+F1Punch Me In Da Face!");
-	textdata_set("battle_bubble_armsguy_2", "+F1Use Ya Strength In Me!");
-	textdata_set("battle_bubble_armsguy_3", "+F1Ya Never Be Strong Like Me.");
-	textdata_set("battle_bubble_armsguy_4", "+F1Bro Ya Gotta Go To Da Gym.");
-	textdata_set("battle_bubble_armsguy_5", "+F1... Wat?^1 &\"Leg Day\"?");
-	textdata_set("battle_bubble_armsguy_6", "+F1Me Stronger Than Ya.");
-	textdata_set("battle_bubble_armsguy_7", "+F1Want Break Ya Legs?");
-	textdata_set("battle_bubble_armsguy_8", "+F1Goo Job Bro.");
-	textdata_set("battle_bubble_armsguy_9", "+F1Me Believe In Ya Potential.");
-	textdata_set("battle_bubble_armsguy_10", "+F1That How Ya Do It.");
-	textdata_set("battle_bubble_armsguy_11", "+F1Make Like Tree And Go Outta Here."); // from "Back to the Future Part II"
-	textdata_set("battle_bubble_armsguy_12", "+F1Hit Da Road,^1 Jackass."); // from "Hit the Road Jack"
-	textdata_set("battle_bubble_armsguy_13", "+F1I Kill Ya.");
-	textdata_set("battle_bubble_armsguy_clean_0", "+F1Back Off Dumbass!!!!");
-	textdata_set("battle_bubble_armsguy_clean_1", "+F1Take Ya Hands Off Me Arms!!!!");
-	textdata_set("battle_bubble_armsguy_clean_2", "+F1Don Touch Me Arms!!!!");
-	textdata_set("battle_bubble_armsguy_punch_0", "+F1Ouch!!^1 Keep Going.");
-	textdata_set("battle_bubble_armsguy_punch_1", "+F1Mweheheh!!^1 Me Like It!");
-	textdata_set("battle_bubble_armsguy_punch_2", "+F1Congrats,^1 Me Love It!");
+	textdata_set("battle_act_result_armsguy_1_0", "* (You try to take some slime from Armsguy's arms,^3 but he slaps your hand away...)", "* (Você tenta tirar o slime dos braços do Armsguy,^3 mas ele dá um tapa na sua mão...)");
+	textdata_set("battle_act_result_armsguy_1_1", "* (Armsguy's :YMERCY;D down :R100%;D.)", "* (:YPIEDADE;D do Armsguy caiu :R100%;D.)");
+	textdata_set("battle_act_result_armsguy_2_0", "* (You punch Armsguy's face pretending to use your&full strength...)", "* (Você bate no rosto do Armsguy fingindo que é com força...)");
+	textdata_set("battle_act_result_armsguy_2_1", "* (Armsguy's :YMERCY;D up :U100%;D!)", "* (:YPIEDADE;D do Armsguy&cresceu :U100%;D!)");
+	textdata_set("battle_bubble_armsguy_0", "+F1Lemme Be Slimy.", "+F1Decha Eu Ser Slime.");
+	textdata_set("battle_bubble_armsguy_1", "+F1Punch Me In Da Face!", "+F1Bater Eu Na Cara!");
+	textdata_set("battle_bubble_armsguy_2", "+F1Use Ya Strength In Me!", "+F1Usar Vc Forca Em Eu!");
+	textdata_set("battle_bubble_armsguy_3", "+F1Ya Never Be Strong Like Me.", "+F1Tu Nunca Ser Forte Tipo Eu.");
+	textdata_set("battle_bubble_armsguy_4", "+F1Bro Ya Gotta Go To Da Gym.", "+F1Man Vc Tem Ir Pra Cademia.");
+	textdata_set("battle_bubble_armsguy_5", "+F1... Wat?^1 &\"Leg Day\"?", "+F1... Q?^1 \"Dia De Perna\"?");
+	textdata_set("battle_bubble_armsguy_6", "+F1Me Stronger Than Ya.", "+F1Eu Mas Forte Que Vc.");
+	textdata_set("battle_bubble_armsguy_7", "+F1Want Break Ya Legs?", "+F1Querer Quebra Vc Perna?");
+	textdata_set("battle_bubble_armsguy_8", "+F1Goo Job Bro.", "+F1Man Shou Da Bola.");
+	textdata_set("battle_bubble_armsguy_9", "+F1Me Believe In Ya.", "+F1Eu Acredirtar Em Vc.");
+	textdata_set("battle_bubble_armsguy_10", "+F1That How Ya Do It.", "+F1Assim Que Se Faz.");
+	textdata_set("battle_bubble_armsguy_11", "+F1Make Like Tree And Go Outta Here.", "+F1Picar Mula E Mancar Fora Daqui."); // references "Back to the Future Part II"
+	textdata_set("battle_bubble_armsguy_12", "+F1Hit Da Road,^1 Jackass.", "+F1Vazar Daqui,^1 Buro."); // "Hit Da Road, Jackass" references "Hit the Road Jack"
+	textdata_set("battle_bubble_armsguy_13", "+F1I Kill Ya.", "+F1Eu Mato Vc.");
+	textdata_set("battle_bubble_armsguy_clean_0", "+F1Back Off Dumbass!!!!", "+F1Sair Daqui Indiota!");
+	textdata_set("battle_bubble_armsguy_clean_1", "+F1Take Ya Hands Off Me Arms!!!!", "+F1Tirar Mao Do Eu Brasso!!!!");
+	textdata_set("battle_bubble_armsguy_clean_2", "+F1Don Touch Me Arms!!!!", "+F1Nn Pega Eu Brasso!!!!");
+	textdata_set("battle_bubble_armsguy_punch_0", "+F1Ouch!!^1 Keep Going.", "+F1Ai!!^1 Nn Parar.");
+	textdata_set("battle_bubble_armsguy_punch_1", "+F1Mweheheh!!^1 Me Like It!", "+F1Huehuehueh!!^1 Eu Gotar Iço!");
+	textdata_set("battle_bubble_armsguy_punch_2", "+F1Congrats,^1 Me Love It!", "+F1Parabems,^1 Eu Amar Iço!");
 		// Trashguy's battle
 	textdata_set("battle_main_trashguy", "* (Trashguy rolls into your way!)");
 	textdata_set("battle_main_trashguy_geno", "* (You step into Trashguy's way.)");
@@ -482,7 +511,7 @@ function textdata()
 	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher is daydreaming.)");
 	textdata_set("battle_act_flitcher_1", "Talk");
 	textdata_set("battle_act_flitcher_2", "Wave");
-	textdata_set("battle_act_result_flitcher_0_0", "* \"Flitcher\" [:R3 ATK;D | :B6 DEF;D]^3 &* (This monster doesn't really know what's happening...)");
+	textdata_set("battle_act_result_flitcher_0_0", "* \"Flitcher\" :R[3 ATK;D | :B6 DEF];D^3 &* (This monster doesn't really know what's happening...)");
 	textdata_set("battle_act_result_flitcher_0_1", "* (It hates eye contact and any type of interaction that involves talking.)");
 	textdata_set("battle_act_result_flitcher_1_0", "* (You quietly say \"hello\"&to Flitcher...)");
 	textdata_set("battle_act_result_flitcher_1_1", "* (It seems scared.)^3 &* (Flitcher's :YMERCY;D down :R100%;D.)");
@@ -497,7 +526,7 @@ function textdata()
 	textdata_set("unused_battle_main_eyecrush_4", "* (Eyecrush has set an unnoficial record for the longest time without blinking.)");
 	textdata_set("unused_battle_act_eyecrush_1", "Hypnotize");
 	textdata_set("unused_battle_act_eyecrush_2", "Dance");
-	textdata_set("unused_battle_act_result_eyecrush_0_0", "* \"Eyecrush\" [:R6 ATK;D | :B0 DEF;D]^3 &* (This monster is a big human eye with six red legs._");
+	textdata_set("unused_battle_act_result_eyecrush_0_0", "* \"Eyecrush\" :R[6 ATK;D | :B0 DEF];D^3 &* (This monster is a big human eye with six red legs._");
 	textdata_set("unused_battle_act_result_eyecrush_0_1", "* (Their inability to verbally communicate makes difficult&to know their interests.)");
 	textdata_set("unused_battle_act_result_eyecrush_1_0", "* (You did something mysterious and hypnotized Eyecrush.)"); // "You did something mysterious" from "UNDERTALE"
 	textdata_set("unused_battle_act_result_eyecrush_1_1", "* (This effect lasts for two turns.)");
@@ -520,7 +549,7 @@ function textdata()
 	textdata_set($"battle_main_brock_{i++}", "* (You feel your hair being pulled by static eletricity.)");
 	textdata_set($"battle_main_brock_{i++}", "* (You feel the power of&1.21 gigawatts coursing&through your nervous system.)"); // "1.21 gigawatts" references "Back to the Future" (1985)
 	textdata_set($"battle_main_brock_{i++}", "* (Reading this doesn't seem&like the best use of time.)"); // from "UNDERTALE"
-	textdata_set("battle_act_result_brock_0_0", "* \"Broken Clock\" [:R12 ATK;D | :B0 DEF;D]^3 &* (A malfunctioning analog clock possessed by a ghost.)"); // "12" references a 12-hour clock
+	textdata_set("battle_act_result_brock_0_0", "* \"Broken Clock\" :R[12 ATK;D | :B0 DEF];D^3 \\&* (A malfunctioning analog clock possessed by a ghost.)"); // "12" references a 12-hour clock
 	textdata_set("battle_act_result_brock_0_1", "* (He has nothing to lose&besides his life.)");
 	textdata_set("battle_act_brock_1", "Negotiate");
 	textdata_set("battle_act_result_brock_1_0_0", "* (You promise Broken Clock to spare him if he spares you...)");
@@ -715,7 +744,7 @@ function textdata()
 	textdata_set("battle_act_rhonhey_1", "Punch");
 	textdata_set("battle_act_rhonhey_2", "Threat"); // from "UNDERTALE"
 	textdata_set("battle_act_rhonhey_3", "Terrorize");  // from "UNDERTALE"
-	textdata_set("battle_act_result_rhonhey_0", "* \"Rhonhey\" [:R?? ATK;D | :B?? DEF;D]^3 &* [No data available.]"); // "No data available" from "UNDERTALE"
+	textdata_set("battle_act_result_rhonhey_0", "* \"Rhonhey\" :R[?? ATK;D | :B?? DEF];D^3 &* [No data available.]"); // "No data available" from "UNDERTALE"
 	textdata_set("battle_act_result_rhonhey_1_0", "* (You punch Rhonhey in the face with all the strength you have...)");
 	textdata_set("battle_act_result_rhonhey_1_1_0", "* (Rhonhey is getting uncomfortable around you.)");
 	textdata_set("battle_act_result_rhonhey_1_1_1", "* (You've made Rhonhey uncomfortable.)");
@@ -747,14 +776,14 @@ function textdata()
 	textdata_set($"battle_main_troll_{i++}", "* (You feel a shiver run&down your spine.)");
 	textdata_set($"battle_main_troll_{i++}", "* (You feel TROLLFACE's sins crawling on your back.)"); // references "You felt your sins crawling on your back" from "UNDERTALE"
 	textdata_set($"battle_main_troll_{i++}", "* (You feel hands wrap around your waist from behind.)^3 &* (But no one was there.)");
-	textdata_set("battle_act_result_troll_0_0", "* \"TROLLFACE\" [:R?? ATK;D | :B?? DEF;D]^3 &* [...]");
+	textdata_set("battle_act_result_troll_0_0", "* \"TROLLFACE\" :R[?? ATK;D | :B?? DEF];D^3 &* [...]");
 		// Toilet's battle (Unused)
 	textdata_set("battle_main_toilet", "* (A toilet stands in the way.)");
 	textdata_set("battle_main_toilet_0", "* (The toilet glares at you.)");
 	i = 0;
-	textdata_set($"battle_act_result_toilet_0_{i++}", "* Toilet - [?? ATK | ?? DEF]^3 &* A giant toilet.");
-	textdata_set($"battle_act_result_toilet_0_{i++}", "* A disgusting smell is coming from inside.");
-	textdata_set($"battle_act_result_toilet_0_{i++}", "* The toilet is too big for you to see what is causing the smell.");
+	textdata_set($"battle_act_result_toilet_0_{i++}", "* \"Toilet\" :R[?? ATK;D | :B?? DEF];D^3 &* (A giant toilet.)");
+	textdata_set($"battle_act_result_toilet_0_{i++}", "* (A disgusting smell is coming from inside.)");
+	textdata_set($"battle_act_result_toilet_0_{i++}", "* (The toilet is too big for you to see what is causing the smell.)");
 	i = 0;
 	textdata_set($"battle_act_result_toilet_1_{i++}", "* (You flushed the toilet.)^1 &* (Suddenly,^1 the smell stops.)");
 	textdata_set($"battle_act_result_toilet_1_{i++}", "* (Then,^1 you understand.)");
@@ -762,17 +791,21 @@ function textdata()
 	textdata_set($"battle_act_result_toilet_1_{i++}", "* (It smiles and thanks you.)");
 	textdata_set($"battle_act_result_toilet_1_{i++}", "* (You feel like a weight has been lifted from your shoulders...)");
 	// room_over
-	textdata_set("over_0", "TRY AGAIN");
-	textdata_set("over_1", "GIVE UP");
+	textdata_set("over_0", "Try Again");
+	textdata_set("over_1", "Give Up");
 	textdata_set("over_skip", "press [{key0}] or [{key1}] to skip");
 	// room_corridors_1
 	textdata_set("charamenu_main_info_money", "$    ", "R$   ");
+	i = 0;
+	textdata_set($"charamenu_main_{i++}", "Item");
+	textdata_set($"charamenu_main_{i++}", "Stat");
+	textdata_set($"charamenu_main_{i++}", "Cell");
 	textdata_set("charamenu_item_title_0", "YOUR ITEMS", "SEUS ITENS");
 	textdata_set("charamenu_item_title_1", "YOUR STATS", "SEUS DADOS");
 	textdata_set("charamenu_item_title_2", "CELLPHONE", "CELULAR");
-	textdata_set("charamenu_item_other_0", "USE", "USAR");
-	textdata_set("charamenu_item_other_1", "INFO");
-	textdata_set("charamenu_item_other_2", "DROP");
+	textdata_set("charamenu_item_other_0", "Use", "Usar");
+	textdata_set("charamenu_item_other_1", "Info");
+	textdata_set("charamenu_item_other_2", "Drop", "Largar");
 	textdata_set("charamenu_stat_atk", "ATK", "ATQ");
 	textdata_set("charamenu_stat_spares",	"SPARES  ",	"POUPAR  ");
 	textdata_set("charamenu_stat_heals",	"HEALS   ",	"CURAS   ");

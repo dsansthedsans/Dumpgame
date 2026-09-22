@@ -32,7 +32,7 @@ for (var i = 0; i < option_length[0]; i++)
 {
 	var _color = c_white;
 	if (lvl == 0 && i == option_pos && thiswriter == -1)
-		_color = c_yellow;
+		_color = global.c_yellow;
 	if (lvl != 0 && i == option_pos_orig)
 		_color = global.c_dump;
 	draw_set_font(fnt_main);
@@ -74,7 +74,7 @@ if (lvl == 1) || (lvl == 2)
 		{
 			var _color = c_white;
 			if (lvl == 1 && i == option_pos && thiswriter == -1)
-				_color = c_yellow;
+				_color = global.c_yellow;
 			if (lvl == 2 && i == option_pos_old) || (lvl == 1 && i == option_pos && thiswriter != -1)
 				_color = global.c_dump;
 			draw_set_color(_color);
@@ -85,7 +85,14 @@ if (lvl == 1) || (lvl == 2)
 		else
 		{
 			var _y = (_cy + option_y[1, i] + (string_height(option[1, i]) / 2) - 1);
-			draw_set_color(merge_color(c_black, global.c_dump, 0.5));
+			var _color = global.c_dump;
+			var _colorMerge = 0.5;
+			if (lvl == 1 && i == option_pos)
+			{
+				_color = global.c_yellow;
+				_colorMerge = 0.75;
+			}
+			draw_set_color(merge_color(c_black, _color, _colorMerge));
 			draw_line_width((_cx + option_x[1, i]), _y, (_cx + option_x[1, i] + (bg_w[2] - (((22 / 1.5) + 10) * 2))), _y, 1);
 		}
 	}
@@ -95,7 +102,8 @@ if (lvl == 1) || (lvl == 2)
 	{
 		var _color = c_white;
 		if (lvl == 2 && i == option_pos)
-			_color = c_yellow;
+			_color = global.c_yellow;
+		draw_set_font(fnt_main);
 		draw_set_color(_color);
 		draw_text((_cx + option_x[2, i]), (_cy + option_y[2, i]), option[2, i]);	
 	}
@@ -160,10 +168,9 @@ if (lvl == 3)
 // indicador das opções
 if (thiswriter == -1 && lvl != 3)
 {
-	var _font = draw_get_font();
 	var _bonusy = 0;
-	if (_font == fnt_main_spaced)
+	if (lvl == 1)
 		_bonusy = -2;
-	draw_sprite_ext(spr_battle_heart, 0, (_cx + option_x[lvl, option_pos] - 11), (_cy + option_y[lvl, option_pos] + 8 + _bonusy + 0), (1 / 2), (1 / 2), 0, global.c_dump, alpha);
+	draw_sprite_ext(spr_battle_heart, 0, (_cx + option_x[lvl, option_pos] - 11), (_cy + option_y[lvl, option_pos] + 8 + _bonusy), (1 / 2), (1 / 2), 0, global.c_dump, alpha);
 }
 draw_set_alpha(1);

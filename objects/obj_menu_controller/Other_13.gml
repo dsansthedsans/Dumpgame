@@ -2,7 +2,7 @@
 msg = "";
 name = global.chara_name;
 block = 0;
-if (name == "")
+if (name == "") || (is_string(global.chara_name) == true && string_length(global.chara_name) <= 0)
 	block = 1;
 name_block[0] = 0;
 name_block[1] = 0;

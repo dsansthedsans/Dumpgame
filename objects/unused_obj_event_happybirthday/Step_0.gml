@@ -35,7 +35,7 @@ if (con == 4)
 }
 if (con == 5)
 {
-	marker(irandom_range(-10, (room_width + 10)), irandom_range(-5, -35), spr_singlepixel, 1, irandom_range(3, 5), irandom_range(3, 5), 0, 0, 0, choose(c_red, c_blue, c_lime, c_yellow, c_aqua, c_fuchsia, c_green, c_orange), -1000);
+	marker(irandom_range(-10, (room_width + 10)), irandom_range(-5, -35), spr_singlepixel, 1, irandom_range(3, 5), irandom_range(3, 5), 0, 0, 0, choose(c_red, c_blue, c_lime, global.c_yellow, c_aqua, c_fuchsia, c_green, c_orange), -1000);
 	p = thismarker;
 	p.vspeed = 1.5;
 	partdelay -= 1;

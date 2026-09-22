@@ -6,7 +6,7 @@ for (var i = 0; i < controller.enemy_length; i++)
 	if (controller.enemy_type[i] != 0)
 		_length += 1;
 }
-normaltime = (8 * (_length - 1));
+normaltime = (10 * (_length - 1));
 
 time = 1;
 box_x = controller.box_x;

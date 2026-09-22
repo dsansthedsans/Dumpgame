@@ -138,7 +138,7 @@ function item_use()
 			for (var i = 0; i < (1 + (chara_murder() < 1)); i++)
 			{
 				var _text_postfix = "_0";
-				if (i == 0 && chara_murder() >= 1) || (i == 1 && global.flag[2] == true && exists(obj_battle_controller) == true && obj_battle_controller.battle_group == 1 && chara_murder() < 1)
+				if (i == 0 && chara_murder() >= 1) || (i == 1 && exists(obj_battle_controller) == true && obj_battle_controller.battle_group == 1)
 				{
 					_text_postfix = "_1";
 					if (i == 1)

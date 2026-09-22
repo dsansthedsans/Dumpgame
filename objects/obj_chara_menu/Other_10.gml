@@ -1,9 +1,8 @@
 /// @descr opções
 
-option[0, 0] = "ITEM";
-option[0, 1] = "STAT";
-option[0, 2] = "CELL";
 option_length[0] = 2;
+for (var o = 0; o < option_length[0]; o++)
+	option[0, o] = textdata_get($"charamenu_main_{o}");
 
 for (var i = 0; i < global.item_length; i++)
 {

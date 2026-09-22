@@ -93,23 +93,20 @@ if (type == 2.2)
 if (type == 3.0)
 {
 	hspeed = random_range(-0.5, 0.5);
-	if (myself == 0)
-	{
-		if (controller.enemy_obj[1] != -1)
-			hspeed = random_range(0.5, 1);
-		if (controller.enemy_obj[2] != -1)
-			hspeed = random_range(1, 2);
-	}
-	if (myself == 1 && controller.enemy_obj[2] == -1)
-		hspeed = random_range(-0.5, -1);
-	if (myself == 2 && controller.enemy_obj[1] != -1)
-		hspeed = random_range(-1, -2);
+	if (myself == 0 && controller.enemy_obj[1] != -1)
+		hspeed = random_range(0.5, 1.75);
+	//if (myself == 1 && controller.enemy_obj[2] == -1)
+	//	hspeed = random_range(-1.5, -0.5);
+	//if (myself == 0 && controller.enemy_obj[2] != -1)
+		//	hspeed = random_range(1, 2);
+	//if (myself == 2 && controller.enemy_obj[1] != -1)
+	//	hspeed = random_range(-1, -2);
 		
-	vspeed = irandom_range(-4, -5);
+	vspeed = random_range(-3, -4);
 	gravity = 0.075;
 	gravity_direction = 270;
 	
-	image_angle = irandom(360);
+	image_angle = random(360);
 	image_index = irandom(4);
 	image_alpha = 0;
 	image_xscale = 0;

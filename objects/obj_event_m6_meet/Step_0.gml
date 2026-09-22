@@ -73,7 +73,7 @@ if (confetti_active == true)
 {
 	if (confetti_time > 0)
 	{
-		marker(irandom_range(-10, (room_width + 10)), irandom_range(-5, -35), spr_singlepixel, 1, 2, 2, 0, 0, 0, merge_color(choose(c_red, c_blue, c_lime, c_yellow, c_aqua, c_fuchsia, c_green, c_orange), c_white, 0.5), (-room_height + 1));
+		marker(irandom_range(-10, (room_width + 10)), irandom_range(-5, -35), spr_singlepixel, 1, 2, 2, 0, 0, 0, merge_color(choose(c_red, c_blue, c_lime, global.c_yellow, c_aqua, c_fuchsia, c_green, c_orange), c_white, 0.5), (-room_height + 1));
 		thismarker.vspeed = 1.5;
 		thismarker.siner = 0;
 		thismarker.sinermult = random_range(0.5, 2.5);

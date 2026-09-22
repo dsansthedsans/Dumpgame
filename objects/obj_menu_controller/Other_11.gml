@@ -1,7 +1,7 @@
 /// @descr extra das opções
-option_key[2, 2] = textdata_get("menu_key_2_3");
-if (option_pos == 2)
-	option_key[2, 2] = "< " + string(option_key[2, 2]) + " >";
+option_key[2, 2] = textdata_get("menu_key_2_2");
+//if (option_pos == 2)
+//	option_key[2, 2] = "< " + string(option_key[2, 2]) + " >";
 option_key[2, 3] = textdata_get("menu_key_2_" + string(global.fullscreen));
 option_key[2, 4] = textdata_get("menu_key_2_" + string(global.visualeff));
 option_key[2, 5] = string(round(global.volume[VOLUME_MASTER] * 100)) + "%";

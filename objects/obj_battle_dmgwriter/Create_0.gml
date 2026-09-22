@@ -21,7 +21,7 @@ if (dmg <= 0)
 	if (controller.enemy_type[target] != 5 && controller.battle_group >= 7) || (controller.enemy_type[target] == 4)
 		myy = 240;
 	drawbar = 0;
-	mycolor_max = #748CAB;
+	mycolor_max = global.c_gray;
 }
 if (controller.enemy_type[target] == 6) || (controller.enemy_type[target] == 1000) || (controller.enemy_type[target] == 2000) // Broken Clock, TROLLFACE, Toilet
 	myy = 220;

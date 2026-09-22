@@ -84,6 +84,12 @@ if (type == 3)
 		/*Bottom*/ draw_rectangle(60, (bottomY + i), 240, (bottomY + i), false);
 	}
 }
+if (type == 4) || (type == 5)
+{
+	draw_set_color(global.c_gray);
+	draw_set_alpha(0.125);
+	draw_rectangle(0, 0, room_width, room_height, false)
+}
 if (type == 4)
 {
 	draw_set_color(c_black);

@@ -74,7 +74,7 @@ if (mytype == 0 && achievement_id != -1) // achievement
 	
 	box_h_bonus = 5;
 	
-	box_outcolor = c_yellow;
+	box_outcolor = global.c_yellow;
 	if (achievement_snd != -1)
 		audio_play(achievement_snd, 0, VOLUME_SOUND);
 }
