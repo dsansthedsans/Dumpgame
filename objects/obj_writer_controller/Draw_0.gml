@@ -31,7 +31,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 	// draw face
 	if (msg_face[page] > -1)
 	{
-		face_index += 0.1;
+		face_index += 0.1 * global.visualeff;
 		draw_sprite_ext(msg_face[page], face_index, (_bonusx + 27), (_bonusy + textbox_y + 14), 1, 1, 0, c_white, alpha);
 	}
 	
@@ -105,7 +105,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 	if (msg_talker[page] > -1)
 	{
 		if (writing == 1)
-			msg_talker[page].image_speed = 0.2;
+			msg_talker[page].image_speed = 0.2 * global.visualeff;
 		else
 		{
 			msg_talker[page].image_speed = 0;
@@ -204,19 +204,19 @@ for (var c = 1; c < (text_length + 1); c++)
 		if (string_char_at(msg[page], c) == _key && string_char_at(msg[page], (c + 1)) != "\\")
 		{
 			var _cancheck = 1;
-			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) // yellow ("HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]")
+			if (string_char_at(msg[page], c + 1) == "Y" && _cancheck == 1) 
 			{
 				text_color[0] = global.c_yellow;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "R" && _cancheck == 1) // red ("ATTACK"; negative status)
+			if (string_char_at(msg[page], c + 1) == "R" && _cancheck == 1) 
 			{
-				text_color[0] = merge_color(c_red, c_white, 0.125);;
+				text_color[0] = global.c_red;
 				_cancheck = 0;
 			}
-			if (string_char_at(msg[page], c + 1) == "B" && _cancheck == 1) // blue ("DEFENSE")
+			if (string_char_at(msg[page], c + 1) == "B" && _cancheck == 1)
 			{
-				text_color[0] = merge_color(c_blue, c_white, 0.25);
+				text_color[0] = global.c_blue;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "C" && _cancheck == 1) // violet ("Central City")
@@ -251,7 +251,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			}
 			if (string_char_at(msg[page], c + 1) == "O" && _cancheck == 1) // orange ("new member")
 			{
-				text_color[0] = #F29948;
+				text_color[0] = global.c_orange;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "@" && _cancheck == 1) // mention

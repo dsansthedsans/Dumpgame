@@ -140,16 +140,33 @@ if (lvl == 3)
 	draw_set_halign(fa_left);
 	
 		// esquerda (primeiro)
+	info[0] = $"HP   {(global.chara_curhp >= 10) ? "" : "0"}{global.chara_curhp}/{global.chara_maxhp}";
+	info[1] = $"LVL  {global.chara_lvl}";
+	info[2] = $"DEF  {global.chara_def - 10 + global.chara_astrength}";
+	for (var i = 0; i < 3; i++)
+	{
+		var _color = c_white;
+		if (i == 2)
+			_color = global.c_blue;
+		draw_text_width(_ilx, (_iy + 25 + (15 * i)), info[i], info_maxw, [_color, c_white], alpha);
+	}
+	/*
 	draw_text_width(_ilx, (_iy + 25), $"HP   {(global.chara_curhp >= 10) ? "" : "0"}{global.chara_curhp}/{global.chara_maxhp}", info_maxw, [c_white, c_white], alpha);
 	draw_text_width(_ilx, (_iy + 40), $"LVL  {global.chara_lvl}", info_maxw, [c_white, c_white], alpha);
 	draw_text_width(_ilx, (_iy + 55), $"{textdata_get("charamenu_stat_atk")}  {global.chara_atk - 10 + global.chara_wstrength}", info_maxw, [c_white, c_white], alpha);
+	*/
 	
 		// direita (primeiro)
 	info[0] = $"{textdata_get("charamenu_main_info_money")}{global.chara_money}";
 	info[1] = $"EXP  {(global.chara_exp >= 10) ? "" : "0"}{global.chara_exp}/{global.chara_nextexp}";
-	info[2] = $"DEF  {global.chara_def - 10 + global.chara_astrength}";
+	info[2] = $"{textdata_get("charamenu_stat_atk")}  {global.chara_atk - 10 + global.chara_wstrength}";
 	for (var i = 0; i < 3; i++)
-		draw_text_width((_irx - info_maxw), (_iy + 25 + (15 * i)), info[i], info_maxw, [c_white, c_white], alpha);
+	{
+		var _color = c_white;
+		if (i == 2)
+			_color = global.c_red;
+		draw_text_width((_irx - info_maxw), (_iy + 25 + (15 * i)), info[i], info_maxw, [_color, c_white], alpha);
+	}
 	
 		// esquerda (segundo)
 	draw_text_width(_ilx, (_iy + 80), $"{textdata_get("charamenu_stat_spares")}{(global.chara_spares >= 10) ? "" : " "}{global.chara_spares}", info_maxw, [c_white, c_white], alpha);
@@ -162,8 +179,25 @@ if (lvl == 3)
 		draw_text_width((_irx - info_maxw), (_iy + 80 + (15 * i)), info[i], info_maxw, [c_white, c_white], 1);
 		
 		// arma e armadura
-	draw_text(_ilx, (_iy + 120), $"{textdata_get("charamenu_stat_weapon")}" + string(item_name(global.chara_weapon, "small")) + " (+" + string(global.chara_wstrength) + ")");
-	draw_text(_ilx, (_iy + 135), $"{textdata_get("charamenu_stat_armor")}" + string(item_name(global.chara_armor, "small")) + ((global.chara_armor != -1) ? " (+" + string(global.chara_astrength) + ")" : ""));
+	draw_set_font(fnt_main_spaced);
+	info_maxw = string_width("XXXXXX  XXXXXXXXXX XXXX");
+	info_maxw[0] = string_width("WEAPON");
+	info_maxw[1] = string_width("Broomstick");
+	info_maxw[2] = string_width("[+0]");
+		// armadura
+	draw_text_width(_ilx, (_iy + 120), $"{textdata_get("charamenu_stat_armor")}", info_maxw[0]);
+	draw_text_width((_ilx + info_maxw[0] + string_width("  ")), (_iy + 120), $"{item_name(global.chara_armor)}", info_maxw[1])
+	if (global.chara_armor != -1)
+		draw_text_width((_ilx + info_maxw[0] + string_width("  ") + clamp(string_width($"{item_name(global.chara_armor)}"), 0, info_maxw[1]) + string_width(" ")), (_iy + 120), $"[+{global.chara_astrength}]", info_maxw[1], [global.c_blue, c_white])
+		// arma
+	draw_text_width(_ilx, (_iy + 135), $"{textdata_get("charamenu_stat_weapon")}", info_maxw[0]);
+	draw_text_width((_ilx + info_maxw[0] + string_width("  ")), (_iy + 135), $"{item_name(global.chara_weapon)}", info_maxw[1])
+	if (global.chara_weapon != -1)
+		draw_text_width((_ilx + info_maxw[0] + string_width("  ") + clamp(string_width($"{item_name(global.chara_weapon)}"), 0, info_maxw[1]) + string_width(" ")), (_iy + 135), $"[+{global.chara_wstrength}]", info_maxw[1], [global.c_red, c_white])
+	/*
+	draw_text(_ilx, (_iy + 120), $"{textdata_get("charamenu_stat_armor")}" + string(item_name(global.chara_armor, "small")) + ((global.chara_armor != -1) ? " (+" + string(global.chara_astrength) + ")" : ""));
+	draw_text(_ilx, (_iy + 135), $"{textdata_get("charamenu_stat_weapon")}" + string(item_name(global.chara_weapon, "small")) + " (+" + string(global.chara_wstrength) + ")");
+	*/
 }	
 // indicador das opções
 if (thiswriter == -1 && lvl != 3)

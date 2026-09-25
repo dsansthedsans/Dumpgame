@@ -2,8 +2,11 @@
 function START_GAME()
 {	
 	global.c_dump = #32FF62;
-	global.c_yellow = #FFF34B;
-	global.c_gray = #748CAB;
+	global.c_red = merge_color(c_red, c_white, 0.125); // "ATTACK"; negative status
+	global.c_blue = merge_color(c_blue, c_white, 0.25); // "DEFENSE"
+	global.c_yellow = #FFF34B; // "HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]"; "Cheap Candy"
+	global.c_orange = #F29948; // "new member"
+	global.c_gray = #748CAB; // unavailable option; "Corridors"
 	
 	randomize();
 	display_set_gui_maximise(2, 2);
@@ -306,8 +309,9 @@ function start_flags()
 	
 	global.flag[70] = false; // talked to ROOM BORDER
 	global.flag[71] = 0; // TALKED TO cellphone developer
+	global.flag[72] = false; // MEE6 SHOULD STAY NEUTRAL because PLAYER SPARED BROKEN CLOCK or because PLAYER HAS BEEN AN IDIOT WITH MEE6 DURING EVENT DIALOG (e.g. Broken Clock's battle event, reCAPTCHA: Stage 3's event, Gabee's chase event)
 	
-	for (var i = 72; i <= 99; i++)
+	for (var i = 73; i <= 99; i++)
 		global.flag[i] = undefined;
 }
 function start_music()
@@ -444,7 +448,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_8;
+		var _rm = room_corridors_13;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;
@@ -548,7 +552,8 @@ function CHANGE_GAME()
 				global.flag[37] = 1; // started Broken Clock's event
 				global.flag[39] = 1; // finished Broken Clock's event
 				global.flag[41] = 1; // left room_corridors_12 after Broken Clock's battle
-			
+				global.item[3] = ITEM_BOWL;
+				global.chara_armor = ITEM_PACE;
 				global.achievement[ACHIEVEMENT_BROCKWIN] = 1;
 			}
 			if (_lvl >= 7)

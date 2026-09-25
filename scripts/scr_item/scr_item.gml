@@ -113,7 +113,7 @@ function item_value(_item)
 		break;
 	}
 }
-function item_name(_item, _type)
+function item_name(_item, _type = "")
 {
 	var _textID = $"item_name_{item_id(_item)}";
 	var _textID_type = $"{_textID}_{_type}";

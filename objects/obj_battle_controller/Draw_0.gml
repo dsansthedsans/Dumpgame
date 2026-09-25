@@ -57,7 +57,7 @@ if (charainfo_active == true)
 		draw_set_halign(fa_left);
 		draw_set_font(global.fnt_mars);
 		var _m6_icon_spr = spr_m6_d_default;
-		if (global.flag[37] == true && global.flag[38] == false)
+		if (global.flag[37] == true/* && global.flag[38] == false*/)
 			_m6_icon_spr = spr_m6_d_neutral;
 		var _m6_icon_x = (box_defaultx + round(box_defaultw / 2) + box_borderw + 2 - (sprite_get_width(_m6_icon_spr) * 2) + 1);
 		var _m6_name_text = "MEE6";

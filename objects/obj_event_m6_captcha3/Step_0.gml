@@ -41,13 +41,23 @@ if (con == 4)
 	writer("event_m6_captcha3", -1, -1);
 	con = 5;
 }
-if (con == 5 && instance_exists(thiswriter) == 0)
+if (con == 5)
 {
-	global.flag[52] = 1;
-	chara_change(-1, true, true, false, true, true, true);
-	chara_facing(DOWN);
-	party_change(0, 1, RIGHT);
-	destroy(id);
+	if (exists(thiswriter) == true && chara_murder() >= 1)
+	{
+		if (thiswriter.page >= 1)
+			chara_facing(RIGHT);
+		if (thiswriter.page >= 2)
+			party_facing(0, LEFT);
+	}
+	else if (exists(thiswriter) == false)
+	{
+		global.flag[52] = 1;
+		chara_change(-1, true, true, false, true, true, true);
+		chara_facing(DOWN);
+		party_change(0, 1, RIGHT);
+		destroy(id);
+	}
 }
 
 

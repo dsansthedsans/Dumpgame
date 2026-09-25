@@ -75,6 +75,10 @@ function room_interact()
 			y += 20;
 			text = "room_rulesbook";
 		}
+		if (x == 140 && y == 260)
+		{
+			text = "room_stairssign";
+		}
 	}
 	if (r == room_corridors_3_5)
 	{
@@ -204,7 +208,7 @@ function room_interact()
 			text = "npc_flitcher_postbrock";
 			x -= 10;
 			sprite_index = spr_npc_flitcher;
-			if (global.flag[38] == 1) || (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
+			if (global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
 				destroy(id);
 		}
 	}
@@ -397,6 +401,8 @@ function room_solid()
 			if (x == 70 && y == 60)
 				image_index = 2;
 		}
+		if (x == 130 && y == 175)
+			sprite_index = spr_overworld_lamp2;
 		
 		// pillar door
 		if (x == 110 && y == 10)

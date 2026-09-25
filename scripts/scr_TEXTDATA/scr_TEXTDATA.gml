@@ -74,15 +74,15 @@ function textdata()
 	textdata_set("world_cave",			"Caverns", "Cavernas");
 	textdata_set("chapter_main", "Chapter");
 	i = 0;
-	textdata_set($"chapter_number_{i}", "I");
+	textdata_set($"chapter_number_{i}", "I"); // Corridors
 	textdata_set($"chapter_name_{i++}", textdata_get("room_corridors_1", "enUS"), textdata_get("room_corridors_1", "ptBR"));
-	textdata_set($"chapter_number_{i}", "II");
+	textdata_set($"chapter_number_{i}", "II"); // Caverns
 	textdata_set($"chapter_name_{i++}", textdata_get("room_cave_1", "enUS"), textdata_get("room_cave_1", "ptBR"));
-	textdata_set($"unused_chapter_number_{i}", "III");
-	textdata_set($"unused_chapter_name_{i++}", "Civilized Chaos");
-	textdata_set($"unused_chapter_number_{i}", "IV");
+	textdata_set($"unused_chapter_number_{i}", "III"); // Central City
+	textdata_set($"unused_chapter_name_{i++}", "Civilized Chaos", "Caos Civilizado");
+	textdata_set($"unused_chapter_number_{i}", "IV"); // Scrapyard
 	textdata_set($"unused_chapter_name_{i++}", "");
-	textdata_set($"unused_chapter_number_{i}", "V");
+	textdata_set($"unused_chapter_number_{i}", "V"); // Admin Realm
 	textdata_set($"unused_chapter_name_{i++}", "");
 	// room_loading
 	textdata_set("start", "A game by\ndsansthedsans\nand migel8022", "Um jogo por\ndsansthedsans\ne migel8022");
@@ -98,7 +98,7 @@ function textdata()
 	textdata_set($"menu_{z}_{i++}", "Quit", "Sair");
 	z += 1;
 	i = 0;
-	textdata_set($"menu_{z}_title", "Choose a File", "Escolha um SAVE"); // "Choose a File" inspired by "EarthBound (MOTHER 2)"
+	textdata_set($"menu_{z}_title", "Choose a File", "Escolha um SAVE"); // inspired by "Choose a File" from "EarthBound (MOTHER 2)"
 	textdata_set($"menu_{z}_{i++}", "Back", "Voltar");
 	textdata_set($"menu_{z}_{i++}", "File 1", "SAVE 1");
 	textdata_set($"menu_{z}_{i++}", "File 2", "SAVE 2");
@@ -287,13 +287,53 @@ function textdata()
 	textdata_set($"drp_faceInfo_0", "No File Selected", "Nenhum Arquivo Selecionado");
 	textdata_set($"drp_faceInfo_1", "@{name} [LVL {lvl}]");
 	// room_story
-	textdata_set($"event_story_{i++}", "Long ago,^1 a group of&!high school students&!made a Discord server."); // references "Long ago, [...]" from "UNDERTALE"
-	textdata_set($"event_story_{i++}", "Year after year,^1 the&!community grew as new&!members joined the server.\\");
-	textdata_set($"event_story_{i++}", "One day,^1 the owner of the server did someting bazooingas.");
-	textdata_set($"event_story_{i++}", "A few years later..."); // references "Many years later" from "UNDERTALE"
+		// Creation (January 21, 2021) >> Transformation (June 10, 2021) >> Invasion (December 7, 2021) >> Carlinhos arrives (December 30, 2022)
+	textdata_set($"event_story_{i++}", "Long ago,^1 a group of&!high school students&!made a Discord server."); // inspired by "Long ago, [...]" from "UNDERTALE"
+	textdata_set($"event_story_{i++}", "Every year,^1 the&!community grew as new&!members joined the server.\\");
+	textdata_set($"event_story_{i++}", "Overnight,^1 they all disappeared without a trace."); // inspired by "One day, they all disappeared without a trace" from "UNDERTALE"
+	textdata_set($"event_story_{i++}", "A few years later..."); // inspired by "Many years later" from "UNDERTALE"
+	/*
+	textdata_set("intro_0", "Long ago,^1 three friends had met each other during class.^2");
+	textdata_set("intro_1", "After some time,^1 they decided to create a server in Discord.^2");
+	textdata_set("intro_2", "As the years went by,^1 new members had joined the server.^2");
+	textdata_set("intro_3", "One day,^1 the owner was testing a new Discord feature.^2");
+	textdata_set("intro_4", "But it went very,^1 very wrong.^2^2^2^1");
+	textdata_set("intro_5", "Many years later^2.^2.^2.^2^2^1");
+	textdata_set("intro_6", "FORTALEZA - \\11/14/2022");
+	textdata_set("intro_7", "A brazilian boy was practing soccer in&a football pitch.");
+	textdata_set("intro_8", "By mistake,^1 the ball fell inside a strange dumpster nearby.");
+	textdata_set("intro_9", "When the boy was trying to get the ball,^1 he fell inside the dumpster.");
+	textdata_set("intro_10", "The bottom of the dumpster opened,^1 revealing a giant portal.");
+	textdata_set("intro_11", "The boy fell inside the portal and he was taken to another world.^2");
+	*/
+	/*
+	msg[0] = "Long ago,^1 three friends&!met each other&!during class."; //"Long ago,^1 two races&!ruled over Earth:^1 &!HUMANS and MONSTERS."
+	msg[1] = "After some time,^1 they&!decided to create a&!server in Discord.";
+	msg[2] = "As months went by,^1 &!new members joined&!the server.";
+	msg[3] = "One day,^1 the server's&!owner was conducting&!experiments in his room.";
+	msg[4] = "But it went very,^1 &!very wrong.";
+	msg[5] = "Many years later^2^3.^2^3.^2^3.";
+	msg[6] = "    CEARÁ,^1 BRAZIL";
+	msg[7] = "A brazilian boy was&!playing soccer alone&!in a football pitch.";
+	msg[8] = "Suddenly,^1 a white flash&!of light came from a&!dumpster nearby.";
+	msg[9] = "Curious, the boy approached the&!dumpster to search the&!origin of the light."
+	msg[10] = "He was then gone as if&!nothing happened.";
+	*/
+	/*
+	msg[0] = "Long ago,^1 a group of&!three friends created&!a server in Discord.^2^3";
+	msg[1] = "As the months went by,^1 &!new members joined&!the server.^2^3";
+	msg[2] = "One day,^1 the server's&!owner was conducting&!experiments in his room.^2^3";
+	msg[3] = "But it all went very,^1 &!very wrong.^2^3";
+	msg[4] = "Several years later^2^3.^2^3.^2^3.^2^1";
+	msg[5] = "        BRAZIL&       2022^2^3";
+	msg[6] = "A boy was playing soccer&!alone in a football&!pitch.";
+	msg[7] = "Suddenly,^1 a white flash&!of light came from a&!dumpster nearby.";
+	msg[8] = "The boy&!slowly approached the dumpster.";
+	msg[9] = "He was then gone as if&!nothing had happened.";
+	*/
 	// room_battle
 	textdata_set("battle_main_sparing_0_0", " is sparing you.", " está te poupando.");
-	textdata_set("battle_main_sparing_0_1", " is tired of you.", " está cansado de você.");
+	textdata_set("battle_main_sparing_0_1", " is tired of you.", " está de&saco cheio de você."); // "está de saco cheio de você" references a trash bag
 	textdata_set("unused_battle_main_sparing_0_2", " is hypnotized.", " está hipnotizado.");
 	textdata_set("battle_main_sparing_0_3", " has given up&on killing you.", " desistiu de matar você.");
 	textdata_set("battle_main_sparing_0_4", " is staring&at the floor in silence.", " está encarando&o chão em silêncio.");
@@ -466,57 +506,60 @@ function textdata()
 	textdata_set("battle_bubble_armsguy_punch_1", "+F1Mweheheh!!^1 Me Like It!", "+F1Huehuehueh!!^1 Eu Gotar Iço!");
 	textdata_set("battle_bubble_armsguy_punch_2", "+F1Congrats,^1 Me Love It!", "+F1Parabems,^1 Eu Amar Iço!");
 		// Trashguy's battle
-	textdata_set("battle_main_trashguy", "* (Trashguy rolls into your way!)");
-	textdata_set("battle_main_trashguy_geno", "* (You step into Trashguy's way.)");
+	textdata_set("battle_main_trashguy", "* (Trashguy rolls into your way!)", "* (Trashguy cai em seu caminho!)");
+	textdata_set("battle_main_trashguy_geno", "* (You step into Trashguy's way.)", "* (Você entra no caminho do Trashguy.)");
 	i = 0;
-	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy is crunching&on moldy bread.)");
-	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy is cleaning themselves with dirty&toilet paper.)");
-	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy looks like it's&about to fall over.)"); // from "UNDERTALE"
-	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy finds a plastic&bag with vomit inside and&drinks it.)");
-	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy takes a rotten egg and throws it at the nearest wall.)");
-	textdata_set("battle_act_trashguy_1", "Empty");
-	textdata_set("battle_act_trashguy_2", "Kick");
-	textdata_set("battle_act_result_trashguy_0_0", "* \"Trashguy\" :R[4 ATK ;D| :B7 DEF];D^3 &* (A mysterious creature who lives inside a trash can.)");
-	textdata_set("battle_act_result_trashguy_0_1", "* (Strangely,^1 they seriously&hate the smell of garbage.)");
-	textdata_set("battle_act_result_trashguy_1_0", "* (You reach into Trashguy's trash can and pull some&of the garbage out...)");
-	textdata_set("battle_act_result_trashguy_1_1", "* (Trashguy's :YMERCY;D up :U100%;D!)");
-	textdata_set("battle_act_result_trashguy_2_0", "* (You kick Trashguy's trash can with your full strength...)");
-	textdata_set("battle_act_result_trashguy_2_1", "* (Trashguy's :YMERCY;D up :R100%;D...?)");
-	textdata_set("battle_bubble_trashguy_0", "+F1...i cant handle this smell...");
-	textdata_set("battle_bubble_trashguy_1", "+F1...i just want all this trash to go away...");
-	textdata_set("battle_bubble_trashguy_2", "+F1...this smell is terrible...");
-	textdata_set("battle_bubble_trashguy_3", "+F1...i think im gonna fall over...");
-	textdata_set("battle_bubble_trashguy_4", "+F1...why do they always put trash in here...?");
-	textdata_set("battle_bubble_trashguy_5", "+F1...this is so much better...");
-	textdata_set("battle_bubble_trashguy_6", "+F1...youre a nice person...");
-	textdata_set("battle_bubble_trashguy_7", "+F1...youre different...");
-	textdata_set("battle_bubble_trashguy_8", "+F1...cant you just leave me alone...?");
-	textdata_set("battle_bubble_trashguy_9", "+F1...i shouldve expected this to happen...");
-	textdata_set("battle_bubble_trashguy_10", "+F1...youre just like them...");
-	textdata_set("battle_bubble_trashguy_empty_0", "+F1...thanks...");
-	textdata_set("battle_bubble_trashguy_empty_1", "+F1...you didnt have to...");
-	textdata_set("battle_bubble_trashguy_empty_2", "+F1...youre the best...");
-	textdata_set("battle_bubble_trashguy_kick_0", "+F1...but why,^1 though...?");
-	textdata_set("battle_bubble_trashguy_kick_1", "+F1...what did i do to you...?");
-	textdata_set("battle_bubble_trashguy_kick_2", "+F1...why are you like this...?");
+	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy seems to be&eating moldy bread.)", "* (Trashguy parece estar&comendo pão mofado.)");
+	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy is cleaning themselves with dirty&toilet paper.)", "* (Trashguy está se limpando&com papel higiênico sujo.)");
+	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy finds a plastic&bag with vomit inside and&drinks it.)", "* (Trashguy encontra um saco plástico com vômito dentro&e bebe tudo.)");
+	textdata_set($"battle_main_trashguy_{i++}", "* (Trashguy takes a rotten egg and throws it at the nearest wall.)", "* (Trashguy pega um ovo podre e&o joga na parede mais próxima.)");
+	textdata_set($"unused_battle_main_trashguy_{i++}", "* (Trashguy looks like it's&going to fall over.)", "* (Trashguy parece que vai cair.)"); // inspired by "Dummy looks like it's going to fall over" from "UNDERTALE"
+	textdata_set("battle_act_trashguy_1", "Empty", "Esvaziar");
+	textdata_set("battle_act_trashguy_2", "Kick", "Chutar");
+	textdata_set("battle_act_result_trashguy_0_0", "* \"Trashguy\" :R[4 ATK ;D| :B7 DEF];D^3 &* (A mysterious creature who lives inside a trash can.)", "* \"Trashguy\" :R[4 ATQ ;D| :B7 DEF];D^3 &* (Uma criatura misteriosa que vive dentro de uma lixeira.)");
+	textdata_set("battle_act_result_trashguy_0_1", "* (Strangely,^1 they seriously&hate the smell of garbage.)", "* (Estranhamente,^1 ele odeia profundamente o cheiro de lixo.)");
+	textdata_set("battle_act_result_trashguy_1_0", "* (You reach into Trashguy's trash can and pull some&of the garbage out...)", "* (Você enfia a mão dentro da lata de lixo do Trashguy e&puxa lixo para fora...)");
+	textdata_set("battle_act_result_trashguy_1_1", "* (Trashguy's :YMERCY;D up :U100%;D!)", "* (:YPIEDADE;D do Trashguy&cresceu :U100%;D!)");
+	textdata_set("battle_act_result_trashguy_2_0", "* (You kick Trashguy's trash can with your full strength...)", "* (Você chuta a lata de lixo&do Trashguy com toda a sua força restante...)");
+	textdata_set("battle_act_result_trashguy_2_1", "* (Trashguy's :YMERCY;D up :R100%;D...?)", "* (:YPIEDADE;D do Trashguy&cresceu :R100%;D...?)");
+	i = 0;
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...i cant handle this smell...", "+F1...eu n aguento esse cheiro...");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...i just want all this trash to go away...", "+F1...eu so quero que todo esse lixo va embora...");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...this smell is terrible...", "+F1...esse cheiro e terrivel...");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...i think im gonna fall over...", "+F1...eu acho que eu vo cair...");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...why do they always put trash in here...?", "+F1...pq eles sempre jogam lixo aqui dentro...?");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...thanks...", "+F1...obg...");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...youre different...", "+F1...vc e diferente...");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...why do you like me...?", "+F1...pq vc gosta de mim...?");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...cant you just leave me alone...?", "+F1...tu n pode so me deixar sozinho...?");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...why are you like this...?", "+F1...pq voce e assim...?");
+	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...youre just like them...", "+F1...vc e igual a eles...");
+	i = 0;
+	textdata_set($"battle_bubble_trashguy_empty_{i++}", "+F1...this is so much better...", "+F1...isso e muito melhor...");
+	textdata_set($"battle_bubble_trashguy_empty_{i++}", "+F1...you didnt have to...", "+F1...voce n precisava...");
+	textdata_set($"battle_bubble_trashguy_empty_{i++}", "+F1...why are you being nice to me...?", "+F1...pq vc ta sendo legal comigo...?");
+	i = 0;
+	textdata_set($"battle_bubble_trashguy_kick_{i++}", "+F1...please,^1 stop...", "+F1...para,^1 pfv...");
+	textdata_set($"battle_bubble_trashguy_kick_{i++}", "+F1...but why,^1 though...?", "+F1...mas pq...?"); // inspired by "Why, though?" from "Five Nights at Freddy's: Security Breach". I'm slightly embarrassed by this inspiration honestly
+	textdata_set($"battle_bubble_trashguy_kick_{i++}", "+F1...what did i do to you...?", "+F1...oq eu te fiz...?");
 		// Flitcher's battle
-	textdata_set("battle_main_flitcher", "* (Flitcher suddenly&appears in your way!)");
-	textdata_set("battle_main_flitcher_geno", "* (You step into Flitcher's way.)");
+	textdata_set("battle_main_flitcher", "* (Flitcher suddenly&appears in your way!)", "* (Flitcher de repente&aparece no seu caminho!)");
+	textdata_set("battle_main_flitcher_geno", "* (You step into Flitcher's way.)", "* (Você entra no caminho do Flitcher.)");
 	i = 0;
-	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher stares blankly&to north and south.)");
-	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher doesn't seem&to know why it's here.)"); // from "UNDERTALE"
-	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher is moving its&tongue back and forth.)");
-	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher doesn't think,^3 therefore it isn't.)");
-	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher is just there.)");
-	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher is daydreaming.)");
-	textdata_set("battle_act_flitcher_1", "Talk");
-	textdata_set("battle_act_flitcher_2", "Wave");
-	textdata_set("battle_act_result_flitcher_0_0", "* \"Flitcher\" :R[3 ATK;D | :B6 DEF];D^3 &* (This monster doesn't really know what's happening...)");
-	textdata_set("battle_act_result_flitcher_0_1", "* (It hates eye contact and any type of interaction that involves talking.)");
-	textdata_set("battle_act_result_flitcher_1_0", "* (You quietly say \"hello\"&to Flitcher...)");
-	textdata_set("battle_act_result_flitcher_1_1", "* (It seems scared.)^3 &* (Flitcher's :YMERCY;D down :R100%;D.)");
-	textdata_set("battle_act_result_flitcher_2_0", "* (You gently wave your hand&to Flitcher...)");
-	textdata_set("battle_act_result_flitcher_2_1", "* (It seems happy.)^3 &* (Flitcher's :YMERCY;D up :U100%;D!)");
+	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher stares blankly&to north and south.)", "* (Flitcher olha fixamente&para norte e sul.)");
+	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher doesn't seem&to know why it's here.)", "* (Flitcher não parece saber&o porquê de estar aqui.)"); // from "UNDERTALE"
+	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher is moving its&tongue back and forth.)", "* (Flitcher está movendo&sua língua para frente&e para trás.)");
+	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher doesn't think,^3 therefore it isn't.)", "* (Flitcher não&pensa,^3 logo&não é.)"); // references "I think, therefore I am".
+	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher is daydreaming.)", "* (Flitcher está no&mundo da lua.)");
+	textdata_set($"unused_battle_main_flitcher_{i++}", "* (Flitcher is just there.)");
+	textdata_set("battle_act_flitcher_1", "Talk", "Falar");
+	textdata_set("battle_act_flitcher_2", "Wave", "Acenar");
+	textdata_set("battle_act_result_flitcher_0_0", "* \"Flitcher\" :R[3 ATK;D | :B6 DEF];D^3 &* (A reptile-like monster who's unaware of its own existence.)", "* \"Flitcher\" :R[3 ATQ;D | :B6 DEF];D^3 &* (Flitcher não tem consciência&sobre sua própria existência.)");
+	textdata_set("battle_act_result_flitcher_0_1", "* (It avoids eye contact and any social interaction that involves talking.)", "* (Evita contato visual e qualquer interação que&envolva falar.)");
+	textdata_set("battle_act_result_flitcher_1_0", "* (You quietly say \"hi\"&to Flitcher...)", "* (Você fala \"oi\" em voz&baixa para Flitcher...)");
+	textdata_set("battle_act_result_flitcher_1_1", "* (It seems scared.)^3 \\&* (Flitcher's :YMERCY;D down :R100%;D.)", "* (Parece estar com medo.)^3 \\&* (:YPIEDADE;D de Flitcher&caiu :R100%;D.)");
+	textdata_set("battle_act_result_flitcher_2_0", "* (You gently wave your&hand to Flitcher...)", "* (Você gentilmente&acena para Flitcher...)");
+	textdata_set("battle_act_result_flitcher_2_1", "* (It seems happy.)^3 \\&* (Flitcher's :YMERCY;D up :U100%;D!)", "* (Parece estar feliz.)^3 \\&* (:YPIEDADE;D de Flitcher&cresceu :U100%;D!)");
 		// Eyecrush's battle (Unused)
 	textdata_set("unused_battle_main_eyecrush", "* (Eyecrush crawls into your way!)");
 	textdata_set("unused_battle_main_eyecrush_0", "* (Eyecrush is looking at you.)");
@@ -685,6 +728,7 @@ function textdata()
 	textdata_set($"battle_bubble_brock_convince_4_1_{i++}", "+F1I-I'M the one that's...");
 	textdata_set($"battle_bubble_brock_convince_4_1_{i++}", "+F1+S4T-that's,^2 uh...");
 	textdata_set($"battle_bubble_brock_convince_4_1_{i++}", "+F1+S4That's...");
+	textdata_set($"battle_bubble_brock_convince_4_1_{i++}", "+F1+S4I'm the,^2 uh...");
 	textdata_set($"battle_bubble_brock_convince_4_1_{i++}", "+F1+S4I'm...");
 	textdata_set($"battle_bubble_brock_convince_4_1_{i++}", "+F1+S4...");
 	i = 0;
@@ -811,8 +855,8 @@ function textdata()
 	textdata_set("charamenu_stat_heals",	"HEALS   ",	"CURAS   ");
 	textdata_set("charamenu_stat_kills",	"KILLS   ",	"MATAR   ");
 	textdata_set("charamenu_stat_deaths",	"DEATHS  ",	"MORTES  ");
-	textdata_set("charamenu_stat_weapon",	"WEAPON  ",	"ARMA     ");
-	textdata_set("charamenu_stat_armor",	"ARMOR   ",	"ARMADURA ");
+	textdata_set("charamenu_stat_armor",	"ARMOR",	"ARMADURA");
+	textdata_set("charamenu_stat_weapon",	"WEAPON",	"ARMA");
 	textdata_set("charapause_title", "GAME PAUSED", "JOGO PAUSADO");
 	textdata_set("charapause_0", "Resume", "Continuar");
 	textdata_set("charapause_1", "Main Menu", "Menu Principal");
@@ -823,77 +867,11 @@ function textdata()
 	textdata_set("item_name_stick",				"Broomstick",	"Cabo de Vassoura");
 	textdata_set("item_name_stick_small",		"",				"CaboVasora");
 	textdata_set("item_name_stick_serious",		"Broom",		"Vassoura");
-	textdata_set("item_info_stick_0", "* \"Broomstick\" :R[0 ATK];D^3 &* (Feels like it's&about to break.)", "* \"Cabo de Vassoura\" :R[0 ATQ];D ^3 &* (Parece estar prestes&a quebrar.)");
+	textdata_set("item_info_stick_0", "* \"Broomstick\" :R[+\\0 ATK];D^3 &* (Feels like it's&about to break.)", "* \"Cabo de Vassoura\" :R[+\\0 ATQ];D ^3 &* (Parece estar prestes&a quebrar.)");
 	textdata_set("item_name_bandage",			"Bandage",		"Curativo");
 	textdata_set("item_name_bandage_small",		"");
 	textdata_set("item_name_bandage_serious",	"");
-	textdata_set("item_info_bandage_0", "* \"Bandage\" :B[0 DEF];D^3 &* (There's a drawing of&a blonde woman on it.)", "* \"Curativo\" :B[0 DEF];D^3 &* (Tem um desenho de uma&mulher loira nele.)"); // "drawing of a blonde woman" references "Barbie"
-	// room_corridors_1_5
-	textdata_set("item_name_brick",				"Concrete Brick",	"Tijolo de Concreto");
-	textdata_set("item_name_brick_small",		"ConcBrick",		"TijoConcre");
-	textdata_set("item_name_brick_serious",		"");
-	textdata_set("item_info_brick_0", "* \"Concrete Brick\" :Y[+\\0 HP];D^3 &* (It's just a brick,^3 for Christ's sake.)");
-	i = 0;
-	textdata_set($"item_use_brick_{i}_0", "* (You shoved :YConcrete Brick;D in&your mouth and swallowed&it whole...)", "* (Você enfiou :YTijolo de Concreto;D dentro da sua boca e o engoliu por inteiro...)");
-	textdata_set($"item_use_brick_{i}_1", "* (You forcefully threw :YConcrete Brick;D against the floor.)", "* (Você jogou :YTijolo de Concreto;D contra o chão com muita força.)");
-	i += 1;
-	textdata_set($"item_use_brick_{i}_0", "* (Nothing happened.)", "* (Nada aconteceu.)");
-	textdata_set($"item_use_brick_{i}_1", "*^4 ?");
-	// room_corridors_4
-	textdata_set("savepoint_all_0", "* (Your :YHP;D has been&fully restored.)");
-	textdata_set("savepoint_all_1", "");
-	textdata_set("savepoint_all_1_1", "Save");
-	textdata_set("savepoint_all_1_2", "Back");
-	textdata_set("savepoint_all_2", "File saved.");
-	// room_corridors_6
-	textdata_set("item_name_candy",				"Cheap Candy",	"Doce Barato");
-	textdata_set("item_name_candy_small",		"CheapCandy",	"DoceBarato");
-	textdata_set("item_name_candy_serious",		"Candy",		"Doce");
-	textdata_set("item_info_candy_0", "* \"Cheap Candy\" :Y[+\\7 HP];D^3 &* (:U1/7;D chance to restore additional :YHP;D when eaten.)", "* \"Doce Barato\" :Y[+\\7 HP];D^3 &* (:U1/7;D de chance de recuperar&:YHP;D extra ao ser usado.)"); // "+7 HP" and "1/7 chance" references the Brazilian candy "7-Belo"
-	textdata_set("item_name_bowl",				"Candy Bowl",	"Tigela de Doces");
-	textdata_set("item_name_bowl_small",		"",				"TijelaDoce");
-	textdata_set("item_name_bowl_serious",		"Bowl",			"Tijela");
-	textdata_set("item_info_bowl_0", "* \"Candy Bowl\" :B[3 DEF];D^3 &* (:U1/7;D chance to fully block damage when hurt.)", "* \"Tigela de Doces\" :B[3 DEF];D^3 &* (:U1/7;D de chance de bloquear dano por completo.)");// "1/7 chance" references the Brazilian candy "7-Belo"
-	i = 0;
-	textdata_set($"item_use_{i++}", "* (You used", "* (Você usou");
-	textdata_set($"item_use_{i++}", "* (You restored", "* (Você recuperou");
-	textdata_set($"item_use_{i++}", "* (Your :YHP;D was maxed out.)", "* (Seu :YHP;D foi maximizado.)");
-	textdata_set("item_equip", "* (You equipped", "* (Você equipou");
-	i = 0;
-	textdata_set($"item_drop_{i++}", "was dumped.)", "foi jogado no lixo.)"); // references Dumpgame itself
-	textdata_set($"item_drop_{i++}", "was kicked.)", "foi expulso.)"); // references kicking members from a Discord server
-	textdata_set($"item_drop_{i++}", "was banned.)", "foi banido.)"); // references banning members from a Discord server
-	textdata_set($"item_drop_{i++}", "was blocked.)", "foi bloqueado.)"); // references blocking users on Discord
-	textdata_set($"item_drop_{i++}", "was ignored.)", "foi ignorado.)"); // references ignoring users on Discord
-	textdata_set("item_pickup", "* (You got", "* (Você conseguiu");
-	textdata_set("item_cantpickup", "* (Your :YINVENTORY;D is full.)", "* (Seu :YINVENTÁRIO;D está cheio.)");
-	// room_corridors_8
-	textdata_set("item_name_trident",			"Enchanted Trident",	"Tridente Encantado");
-	textdata_set("item_name_trident_small",		"EncTrident",			"TrideEncan");
-	textdata_set("item_name_trident_serious",	"Trident",				"Tridente");
-	textdata_set("item_info_trident_0", "* \"Enchanted Trident\" :R[3 ATK];D^3 &* (Summons a lightning when :RATTACKing;D at the center mark.)", "* \"Tridente Encantado\" :R[3 ATQ];D^3 &* (Invoca um raio ao :RATACAR;D&na linha de centro.)"); // references Minecraft's "Trident" item with "Channeling" enchantment
-	// room_corridors_10
-	textdata_set("item_name_choco",				"Chocolate Bar",	"Barra de Chocolate");
-	textdata_set("item_name_choco_small",		"ChocolaBar",		"BarraChoco");
-	textdata_set("item_name_choco_serious",		"Chocolate");
-	textdata_set("item_info_choco_0", "* \"Chocolate Bar\" :Y[+\\14 HP];D^3 &* (Very sticky,^3 but lactose-free.)", "* \"Barra de Chocolate\" :Y[+\\14 HP];D^3 &* (Preguento,^3 mas zero lactose.)"); // "+14 HP" is the double of Cheap Candy's "+7 HP", and this item references "Nestlé Classic Duo" (double chocolate bar)
-	// room_corridors_11
-	textdata_set("item_name_pace",			"Temporary Pacemaker",	"Marcapasso Temporário"); // "Temporary" references Broken Clock, but also explains why the player can equip the item without surgery; "Pacemaker" references both Broken Clock and the player's SOUL
-	textdata_set("item_name_pace_small",	"TempoPacer",			"MarcaTempo");
-	textdata_set("item_name_pace_serious",	"Pacemaker",			"Marcapasso");
-	textdata_set("item_info_pace_0", "* \"Temporary Pacemaker\" :B[6 DEF];D^3 &* (Increases the duration of :PINVINCIBILITY FRAMES;D by :U50%;D.)", "* \"Marcapasso Temporário\" :B[6 DEF];D^3 &* (Prolonga a duração dos :PFRAMES DE INVENCIBILIDADE;D em :U50%;D.)");
-	// room_corridors_17
-	textdata_set("item_name_brick2",			"Metal Brick",	"Tijolo de Metal");
-	textdata_set("item_name_brick2_small",		"MetalBrick",	"TijoMetal");
-	textdata_set("item_name_brick2_serious",	"");
-	i = 0;
-	textdata_set($"item_info_brick2_{i++}", "* \"Metal Brick\"^3 &* (It's a very unusual brick...)"); // inspired by "It's a very unusual knife" from "12 Angry Men" (1957)
-	textdata_set($"item_info_brick2_{i++}", "* (It seems irrelevant for now.)");
-	
-}
-function textdataOLD()
-{
-	// room_corridors_1
+	textdata_set("item_info_bandage_0", "* \"Bandage\" :B[+\\0 DEF];D^3 &* (There's a drawing of&a blonde woman on it.)", "* \"Curativo\" :B[+\\0 DEF];D^3 &* (Tem um desenho de uma&mulher loira nele.)"); // "drawing of a blonde woman" references "Barbie"
 	textdata_set("room_lamp_0","* (It's a lamp.)^1 &* (An exotic blue fire is lighting up the room...)");
 	textdata_set("room_lamp_0_geno","* (It's a lamp.)");
 	textdata_set("room_brokenlamp", "* (This lamp appears to have been forcefully thrown&against the floor...)");
@@ -915,8 +893,9 @@ function textdataOLD()
 	textdata_set($"event_m6_meet_{z}_{i++}", "* ");
 	z += 1;
 	i = 0;
-	textdata_set($"event_m6_meet_{z}_{i++}", "* My name is :6@MEE6;D.^1 &* I am a :6ROBOT;D designed&to guide and assist you!");
-	textdata_set($"event_m6_meet_{z}_{i++}", "* First and foremost,^1 let us analyze the anatomy behind this world.");
+	textdata_set($"event_m6_meet_{z}_{i++}", "* My name is :@@MEE6;D.^1 &* I am a :6ROBOT;D designed&to guide and assist you!");
+	textdata_set($"event_m6_meet_{z}_{i++}", "* My mission is to prepare you to explore the server by yourself."); // inspired by "Please remain here. It's dangerous to explore by yourself." from "UNDERTALE" (which is probably inspired by "It's dangerous to go alone! Take this." from "Legend of Zelda")
+	textdata_set($"event_m6_meet_{z}_{i++}", "* For that,^1 we must analyze the anatomy behind this world.");
 	textdata_set($"event_m6_meet_{z}_{i++}", "* :UDumpster Friends;D can be divided into three primary regions\\:");
 	textdata_set($"event_m6_meet_{z}_{i++}", "* The :GCorridors;D,^1 where&:Onew members;D appear and verify their identity...");
 	textdata_set($"event_m6_meet_{z}_{i++}", "* The :CCentral City;D,^1 a friendly neighborhood for all members alike..."); // "friendly heighborhood" inspired by "Spider-Man: Brand New Day"
@@ -925,6 +904,7 @@ function textdataOLD()
 	textdata_set($"event_m6_meet_{z}_{i++}", "* There,^3 we will find the only known exit in :UDumpster Friends;D.");
 	textdata_set($"unused_event_m6_meet_{z}_{i++}", "* My mission is to help you not need my help.");
 	textdata_set($"unused_event_m6_meet_{z}_{i++}", "* My mission is to fulfill your requests and help you accomplish your goals.");
+	textdata_set($"unused_event_m6_meet_{z}_{i++}", "* My mission is to make Dumpster Friends feel a little less intimidating to you.");
 	i = 0;
 	textdata_set($"event_m6_meet_teachInfo_{i++}", "Corridors");
 	textdata_set($"event_m6_meet_teachInfo_{i++}", "Central\nCity");
@@ -938,8 +918,41 @@ function textdataOLD()
 	textdata_set($"event_m6_meet_{z}_{i++}", "* If my understanding is correct,^1 we could easily reach :BCentral City;D.");
 	textdata_set($"unused_event_m6_meet_{z}_{i++}", "* My knowledge and your strength together could ease our adventure.");
 	textdata_set($"unused_event_m6_meet_{z}_{i++}", "* Hey.^1 Look.^1 My system does not understand sarcasm,^1 all right?");
-	// 
-	// 
+	i = 0;
+	textdata_set($"unused_event_theguys_meet_0_{i++}", "* Wrap It Up,^1 Shakespear!");
+	textdata_set($"unused_event_theguys_meet_0_{i++}", "* Incoming !!!!!"); // from "Meet the Spy" (2009) by Valve
+	i = 0;
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Stop Right There,^1 CowBoy!!!!");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Or Is It CowGirl??^1 &* I Can Really Tell!");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* whatever.^1 &* \"cowyou\".^1 &* it doesnt matter.");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Ya Must Be A New Member!");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Well.^1 &* Lucky Ya,^1 We Here!");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Because If It Werent For We...");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "+S1* Dat Blue Head Pain In Da Ass Would Talk For Days!!!!");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "+S3* you should thank us for kicking that guys face.");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Hold Ya Horses!!!^1 &* We Forgo To Introduce We!");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* I Am...^2 Da Guy.^1 &* Da Real Guy."); // "I'm the guy. The real guy." from "Spy Kids 3-D: Game Over"
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* and im the&other guy.");
+	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Together,^1 We Are...");
+	i = 0;
+	textdata_set($"unused_event_theguys_meet_2_{i++}", "* ... Da Guys!!!!");
+	textdata_set($"unused_event_theguys_meet_2_{i++}", "* Dat Right,^1 &Fancy Pants!^1 &* Da Guys!");
+	textdata_set($"unused_event_theguys_meet_2_{i++}", "* And Ya Made A Very Bad Mistake!");
+	textdata_set($"unused_event_theguys_meet_2_{i++}", "* a mistake not even&death can undo.");
+	textdata_set($"unused_event_theguys_meet_2_{i++}", "* You Invade We Territory!");
+	textdata_set($"unused_event_theguys_meet_2_{i++}", "* our private,^1 &private space.");
+	textdata_set($"unused_event_theguys_meet_2_{i++}", "* So,^1 In Conclusion ...");
+	textdata_set($"unused_event_theguys_meet_2_{i++}", "* We are going to kill you.");
+	textdata_set("room_m6_banner_0", "* (It's an old banner.)");
+	textdata_set("room_m6_banner_1", "* (The banner depicts MEE6 advertising a product&that you don't know.)");
+	textdata_set("room_m6_poster_0", "* (It's a poster.)");
+	textdata_set("room_m6_poster_1", "* (It says something about MEE6 remembering your birthday.)");
+	textdata_set("room_m6_poster_2", "* (There's also a drawing of&him wearing a birthday hat.)");
+	textdata_set("room_m6_papers_0", "* (It's a pair of&stapled papers.)");
+	textdata_set("room_m6_papers_1", "* (There's a license&agreement in it.)");
+	textdata_set("room_m6_papers_2", "* (You decide not to read.)");
+	textdata_set("room_m6_brokenwall_0", "* (There's an ant-sized toy&of MEE6 inside the crack&of this wall...)"); // from "UNDERTALE"; references a bug where a tiny MEE6 appeared next to the actual MEE6
+	textdata_set("room_m6_brokenwall_1", "* (Strangely,^1 the toy is depicting MEE6 as a&tall robot.)"); // references MEE6's old design
 	/*
 	textdata_set("event_m6_start_1_0", "* Hello,^3 new member.^1 &* Welcome to the world&of ;UDumpster Friends;D!");
 	textdata_set("event_m6_start_1_1", "* My name is :6MEE6;D.^1 &* I am a :6ROBOT;D made&to help you.");
@@ -981,46 +994,11 @@ function textdataOLD()
 	... there are also a large amount of monsters ready to attack.
 	And now, I am afraid that you are here stuck with me.
 	*/
+	// room_corridors_2
 	i = 0;
-	textdata_set($"unused_event_theguys_meet_0_{i++}", "* Wrap It Up,^1 Shakespear!");
-	textdata_set($"unused_event_theguys_meet_0_{i++}", "* Incoming !!!!!"); // from "Meet the Spy" (2009) by Valve
-	i = 0;
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Stop Right There,^1 CowBoy!!!!");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Or Is It CowGirl??^1 &* I Can Really Tell!");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* whatever.^1 &* \"cowyou\".^1 &* it doesnt matter.");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Ya Must Be A New Member!");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Well.^1 &* Lucky Ya,^1 We Here!");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Because If It Werent For We...");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "+S1* Dat Blue Head Pain In Da Ass Would Talk For Days!!!!");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "+S3* you should thank us for kicking that guys face.");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Hold Ya Horses!!!^1 &* We Forgo To Introduce We!");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* I Am...^2 Da Guy.^1 &* Da Real Guy."); // "I'm the guy. The real guy." from "Spy Kids 3-D: Game Over"
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* and im the&other guy.");
-	textdata_set($"unused_event_theguys_meet_1_{i++}", "* Together,^1 We Are...");
-	i = 0;
-	textdata_set($"unused_event_theguys_meet_2_{i++}", "* ... Da Guys!!!!");
-	textdata_set($"unused_event_theguys_meet_2_{i++}", "* Dat Right,^1 &Fancy Pants!^1 &* Da Guys!");
-	textdata_set($"unused_event_theguys_meet_2_{i++}", "* And Ya Made A Very Bad Mistake!");
-	textdata_set($"unused_event_theguys_meet_2_{i++}", "* a mistake not even&death can undo.");
-	textdata_set($"unused_event_theguys_meet_2_{i++}", "* You Invade We Territory!");
-	textdata_set($"unused_event_theguys_meet_2_{i++}", "* our private,^1 &private space.");
-	textdata_set($"unused_event_theguys_meet_2_{i++}", "* So,^1 In Conclusion ...");
-	textdata_set($"unused_event_theguys_meet_2_{i++}", "* We are going to kill you.");
-	textdata_set("room_m6_banner_0", "* (It's an old banner.)");
-	textdata_set("room_m6_banner_1", "* (The banner depicts MEE6 advertising a product&that you don't know.)");
-	textdata_set("room_m6_poster_0", "* (It's a poster.)");
-	textdata_set("room_m6_poster_1", "* (It says something about MEE6 remembering your birthday.)");
-	textdata_set("room_m6_poster_2", "* (There's also a drawing of&him wearing a birthday hat.)");
-	textdata_set("room_m6_papers_0", "* (It's a pair of&stapled papers.)");
-	textdata_set("room_m6_papers_1", "* (There's a license&agreement in it.)");
-	textdata_set("room_m6_papers_2", "* (You decide not to read.)");
-	textdata_set("room_m6_brokenwall_0", "* (There's an ant-sized toy&of MEE6 inside the crack&of this wall...)"); // from "UNDERTALE"; references a bug where a tiny MEE6 appeared next to the actual MEE6
-	textdata_set("room_m6_brokenwall_1", "* (Strangely,^1 the toy is depicting MEE6 as a&tall robot.)"); // references MEE6's old design
-	// room_corridors_3
-	i = 0;
-	textdata_set($"room_stairssign_{i++}", "* \"Hey!\"^1 &* \"It's great to have you here!\"");
-	textdata_set($"room_stairssign_{i++}", "* \"Pretty soon you'll be at the city,^3 don't worry.\"^1 &* \"This shouldn't take long.\"");
-	textdata_set($"room_stairssign_{i++}", "* \"Signed,^1 your local&Dumpster Friend\"");
+	/*sketch*/textdata_set($"room_stairssign_{i++}", "* \"Hey!\"^1 &* \"It's great to have you here!\"");
+	/*sketch*/textdata_set($"room_stairssign_{i++}", "* \"Pretty soon you'll be at the city,^3 don't worry.\"^1 &* \"This shouldn't take long.\"");
+	/*sketch*/textdata_set($"room_stairssign_{i++}", "* \"Signed,^1 your local&Dumpster Friend\"");
 	textdata_set($"unused_room_stairssign_{i++}", "* \"It's kind of a legal thing,^3 you know?\""); // from "Five Nights at Freddy's"
 	textdata_set("room_rulesbook_0", "* (It's a book titled&\"Server Rules\".)");
 	textdata_set("room_rulesbook_1", "* (Some pages are ripped off and others are full of drawings.)");
@@ -1078,16 +1056,10 @@ function textdataOLD()
 	textdata_set($"event_dummy_battle_0_{i++}", "* These creatures are wired to submit others to that :VACTIVITY;D.");
 	textdata_set($"event_dummy_battle_0_{i++}", "* Therefore,^1 you must be prepared for this kind of situation."); // inspired by "You will need to be prepared for this situation" from "UNDERTALE"
 	textdata_set($"event_dummy_battle_0_{i++}", "* Approach the training dummy and subject it&to :Y[Battle Together];D.");
-	textdata_set($"unused_event_dummy_battle_0_{i++}", "* ... similar to how you were assaulted by that snake-like creature.");
-	i = 0;
-	textdata_set($"npc_dummy_{i++}", "* (It's a training dummy.)");
-	textdata_set($"npc_dummy_{i}", "* (Battle the dummy?)");
-	textdata_set($"npc_dummy_{i}_1", "Yes");
-	textdata_set($"npc_dummy_{i}_2", "No");
 	i = 0;
 	textdata_set($"event_dummy_battle_1_{i++}", "* Excellent work,^3 &:Onew member;D!");
 	textdata_set($"event_dummy_battle_1_{i++}", "* It was almost as if you had already played it&somewhere else...!"); // references "UNDERTALE"
-	/*sketch*/ textdata_set($"event_dummy_battle_1_{i++}", "* Regardless,^1 you are ready to defend yourself in case of danger.");
+	/*sketch*/textdata_set($"event_dummy_battle_1_{i++}", "* Regardless,^1 you are ready to defend yourself in case of danger.");
 	textdata_set($"event_dummy_battle_1_{i++}", "* We may now proceed&with our adventure!"); // inspired by "Let us move to the next room" from "UNDERTALE"
 	i = 0;
 	textdata_set($"event_dummy_battle_2_{i++}", "* You may have taken my \"fight back\" statement too literally.");
@@ -1096,11 +1068,34 @@ function textdataOLD()
 	i = 0;
 	textdata_set($"event_dummy_battle_3_{i++}", "* You were not supposed&to :Y[Spare];D it yet.");
 	textdata_set($"event_dummy_battle_3_{i++}", "* Must I remind you to use :U[ITEM];D when necessary?");
+	i = 0;
+	textdata_set($"npc_dummy_{i++}", "* (It's a training dummy.)");
+	textdata_set($"npc_dummy_{i}", "* (Battle the dummy?)");
+	textdata_set($"npc_dummy_{i}_1", "Yes");
+	textdata_set($"npc_dummy_{i}_2", "No");
+	textdata_set("item_name_brick",				"Concrete Brick",	"Tijolo de Concreto");
+	textdata_set("item_name_brick_small",		"ConcBrick",		"TijoConcre");
+	textdata_set("item_name_brick_serious",		"");
+	textdata_set("item_info_brick_0", "* \"Concrete Brick\" :Y[+\\0 HP];D^3 &* (It's just a brick,^3 for Christ's sake.)");
+	i = 0;
+	textdata_set($"item_use_brick_{i}_0", "* (You shoved :YConcrete Brick;D in&your mouth and swallowed&it whole...)", "* (Você enfiou :YTijolo de Concreto;D dentro da sua boca e o engoliu por inteiro...)");
+	textdata_set($"item_use_brick_{i}_1", "* (You forcefully threw :YConcrete Brick;D against the floor.)", "* (Você jogou :YTijolo de Concreto;D contra o chão com muita força.)");
+	i += 1;
+	textdata_set($"item_use_brick_{i}_0", "* (Nothing happened.)", "* (Nada aconteceu.)");
+	textdata_set($"item_use_brick_{i}_1", "*^4 ?");
 	// room_corridors_4
 	i = 0;
-	textdata_set($"savepoint_0_{i++}", "* (Seeing dust on the colorless stairs and colorful flowers&in the grass...)\\");
-	textdata_set($"savepoint_0_{i++}", "* (You feel like this is&just the beginning to something big.)");
-	textdata_set($"savepoint_0_{i++}", "* (And that you should've&stayed at home,^3 too.)");
+	/*sketch*/textdata_set($"savepoint_0_{i++}", "* (Seeing dust build up on the stairs and flowers grow in the grass...)\\");
+	/*sketch*/textdata_set($"savepoint_0_{i++}", "* (You realize that none&of this makes sense.)");
+	/*sketch*/textdata_set($"savepoint_0_{i++}", "* (And that you probably should've stayed at home,^1 too...)");
+	textdata_set($"unused_savepoint_0_{i++}", "* (Seeing dust on the colorless stairs and colorful flowers&in the grass...)\\");
+	textdata_set($"unused_savepoint_0_{i++}", "* (You feel like this is&just the beginning to something big.)");
+	textdata_set($"unused_savepoint_0_{i++}", "* (And that you should've&stayed at home,^3 too.)");
+	textdata_set("savepoint_all_0", "* (Your :YHP;D has been&fully restored.)");
+	textdata_set("savepoint_all_1", "");
+	textdata_set("savepoint_all_1_1", "Save");
+	textdata_set("savepoint_all_1_2", "Back");
+	textdata_set("savepoint_all_2", "File saved.");
 	z = 0;
 	i = 0;
 	textdata_set($"npc_armsguy1_{z}_{i++}", "* Yo [name].^3 &* Ya A New Member?");
@@ -1114,7 +1109,7 @@ function textdataOLD()
 	textdata_set($"npc_armsguy1_{z}_{i++}", "* Be Cool With Monsters.^1 &* They Hurt Ya Because&They Scared Bro!");
 	textdata_set($"npc_armsguy1_{z}_{i++}", "* If Ya Don Hurt&Em,^1 Ya Cool.");
 	// room_corridors_5
-	/*sketch*/ textdata_set("event_m6_captcha1_0_0", "* This is the door that has trapped me here for all of this time.");
+	/*sketch*/textdata_set("event_m6_captcha1_0_0", "* This is the door that has trapped me here for all of this time.");
 	textdata_set("event_m6_captcha1_0_1", "* I have never been told the reason behind the puzzles' complexity.");
 	textdata_set("event_m6_captcha1_0_2", "* Regardless,^1 I believe you should read the&sign near the door.");
 	textdata_set("event_m6_captcha1_0_3", "* It may help you find the answer to the puzzles!");
@@ -1138,6 +1133,7 @@ function textdataOLD()
 	textdata_set($"unused_room_captcha1_{i++}", "JELLYFISH");
 	textdata_set($"unused_room_captcha1_{i++}", "CLOWNFISH");
 	// room_corridors_6
+	textdata_set("room_candysign_0", "* \"Thank you for completing stage one of reCAPTCHA's verification.\"");
 	textdata_set("room_candybowl_0_0_0", "* (It's a candy bowl.)");
 	textdata_set("room_candybowl_0_0_1", "^1 &* (There ");
 	textdata_set("room_candybowl_0_0_2", "is ");
@@ -1163,7 +1159,27 @@ function textdataOLD()
 	textdata_set("room_candybowl_3_1", "* (The pillar had a candy bowl on it before you took both the candies and the bowl.)");
 	textdata_set("room_candybowl_3_2", "* (By the way,^3 you can take the pillar and use it as...^1 Wait.)^3 &* (No,^1 that's wrong.)");
 	textdata_set("room_candybowl_3_3", "* (You can't take the pillar.)^1 &* (Sorry!)");
-	textdata_set("room_candysign_0", "* \"Thank you for completing stage one of reCAPTCHA's verification.\"");
+	textdata_set("item_name_candy",				"Cheap Candy",	"Doce Barato");
+	textdata_set("item_name_candy_small",		"CheapCandy",	"DoceBarato");
+	textdata_set("item_name_candy_serious",		"Candy",		"Doce");
+	textdata_set("item_info_candy_0", "* \"Cheap Candy\" :Y[+\\7 HP];D^3 &* (:U1/7;D chance to restore additional :YHP;D when eaten.)", "* \"Doce Barato\" :Y[+\\7 HP];D^3 &* (:U1/7;D de chance de recuperar&:YHP;D extra ao ser usado.)"); // "+7 HP" and "1/7 chance" references the Brazilian candy "7-Belo"
+	textdata_set("item_name_bowl",				"Candy Bowl",	"Tigela de Doces");
+	textdata_set("item_name_bowl_small",		"",				"TijelaDoce");
+	textdata_set("item_name_bowl_serious",		"Bowl",			"Tijela");
+	textdata_set("item_info_bowl_0", "* \"Candy Bowl\" :B[+\\3 DEF];D^3 &* (:U1/7;D chance to fully block damage when hurt.)", "* \"Tigela de Doces\" :B[+\\3 DEF];D^3 &* (:U1/7;D de chance de bloquear dano por completo.)");// "1/7 chance" references the Brazilian candy "7-Belo"
+	i = 0;
+	textdata_set($"item_use_{i++}", "* (You used", "* (Você usou");
+	textdata_set($"item_use_{i++}", "* (You restored", "* (Você recuperou");
+	textdata_set($"item_use_{i++}", "* (Your :YHP;D was maxed out.)", "* (Seu :YHP;D foi maximizado.)");
+	textdata_set("item_equip", "* (You equipped", "* (Você equipou");
+	i = 0;
+	textdata_set($"item_drop_{i++}", "was dumped.)", "foi jogado no lixo.)"); // references Dumpgame itself
+	textdata_set($"item_drop_{i++}", "was kicked.)", "foi expulso.)"); // references kicking members from a Discord server
+	textdata_set($"item_drop_{i++}", "was banned.)", "foi banido.)"); // references banning members from a Discord server
+	textdata_set($"item_drop_{i++}", "was blocked.)", "foi bloqueado.)"); // references blocking users on Discord
+	textdata_set($"item_drop_{i++}", "was ignored.)", "foi ignorado.)"); // references ignoring users on Discord
+	textdata_set("item_pickup", "* (You got", "* (Você conseguiu");
+	textdata_set("item_cantpickup", "* (Your :YINVENTORY;D is full...)", "* (Seu :YINVENTÁRIO;D está cheio...)");
 	// room_corridors_7
 	textdata_set("room_relaxsign_0", "* \"Hey!\"^1 &* \"Getting tired with all&the walking and reading?\"");
 	textdata_set("room_relaxsign_1", "* \"Why not take a break?\"^3 &* \"Make yourself comfortable!\"");
@@ -1202,9 +1218,13 @@ function textdataOLD()
 	textdata_set("npc_armsguy_lost_1_1_4_1", "* Dump Sumthin And Me Give Ya Gift.");
 	textdata_set("npc_armsguy_lost_1_2_0", "* Wat?^3 Didn Like It?^2 &* Deal With It");
 	textdata_set("npc_trashguy_lost2", "* ...thanks...");
+	textdata_set("item_name_trident",			"Enchanted Trident",	"Tridente Encantado");
+	textdata_set("item_name_trident_small",		"EncTrident",			"TrideEncan");
+	textdata_set("item_name_trident_serious",	"Trident",				"Tridente");
+	textdata_set("item_info_trident_0", "* \"Enchanted Trident\" :R[+\\3 ATK];D^3 \\&* (Summons a lightning when :RATTACKing;D at the center mark.)", "* \"Tridente Encantado\" :R[+\\3 ATQ];D^3 \\&* (Invoca um raio ao :RATACAR;D&na linha de centro.)"); // references Minecraft's "Trident" item with "Channeling" enchantment
 	// room_corridors_9
-	textdata_set("event_m6_captcha2_0", "* Here comes more extremely difficult puzzles for you.");
-	textdata_set("event_m6_captcha2_1", "* The faster we go,^3 &the sooner we leave&this place.");
+	/*sketch*/textdata_set("event_m6_captcha2_0", "* Here comes more extremely difficult puzzles for you.");
+	/*sketch*/textdata_set("event_m6_captcha2_1", "* The faster we go,^3 &the sooner we leave&this place.");
 	textdata_set("room_captcha_mainsign_2_0", "* \"reCAPTCHA\\:  Stage 2/3\"");
 	textdata_set("room_captcha_mainsign_2_1", "* \"Please solve three puzzles&to confirm you are a human.\"");
 	textdata_set("room_captcha_guidesign_2_0", "* \"Push the box to the 'X'&on the white path.\"");
@@ -1217,6 +1237,8 @@ function textdataOLD()
 	textdata_set("event_m6_postcaptcha2_0", "* How are you able to solve them so easily?!");
 	textdata_set("event_m6_postcaptcha2_1", "* Regardless,^1 let us proceed with our adventure!");
 	// room_corridors_10
+	textdata_set("room_chocosign", "* \"          for completing&           f reCAPTCHA's&           n.\"");
+	textdata_set("room_chocosign_geno", "* (The left half of this&sign is missing.)");
 	textdata_set("room_chocobowl_0", "* (It's a seriously damaged chocolate bowl.)");
 	textdata_set("room_chocobowl_1", "* (There's only one chocolate left,^1 lying on the floor.)");
 	textdata_set("room_chocobowl_2", "* (Take the chocolate?)");
@@ -1225,8 +1247,10 @@ function textdataOLD()
 	textdata_set("room_chocobowl_3_0", "* (You took the chocolate.)^3 &* (You got :YChocolate Bar;D.)");
 	textdata_set("room_chocobowl_3_1", "* (Your inventory is full.)");
 	textdata_set("room_chocobowl_4", "* (You already have a&bowl on your head.)");
-	textdata_set("room_chocosign", "* \"          for completing&           f reCAPTCHA's&           n.\"");
-	textdata_set("room_chocosign_geno", "* (The left half of this&sign is missing.)");
+	textdata_set("item_name_choco",				"Chocolate Bar",	"Barra de Chocolate");
+	textdata_set("item_name_choco_small",		"ChocolaBar",		"BarraChoco");
+	textdata_set("item_name_choco_serious",		"Chocolate");
+	textdata_set("item_info_choco_0", "* \"Chocolate Bar\" :Y[+\\14 HP];D^3 \\&* (Very sticky,^3 but lactose-free.)", "* \"Barra de Chocolate\" :Y[+\\14 HP];D^3 \\&* (Preguento,^3 mas zero lactose.)"); // "+14 HP" is the double of Cheap Candy's "+7 HP", and this item references "Nestlé Classic Duo" (double chocolate bar)
 	// room_corridors_11
 	textdata_set("room_preclocksign_0", "* \"Hey!\"^1 &* \"Don't worry,^3 you're almost there.^3 Just a few rooms away!\"");
 	textdata_set("room_preclocksign_1", "* \"Why not speed up a&bit and finish early?\"^1 &* \"Think of it like this\\:\\\"");
@@ -1234,7 +1258,7 @@ function textdataOLD()
 	textdata_set("room_preclocksign_3", "* \"Does that make sense?\"^1 &* \"Don't mind answering,^3 &I'm just a sign.\""); // inspired by "does that make sense?" from "UNDERTALE"
 	textdata_set("room_preclocksign_4", "* \"Signed,^1 your local&Dumpster Friend\"");
 	i = 0;
-	textdata_set($"savepoint_2_{i++}", "* (hello)");
+	/*sketch*/textdata_set($"savepoint_2_{i++}", "* (hello)");
 	i = 0;
 	textdata_set($"unused_genodialog_0_{i++}", "* (You feel the power in your hands...)");
 	textdata_set($"unused_genodialog_0_{i++}", "* (... and the strength crossing through your veins.)");
@@ -1281,6 +1305,10 @@ function textdataOLD()
 	textdata_set($"event_brock_battle_4_{i++}_1", "* Again,^1 thanks to you,^1 &we slowly approach the exit of :GCorridors;D.");
 	textdata_set($"event_brock_battle_4_{i++}_1_geno", "* ...^2 What did you say?^1 &* I was not skeptical&of your abilities.");
 	textdata_set($"event_brock_battle_4_{i++}_1_geno", "* You are the one who interpreted it incorrectly.");
+	textdata_set("item_name_pace",			"Temporary Pacemaker",	"Marcapasso Temporário"); // "Temporary" references Broken Clock, but also explains why the player can equip the item without surgery; "Pacemaker" references both Broken Clock and the player's SOUL
+	textdata_set("item_name_pace_small",	"TempoPacer",			"MarcaTempo");
+	textdata_set("item_name_pace_serious",	"Pacemaker",			"Marcapasso");
+	textdata_set("item_info_pace_0", "* \"Temporary Pacemaker\" :B[+\\6 \\DEF];D^3 \\&* (Increases the duration of :PINVINCIBILITY FRAMES;D by :U50%;D.)", "* \"Marcapasso Temporário\" :B[+\\6 DEF];D^3 \\&* (Prolonga a duração dos :PFRAMES DE INVENCIBILIDADE;D em :U50%;D.)");
 	i = 0;
 	textdata_set($"room_trollwall_{i++}", "* (A thick, oily substance is leaking from between the bricks of this wall...)"); // references TROLLFACE's oil attack
 	textdata_set($"room_trollwall_{i++}", "* (It seems irrelevant for now.)");
@@ -1305,6 +1333,16 @@ function textdataOLD()
 	textdata_set($"npc_flitcher_postbrock_{i++}", "* (...)^4 &* (It doesn't really matter.)"); // inspired by "Tra la la. What's my name? ... It doesn't really matter." from "UNDERTALE"
 	textdata_set($"npc_flitcher_postbrock_{i++}_geno", "* (It's a Flitcher.)");
 	// room_corridors_14
+	i = 0;
+	textdata_set($"event_m6_captcha3_{i}", "* Here we are.^1 \\&* The last stage of nearly unsolvable puzzles.");
+	textdata_set($"event_m6_captcha3_{i}_geno", "* Here we are!^1 \\&* The last stage of nearly unsolvable puzzles!");
+	i += 1;
+	textdata_set($"event_m6_captcha3_{i}", "* Based on other members' experiences,^1 you may&not succeed at first.");
+	i += 1;
+	textdata_set($"event_m6_captcha3_{i}", "* I suggest you read the introductory sign.");
+	textdata_set($"event_m6_captcha3_{i}_geno", "* I suggest you&read the,^1 uh...");
+	i += 1;
+	textdata_set($"event_m6_captcha3_{i}_geno", "* ...^2 Why are you&looking at me&like that?");
 	textdata_set("room_captcha_mainsign_3_0", "* \"reCAPTCHA\\:  Stage 3/3\"");
 	textdata_set("room_captcha_mainsign_3_1", "* \"Please solve three puzzles&to confirm you are a human.\"");
 	textdata_set("room_captcha_mainsign_3_2", "* \"You have :Rone minute;D&to solve the puzzles.\"");
@@ -1320,7 +1358,7 @@ function textdataOLD()
 	// room_corridors_17
 	i = 0;
 	textdata_set($"savepoint_4_{i++}", "* (Seeing monsters you've met peacefully living their day-to-day lives...)");
-	textdata_set($"savepoint_4_{i++}", "* (You realize this world might not be as weird as you originally thought.)");
+	/*sketch*/textdata_set($"savepoint_4_{i++}", "* (You realize this world might not be as weird as you originally thought.)");
 	z = 0;
 	i = 0;
 	textdata_set($"npc_armsguy_exit_{z}_{i++}", "* Ya Da New Member?^1 &* Bro Dat Cool.^3 &* Ya Da First Since Da Raid!");
@@ -1354,9 +1392,15 @@ function textdataOLD()
 	textdata_set("npc_flitcher_exit_geno_0", "* (It's a Flitcher.)");
 	textdata_set("room_corridors_17_egg.0", "* (It's an egg.)");
 	textdata_set("room_corridors_17_egg.1", "* (It's unclear why there's&an egg beside the tree.)"); // from "DELTARUNE"
+	textdata_set("item_name_brick2",			"Metal Brick",	"Tijolo de Metal");
+	textdata_set("item_name_brick2_small",		"MetalBrick",	"TijoMetal");
+	textdata_set("item_name_brick2_serious",	"");
+	i = 0;
+	textdata_set($"item_info_brick2_{i++}", "* \"Metal Brick\"^3 \\&* (It's a very unusual brick...)"); // inspired by "It's a very unusual knife" from "12 Angry Men" (1957)
+	textdata_set($"item_info_brick2_{i++}", "* (It seems irrelevant for now.)");
 	// room_corridors_18
 	textdata_set("room_corridors_18_sign.0", "* \"New member,^1 you are at&the Corridors' edge.\"");
-	textdata_set("room_corridors_18_sign.1", "* \"Soon you'll be at the&Central City,^1 the home&of members like you.\"");
+	/*sketch*/textdata_set("room_corridors_18_sign.1", "* \"Soon you'll be at the&Central City,^1 the home&of members like you.\"");
 	textdata_set("room_corridors_18_sign.2", "* \"But,^1 before that,^1 there's one&last thing you have to do.\"");
 	textdata_set("room_corridors_18_sign.3", "* \"Face your last challenge before leaving this place.\"");
 	textdata_set("room_corridors_18_sign.4", "* \"Prove yourself worthy&by walking through this unnecessarily long corridor.\"");
@@ -1423,42 +1467,3 @@ function textdataOLD()
 	textdata_set("unused_genodialog_1_1", "* (However,^1 your urge is far to being fulfilled.)");
 	textdata_set("unused_genodialog_1_1", "* (But nobody came.)");
 }
-/*
-textdata_set("intro_0", "Long ago,^1 three friends had met each other during class.^2");
-textdata_set("intro_1", "After some time,^1 they decided to create a server in Discord.^2");
-textdata_set("intro_2", "As the years went by,^1 new members had joined the server.^2");
-textdata_set("intro_3", "One day,^1 the owner was testing a new Discord feature.^2");
-textdata_set("intro_4", "But it went very,^1 very wrong.^2^2^2^1");
-textdata_set("intro_5", "Many years later^2.^2.^2.^2^2^1");
-textdata_set("intro_6", "FORTALEZA - \\11/14/2022");
-textdata_set("intro_7", "A brazilian boy was practing soccer in&a football pitch.");
-textdata_set("intro_8", "By mistake,^1 the ball fell inside a strange dumpster nearby.");
-textdata_set("intro_9", "When the boy was trying to get the ball,^1 he fell inside the dumpster.");
-textdata_set("intro_10", "The bottom of the dumpster opened,^1 revealing a giant portal.");
-textdata_set("intro_11", "The boy fell inside the portal and he was taken to another world.^2");
-*/
-/*
-msg[0] = "Long ago,^1 three friends&!met each other&!during class."; //"Long ago,^1 two races&!ruled over Earth:^1 &!HUMANS and MONSTERS."
-msg[1] = "After some time,^1 they&!decided to create a&!server in Discord.";
-msg[2] = "As months went by,^1 &!new members joined&!the server.";
-msg[3] = "One day,^1 the server's&!owner was conducting&!experiments in his room.";
-msg[4] = "But it went very,^1 &!very wrong.";
-msg[5] = "Many years later^2^3.^2^3.^2^3.";
-msg[6] = "    CEARÁ,^1 BRAZIL";
-msg[7] = "A brazilian boy was&!playing soccer alone&!in a football pitch.";
-msg[8] = "Suddenly,^1 a white flash&!of light came from a&!dumpster nearby.";
-msg[9] = "Curious, the boy approached the&!dumpster to search the&!origin of the light."
-msg[10] = "He was then gone as if&!nothing happened.";
-*/
-/*
-msg[0] = "Long ago,^1 a group of&!three friends created&!a server in Discord.^2^3";
-msg[1] = "As the months went by,^1 &!new members joined&!the server.^2^3";
-msg[2] = "One day,^1 the server's&!owner was conducting&!experiments in his room.^2^3";
-msg[3] = "But it all went very,^1 &!very wrong.^2^3";
-msg[4] = "Several years later^2^3.^2^3.^2^3.^2^1";
-msg[5] = "        BRAZIL&       2022^2^3";
-msg[6] = "A boy was playing soccer&!alone in a football&!pitch.";
-msg[7] = "Suddenly,^1 a white flash&!of light came from a&!dumpster nearby.";
-msg[8] = "The boy&!slowly approached the dumpster.";
-msg[9] = "He was then gone as if&!nothing had happened.";
-*/

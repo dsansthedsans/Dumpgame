@@ -61,6 +61,8 @@ if (msg[page] != "%%%") || (question[page] != "%%%")
 			create_notification("monstninja");
 		}
 	}
+	if (global.flag[72] != undefined && global.flag[72] == 0.5)
+		global.flag[72] = true;
 	if (text == "battle_act_brock3" && enemy.convince >= 5 && page >= 11)
 		enemy.body.tense = true;
 }

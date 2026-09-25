@@ -51,6 +51,8 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			global.battle_nextgroup = 1;
 		if (keyboard_check(vk_backspace) == 1)
 			global.battle_nextgroup = 12;
+		if (keyboard_check(vk_delete) == 1)
+			global.battle_nextgroup = 4;
 		battle();
 	}
 	if (keyboard_check(ord("E")) == true && keyboard_check(vk_end) == true && exists(obj_battle_controller) == true)
@@ -83,8 +85,12 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			global.chara_kills += global.world_maxpopulation[chara_world()];
 			global.world_curpopulation[chara_world()] = 0;
 			global.flag[22] = true;
-			if (global.flag[39] == true)
+			if (array_get_index(global.room_order, room) >= array_get_index(global.room_order, room_corridors_13))
+			{
+				global.flag[37] = true;
 				global.flag[38] = true;
+				global.flag[39] = true;
+			}
 		}
 		
 	}

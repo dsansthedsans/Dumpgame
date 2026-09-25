@@ -135,10 +135,10 @@ function TEXT()
 		}
 	}
 	// room_corridors_3
-	if (text == "unused_room_stairssign")
+	if (text == "room_stairssign")
 	{
-		for (var m = 0; m < 4; m++)
-			msg[m] = textdata_get($"unused_room_stairssign_{m}");
+		for (var m = 0; m < 3; m++)
+			msg[m] = textdata_get($"room_stairssign_{m}");
 	}
 	if (text == "room_rulesbook")
 	{
@@ -439,7 +439,11 @@ function TEXT()
 	if (text == "itemDropped_pickup")
 		msg[0] = $"{textdata_get("item_pickup")} :Y{infoArray[0]};D.)";
 	if (text == "itemDropped_cantpickup")
+	{
 		msg[0] = textdata_get("item_cantpickup");
+		audio_play(snd_option_cantselect, false, VOLUME_SOUND);
+		shakescreen(2, 2);
+	}
 	// room_corridors_7
 	if (text == "room_relaxsign")
 	{
@@ -701,6 +705,7 @@ function TEXT()
 				msg_face[3] = spr_dialogface_m6_angry;
 				msg_sound[3] = snd_writer_m6_angry;
 				msg_talker[3] = global.party[0];
+				global.flag[72] = 0.5;
 			}
 			else 
 			{
@@ -710,6 +715,7 @@ function TEXT()
 					msg[i] = textdata_get($"event_brock_battle_4_{i}_1_geno");
 					msg[i+1] = textdata_get($"event_brock_battle_4_{i+1}_1_geno");
 					msg_face[i] = spr_dialogface_m6_angry;
+					global.flag[72] = 0.5;
 				}
 			}
 			break;
@@ -772,15 +778,35 @@ function TEXT()
 	// room_corridors_14
 	if (text == "event_m6_captcha3")
 	{
-		msg[0] = "* Hey!^1&* This is already CAPTCHA's last stage!";
-		msg[1] = "* As far as I can recall,^1 this is the hardest one.";
-		msg[2] = "* However,^1 that is not going to be a problem for you.";
-		msg[3] = "* And soon enough,^1 we&will be leaving&the :RCORRIDORS;D.";
-		msg[4] = "* Any more dangers like that clock will not appear.";
-		msg[5] = "* In any way,^1 I will leave it up to you.";
-		msg_face[0] = spr_dialogface_m6_default;
-		msg_face[1] = spr_dialogface_m6_neutral;
-		msg_face[2] = spr_dialogface_m6_default;
+		for (var i = 0; i < 99; i++)
+		{
+			var _msg_id = $"{text}_{i}";
+			if (i == 0 && global.flag[72] != undefined && global.flag[72] < 1)
+				_msg_id += "_geno";
+			else if ((i == 2 || i == 3) && chara_murder() >= 1)
+				_msg_id += "_geno";
+			var _msg = textdata_get(_msg_id);
+			if (_msg == undefined) || (_msg == "Salenis")
+				break;
+			msg[i] = _msg;
+		}
+		if (global.flag[72] == true && chara_murder() < 1)
+			msg_face[0] = spr_dialogface_m6_serious;
+		else if (global.flag[72] == true && chara_murder() >= 1)
+		{
+			msg_face[0] = spr_dialogface_m6_neutral;
+			msg_face[3] = spr_dialogface_m6_angry;
+			if (global.flag[38] == false)
+				msg_face[0] = spr_dialogface_m6_serious;
+		}
+		else if (global.flag[72] != undefined && global.flag[72] < 1)
+		{
+			msg_face[0] = spr_dialogface_m6_default;
+			msg_face[1] = spr_dialogface_m6_neutral;
+			msg_face[2] = spr_dialogface_m6_default;
+			if (chara_murder() >= 1)
+				msg_face[3] = spr_dialogface_m6_neutral;
+		}
 		msg_sound[0] = snd_writer_m6;
 	}
 	if (text == "room_captcha_mainsign_3")
@@ -969,6 +995,7 @@ function TEXT()
 				msg[m] = textdata_get($"event_gabee_chase.0.{m}_geno");
 				msg[m+1] = textdata_get($"event_gabee_chase.0.{m+1}_geno");
 				msg_face[m] = spr_dialogface_m6_angry;
+				global.flag[72] = 0.5;
 			}
 			break;
 			case 1:
@@ -1260,12 +1287,12 @@ function TEXT()
 			if (_type == 3)
 			{
 				_name = "trashguy";
-				_max = 4;
+				_max = 3;
 			}
 			if (_type == 4)
 			{
 				_name = "flitcher";
-				_max = 5;
+				_max = 4;
 			}
 			if (_type == 5)
 			{
@@ -1315,58 +1342,55 @@ function TEXT()
 				if (_num > _max)
 					_num = irandom(_max);
 				msg[0] = textdata_get("battle_main_" + string(_name) + "_" + string(_num));
-			}
-			if (msg[0] == undefined) || (msg[0] == "Salenis")
-				msg[0] = "* Salenis";
-			
-			// old main msg
-			if (controller.battle_oldmainmsg != "%%%")
-				msg[0] = controller.battle_oldmainmsg;
-			controller.battle_oldmainmsg = msg[0];
-			
-			// can spare
-			var _amt = 0;
-			var _enemy1 = -1;
-			var _enemy2 = -1;
-			var _enemy3 = -1;
-			for (var i = 0; i < controller.enemy_length; i++)
-			{
-				name[i] = "";
-				if (controller.enemy_type[i] != 0 && controller.enemy_spare[i] >= 100)
+				if (msg[0] == undefined) || (msg[0] == "Salenis")
+					msg[0] = "* Salenis";
+				// old main msg
+				if (controller.battle_oldmainmsg != "%%%")
+					msg[0] = controller.battle_oldmainmsg;
+				controller.battle_oldmainmsg = msg[0];
+				// can spare
+				var _amt = 0;
+				var _enemy1 = -1;
+				var _enemy2 = -1;
+				var _enemy3 = -1;
+				for (var i = 0; i < controller.enemy_length; i++)
 				{
-					name[i] = controller.enemy_name[i];
-					_amt += 1;
+					name[i] = "";
+					if (controller.enemy_type[i] != 0 && controller.enemy_spare[i] >= 100)
+					{
+						name[i] = controller.enemy_name[i];
+						_amt += 1;
 					
-					if (_enemy1 == -1)
-						_enemy1 = i;
-					else if (_enemy2 == -1)
-						_enemy2 = i;
-					else if (_enemy3 == -1)
-						_enemy3 = i;
+						if (_enemy1 == -1)
+							_enemy1 = i;
+						else if (_enemy2 == -1)
+							_enemy2 = i;
+						else if (_enemy3 == -1)
+							_enemy3 = i;
+					}
 				}
-			}
-			if (_amt > 0)
-			{
-				var _custom = 0;
-				if (controller.enemy_type[_enemy1] == 3 && controller.enemy_obj[_enemy1].kicked == 1)
-					_custom = 1;
-				if (controller.enemy_type[_enemy1] == 5 && controller.enemy_obj[_enemy1].hypnotized >= 1)
-					_custom = 2;
-				if (controller.enemy_type[_enemy1] == 7 && controller.enemy_obj[_enemy1].punched == 1 && controller.enemy_obj[_enemy1].terrorized == 1)
-					_custom = 3;
-				if (controller.enemy_type[_enemy1] == 6 && controller.enemy_obj[_enemy1].convince >= 5)
+				if (_amt > 0)
 				{
-					_custom = 4;
-					if (chara_murder() >= 1)
-						_custom = 5;
+					var _custom = 0;
+					if (controller.enemy_type[_enemy1] == 3 && controller.enemy_obj[_enemy1].kicked == 1)
+						_custom = 1;
+					if (controller.enemy_type[_enemy1] == 5 && controller.enemy_obj[_enemy1].hypnotized >= 1)
+						_custom = 2;
+					if (controller.enemy_type[_enemy1] == 7 && controller.enemy_obj[_enemy1].punched == 1 && controller.enemy_obj[_enemy1].terrorized == 1)
+						_custom = 3;
+					if (controller.enemy_type[_enemy1] == 6 && controller.enemy_obj[_enemy1].convince >= 5)
+					{
+						_custom = 4;
+						if (chara_murder() >= 1)
+							_custom = 5;
+					}
+					msg[0] = $"* ({name[_enemy1]}{textdata_get("battle_main_sparing_0_" + string(_custom))})";
+					if (_amt == 2)
+						msg[0] = "* " + string(name[_enemy1]) + textdata_get("battle_main_sparing_1_0") + string(name[_enemy2]) + textdata_get("battle_main_sparing_1_1");
+					else if (_amt == 3)
+						msg[0] = "* " + string(name[_enemy1]) + ", " + string(name[_enemy2]) + textdata_get("battle_main_sparing_1_0") + string(name[_enemy3]) + textdata_get("battle_main_sparing_1_1");
 				}
-				msg[0] = "* " + string(name[_enemy1]) + textdata_get("battle_main_sparing_0_" + string(_custom));
-				if (_amt == 2)
-					msg[0] = "* " + string(name[_enemy1]) + textdata_get("battle_main_sparing_1_0") + string(name[_enemy2]) + textdata_get("battle_main_sparing_1_1");
-				else if (_amt == 3)
-					msg[0] = "* " + string(name[_enemy1]) + ", " + string(name[_enemy2]) + textdata_get("battle_main_sparing_1_0") + string(name[_enemy3]) + textdata_get("battle_main_sparing_1_1");
 			}
-			
 			// special
 			if (controller.battle_group == 1) // Dummy
 			{
