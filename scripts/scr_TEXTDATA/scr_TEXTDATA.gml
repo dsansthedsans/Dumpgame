@@ -375,6 +375,11 @@ function textdata()
 	textdata_set($"battle_flee_{i++}", "* Leave a message&   after the tone.", "* Deixe uma mensagem&   após o sinal.");
 	textdata_set($"battle_flee_geno", "+S3* In my way.", "+S3* Em meu caminho."); // from "UNDERTALE"
 	textdata_set("battle_nobody", "* But nobody came.", "* Mas ninguém veio."); // from "UNDERTALE"
+	i = 0;
+	textdata_set($"battle_nobody_{i++}", "* Somebody is dead because of you."); // from "UNDERTALE"
+	textdata_set($"battle_nobody_{i++}", "* What made you wake up?"); // from "UNDERTALE"
+	textdata_set($"battle_nobody_{i++}", "* Kill or be killed."); // from "UNDERTALE"
+	textdata_set($"battle_nobody_{i++}", "* Do you think even the worst person can change?"); // from "UNDERTALE"
 		// TESTGUY's battle
 	textdata_set("battle_main_test", "* (Ugh...^1 That TESTGUY again?!)");
 	i = 0;
@@ -412,7 +417,7 @@ function textdata()
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* Another method is through friendly conversation.", "* Outro método é através de conversas amigáveis."); // "[...] strike up a friendly conversation" from "UNDERTALE"
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* Within the :U[ACT];D button,^1 you can :Y[Check];D an enemy of your choice.", "* Dentro do botão :U[AGIR];D,^1 você pode :Y[Checar];D um inimigo de sua escolha.");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* The :Y[Check];D option provides more details about the chosen enemy.", "* A opção :Y[Checar];D fornece mais informações sobre o inimigo escolhido.");
-	textdata_set($"battle_main_dummy_{z}_{i++}", "* Simply put,^1 it is easier for it to like you if you know what it likes.", "* Em resumo,^1 fazê-lo gostar de você é fácil sabendo do que ele gosta.");
+	textdata_set($"battle_main_dummy_{z}_{i++}", "* Simply put,^1 it is easier for it to like you if you know what it likes.", "* Em resumo,^1 fazê-lo gostar de você é fácil ao saber do que ele \\gosta.");
 	textdata_set($"battle_main_dummy_{z}_{i++}", "* :6@MEE6;D wants you to use :Y[Check];D.\\", "* :6@MEE6;D quer que&você use :Y[Checar];D.");
 	z += 2;
 	i = 0;
@@ -448,8 +453,8 @@ function textdata()
 	textdata_set("battle_act_result_dummy_1_1_0_1_2", "birds", "pássaros");
 	textdata_set("battle_act_result_dummy_1_1_0_1_3", "bees", "abelhas");
 	textdata_set("battle_act_result_dummy_1_1_0_2", " with Dummy.)", " com Dummy.)");
-	textdata_set("battle_act_result_dummy_1_1_1", "* (The blush on her face&seems to get redder...)^3 &* (Dummy's :YMERCY;D up :U100%;D!)", "* (O rosto dela parece&ficar mais rosa...)^3 &* (Sua :YPIEDADE;D cresceu :U100%;D!)");
-	textdata_set("battle_act_result_dummy_2_0", "* (You loudly scream&to Dummy's face.)", "* (Você grita na cara de Dummy.)");
+	textdata_set("battle_act_result_dummy_1_1_1", "* (The blush on her face&seems to get redder...)^3 &* (Dummy's :YMERCY;D up :U100%;D!)", "* (O rosto dela parece&ficar mais rosa...)^3 &* (Sua :YPIEDADE;D subiu :U100%;D!)");
+	textdata_set("battle_act_result_dummy_2_0", "* (You loudly scream&to Dummy's face.)", "* (Você grita na cara da Dummy.)");
 	textdata_set("battle_act_result_dummy_2_1", "* (Tears flow down&out of her eyes.)", "* (Lágrimas escorrem&de seus olhos.)");
 	i = 0;
 	textdata_set($"battle_act_result_dummy_2_2_{i++}", "* That was the&wrong option.", "* Essa é a opção errada.");
@@ -470,7 +475,7 @@ function textdata()
 	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy drinks his own sweat and realizes it isn't sweat.)", "* (Armsguy bebe seu próprio suor e percebe que não é suor.)");
 	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy kisses his own arm and gets slime around his mouth.)", "* (Armsguy beija o próprio braço e fica com slime na boca.)");
 	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy finds a wet sock inside his mouth and&throws it away.)", "* (Armsguy encontra uma meia molhada dentro da boca e&joga-a para longe.)");
-	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy pulls rotten&meat out of his mouth&and eats it again.)", "* (Armsguy puxa uma carne podre de dentro da boca e come-a de novo.)");
+	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy pulls rotten&meat out of his mouth&and eats it again.)", "* (Armsguy puxa uma carne&podre de dentro da boca&e come-a de novo.)");
 	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is munching&on a dirty needle.)", "* (Armsguy está mastigando&uma seringa suja.)"); // inspired by "Armsguy munches on a dirty needle" by Mawri
 	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is punching the air in an attempt to intimidate you.)", "* (Armsguy está dando socos no ar na tentativa de te assustar.)");
 	textdata_set($"battle_main_armsguy_{i++}", "* (Armsguy is calling the other monsters in the room to watch him destroy you.)", "* (Armsguy está chamando os outros monstros no quarto&para vê-lo te destruir.)");
@@ -484,7 +489,7 @@ function textdata()
 	textdata_set("battle_act_result_armsguy_1_0", "* (You try to take some slime from Armsguy's arms,^3 but he slaps your hand away...)", "* (Você tenta tirar o slime dos braços do Armsguy,^3 mas ele dá um tapa na sua mão...)");
 	textdata_set("battle_act_result_armsguy_1_1", "* (Armsguy's :YMERCY;D down :R100%;D.)", "* (:YPIEDADE;D do Armsguy caiu :R100%;D.)");
 	textdata_set("battle_act_result_armsguy_2_0", "* (You punch Armsguy's face pretending to use your&full strength...)", "* (Você bate no rosto do Armsguy fingindo que é com força...)");
-	textdata_set("battle_act_result_armsguy_2_1", "* (Armsguy's :YMERCY;D up :U100%;D!)", "* (:YPIEDADE;D do Armsguy&cresceu :U100%;D!)");
+	textdata_set("battle_act_result_armsguy_2_1", "* (Armsguy's :YMERCY;D up :U100%;D!)", "* (:YPIEDADE;D do Armsguy&subiu :U100%;D!)");
 	textdata_set("battle_bubble_armsguy_0", "+F1Lemme Be Slimy.", "+F1Decha Eu Ser Slime.");
 	textdata_set("battle_bubble_armsguy_1", "+F1Punch Me In Da Face!", "+F1Bater Eu Na Cara!");
 	textdata_set("battle_bubble_armsguy_2", "+F1Use Ya Strength In Me!", "+F1Usar Vc Forca Em Eu!");
@@ -519,9 +524,9 @@ function textdata()
 	textdata_set("battle_act_result_trashguy_0_0", "* \"Trashguy\" :R[4 ATK ;D| :B7 DEF];D^3 &* (A mysterious creature who lives inside a trash can.)", "* \"Trashguy\" :R[4 ATQ ;D| :B7 DEF];D^3 &* (Uma criatura misteriosa que vive dentro de uma lixeira.)");
 	textdata_set("battle_act_result_trashguy_0_1", "* (Strangely,^1 they seriously&hate the smell of garbage.)", "* (Estranhamente,^1 ele odeia profundamente o cheiro de lixo.)");
 	textdata_set("battle_act_result_trashguy_1_0", "* (You reach into Trashguy's trash can and pull some&of the garbage out...)", "* (Você enfia a mão dentro da lata de lixo do Trashguy e&puxa lixo para fora...)");
-	textdata_set("battle_act_result_trashguy_1_1", "* (Trashguy's :YMERCY;D up :U100%;D!)", "* (:YPIEDADE;D do Trashguy&cresceu :U100%;D!)");
+	textdata_set("battle_act_result_trashguy_1_1", "* (Trashguy's :YMERCY;D up :U100%;D!)", "* (:YPIEDADE;D do Trashguy&subiu :U100%;D!)");
 	textdata_set("battle_act_result_trashguy_2_0", "* (You kick Trashguy's trash can with your full strength...)", "* (Você chuta a lata de lixo&do Trashguy com toda a sua força restante...)");
-	textdata_set("battle_act_result_trashguy_2_1", "* (Trashguy's :YMERCY;D up :R100%;D...?)", "* (:YPIEDADE;D do Trashguy&cresceu :R100%;D...?)");
+	textdata_set("battle_act_result_trashguy_2_1", "* (Trashguy's :YMERCY;D up :U100%;D...?)", "* (:YPIEDADE;D do Trashguy&subiu :R100%;D...?)");
 	i = 0;
 	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...i cant handle this smell...", "+F1...eu n aguento esse cheiro...");
 	textdata_set($"battle_bubble_trashguy_{i++}", "+F1...i just want all this trash to go away...", "+F1...eu so quero que todo esse lixo va embora...");
@@ -539,7 +544,7 @@ function textdata()
 	textdata_set($"battle_bubble_trashguy_empty_{i++}", "+F1...you didnt have to...", "+F1...voce n precisava...");
 	textdata_set($"battle_bubble_trashguy_empty_{i++}", "+F1...why are you being nice to me...?", "+F1...pq vc ta sendo legal comigo...?");
 	i = 0;
-	textdata_set($"battle_bubble_trashguy_kick_{i++}", "+F1...please,^1 stop...", "+F1...para,^1 pfv...");
+	textdata_set($"battle_bubble_trashguy_kick_{i++}", "+F1...please,^1 stop...", "+F1...pfv,^1 para...");
 	textdata_set($"battle_bubble_trashguy_kick_{i++}", "+F1...but why,^1 though...?", "+F1...mas pq...?"); // inspired by "Why, though?" from "Five Nights at Freddy's: Security Breach". I'm slightly embarrassed by this inspiration honestly
 	textdata_set($"battle_bubble_trashguy_kick_{i++}", "+F1...what did i do to you...?", "+F1...oq eu te fiz...?");
 		// Flitcher's battle
@@ -549,17 +554,17 @@ function textdata()
 	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher stares blankly&to north and south.)", "* (Flitcher olha fixamente&para norte e sul.)");
 	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher doesn't seem&to know why it's here.)", "* (Flitcher não parece saber&o porquê de estar aqui.)"); // from "UNDERTALE"
 	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher is moving its&tongue back and forth.)", "* (Flitcher está movendo&sua língua para frente&e para trás.)");
-	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher doesn't think,^3 therefore it isn't.)", "* (Flitcher não&pensa,^3 logo&não é.)"); // references "I think, therefore I am".
+	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher doesn't think,^3 therefore it isn't.)", "* (Flitcher não pensa,^3 \\&logo não é.)"); // references "I think, therefore I am"
 	textdata_set($"battle_main_flitcher_{i++}", "* (Flitcher is daydreaming.)", "* (Flitcher está no&mundo da lua.)");
 	textdata_set($"unused_battle_main_flitcher_{i++}", "* (Flitcher is just there.)");
 	textdata_set("battle_act_flitcher_1", "Talk", "Falar");
 	textdata_set("battle_act_flitcher_2", "Wave", "Acenar");
-	textdata_set("battle_act_result_flitcher_0_0", "* \"Flitcher\" :R[3 ATK;D | :B6 DEF];D^3 &* (A reptile-like monster who's unaware of its own existence.)", "* \"Flitcher\" :R[3 ATQ;D | :B6 DEF];D^3 &* (Flitcher não tem consciência&sobre sua própria existência.)");
-	textdata_set("battle_act_result_flitcher_0_1", "* (It avoids eye contact and any social interaction that involves talking.)", "* (Evita contato visual e qualquer interação que&envolva falar.)");
+	textdata_set("battle_act_result_flitcher_0_0", "* \"Flitcher\" :R[3 ATK;D | :B6 DEF];D^3 &* (A reptile-like monster who's unaware of its own existence.)", "* \"Flitcher\" :R[3 ATQ;D | :B6 DEF];D^3 &* (Ele não tem consciência&sobre sua própria existência.)");
+	textdata_set("battle_act_result_flitcher_0_1", "* (It avoids eye contact and any social interaction that involves talking.)", "* (Ele evita contato visual&e qualquer interação que&envolva falar.)");
 	textdata_set("battle_act_result_flitcher_1_0", "* (You quietly say \"hi\"&to Flitcher...)", "* (Você fala \"oi\" em voz&baixa para Flitcher...)");
-	textdata_set("battle_act_result_flitcher_1_1", "* (It seems scared.)^3 \\&* (Flitcher's :YMERCY;D down :R100%;D.)", "* (Parece estar com medo.)^3 \\&* (:YPIEDADE;D de Flitcher&caiu :R100%;D.)");
+	textdata_set("battle_act_result_flitcher_1_1", "* (It seems scared.)^3 \\&* (Flitcher's :YMERCY;D down :R100%;D.)", "* (Ele parece estar com medo.)^3 \\&* (:YPIEDADE;D de Flitcher&caiu :R100%;D.)");
 	textdata_set("battle_act_result_flitcher_2_0", "* (You gently wave your&hand to Flitcher...)", "* (Você gentilmente&acena para Flitcher...)");
-	textdata_set("battle_act_result_flitcher_2_1", "* (It seems happy.)^3 \\&* (Flitcher's :YMERCY;D up :U100%;D!)", "* (Parece estar feliz.)^3 \\&* (:YPIEDADE;D de Flitcher&cresceu :U100%;D!)");
+	textdata_set("battle_act_result_flitcher_2_1", "* (It seems happy.)^3 \\&* (Flitcher's :YMERCY;D up :U100%;D!)", "* (Ele parece estar feliz.)^3 \\&* (:YPIEDADE;D de Flitcher&subiu :U100%;D!)");
 		// Eyecrush's battle (Unused)
 	textdata_set("unused_battle_main_eyecrush", "* (Eyecrush crawls into your way!)");
 	textdata_set("unused_battle_main_eyecrush_0", "* (Eyecrush is looking at you.)");
@@ -577,62 +582,66 @@ function textdata()
 	textdata_set("unused_battle_act_result_eyecrush_2_1_0", "* (Eyecrush didn't understand what you did,^1 but liked it anyway.)"); // from "UNDERTALE"
 	textdata_set("unused_battle_act_result_eyecrush_2_1_1", "* (Eyecrush couldn't understand what you did due to the hypnotization.)");
 		// Broken Clock's battle
-	textdata_set("battle_main_brock", "* (Broken Clock blocks your way!)");
-	textdata_set("battle_main_brock_geno", "* (Broken Clock blocks your way.)");
+	textdata_set("battle_main_brock", "* (Broken Clock blocks your way!)", "* (Broken Clock bloqueia&o seu caminho!)");
+	textdata_set("battle_main_brock_geno", "* (Broken Clock blocks your way.)", "* (Broken Clock bloqueia&o seu caminho.)");
 	i = 0;
-	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is flying&around the room.)"); // references "time flies" idiom
-	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is bursting&with electricity.)");
-	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is having&the time of his life.)"); // references "to have the time of one's life" idiom
-	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is breaking&laws of time and space.)");
-	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is the proof that time doesn't heal all wounds.)"); // references "time doesn't heal all wounds" idiom
-	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock's movements&are making you dizzy.)");
-	textdata_set($"battle_main_brock_{i++}", "* (Even Broken Clock is&right twice a day.)"); // references "even a broken clock is right twice a day" idiom
-	textdata_set($"battle_main_brock_{i++}", "* (MEE6 is insulting Broken Clock under his nonexistent breath.)");
-	textdata_set($"battle_main_brock_{i++}", "* (MEE6 throws leaves at&Broken Clock and misses&every one of them.)");
-	textdata_set($"battle_main_brock_{i++}", "* (You feel your hair being pulled by static eletricity.)");
-	textdata_set($"battle_main_brock_{i++}", "* (You feel the power of&1.21 gigawatts coursing&through your nervous system.)"); // "1.21 gigawatts" references "Back to the Future" (1985)
-	textdata_set($"battle_main_brock_{i++}", "* (Reading this doesn't seem&like the best use of time.)"); // from "UNDERTALE"
-	textdata_set("battle_act_result_brock_0_0", "* \"Broken Clock\" :R[12 ATK;D | :B0 DEF];D^3 \\&* (A malfunctioning analog clock possessed by a ghost.)"); // "12" references a 12-hour clock
-	textdata_set("battle_act_result_brock_0_1", "* (He has nothing to lose&besides his life.)");
-	textdata_set("battle_act_brock_1", "Negotiate");
-	textdata_set("battle_act_result_brock_1_0_0", "* (You promise Broken Clock to spare him if he spares you...)");
-	textdata_set("battle_act_result_brock_1_1_0", "* (He considers the possibility.)^3 &* (Broken Clock's :RATTACK;D down!)");
-	textdata_set("battle_act_result_brock_1_0_1", "* (You propose handing over your weapon to Broken Clock...)");
-	textdata_set("battle_act_result_brock_1_1_1", "* (He declines it,^3 but likes&that you tried anyway.)^3 &* (Broken Clock's :FSPEED;D down!)");
-	textdata_set("battle_act_brock_2", "Insult"); // inspired by "Insult" and "Threat" from "UNDERTALE"
-	var m = 0;
-	textdata_set($"battle_act_result_brock_2_{m}", "* (You stare Broken Clock right in the eyes and shout...)"); 
-	textdata_set($"battle_act_result_brock_2_{++m}", "* (... \"You're [insult]\".)");
+	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is flying&around the room.)", "* (Broken Clock está voando&ao redor do quarto.)"); // references "time flies" idiom
+	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is bursting&with electricity.)", "* (Broken Clock está pulsando&de eletricidade estática.)");
+	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is having&the time of his life.)", "* (Broken Clock está voando contra o tempo.)"); // "is having the time of his life" references Broken Clock; "voando contra o tempo" references Broken Clock
+	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is breaking&laws of time and space.)", "* (Broken Clock está quebrando&leis do espaço e do tempo.)"); // inspired by "They say he shattered across time and space" from "UNDERTALE"
+	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock is the proof that time doesn't heal all wounds.)", "* (Broken Clock é a prova de&que o tempo não cura tudo.)"); // "time doesn't heal all wounds" idiom references Broken Clock
+	textdata_set($"battle_main_brock_{i++}", "* (Broken Clock's movements&are making you dizzy.)", "* (Os movimentos do Broken Clock estão deixando você tonto.)");
+	textdata_set($"battle_main_brock_{i++}", "* (Even Broken Clock is&right twice a day.)", "* (Até Broken Clock está&certo duas vezes ao dia.)"); // references "even a broken clock is right twice a day" idiom
+	textdata_set($"battle_main_brock_{i++}", "* (MEE6 is insulting Broken Clock under his nonexistent breath.)", "* (MEE6 está insultando Broken&Clock e toda a sua família.)");
+	textdata_set($"battle_main_brock_{i++}", "* (MEE6 throws leaves at&Broken Clock and misses&every one of them.)", "* (MEE6 pega folhas do chão&e joga-as em Broken Clock,^3 \\&errando todas.)");
+	textdata_set($"battle_main_brock_{i++}", "* (You feel your hair being pulled by static eletricity.)", "* (Você sente seu cabelo voando com a eletricidade estática.)");
+	textdata_set($"battle_main_brock_{i++}", "* (You feel the power of&1.21 gigawatts coursing&through your nervous system.)", "* (Você sente o poder de 1,21 gigawatts percorrendo o seu sistema nervoso.)"); // "1.21 gigawatts" references "Back to the Future" (1985)
+	textdata_set($"battle_main_brock_{i++}", "* (Reading this doesn't seem&like the best use of time.)", "* (Ler isso não parece ser o melhor uso do seu tempo.)"); // from "UNDERTALE"
+	textdata_set("battle_act_result_brock_0_0", "* \"Broken Clock\" :R[12 ATK;D | :B0 DEF];D^3 \\&* (A malfunctioning analog clock possessed by a ghost.)", "* \"Broken Clock\" :R[12 ATQ;D | :B0 DEF];D^3 \\&* (Um relógio analógico quebrado e possuído por um fantasma.)"); // "12" references a 12-hour clock
+	textdata_set("battle_act_result_brock_0_1", "* (He has nothing to lose&besides his life.)", "* (Ele tem nada a perder&além da própria vida.)");
+	textdata_set("battle_act_brock_1", "Negotiate", "Negociar");
+	textdata_set("battle_act_result_brock_1_0_0", "* (You promise Broken Clock to spare him if he spares you...)", "* (Você promete a Broken Clock poupá-lo se ele poupar você...)");
+	textdata_set("battle_act_result_brock_1_1_0", "* (He considers the possibility.)^3 \\&* (Broken Clock's :RATTACK;D down!)", "* (Ele considera a possibilidade.)^3 \\&* (:RATAQUE;D do Broken Clock caiu!)");
+	textdata_set("battle_act_result_brock_1_0_1", "* (You propose handing over your weapon to Broken Clock...)", "* (Você propõe entregar sua&arma a Broken Clock...)");
+	textdata_set("battle_act_result_brock_1_1_1", "* (He declines it,^3 but likes&that you tried anyway.)^3 &* (Broken Clock's :FSPEED;D down!)", "* (Ele recusa,^3 mas gosta que você tenha tentado mesmo assim.)^3 \\&* (:FVELOCIDADE;D do B. Clock caiu!)");
+	textdata_set("battle_act_brock_2", "Insult", "Insultar"); // inspired by "Insult" and "Threat" from "UNDERTALE"
 	i = 0;
-	textdata_set($"battle_act_result_brock_2_{m}_{i++}", "a stupid&doodoo butt"); // from "UNDERTALE"
-	textdata_set($"battle_act_result_brock_2_{m}_{i++}", "&the legendary&fartmaster"); // from "UNDERTALE"
-	textdata_set($"battle_act_result_brock_2_{m}_{i++}", "a filthy&single minder"); // from "UNDERTALE"
-	textdata_set($"battle_act_result_brock_2_{m}_{i++}", "a goofy goober"); // from "Spongebob SquarePants"
-	textdata_set($"battle_act_result_brock_2_{m}_{i++}", "nothing&but a little chicken"); // from "Back to the Future Part II"
-	textdata_set($"battle_act_result_brock_2_{m}_{i++}", "&a seedling&of Satan"); // from "South Park"
-	textdata_set($"battle_act_result_brock_2_{m}_{i++}", "a teeny&tiny ding-a-ling");
-	textdata_set($"unused_battle_act_result_brock_2_{m}_{i++}", "a dirty brother killer"); // from "UNDERTALE"
-	textdata_set($"unused_battle_act_result_brock_2_{m}_{i++}", "a miserable creature"); // from "UNDERTALE"
-	textdata_set($"unused_battle_act_result_brock_2_{m}_{i++}", "a fool of a took"); // from "Lord of the Rings"
-	textdata_set($"unused_battle_act_result_brock_2_{m}_{i++}", "a worthless&cock nugget");
-	textdata_set($"battle_act_result_brock_2_{++m}", "* (Broken Clock seems to be unsure on how to react...)");
-	textdata_set($"battle_act_result_brock_2_{++m}", "* (Broken Clock's :FSPEED;D&down for two turns!)");
-	textdata_set("battle_act_brock_3", "Convince"); // from "DELTARUNE"
-	textdata_set("battle_act_result_brock_3_0", "* (What will you say?)");
-	textdata_set("battle_act_result_brock_3_1_0_1", "I don't want\nto hurt you");
-	textdata_set("battle_act_result_brock_3_1_0_2", "You're going\nto be okay");
-	textdata_set("battle_act_result_brock_3_1_1_1", "I don't know\nwhere I am");
-	textdata_set("battle_act_result_brock_3_1_1_2", "I just want\nto help you");
-	textdata_set("battle_act_result_brock_3_1_2_1", "I didn't do\nanything");
-	textdata_set("battle_act_result_brock_3_1_2_2", "I just want\nto go home");
-	textdata_set("battle_act_result_brock_3_1_3_1", "I didn't want\nto bother you");
-	textdata_set("battle_act_result_brock_3_1_3_2", "I know how you\nare feeling");
-	textdata_set("battle_act_result_brock_3_1_4_1", "I'm sorry");
-	textdata_set("battle_act_result_brock_3_1_4_2", "You are\noverreacting")
-	textdata_set("battle_act_result_brock_3_2_0", "* (Wrong choice...?)"); // from "DELTARUNE"
-	textdata_set("battle_act_result_brock_3_2_1_prefix", "* (Broken Clock seems to be willing to trust you...)^3 &");
-	textdata_set("battle_act_result_brock_3_2_1", "* (Broken Clock's :YMERCY;D up :U20%;D!)");
-	textdata_set("battle_act_result_brock_convinced", "* (It doesn't matter anymore.)");
+	textdata_set($"battle_act_result_brock_2_{i++}", "* (You stare Broken Clock right in the eyes and shout...)", "* (Você encara Broken Clock&olho nos olho e grita...)"); 
+	textdata_set($"battle_act_result_brock_2_{i}", "* (... \"You're {insult}\".)", "* (...\"Você é {insult}\".)");
+	z = 0;
+	textdata_set($"battle_act_result_brock_2_{i}_{z++}", "a stupid&doodoo butt", "um bundão bobão"); // from "UNDERTALE"
+	textdata_set($"battle_act_result_brock_2_{i}_{z++}", "&the legendary&fartmaster", "o mestre peidorreiro supremo"); // from "UNDERTALE"
+	textdata_set($"battle_act_result_brock_2_{i}_{z++}", "a filthy&single minder", ""); // from "UNDERTALE"
+	textdata_set($"battle_act_result_brock_2_{i}_{z++}", "a goofy goober", "um amendobobo"); // references "Spongebob SquarePants Movie"
+	textdata_set($"battle_act_result_brock_2_{i}_{z++}", "nothing&but a little chicken", ""); // from "Back to the Future Part II"
+	textdata_set($"battle_act_result_brock_2_{i}_{z++}", "&a seedling&of Satan", "uma semente do Diabo"); // from "South Park"
+	textdata_set($"battle_act_result_brock_2_{i}_{z++}", "a teeny&tiny ding-a-ling", "um pintinho pequenininho");
+	textdata_set($"unused_battle_act_result_brock_2_{i}_{z++}", "a dirty brother killer"); // from "UNDERTALE"
+	textdata_set($"unused_battle_act_result_brock_2_{i}_{z++}", "a miserable creature"); // from "UNDERTALE"
+	textdata_set($"unused_battle_act_result_brock_2_{i}_{z++}", "a fool of a took"); // from "Lord of the Rings"
+	textdata_set($"unused_battle_act_result_brock_2_{i}_{z++}", "a worthless&cock nugget");
+	i += 1;
+	textdata_set($"battle_act_result_brock_2_{i}_0", "* (Broken Clock seems to be unsure on how to react...)", "* (Broken Clock não parece saber como reagir...)");
+	textdata_set($"battle_act_result_brock_2_{i}_1", "* (Broken Clock is extremely disappointed with your&swearing power...)", "* (Broken Clock está extremamente decepcionado.)");
+	i += 1;
+	textdata_set($"battle_act_result_brock_2_{i}_0", "* (Broken Clock's :FSPEED;D&down :U20%;D for two turns!)", "* (:FVELOCIDADE;D do Broken Clock caiu :U20;D!)");
+	textdata_set($"battle_act_result_brock_2_{i}_1", "* (Broken Clock's :FSPEED;D&up :R20%;D for two turns.)", "* (:FVELOCIDADE;D do Broken Clock subiu :R20;D.)");
+	textdata_set("battle_act_brock_3", "Convince", "Convencer"); // from "DELTARUNE"
+	textdata_set("battle_act_result_brock_3_0", "* (What will you say?)", "* (O que você vai dizer?)");
+	textdata_set("battle_act_result_brock_3_1_0_1", "I don't want\nto hurt you", "Eu não quero\nte machucar");
+	textdata_set("battle_act_result_brock_3_1_0_2", "You're going\nto be okay", "Você vai\nficar bem");
+	textdata_set("battle_act_result_brock_3_1_1_1", "I don't know\nwhere I am", "Eu não sei\nonde eu tô");
+	textdata_set("battle_act_result_brock_3_1_1_2", "I just want\nto help you", "Eu só quero\nte ajudar");
+	textdata_set("battle_act_result_brock_3_1_2_1", "I didn't do\nanything", "Eu não\nfiz nada");
+	textdata_set("battle_act_result_brock_3_1_2_2", "I just want\nto go home", "Eu só quero\nir pra casa");
+	textdata_set("battle_act_result_brock_3_1_3_1", "I didn't want\nto bother you", "Eu não queria\nte incomodar");
+	textdata_set("battle_act_result_brock_3_1_3_2", "I know how you\nare feeling", "Eu sei o que\nvocê tá sentindo");
+	textdata_set("battle_act_result_brock_3_1_4_1", "I'm sorry", "Me desculpa");
+	textdata_set("battle_act_result_brock_3_1_4_2", "You are\noverreacting", "Você tá\nexagerando")
+	textdata_set("battle_act_result_brock_3_2_0", "* (Wrong choice...?)", "* (Escolha errada...?)"); // from "DELTARUNE"
+	textdata_set("battle_act_result_brock_3_2_1_prefix", "* (Broken Clock seems to be willing to trust you...)^3 &", "* (Broken Clock parece disposto a confiar em você...)");
+	textdata_set("battle_act_result_brock_3_2_1", "* (Broken Clock's :YMERCY;D up :U20%;D!)", "* (:YPIEDADE;D do B. Clock subiu :U20%;D!)");
+	textdata_set("battle_act_result_brock_convinced", "* (It doesn't matter anymore.)", "* (Não importa mais.)");
 	z = 0;
 	i = 0;
 	textdata_set($"battle_bubble_brock_{z}_{i++}", "+F1+S2YOU KNOW WHAT I HATE THE MOST?!?");
@@ -670,8 +679,8 @@ function textdata()
 	textdata_set($"battle_bubble_brock_{z}_{i++}", "+F1+S2WHETHER IT'S MINE OR ANY OTHER MONSTER'S.");
 	z += 1;
 	i = 0;
-	textdata_set($"battle_bubble_brock_{z}_{i++}", "+F1+S2ALL I'M DOING&IS STOPPING A DISASTER BEFORE&IT EVEN HAPPENS.");
-	textdata_set($"battle_bubble_brock_{z}_{i++}", "+F1+S2I'M STOPPING MYSELF FROM REGRETTING EVER TRUSTING YOU.");
+	/*!!!!!!!!!!!!!!!!*/textdata_set($"battle_bubble_brock_{z}_{i++}", "+F1+S2ALL I'M DOING&IS STOPPIN' A DISASTER BEFORE&IT EVEN HAPPENS.");
+	/*!!!!!!!!!!!!!!!!*/textdata_set($"battle_bubble_brock_{z}_{i++}", "+F1+S2I'M STOPPIN' MYSELF FROM REGRETTIN' EVER TRUSTIN'YA.");
 	z += 1;
 	i = 0;
 	textdata_set($"battle_bubble_brock_{z}_{i++}", "+F1+S2IT'S NOT MY FAULT IF YOU'RE NOT CONVINCING&ENOUGH."); // hints convincing Broken Clock to win the battle
@@ -760,7 +769,7 @@ function textdata()
 	textdata_set("battle_main_armsguy_armsguy", "* (Armsguys jump in your way!)");
 	textdata_set("battle_main_armsguy_armsguy_geno", "* (You step into Armsguys' way.)");
 	textdata_set("battle_main_trashguy_armsguy", "* (Trashguy rolls into your way!)^3 \\&* (Armsguy gets jealous and&jumps in to save the day!)");
-	textdata_set("battle_main_trashguy_armsguy_geno", "* (You step into Trashguy's way.)^3 &* (Armsguy jumps in&to protect them.)");
+	textdata_set("battle_main_trashguy_armsguy_geno", "* (You step into Trashguy's way.)^3 \\&* (Armsguy jumps in&to protect them.)");
 	textdata_set("battle_main_armsguy_flitcher", "* (Armsguy jumps in your way!)^3 &* (Flitcher is here,^3 somehow.)\\");
 	textdata_set("battle_main_armsguy_flitcher_geno", "* (You step into Armsguy's way.)^3 &* (Flitcher was caught&in the crossfire.)");
 	textdata_set("unused_battle_main_eyecrush_armsguy", "* (Eyecrush crawls into your way!)^3 &* (Armsguy jumps in to help them!)");
@@ -1308,7 +1317,7 @@ function textdata()
 	textdata_set("item_name_pace",			"Temporary Pacemaker",	"Marcapasso Temporário"); // "Temporary" references Broken Clock, but also explains why the player can equip the item without surgery; "Pacemaker" references both Broken Clock and the player's SOUL
 	textdata_set("item_name_pace_small",	"TempoPacer",			"MarcaTempo");
 	textdata_set("item_name_pace_serious",	"Pacemaker",			"Marcapasso");
-	textdata_set("item_info_pace_0", "* \"Temporary Pacemaker\" :B[+\\6 \\DEF];D^3 \\&* (Increases the duration of :PINVINCIBILITY FRAMES;D by :U50%;D.)", "* \"Marcapasso Temporário\" :B[+\\6 DEF];D^3 \\&* (Prolonga a duração dos :PFRAMES DE INVENCIBILIDADE;D em :U50%;D.)");
+	textdata_set("item_info_pace_0", "* \"Temporary Pacemaker\" :B[+\\6 DEF];D^3 \\&* (Increases the duration of :PINVINCIBILITY FRAMES;D by :U50%;D.)", "* \"Marcapasso Temporário\" :B[+\\6 \\DEF];D^3 \\&* (Prolonga a duração dos :PFRAMES DE INVENCIBILIDADE;D em :U50%;D.)");
 	i = 0;
 	textdata_set($"room_trollwall_{i++}", "* (A thick, oily substance is leaking from between the bricks of this wall...)"); // references TROLLFACE's oil attack
 	textdata_set($"room_trollwall_{i++}", "* (It seems irrelevant for now.)");

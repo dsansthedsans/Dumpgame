@@ -1271,62 +1271,34 @@ function TEXT()
 					array_push(_enemylist, controller.enemy_type[e]);
 			}
 			_type = _enemylist[irandom(array_length(_enemylist) - 1)];
-			
 			var _max = 0;
 			var _name = "";
 			if (_type == -1)
-			{
 				_name = "test";
-				_max = 4;
-			}
 			if (_type == 2)
-			{
 				_name = "armsguy";
-				_max = 7;
-			}
 			if (_type == 3)
-			{
 				_name = "trashguy";
-				_max = 3;
-			}
 			if (_type == 4)
-			{
 				_name = "flitcher";
-				_max = 4;
-			}
 			if (_type == 5)
-			{
 				_name = "eyecrush";
-				_max = 4;
-			}
 			if (_type == 6)
-			{
 				_name = "brock";
-				_max = 10;
-			}
 			if (_type == 7)
-			{
 				_name = "rhonhey";
-				_max = 4;
-			}
 			if (_type == 1000)
-			{
 				_name = "troll";
-				for (var m = 0; m < 99; m++)
-				{
-					var _msg = textdata_get("battle_main_" + string(_name) + "_" + string(m));
-					if (_msg == undefined) || (_msg == "Salenis")
-						break;
-				}
-				_max = (m - 1);
-			}
 			if (_type == 2000)
-			{
 				_name = "toilet";
-				_max = 0;
+			for (var m = 0; m < 99; m++)
+			{
+				var _msg = textdata_get($"battle_main_{_name}_{m}");
+				if (_msg == undefined) || (_msg == "Salenis")
+					break;
 			}
-			
-			if (controller.battle_round == 0) // first
+			_max = (m - 1);
+			if (controller.battle_round == 0) || (controller.battle_round > 0 && chara_murder() >= 1) // first
 			{
 				var _msg_id = "battle_main_" + string(_groupname);
 				var _msg_geno = textdata_get($"{_msg_id}_geno");
@@ -1334,7 +1306,6 @@ function TEXT()
 					msg[0] = _msg_geno;
 				else
 					msg[0] = textdata_get(_msg_id);
-				
 			}
 			else // normal
 			{
@@ -1736,21 +1707,21 @@ function TEXT()
 							case 1:
 							_text_postfix = $"_{enemy.negotiate}";
 							break;
-							case 2:
-							var _insult_page = 1;
-							if (m == _insult_page)
-							{
-								for (var i = 0; i < 99; i++)
-								{	
-									var _text = textdata_get($"battle_act_result_brock_{_text_index}_{_insult_page}_{i}");
-									if (_text == undefined) || (_text == "Salenis")
-										break;
-								}
-								var _insult_index = enemy.insult;
-								if (_insult_index > (i - 1))
-									_insult_index = irandom(i - 1);
-							}
-							break;
+							//case 2:
+							//var _insult_page = 1;
+							//if (m == _insult_page)
+							//{
+							//	for (var i = 0; i < 99; i++)
+							//	{	
+							//		var _text = textdata_get($"battle_act_result_brock_{_text_index}_{_insult_page}_{i}");
+							//		if (_text == undefined) || (_text == "Salenis")
+							//			break;
+							//	}
+							//	var _insult_index = enemy.insult;
+							//	if (_insult_index > (i - 1))
+							//		_insult_index = irandom(i - 1);
+							//}
+							//break;
 						}
 						var _msg = textdata_get($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}");
 						if (_msg == undefined) || (_msg == "Salenis")
@@ -1769,35 +1740,63 @@ function TEXT()
 						break;
 						// "Insult"
 						case 2:
-						audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
-						msg[_insult_page] = string_replace_all(msg[_insult_page], "[insult]", textdata_get($"battle_act_result_brock_{_text_index}_{_insult_page}_{_insult_index}"));
-						var _page = (m - 2);
-						var _msg_result = [msg[_page], msg[_page + 1]];
-						for (var m = 0; m < 99; m++)
+						var _insult_page = 1;
+						var _insult_index = enemy.insult;
+						for (var z = 0; z < 99; z++)
 						{	
-							var _msg = textdata_get($"battle_bubble_brock_insult_{enemy.insult}_{m}");
-							if (_msg == undefined) || (_msg == "Salenis")
+							var _insult_text = textdata_get($"battle_act_result_brock_{_text_index}_{_insult_page}_{z}");
+							if (_insult_text == undefined) || (_insult_text == "Salenis")
 								break;
-							msg[_page + m] = _msg;
 						}
-						msg_font[_page] = global.fnt_dotum;
-						msg_sound[_page] = snd_writer_brock;
-						msg_format[_page] = "bubble";
-						enemy.body.movement = 1;
-						msg_font[_page + m] = fnt_main_big;
-						msg_sound[_page + m] = snd_writer_0;
-						msg_format[_page + m] = "battlebox";
+						if (_insult_index > (z - 1))
+							_insult_index = irandom(z - 1);
+						msg[_insult_page] = string_replace_all(msg[_insult_page], "{insult}", textdata_get($"battle_act_result_brock_{_text_index}_{_insult_page}_{_insult_index}"));
+						var _answer_page = (_insult_page + 1);
+						for (var i = 0; i < 99; i++)
+						{
+							var _answer_text = textdata_get($"battle_bubble_brock_insult_{_insult_index}_{i}");
+							if (_answer_text == undefined) || (_answer_text == "Salenis")
+								break;
+							msg[_answer_page + i] = _answer_text;
+						}
+						msg_font[_answer_page] = global.fnt_dotum;
+						msg_sound[_answer_page] = snd_writer_brock;
+						msg_format[_answer_page] = "bubble";
+						var _result_page = (_answer_page + i);
+						var _result_type = 0;
+						switch (_insult_index)
+						{
+							case 6:
+							_result_type = 1;
+							enemy.insultTurns = -2;
+							audio_play(snd_jingleFail, 0, VOLUME_SOUND);
+							break;
+							default:
+							_result_type = 0;
+							enemy.insultTurns = 2;
+							audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
+							break;
+						}
+						var _result_pageSkipped = false;
 						for (var i = 0; i < 2; i++)
 						{
-							if (i == 0 && enemy.insult > 0)
+							if (enemy.insult > 0 && i == 0 && _result_type == 0)
+							{
+								_result_pageSkipped = true;
 								continue;
-							msg[_page + m] = _msg_result[i];
-							m += 1;
+							}
+							var _result_text = textdata_get($"battle_act_result_brock_{_text_index}_{_insult_page + 1 + i}_{_result_type}");
+							if (_result_text == undefined) || (_result_text == "Salenis")
+								break;
+							msg[_result_page + i - (1 * _result_pageSkipped)] = _result_text;
 						}
+						msg_font[_result_page] = fnt_main_big;
+						msg_sound[_result_page] = snd_writer_1;
+						msg_format[_result_page] = "battlebox";
 						enemy.insult += 1;
 						if (enemy.insult >= 7)
 							controller.enemy_act_enabled[enemy.myself, 2] = false;
-						enemy.insultTurns = 2;
+						enemy.body.movement = 1;
 						break;
 						// "Convince"
 						case 3:

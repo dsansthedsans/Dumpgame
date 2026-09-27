@@ -307,6 +307,7 @@ if (active == 1)
 	}
 	if (type == 6.3)
 	{
+		var _insultTurns = controller.enemy_obj[myself].insultTurns;
 		if (stage == 0)
 		{		
 			// get angle
@@ -329,13 +330,13 @@ if (active == 1)
 			nexty = yy[ypos];
 			
 			// create danger
-			var _time = 27;
+			var _time = 25;
 			if (controller.battle_round > 3)
-				_time = 22;
-			if (controller.enemy_obj[myself].negotiate >= 2)
+				_time -= 5;
+			if (_insultTurns > 0)
 				_time += 5;
-			if (controller.enemy_obj[myself].insultTurns > 0)
-				_time += 5;
+			if (_insultTurns < 0)
+				_time -= 5;
 			dx1 = (x - (sw / 2) + 2);
 			dy1 = (y - (sh / 2) + 2);
 			dx2 = (nextx + (sw / 2) - 2);
@@ -359,13 +360,11 @@ if (active == 1)
 			if (delay == 0 && touchytouchy == 1)
 				audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
 			
-			var _time = 20;
+			var _time = 25;
 			if (controller.battle_round > 3)
-				_time = 15;
+				_time -= 5;
 			if (controller.enemy_obj[myself].negotiate >= 2)
-				_time += 5;
-			if (controller.enemy_obj[myself].insultTurns > 0)
-				_time += 5;
+				_time += 10;
 			if (delay >= _time)
 			{
 				x = nextx;

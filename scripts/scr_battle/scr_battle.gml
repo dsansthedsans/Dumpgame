@@ -294,7 +294,7 @@ function battle_enemy()
 				enemy_act[i, 1] = textdata_get("battle_act_brock_1");
 				enemy_act[i, 2] = textdata_get("battle_act_brock_2");
 				enemy_act[i, 3] = textdata_get("battle_act_brock_3");
-				enemy_obj[i].hurtsound = snd_impactBreak;
+				enemy_obj[i].hurtsound = snd_breakSplit;
 			}
 			if (enemy_type[i] == 7) // Rhonhey
 			{
@@ -708,6 +708,7 @@ function battle_attack()
 		var _body = controller.enemy_obj[myself].body;
 		var _body_w = _body.sprite_width;
 		var _body_h = _body.sprite_height;
+		var _insultTurns = controller.enemy_obj[myself].insultTurns;
 		
 		if (attack == 0) // electricity
 		{
@@ -741,15 +742,14 @@ function battle_attack()
 				bltvideo.type = 6.15;
 				bltvideo.myself = myself;
 				bltpos = 0;
-				for (var i = 0; i < 100; i++)
-					thisblt[i] = -1;
+				thisblt = [];
 				delay = 0;
 				stage = 1;
 			}
 			if (stage == 1)
 			{
-				var _delay = 15 - (4 * (controller.battle_round > 1)) + (4 * (controller.enemy_obj[myself].insultTurns > 0));
-				if (delay >= _delay)
+				var _delay = 12 + (-2 * (controller.battle_round > 1)) + (2 * (_insultTurns > 0)) + (-2 * (_insultTurns < 0));
+				if (delay >= _delay && timer > (_delay + 1))
 				{
 					create((box_x - (box_w / 2) + irandom(box_w)), (box_y - (box_h / 2) + 20), obj_battle_blt);
 					thisobj.type = 6.1;
@@ -758,6 +758,7 @@ function battle_attack()
 					thisblt[bltpos] = thisobj;
 					bltpos += 1;
 					delay = 0;
+					debug("With Love, Mr. Killyourself");
 				}
 				else
 					delay += 1;
@@ -768,11 +769,12 @@ function battle_attack()
 			}
 			else if (stage == 2)
 			{
-				for (var i = 0; i < 100; i++)
+				for (var i = 0; i < array_length(thisblt); i++)
 				{
-					if (thisblt[i] != -1 && exists(thisblt[i]) == 1)
+					if (exists(thisblt[i]) == true)
 						thisblt[i].reverse = 1;
 				}
+				debug("ladybugs and gentlemeans");
 				stage = 3;
 			}	
 		}
@@ -820,11 +822,13 @@ function battle_attack()
 				
 				var _time = 45;
 				if (controller.battle_round > 2)
-					_time = 40;
+					_time -= 5;
 				if (controller.enemy_obj[myself].negotiate >= 2)
 					_time += 5;
-				if (controller.enemy_obj[myself].insultTurns > 0)
-					_time += 5;
+				if (_insultTurns > 0)
+					_time += 10;
+				if (_insultTurns < 0)
+					_time -= 10;
 				battle_danger(1, danger_x1, danger_y1, danger_x2, danger_y2, _time);
 				
 				time = _time;
@@ -843,8 +847,10 @@ function battle_attack()
 					time -= 10;
 				if (controller.enemy_obj[myself].negotiate >= 2)
 					time += 10;
-				if (controller.enemy_obj[myself].insultTurns > 0)
+				if (_insultTurns > 0)
 					time += 10;
+				if (_insultTurns < 0)
+					time -= 10;
 				stage = 1;
 			}
 		}

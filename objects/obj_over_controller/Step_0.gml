@@ -41,7 +41,7 @@ if (con == 5)
 			image_index = irandom_range(1, 3);
 			image_blend = controller.heart_color;
 			direction = irandom_range(0, 360);
-			gravity = 0.1;
+			gravity = 0.075;
 			depth = -1500;
 			speed = 3;
 		}

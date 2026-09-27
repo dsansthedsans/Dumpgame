@@ -25,9 +25,14 @@ if (con == 4)
 			image_index = irandom_range(1, 3);
 			image_blend = c_white;
 			direction = irandom_range(0, 360);
-			gravity = 0.1;
+			gravity = 0.075;
 			depth = other.depth;
 			speed = 3;
+			if (other.control.enemy_target != -1 && other.control.enemy_type[other.control.enemy_target] == 6)
+			{
+				speed *= 2;
+				direction = irandom_range((90 - (45 / 2)), (90 + (45 / 2)));
+			}
 		}
 	}
 	con += 1;

@@ -40,5 +40,6 @@ insultTurns = 0;
 if (global.indebug == true && global.debug_hud == true)
 {
 	convince = 4;
+	insult = 6;
 	controller.enemy_spare[myself] = 80;
 }

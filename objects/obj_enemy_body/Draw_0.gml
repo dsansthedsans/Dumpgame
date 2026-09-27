@@ -135,9 +135,13 @@ if (active == 1)
 				if (_xdist <= 1 && _ydist <= 1)
 				{
 					shakeamt = 2;
-					delay = 45 - (10 * (controller.battle_round > 0));
+					delay = 50;
+					if (controller.battle_round > 0)
+						delay -= 10;
 					if (enemy.insultTurns > 0)
 						delay += 10;
+					if (enemy.insultTurns < 0)
+						delay -= 10;
 					stage = 2;
 				}
 			}
@@ -152,7 +156,7 @@ if (active == 1)
 				if (delay <= 0)	
 				{
 					if (enemy.insultTurns > 0)
-						delay = 20;
+						delay += 10;
 					stage = 0;
 				}
 				else
@@ -231,6 +235,7 @@ if (active == 1)
 							part[i].hspeed = random_range(-2, 2);
 							part[i].angleamt = (choose(-1.5, 1.5) * 2);
 						}
+						create(0, 0, obj_battle_enemyHeartbreak);
 					}
 					hspeed = 0;
 					vspeed = 0;

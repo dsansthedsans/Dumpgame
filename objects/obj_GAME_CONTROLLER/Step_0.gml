@@ -115,4 +115,10 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		global.chara_kills += _amt;
 		global.chara_heals += _amt;
 	}
+	if (keyboard_check_pressed(vk_f10) == true)
+	{
+		if (room == room_battle && exists(obj_battle_controller) == true && obj_battle_controller.enemy_type[0] == 6)
+			obj_battle_controller.enemy_obj[0].insultTurns = -2;
+		audio_play(snd_shriekCar, false, VOLUME_SOUND);
+	}
 }

@@ -145,9 +145,13 @@ if (active == 1)
 			startattack = 0;
 			returnmain = 1;
 			usedact = 0;
-			if (insultTurns > 0)
-				insultTurns -= 1;
+			//if (insultTurns > 0)
+			//	insultTurns -= 1;
+			//if (insultTurns < 0)
+			//	insultTurns += 1;
 		}
 	}
+	if (global.indebug == true && global.debug_hud == true)
+		debug($"insultTurns = {insultTurns}");
 }
 
