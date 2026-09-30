@@ -132,7 +132,7 @@ if (con == 16)
 			bullet[i] = thismarker;
 		}
 		if (global.world_curpopulation[chara_world()] > 0 && fearstingy == true)
-			audio_play(unused_snd_stingFear, 0, VOLUME_SOUND);
+			audio_play(snd_stingFear, 0, VOLUME_SOUND);
 		con = 17;
 	}
 }
@@ -146,7 +146,7 @@ if (con == 17)
 			if (other.m6_surprise == undefined)
 			{
 				other.m6_surprise = surprise(other.m6);
-				audio_play(snd_surprise, false, VOLUME_SOUND);
+				audio_play(snd_stingSurprise, false, VOLUME_SOUND);
 			}
 		}
 		if (place_meeting(x, y, other.m6) == 1) || (global.world_curpopulation[chara_world()] <= 0 && y >= (other.m6.y - 60) && other.m6_canEscape == true)
@@ -259,7 +259,7 @@ if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter
 		if (global.world_curpopulation[chara_world()] > 0)
 		{
 			if (fearstingy == true)
-				audio_play(unused_snd_stingFear, 0, VOLUME_SOUND,,,, 1.125);
+				audio_play(snd_stingFear, 0, VOLUME_SOUND,,,, 1.125);
 		}
 		else
 			party_facing(0, RIGHT);
@@ -285,6 +285,7 @@ if (con == 36)
 	chara.x -= chara.rspeed[0];
 	chara.image_speed = chara.rimgspeed[0];
 	global.chara_facing = RIGHT;
+	chara_stop();
 	if (chara.x <= 760)
 	{
 		chara_stop();
@@ -318,6 +319,7 @@ if (con == 37)
 if (con == 38)
 {
 	global.chara_facing = DOWN;
+	chara_stop();
 	with (chara)
 		shakeobj_small();
 	audio_play(snd_impactBump, 0, VOLUME_SOUND);

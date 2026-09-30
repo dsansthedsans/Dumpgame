@@ -17,9 +17,9 @@ var _info_y = (_name_y + string_height(global.chara_name) + (_bg1_di / 2) - 2);
 draw_text_width((_cx + bg_x[0] + (bg_w[0] / 2)), _name_y + 1, $"@{global.chara_name}", (bg_w[0] - (_bg1_di * 2)), [global.c_mention[0], global.c_mention[1]], alpha);
 draw_set_font(global.fnt_mars);
 draw_set_halign(fa_left);
-info[0] = "LVL  " + string(global.chara_lvl);
-info[1] = "HP   " + string(global.chara_curhp) + "/" + string(global.chara_maxhp);
-info[2] = $"{textdata_get("charamenu_main_info_money")}{global.chara_money}";
+info[0] = $"{text_get("charamenu_main_info_lvl")}{global.chara_lvl}";
+info[1] = $"{text_get("charamenu_main_info_hp")}{global.chara_curhp}/{global.chara_maxhp}";
+info[2] = $"{text_get("charamenu_main_info_money")}{global.chara_money}";
 info_maxw = string_width("XXX  XXXXX");
 for (var i = 0; i < 3; i++)
 	draw_text_width((_cx + bg_x[0] + _bg1_di + 1), (_info_y + ((string_height("SALENIS") + 2) * i)), info[i], info_maxw, [c_white, c_white], alpha);
@@ -140,9 +140,9 @@ if (lvl == 3)
 	draw_set_halign(fa_left);
 	
 		// esquerda (primeiro)
-	info[0] = $"HP   {(global.chara_curhp >= 10) ? "" : "0"}{global.chara_curhp}/{global.chara_maxhp}";
-	info[1] = $"LVL  {global.chara_lvl}";
-	info[2] = $"DEF  {global.chara_def - 10 + global.chara_astrength}";
+	info[0] = $"{text_get("charamenu_main_info_hp")}{(global.chara_curhp >= 10) ? "" : "0"}{global.chara_curhp}/{global.chara_maxhp}";
+	info[1] = $"{text_get("charamenu_main_info_lvl")}{global.chara_lvl}";
+	info[2] = $"{text_get("charamenu_stat_def")}{global.chara_def - 10 + global.chara_astrength}";
 	for (var i = 0; i < 3; i++)
 	{
 		var _color = c_white;
@@ -153,13 +153,13 @@ if (lvl == 3)
 	/*
 	draw_text_width(_ilx, (_iy + 25), $"HP   {(global.chara_curhp >= 10) ? "" : "0"}{global.chara_curhp}/{global.chara_maxhp}", info_maxw, [c_white, c_white], alpha);
 	draw_text_width(_ilx, (_iy + 40), $"LVL  {global.chara_lvl}", info_maxw, [c_white, c_white], alpha);
-	draw_text_width(_ilx, (_iy + 55), $"{textdata_get("charamenu_stat_atk")}  {global.chara_atk - 10 + global.chara_wstrength}", info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 55), $"{text_get("charamenu_stat_atk")}  {global.chara_atk - 10 + global.chara_wstrength}", info_maxw, [c_white, c_white], alpha);
 	*/
 	
 		// direita (primeiro)
-	info[0] = $"{textdata_get("charamenu_main_info_money")}{global.chara_money}";
-	info[1] = $"EXP  {(global.chara_exp >= 10) ? "" : "0"}{global.chara_exp}/{global.chara_nextexp}";
-	info[2] = $"{textdata_get("charamenu_stat_atk")}  {global.chara_atk - 10 + global.chara_wstrength}";
+	info[0] = $"{text_get("charamenu_main_info_money")}{global.chara_money}";
+	info[1] = $"{text_get("charamenu_stat_exp")}{(global.chara_exp >= 10) ? "" : "0"}{global.chara_exp}/{global.chara_nextexp}";
+	info[2] = $"{text_get("charamenu_stat_atk")}{global.chara_atk - 10 + global.chara_wstrength}";
 	for (var i = 0; i < 3; i++)
 	{
 		var _color = c_white;
@@ -169,12 +169,12 @@ if (lvl == 3)
 	}
 	
 		// esquerda (segundo)
-	draw_text_width(_ilx, (_iy + 80), $"{textdata_get("charamenu_stat_spares")}{(global.chara_spares >= 10) ? "" : " "}{global.chara_spares}", info_maxw, [c_white, c_white], alpha);
-	draw_text_width(_ilx, (_iy + 95), $"{textdata_get("charamenu_stat_heals")}{(global.chara_heals >= 10) ? "" : " "}{global.chara_heals}", info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 80), $"{text_get("charamenu_stat_spares")}{(global.chara_spares >= 10) ? "" : " "}{global.chara_spares}", info_maxw, [c_white, c_white], alpha);
+	draw_text_width(_ilx, (_iy + 95), $"{text_get("charamenu_stat_heals")}{(global.chara_heals >= 10) ? "" : " "}{global.chara_heals}", info_maxw, [c_white, c_white], alpha);
 	
 		// direita (segundo)
-	info[0] = $"{textdata_get("charamenu_stat_kills")}{(global.chara_kills >= 10) ? "" : " "}{global.chara_kills}";
-	info[1] = $"{textdata_get("charamenu_stat_deaths")}{(global.chara_deaths >= 10) ? "" : " "}{global.chara_deaths}";
+	info[0] = $"{text_get("charamenu_stat_kills")}{(global.chara_kills >= 10) ? "" : " "}{global.chara_kills}";
+	info[1] = $"{text_get("charamenu_stat_deaths")}{(global.chara_deaths >= 10) ? "" : " "}{global.chara_deaths}";
 	for (var i = 0; i < 2; i++)
 		draw_text_width((_irx - info_maxw), (_iy + 80 + (15 * i)), info[i], info_maxw, [c_white, c_white], 1);
 		
@@ -185,18 +185,18 @@ if (lvl == 3)
 	info_maxw[1] = string_width("Broomstick");
 	info_maxw[2] = string_width("[+0]");
 		// armadura
-	draw_text_width(_ilx, (_iy + 120), $"{textdata_get("charamenu_stat_armor")}", info_maxw[0]);
+	draw_text_width(_ilx, (_iy + 120), $"{text_get("charamenu_stat_armor")}", info_maxw[0]);
 	draw_text_width((_ilx + info_maxw[0] + string_width("  ")), (_iy + 120), $"{item_name(global.chara_armor)}", info_maxw[1])
 	if (global.chara_armor != -1)
 		draw_text_width((_ilx + info_maxw[0] + string_width("  ") + clamp(string_width($"{item_name(global.chara_armor)}"), 0, info_maxw[1]) + string_width(" ")), (_iy + 120), $"[+{global.chara_astrength}]", info_maxw[1], [global.c_blue, c_white])
 		// arma
-	draw_text_width(_ilx, (_iy + 135), $"{textdata_get("charamenu_stat_weapon")}", info_maxw[0]);
+	draw_text_width(_ilx, (_iy + 135), $"{text_get("charamenu_stat_weapon")}", info_maxw[0]);
 	draw_text_width((_ilx + info_maxw[0] + string_width("  ")), (_iy + 135), $"{item_name(global.chara_weapon)}", info_maxw[1])
 	if (global.chara_weapon != -1)
 		draw_text_width((_ilx + info_maxw[0] + string_width("  ") + clamp(string_width($"{item_name(global.chara_weapon)}"), 0, info_maxw[1]) + string_width(" ")), (_iy + 135), $"[+{global.chara_wstrength}]", info_maxw[1], [global.c_red, c_white])
 	/*
-	draw_text(_ilx, (_iy + 120), $"{textdata_get("charamenu_stat_armor")}" + string(item_name(global.chara_armor, "small")) + ((global.chara_armor != -1) ? " (+" + string(global.chara_astrength) + ")" : ""));
-	draw_text(_ilx, (_iy + 135), $"{textdata_get("charamenu_stat_weapon")}" + string(item_name(global.chara_weapon, "small")) + " (+" + string(global.chara_wstrength) + ")");
+	draw_text(_ilx, (_iy + 120), $"{text_get("charamenu_stat_armor")}" + string(item_name(global.chara_armor, "small")) + ((global.chara_armor != -1) ? " (+" + string(global.chara_astrength) + ")" : ""));
+	draw_text(_ilx, (_iy + 135), $"{text_get("charamenu_stat_weapon")}" + string(item_name(global.chara_weapon, "small")) + " (+" + string(global.chara_wstrength) + ")");
 	*/
 }	
 // indicador das opções

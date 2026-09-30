@@ -23,7 +23,8 @@ if (exists(target) == 1)
 		//target.y = movey;
         destroy(id);
 	}
-	//debug("xadd" + string(xadd) + " yadd" + string(yadd) + " fps" + string(fps) + " hspeed" + string(target.hspeed) + " vspeed" + string(target.vspeed));
+	if (global.indebug == true && global.debug_hud == true)
+		debug("xadd" + string(xadd) + " yadd" + string(yadd) + " fps" + string(fps) + " hspeed" + string(target.hspeed) + " vspeed" + string(target.vspeed));
 }
 else
 	destroy(id);

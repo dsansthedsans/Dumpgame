@@ -101,7 +101,7 @@ if (move == 1)
 		audio_play(snd_option_move, 0, VOLUME_SOUND);
 		if (play_erase > 0)
 		{
-			option[5, 2] = textdata_get("menu_5_2");
+			option[5, 2] = text_get("menu_5_2");
 			play_erase = 0;	
 		}
 	}
@@ -251,11 +251,11 @@ if (move == 1)
 				play_erase += 1;
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
 				if (play_erase == 1)
-					option[5, 2] = textdata_get("menu_5_2_1");
+					option[5, 2] = text_get("menu_5_2_1");
 				if (play_erase == 2)
 				{
 					savefile_erase(play_save);
-					option[5, 2] = textdata_get("menu_5_2");
+					option[5, 2] = text_get("menu_5_2");
 					play_erase = 0;
 					option_pos = (play_save + 1);
 					global.menu_lvl = 1;

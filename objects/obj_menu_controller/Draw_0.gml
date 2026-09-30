@@ -226,18 +226,18 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 				draw_set_font(fnt_main_spaced_medium);
 				credits_y[0] = (_bg_y + 40 + 12);
 				credits_y[1] = (credits_y[0] + 40 - (string_height("ABC") / 2));
-				credits_y[2] = (credits_y[1] + string_height(textdata_get("menu_4_info_0_1")) + 80);
+				credits_y[2] = (credits_y[1] + string_height(text_get("menu_4_info_0_1")) + 80);
 				credits_y[3] = (credits_y[2] + 40 - (string_height("ABC") / 2));
 			
 				draw_set_font(fnt_main_spaced_big);
 				draw_set_color(c_white);
 				draw_set_valign(fa_middle);
-				draw_text((_bg_x + (_bg_w / 2)), credits_y[_cur], textdata_get("menu_4_info_0_" + string(_cur)));
+				draw_text((_bg_x + (_bg_w / 2)), credits_y[_cur], text_get("menu_4_info_0_" + string(_cur)));
 			
 				draw_set_font(fnt_main_spaced_medium);
 				draw_set_color(merge_color(global.c_gray, c_white, 0.25));
 				draw_set_valign(fa_top);
-				draw_text_ext((_bg_x + (_bg_w / 2)), credits_y[(_cur + 1)],  textdata_get("menu_4_info_0_" + string(_cur + 1)), -1, (_bg_w - 60));
+				draw_text_ext((_bg_x + (_bg_w / 2)), credits_y[(_cur + 1)],  text_get("menu_4_info_0_" + string(_cur + 1)), -1, (_bg_w - 60));
 			}
 		}
 		
@@ -255,25 +255,25 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 				credits_y[0] = (_bg_y + _di0 + 14);
 				credits_y[1] = (credits_y[0] + _di0 - (string_height("ABC") / 2));
 				
-				credits_y[2] = (credits_y[1] + string_height(textdata_get("menu_4_info_1_1")) + _di1);
+				credits_y[2] = (credits_y[1] + string_height(text_get("menu_4_info_1_1")) + _di1);
 				credits_y[3] = (credits_y[2] + _di0 - (string_height("ABC") / 2));
 				
-				credits_y[4] = (credits_y[3] + string_height(textdata_get("menu_4_info_1_3")) + _di1);
+				credits_y[4] = (credits_y[3] + string_height(text_get("menu_4_info_1_3")) + _di1);
 				credits_y[5] = (credits_y[4] + _di0 - (string_height("ABC") / 2));
 				
-				credits_y[6] = (credits_y[5] + string_height(textdata_get("menu_4_info_1_5")) + _di1);
+				credits_y[6] = (credits_y[5] + string_height(text_get("menu_4_info_1_5")) + _di1);
 				credits_y[7] = (credits_y[6] + _di0 - (string_height("ABC") / 2));
 				
-				credits_y[8] = (credits_y[7] + string_height(textdata_get("menu_4_info_1_7")) + _di1);
+				credits_y[8] = (credits_y[7] + string_height(text_get("menu_4_info_1_7")) + _di1);
 				credits_y[9] = (credits_y[8] + _di0 - (string_height("ABC") / 2));
 			
 				draw_set_color(c_white);
 				draw_set_valign(fa_middle);
-				draw_text((_bg_x + (_bg_w / 2)), credits_y[_cur], textdata_get("menu_4_info_1_" + string(_cur)));
+				draw_text((_bg_x + (_bg_w / 2)), credits_y[_cur], text_get("menu_4_info_1_" + string(_cur)));
 				
 				draw_set_color(merge_color(global.c_gray, c_white, 0.25));
 				draw_set_valign(fa_top);
-				draw_text_ext((_bg_x + (_bg_w / 2)), credits_y[(_cur + 1)],  textdata_get("menu_4_info_1_" + string(_cur + 1)), -1, (_bg_w - 60));
+				draw_text_ext((_bg_x + (_bg_w / 2)), credits_y[(_cur + 1)],  text_get("menu_4_info_1_" + string(_cur + 1)), -1, (_bg_w - 60));
 			}
 		}
 		
@@ -284,7 +284,7 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 			draw_set_font(fnt_main_spaced_big);
 			draw_set_valign(fa_middle);
 			draw_set_halign(fa_center);
-			draw_text((_bg_x + (_bg_w / 2)), (_bg_y + (_bg_h / 2)), textdata_get("menu_4_info_2_0"));
+			draw_text((_bg_x + (_bg_w / 2)), (_bg_y + (_bg_h / 2)), text_get("menu_4_info_2_0"));
 		}
 	}	
 }
@@ -338,7 +338,7 @@ if (global.menu_lvl == 1)
 			draw_set_color(_color);
 			draw_set_valign(fa_middle);
 			draw_set_halign(fa_center);
-			draw_text((_x2 + (_w2 / 2)), (_y + 44), textdata_get("menu_1_empty"));	
+			draw_text((_x2 + (_w2 / 2)), (_y + 44), text_get("menu_1_empty"));	
 		}
 	}
 }
@@ -427,6 +427,6 @@ if (global.menu_lvl <= 0)
 		draw_text(5, (room_height - 2), global.game_version);
 	
 		draw_set_halign(fa_right);
-		draw_text((room_width - 5), (room_height - 2), textdata_get("menu_hidehud"));
+		draw_text((room_width - 5), (room_height - 2), text_get("menu_hidehud"));
 	}
 }

@@ -7,7 +7,7 @@ for (var l = 0; l < 8; l++)
 		option[l, i] = "";
 		option_key[l, i] = "  ";
 		var _id = string(l) + "_" + string(i);
-		var _opt = textdata_get("menu_" + string(_id));
+		var _opt = text_get("menu_" + string(_id));
 		if (_opt != undefined && _opt != "Salenis")
 		{
 			option[l, i] = _opt;

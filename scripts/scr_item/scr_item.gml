@@ -117,9 +117,9 @@ function item_name(_item, _type = "")
 {
 	var _textID = $"item_name_{item_id(_item)}";
 	var _textID_type = $"{_textID}_{_type}";
-	if (_type != "" && textdata_get(_textID_type) != "")
-		return textdata_get(_textID_type);
-	return textdata_get(_textID);
+	if (_type != "" && text_get(_textID_type) != "")
+		return text_get(_textID_type);
+	return text_get(_textID);
 }
 function item_use()
 {
@@ -144,10 +144,10 @@ function item_use()
 					if (i == 1)
 					{
 						msg_face[i] = spr_dialogface_m6_thinking;
-						msg_sound[i] = snd_writer_m6_tense;
+						msg_sound[i] = snd_writerMee6_tense;
 					}
 				}
-				msg[i] = textdata_get($"item_use_brick_{i}{_text_postfix}");
+				msg[i] = text_get($"item_use_brick_{i}{_text_postfix}");
 			}
 			audio_play(snd_jingleHypnosis, false, VOLUME_SOUND);
 			break;
@@ -155,7 +155,13 @@ function item_use()
 			default:
 			global.chara_heals += 1;
 			chara_hp(item_value(_item));
-			msg[0] = $"{textdata_get("item_use_0")} :Y{item_name(_item, "")};D.)^3&" + string((global.chara_curhp < global.chara_maxhp) ? $"{textdata_get("item_use_1")} :Y{item_value(_item)} HP;D.)" : $"{textdata_get("item_use_2")}");
+			msg[0] = $"{text_get("item_use_0")} :Y{item_name(_item, "")};D.)^3 \\&" + string((global.chara_curhp < global.chara_maxhp) ? $"{text_get("item_use_1")} :Y{item_value(_item)} HP;D.)" : $"{text_get("item_use_2")}");
+			if (_item == ITEM_CHOCO && room == room_battle)
+			{
+				global.item_choco_attackTurns = 3; // 3 because counts the round in which the item was used
+				msg[0] += $"^3 \\&{text_get("item_use_choco")}";
+				audio_play(snd_stingBoost, false, VOLUME_SOUND);
+			}
 			break;
 		}
 		global.item[_pos] = -1;
@@ -172,7 +178,7 @@ function item_use()
 			global.item[_pos] = global.chara_armor;
 			global.chara_armor = _item;
 		}
-		msg[0] = $"{textdata_get("item_equip")} :Y{item_name(_item, "")};D.)";
+		msg[0] = $"{text_get("item_equip")} :Y{item_name(_item, "")};D.)";
 		audio_play(snd_equip, 0, VOLUME_SOUND);
 	}
 }
@@ -181,7 +187,7 @@ function item_info()
 	for (var i = 0; i < 99; i++)
 	{
 		var _textID = $"item_info_{item_id(global.item[obj_chara_menu.option_pos_old])}_{i}";
-		var _text = textdata_get(_textID);
+		var _text = text_get(_textID);
 		if (_text == undefined) || (_text == "Salenis")
 			break;
 		msg[i] = _text;

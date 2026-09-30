@@ -55,7 +55,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			global.battle_nextgroup = 4;
 		battle();
 	}
-	if (keyboard_check(ord("E")) == true && keyboard_check(vk_end) == true && exists(obj_battle_controller) == true)
+	if (keyboard_check_pressed(ord("E")) == true && keyboard_check(vk_end) == true && exists(obj_battle_controller) == true)
 		obj_battle_controller.battle_turntime = 0;
 	if (keyboard_check_pressed(vk_numpad7) == 1)
 		global.debug_hud = !global.debug_hud;
@@ -117,8 +117,21 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 	}
 	if (keyboard_check_pressed(vk_f10) == true)
 	{
+		if (room == room_corridors_3)
+			global.flag[67] += 1;
 		if (room == room_battle && exists(obj_battle_controller) == true && obj_battle_controller.enemy_type[0] == 6)
 			obj_battle_controller.enemy_obj[0].insultTurns = -2;
 		audio_play(snd_shriekCar, false, VOLUME_SOUND);
+	}
+	if (keyboard_check_pressed(ord("W")) == true)
+	{
+		var _textGroup = "event_troll_0";
+		writer(_textGroup);
+		if (string_starts_with(_textGroup, "event_troll_") == true && floor(global.volume[VOLUME_MUSIC]) == 0)
+		{
+			if (audio_playing(mus_event_troll) == true)
+				audio_stop(mus_event_troll);
+			audio_play(mus_event_troll, true);
+		}
 	}
 }

@@ -29,7 +29,7 @@ function START_GAME()
 	global.c_mention[1] = #A8BAFE; //#5865F2//#6B70B2;
 	global.fnt_mars = font_add_sprite_ext(spr_fnt_mars, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.!:$/%#", false, 0);
 	global.fnt_dmg = font_add_sprite_ext(spr_fnt_dmg, "BCEIKLMOQRSU 0123456789", 1, 0);
-	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcçdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- @", 0, 0);
+	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcçdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCÇDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- @", 0, 0);
 	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
 	global.debug_hud = false;
@@ -202,6 +202,7 @@ function start_item()
 	global.item_last = (global.item_length - 1);
 	for (var i = 0; i < global.item_length; i++)
 		global.item[i] = -1;
+	global.item_choco_attackTurns = 0;
 	global.itemDropped_lengthMax = 99;
 	for (var i = 0; i < global.itemDropped_lengthMax; i++)
 		global.itemDropped[i] = {};
@@ -418,12 +419,12 @@ function start_achievements()
 	global.achievement_total = 0;
 	for (var i = 0; i < 99; i++)
 	{
-		var z = textdata_get("unused_achievement_name_" + string(i));
+		var z = text_get("unused_achievement_name_" + string(i));
 		if (z != undefined && z != "Salenis")
 		{
 			global.achievement[i] = 0;
 			global.achievement_name[i] = z;
-			global.achievement_desc[i] = textdata_get("unused_achievement_desc_" + string(i));
+			global.achievement_desc[i] = text_get("unused_achievement_desc_" + string(i));
 		}
 		else
 		{
@@ -550,6 +551,9 @@ function CHANGE_GAME()
 			if (_lvl >= 6)
 			{
 				global.flag[37] = 1; // started Broken Clock's event
+				global.flag[38] = false;
+				if (global.flag[38] == false)
+					global.flag[72] = true;
 				global.flag[39] = 1; // finished Broken Clock's event
 				global.flag[41] = 1; // left room_corridors_12 after Broken Clock's battle
 				global.item[3] = ITEM_BOWL;

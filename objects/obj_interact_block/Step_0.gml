@@ -241,7 +241,7 @@ else if (result == 2) // moveble
 		}
 		else
 		{
-			audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
+			audio_play(snd_impactPulse1, 0, VOLUME_SOUND);
 			chara_change(-1, 0, 0, -1, false, false, -1)
 			con = 2;
 		}
@@ -289,7 +289,7 @@ else if (result == 5) // itemDropoed
 			writer("itemDropped_pickup", -1, -1, [item_name(global.item[global.item_last], "")]);
 			visible = false;
 			image_alpha = 0;
-			audio_play(snd_interact_item, 0, VOLUME_SOUND);
+			audio_play(snd_stingItem, 0, VOLUME_SOUND);
 		}
 		else
 			writer("itemDropped_cantpickup", -1, -1);
@@ -420,7 +420,7 @@ if (myinteract == 1)
 			chara.move = 1;
 		}
 		else
-			audio_play(snd_heartpulse1, 0, 0);
+			audio_play(snd_impactPulse1, 0, 0);
 			
 		mydelay = 0;
 	}
@@ -433,7 +433,7 @@ if (myinteract == 1)
 	}
 	else if (myresult == 5) // captcha 3 lever
 	{
-		var _snd = snd_heartpulse1;
+		var _snd = snd_impactPulse1;
 		if (x == 100 && global.flag[50] == 0)
 			global.flag[50] = 1;
 		else if (x == 200 && global.flag[51] == 0)

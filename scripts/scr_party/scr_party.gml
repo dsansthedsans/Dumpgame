@@ -35,7 +35,7 @@ function party_type(_type)
 		sprite[DOWN, 1] = spr_m6_d_defaultTalk;
 		sprite[SIT, 0] = spr_m6_d_defaultSit;
 		sprite[SIT, 1] = sprite[SIT, 0];
-		if (room == room_corridors_2 && global.flag[2] == 0.125) || (global.flag[72] != undefined && global.flag[72] > 0) || (room == room_corridors_18)
+		if (party_typeM6_isSerious() == true)
 		{
 			sprite[LEFT, 0] = spr_m6_l_neutral;
 			sprite[RIGHT, 0] = spr_m6_r_neutral;
@@ -47,6 +47,10 @@ function party_type(_type)
 			sprite[SIT, 1] = sprite[SIT, 0];
 		}
 	}
+}
+function party_typeM6_isSerious()
+{
+	return (room == room_corridors_2 && global.flag[2] == 0.125) || (global.flag[72] != undefined && global.flag[72] > 0) || (room == room_corridors_18);
 }
 
 function party_change(_index, _movetype, _movetype_targetside)

@@ -42,9 +42,9 @@ title_length = 0;
 shard_amt = 6;
 
 draw_set_font(fnt_main_big);
-mainopt[0] = textdata_get("over_0");
+mainopt[0] = text_get("over_0");
 mainopt[1] = "";
-mainopt[2] = textdata_get("over_1");
+mainopt[2] = text_get("over_1");
 for (var i = 0; i < 3; i++)
 	mainopt_x[i] = ((room_width / 2) - 80 + (80 * i));
 mainopt_y = (room_height / 1.5);

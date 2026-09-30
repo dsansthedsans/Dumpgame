@@ -29,7 +29,7 @@ if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 	{
 		con = 8;
 		alarm[2] = 90;
-		audio_play(snd_breakPieces, false, VOLUME_SOUND);
+		audio_play(snd_impactBreakPieces, false, VOLUME_SOUND);
 	}
 	if (con == 9)
 	{

@@ -50,11 +50,11 @@ if (msg[page] != "%%%") || (question[page] != "%%%")
 	if (text == "battle_main" && exists(obj_battle_controller) == true && obj_battle_controller.battle_group == 1 && obj_battle_controller.enemy_obj[0].stage == 7 && msg[page + 3] == "%%%" && msg[page + 2] != "%%%")
 	{
 		global.item[global.item_last] = ITEM_BRICK;
-		audio_play(snd_interact_item, 0, VOLUME_SOUND);
+		audio_play(snd_stingItem, 0, VOLUME_SOUND);
 	}
 	if (text == "npc_armsguy_lost" && global.flag[47] == 1 && page == 4)
 	{
-		audio_play(snd_interact_item, 0, VOLUME_SOUND);
+		audio_play(snd_stingItem, 0, VOLUME_SOUND);
 		if (global.ACHIEVEMENT_ENABLED == true && global.achievement[ACHIEVEMENT_MONSTNINJA] == 0)
 		{
 			global.achievement[ACHIEVEMENT_MONSTNINJA] = 1;
@@ -77,8 +77,6 @@ else
 	{
 		msg_talker[(page - 1)].image_speed = 0;
 		msg_talker[(page - 1)].image_index = 0;
-		debug("stopped talker animation");
 	}
-	debug("--- Destroyed obj_writer_controller");
 	destroy(id);
 }

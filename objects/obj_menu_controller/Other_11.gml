@@ -1,22 +1,22 @@
 /// @descr extra das opções
-option_key[2, 2] = textdata_get("menu_key_2_2");
+option_key[2, 2] = text_get("menu_key_2_2");
 //if (option_pos == 2)
 //	option_key[2, 2] = "< " + string(option_key[2, 2]) + " >";
-option_key[2, 3] = textdata_get("menu_key_2_" + string(global.fullscreen));
-option_key[2, 4] = textdata_get("menu_key_2_" + string(global.visualeff));
+option_key[2, 3] = text_get("menu_key_2_" + string(global.fullscreen));
+option_key[2, 4] = text_get("menu_key_2_" + string(global.visualeff));
 option_key[2, 5] = string(round(global.volume[VOLUME_MASTER] * 100)) + "%";
 option_key[2, 6] = string(round(global.volume[VOLUME_MUSIC] * 100)) + "%";
 option_key[2, 7] = string(round(global.volume[VOLUME_SOUND] * 100)) + "%";
 if (option_pos >= 5 && option_pos <= 7)
 	option_key[2, option_pos] = "< " + string(option_key[2, option_pos]) + " >";
-option_key[2, 8] = textdata_get("menu_key_2_" + string(global.autorun));
-option_key[2, 9] = textdata_get("menu_key_2_" + string(global.showfps));
-option_key[2, 10] = textdata_get("menu_key_2_" + string(global.showsw));
+option_key[2, 8] = text_get("menu_key_2_" + string(global.autorun));
+option_key[2, 9] = text_get("menu_key_2_" + string(global.showfps));
+option_key[2, 10] = text_get("menu_key_2_" + string(global.showsw));
 var i = 11;
 if (global.ACHIEVEMENT_ENABLED == true)
-	option_key[2, i++] = textdata_get("menu_key_2_" + string(global.hidenotif));
-option_key[2, i++] = textdata_get("menu_key_2_" + string(global.drpenabled));
-option_key[2, i++] = textdata_get("menu_key_2_" + string(global.fastmenu));
+	option_key[2, i++] = text_get("menu_key_2_" + string(global.hidenotif));
+option_key[2, i++] = text_get("menu_key_2_" + string(global.drpenabled));
+option_key[2, i++] = text_get("menu_key_2_" + string(global.fastmenu));
 option_key[6, 1] = "[F10]";
 for (var i = 0; i < 14; i++)
 	option_key[6, (i + 2)] = "[" + string(key_name(global.keybind[i])) + "]";

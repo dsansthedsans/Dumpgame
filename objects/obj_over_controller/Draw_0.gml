@@ -37,7 +37,7 @@ draw_set_color(c_black);
 draw_rectangle(-40, -40, (room_width + 40), (room_height + 40), 0);
 
 //skip
-var _skip_text = textdata_get("over_skip");
+var _skip_text = text_get("over_skip");
 _skip_text = string_replace_all(_skip_text, "{key0}", string_upper(key_name(global.keybind[04])) );
 _skip_text = string_replace_all(_skip_text, "{key1}", string_upper(key_name(global.keybind[05])) );
 skipalpha = lerp(skipalpha, (con < 9 && global.chara_deaths > 0), 0.1);

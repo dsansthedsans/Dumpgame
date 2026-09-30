@@ -9,7 +9,7 @@ if (active == 1)
 			image_alpha += 0.1;
 			if (delay >= 30)
 			{
-				audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
+				audio_play(snd_impactPulse1, 0, VOLUME_SOUND);
 				delay = 0;
 				stage = 1;
 			}
@@ -358,7 +358,7 @@ if (active == 1)
 			y = lerp(y, nexty, 0.25);
 			image_angle = lerp(image_angle, nextangle, 0.25);
 			if (delay == 0 && touchytouchy == 1)
-				audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
+				audio_play(snd_impactPulse1, 0, VOLUME_SOUND);
 			
 			var _time = 25;
 			if (controller.battle_round > 3)

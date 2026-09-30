@@ -86,7 +86,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 		draw_set_valign(fa_bottom);
 		draw_set_halign(fa_center);
 		if (filesaved == 1)
-			draw_text(_middlex + 3, _savedy, textdata_get("savepoint_all_2"));
+			draw_text(_middlex + 3, _savedy, text_get("savepoint_all_2"));
 	}
 }
 if (msg_format[page] == "battlebox")
@@ -318,7 +318,7 @@ for (var c = 1; c < (text_length + 1); c++)
 	// remove characters
 	if (string_char_at(msg[page], c) == "^")
 	{
-		if (string_char_at(msg[page], c + 1) == "1") || (string_char_at(msg[page], c + 1) == "2") || (string_char_at(msg[page], c + 1) == "3") || (string_char_at(msg[page], c + 1) == "4")
+		if (string_char_at(msg[page], c + 1) == "1") || (string_char_at(msg[page], c + 1) == "2") || (string_char_at(msg[page], c + 1) == "3") || (string_char_at(msg[page], c + 1) == "4") || (string_char_at(msg[page], c + 1) == "5")
 			_candraw = 0;
 	}	
 	if (string_char_at(msg[page], (c - 1)) == "^")
@@ -350,22 +350,27 @@ for (var c = 1; c < (text_length + 1); c++)
 	var _floaty = 0;
 	if (shaking > 0 && shake_change == 1 && global.visualeff == true)
 	{
-		if (shaking == 1) || (shaking == 2) || (shaking == 4)
+		if (shaking == 1) || (shaking == 2) || (shaking == 4) || (shaking == 5 && shake_time[c] > 0)
 		{
 			var _amt = 0.5;
 			if (shaking == 2)
 				_amt = 0.75;
-			if (shaking == 4)
+			if (shaking == 4) || (shaking == 5)
+			{
 				_amt = 1;
+				if (shaking == 5 && room == room_battle)
+					_amt *= 1.75;
+			}
 			shake_x[c] = choose(_amt, 0);
 			shake_y[c] = choose(_amt, 0);
+			if (shaking == 5)
+				shake_time[c] -= 1;
 		}
 		else if (shaking == 3)
 		{
 			shake_x[c] = 0;
 			shake_y[c] = 0;
 			if (irandom_range(1, 200) == 1)
-
 			{
 				var _amt = 1;
 				shake_x[c] = choose(-_amt, _amt);
@@ -378,6 +383,7 @@ for (var c = 1; c < (text_length + 1); c++)
 		var _floatx = (sin((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 		var _floaty = (cos((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 	}
+	//draw
 	if (_candraw == 1)
 	{
 		draw_set_valign(fa_top);
@@ -588,7 +594,7 @@ if (question[page] != "%%%" && writing == 0)
 			if (question_result[page] == 1)
 			{
 				savefile_write();
-				audio_play(snd_interact_save, 0, VOLUME_SOUND);
+				audio_play(snd_jingleSave, 0, VOLUME_SOUND);
 			}
 			else if (question_result[page] == 2)
 				audio_play(snd_option_return, 0, VOLUME_SOUND);

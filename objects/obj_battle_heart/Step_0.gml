@@ -47,7 +47,7 @@ if (exists(controller) == true)
 	graze.x = x;
 	graze.y = y;
 	if (global.indebug == true && global.debug_hud == true)
-		debug($"x = {x} | y = {y}");
+		debug($"--- obj_battle_heart.x = {x} | obj_battle_heart.y = {y}");
 }
 
 /*

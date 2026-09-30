@@ -462,6 +462,8 @@ if (battle_lvl == 12 && button_active == true)
 		heart_move = 0;
 		heart.x = -20;
 		heart.y = -20;
+		if (global.item_choco_attackTurns > 0)
+			global.item_choco_attackTurns -= 1;
 	}
 }
 if (battle_lvl == 13 && box_x == box_defaultx && box_y == box_defaulty && box_w == box_defaultw && box_h == box_defaulth)
@@ -548,8 +550,6 @@ if (assist.active == true)
 								_destroyed = true;
 								destroy(_blt);
 							}
-							else
-								debug($"NO BRAINER HERE !!!!!!!! {_blt.type}");
 						}
 						if (_destroyed == true)
 							audio_play(snd_bellFlower, false, VOLUME_SOUND);
@@ -578,5 +578,5 @@ if (assist.active == true)
 
 if (global.indebug == 1 && global.debug_hud == true && battle_won == 0)
 {	
-	debug("battle_lvl: " + string(battle_lvl) + " | button_pos: " + string(button_pos) + " | level_pos: " + /*string(level_pos) + " | usedFIGHT: " + string(battle_usedfight) +*/ " | usedACT: " + string(battle_usedact)/* + " | usedITEM: " + string(battle_useditem) + " | usedMERCY: " + string(battle_usedmercy)*/);
+	debug("--- battle_lvl: " + string(battle_lvl) + " | button_pos: " + string(button_pos) + " | level_pos: " + /*string(level_pos) + " | usedFIGHT: " + string(battle_usedfight) +*/ " | usedACT: " + string(battle_usedact)/* + " | usedITEM: " + string(battle_useditem) + " | usedMERCY: " + string(battle_usedmercy)*/);
 }

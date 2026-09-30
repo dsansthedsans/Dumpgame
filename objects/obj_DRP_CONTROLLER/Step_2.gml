@@ -5,9 +5,9 @@ if (ready == 1)
 		details = room_name(room);
 		state = "Salenis";
 		if (room == room_loading) // carregando
-			state = textdata_get("start");
+			state = text_get("start");
 		else if (global.inmenu == 1) // menu
-			state = textdata_get($"drp_state_menu_{global.menu_lvl}");
+			state = text_get($"drp_state_menu_{global.menu_lvl}");
 		else if (global.inintro == 1) // intro
 			state = "";
 			/*thatwriter = obj_intro_controller.thiswriter;
@@ -49,9 +49,9 @@ if (ready == 1)
 					state = string(name[0]) + ", " + string(name[1]) + ", " + string(name[2]);
 			}
 			else if (controller.battle_won == 1)
-				state = textdata_get($"drp_state_battle_won_{controller.battle_group == 0}");
+				state = text_get($"drp_state_battle_won_{controller.battle_group == 0}");
 			else if (controller.fleeing == 1) // flee
-				state = textdata_get("drp_state_battle_fleeing");
+				state = text_get("drp_state_battle_fleeing");
 		}
 		else if (global.ingameover == 1) // Game over
 			state = "";
@@ -61,7 +61,7 @@ if (ready == 1)
 			state = room_name(room);
 		}
 		face = "noface";
-		faceInfo = textdata_get($"drp_faceInfo_{global.savefile_selected != -1}");
+		faceInfo = text_get($"drp_faceInfo_{global.savefile_selected != -1}");
 		if (global.savefile_selected != -1)
 		{
 			face = "face0";
@@ -71,7 +71,7 @@ if (ready == 1)
 			faceInfo = string_replace_all(faceInfo, "{lvl}", global.chara_lvl);
 		}
 		np_setpresence(state, details, "cover", face);
-		np_setpresence_more(faceInfo, textdata_get("start"), 0);
+		np_setpresence_more(faceInfo, text_get("start"), 0);
 	}
 	else
 		np_clearpresence();	

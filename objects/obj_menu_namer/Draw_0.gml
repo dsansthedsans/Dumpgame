@@ -91,7 +91,7 @@ if (typing == 1)
 	draw_set_alpha(controller.alpha);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_text_outline((_bg_x + (_bg_w / 2) + (irandom(1) * choose(-1, 1) * global.visualeff)), (_bg_y + (_bg_h / 2) - 20 + (irandom(1) * choose(-1, 1) * global.visualeff)), textdata_get("menu_namer_f10"), c_red, 2, c_black);
+	draw_text_outline((_bg_x + (_bg_w / 2) + (irandom(1) * choose(-1, 1) * global.visualeff)), (_bg_y + (_bg_h / 2) - 20 + (irandom(1) * choose(-1, 1) * global.visualeff)), text_get("menu_namer_f10"), c_red, 2, c_black);
 }
 
 

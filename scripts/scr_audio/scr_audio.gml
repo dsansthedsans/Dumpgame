@@ -13,11 +13,11 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_option_return)
 			_volume *= 0.75;
-		if (_asset == snd_ambient_birds)
+		if (_asset == snd_ambienceBirds)
 			_volume *= 0.5;
-		if (_asset == snd_ambient_wind)
+		if (_asset == snd_ambienceWind)
 			_volume *= 0.75 + 0.125;
-		if (_asset == snd_ambient_water)
+		if (_asset == snd_ambienceWater)
 			_volume *= 1.25;
 		if (_asset == snd_bird_startfly)
 			_volume /= 2;
@@ -27,21 +27,25 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_impact)
 			_volume *= 0.75;
-		if (_asset == snd_writer_m6) || (_asset == snd_writer_m6_tense) || (_asset == snd_writer_m6_angry)
+		if (_asset == snd_writerMee6) || (_asset == snd_writerMee6_tense) || (_asset == snd_writerMee6_angry)
+		{
 			_volume *= 0.35;
-		if (_asset == snd_surprise)
+			if (object_index == obj_writer_controller && msg_face[page] == -1)
+				_volume /= 2;
+		}
+		if (_asset == snd_stingSurprise)
 			_volume *= 0.5 + (0.25 / 2);
-		if (_asset == snd_heartpulse1)
+		if (_asset == snd_impactPulse1)
 			_volume *= 0.75 - 0.125;
-		if (_asset == snd_heartpulse2)
+		if (_asset == snd_impactPulse2)
 			_volume *= 0.75;
 		if (_asset == snd_explosionRealistic)
 			_volume = 0.75;
-		if (_asset == snd_ambient_wind)
+		if (_asset == snd_ambienceWind)
 			_volume *= 0.5;
 		if (_asset == snd_impactSwing)
 			_volume *= 1;
-		if (_asset == snd_writer_brock)
+		if (_asset == snd_writerBrock)
 			_volume *= 0.5;
 		if (_asset == snd_launchShock)
 			_volume *= 0.5;
@@ -49,7 +53,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.75;
 		if (_asset == snd_explosionLightning)
 			_volume *= 0.375;
-		if (_asset == snd_writer_gabee) || (_asset == snd_writer_dsans)
+		if (_asset == snd_writerGabee) || (_asset == snd_writerDsans)
 			_volume /= 5;
 		if (_asset == snd_splat) || (_asset == snd_splat_reversed)
 			_volume *= 0.5;
@@ -63,7 +67,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 1.5;
 		if (_asset == snd_crowdApplause) || (_asset == snd_crowdCheer)
 			_volume *= 0.5;
-		if (_asset == snd_alarm)
+		if (_asset == snd_ambienceAlarm)
 			_volume *= 1.5;
 		if (_asset == snd_jingleOminous)
 			_volume *= (0.5 - 0.125);
@@ -71,11 +75,11 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_battle_danger)
 			_volume *= 0.75;
-		if (_asset == snd_interact_save)
+		if (_asset == snd_jingleSave)
 			_volume *= 0.75;
 		if (_asset == snd_heal)
 			_volume *= 1 - 0.125;
-		if (_asset == snd_victory)
+		if (_asset == snd_jingleVictory)
 			_volume *= 0.75;
 		if (_asset == snd_creepyPedronstro)
 			_volume *= 0.5;
@@ -93,7 +97,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_option_keyreset)
 			_volume *= 0.5;
-		if (_asset == snd_interact_rulesbook) || (_asset == snd_meowmeowmeow)
+		if (_asset == snd_interact_rulesbook) || (_asset == snd_shriekCatLong)
 			_volume *= 0.25;
 		if (_asset == snd_shriekCat)
 			_volume *= 0.5;
@@ -105,9 +109,9 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 1.25;
 		if (_asset == snd_jingleLevel)
 			_volume *= 0.75;
-		if (_asset == snd_writer_armsguy)
+		if (_asset == snd_writerArmsguy)
 			_volume *= 1;
-		if (_asset == unused_snd_stingFear)
+		if (_asset == snd_stingFear)
 			_volume *= 0.5;
 		if (_asset == snd_stepKnight)
 			_volume *= (0.25 * (0.75 - 0.125));
@@ -115,6 +119,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.75;
 		if (_asset == snd_buildupCymbal)
 			_volume *= (0.75 + 0.125);
+		if (_asset == snd_stingBoost)
+			_volume *= 0.75;
+		if (_asset == snd_writerTroll_0) || (_asset == snd_writerTroll_1)
+			_volume *= 0.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -173,7 +181,7 @@ function audio_pitch(_audio, _pitch)
 		case snd_explosionRealistic:
 		case snd_explosionLightning:
 		case snd_explosionEcho:
-		case snd_battle_item_trident_lightningSummon:
+		case snd_appearLightning:
 		_pitch += (random(0.125) * choose(-1, 1));
 		break;
 	}

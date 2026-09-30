@@ -17,7 +17,7 @@ fade = 0;
 drawbar = 1;
 if (dmg <= 0)
 {
-	dmg = textdata_get("battle_fight_0");
+	dmg = text_get("battle_fight_0");
 	if (controller.enemy_type[target] != 5 && controller.battle_group >= 7) || (controller.enemy_type[target] == 4)
 		myy = 240;
 	drawbar = 0;

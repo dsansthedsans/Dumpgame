@@ -15,10 +15,10 @@ function battle_getgroup()
 	if (chara_world() == WORLD_CORRIDORS) // corridors
 	{
 		battle_group = irandom_range(2, 4);
-		if (global.world_curpopulation[chara_world()] > 1 && global.world_curpopulation[chara_world()] != ((global.world_maxpopulation[chara_world()] / 2) + 1))
+		if (global.world_curpopulation[chara_world()] >= 2 && global.world_curpopulation[chara_world()] != ((global.world_maxpopulation[chara_world()] / 2) + 1))
 		{
 			battle_group = choose(irandom_range(2, 4), irandom_range(7, 9));
-			if (global.flag[37] == 1 && global.flag[39] == 1)
+			if (global.world_curpopulation[chara_world()] >= 3 && global.flag[37] == 1 && global.flag[39] == 1)
 				battle_group = ((irandom_range(1, 5) != 1) ? irandom_range(7, 9) : 12);
 		}
 		if (global.battle_nextgroup == 0)
@@ -227,8 +227,8 @@ function battle_enemy()
 				enemy_def[i] = 1;
 				enemy_reward_exp[i] = 0;
 				enemy_reward_mny[i] = 0;
-				enemy_act[i, 1] = textdata_get("battle_act_dummy_1");
-				enemy_act[i, 2] = textdata_get("battle_act_dummy_2");
+				enemy_act[i, 1] = text_get("battle_act_dummy_1");
+				enemy_act[i, 2] = text_get("battle_act_dummy_2");
 				enemy_obj[i].hurtsound = snd_shriekCat;
 			}
 			if (enemy_type[i] == 2) // Armsguy
@@ -240,8 +240,8 @@ function battle_enemy()
 				enemy_def[i] = 4;
 				enemy_reward_exp[i] = 3;
 				enemy_reward_mny[i] = 2;
-				enemy_act[i, 1] = textdata_get("battle_act_armsguy_1");
-				enemy_act[i, 2] = textdata_get("battle_act_armsguy_2");
+				enemy_act[i, 1] = text_get("battle_act_armsguy_1");
+				enemy_act[i, 2] = text_get("battle_act_armsguy_2");
 				enemy_obj[i].hpwidth = 200;
 			}
 			if (enemy_type[i] == 3) // Trashguy
@@ -253,8 +253,8 @@ function battle_enemy()
 				enemy_def[i] = 7;
 				enemy_reward_exp[i] = 3;
 				enemy_reward_mny[i] = 2;
-				enemy_act[i, 1] = textdata_get("battle_act_trashguy_1");
-				enemy_act[i, 2] = textdata_get("battle_act_trashguy_2");
+				enemy_act[i, 1] = text_get("battle_act_trashguy_1");
+				enemy_act[i, 2] = text_get("battle_act_trashguy_2");
 				enemy_obj[i].hurtsound = snd_shriekDemon;
 			}
 			if (enemy_type[i] == 4) // Flitcher
@@ -266,8 +266,8 @@ function battle_enemy()
 				enemy_def[i] = 6;
 				enemy_reward_exp[i] = 3;
 				enemy_reward_mny[i] = 2;
-				enemy_act[i, 1] = textdata_get("battle_act_flitcher_1");
-				enemy_act[i, 2] = textdata_get("battle_act_flitcher_2");
+				enemy_act[i, 1] = text_get("battle_act_flitcher_1");
+				enemy_act[i, 2] = text_get("battle_act_flitcher_2");
 				enemy_obj[i].hurtsound = snd_shriekDragon;
 			}
 			if (enemy_type[i] == 5) // Eyecrush
@@ -279,8 +279,8 @@ function battle_enemy()
 				enemy_def[i] = 0;
 				enemy_reward_exp[i] = 3;
 				enemy_reward_mny[i] = 2;
-				enemy_act[i, 1] = textdata_get("unused_battle_act_eyecrush_1");
-				enemy_act[i, 2] = textdata_get("unused_battle_act_eyecrush_2");
+				enemy_act[i, 1] = text_get("unused_battle_act_eyecrush_1");
+				enemy_act[i, 2] = text_get("unused_battle_act_eyecrush_2");
 			}
 			if (enemy_type[i] == 6) // Broken Clock
 			{
@@ -291,10 +291,10 @@ function battle_enemy()
 				enemy_def[i] = 9999999;
 				enemy_reward_exp[i] = 12; // 12 as in a 12-hour clock
 				enemy_reward_mny[i] = 24; // 24 as in the length of a day, the 24-hour cycle
-				enemy_act[i, 1] = textdata_get("battle_act_brock_1");
-				enemy_act[i, 2] = textdata_get("battle_act_brock_2");
-				enemy_act[i, 3] = textdata_get("battle_act_brock_3");
-				enemy_obj[i].hurtsound = snd_breakSplit;
+				enemy_act[i, 1] = text_get("battle_act_brock_1");
+				enemy_act[i, 2] = text_get("battle_act_brock_2");
+				enemy_act[i, 3] = text_get("battle_act_brock_3");
+				enemy_obj[i].hurtsound = snd_impactBreakSplit;
 			}
 			if (enemy_type[i] == 7) // Rhonhey
 			{
@@ -305,9 +305,9 @@ function battle_enemy()
 				enemy_def[i] = 4;
 				enemy_reward_exp[i] = 6;
 				enemy_reward_mny[i] = 4;
-				enemy_act[i, 1] = textdata_get("battle_act_rhonhey_1");
-				enemy_act[i, 2] = textdata_get("battle_act_rhonhey_2");
-				enemy_act[i, 3] = textdata_get("battle_act_rhonhey_3");
+				enemy_act[i, 1] = text_get("battle_act_rhonhey_1");
+				enemy_act[i, 2] = text_get("battle_act_rhonhey_2");
+				enemy_act[i, 3] = text_get("battle_act_rhonhey_3");
 			}
 			if (enemy_type[i] == 1000) // TROLLFACE
 			{
@@ -556,10 +556,7 @@ function battle_attack()
 			var _y = (box_y - (box_h / 2) - 15);
 			create(_x, _y, obj_battle_blt);
 			thisobj.type = 2.0;
-			
 			time = (irandom_range(10, 15) + normaltime);
-			if (controller.battle_group == 7)
-				debug($"{time} AÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇPAÇP")
 		}
 		if (attack == 1)
 		{
@@ -758,7 +755,6 @@ function battle_attack()
 					thisblt[bltpos] = thisobj;
 					bltpos += 1;
 					delay = 0;
-					debug("With Love, Mr. Killyourself");
 				}
 				else
 					delay += 1;
@@ -774,7 +770,6 @@ function battle_attack()
 					if (exists(thisblt[i]) == true)
 						thisblt[i].reverse = 1;
 				}
-				debug("ladybugs and gentlemeans");
 				stage = 3;
 			}	
 		}

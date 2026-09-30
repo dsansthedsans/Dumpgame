@@ -164,15 +164,17 @@ function chara_stats()
 	}
 	if (string_upper(global.chara_name) == "FRISK")
 		global.chara_maxhp = 99;
+	if (global.item_choco_attackTurns > 0)
+		global.chara_atk *= 2;
 
 	// arma e armadura
 	var _weapon = global.chara_weapon;
-	global.chara_wname = textdata_get("item_name_none");
+	global.chara_wname = text_get("item_name_none");
 	global.chara_wstrength = item_value(_weapon);
 	if (_weapon != -1)
 		global.chara_wname = item_name(_weapon, "");
 	var _armor = global.chara_armor;
-	global.chara_aname = textdata_get("item_name_none");
+	global.chara_aname = text_get("item_name_none");
 	global.chara_astrength = item_value(_armor);
 	if (_armor != -1)
 		global.chara_aname = item_name(_armor, "");
@@ -343,10 +345,10 @@ function chara_world_name(_world)
 	switch (_world)
 	{
 		case WORLD_CORRIDORS:
-		return textdata_get("world_corridors");
+		return text_get("world_corridors");
 		break;
 		case WORLD_CAVERNS:
-		return textdata_get("world_cave");
+		return text_get("world_cave");
 		break;
 	}
 }

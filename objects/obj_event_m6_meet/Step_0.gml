@@ -34,7 +34,7 @@ else if (con == 7)
 	con += 1;
 	alarm[2] = 60;
 	cutout_active = true;
-	audio_play(snd_heartpulse1, false, VOLUME_SOUND);
+	audio_play(snd_impactPulse1, false, VOLUME_SOUND);
 }
 else if (con == 9)
 {

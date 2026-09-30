@@ -8,12 +8,12 @@ if (con == 2)
 	con += 1;
 	alarm[2] = round(60 * 1.25);
 	heart_spr = spr_battle_heart_break;
-	audio_play(snd_breakSplit, false, VOLUME_SOUND, 0.5);
+	audio_play(snd_impactBreakSplit, false, VOLUME_SOUND, 0.5);
 }
 if (con == 4)
 {
 	heart_alpha = 0;
-	audio_play(snd_breakPieces, 0, VOLUME_SOUND, 0.5);
+	audio_play(snd_impactBreakPieces, 0, VOLUME_SOUND, 0.5);
 	shard = [];
 	for (var i = 0; i < shard_amt * global.visualeff; i++)
 	{

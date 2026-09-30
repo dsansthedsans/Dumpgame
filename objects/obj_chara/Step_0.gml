@@ -56,7 +56,7 @@ if (position_meeting(x, y, obj_water_block) == false)
 else
 {
 	if (inwater == false)
-		audio_play(snd_heartpulse1, , VOLUME_SOUND, 0.5);
+		audio_play(snd_impactPulse1, , VOLUME_SOUND, 0.5);
 	inwater = true;
 }
 if (global.chara_move == 1)
@@ -427,7 +427,7 @@ if (stepplay == 1)
 if (position_meeting(x, y, obj_water_block) == 1) // in water
 {
 	if (inwater == 0)
-		audio_play(snd_heartpulse1, 0, VOLUME_SOUND);
+		audio_play(snd_impactPulse1, 0, VOLUME_SOUND);
 	inwater = 1;
 }
 else

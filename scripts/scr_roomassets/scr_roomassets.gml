@@ -930,7 +930,10 @@ function room_nonsolid()
 		{
 			sprite_index = spr_overworld_corridorsbricks;
 			if (x == 525 && y == 115)
+			{
+				y += 10;
 				image_xscale = -1;
+			}
 		}
 	}
 	if (room == unused_room_corridors_16_B)

@@ -29,9 +29,9 @@ for (var l = 0; l < 2; l++)
 	levers[l].object.image_index = levers[l].active;
 	if (_index != levers[l].object.image_index && stage < 16)
 	{
-		if (audio_playing(snd_heartpulse1) == true)
-			audio_stop(snd_heartpulse1);
-		audio_play(snd_heartpulse1, false, VOLUME_SOUND);
+		if (audio_playing(snd_impactPulse1) == true)
+			audio_stop(snd_impactPulse1);
+		audio_play(snd_impactPulse1, false, VOLUME_SOUND);
 		shakeobj(levers[l].object, 1, 1, 0.1);
 	}
 }
@@ -71,7 +71,7 @@ if (stage == 3)
 if (stage == 4 && buttons_word == buttons_wordCurr)
 {
 	if (global.flag[51] == false)
-		audio_play(snd_victory, false, VOLUME_SOUND);
+		audio_play(snd_jingleVictory, false, VOLUME_SOUND);
 	global.flag[51] = true;
 	stage = 5;
 	alarm[2] = 30;
@@ -84,7 +84,7 @@ if (stage == 6)
 if (stage == 7 && round(moveable.object.x) == moveable.endX && round(moveable.object.y) == moveable.endY)
 {
 	if (global.flag[54] == false)
-		audio_play(snd_victory, false, VOLUME_SOUND);
+		audio_play(snd_jingleVictory, false, VOLUME_SOUND);
 	global.flag[54] = true;
 	stage = 8;
 	alarm[2] = 30;
@@ -106,7 +106,7 @@ if (stage == 10 && plates_activeAll == true)
 	stage = 11;
 	alarm[2] = 90;
 	timer.active = false;
-	audio_play(snd_victory, false, VOLUME_SOUND);
+	audio_play(snd_jingleVictory, false, VOLUME_SOUND);
 }
 if (stage == 12)
 {
@@ -216,7 +216,7 @@ if (stage >= 3 && buttons_word != buttons_wordCurr)
 				for (var h = 0; h < sqrt(buttons_length); h++)
 					buttons[h, v].active = false;
 			}
-			audio_play(snd_heartpulse1, false, VOLUME_SOUND);
+			audio_play(snd_impactPulse1, false, VOLUME_SOUND);
 		}
 		buttonsReset.active = true;
 		buttonsReset.object.image_index = 3;
@@ -235,9 +235,9 @@ if (stage >= 3 && buttons_word != buttons_wordCurr)
 					buttons[h, v].object.image_index = 1;
 					if (string_length(buttons_wordCurr) < buttons_length)
 						buttons_wordCurr += buttons[h, v].letter;
-					if (audio_playing(snd_heartpulse1) == true)
-						audio_stop(snd_heartpulse1);
-					audio_play(snd_heartpulse1, false, VOLUME_SOUND);
+					if (audio_playing(snd_impactPulse1) == true)
+						audio_stop(snd_impactPulse1);
+					audio_play(snd_impactPulse1, false, VOLUME_SOUND);
 				}
 			}
 		}
@@ -274,7 +274,7 @@ if (stage >= 3 && plates_activeAll == false)
 				for (var h = 0; h < sqrt(plates_length); h++)
 					plates[h, v].active = false;
 			}
-			audio_play(snd_heartpulse1, false, VOLUME_SOUND);
+			audio_play(snd_impactPulse1, false, VOLUME_SOUND);
 		}
 		platesReset.active = true;
 		platesReset.object.image_index = 3;

@@ -13,7 +13,7 @@ if (con == 1)
 if (con == 2.25)
 {
 	surprise(m6);
-	audio_play(snd_surprise, 0, VOLUME_SOUND);
+	audio_play(snd_stingSurprise, 0, VOLUME_SOUND);
 	chara_facing(UP);
 	alarm[3] = 45;
 	con = 2.5;

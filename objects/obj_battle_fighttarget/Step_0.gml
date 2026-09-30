@@ -18,7 +18,7 @@ if (speed != 0)
 		if (global.chara_weapon == ITEM_TRIDENT && x >= (320 - item_trident_lightningDistance - 2) && x <= (320 + item_trident_lightningDistance) && controller.enemy_type[target] != 6)
 		{
 			dmg *= 1.5;
-			audio_play(snd_battle_item_trident_lightningSummon, false, VOLUME_SOUND);
+			audio_play(snd_appearLightning, false, VOLUME_SOUND);
 		}
 		xscale = 1.35;
 		yscale = xscale;

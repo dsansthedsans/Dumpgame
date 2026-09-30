@@ -182,7 +182,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 				destroy(thismover);
 				party_stop(0);
 			}
-			audio_play(snd_bigswing, false, VOLUME_SOUND);
+			audio_play(snd_impactSwingSmall, false, VOLUME_SOUND);
 			con = 9;
 			alarm[2] = m6_seriousDelay;
 			aftercon = 3;
@@ -237,7 +237,7 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 	else if (con == 15 && ((is_undefined(thiswriter) == false && exists(thiswriter) == false) || (is_undefined(thiswriter) == true))) 
 	{
 		global.flag[37] = 0.75;
-		audio_play(snd_breakPieces, 0, VOLUME_SOUND);
+		audio_play(snd_impactBreakPieces, 0, VOLUME_SOUND);
 		con = 16;
 		alarm[2] = 80;
 	}
@@ -335,7 +335,7 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 			if (global.item[global.item_last] == -1)
 			{
 				global.item[global.item_last] = ITEM_PACE;
-				audio_play(snd_interact_item, 0, VOLUME_SOUND);
+				audio_play(snd_stingItem, 0, VOLUME_SOUND);
 			}
 			else
 				event_user(0);

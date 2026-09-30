@@ -49,14 +49,14 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		{
 			music_set(0, mus_event_chapter1, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
 			if (chara_murder() < 2)
-				music_set(1, snd_ambient_birds, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
+				music_set(1, snd_ambienceBirds, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
 			else
 				global.music[0] = mus_event_chapter1_geno;
 		}
 		// First Corridor & MEE6's Room
 		if (room == room_corridors_1_5 && global.flag[66] != 0.75) || (room == room_corridors_2 && (global.flag[1] == 0 || global.flag[1] == 1))
 		{
-			music_set(1, snd_ambient_wind, , 4, true, 0.5, , 2);
+			music_set(1, snd_ambienceWind, , 4, true, 0.5, , 2);
 			global.music_volumetype[1] = VOLUME_SOUND;
 		}
 		else if (room == room_corridors_2 && global.flag[1] == 0.75)
@@ -68,10 +68,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			if (chara_murder() >= 2)
 				music_set(0, mus_corridors_geno,,,, (1 + (0.025 * (chara_murder() == 3))))
 			if (global.world_curpopulation[chara_world()] <= 0 && global.flag[40] == false) || (audio_playing(snd_jingleLuminous) == true) || (audio_playing(snd_jingleOminous) == true)
-			{
 				music_paused[0] = true;
-				debug("holy cheese and creackers");
-			}
 		}
 		// Broken Clock
 		if (room == room_corridors_11 && global.flag[39] != (0.75 + 0.125))
@@ -106,8 +103,8 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 						var _secMin = obj_captcha3.timer.fog.secondsMin;
 						global.music_pitch[0] = music_pitch_old[0];
 						global.music_pitch[0] = lerp(global.music_pitch[0], ((_sec > (_secMin / 2)) ? 1.05 : ((_sec > (_secMin / 4)) ? 1.1 : ((_sec > (_secMin / 8)) ? 1.15 : 1.2))), 0.025);
-						music_set(1, snd_alarm, , , 2, , , 0);
-						if (music_old[1] == snd_alarm)
+						music_set(1, snd_ambienceAlarm, , , 2, , , 0);
+						if (music_old[1] == snd_ambienceAlarm)
 							global.music_pitch[1] = music_pitch_old[1];
 						global.music_pitch[1] = lerp(global.music_pitch[1], ((_sec > (_secMin / 2)) ? 1 : ((_sec > (_secMin / 4)) ? 1.1 : ((_sec > (_secMin / 8)) ? 1.2 : 1.3))), 0.025);
 						global.music_volumetype[1] = VOLUME_SOUND;
@@ -120,14 +117,14 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		{
 			music_set(0, -1);
 			music_fadeouttime_old[0] = 5;
-			music_set(1, snd_ambient_wind, , 2.5, 1, 0.5, , 1);
+			music_set(1, snd_ambienceWind, , 2.5, 1, 0.5, , 1);
 			global.music_volumetype[1] = VOLUME_SOUND;
 		}
 		// Flitcher's first words
 		if (room == room_corridors_17)
 		{
 			if (chara_murder() < 2)
-				music_set(1, snd_ambient_birds);
+				music_set(1, snd_ambienceBirds);
 			if (global.flag[44] == 0.5)
 			{
 				music_paused[0] = true;
@@ -143,7 +140,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				music_set(0, -1);
 			if (obj_event_gabee_chase.con < 8)
 			{
-				music_set(1, snd_ambient_wind, , 2, true, 0.75, , 2);
+				music_set(1, snd_ambienceWind, , 2, true, 0.75, , 2);
 				global.music_volumetype[1] = VOLUME_SOUND;
 			}
 			music_fadeouttime_old[0] = 5;
@@ -176,7 +173,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		{
 			if (global.flag[62] == 0.5)
 				music_set(0, mus_event_chapter2, , , , (0.5 + 0.25 - (0.025 * (chara_murder() >= 1))), false);
-			music_set(1, snd_ambient_wind, , 2, true, 0.5, , 4);
+			music_set(1, snd_ambienceWind, , 2, true, 0.5, , 4);
 			music_set(2, snd_impactTitle, , 2, true, 0.35, , 4);
 			global.music_volumetype[1] = VOLUME_SOUND;
 			global.music_volumetype[2] = VOLUME_SOUND;
@@ -190,7 +187,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		if (room == room_cave_3)
 		{
 			music_set(0, mus_cave,,,, (1 - (0.025 * (chara_murder() >= 1))),, 2);
-			music_set(2, snd_ambient_water, , 2, true, , , 4);
+			music_set(2, snd_ambienceWater, , 2, true, , , 4);
 			global.music_volumetype[2] = VOLUME_SOUND;
 		}
 	}
@@ -241,7 +238,7 @@ else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 		}
 		music_set(3, control.battle_music, 1, 0, 0, _pitch, 1, _fadeout);
 		//if (control.battle_group == 13)
-		//	music_set(4, snd_ambient_wind, 0.5, , , 0.25);
+		//	music_set(4, snd_ambienceWind, 0.5, , , 0.25);
 	}
 }
 else if (room == room_over)

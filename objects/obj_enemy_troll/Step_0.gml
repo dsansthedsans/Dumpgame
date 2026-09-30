@@ -102,7 +102,7 @@ if (active == 1)
 		// create bubble
 		if (controller.createbubble == 1 && createbubble == 1)
 		{
-			writer("battle_bubble_", bubble_x, bubble_y);
+			writer("battle_bubble_troll_0", bubble_x, bubble_y);
 			createbubble = 2;
 			returnmain = 0;
 		}

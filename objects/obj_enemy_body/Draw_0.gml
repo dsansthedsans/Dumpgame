@@ -135,7 +135,7 @@ if (active == 1)
 				if (_xdist <= 1 && _ydist <= 1)
 				{
 					shakeamt = 2;
-					delay = 50;
+					delay = 45;
 					if (controller.battle_round > 0)
 						delay -= 10;
 					if (enemy.insultTurns > 0)

@@ -74,7 +74,7 @@ option[2, 11] = "!";
 option[2, 12] = "#";
 
 for (var i = 0; i < 3; i++)
-	option[3, i] = string_upper(textdata_get("menu_namer_" + string(i)));
+	option[3, i] = string_upper(text_get("menu_namer_" + string(i)));
 
 
 

@@ -20,7 +20,7 @@ if (con == 1)
 if (con == 3)
 {
 	heart_spr = spr_battle_heart_break;
-	audio_play(snd_breakSplit, 0, VOLUME_SOUND);
+	audio_play(snd_impactBreakSplit, 0, VOLUME_SOUND);
 	event_user(0);
 	alarm[2] = round(60 * 1.25);
 	con = 4;
@@ -28,7 +28,7 @@ if (con == 3)
 if (con == 5)
 {
 	heart_alpha = 0;
-	audio_play(snd_breakPieces, 0, VOLUME_SOUND);
+	audio_play(snd_impactBreakPieces, 0, VOLUME_SOUND);
 	event_user(0);
 	for (var i = 0; i < shard_amt; i++)
 	{

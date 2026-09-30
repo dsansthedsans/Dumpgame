@@ -36,7 +36,7 @@ nobody = 0;
 if /*(global.battle_nextgroup == 1) ||*/ (global.world_curpopulation[chara_world()] <= 0 && global.battle_nextgroup == 0)
 	nobody = 1;
 
-audio_stop(snd_victory);
+audio_stop(snd_jingleVictory);
 audio_stop(snd_option_movehold);
 audio_stop(snd_impact);
 

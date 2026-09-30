@@ -151,7 +151,5 @@ if (active == 1)
 			//	insultTurns += 1;
 		}
 	}
-	if (global.indebug == true && global.debug_hud == true)
-		debug($"insultTurns = {insultTurns}");
 }
 

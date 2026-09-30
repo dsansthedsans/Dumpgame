@@ -22,7 +22,7 @@ if (con == 2)
 	{
 		cake.y = 130;
 		audio_stop(snd_option_movehold);
-		audio_play(snd_interact_item, 0, VOLUME_SOUND);
+		audio_play(snd_stingItem, 0, VOLUME_SOUND);
 		con = 3;
 		alarm[2] = 80;
 	}
