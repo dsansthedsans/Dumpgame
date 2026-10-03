@@ -102,8 +102,15 @@ function TEXT()
 			break;
 			case 2:
 			msg_face[0] = spr_dialogface_m6_sadTense;
-			msg_face[3] = spr_dialogface_m6_sad;
+			msg_face[3] = spr_dialogface_m6_neutral;
+			msg_face[4] = spr_dialogface_m6_default;
 			msg_sound[0] = snd_writerMee6_tense;
+			break;
+			case 3:
+			msg_face[1] = -1;
+			msg_sound[1] = snd_writer_0;
+			msg_talker[1] = -1;
+			msg_format[0] = "textbox_top";
 			break;
 		}
 	}
@@ -114,7 +121,7 @@ function TEXT()
 	}
 	if (text == "room_m6_poster")
 	{
-		for (var i = 0; i < 3; i++)
+		for (var i = 0; i < 2; i++)
 			msg[i] = text_get("room_m6_poster_" + string(i));
 	}
 	if (text == "room_m6_papers")
@@ -162,7 +169,7 @@ function TEXT()
 					if (global.flag[67] > 0)
 						msg_skip[m+2] = (global.indebug == true && global.debug_hud == true);
 					global.flag[67] += 1;
-					audio_play(snd_interact_rulesbook, 0, VOLUME_SOUND);
+					audio_play(snd_otherDraw, 0, VOLUME_SOUND);
 				}
 				else
 				{
@@ -285,7 +292,7 @@ function TEXT()
 		}
 		if (global.flag[24] == 0)
 		{
-			msg[0] = string_replace_all(msg[0], "[name]", $":@@{global.chara_name};D")
+			msg[0] = string_replace_all(msg[0], "[name]", $"{global.chara_name}")
 			global.flag[24] = 1;
 		}
 		msg_sound[0] = snd_writerArmsguy;
@@ -584,8 +591,6 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 		global.flag[48] = 1;
 	}
-				
-	// obj_event_m6_postcaptcha2
 	if (text == "event_m6_postcaptcha2")
 	{
 		msg[0] = text_get("event_m6_postcaptcha2_0");
@@ -593,8 +598,7 @@ function TEXT()
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_writerMee6;
 		msg_format[0] = "textbox_bottom";
-	}
-				
+	}	
 	// room_corridors_10
 	if (text == "room_chocobowl")
 	{
@@ -626,8 +630,7 @@ function TEXT()
 		msg[0] = text_get("room_chocosign");
 		if (chara_murder() >= 1)
 			msg[0] = text_get("room_chocosign_geno");
-	}
-		
+	}	
 	// room_corridors_11
 	if (text == "room_preclocksign")
 	{
@@ -809,38 +812,38 @@ function TEXT()
 		msg[0] = "* (It's a rock in the format of a head.)";
 		msg[1] = "* (The name \"Maurice\" is engraved in its forehead.)";
 	}
-	
 	// room_corridors_14
 	if (text == "event_m6_captcha3")
 	{
 		for (var i = 0; i < 99; i++)
 		{
 			var _msg_id = $"{text}_{i}";
-			if (i == 0 && global.flag[72] != undefined && global.flag[72] < 1)
-				_msg_id += "_geno";
-			else if ((i == 2 || i == 3) && chara_murder() >= 1)
+			if ((i == 2 || i == 3) && chara_murder() >= 1)
 				_msg_id += "_geno";
 			var _msg = text_get(_msg_id);
 			if (_msg == undefined) || (_msg == "Salenis")
 				break;
 			msg[i] = _msg;
 		}
-		if (global.flag[72] == true && chara_murder() < 1)
-			msg_face[0] = spr_dialogface_m6_serious;
-		else if (global.flag[72] == true && chara_murder() >= 1)
+		if (global.flag[72] == false)
 		{
-			msg_face[0] = spr_dialogface_m6_neutral;
-			msg_face[3] = spr_dialogface_m6_angry;
-			if (global.flag[38] == false)
-				msg_face[0] = spr_dialogface_m6_serious;
-		}
-		else if (global.flag[72] != undefined && global.flag[72] < 1)
-		{
+			msg[0] = string_replace_all(msg[0], "{punctuation}", "!");
 			msg_face[0] = spr_dialogface_m6_default;
 			msg_face[1] = spr_dialogface_m6_neutral;
 			msg_face[2] = spr_dialogface_m6_default;
 			if (chara_murder() >= 1)
 				msg_face[3] = spr_dialogface_m6_neutral;
+		}
+		else
+		{
+			msg[0] = string_replace_all(msg[0], "{punctuation}", ".");
+			msg_face[0] = spr_dialogface_m6_serious;
+			if (chara_murder() >= 1)
+			{
+				if (global.flag[38] == true)
+					msg_face[0] = spr_dialogface_m6_neutral;
+				msg_face[3] = spr_dialogface_m6_angry;
+			}
 		}
 		msg_sound[0] = snd_writerMee6;
 	}
@@ -859,20 +862,43 @@ function TEXT()
 		for (var i = 0; i < 2; i++)
 			msg[i] = text_get($"room_captcha_endsign_3_{i}");
 	}
-	
-	// obj_event_m6_postcaptcha3
 	if (text == "event_m6_postcaptcha3")
 	{
-		msg[0] = "* Wow,^1 you really did it!";
-		msg[1] = "* The CAPTCHA's verification is&finally over.";
-		msg[2] = "* Now all we have to do is get to the end.";
-		msg[3] = "* Thank you,^1 new member.";
-		msg[4] = "* In any way,^1 let us keep going!";
-		msg_face[0] = spr_dialogface_m6_default;
+		for (var i = 0; i < 99; i++)
+		{
+			var _msg_id = $"{text}_{i}";
+			if (i == 0)
+				_msg_id += $"_{global.flag[73]}";
+			var _msg = text_get(_msg_id);
+			if (_msg == undefined) || (_msg == "Salenis")
+				break;
+			msg[i] = _msg;
+		}
+		if (global.flag[72] == false)
+		{
+			if (global.flag[73] == false)
+				msg[0] = string_replace_all(msg[0], "{punctuation}", "!");
+			msg[2] = string_replace_all(msg[2], "{punctuation}", "!");
+			msg_face[0] = spr_dialogface_m6_default;
+			if (global.flag[73] == true)
+			{
+				msg_face[0] = spr_dialogface_m6_neutral;
+				msg_face[1] = spr_dialogface_m6_default;
+			}
+		}
+		else
+		{
+			if (global.flag[73] == false)
+				msg[0] = string_replace_all(msg[0], "{punctuation}", ".");
+			msg[2] = string_replace_all(msg[2], "{punctuation}", ".");
+			msg_face[0] = spr_dialogface_m6_neutral;
+			if (global.flag[73] == true)
+				msg_face[0] = spr_dialogface_m6_serious;
+			msg_face[1] = spr_dialogface_m6_serious;
+		}
 		msg_sound[0] = snd_writerMee6;
 		msg_talker[0] = global.party[0];
 	}
-	
 	// unused_room_corridors_15
 	if (text == "unused_room_nobowl")
 	{
@@ -886,13 +912,11 @@ function TEXT()
 		msg_sound[0] = snd_writerMee6;
 		msg_talker[0] = global.side[0];
 	}
-	
 	// unused_room_corridors_16_A
 	if (text == "unused_room_cavesign")
 		msg[0] = "* \"Cave system entrance.\"^1&* \"Proceed with caution.\"";
 	if (text == "unused_room_cavedoor")
 		msg[0] = "* (Something behind the door is stopping you from opening it.)";
-	
 	// unused_room_corridors_16_B
 	if (text == "unused_room_subwaysign")
 	{
@@ -905,7 +929,6 @@ function TEXT()
 		msg[1] = "* (...)";
 		msg[2] = "* (Doesn't seem to be working.)";
 	}
-	
 	// room_corridors_17
 	if (text == "npc_armsguy_exit")
 	{
@@ -993,7 +1016,6 @@ function TEXT()
 		for (var m = 0; m < (1 + (chara_murder() < 1)); m++)
 			msg[m] = text_get($"room_corridors_17_egg.{m}");
 	}
-	
 	// room_corridors_18
 	if (text == "room_finalcorridor_sign")
 	{
@@ -1005,8 +1027,6 @@ function TEXT()
 			msg[m] = _msg;
 		}
 	}
-	
-	// event_gabee_chase
 	if (string_starts_with(text, "event_gabee_chase.") == true)
 	{
 		for (var m = 0; m < 99; m++)
@@ -1345,7 +1365,11 @@ function TEXT()
 				if (chara_murder() >= 1 && _msg_geno != undefined && _msg_geno != "Salenis")
 					msg[0] = _msg_geno;
 				else
+				{
 					msg[0] = text_get(_msg_id);
+				}
+				if (_group == 6)
+					msg[0] = string_replace_all(msg[0], "{punctuation}", ((chara_murder() < 1) ? "!" : "."));
 			}
 			else // normal
 			{
@@ -1609,13 +1633,13 @@ function TEXT()
 				if (global.flag[40] == true)
 				{
 					msg[0] = "";
-					for (var i = 0; i < 99; i++)
-					{
-						_text = text_get($"battle_nobody_{i}");
-						if (_text == undefined) || (_text == "Salenis")
-							break;
-					}
-					_textID += $"_{irandom(i - 1)}";
+					//for (var i = 0; i < 99; i++)
+					//{
+					//	_text = text_get($"battle_nobody_{i}");
+					//	if (_text == undefined) || (_text == "Salenis")
+					//		break;
+					//}
+					//_textID += $"_{irandom(i - 1)}";
 				}
 				msg[0] += text_get(_textID);
 				msg_type[0] = "nobody";

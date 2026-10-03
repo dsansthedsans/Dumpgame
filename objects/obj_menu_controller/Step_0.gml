@@ -12,54 +12,103 @@ event_user(3);
 // start
 if (startcon == 0)
 {
-	alarm[2] = 60;
-	startcon = 1;
+	global.menu_lvl = 8;
+	alpha = 0;
+	startcon += 1;
+	if (global.langChosen == true)
+	{
+		global.menu_lvl = 0;
+		alpha = 1;
+		startcon = 5;
+	}
+	move = 0;
+	alarm[2] = 120;
 }
 if (startcon == 2)
 {
-	warning_alpha += 0.05;
+	if (alpha == 0)
+		audio_play(snd_option_move, false, VOLUME_SOUND);
+	alpha += (1 / 15);
+	if (alpha >= 1)
+	{
+		move = 1;
+		startcon += 1;
+	}
+}
+if (startcon == 4)
+{
+	move = 0;
+	alpha -= (1 / 1);
+	if (alpha <= 0)
+	{
+		global.menu_lvl = 0;
+		alpha = 1;
+		startcon += 1;
+		alarm[2] = (60 * 2);
+	}
+}
+if (startcon == 6)
+{
+	warning_alpha += (1 / 30);
 	if (warning_alpha >= 1)
 	{
-		alarm[2] = 180;
-		startcon = 4;
+		startcon += 1;
+		alarm[2] = (60 * 2);
 	}
 }
-if (startcon == 5)
+if (startcon == 8)
 {
-	warning_alpha -= 0.05;
+	warning_alpha -= (1 / 30);
 	if (warning_alpha <= 0)
 	{
-		alarm[2] = 180;
-		startcon = 6;
+		warning_textPos += 1;
+		startcon += 1;
+		alarm[2] = (60 * 1);
 	}
 }
-if (startcon >= 7 && startcon <= 23 && (startcon / 2) != round(startcon / 2))
+if (startcon == 10)
+{
+	warning_alpha += (1 / 30);
+	if (warning_alpha >= 1)
+	{
+		startcon += 1;
+		alarm[2] = (60 * 2);
+	}
+}
+if (startcon == 12)
+{
+	warning_alpha -= (1 / 30);
+	if (warning_alpha <= 0)
+	{
+		startcon += 1;
+		alarm[2] = (60 * 2);
+	}
+}
+if (startcon == 14) || (startcon == 16) || (startcon == 18) || (startcon == 20) || (startcon == 22) || (startcon == 24) || (startcon == 26) || (startcon == 28) || (startcon == 30)
 {
 	if (title_length < 8)
 	{
 		title_length += 1;
 		audio_play(snd_impact, 0, VOLUME_SOUND);
+		var _name = "Dumpgame";
+		if (dumpgaem == 1)
+			_name = "Dumpgaem";
+		var _caption = "";
+		for (var i = 1; i < (title_length + 1); i++)
+			_caption += string_char_at(_name, i);
+		window_set_caption(_caption);
 	}
 	else
 		audio_play(snd_voiceDump, 0, VOLUME_SOUND);
-		
-	var _name = "Dumpgame";
-	if (dumpgaem == 1)
-		_name = "Dumpgaem";
-	var _caption = "";
-	for (var i = 1; i < (title_length + 1); i++)
-		_caption += string_char_at(_name, i);
-	window_set_caption(_caption);
-	
 	alarm[2] = 30;
 	startcon += 1;
 }
-if (startcon == 25)
+if (startcon == 32)
 {	
-	alarm[2] = 60;
-	startcon = 26;
+	alarm[2] = round(60 * 1);
+	startcon += 1;
 }
-if (startcon == 27)
+if (startcon == 34)
 {
 	var _spd = 0.075;
 	alpha = lerp(alpha, 1, _spd);
@@ -72,7 +121,7 @@ if (startcon == 27)
 		alpha = 1;
 		title_y = 70;
 		startalpha = 0;
-		startcon = 28;
+		startcon += 1;
 		started = 1;
 	}
 }
@@ -129,7 +178,7 @@ if (move == 1)
 		}
 	
 		// voltar
-		else if (global.menu_lvl > 0 && option_pos == 0)
+		else if (global.menu_lvl > 0 && option_pos == 0 && global.menu_lvl != 8)
 		{
 			// normal
 			if (global.menu_lvl < (4 + global.ACHIEVEMENT_ENABLED))
@@ -294,7 +343,7 @@ if (move == 1)
 					global.savefile_selected = play_save;
 					chara_stats();
 					global.chara_curhp = global.chara_maxhp;
-					room_goto(global.game_startroom[1]);
+					room_go(global.game_startroom[1], -1, -1);
 					audio_play(snd_option_select, 0, VOLUME_SOUND);
 				}
 				else
@@ -303,6 +352,21 @@ if (move == 1)
 					shakescreen(2, 2);
 				}
 			}
+		}
+		
+		// choose a lang
+		else if (global.menu_lvl == 8)
+		{
+			global.lang = "enUS";
+			if (option_pos == 1)
+				global.lang = "ptBR";
+			global.langChosen = true;
+			event_user(0);
+			settings_write();
+			start_achievements();
+			move = 0;
+			startcon += 1;
+			audio_play(snd_option_select, 0, VOLUME_SOUND);
 		}
 	}
 	
@@ -457,10 +521,10 @@ if (started == 1 && controls_changing == 0 && !(exists(obj_menu_namer) == 1 && o
 {
 	if (string_ends_with(string_upper(keyboard_string), "OVOS") == 1 && ovos == 0)
 	{
-		audio_play(SND_OVOS, 0, VOLUME_SOUND);
+		audio_play(snd_otherOVOS, 0, VOLUME_SOUND);
 		ovos = 1;
 	}
-	if (ovos == 1 && audio_playing(SND_OVOS) == 0)
+	if (ovos == 1 && audio_playing(snd_otherOVOS) == 0)
 	{
 		keyboard_string = "";
 		ovos = 0;	

@@ -13,6 +13,9 @@ function settings_write()
 			// opções
 		file_text_write_string(_file, global.lang);
 		file_text_writeln(_file);
+		
+		file_text_write_string(_file, global.langChosen);
+		file_text_writeln(_file);
 	
 		file_text_write_real(_file, global.fullscreen);
 		file_text_writeln(_file);
@@ -69,6 +72,9 @@ function settings_read()
 	file_text_readln(_file);
 	
 	global.lang = file_text_read_string(_file);
+	file_text_readln(_file);
+	
+	global.langChosen = file_text_read_string(_file);
 	file_text_readln(_file);
 	
 	global.fullscreen = file_text_read_real(_file);

@@ -1,4 +1,13 @@
 
+if (con == 0.5)
+{
+	chapter_alpha = 1;
+	audio_play(snd_impactTitle, 0, VOLUME_SOUND);
+	alarm[5] = 210;
+	aftercon = 1;
+	alarm[2] = (getuptime / 2);
+	con = 1;
+}
 if (con == 2)
 {
 	if (room == room_corridors_1)

@@ -33,9 +33,9 @@ if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 	}
 	if (con == 9)
 	{
-		if (audio_playing(snd_879) == false)
+		if (audio_playing(snd_creepy879) == false)
 		{
-			xscream = audio_play(snd_879, true, VOLUME_SOUND, , , , (0.5 + 0.125));
+			xscream = audio_play(snd_creepy879, true, VOLUME_SOUND, , , , (0.5 + 0.125));
 			audio_play(snd_creepyPedronstro, false, VOLUME_SOUND,,,, 1.5);
 		}
 		audio_pitch(xscream, (audio_sound_get_pitch(xscream) + 0.01));
@@ -46,7 +46,7 @@ if (global.flag[2] == false && global.flag[66] < 1 && global.flag[69] == 0)
 			global.battle_nextgroup = 13;
 			battle();
 			con = 10;
-			audio_stop(snd_879);
+			audio_stop(snd_creepy879);
 			audio_stop(snd_creepyPedronstro);
 		}
 	}

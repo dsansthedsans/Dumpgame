@@ -177,6 +177,7 @@ if (timer.active == true)
 			timer.active = false;
 			moveable.object.canmove = 0;
 			global.flag[50] = 0;
+			global.flag[73] = true;
 			global.chara_cutscene = false;
 			if (global.chara_move == true)
 			{
@@ -184,7 +185,7 @@ if (timer.active == true)
 				global.chara_pause_game = true;
 			}
 			if (chara_murder() < 1)
-				audio_play(snd_trombone, 0, VOLUME_SOUND);
+				audio_play(snd_otherTrombone, 0, VOLUME_SOUND);
 		}
 		timer.milliseconds = ((timer.seconds > 0) ? timer.millisecondsTotal : 0);
 		timer.seconds = clamp((timer.seconds - 1), 0, timer.seconds);

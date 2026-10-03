@@ -148,6 +148,7 @@ else if (con == 20)
 	if (m6.x <= (chara.x - 20))
 	{
 		party_stop(0);
+		m6.x = (chara.x - 20);
 		con += 1;
 		alarm[2] = round(60 * 2);
 	}
@@ -171,11 +172,53 @@ else if (con == 25)
 	{
 		if (thiswriter.page >= 3)
 			party_facing(0, DOWN);
+		if (thiswriter.page >= 4)
+			global.flag[2] = false;
 	}
 	else
 	{
-		party_facing(0, -1);
-		m6.sprite_index = spr_m6_l_sadTalk;
+		global.flag[2] = false;
+		m6.image_speed = (chara.wimgspeed / 1);
+		m6.image_index = 1;
+		con += 1;
+	}
+}
+else if (con == 26)
+{
+	m6.y += (chara.wspeed / 2);
+	m6.depth = -m6.bbox_bottom;
+	if (m6.y >= chara.y)
+	{
+		chara_facing(LEFT);
+		party_stop(0);
+		m6.y = chara.y;
+		con += 1;
+		alarm[2] = (60 * 1);
+	}
+}
+else if (con == 28)
+{
+	party_facing(0, RIGHT);
+	writer("event_m6_meet_3");
+	con += 1;
+}
+else if (con == 29) || (con == 30)
+{
+	if (exists(thiswriter) == true)
+	{
+		if (con == 29 && thiswriter.page >= 1)
+		{
+			audio_play(snd_jingleParty, false, VOLUME_SOUND);
+			con += 1;
+		}
+	}
+	else
+	{
+		global.flag[1] = true;
+		global.flag[2] = true;
+		chara_facing(DOWN);
+		chara_change(true, true, true, false, true, true, true);
+		party_change(0, 1, LEFT);
 		con += 1;
 	}
 }

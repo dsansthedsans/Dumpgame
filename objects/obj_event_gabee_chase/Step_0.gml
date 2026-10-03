@@ -251,7 +251,7 @@ if (con >= 21 && con % 2 == 1 && con <= 31 && ((thiswriter == -1) || (thiswriter
 	}
 	num += 1;
 	
-	audio_play(snd_appearBullet, 0, VOLUME_SOUND);
+	audio_play(snd_appearSpear, 0, VOLUME_SOUND);
 	alarm[2] = (6 + (2 * (global.world_curpopulation[chara_world()] <= 0)));
 	con += 1;
 	if (aftercon == 0)
@@ -376,7 +376,7 @@ if (con == 41)
 				}
 				bullet_format[2] = !bullet_format[2];	
 			}
-			audio_play(snd_appearBullet, 0, VOLUME_SOUND, , , , (1 + (0.15 * bullet_stage)));
+			audio_play(snd_appearSpear, 0, VOLUME_SOUND, , , , (1 + (0.15 * bullet_stage)));
 			bullet_delay[s] = bullet_time[s];
 		}
 		else

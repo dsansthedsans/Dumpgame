@@ -19,7 +19,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.75 + 0.125;
 		if (_asset == snd_ambienceWater)
 			_volume *= 1.25;
-		if (_asset == snd_bird_startfly)
+		if (_asset == snd_otherBird)
 			_volume /= 2;
 		if (_asset == snd_step_0) || (_asset == snd_step_1)
 			_volume *= (0.5 + 0.125);
@@ -63,7 +63,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 		}
 		if (_asset == snd_impactBump)
 			_volume *= 0.75;
-		if (_asset == snd_trombone)
+		if (_asset == snd_otherTrombone)
 			_volume *= 1.5;
 		if (_asset == snd_crowdApplause) || (_asset == snd_crowdCheer)
 			_volume *= 0.5;
@@ -77,17 +77,17 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.75;
 		if (_asset == snd_jingleSave)
 			_volume *= 0.75;
-		if (_asset == snd_heal)
+		if (_asset == snd_jingleHeal)
 			_volume *= 1 - 0.125;
 		if (_asset == snd_jingleVictory)
 			_volume *= 0.75;
 		if (_asset == snd_creepyPedronstro)
 			_volume *= 0.5;
-		if (_asset == snd_879)
+		if (_asset == snd_creepy879)
 			_volume *= 0.5;
 		if (_asset == snd_shriekYowl)
 			_volume *= 0.75;
-		if (_asset == snd_appearSword) || (_asset == snd_rotate)
+		if (_asset == snd_appearSword) || (_asset == snd_buildupRotate)
 			_volume *= 0.75;
 		if (_asset == snd_buildupComputer)
 			_volume *= 0.75;
@@ -97,7 +97,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.5;
 		if (_asset == snd_option_keyreset)
 			_volume *= 0.5;
-		if (_asset == snd_interact_rulesbook) || (_asset == snd_shriekCatLong)
+		if (_asset == snd_otherDraw) || (_asset == snd_shriekCatLong)
 			_volume *= 0.25;
 		if (_asset == snd_shriekCat)
 			_volume *= 0.5;
@@ -123,38 +123,40 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.75;
 		if (_asset == snd_writerTroll_0) || (_asset == snd_writerTroll_1)
 			_volume *= 0.5;
+		if (_asset == snd_jingleParty)
+			_volume *= 0.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
 		_volume *= 0.5;
 		
-		if (_asset == mus_event_chapter1)
+		if (_asset == mus_eventChapter1)
 			_volume *= 1.25;
-		if (_asset == mus_event_rhonhey_battle)
+		if (_asset == mus_battle_tense)
 			_volume *= 1.5;
-		if (_asset == mus_event_m6)
+		if (_asset == mus_eventMee6)
 			_volume *= 2.5;
-		if (_asset == mus_corridors)
+		if (_asset == mus_worldCorridors)
 			_volume *= 1 - 0.125;
-		if (_asset == mus_battle_dummy)
+		if (_asset == mus_battleDummy)
 			_volume *= 1.25;
-		if (_asset == mus_event_chapter2)
+		if (_asset == mus_eventChapter2)
 			_volume *= 4;
-		if (_asset == mus_cave)
+		if (_asset == mus_worldCave)
 			_volume *= 1.125;
-		if (_asset == mus_hurry_intro_0)
+		if (_asset == mus_hurryIntro_0)
 			_volume *= 2;
-		if (_asset == mus_hurry_loop_0) || (_asset == mus_hurry_loop_1)
+		if (_asset == mus_hurryLoop_0) || (_asset == mus_hurryLoop_1)
 			_volume *= (1.5 - 0.125);
-		if (_asset == mus_corridors_geno)
+		if (_asset == mus_worldCorridors_geno)
 			_volume *= 1.25;
-		if (_asset == mus_battle_troll)
+		if (_asset == mus_battleTroll)
 			_volume *= 1.25;
-		if (_asset == mus_event_brock_mad)
+		if (_asset == mus_eventBrock_mad)
 			_volume *= 1.25;
-		if (_asset == mus_battle_brock)
+		if (_asset == mus_battleBrock)
 			_volume *= 1.25;
-		if (_asset == mus_event_brock_sad)
+		if (_asset == mus_eventBrock_sad)
 			_volume *= 1.5;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
@@ -169,7 +171,7 @@ function audio_pitch(_audio, _pitch)
 		_asset = audio_sound_get_asset(_asset);
 	switch (_asset)
 	{
-		case snd_bird_startfly:
+		case snd_otherBird:
 		_pitch *= irandom_range(1.25, 1.35);
 		break;
 		case snd_step_0:

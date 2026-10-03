@@ -1,4 +1,11 @@
 
+if (global.menu_lvl == 8)
+{
+	draw_set_alpha(startalpha);
+	draw_set_color(c_black);
+	draw_rectangle(-40, -40, (room_width + 40), (room_height + 40), 0);
+}
+
 // jogar (continuar)
 if (global.menu_lvl == 5)
 {
@@ -394,7 +401,7 @@ if (global.menu_lvl >= 0)
 }
 
 // fundo inicial, aviso, título e versão
-if (global.menu_lvl <= 0)
+if (global.menu_lvl == 0)
 {
 	// fundo inicial
 	draw_set_alpha(startalpha);
@@ -409,7 +416,7 @@ if (global.menu_lvl <= 0)
 	
 	var _mainy = room_height / 2
 	draw_set_valign(fa_middle);
-	draw_text_outline_ext(_basex, _mainy, warning_text, c_white, 35, 999, 1, c_dkgrey);
+	draw_text_outline_ext(_basex, _mainy, warning_text[warning_textPos], c_white, 35, 999, 1, c_dkgrey);
 	
 	if (keyboard_check(vk_alt) == 0) // esconder hud
 	{
@@ -420,7 +427,7 @@ if (global.menu_lvl <= 0)
 		// versão
 		draw_set_font(fnt_main);
 		draw_set_color(obj_menu_bg.trash_color);
-		draw_set_alpha((alpha * (startalpha * -1) + 1) / 2);
+		draw_set_alpha((alpha - startalpha) / 2);
 		draw_set_valign(fa_bottom);
 	
 		draw_set_halign(fa_left);

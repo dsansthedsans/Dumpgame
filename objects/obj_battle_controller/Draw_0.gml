@@ -49,7 +49,7 @@ if (charainfo_active == true)
 		/*chara_icon_geno*/ draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, _chara_icon_width, 16, _chara_icon_x, _chara_icon_y, 2, 2, c_white, (_chara_icon_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
 	draw_set_alpha(_chara_icon_alpha);
 	/*chara_name*/ draw_text_outline_transformed(_chara_name_x, _chara_name_y, _chara_name_text, c_white, 2, c_black, _chara_name_scale, _chara_name_scale, 0);
-	/*chara_bar*/ draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(global.chara_curhp) + " / "  + string(global.chara_maxhp), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, _chara_bar_widthMax, /*#FFDC31*/ #F29948, #DD2929, _chara_bar_alpha);
+	/*chara_bar*/ draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(round(global.chara_curhp)) + " / "  + string(round(global.chara_maxhp)), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, _chara_bar_widthMax, /*#FFDC31*/ #F29948, #DD2929, _chara_bar_alpha);
 	if (global.flag[2] == true && assist.active == true && button_active == true)
 	{
 		draw_set_alpha(gui_alpha);

@@ -19,7 +19,7 @@ if (type == -1)
 	sprite_index = spr_battle_blt_test;
 	image_alpha = 0;
 	outside_box = true;
-	audio_play(snd_appearBullet, false, VOLUME_SOUND);
+	audio_play(snd_appearSpear, false, VOLUME_SOUND);
 }
 // Dummy
 if (type == 1)

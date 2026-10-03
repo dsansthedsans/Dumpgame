@@ -4,7 +4,7 @@ if (ready == 1)
 	{
 		details = room_name(room);
 		state = "Salenis";
-		if (room == room_loading) // carregando
+		if (room == room_start) // carregando
 			state = text_get("start");
 		else if (global.inmenu == 1) // menu
 			state = text_get($"drp_state_menu_{global.menu_lvl}");

@@ -387,7 +387,7 @@ function chara_hp(_amt)
 {
 	global.chara_curhp += _amt;
 	global.chara_curhp = clamp(global.chara_curhp, 0, global.chara_maxhp);
-	audio_play(snd_heal, 0, VOLUME_SOUND);
+	audio_play(snd_jingleHeal, 0, VOLUME_SOUND);
 }
 function chara_stepping()
 {

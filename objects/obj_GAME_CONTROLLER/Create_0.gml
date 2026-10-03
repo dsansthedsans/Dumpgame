@@ -6,7 +6,8 @@ window_set_caption("");
 create(-20, -20, obj_MUSIC_CONTROLLER);
 create(-20, -20, obj_PARTICLE_CONTROLLER);
 create(-20, -20, obj_DRP_CONTROLLER);
-active = 0;
+active = 1;
+room_go(global.game_startroom[0], -1, -1);
 
 fullscreen = 0;
 fullscreen_delay = 0;
@@ -27,6 +28,5 @@ for (var i = 0; i < 4; i++)
 }
 
 depth = -15500;
-alarm[0] = load_time;
 image_alpha = 0;
 murder_alpha = 0;

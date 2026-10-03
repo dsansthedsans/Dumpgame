@@ -171,7 +171,7 @@ for (var c = 1; c < (text_length + 1); c++)
 		// next line
 		if ((text_x + _xspace) >= text_xend && _breakline == 1)
 		{
-			if (string_char_at(msg[page], (c + 1)) != "*" && msg_format[page] != "bubble" && msg_type[page] != "endingreal")
+			if (string_char_at(msg[page], (c + 1)) != "*" && msg_format[page] != "bubble" && msg_type[page] != "event_story")
 				text_x = (orig_text_x + (letter_xspace * 2));
 			else 
 				text_x = orig_text_x;
@@ -183,7 +183,7 @@ for (var c = 1; c < (text_length + 1); c++)
 	// manual new line
 	if (string_char_at(msg[page], c) == "&" && string_char_at(msg[page], (c + 1)) != "\\")
 	{
-		if (string_char_at(msg[page], (c + 1)) != "*" && msg_format[page] != "bubble" && string_char_at(msg[page], (c + 1)) != "!")
+		if (string_char_at(msg[page], (c + 1)) != "*" && msg_format[page] != "bubble" && string_char_at(msg[page], (c + 1)) != "!" && msg_type[page] != "event_story")
 			text_x = (orig_text_x + (letter_xspace * 2));
 		else
 			text_x = orig_text_x;

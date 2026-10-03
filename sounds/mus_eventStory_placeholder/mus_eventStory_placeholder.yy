@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mus_eventStory_placeholder",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":80.01742,
+  "exportDir":"",
+  "name":"mus_eventStory_placeholder",
+  "parent":{
+    "name":"[!] audio",
+    "path":"folders/[!] audio.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_eventStory_placeholder.ogg",
+  "volume":1.0,
+}

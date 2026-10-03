@@ -15,14 +15,10 @@ if (room == room_corridors_1 && global.flag[0] == 0) || (room == room_cave_1 && 
 	chara.y += 10;
 	getuptime = (60 * 5);
 	fade_alpha = 1;
-	chapter_alpha = 1;
+	chapter_alpha = 0;
 	chapter_outlineWidth = 0.5;
-	audio_play(snd_impactTitle, 0, VOLUME_SOUND);
 	depth = -9999;
-	alarm[5] = 210;
-	aftercon = 1;
-	alarm[2] = (getuptime / 2);
-	con = 1;
+	alarm[3] = (getuptime / 2);
 }
 else
 	destroy(id);

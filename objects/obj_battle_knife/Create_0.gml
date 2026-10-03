@@ -45,7 +45,7 @@ if (controller.enemy_type[target] == 6 && controller.enemy_spare[target] >= 100)
 	sound_pitch = 0.75;
 }
 
-audio_play(snd_battle_knife_hit, 0, VOLUME_SOUND, , , , sound_pitch);
+audio_play(snd_launchKnife, 0, VOLUME_SOUND, , , , sound_pitch);
 
 // other
 /*

@@ -572,7 +572,6 @@ if (assist.active == true)
 				}
 			}
 		}
-		
 	}
 }
 

@@ -10,7 +10,7 @@ function START_GAME()
 	
 	randomize();
 	display_set_gui_maximise(2, 2);
-	load_time = 180;
+	load_time = 1;
 	global.game_version = "v0.5.0";
 	global.game_directory = $"{working_directory}{global.game_version}\\";
 	if (directory_exists(global.game_directory) == false)
@@ -33,7 +33,7 @@ function START_GAME()
 	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
 	global.debug_hud = false;
-	global.room_order = [room_loading, room_menu, room_story, room_battle, room_over, room_corridors_1, room_corridors_1_5, room_corridors_2, room_corridors_3, room_corridors_3_5, room_corridors_4, room_corridors_5, room_corridors_5_A, room_corridors_5_B, room_corridors_6, room_corridors_7, room_corridors_8, room_corridors_9, room_corridors_10, room_corridors_11, room_corridors_13, room_corridors_14, room_corridors_17, room_corridors_18, room_cave_1, room_cave_2, room_cave_3, room_cat];
+	global.room_order = [room_start, room_menu, room_story, room_battle, room_over, room_corridors_1, room_corridors_1_5, room_corridors_2, room_corridors_3, room_corridors_3_5, room_corridors_4, room_corridors_5, room_corridors_5_A, room_corridors_5_B, room_corridors_6, room_corridors_7, room_corridors_8, room_corridors_9, room_corridors_10, room_corridors_11, room_corridors_13, room_corridors_14, room_corridors_17, room_corridors_18, room_cave_1, room_cave_2, room_cave_3, room_cat];
 	for (var i = 0; i < 10; i++)
 		global.notification[i] = 0;
 }
@@ -311,8 +311,9 @@ function start_flags()
 	global.flag[70] = false; // talked to ROOM BORDER
 	global.flag[71] = 0; // TALKED TO cellphone developer
 	global.flag[72] = false; // MEE6 SHOULD STAY NEUTRAL because PLAYER SPARED BROKEN CLOCK or because PLAYER HAS BEEN AN IDIOT WITH MEE6 DURING EVENT DIALOG (e.g. Broken Clock's battle event, reCAPTCHA: Stage 3's event, Gabee's chase event)
+	global.flag[73] = false; // failed CAPTCHA 3
 	
-	for (var i = 73; i <= 99; i++)
+	for (var i = 74; i <= 99; i++)
 		global.flag[i] = undefined;
 }
 function start_music()
@@ -388,6 +389,7 @@ function start_settings()
 	global.hidenotif = 0;
 	global.drpenabled = 1;
 	global.fastmenu = 0;
+	global.langChosen = false;
 	
 	#macro VOLUME_MASTER 0
 	#macro VOLUME_MUSIC 1
@@ -449,7 +451,7 @@ function CHANGE_GAME()
 		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
 		load_time = 1;
-		var _rm = room_corridors_13;
+		var _rm = room_corridors_2;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;
@@ -551,7 +553,7 @@ function CHANGE_GAME()
 			if (_lvl >= 6)
 			{
 				global.flag[37] = 1; // started Broken Clock's event
-				global.flag[38] = false;
+				global.flag[38] = true;
 				if (global.flag[38] == false)
 					global.flag[72] = true;
 				global.flag[39] = 1; // finished Broken Clock's event

@@ -50,7 +50,7 @@ function battle_setupgroup()
 	battle_bg = spr_battle_bg_corridors;
 	if (chara_world() == WORLD_CAVERNS)
 		battle_bg = spr_battle_bg_cave;
-	battle_music = mus_battle_1;
+	battle_music = mus_battle;
 	battle_flee = false;
 	if (battle_group == -1) // TESTGUY
 	{
@@ -70,7 +70,7 @@ function battle_setupgroup()
 	if (battle_group == 1) // Dummy
 	{
 		battle_bg = spr_battle_bg_dummy;
-		battle_music = mus_battle_dummy;
+		battle_music = mus_battleDummy;
 		enemy_type[0] = 1;
 		enemy_obj[0] = instance_create_layer(defaultx[0], defaulty, "Instances", obj_enemy_dummy);	
 		button_active = false;
@@ -99,7 +99,7 @@ function battle_setupgroup()
 	}
 	if (battle_group == 6) // Broken Clock
 	{
-		battle_music = mus_battle_brock;
+		battle_music = mus_battleBrock;
 		obj_battle_bg.waveSpeed /= 2;
 		battle_serious = true;
 		enemy_type[0] = 6;
@@ -155,9 +155,9 @@ function battle_setupgroup()
 		enemy_type[2] = 4;
 		enemy_obj[2] = instance_create_layer(defaultx[5] - 5, defaulty, "Instances", obj_enemy_flitcher);
 	}
-	if (battle_group == 13) // Rhonhey (MEE6)
+	if (battle_group == 13) // Rhonhey (MEE6's Intervention)
 	{
-		battle_music = mus_event_rhonhey_battle;
+		battle_music = mus_battle_tense;
 		button_active = false;
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
@@ -177,9 +177,9 @@ function battle_setupgroup()
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
 	}
-	if (battle_group == 1000) // TROLLFACE
+	if (battle_group == 1000) // TROLLFACE (WORK IN PROGRESS, v0.6.0)
 	{
-		battle_music = mus_battle_troll;
+		battle_music = mus_battleTroll;
 		battle_bg = spr_battle_bg_troll;
 		obj_battle_bg.waveSpeed /= 2;
 		battle_serious = true;
@@ -239,7 +239,7 @@ function battle_enemy()
 				enemy_atk[i] = 5;
 				enemy_def[i] = 4;
 				enemy_reward_exp[i] = 3;
-				enemy_reward_mny[i] = 2;
+				enemy_reward_mny[i] = 6;
 				enemy_act[i, 1] = text_get("battle_act_armsguy_1");
 				enemy_act[i, 2] = text_get("battle_act_armsguy_2");
 				enemy_obj[i].hpwidth = 200;
@@ -252,7 +252,7 @@ function battle_enemy()
 				enemy_atk[i] = 4;
 				enemy_def[i] = 7;
 				enemy_reward_exp[i] = 3;
-				enemy_reward_mny[i] = 2;
+				enemy_reward_mny[i] = 6;
 				enemy_act[i, 1] = text_get("battle_act_trashguy_1");
 				enemy_act[i, 2] = text_get("battle_act_trashguy_2");
 				enemy_obj[i].hurtsound = snd_shriekDemon;
@@ -265,12 +265,12 @@ function battle_enemy()
 				enemy_atk[i] = 3;
 				enemy_def[i] = 6;
 				enemy_reward_exp[i] = 3;
-				enemy_reward_mny[i] = 2;
+				enemy_reward_mny[i] = 6;
 				enemy_act[i, 1] = text_get("battle_act_flitcher_1");
 				enemy_act[i, 2] = text_get("battle_act_flitcher_2");
 				enemy_obj[i].hurtsound = snd_shriekDragon;
 			}
-			if (enemy_type[i] == 5) // Eyecrush
+			if (enemy_type[i] == 5) // Eyecrush (Unused)
 			{
 				enemy_name[i] = "Eyecrush";
 				enemy_curhp[i] = 35;
@@ -278,7 +278,7 @@ function battle_enemy()
 				enemy_atk[i] = 6;
 				enemy_def[i] = 0;
 				enemy_reward_exp[i] = 3;
-				enemy_reward_mny[i] = 2;
+				enemy_reward_mny[i] = 6;
 				enemy_act[i, 1] = text_get("unused_battle_act_eyecrush_1");
 				enemy_act[i, 2] = text_get("unused_battle_act_eyecrush_2");
 			}
@@ -304,7 +304,7 @@ function battle_enemy()
 				enemy_atk[i] = 5;
 				enemy_def[i] = 4;
 				enemy_reward_exp[i] = 6;
-				enemy_reward_mny[i] = 4;
+				enemy_reward_mny[i] = 10;
 				enemy_act[i, 1] = text_get("battle_act_rhonhey_1");
 				enemy_act[i, 2] = text_get("battle_act_rhonhey_2");
 				enemy_act[i, 3] = text_get("battle_act_rhonhey_3");
@@ -320,7 +320,7 @@ function battle_enemy()
 				enemy_reward_mny[i] = 100;
 				enemy_obj[i].hurtsound = snd_shriekTroll;
 			}
-			if (enemy_type[i] == 2000) // Toilet
+			if (enemy_type[i] == 2000) // Toilet (Unused)
 			{
 				enemy_name[i] = "Toilet";
 				enemy_curhp[i] = 1000;
@@ -887,7 +887,7 @@ function battle_attack()
 					},
 					rotate :
 					{
-						asset : snd_rotate,
+						asset : snd_buildupRotate,
 						id : undefined,
 						volume : undefined,
 						volumeMin : 0.25,
@@ -1012,7 +1012,7 @@ function battle_attack()
 				global.flag[69] = 0.5;
 				stage += 1;
 				delay = (120 - 30 - 15);
-				audio_play(snd_whip_crack, false, VOLUME_SOUND);
+				audio_play(snd_impactWhip, false, VOLUME_SOUND);
 			}
 			else if (stage == 6)
 			{

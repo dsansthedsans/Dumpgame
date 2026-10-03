@@ -77,11 +77,13 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		if (keyboard_check(ord("T")) == false)
 		{
 			global.chara_exp += 3;
+			global.chara_money += 6;
 			global.chara_kills += 1;
 		}
 		else
 		{
 			global.chara_exp += (3 * global.world_maxpopulation[chara_world()]);
+			global.chara_money += (6 * global.world_maxpopulation[chara_world()]);
 			global.chara_kills += global.world_maxpopulation[chara_world()];
 			global.world_curpopulation[chara_world()] = 0;
 			global.flag[22] = true;
@@ -129,9 +131,9 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		writer(_textGroup);
 		if (string_starts_with(_textGroup, "event_troll_") == true && floor(global.volume[VOLUME_MUSIC]) == 0)
 		{
-			if (audio_playing(mus_event_troll) == true)
-				audio_stop(mus_event_troll);
-			audio_play(mus_event_troll, true);
+			if (audio_playing(mus_eventTroll) == true)
+				audio_stop(mus_eventTroll);
+			audio_play(mus_eventTroll, true);
 		}
 	}
 }

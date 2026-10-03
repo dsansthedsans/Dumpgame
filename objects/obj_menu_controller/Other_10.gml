@@ -1,6 +1,6 @@
 /// @descr opções
 draw_set_font(option_font);
-for (var l = 0; l < 8; l++)
+for (var l = 0; l < 9; l++)
 {
 	for (var i = 0; i < 99; i++)
 	{
@@ -31,7 +31,7 @@ for (var l = 0; l < 8; l++)
 	}
 }
 event_user(1);
-for (var l = 0; l < 8; l++)
+for (var l = 0; l < 9; l++)
 {
 	for (var i = 0; i < option_length[l]; i++)
 	{			
@@ -168,6 +168,19 @@ for (var l = 0; l < 8; l++)
 			option_bgy[l] = (option_y[l, 0] - 44);
 			option_bgw[l] = (44 + 10 + (option_w[l, 0] / 2) + (option_x[l, i] - option_x[l, 0]) + (option_w[l, i] / 2) + 10 + 44);
 			option_bgh[l] = (44 + (option_y[l, i] - option_y[l, 0]) + 44);
+		}
+		else if (l == 8) // Choose a Language
+		{
+			option_x[l, i] = 220;
+			option_y[l, 0] = 220;
+			if (i > 0)
+			{
+				option_ydi[l, i] = 40;
+				option_y[l, i] = (option_y[l, 0] + option_yditotal[l, (i - 1)] + option_ydi[l, i]);	
+				option_yditotal[l, i] = (option_yditotal[l, (i - 1)] + option_ydi[l, i]);
+			}
+			option_hal[l] = fa_left;
+			option_heartx[l, i] = (option_x[l, i] - 22);
 		}
 		
 		option_hearty[l, i] = option_y[l, i];

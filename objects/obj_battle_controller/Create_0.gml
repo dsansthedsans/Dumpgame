@@ -4,7 +4,7 @@ battle_won = 0;
 battle_flee = 1;
 battle_group = 0;
 battle_round = 0;
-battle_music = mus_battle_1;
+battle_music = mus_battle;
 battle_serious = 0;
 battle_depth[0] = -1000; // battle_controller
 battle_depth[1] = -800; // enemy & battle_vapor & battle_vaporpixel
@@ -119,7 +119,7 @@ assist =
 	object : undefined,
 	objectSpeedMax : 8,
 	slide : true,
-	heal : (global.chara_maxhp / 4),
+	heal : round(global.chara_maxhp / 4),
 	audio_assets : [snd_appearFlash, snd_appearSparkles],
 	audio_volume :  1,
 	destroyBullets : true,

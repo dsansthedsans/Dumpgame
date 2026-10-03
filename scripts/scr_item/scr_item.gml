@@ -179,7 +179,7 @@ function item_use()
 			global.chara_armor = _item;
 		}
 		msg[0] = $"{text_get("item_equip")} :Y{item_name(_item, "")};D.)";
-		audio_play(snd_equip, 0, VOLUME_SOUND);
+		audio_play(snd_impactEquip, 0, VOLUME_SOUND);
 	}
 }
 function item_info()

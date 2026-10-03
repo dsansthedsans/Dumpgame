@@ -14,6 +14,7 @@ lvl = @"
 		5 = Play (Continue)
 		6 = Controls
 		7 = Play (New game)
+		8 = Choose a Language
 		";
 
 started = 0;
@@ -21,7 +22,8 @@ startcon = 0;
 startalpha = 1;
 
 
-warning_text = text_get("warning");
+warning_text = [text_get("warning_0"), text_get("warning_1")];
+warning_textPos = 0;
 warning_alpha = 0;
 
 
@@ -54,7 +56,7 @@ if (dumpgaem == 1)
 
 // opções e informações principais
 move = 0;
-alpha = 1;
+alpha = 0;
 option_pos = 0;
 option_font = fnt_main_spaced_big;
 option_alpha = 1;
@@ -90,7 +92,7 @@ if (global.fastmenu > 0)
 	global.menu_lvl = 0;
 	
 	started = 1;
-	startcon = 28;
+	startcon = 35;
 	startalpha = 0;
 	
 	title_y = 70;
