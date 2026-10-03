@@ -16,11 +16,11 @@
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--"In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
+<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--inspired by "In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
 <br>
 
 > [!IMPORTANT]  
-> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fangame. All mentions of Discord, MEE6, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented. <!--"It is purely a fan game" from "Yume 2kki"; "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE 2"-->
+> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fangame. All mentions of Discord, MEE6, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented. <!--inspired by "It is purely a fan game" from "Yume 2kki"; inspired by "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE II: Revenge of the Robots"-->
 
 > [!CAUTION]
 > Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
@@ -30,7 +30,7 @@
 <ul>
   <li>Original art, story, world and characters created almost entirely by <b>dsansthedsans</b>!</li>
   <li>An amazing original soundtrack fully composed and arranged by <b>migel8022</b>!</li>
-  <li>Obligatory puzzles. Lots and lots of obligatory puzzles.</li> <!--"Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
+  <li>Obligatory puzzles. Lots and lots of obligatory puzzles.</li> <!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
 </ul>
 <h3>Story</h3>
 <p>[...]</p>
@@ -38,7 +38,7 @@
 <ul>
   <li><b>MEE6</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_m6_d_default/ebb7cb05-88c9-4651-bf96-40c399ca001c.png" height="32" align="top"> , a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
   <li><b>Armsguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_armsguy/b3a84e52-745d-4bc2-9db0-ad11a317eb49.png" height="32" align="top"> , a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
-  <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face danger head-on. They usually stick close to an Armsguy.</li><!--"[...] to face danger head-on" from "UNDERTALE"-->
+  <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face danger head-on. They usually stick close to an Armsguy.</li><!--inspired by "[...] to face danger head-on" from "UNDERTALE"-->
   <li><b>Flitcher</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_flitcher/ca904f51-ea94-45e0-8699-841141abe37c.png" height="32" align="top"> , a reptile-like monster who's unaware of its own existence for most of the time. There's not much to say about it.</li>
   <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock_full/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
   <li><b>And more</b>...? <i>(Only in the upcoming <b>v0.6.0</b>, sadly...)</i></li>
@@ -53,7 +53,7 @@
 <p>No external files are required.</p>
 <br>
 <h1>Development History</h1>
-<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p><!--"Long ago, two races ruled over Earth" from "UNDERTALE"-->
+<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p><!--references "Long ago, two races ruled over Earth" from "UNDERTALE"-->
 <p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
 <p>I was 11 years old at the time.</p>
 <br>
@@ -72,11 +72,13 @@
 <p align="center"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Image of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
 <p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
+<p>I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog Systems" series. Without him, Dumpgame's code would've been significantly worse.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN3-WRITER-GUY.gif" height="295" alt="Video of Dumpgame in early development showing a test dialog"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
 <br>
-<p>It was only in November 2022 that I went back to making the actual game. The "4th generation" was basically me reprogramming, redrawing, rewriting and redesigning everything over a year until I felt it was good enough. On November 2023, <code>v0.4.0</code> was released. At this point, Dumpgame began to look pretty similar to what it is today.</p>
+<p>It was only in November 2022 that I went back to making the actual game. The "4th generation" was basically me reprogramming, redrawing, rewriting and redesigning everything over a year until I felt it was good enough. On November 2023, <code>v0.4.0</code> was released.</p>
+<p>At this point, Dumpgame began to look pretty similar to what it is today.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN4-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
 <p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR5B_0.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage"><img src="README-ASSETS/GEN4-ROOM-CORR11.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"></p>
@@ -87,10 +89,15 @@
 <p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR5B_1.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage"><img src="README-ASSETS/GEN4-ROOM-CORR7.png" height="295" alt="Image of Dumpgame in early development showing the bench corridor room"></p>-->
 <p align="center"><img src="README-ASSETS/GEN4-EVENT-BROCK-BATTLE.png" height="295" alt="Image of Dumpgame in early development showing Broken Clock's battle event"><!--<img src="README-ASSETS/GEN4-BATTLE-BROCK.png" height="295" alt="Image of Dumpgame in early development showing Broken Clock's battle">--></p>
 <br>
-<p><i>Many years later...</i></p><!--"Many years later" from "UNDERTALE"-->
+<p>Then, on December 14, 2024, one year after releasing <code>v0.4.0</code>, I gave up on Dumpgame. Not only had Dumpster Friends fallen apart, but the development of the game had become unbearable. A year's worth of new content was discarded.</p><!--inspired by "Will now be discarded" from "DELTARUNE: Chapter 1"-->
+<br>
+<p><i>Many years later...</i></p><!--references "Many years later" from "UNDERTALE"-->
+<br>
 <p>["5th generation"]</p>
+<br>
 <p>Dumpgame is just another random UNDERTALE fangame. There's nothing special about it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
-<!--<br><p align="center"><img src="README-ASSETS/CHARA-EVOLUTION.png" alt="Image showing all versions of the player's sprite" width="266"></p>-->
+<br>
+<p align="center"><img src="README-ASSETS/CHARA-EVOLUTION-X4.png" alt="Image showing all versions of the player's sprite" width="399"></p>
 <br>
 <h1>Never Asked Questions</h1>
 <h3>Is Dumpgame still in development?</h3>
@@ -133,7 +140,6 @@
   <li>Mojang Studios</li>
   <li>Facepunch Studios</li>
   <li>Playdead</li>
-  <li>KIKIYAMA (ききやま)</li>
   <li>Discord</li>
   <li>Anis Belkacem</li>
   <li>Brendan Rius</li>
