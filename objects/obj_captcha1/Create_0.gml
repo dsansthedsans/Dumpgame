@@ -35,7 +35,7 @@ if (room == room_corridors_5_A)
 		myscreen = 2;
 	if (myword == text_get("room_captcha1_3"))
 		myscreen = 3;
-	if (global.lang == "pt")
+	if (global.lang == "ptBR")
 		myscreen += 4;
 }
 else

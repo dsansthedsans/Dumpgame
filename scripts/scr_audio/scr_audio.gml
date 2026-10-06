@@ -124,7 +124,9 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 		if (_asset == snd_writerTroll_0) || (_asset == snd_writerTroll_1)
 			_volume *= 0.5;
 		if (_asset == snd_jingleParty)
-			_volume *= 0.5;
+			_volume *= 0.25;
+		if (_asset == snd_writerTrashguy)
+			_volume *= 0.875;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{

@@ -2,7 +2,7 @@ if (exists(controller) == true && controller.battle_bg != -1)
 {
 	sprite_index = controller.battle_bg;
 	image_alpha = controller.gui_alpha;
-	if (wave == false) || (wave == true && global.visualeff == false) || (wave == true && chara_murder() >= 1)
+	if (wave == false) || (wave == true && global.visualeff == false) || (wave == true && chara_murder() >= 1 && controller.battle_group != 6)
 		draw_self();
 	else if (wave == true && global.visualeff == true)
 	{

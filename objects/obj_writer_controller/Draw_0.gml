@@ -308,6 +308,11 @@ for (var c = 1; c < (text_length + 1); c++)
 			floating = _type;
 			_cancheck = 0;
 		}
+		if (string_char_at(msg[page], (c + 1)) == "I" && _cancheck == 1) // impact
+		{
+			impacting = _type;
+			_cancheck = 0;
+		}
 		
 		if (_cancheck == 0)
 			_candraw = 0;
@@ -350,27 +355,24 @@ for (var c = 1; c < (text_length + 1); c++)
 	var _floaty = 0;
 	if (shaking > 0 && shake_change == 1 && global.visualeff == true)
 	{
-		if (shaking == 1) || (shaking == 2) || (shaking == 4) || (shaking == 5 && shake_time[c] > 0)
+		if (shaking == 1) || (shaking == 2) || (shaking == 4)
 		{
 			var _amt = 0.5;
 			if (shaking == 2)
 				_amt = 0.75;
-			if (shaking == 4) || (shaking == 5)
-			{
+			if (shaking == 4)
 				_amt = 1;
-				if (shaking == 5 && room == room_battle)
-					_amt *= 1.75;
-			}
 			shake_x[c] = choose(_amt, 0);
 			shake_y[c] = choose(_amt, 0);
-			if (shaking == 5)
-				shake_time[c] -= 1;
 		}
-		else if (shaking == 3)
+		else if (shaking == 3) || (shaking == 6)
 		{
 			shake_x[c] = 0;
 			shake_y[c] = 0;
-			if (irandom_range(1, 200) == 1)
+			var _range = 200;
+			if (shaking == 6)
+				_range *= 3;
+			if (irandom_range(1, _range) == 1)
 			{
 				var _amt = 1;
 				shake_x[c] = choose(-_amt, _amt);
@@ -383,6 +385,13 @@ for (var c = 1; c < (text_length + 1); c++)
 		var _floatx = (sin((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 		var _floaty = (cos((c * 0.5) - myfloat) * (0.75 + (0.25 * floating)))//max(global.inmenu, global.inintro, global.inbattle, global.ingameover))));
 	}
+	if (impacting > 0 && impact_change == true && impact_time[c] > 0)
+	{
+		var _amt = 0.875;
+		impact_x[c] = choose(_amt, 0);
+		impact_y[c] = choose(_amt, 0);
+		impact_time[c] -= 1;
+	}
 	//draw
 	if (_candraw == 1)
 	{
@@ -390,8 +399,8 @@ for (var c = 1; c < (text_length + 1); c++)
 		draw_set_halign(fa_left);
 		draw_set_font(msg_font[page]);
 		draw_set_alpha(alpha);
-		var _text_x = (_bonusx + round(text_x) + shake_x[c] + _floatx);
-		var _text_y = (_bonusy + round(text_y) + shake_y[c] + _floaty)
+		var _text_x = (_bonusx + round(text_x) + shake_x[c] + _floatx + impact_x[c]);
+		var _text_y = (_bonusy + round(text_y) + shake_y[c] + _floaty + impact_y[c])
 		draw_text_color(_text_x, _text_y, string_char_at(msg[page], c), text_color[1], text_color[1], text_color[0], text_color[0], alpha);
 		text_x += letter_xspace;
 	}
@@ -604,6 +613,7 @@ if (question[page] != "%%%" && writing == 0)
 }
 
 shake_change = !shake_change;
+impact_change = !impact_change;
 draw_set_alpha(1);
 
 if (global.indebug == 1 && global.debug_hud == true)

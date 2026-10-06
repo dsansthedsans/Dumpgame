@@ -298,6 +298,7 @@
     {"name":"snd_writerMee6_angry","order":110,"path":"sounds/snd_writerMee6_angry/snd_writerMee6_angry.yy",},
     {"name":"snd_writerMee6_tense","order":109,"path":"sounds/snd_writerMee6_tense/snd_writerMee6_tense.yy",},
     {"name":"snd_writerMee6","order":49,"path":"sounds/snd_writerMee6/snd_writerMee6.yy",},
+    {"name":"snd_writerTrashguy","order":139,"path":"sounds/snd_writerTrashguy/snd_writerTrashguy.yy",},
     {"name":"snd_writerTroll_0","order":135,"path":"sounds/snd_writerTroll_0/snd_writerTroll_0.yy",},
     {"name":"snd_writerTroll_1","order":136,"path":"sounds/snd_writerTroll_1/snd_writerTroll_1.yy",},
     {"name":"unused_mus_battle_toilet","order":6,"path":"sounds/unused_mus_battle_toilet/unused_mus_battle_toilet.yy",},

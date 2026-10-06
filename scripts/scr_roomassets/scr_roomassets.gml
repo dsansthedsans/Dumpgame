@@ -683,7 +683,7 @@ function room_solid()
 		if (x == 520 && y == 140)
 		{
 			image_alpha = 0;
-			if (global.flag[39] == true)
+			if (global.flag[37] == true)
 				destroy(id);
 		}
 	}

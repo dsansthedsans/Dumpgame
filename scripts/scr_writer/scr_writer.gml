@@ -105,6 +105,7 @@ function TEXT()
 			msg_face[3] = spr_dialogface_m6_neutral;
 			msg_face[4] = spr_dialogface_m6_default;
 			msg_sound[0] = snd_writerMee6_tense;
+			msg_sound[3] = snd_writerMee6;
 			break;
 			case 3:
 			msg_face[1] = -1;
@@ -333,6 +334,37 @@ function TEXT()
 			msg[i] = text_get("room_captcha_guidesign_1_" + string(i));
 	}
 	// room_corridors_6
+	if (text == "charamenu_item_use")
+	{
+		item_use();
+		msg_format[0] = "textbox_bottom";
+	}
+	if (text == "charamenu_item_info")
+	{
+		item_info();
+		msg_format[0] = "textbox_bottom";
+	}
+	if (text == "charamenu_item_drop")
+	{
+		msg[0] = $"* (:Y{item_name(global.item[obj_chara_menu.option_pos_old], "")};D {text_get("item_drop_" + string(irandom(4)))}";
+		msg_format[0] = "textbox_bottom";
+		itemDropped_create(itemDropped_add(global.item[obj_chara_menu.option_pos_old]));
+		global.item[obj_chara_menu.option_pos_old] = -1;
+		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
+	}
+	if (text == "itemDropped_pickup")
+		msg[0] = $"{text_get("item_pickup")} :Y{infoArray[0]};D.)";
+	if (text == "itemDropped_cantpickup")
+	{
+		msg[0] = text_get("item_cantpickup");
+		audio_play(snd_option_cantselect, false, VOLUME_SOUND);
+		shakescreen(2, 2);
+	}
+	if (text == "room_candysign")
+	{
+		for (var i = 0; i < 1; i++)
+			msg[i] = text_get("room_candysign_" + string(i));
+	}
 	if (text == "room_candybowl")
 	{
 		var _candyamt = global.flag[19];
@@ -377,7 +409,11 @@ function TEXT()
 					audio_play(snd_stingItem, 0, VOLUME_SOUND);
 				}
 				else
-					msg[2] = text_get("room_candybowl_2");
+				{
+					msg[2] = text_get("item_cantpickup");
+					audio_play(snd_option_cantselect, false, VOLUME_SOUND);
+					shakescreen(2, 2);
+				}
 			}
 		}
 			
@@ -411,45 +447,18 @@ function TEXT()
 					}
 				}
 				else
-					msg[4] = text_get("room_candybowl_2");
+				{
+					msg[4] = text_get("item_cantpickup");
+					audio_play(snd_option_cantselect, false, VOLUME_SOUND);
+					shakescreen(2, 2);
+				}
 			}
 		}
 		else
 		{
 			for (var i = 0; i < (4 - (3 * (chara_murder() >= 1))); i++)
-				msg[i] = text_get($"room_candybowl_3_{i}");
+				msg[i] = text_get($"room_candybowl_2_{i}");
 		}
-	}
-	if (text == "room_candysign")
-	{
-		for (var i = 0; i < 1; i++)
-			msg[i] = text_get("room_candysign_" + string(i));
-	}	
-	if (text == "charamenu_item_use")
-	{
-		item_use();
-		msg_format[0] = "textbox_bottom";
-	}
-	if (text == "charamenu_item_info")
-	{
-		item_info();
-		msg_format[0] = "textbox_bottom";
-	}
-	if (text == "charamenu_item_drop")
-	{
-		msg[0] = $"* (:Y{item_name(global.item[obj_chara_menu.option_pos_old], "")};D {text_get("item_drop_" + string(irandom(4)))}";
-		msg_format[0] = "textbox_bottom";
-		itemDropped_create(itemDropped_add(global.item[obj_chara_menu.option_pos_old]));
-		global.item[obj_chara_menu.option_pos_old] = -1;
-		audio_play(snd_impactGrab, 0, VOLUME_SOUND);
-	}
-	if (text == "itemDropped_pickup")
-		msg[0] = $"{text_get("item_pickup")} :Y{infoArray[0]};D.)";
-	if (text == "itemDropped_cantpickup")
-	{
-		msg[0] = text_get("item_cantpickup");
-		audio_play(snd_option_cantselect, false, VOLUME_SOUND);
-		shakescreen(2, 2);
 	}
 	// room_corridors_7
 	if (text == "room_relaxsign")
@@ -487,7 +496,8 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 		if (global.flag[45] == 0 && global.flag[48] == 0)
 		{
-			msg[0] = $"{text_get("npc_armsguy_lost_0_0_0_0")}{global.chara_name}{text_get("npc_armsguy_lost_0_0_0_1")}";
+			msg[0] = text_get("npc_armsguy_lost_0_0_0");
+			msg[0] = string_replace_all(msg[0], "{name}", global.chara_name);
 			for (var i = 1; i < 99; i++)
 			{
 				var _curmsg = text_get("npc_armsguy_lost_0_0_" + string(i));
@@ -534,6 +544,20 @@ function TEXT()
 						_full = 1;
 					for (var i = 0; i < 99; i++)
 					{
+						var _textID = "npc_armsguy_lost_1_1_";
+						var _textID_postfix = "";
+						if (i == 0 && global.flag[45] == false)
+							_textID = "npc_armsguy_lost_0_0_";
+						else if (i == 1 && global.flag[45] == false)
+							_textID_postfix = "__";
+						else if (i >= 3)
+							_textID_postfix = "_" + string(_full);
+						var _text = text_get($"{_textID}{i}{_textID_postfix}");
+						if (_text != undefined && _text != "Salenis")
+							msg[i] = _text;
+						else
+							break;
+						/*
 						var _bonus = "";
 						if (((i == 0) || (i == 1)) && global.flag[45] == 0)
 							_bonus = "__";
@@ -544,7 +568,10 @@ function TEXT()
 							msg[i] = _curmsg;
 						else
 							break;
+							*/
 					}
+					if (global.flag[45] == false)
+						msg[0] = string_replace_all(msg[0], "{name}", global.chara_name);
 					if (_full == 0)
 					{
 						msg_sound[4] = snd_writer_0;
@@ -563,6 +590,7 @@ function TEXT()
 	if (text == "npc_trashguy_lost2")
 	{
 		msg[0] = text_get("npc_trashguy_lost2");
+		msg_sound[0] = snd_writerTrashguy;
 		msg_talker[0] = obj_chara.mycol;
 	}
 	// room_corridors_9
@@ -588,6 +616,7 @@ function TEXT()
 	{
 		for (var i = 0; i < 3; i++)
 			msg[i] = text_get("npc_trashguy_lost1_" + string(i));
+		msg_sound[0] = snd_writerTrashguy;
 		msg_talker[0] = obj_chara.mycol;
 		global.flag[48] = 1;
 	}
@@ -613,13 +642,17 @@ function TEXT()
 			{
 				if (global.item[global.item_last] == -1)
 				{
-					msg[3] = text_get("room_chocobowl_3_0");
+					msg[3] = text_get("room_chocobowl_3");
 					global.flag[36] = 1;
 					global.item[global.item_last] = ITEM_CHOCO;
 					audio_play(snd_stingItem, 0, VOLUME_SOUND);
 				}
 				else
-					msg[3] = text_get("room_chocobowl_3_1");
+				{
+					msg[3] = text_get("item_cantpickup");
+					audio_play(snd_option_cantselect, false, VOLUME_SOUND);
+					shakescreen(2, 2);
+				}
 			}
 		}
 		else if (global.chara_armor == ITEM_BOWL && chara_murder() < 1)
@@ -953,6 +986,7 @@ function TEXT()
 			msg[m] = _msg;
 		}
 		global.flag[58] = true;
+		msg_sound[0] = snd_writerTrashguy;
 		msg_talker[0] = obj_chara.mycol;
 	}
 	if (text == "npc_armsguy_exit_fishing")
@@ -968,6 +1002,7 @@ function TEXT()
 		msg_talker[0] = obj_chara.mycol;
 		if (global.flag[23] == false)
 		{
+			msg_sound[2] = snd_writerTrashguy;
 			for (var o = 0; o < instance_number(obj_npc_room); o++)
 			{
 				var _obj = instance_find(obj_npc_room, o);
@@ -1197,7 +1232,7 @@ function TEXT()
 		{
 			if (controller.battle_group >= 7)
 				msg_type[0] = 4;
-			
+			msg_sound[0] = snd_writerTrashguy;
 			if (text == "battle_bubble_trashguy0") // Armsguy
 			{
 				var _num = irandom(4);

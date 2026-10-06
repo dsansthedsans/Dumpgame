@@ -335,6 +335,7 @@
     {"id":{"name":"snd_writerMee6_angry","path":"sounds/snd_writerMee6_angry/snd_writerMee6_angry.yy",},},
     {"id":{"name":"snd_writerMee6_tense","path":"sounds/snd_writerMee6_tense/snd_writerMee6_tense.yy",},},
     {"id":{"name":"snd_writerMee6","path":"sounds/snd_writerMee6/snd_writerMee6.yy",},},
+    {"id":{"name":"snd_writerTrashguy","path":"sounds/snd_writerTrashguy/snd_writerTrashguy.yy",},},
     {"id":{"name":"snd_writerTroll_0","path":"sounds/snd_writerTroll_0/snd_writerTroll_0.yy",},},
     {"id":{"name":"snd_writerTroll_1","path":"sounds/snd_writerTroll_1/snd_writerTroll_1.yy",},},
     {"id":{"name":"unused_mus_battle_toilet","path":"sounds/unused_mus_battle_toilet/unused_mus_battle_toilet.yy",},},

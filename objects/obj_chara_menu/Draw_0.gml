@@ -17,8 +17,8 @@ var _info_y = (_name_y + string_height(global.chara_name) + (_bg1_di / 2) - 2);
 draw_text_width((_cx + bg_x[0] + (bg_w[0] / 2)), _name_y + 1, $"@{global.chara_name}", (bg_w[0] - (_bg1_di * 2)), [global.c_mention[0], global.c_mention[1]], alpha);
 draw_set_font(global.fnt_mars);
 draw_set_halign(fa_left);
-info[0] = $"{text_get("charamenu_main_info_lvl")}{global.chara_lvl}";
-info[1] = $"{text_get("charamenu_main_info_hp")}{global.chara_curhp}/{global.chara_maxhp}";
+info[0] = $"{text_get("charamenu_main_info_hp")}{global.chara_curhp}/{global.chara_maxhp}";
+info[1] = $"{text_get("charamenu_main_info_lvl")}{global.chara_lvl}";
 info[2] = $"{text_get("charamenu_main_info_money")}{global.chara_money}";
 info_maxw = string_width("XXX  XXXXX");
 for (var i = 0; i < 3; i++)

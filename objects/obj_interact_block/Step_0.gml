@@ -64,6 +64,7 @@ if (result >= 0 && result < 1) || (result == 4) // writer
 			if (y >= (camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) + 20))
 			{
 				con = 0;
+				chara_facing(DOWN);
 				chara_change(-1, 1, 1, 0, 1, 1, 1);
 			}
 		}
