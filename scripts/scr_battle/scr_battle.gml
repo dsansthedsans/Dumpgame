@@ -377,6 +377,7 @@ function battle_getattack()
 	box_nextw = 160;
 	box_nexth = 160;
 	battle_turntime = 450;
+	heart_type = 0;
 	heart_nextx = -1;
 	heart_nexty = -1;
 	for (var i = 0; i < enemy_length; i++)
@@ -440,6 +441,10 @@ function battle_getattack()
 		{
 			enemy_attack[i] = 0;
 			heart_nexty = round(box_nexty + (box_nexth / 3));
+		}
+		if (enemy_type[i] == 1000)
+		{
+			heart_type = 1;
 		}
 		if (enemy_type[i] == 2000) // Toilet
 		{

@@ -2,10 +2,13 @@
 function START_GAME()
 {	
 	global.c_dump = #32FF62;
+	global.c_dumpDark = #136641;
 	global.c_red = merge_color(c_red, c_white, 0.125); // "ATTACK"; negative status
 	global.c_blue = merge_color(c_blue, c_white, 0.25); // "DEFENSE"
 	global.c_yellow = #FFF34B; // "HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]"; "Cheap Candy"
+	global.c_yellowDark = #B24A00;
 	global.c_orange = #F29948; // "new member"
+	global.c_orangeDark = #D86440;
 	global.c_gray = #748CAB; // unavailable option; "Corridors"
 	
 	randomize();

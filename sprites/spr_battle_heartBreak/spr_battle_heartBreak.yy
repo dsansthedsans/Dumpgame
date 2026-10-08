@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_battle_heart_break",
+  "%Name":"spr_battle_heartBreak",
   "bboxMode":2,
   "bbox_bottom":17,
   "bbox_left":2,
@@ -24,7 +24,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"fa56e265-1023-41d9-9ee4-5b5109dd1f99","blendMode":0,"displayName":"default","isLocked":false,"name":"fa56e265-1023-41d9-9ee4-5b5109dd1f99","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_battle_heart_break",
+  "name":"spr_battle_heartBreak",
   "nineSlice":null,
   "origin":4,
   "parent":{
@@ -36,7 +36,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_battle_heart_break",
+    "%Name":"spr_battle_heartBreak",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -60,7 +60,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_battle_heart_break",
+    "name":"spr_battle_heartBreak",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -72,16 +72,16 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b69da52d-a054-42d8-8c28-7db1a9a6ee7f","path":"sprites/spr_battle_heart_break/spr_battle_heart_break.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b69da52d-a054-42d8-8c28-7db1a9a6ee7f","path":"sprites/spr_battle_heartBreak/spr_battle_heartBreak.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c81a2aa0-44e3-40a9-b91d-5856c54e98e7","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6e6a295a-48b9-438e-8f25-3d6deb9c2a55","path":"sprites/spr_battle_heart_break/spr_battle_heart_break.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6e6a295a-48b9-438e-8f25-3d6deb9c2a55","path":"sprites/spr_battle_heartBreak/spr_battle_heartBreak.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"cf36a5ac-1d71-493e-bf2e-9379716210da","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9a48720e-480d-4e53-872d-5133cf875bb9","path":"sprites/spr_battle_heart_break/spr_battle_heart_break.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9a48720e-480d-4e53-872d-5133cf875bb9","path":"sprites/spr_battle_heartBreak/spr_battle_heartBreak.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"df2a990f-4cb9-43f9-b85a-6ff53a35b435","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cc9661e4-36b4-4e61-bb3c-ee096ce9a6a9","path":"sprites/spr_battle_heart_break/spr_battle_heart_break.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cc9661e4-36b4-4e61-bb3c-ee096ce9a6a9","path":"sprites/spr_battle_heartBreak/spr_battle_heartBreak.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"00ca6b7e-c0c9-484e-b3b2-9a652af7d896","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

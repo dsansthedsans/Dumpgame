@@ -188,6 +188,11 @@ function audio_pitch(_audio, _pitch)
 		case snd_appearLightning:
 		_pitch += (random(0.125) * choose(-1, 1));
 		break;
+		case snd_writerTroll_0:
+		case snd_writerTroll_1:
+		if (object_index == obj_writer_controller && string_starts_with(text, "event_troll_") == true && real(string_char_at(text, string_length(text))) < 4)
+			_pitch *= 1.25;
+		break;
 	}
 	switch (_asset)
 	{

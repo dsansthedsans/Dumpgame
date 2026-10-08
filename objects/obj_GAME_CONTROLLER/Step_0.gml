@@ -129,11 +129,11 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 	{
 		var _textGroup = "event_troll_0";
 		writer(_textGroup);
-		if (string_starts_with(_textGroup, "event_troll_") == true && floor(global.volume[VOLUME_MUSIC]) == 0)
+		if (string_starts_with(_textGroup, "event_troll_") == true && _textGroup != "event_troll_4" && floor(global.volume[VOLUME_MUSIC]) == 0)
 		{
 			if (audio_playing(mus_eventTroll) == true)
 				audio_stop(mus_eventTroll);
-			audio_play(mus_eventTroll, true);
+			audio_play(mus_eventTroll, true,,,,, 1);
 		}
 	}
 }

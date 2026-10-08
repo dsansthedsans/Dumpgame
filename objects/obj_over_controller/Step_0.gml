@@ -19,7 +19,7 @@ if (con == 1)
 }
 if (con == 3)
 {
-	heart_spr = spr_battle_heart_break;
+	heart_spr = spr_battle_heartBreak;
 	audio_play(snd_impactBreakSplit, 0, VOLUME_SOUND);
 	event_user(0);
 	alarm[2] = round(60 * 1.25);
@@ -36,7 +36,7 @@ if (con == 5)
 		with (shard[i]) 
 		{
 			controller = obj_over_controller;
-			sprite_index = spr_battle_heart_break;
+			sprite_index = spr_battle_heartBreak;
 			image_speed = 0;
 			image_index = irandom_range(1, 3);
 			image_blend = controller.heart_color;

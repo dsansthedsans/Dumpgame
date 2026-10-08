@@ -1,9 +1,9 @@
 
 // folhas das árvores
-for (var i = 0; i < instance_number(obj_overworld_solid); i++)
+for (var i = 0; i < instance_number(obj_overworld_solid) * global.visualeff; i++)
 {
 	treeobj = instance_find(obj_overworld_solid, i);
-	if (treeobj.leaf_fall == 1 && treeobj.leaf_create == 1 && global.visualeff == true)
+	if (treeobj.leaf_fall == 1 && treeobj.leaf_create == 1)
 	{
 		var _x = (treeobj.x + 30 + choose(irandom_range(-11, -20), irandom_range(11, 20)));
 		var _y = (treeobj.y + 35);
@@ -44,5 +44,35 @@ if (room == room_corridors_18 && global.flag[60] == true && global.flag[61] == 0
 				particle[i] = -1;
 			}
 		}
+	}
+}
+var _control = obj_battle_controller;
+if (room == room_battle && exists(_control) == true && global.visualeff == true)
+{
+	if (_control.heart_type == 1 && _control.heart_move == true && delay <= 0)
+	{
+		var _marker = marker((_control.heart.x + irandom_range(-5, 5)), (_control.heart.y + irandom_range(-5, 5)), spr_singlepixel, 1, 2, 2, 0, 0, 0, global.c_yellow, (_control.heart.depth - 1));
+		_marker.hspeed = (_control.heart.press_r - _control.heart.press_l);
+		_marker.gravity = 0.1;
+		array_push(particle2, _marker);
+		delay = choose(15, 30);
+	}
+	else
+		delay -= 1;
+	for (var i = 0; i < array_length(particle2); i++)
+	{
+		if (exists(particle2[i]) == 1)
+		{
+			var _ymax = (_control.box_x + (_control.box_h / 2));
+			if (_control.heart_move == false)
+				_ymax = room_height;
+			if (_control.heart_move == true && (particle2[i].x <= (_control.box_x - (_control.box_w / 2)) || particle2[i].x >= (_control.box_x + (_control.box_w / 2)))) || (particle2[i].y >= _ymax)
+			{
+				destroy(particle2[i]);
+				array_delete(particle2, i, 1);
+			}
+		}
+		else
+			array_delete(particle2, i, 1);
 	}
 }

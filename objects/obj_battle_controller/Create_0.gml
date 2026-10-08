@@ -46,7 +46,7 @@ for (var i = 0; i < 4; i++)
 	button_y[i] = round(432 - (sprite_get_height(button_spr[0]) / 4) + 0);
 
 button_alpha = 1;
-button_color[0] = #136641;
+button_color[0] = global.c_dumpDark;
 button_color[1] = global.c_dump;
 
 button_pos = 0;
@@ -78,6 +78,7 @@ box_borderw = 4;
 heart = create(-20, -20, obj_battle_heart);
 heart.controller = id;
 heart_move = 0;
+heart_type = 0;
 heart_nextx = box_nextx;
 heart_nexty = box_nexty;
 
@@ -146,7 +147,7 @@ level_length[2] = (enemy_length - 1);
 level_curbarcolor[0] = #27CC84;
 level_curbarcolor[1] = global.c_yellow;
 level_maxbarcolor[0] = #DD2929;
-level_maxbarcolor[1] = #B24A00//#CC6600;
+level_maxbarcolor[1] = global.c_yellowDark;
 
 screenpos(0, 0);
 create(-20, -20, obj_battle_fadein);

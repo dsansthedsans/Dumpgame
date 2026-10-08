@@ -7,7 +7,7 @@ if (con == 2)
 {
 	con += 1;
 	alarm[2] = round(60 * 1.25);
-	heart_spr = spr_battle_heart_break;
+	heart_spr = spr_battle_heartBreak;
 	audio_play(snd_impactBreakSplit, false, VOLUME_SOUND, 0.5);
 }
 if (con == 4)
@@ -20,7 +20,7 @@ if (con == 4)
 		shard[i] = instance_create_layer(heart_x, heart_y, "Instances", obj_marker);
 		with (shard[i]) 
 		{
-			sprite_index = spr_battle_heart_break;
+			sprite_index = spr_battle_heartBreak;
 			image_speed = 0;
 			image_index = irandom_range(1, 3);
 			image_blend = c_white;
