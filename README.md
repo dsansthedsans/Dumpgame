@@ -32,8 +32,8 @@
   <li>An amazing original soundtrack fully composed and arranged by <b>migel8022</b>!</li>
   <li>Obligatory puzzles. Lots and lots of obligatory puzzles.</li> <!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
 </ul>
-<h3>Story</h3>
-<p>[...]</p>
+<!--<h3>Story</h3>
+<p>[...]</p>-->
 <h3>Characters</h3>
 <ul>
   <li><b>MEE6</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_m6_d_default/ebb7cb05-88c9-4651-bf96-40c399ca001c.png" height="32" align="top"> , a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
@@ -72,7 +72,7 @@
 <p align="center"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Image of Dumpgame in early development showing MEE6's training battle"></p>
 <br>
 <p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
-<p>I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog Systems" series. Without him, Dumpgame's code would've been significantly worse.</p>
+<p>I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog System" series. Without him, Dumpgame's code would've been significantly worse.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN3-WRITER-GUY.gif" height="295" alt="Video of Dumpgame in early development showing a test dialog"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
 <p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
@@ -133,22 +133,17 @@
 </ul>
 <h3>Special Thanks</h3>
 <ul>
-  <li>Toby Fox</li>
-  <li>Temmie Chang</li>
-  <li>Tophat Interactive</li>
-  <li>Arsi "Hakita" Patala</li>
-  <li>Mojang Studios</li>
-  <li>Facepunch Studios</li>
-  <li>Playdead</li>
-  <li>Discord</li>
-  <li>Anis Belkacem</li>
-  <li>Brendan Rius</li>
-  <li>Carlos Ramirez</li>
-  <li>YoYo Games</li>
-  <li>Image-Line Software</li>
-  <li>Peyton Burnham</li>
-  <li>maxdefolsch</li>
-  <li>HushBugger</li>
+  <li>Toby Fox & Temmie Chang<i> 〜 UNDERTALE & DELTARUNE: Chapter 1-4</i></li>
+  <li>Tophat Interactive<i> 〜 UNDERTALE: Bits and Pieces</i></li>
+  <li>HTTG Team<i> 〜 HorrorTale: Chapter 1</i></li>
+  <li>Mojang Studios<i> 〜 Minecraft: Java Edition</i></li>
+  <li>Facepunch Studios<i> 〜 Garry's Mod</i></li>
+  <li>Arsi "Hakita" Patala<i> 〜 ULTRAKILL</i></li>
+  <li>Playdead<i> 〜 INSIDE</i></li>
+  <li>Anis Belkacem & Brendan Rius<i> 〜 MEE6</i></li>
+  <li>Carlos Ramirez<i> 〜 Trollface</i></li>
+  <li>Peyton Burnham<i> 〜 How to Make an RPG & Branching Dialog System</i></li>
+  <li>maxdefolsch & HushBugger<i> 〜 UNDERTALE Text Dump</i></li>
   <li>Mãe Gamer</li>
   <li>HybridTeacher</li>
   <li>sam06tanb</li>
