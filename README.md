@@ -1,24 +1,25 @@
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
-<h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsansthedsans and migel8022</strong></h3>
+<h3 align="center"><strong>An open-source UNDERTALE fan game created in Brazil by dsansthedsans and migel8022</strong></h3>
 <p align="center">
   <img src="https://img.shields.io/badge/status-in_development-white?labelColor=40ff6d" alt="Status">
   <img src="https://img.shields.io/badge/version-0.5.0-white?labelColor=40ff6d" alt="Version">
   <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="License">
   <img src="https://img.shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
+  <a href="https://github.com/dsansthedsans/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/GitHub-212830?logo=github&logoColor=f5f5f5" alt="GitHub"></a>
   <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
   <a href="https://gamejolt.com/games/dumpgame/1097311" target="_blank"><img src="https://img.shields.io/badge/Game Jolt-ccff00?logo=gamejolt&logoColor=black" alt="Itch.io"></a>
   <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
 <br>
-<p>Dumpgame, as an UNDERTALE fangame, is a top-down RPG with turn-based battles where the player has to dodge the enemy's "bullet hell" patterns.</p>
+<p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way of danger using UNDERTALE's unique battle system.</p> <!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
-<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a magical world full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--inspired by "In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
+<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a physical manifestation of a Discord server full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--inspired by "In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
 <br>
 
 > [!IMPORTANT]  
-> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fangame. All mentions of Discord, MEE6, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented. <!--inspired by "It is purely a fan game" from "Yume 2kki"; inspired by "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE II: Revenge of the Robots"-->
+> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fan game. All mentions of Discord, MEE6, reCAPTCHA, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented. <!--inspired by "It is purely a fan game" from "Yume 2kki"; inspired by "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE II: Revenge of the Robots"-->
 
 > [!CAUTION]
 > Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
@@ -26,9 +27,10 @@
 <br>
 <h1>Features</h1>
 <ul>
-  <li>Original art, story, world and characters created almost entirely by <b>dsansthedsans</b>!</li>
-  <li>An amazing original soundtrack fully composed and arranged by <b>migel8022</b>!</li>
-  <li>Obligatory puzzles. Lots and lots of obligatory puzzles.</li> <!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
+  <li><b>Original art, story, world and characters,</b> created almost entirely by <b>dsansthedsans</b>!</li>
+  <li><b>An amazing original soundtrack,</b> fully composed and arranged by <b>migel8022</b>!</li>
+  <li><b>Trollishly difficult battles,</b> intended for those who've played <b>UNDERTALE or DELTARUNE</b>!<br><i>(But not as hard as the average Sans fan game...)</i></li> <!--inspired by "Jevilishly difficult hidden bosses" from Steam page of "DELTARUNE"-->
+  <li><b>Obligatory puzzles.</b> Lots and lots of obligatory puzzles.</li> <!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
 </ul>
 <!--<h3>Story</h3>
 <p>[...]</p>-->
@@ -55,7 +57,7 @@
 <br>
 <h1>Development History</h1>
 <p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p><!--references "Long ago, two races ruled over Earth" from "UNDERTALE"-->
-<p>I wanted to make an UNDERTALE fangame that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
+<p>I wanted to make an UNDERTALE fan game that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
 <p>I was 11 years old at the time.</p>
 <br>
 <p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Image of Dumpgame in early development"></p>
@@ -94,9 +96,9 @@
 <br>
 <p><i>Many years later...</i></p><!--references "Many years later" from "UNDERTALE"-->
 <br>
-<p>["5th generation"]</p>
+<p>[...]</p>
 <br>
-<p>Dumpgame is just another random UNDERTALE fangame. There's nothing special about it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
+<p>Dumpgame is just another random UNDERTALE fan game. There's nothing special about it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
 <br>
 <p align="center"><img src="README-ASSETS/CHARA-EVOLUTION-X4.png" alt="Image showing all versions of the player's sprite" width="399"></p>
 <br>
@@ -145,8 +147,6 @@
   <li>Carlos Ramirez<i> 〜 Trollface</i></li>
   <li>Peyton Burnham<i> 〜 How to Make an RPG & Branching Dialog System</i></li>
   <li>maxdefolsch & HushBugger<i> 〜 UNDERTALE Text Dump</i></li>
-  <li>Mãe Gamer</li>
-  <li>HybridTeacher</li>
   <li>sam06tanb</li>
   <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
