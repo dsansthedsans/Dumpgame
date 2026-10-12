@@ -1,9 +1,7 @@
-<h1>README UNDER CONSTRUCTION !!!!<br>The download of the new version will be available SOON...!</h1>
-<br>
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fangame created in Brazil by dsansthedsans and migel8022</strong></h3>
 <p align="center">
-  <img src="https://img.shields.io/badge/status-cancelled-white?labelColor=40ff6d" alt="Status">
+  <img src="https://img.shields.io/badge/status-in_development-white?labelColor=40ff6d" alt="Status">
   <img src="https://img.shields.io/badge/version-0.5.0-white?labelColor=40ff6d" alt="Version">
   <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="License">
   <img src="https://img.shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
@@ -51,6 +49,9 @@
   <li>In the extracted folder, open the <code>.exe</code></li>
 </ol>
 <p>No external files are required.</p>
+<br>
+<h1>Report a Bug</h1>
+<p>Noticed anything that clearly wasn't supposed to happen? Fill out <a href="https://forms.gle/ZReHikxZvPCDPcuq9" target="_blank"><b>this Google Form</b></a> to help us make the game a little less broken, please...! You'll win our hearts <3 <i>(or, if you prefer, a place in the Special Thanks.)</i></p>
 <br>
 <h1>Development History</h1>
 <p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p><!--references "Long ago, two races ruled over Earth" from "UNDERTALE"-->
