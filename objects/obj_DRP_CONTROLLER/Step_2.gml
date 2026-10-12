@@ -71,7 +71,7 @@ if (ready == 1)
 			faceInfo = string_replace_all(faceInfo, "{lvl}", global.chara_lvl);
 		}
 		np_setpresence(state, details, "cover", face);
-		np_setpresence_more(faceInfo, text_get("start"), 0);
+		np_setpresence_more(faceInfo, text_get("warning_0"), 0);
 	}
 	else
 		np_clearpresence();	

@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":180.2449,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_menu",
   "parent":{
     "name":"[!] audio",

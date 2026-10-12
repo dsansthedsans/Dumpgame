@@ -473,7 +473,7 @@ if (con == 55)
 		depth = -5000;
 		audio_stop(thisaudio);
 		audio_play(snd_impactDeep, 0, VOLUME_SOUND);
-		alarm[2] = (60 * 8);
+		alarm[2] = (60 * 2.5);
 		con = 59; //56;
 	}
 }

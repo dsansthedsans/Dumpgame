@@ -1,0 +1,1 @@
+global.item_choco_attackTurns = 0;

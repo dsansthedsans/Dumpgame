@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":114.83428,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_worldCorridors",
   "parent":{
     "name":"[!] audio",

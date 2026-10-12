@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":59.10773,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_hurryLoop_0",
   "parent":{
     "name":"[!] audio",

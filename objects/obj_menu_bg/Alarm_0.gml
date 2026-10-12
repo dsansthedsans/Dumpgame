@@ -15,7 +15,7 @@ if (global.visualeff == 1)
 		h.image_yscale = hsc;
 		h.image_angle = hang;
 		h.image_speed = 0;
-		h.image_index = 0;
+		h.image_index = ((irandom_range(1, 100) != 1) ? 0 : 1);
 		h.direction = (image_angle + 90);
 		h.speed = (irandom_range(1.2, 2) / (!i + 1));
 		h.dir = choose(1, -1);

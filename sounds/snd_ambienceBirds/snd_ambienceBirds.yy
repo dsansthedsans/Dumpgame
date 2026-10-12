@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":26.028118,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"snd_ambienceBirds",
   "parent":{
     "name":"[!] audio",

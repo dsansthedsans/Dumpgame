@@ -83,7 +83,7 @@ if (active == 1)
 	}
 
 	// lower defense
-	if (controller.enemy_spare[myself] >= 100 && kicked == 0)
+	if (controller.enemy_spare[myself] >= 100)
 		controller.enemy_def[myself] = 0;
 	else
 		controller.enemy_def[myself] = orig_def;

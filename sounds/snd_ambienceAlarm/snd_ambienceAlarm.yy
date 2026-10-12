@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":13.00898,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"snd_ambienceAlarm",
   "parent":{
     "name":"[!] audio",

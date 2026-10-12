@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":59.167347,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_eventMee6",
   "parent":{
     "name":"[!] audio",

@@ -18,11 +18,11 @@ function battle_getgroup()
 		if (global.world_curpopulation[chara_world()] >= 2 && global.world_curpopulation[chara_world()] != ((global.world_maxpopulation[chara_world()] / 2) + 1))
 		{
 			battle_group = choose(irandom_range(2, 4), irandom_range(7, 9));
-			if (global.world_curpopulation[chara_world()] >= 3 && global.flag[37] == 1 && global.flag[39] == 1)
+			if (global.world_curpopulation[chara_world()] >= 3 && ((global.world_curpopulation[chara_world()] <= (global.world_maxpopulation[chara_world()] / 2)) || (global.flag[37] == 1 && global.flag[39] == 1)))
 				battle_group = ((irandom_range(1, 5) != 1) ? irandom_range(7, 9) : 12);
 		}
-		if (global.battle_nextgroup == 0)
-			global.flag[18] = 1;
+		if (global.flag[24] == 1)
+			global.flag[24] = 2;
 	}
 	else if (chara_world() == WORLD_CAVERNS) // caverns
 	{
@@ -157,7 +157,7 @@ function battle_setupgroup()
 	}
 	if (battle_group == 13) // Rhonhey (MEE6's Intervention)
 	{
-		battle_music = mus_battle_tense;
+		battle_music = mus_battleRhonhey;
 		button_active = false;
 		enemy_type[0] = 7;
 		enemy_obj[0] = instance_create_layer((defaultx[0] + 6), (defaulty - 4), "Instances", obj_enemy_rhonhey);
@@ -468,6 +468,7 @@ function battle_attack()
 		{
 			stage : 0,
 			delay : round(60 * 6),
+			delay_orig : undefined,
 			buildup :
 			{
 				asset : snd_buildupComputer,
@@ -481,6 +482,7 @@ function battle_attack()
 			bubble_offsetX : 0,
 			bubble_offsetY : 0,
 		};
+		mee6.delay_orig = mee6.delay;
 		mee6.object = marker(-20, -20, spr_enemy_m6_leftMad, 1, 2, 2, 0, 1, 0, c_white, controller.battle_depth[1]);
 		mee6.object.x = (room_width + (sprite_get_width(mee6.object.sprite_index) * mee6.object.image_xscale));
 		mee6.object.y = controller.defaulty;

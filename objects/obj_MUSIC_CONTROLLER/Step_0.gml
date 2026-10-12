@@ -153,7 +153,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				{
 					if (audio_playing(snd_buildupComputer) == true)
 						audio_stop(snd_buildupComputer);
-					music_set(0, mus_hurryLoop_1,,,,);//(1 - (0.025 * (chara_murder() == 1)) + (0.025 * (chara_murder() >= 2))));
+					music_set(0, mus_hurryLoop_1,,,, (1 + (0.025 * (chara_murder() >= 3))));
 					if (obj_event_gabee_chase.con >= 45)
 					{
 						global.music_pitch[0] = music_pitch_old[0];
@@ -231,8 +231,11 @@ else if (room == room_battle) || (exists(obj_battle_quicker) == true)
 		var _fadeout = 0.5;
 		switch (control.battle_music)
 		{
-			case mus_battle_tense:
-			_pitch = 0.75;
+			case mus_battleRhonhey:
+			attack = obj_battle_attack;
+			if (exists(attack) == true && attack.stage >= 2 && attack.ball.catch.index != undefined && attack.mee6.delay > 0)
+				_pitch = clamp((music_pitch_old[3] + 0.0025), 1, 2);
+			_fadeout = 0;
 			break;
 			case mus_battleBrock:
 			_pitch = 1;

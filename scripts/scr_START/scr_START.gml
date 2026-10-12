@@ -2,7 +2,7 @@
 function START_GAME()
 {	
 	global.c_dump = #32FF62;
-	global.c_dumpDark = #136641;
+	global.c_dumpDark = #12664E;
 	global.c_red = merge_color(c_red, c_white, 0.125); // "ATTACK"; negative status
 	global.c_blue = merge_color(c_blue, c_white, 0.25); // "DEFENSE"
 	global.c_yellow = #FFF34B; // "HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]"; "Cheap Candy"
@@ -10,6 +10,8 @@ function START_GAME()
 	global.c_orange = #F29948; // "new member"
 	global.c_orangeDark = #D86440;
 	global.c_gray = #748CAB; // unavailable option; "Corridors"
+	global.c_mention[0] = #5865F2;
+	global.c_mention[1] = #A8BAFE;
 	
 	randomize();
 	display_set_gui_maximise(2, 2);
@@ -28,8 +30,7 @@ function START_GAME()
 	start_writer();
 	start_settings();
 	start_achievements();
-	global.c_mention[0] = #5865F2; //#5865F2//#6B70B2;
-	global.c_mention[1] = #A8BAFE; //#5865F2//#6B70B2;
+	
 	global.fnt_mars = font_add_sprite_ext(spr_fnt_mars, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.!:$/%#", false, 0);
 	global.fnt_dmg = font_add_sprite_ext(spr_fnt_dmg, "BCEIKLMOQRSU 0123456789", 1, 0);
 	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcçdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCÇDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- @", 0, 0);
@@ -216,8 +217,7 @@ function start_flags()
 	
 	global.flag[1] = 0; // finished first MEE6's event
 	global.flag[2] = 0; // has MEE6 as side character
-	
-	global.flag[3] = 0; // left room_corridors_2 after MEE6's event
+	global.flag[3] = 0; // 1 == said yes to mee6; 2 == said no to mee6
 	
 	global.flag[4] = 0; // finished MEE6's pre-dummy event
 	global.flag[5] = 0; // KILLED DUMMY !!!!!!!!!!!!!
@@ -448,7 +448,7 @@ function start_achievements()
 
 function CHANGE_GAME()
 {
-	var _change = true;
+	var _change = false;
 	if (_change == true)
 	{
 		global.chara_name = "CRAZYCAT";
@@ -502,7 +502,6 @@ function CHANGE_GAME()
 			{
 				global.flag[1] = 1; // finished first MEE6's event
 				global.flag[2] = 1; // has MEE6 as side character
-				global.flag[3] = 1; // left room_corridors_2 after MEE6's event
 			}
 			if (_lvl >= 3)
 			{
@@ -556,7 +555,7 @@ function CHANGE_GAME()
 			if (_lvl >= 6)
 			{
 				global.flag[37] = 1; // started Broken Clock's event
-				global.flag[38] = true;
+				global.flag[38] = false;
 				if (global.flag[38] == false)
 					global.flag[72] = true;
 				global.flag[39] = 1; // finished Broken Clock's event
@@ -564,6 +563,13 @@ function CHANGE_GAME()
 				global.item[3] = ITEM_BOWL;
 				global.chara_armor = ITEM_PACE;
 				global.achievement[ACHIEVEMENT_BROCKWIN] = 1;
+				global.flag[73] = true;
+				var _skipuzzles = false;
+				if (_skipuzzles == true)
+				{
+					global.flag[51] = true;
+					global.flag[54] = true;
+				}
 			}
 			if (_lvl >= 7)
 			{
@@ -595,12 +601,13 @@ function CHANGE_GAME()
 				global.flag[59] = 1;
 				global.flag[60] = 1;
 				global.flag[61] = 1;
-				
 				global.flag[62] = 1;
 			}
 			if (_lvl >= 10)
 			{
 				global.flag[62] = 1;
+				if (_rm == room_cave_2)
+					global.flag[70] = true;
 			}
 		}
 		chara_stats();

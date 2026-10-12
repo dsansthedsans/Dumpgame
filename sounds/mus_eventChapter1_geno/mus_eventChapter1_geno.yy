@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":72.148026,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_eventChapter1_geno",
   "parent":{
     "name":"[!] audio",

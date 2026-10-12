@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":82.44245,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_eventChapter1",
   "parent":{
     "name":"[!] audio",

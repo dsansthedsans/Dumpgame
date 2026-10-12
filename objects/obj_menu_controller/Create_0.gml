@@ -22,7 +22,6 @@ startcon = 0;
 startalpha = 1;
 
 
-warning_text = [text_get("warning_0"), text_get("warning_1")];
 warning_textPos = 0;
 warning_alpha = 0;
 

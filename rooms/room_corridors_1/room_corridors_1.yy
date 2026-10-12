@@ -38,6 +38,7 @@
     {"name":"inst_4C547D08","path":"rooms/room_corridors_1/room_corridors_1.yy",},
     {"name":"inst_657D40B3","path":"rooms/room_corridors_1/room_corridors_1.yy",},
     {"name":"inst_FE3FDB1","path":"rooms/room_corridors_1/room_corridors_1.yy",},
+    {"name":"inst_271067E","path":"rooms/room_corridors_1/room_corridors_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -81,6 +82,7 @@
         {"$GMRInstance":"v4","%Name":"inst_4C547D08","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4C547D08","objectId":{"name":"obj_event_chapter","path":"objects/obj_event_chapter/obj_event_chapter.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":100.0,"y":480.0,},
         {"$GMRInstance":"v4","%Name":"inst_657D40B3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_657D40B3","objectId":{"name":"obj_particle_bird","path":"objects/obj_particle_bird/obj_particle_bird.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":511.0,},
         {"$GMRInstance":"v4","%Name":"inst_FE3FDB1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_FE3FDB1","objectId":{"name":"obj_tutorial_controller","path":"objects/obj_tutorial_controller/obj_tutorial_controller.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":120.0,"y":220.0,},
+        {"$GMRInstance":"v4","%Name":"inst_271067E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_271067E","objectId":{"name":"obj_particle_bird","path":"objects/obj_particle_bird/obj_particle_bird.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":200.0,"y":550.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":16,"TileCompressedData":[
           -72,-2147483648,1,0,-11,-2147483648,-2,0,-2,-2147483648,4,268435553,-2147483648,0,117,-7,-2147483648,

@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":3.0142403,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"snd_ambienceWater",
   "parent":{
     "name":"[!] audio",

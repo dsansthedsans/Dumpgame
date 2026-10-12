@@ -1,4 +1,5 @@
 /// @descr opções
+warning_text = [text_get("warning_0"), text_get("warning_1")];
 draw_set_font(option_font);
 for (var l = 0; l < 9; l++)
 {
@@ -186,3 +187,4 @@ for (var l = 0; l < 9; l++)
 		option_hearty[l, i] = option_y[l, i];
 	}
 }
+event_user(3);

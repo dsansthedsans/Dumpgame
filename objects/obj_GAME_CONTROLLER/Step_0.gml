@@ -29,7 +29,7 @@ if (active == 1)
 
 // debug
 //if (keyboard_check_pressed(vk_numpad7) == 1 && string_upper(global.chara_name) == "CRAZYCAT")
-if (string_ends_with(string_upper(keyboard_string), "HUNTER2") == true)
+if (string_ends_with(string_upper(keyboard_string), "HUNTER2") == true && exists(obj_menu_namer) == false)
 {
 	global.indebug = !global.indebug;
 	keyboard_string = "";
@@ -123,6 +123,8 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 			global.flag[67] += 1;
 		if (room == room_battle && exists(obj_battle_controller) == true && obj_battle_controller.enemy_type[0] == 6)
 			obj_battle_controller.enemy_obj[0].insultTurns = -2;
+		if (room == room_corridors_14 && global.flag[50] > 0 && global.flag[50] < 1 && exists(obj_captcha3) == true)
+			obj_captcha3.timer.seconds = 0;
 		audio_play(snd_shriekCar, false, VOLUME_SOUND);
 	}
 	if (keyboard_check_pressed(ord("W")) == true)

@@ -20,4 +20,3 @@ option_key[2, i++] = text_get("menu_key_2_" + string(global.fastmenu));
 option_key[6, 1] = "[F10]";
 for (var i = 0; i < 14; i++)
 	option_key[6, (i + 2)] = "[" + string(key_name(global.keybind[i])) + "]";
-settings_write();

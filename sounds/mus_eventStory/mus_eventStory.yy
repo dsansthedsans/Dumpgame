@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":67.84,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_eventStory",
   "parent":{
     "name":"[!] audio",

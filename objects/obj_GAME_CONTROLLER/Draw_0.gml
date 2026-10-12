@@ -55,6 +55,22 @@ if (global.indebug == 1)
 		draw_text_outline_transformed((_cx + 5 + (string_width(_str_flag_0) / 2) + 5), (_cy + 3), _str_flag_1, c_orange, 0.5, c_black, 0.5, 0.5, 0);
 		draw_text_outline_transformed((_cx + 5 + (string_width(_str_flag_0) / 2) + 5 + (string_width(_str_flag_1) / 2) + 5), (_cy + 3), _str_flag_2, c_orange, 0.5, c_black, 0.5, 0.5, 0);
 		draw_text_outline_transformed((_cx + 5 + (string_width(_str_flag_0) / 2) + 5 + (string_width(_str_flag_1) / 2) + 5 + (string_width(_str_flag_2) / 2) + 5), (_cy + 3), _str_flag_3, c_orange, 0.5, c_black, 0.5, 0.5, 0);
+		if (exists(obj_chara) == true)
+		{
+			with (obj_chara)
+			{
+				draw_set_alpha(1);
+				draw_set_color(c_aqua);
+				if (global.chara_facing == LEFT)
+					draw_rectangle(x, (y - (sprite_height / 2) - 0), (x - (sprite_width / 2) - 8), y - 2, false);
+				if (global.chara_facing == RIGHT)
+					draw_rectangle(x, (y - (sprite_height / 2) - 0), (x + (sprite_width / 2) + 8), y - 2, false);
+				if (global.chara_facing == UP)
+					draw_rectangle((x - (sprite_width / 3) - 0), y, (x + (sprite_width / 3) + 0), (y - (sprite_height / 2) - 4), false);
+				if (global.chara_facing == DOWN)
+					draw_rectangle((x - (sprite_width / 3) - 0), y, (x + (sprite_width / 3) + 0), (y + (sprite_height / 3) + 4), false);
+			}
+		}
 	}
 }
 

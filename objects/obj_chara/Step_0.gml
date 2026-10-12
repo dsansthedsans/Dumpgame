@@ -345,13 +345,34 @@ if (global.chara_move == 1 && global.chara_interact == 1)
 			if (o == 1)
 				_obj = obj_solidinteract_parent;
 			intlist[0] = ds_list_create();
-			intcol[0] = collision_rectangle_list(x, (y - (sprite_height / 2) - 2), (x - (sprite_width / 2) - 2), y, _obj, 0, 1, intlist[0], true);
+			intcol[0] = collision_rectangle_list(x, (y - (sprite_height / 2) - 0), (x - (sprite_width / 2) - 8), y - 2, _obj, 0, 1, intlist[0], true);
 			intlist[1] = ds_list_create();
-			intcol[1] = collision_rectangle_list(x, (y - (sprite_height / 2) - 2), (x + (sprite_width / 2) + 2), y, _obj, 0, 1, intlist[1], true);
+			intcol[1] = collision_rectangle_list(x, (y - (sprite_height / 2) - 0), (x + (sprite_width / 2) + 8), y - 2, _obj, 0, 1, intlist[1], true);
 			intlist[2] = ds_list_create();
-			intcol[2] = collision_rectangle_list((x - (sprite_width / 3) - 2), y, (x + (sprite_width / 3) + 2), (y - (sprite_height / 2) - 2), _obj, 0, 1, intlist[2], true);
+			intcol[2] = collision_rectangle_list((x - (sprite_width / 3) - 0), y, (x + (sprite_width / 3) + 0), (y - (sprite_height / 2) - 4), _obj, 0, 1, intlist[2], true);
 			intlist[3] = ds_list_create();
-			intcol[3] = collision_rectangle_list((x - (sprite_width / 3) - 2), y, (x + (sprite_width / 3) + 2), (y + (sprite_height / 3) + 2), _obj, 0, 1, intlist[3], true);
+			intcol[3] = collision_rectangle_list((x - (sprite_width / 3) - 0), y, (x + (sprite_width / 3) + 0), (y + (sprite_height / 3) + 4), _obj, 0, 1, intlist[3], true);
+			var f = global.chara_facing;
+			if (intcol[f] > 0)
+			{
+				var _intpos = 0;
+				for (var l = 0; l < intcol[f]; l++)
+				{
+					if (intlist[f][| l].text == "itemDropped_pickup") || (intlist[f][| l].text == "itemDropped_cantpickup")
+						_intpos = l;
+				}
+				if (intlist[f][| _intpos].con == 0)
+				{
+					chara_change(-1, 0, 0, -1, 0, 0, -1);
+					chara_stop();
+					mycol = intlist[f][| _intpos];
+					mycol.con = 1;
+					lastcol = mycol;
+					_interacted = true;
+					break;
+				}
+			}
+			/*
 			for (var i = 0; i < 4; i++)
 			{
 				if (intcol[i] > 0)
@@ -374,6 +395,7 @@ if (global.chara_move == 1 && global.chara_interact == 1)
 					}
 				}
 			}
+			*/
 			if (_interacted == true)
 				break;
 		}

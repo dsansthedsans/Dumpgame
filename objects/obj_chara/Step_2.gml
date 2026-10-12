@@ -46,7 +46,7 @@ if (global.chara_encounter == 1)
 			chara_stop();
 			surprise(obj_chara);
 			audio_play(snd_stingSurprise, 0, VOLUME_SOUND);
-			battlecon = 1;
+			battlecon += 1;
 		}
 		if (battlecon > 0 && battlecon < (1 + 45))
 			battlecon += 1;

@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":8.464286,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"snd_ambienceWind",
   "parent":{
     "name":"[!] audio",

@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":124.47585,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_battleTroll",
   "parent":{
     "name":"[!] audio",

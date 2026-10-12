@@ -79,6 +79,8 @@ function room_interact()
 		{
 			text = "room_stairssign";
 		}
+		if (x == 250 && y == 280)
+			text = "room_splitpillar";
 	}
 	if (r == room_corridors_3_5)
 	{
@@ -227,6 +229,7 @@ function room_interact()
 				text = "room_captcha_guidesign_2";
 			if (y == 475)
 				text = "room_captcha_guidesign_3_3";
+			y += 8;
 		}
 	}
 	if (room == unused_room_corridors_16_A)
@@ -725,7 +728,10 @@ function room_solid()
 		if (x == 140)
 			sprite_index = spr_overworld_signWood_big;
 		if (x == 150)
+		{
 			sprite_index = spr_overworld_signWood;
+			y += 8;
+		}
 	}
 	if (room == unused_room_corridors_16_A)
 	{

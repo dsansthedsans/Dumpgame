@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":1.3248526,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_hurryIntro_0",
   "parent":{
     "name":"[!] audio",

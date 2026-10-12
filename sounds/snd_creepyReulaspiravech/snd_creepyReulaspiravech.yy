@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":16.005215,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"snd_creepyReulaspiravech",
   "parent":{
     "name":"[!] audio",

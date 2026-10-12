@@ -222,8 +222,6 @@ function chara_room()
 		rm = room_next(room);
 		
 		// custom position and/or room
-		if (room == room_corridors_2)
-			global.flag[3] = 1;
 		if (room == room_corridors_3_5)
 		{
 			xx = 460;

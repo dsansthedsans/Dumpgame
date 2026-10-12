@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":176.04857,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_battleBrock",
   "parent":{
     "name":"[!] audio",

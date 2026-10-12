@@ -6,7 +6,7 @@ press_r = key("right_press");
 press_u = key("up_press");
 press_d = key("down_press");
 press_enter = key("enter_press");
-event_user(1);
+
 event_user(3);
 
 // start
@@ -44,11 +44,13 @@ if (startcon == 4)
 		global.menu_lvl = 0;
 		alpha = 1;
 		startcon += 1;
-		alarm[2] = (60 * 2);
+		alarm[2] = (60 * 3);
 	}
 }
 if (startcon == 6)
 {
+	if (warning_alpha == 0)
+		audio_play(snd_jingleFuture_0, false, VOLUME_SOUND);
 	warning_alpha += (1 / 30);
 	if (warning_alpha >= 1)
 	{
@@ -61,6 +63,7 @@ if (startcon == 8)
 	warning_alpha -= (1 / 30);
 	if (warning_alpha <= 0)
 	{
+		warning_alpha = 0;
 		warning_textPos += 1;
 		startcon += 1;
 		alarm[2] = (60 * 1);
@@ -68,6 +71,8 @@ if (startcon == 8)
 }
 if (startcon == 10)
 {
+	if (warning_alpha == 0)
+		audio_play(snd_jingleFuture_1, false, VOLUME_SOUND);
 	warning_alpha += (1 / 30);
 	if (warning_alpha >= 1)
 	{
@@ -257,8 +262,6 @@ if (move == 1)
 					global.lang = "ptBR";
 				else
 					global.lang = "enUS";
-				event_user(0);
-				settings_write();
 				start_achievements();
 			}
 			if (_pos == 3)
@@ -277,8 +280,8 @@ if (move == 1)
 				global.drpenabled = !global.drpenabled;
 			if (_pos == 13 - !global.ACHIEVEMENT_ENABLED)
 				global.fastmenu = !global.fastmenu;
-
-			event_user(1);
+			event_user(0);
+			settings_write();
 			audio_play(snd_option_select, 0, VOLUME_SOUND);
 		}	
 		
@@ -340,6 +343,7 @@ if (move == 1)
 			{
 				if (block == 0)
 				{
+					move = 0;
 					global.savefile_selected = play_save;
 					chara_stats();
 					global.chara_curhp = global.chara_maxhp;
@@ -399,8 +403,8 @@ if (move == 1)
 		
 			global.volume[_pos] += ((_amt * _mult) * _dir);
 			global.volume[_pos] = clamp(global.volume[_pos], 0, 1);
-		
-			event_user(1);
+			settings_write();
+			event_user(0);
 			if (audio_playing(snd_option_movehold) == 0)
 				audio_play(snd_option_movehold, 0, VOLUME_SOUND);
 		}
@@ -416,7 +420,7 @@ if (move == 1)
 		if (_oldpos != achievement_pos)
 			audio_play(snd_option_move, 0, VOLUME_SOUND);
 	}
-	if (global.menu_lvl == 4) // créditos
+	/*if (global.menu_lvl == 4) // créditos
 	{
 		var _oldpos = credits_pos;
 		credits_pos += (press_r - press_l);
@@ -424,17 +428,14 @@ if (move == 1)
 			credits_pos = _oldpos;
 		if (_oldpos != credits_pos)
 			audio_play(snd_option_move, 0, VOLUME_SOUND);
+	}*/
+	// resetar controles
+	if (controls_changing == 0 && ((global.menu_lvl == 6 && press_enter == 1 && option_pos == 1) || (keyboard_check_pressed(vk_f10) == 1)))
+	{
+		start_controls();
+		event_user(1);
+		audio_play(snd_option_keyreset, 0, VOLUME_SOUND);
 	}
-	//if (global.menu_lvl == 6) // controles
-	//{
-		// resetar controles
-		if (controls_changing == 0 && ((global.menu_lvl == 6 && press_enter == 1 && option_pos == 1) || (keyboard_check_pressed(vk_f10) == 1)))
-		{
-			start_controls();
-			event_user(1);
-			audio_play(snd_option_keyreset, 0, VOLUME_SOUND);
-		}
-	//}
 }
 namer_state = 0;
 
@@ -477,7 +478,8 @@ if (global.menu_lvl == 6)
 			move = 1;
 			controls_changing = 0;
 			audio_play(snd_option_select, 0, VOLUME_SOUND);
-			event_user(1);
+			event_user(0);
+			settings_write();
 		}
 		else
 			keyboard_lastkey = 0;	
@@ -531,9 +533,7 @@ if (started == 1 && controls_changing == 0 && !(exists(obj_menu_namer) == 1 && o
 	}
 }
 
-
-
-
+event_user(1);
 
 
 

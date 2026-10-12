@@ -1,6 +1,4 @@
 
-debugalarm = 0;
-
 press_l = false;
 press_r = false;
 press_u = false;

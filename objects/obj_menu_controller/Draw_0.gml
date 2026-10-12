@@ -68,7 +68,7 @@ else if (continueback_surface != -1 && surface_exists(continueback_surface) == 1
 if (global.menu_lvl >= 0)
 {
 	var l = global.menu_lvl;
-	if ((global.menu_lvl == 0 && keyboard_check(vk_alt) == 1) == false && option_length[l] > 0) // esconder hud
+	if ((global.menu_lvl == 0 && keyboard_check(vk_alt) == true && started == true) == false && option_length[l] > 0) // esconder hud
 		draw_sprite_stretched_ext(spr_menu_optbg, 0, option_bgx[l], option_bgy[l], option_bgw[l], option_bgh[l], c_white, (option_alpha * alpha));
 }
 
@@ -141,23 +141,22 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 		_bg_col = global.c_yellow;
 	draw_sprite_stretched_ext(spr_menu_optbg, 0, _bg_x, _bg_y, _bg_w, _bg_h, _bg_col, alpha);
 
-	// setas
-	draw_set_font(fnt_main_bigger);
-	draw_set_valign(fa_middle);
-	draw_set_halign(fa_center);
-	for (var i = 0; i < 2; i++)
-	{
-		var _arrow = "<";
-		if (i == 1)
-			_arrow = ">";
-		
-		if !(i == 0 && _pos == 0) && !(i == 1 && _pos == _max)
-			draw_text_outline((60 + ((_bg_w + 60) * i)), (_bg_y + (_bg_h / 2)), _arrow, c_white, 2, c_black);	
-	}
-	
 	// conquistas
 	if (global.menu_lvl == 3)
 	{
+		draw_set_font(fnt_main_bigger);
+		draw_set_valign(fa_middle);
+		draw_set_halign(fa_center);
+		for (var i = 0; i < 2; i++)
+		{
+			var _arrow = "<";
+			if (i == 1)
+				_arrow = ">";
+		
+			if !(i == 0 && _pos == 0) && !(i == 1 && _pos == _max)
+				draw_text_outline((60 + ((_bg_w + 60) * i)), (_bg_y + (_bg_h / 2)), _arrow, c_white, 2, c_black);	
+		}
+		
 		// foto da conquista
 		var _image_spr = unused_spr_achievement_image;
 		var _image_sc = 3;
@@ -222,9 +221,17 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 	if (global.menu_lvl == 4)
 	{
 		draw_set_alpha(alpha);
+		draw_set_valign(fa_middle);
+		draw_set_halign(fa_center);
+		draw_set_font(fnt_main_spaced_big);
+		draw_set_color(c_white);
+		draw_text((_bg_x + (_bg_w / 2)), (_bg_y + (_bg_h / 3)), text_get($"menu_{global.menu_lvl}_info_0"));
+		draw_set_font(fnt_main_spaced_medium);
+		draw_set_color(global.c_gray);
+		draw_text((_bg_x + (_bg_w / 2)), (_bg_y + _bg_h - (_bg_h / 3)), text_get($"menu_{global.menu_lvl}_info_1"));
 		
 		// principal
-		if (credits_pos == 0)
+		/*if (credits_pos == 0)
 		{
 			for (var i = 0; i < 2; i++)
 			{			
@@ -292,7 +299,7 @@ if (global.menu_lvl == 3) || (global.menu_lvl == 4)
 			draw_set_valign(fa_middle);
 			draw_set_halign(fa_center);
 			draw_text((_bg_x + (_bg_w / 2)), (_bg_y + (_bg_h / 2)), text_get("menu_4_info_2_0"));
-		}
+		}*/
 	}	
 }
 
@@ -361,7 +368,7 @@ if (global.menu_lvl >= 0)
 	draw_set_valign(option_val[l]);
 	draw_set_halign(option_hal[l]);
 	
-	if !(global.menu_lvl == 0 && keyboard_check(vk_alt) == 1) // esconder hud
+	if !(global.menu_lvl == 0 && keyboard_check(vk_alt) == 1 && started == true) // esconder hud
 	{
 		// indicator (depth 1)
 		if (option_heartdepth[l, option_pos] == 1)
@@ -418,7 +425,7 @@ if (global.menu_lvl == 0)
 	draw_set_valign(fa_middle);
 	draw_text_outline_ext(_basex, _mainy, warning_text[warning_textPos], c_white, 35, 999, 1, c_dkgrey);
 	
-	if (keyboard_check(vk_alt) == 0) // esconder hud
+	if ((keyboard_check(vk_alt) == true && started == true) == false) // esconder hud
 	{
 		// título
 		for (var i = 0; i < title_length; i++)

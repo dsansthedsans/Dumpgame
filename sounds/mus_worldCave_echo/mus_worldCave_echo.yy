@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":20.03592,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_worldCave_echo",
   "parent":{
     "name":"[!] audio",

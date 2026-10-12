@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":17.454557,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"unused_mus_battle_toilet",
   "parent":{
     "name":"[!] UNUSED !!!!!",

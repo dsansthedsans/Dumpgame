@@ -14,11 +14,11 @@ if (con == 1)
 if (con == 2 && chara.y <= 195)
 {
 	global.flag[1] = 0.5;
-	var _DEBUG_SKIP = true;
+	var _DEBUG_SKIP = global.indebug;
 	if (DEBUG_SKIP == false) || (DEBUG_SKIP == true && _DEBUG_SKIP == false)
 	{
 		con = 6;
-		alarm[2] = round(60 * 1);
+		alarm[2] = round(60 * 1.5);
 	}
 	else
 	{

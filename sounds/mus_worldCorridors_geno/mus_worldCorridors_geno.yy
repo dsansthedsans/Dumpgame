@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":172.8829,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_worldCorridors_geno",
   "parent":{
     "name":"[!] audio",

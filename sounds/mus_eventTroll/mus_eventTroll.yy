@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":108.93061,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_eventTroll",
   "parent":{
     "name":"[!] audio",

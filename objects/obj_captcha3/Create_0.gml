@@ -1,5 +1,6 @@
 depth = 0;
 image_alpha = 0;
+game = obj_GAME_CONTROLLER;
 chara = obj_chara;
 m6 = obj_party;
 stage = 0;
@@ -21,6 +22,7 @@ for (var d = 0; d < doors_length; d++)
 	doors[d] =
 	{
 		active : false,
+		animate : true,
 		object : create(140, 0, obj_solid_parent),
 	}
 	doors[d].object.index = d;
@@ -64,7 +66,7 @@ timer =
 {
 	active : false,
 	seconds : 0,
-	secondsTotal : 60,
+	secondsTotal : (60 * 2),
 	milliseconds : 0,
 	millisecondsTotal : 60,
 	color_green : 0,
@@ -187,13 +189,19 @@ platesReset =
 	active : false,
 	object : marker(210, 410, spr_overworld_captcha_button, 1, 1, 1, 0, 2, 0, c_white, 0),
 }
-	
 
 if (global.flag[51] == true)
 {
+	for (var d = 0; d < 2; d++)
+	{
+		doors[d].active = true;
+		doors[d].animate = false;
+	}
 	buttons_wordCurr = buttons_word;
 	if (global.flag[54] == true)
 	{
+		doors[2].active = true;
+		doors[2].animate = false;
 		moveable.object.x = moveable.endX;
 		moveable.object.y = moveable.endY;
 		moveable.object.depth = -moveable.object.bbox_bottom;
@@ -202,14 +210,17 @@ if (global.flag[51] == true)
 			stage = 16;
 			for (var l = 0; l < 2; l++)
 				levers[l].active = true;
-			for (var d = 0; d < doors_length; d++)
+			for (var d = 2; d < doors_length; d++)
+			{
 				doors[d].active = true;
+				doors[d].animate = false;
+			}
 			plates_activeAll = true;
 		}
 	}
 }
 
 
-skip = false;
+skip = (true * (global.indebug == true && global.debug_hud == true));
 if (skip == true)
 	stage = 1;

@@ -12,11 +12,7 @@ if (dancing == 1)
 			dance_walkturn = 0;
 		}
 		
-		// set xscale
-		if (dance_dir == -1)
-			image_xscale = 1;
-		else
-			image_xscale = -1;
+		image_xscale = dance_dir;
 		
 		// go to new position
 		var _xmove = (irandom_range(2, 6) * dance_dir);
@@ -122,9 +118,9 @@ if (scarefly == 1)
 		
 		// set image direction
 		if (spdx < 0)
-			image_xscale = 1;
-		else
 			image_xscale = -1;
+		else
+			image_xscale = 1;
 		
 		// get to point
 		var _dist = point_distance(x, y, scarefly_x, scarefly_y);

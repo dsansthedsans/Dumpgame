@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":149.51697,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_battle",
   "parent":{
     "name":"[!] audio",

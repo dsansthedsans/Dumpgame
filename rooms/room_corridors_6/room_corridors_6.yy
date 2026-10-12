@@ -51,8 +51,8 @@
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
           -52,-2147483648,1,0,-14,-2147483648,11,154,136,0,268435553,0,-2147483648,0,268435573,276,134,0,-5,-2147483648,
-          4,116,297,0,-2147483648,-5,0,3,296,0,0,-4,-2147483648,6,136,256,0,268435554,-2147483648,-2147483648,
-          -5,0,2,268435553,268435573,-3,-2147483648,4,0,117,0,0,-5,-2147483648,4,117,-2147483648,0,0,-3,-2147483648,
+          4,116,297,0,-2147483648,-4,0,4,234,296,0,0,-4,-2147483648,6,136,1879048427,0,268435554,-2147483648,-2147483648,
+          -5,0,2,268435553,268435573,-3,-2147483648,4,277,117,0,0,-5,-2147483648,4,117,-2147483648,0,0,-3,-2147483648,
           4,296,0,268435573,0,-3,-2147483648,5,97,268435753,94,0,0,-4,-2147483648,2,95,96,-3,0,-3,-2147483648,
           3,94,175,0,-6,-2147483648,5,0,-2147483648,-2147483648,0,98,-23,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tile_corridors","path":"tilesets/tile_corridors/tile_corridors.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

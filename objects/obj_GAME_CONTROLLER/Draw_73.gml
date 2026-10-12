@@ -53,7 +53,11 @@ if (active == 1)
 			_stopwatch_zeros[2] = "0";
 		else 
 			_stopwatch_zeros[2] = "";
-		_hud_string[0] = $"{_stopwatch.time[3]}:{_stopwatch_zeros[2]}{_stopwatch.time[2]}:{_stopwatch_zeros[1]}{_stopwatch.time[1]}.{_stopwatch_zeros[0]}{_stopwatch.time[0]}";
+		_hud_string[0] = text_get("stopwatch_0");
+		_hud_string[0] = string_replace_all(_hud_string[0], "{hours}", _stopwatch.time[3]);
+		_hud_string[0] = string_replace_all(_hud_string[0], "{minutes}", $"{_stopwatch_zeros[2]}{_stopwatch.time[2]}");
+		_hud_string[0] = string_replace_all(_hud_string[0], "{seconds}", $"{_stopwatch_zeros[1]}{_stopwatch.time[1]}");
+		_hud_string[0] = string_replace_all(_hud_string[0], "{milliseconds}", $"{_stopwatch_zeros[0]}{_stopwatch.time[0]}");
 	}
 	// fps
 	if (global.showfps == 1)

@@ -139,7 +139,7 @@ for (var d = 0; d < doors_length; d++)
 	{
 		var _sprite = doors[d].object.sprite_index;
 		doors[d].object.sprite_index = ((doors[d].active == false) ? spr_overworld_bigdoor_closed : spr_overworld_bigdoor_open);
-		if (_sprite != doors[d].object.sprite_index && stage < 16)
+		if (_sprite != doors[d].object.sprite_index && stage < 16 && doors[d].animate == true)
 		{
 			if (_sprite == spr_overworld_bigdoor_closed)
 			{
@@ -148,7 +148,11 @@ for (var d = 0; d < doors_length; d++)
 				audio_play(snd_impactBluh, 0, VOLUME_SOUND);
 			}
 			else
+			{
+				if (audio_playing(snd_impact) == true)
+					audio_stop(snd_impact);
 				audio_play(snd_impact, 0, VOLUME_SOUND);
+			}
 			shakescreen(5, 5);
 		}
 	}

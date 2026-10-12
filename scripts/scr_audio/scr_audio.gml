@@ -127,6 +127,8 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 			_volume *= 0.25;
 		if (_asset == snd_writerTrashguy)
 			_volume *= 0.875;
+		if (_asset == snd_jingleFuture_0) || (_asset == snd_jingleFuture_1)
+			_volume *= 0.5;
 	}
 	if (_volume_type == VOLUME_MUSIC)
 	{
@@ -134,8 +136,10 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 		
 		if (_asset == mus_eventChapter1)
 			_volume *= 1.25;
-		if (_asset == mus_battle_tense)
-			_volume *= 1.5;
+		if (_asset == mus_eventChapter1_geno)
+			_volume *= 0.875;
+		if (_asset == mus_battleRhonhey)
+			_volume *= 0.875;
 		if (_asset == mus_eventMee6)
 			_volume *= 2.5;
 		if (_asset == mus_worldCorridors)
@@ -159,7 +163,7 @@ function audio_gain(_audio, _volume, _time, _fadein, _volume_type) // OH MYU GOD
 		if (_asset == mus_battleBrock)
 			_volume *= 1.25;
 		if (_asset == mus_eventBrock_sad)
-			_volume *= 1.5;
+			_volume *= 1;
 	}
 	_volume *= (global.volume[_volume_type] * global.volume[VOLUME_MASTER]);
 	if (_fadein == 1)

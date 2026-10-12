@@ -65,53 +65,93 @@ function TEXT()
 	// room_corridors_2
 	if (string_starts_with(text, "event_m6_meet_") == true)
 	{
-		var _text_index = string_char_at(text, string_length(text));
-		for (var m = 0; m < 99; m++)
+		var _page_question = 7;
+		var _textIndex = string_char_at(text, string_length(text));
+		for (var t = 0; t < 99; t++)
 		{
-			var _msg = text_get($"event_m6_meet_{_text_index}_{m}");
-			if (_msg == undefined) || (_msg == "Salenis")
+			var _textID = $"event_m6_meet_{_textIndex}_{t}";
+			switch (_textIndex)
+			{
+				case 2:
+				if (t == (_page_question + 1))
+					_textID += $"_{question_result[t - 1]}";
 				break;
-			//switch (_text_index)
-			//{
-			//	case 2:
-			//	if (m == 4)
-			//	{
-			//		question[m] = _msg;
-			//		for (var a = 1; a <= 2; a++)
-			//			question_option[a] = text_get($"event_m6_meet_{_text_index}_{m}_{a}");
-			//		continue;
-			//	}
-			//	break;
-			//}
-			msg[m] = _msg;
+			}
+			var _text = text_get(_textID);
+			if (_text == undefined) || (_text == "Salenis")
+				break;
+			switch (_textIndex)
+			{
+				case 0:
+				if (t == 0)
+					_text = string_replace_all(_text, "[name]", global.chara_name);	
+				break;
+				case 2:
+				if (t == (_page_question - 1))
+					_text = string_replace_all(_text, "{name}", global.chara_name);
+				if (t == _page_question)
+				{
+					question[t] = _text;
+					for (var r = 1; r <= 2; r++)
+						question_option[r] = text_get($"event_m6_meet_{_textIndex}_{t}_{r}");
+					continue;
+				}
+				break;
+				case 3:
+				if (t == 0)
+					_text = string_replace_all(_text, "{punctuation}", ((global.flag[3] == 1) ? "!" : "."));
+				break;
+			}
+			msg[t] = _text;
 		}
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_writerMee6;
-		msg_format[0] = "textbox_bottom";
-		if (exists(obj_event_m6_meet) == true)
-			msg_talker[0] = obj_event_m6_meet.m6;
-		switch (_text_index)
+		msg_talker[0] = obj_event_m6_meet.m6;
+		msg_format[0] = "textbox_top";
+		switch (_textIndex)
 		{
 			case 0:
-			msg[0] = string_replace_all(msg[0], "[name]", $"{global.chara_name}");	
+			msg_format[0] = "textbox_bottom";
 			msg_skip[0] = false;
 			msg_next[2] = false;
 			msg_sound[2] = -1;
 			break;
 			case 1:
+			msg_face[2] = spr_dialogface_m6_thinking;
+			msg_face[3] = spr_dialogface_m6_default;
+			msg_format[0] = "textbox_bottom";
 			break;
 			case 2:
 			msg_face[0] = spr_dialogface_m6_sadTense;
-			msg_face[3] = spr_dialogface_m6_neutral;
-			msg_face[4] = spr_dialogface_m6_default;
 			msg_sound[0] = snd_writerMee6_tense;
+			msg_face[3] = spr_dialogface_m6_neutral;
 			msg_sound[3] = snd_writerMee6;
+			msg_face[4] = spr_dialogface_m6_default;
+			msg_face[_page_question] = -1;
+			msg_sound[_page_question] = snd_writer_0;
+			msg_talker[_page_question] = -1;
+			global.flag[3] = question_result[_page_question];
+			if (global.flag[3] == 1)
+			{
+				msg_face[_page_question + 1] = spr_dialogface_m6_default;
+				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
+			}
+			else if (global.flag[3] == 2)
+			{
+				global.flag[72] = 0.5;
+				msg_face[_page_question + 1] = spr_dialogface_m6_angry;
+				audio_play(snd_jingleFail, false, VOLUME_SOUND);
+			}
+			msg_sound[_page_question + 1] = snd_writerMee6;
+			msg_talker[_page_question + 1] = obj_event_m6_meet.m6;
 			break;
 			case 3:
+			if (global.flag[3] == 2)
+				msg_face[0] = spr_dialogface_m6_serious;
 			msg_face[1] = -1;
 			msg_sound[1] = snd_writer_0;
 			msg_talker[1] = -1;
-			msg_format[0] = "textbox_top";
+			//msg_format[0] = "textbox_top";
 			break;
 		}
 	}
@@ -180,7 +220,7 @@ function TEXT()
 			}
 		}
 	}
-	if (text == "room_deadlamp")
+	if (text == "room_splitpillar") || (text == "room_deadlamp")
 		msg[0] = text_get($"{text}{(chara_murder() < 1) ? "" : "_geno"}");
 	// room_corridors_3_5
 	if (string_starts_with(text, "event_dummy_battle_") == true)
@@ -203,6 +243,11 @@ function TEXT()
 			msg_face[4] = spr_dialogface_m6_thinking;
 			msg_face[7] = spr_dialogface_m6_neutral;
 			msg_face[8] = spr_dialogface_m6_default;
+			if (global.flag[72] == true)
+			{
+				msg_face[0] = spr_dialogface_m6_serious;
+				msg_face[8] = spr_dialogface_m6_serious;
+			}
 			break;
 			case 1:
 			msg_face[1] = spr_dialogface_m6_sassy;
@@ -362,7 +407,7 @@ function TEXT()
 	}
 	if (text == "room_candysign")
 	{
-		for (var i = 0; i < 1; i++)
+		for (var i = 0; i < 2; i++)
 			msg[i] = text_get("room_candysign_" + string(i));
 	}
 	if (text == "room_candybowl")
@@ -890,6 +935,11 @@ function TEXT()
 		for (var i = 0; i < 2; i++)
 			msg[i] = text_get($"room_captcha_guidesign_3_3_{i}");
 	}
+	if (text == "room_captcha_guidesign_1") || (text == "room_captcha_guidesign_2") || (text == "room_captcha_mainsign_3") || (text == "room_captcha_guidesign_3_3")
+	{
+		if (global.flag[50] > 0 && global.flag[50] < 1)
+			msg_format[0] = "textbox_bottom";
+	}
 	if (text == "room_captcha_endsign_3")
 	{
 		for (var i = 0; i < 2; i++)
@@ -1089,12 +1139,13 @@ function TEXT()
 			}
 			break;
 			case 1:
+			msg_skip[0] = false;
 			msg_face[0] = spr_dialogface_m6_sadTense;
+			msg_sound[0] = snd_writerMee6_tense;
+			msg_talker[0] = global.party[0];
 			msg_face[1] = spr_dialogface_m6_sad;
 			msg_face[2] = spr_dialogface_m6_sadTense;
 			msg_face[3] = spr_dialogface_m6_sad;
-			msg_sound[0] = snd_writerMee6_tense;
-			msg_talker[0] = global.party[0];
 			break;
 			case 3:
 			msg_type[0] = "notawake";

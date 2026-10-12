@@ -48,6 +48,8 @@ if (room == room_corridors_1)
 		mytype = 3;
 	if (x == 120 && y == 130)
 		mytype = 4;
+	if (x == 200 && y == 550)
+		mytype = 8;
 }
 else if (room == room_corridors_17)
 {
@@ -64,11 +66,12 @@ if (mytype == 1) // dump
 {
 	x = (chara.x - 8);
 	y = (chara.y - 15);
+	image_xscale = -1;
 	if (global.flag[0] < 1)
 		eating = 1;
 	scarefly_x = 33;
 	scarefly_y = 453;
-	scarefly_dir = -1;
+	scarefly_dir = 1;
 	if (global.flag[0] == 1)
 	{
 		x = scarefly_x;
@@ -78,11 +81,11 @@ if (mytype == 1) // dump
 }
 if (mytype >= 2) // red, blue, yellow
 {
-	indexmult = choose(1, 2, 3);
+	indexmult = choose(1, 2, 3, 4);
 	dancing = 1;
 	dance_origx = x;
 	dance_origy = y;
-	scarefly_dir = 1;
+	scarefly_dir = -1;
 	
 	if (mytype == 2)
 	{
@@ -95,27 +98,27 @@ if (mytype >= 2) // red, blue, yellow
 		indexmult = 2;
 		scarefly_x = 35;
 		scarefly_y = 520;
-		scarefly_dir = -1;
+		scarefly_dir = 1;
 	}
 	if (mytype == 4)
 	{
-		indexmult = 3;
+		indexmult = 4;
 		scarefly_x = 55;
 		scarefly_y = 80;
-		scarefly_dir = -1;
+		scarefly_dir = 1;
 	}
 	if (mytype == 5)
 	{
-		indexmult = 3;
+		//indexmult = 3;
 		scarefly_x = 290;
 		if (x == 440 && y == 190)
 			scarefly_x = 410;
 		scarefly_y = 35;
-		scarefly_dir = -1;
+		scarefly_dir = 1;
 	}
 	if (mytype == 6)
 	{
-		indexmult = 2;
+		//indexmult = 2;
 		scarefly_x = 310;
 		if (x == 660 && y == 160)
 			scarefly_x = 620;
@@ -123,11 +126,17 @@ if (mytype >= 2) // red, blue, yellow
 	}
 	if (mytype == 7)
 	{
-		indexmult = 1;
+		//indexmult = 1;
 		scarefly_x = 340;
 		if (x == 690 && y == 170)
 			scarefly_x = 640;
 		scarefly_y = 35;
+	}
+	if (mytype == 8)
+	{
+		indexmult = 3;
+		scarefly_x = 286;
+		scarefly_y = 475;
 	}
 }
 

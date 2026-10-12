@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":178.13705,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_battleDummy",
   "parent":{
     "name":"[!] audio",

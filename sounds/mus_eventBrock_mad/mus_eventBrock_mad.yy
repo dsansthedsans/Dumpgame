@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":73.14286,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_eventBrock_mad",
   "parent":{
     "name":"[!] audio",

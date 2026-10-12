@@ -11,7 +11,7 @@
   "compressionQuality":4,
   "conversionMode":0,
   "duration":34.638367,
-  "exportDir":"",
+  "exportDir":"audio",
   "name":"mus_eventBrock_sad",
   "parent":{
     "name":"[!] audio",
