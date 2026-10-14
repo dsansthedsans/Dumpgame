@@ -12,6 +12,7 @@
 </p>
 <br>
 <p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way of danger using UNDERTALE's unique battle system.</p> <!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
+<p>If you still haven't played UNDERTALE, go play it. It's <a href="https://store.steampowered.com/app/391540/Undertale/">steamingly good</a>.</p>
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
 <br>
@@ -28,7 +29,7 @@
 <h1>Features</h1>
 <ul>
   <li><b>Original art, story, world and characters,</b> created almost entirely by <b>dsansthedsans</b>!</li>
-  <li><b>An amazing original soundtrack,</b> fully composed and arranged by <b>migel8022</b>!</li>
+  <li><b>An amazing original soundtrack,</b> composed and arranged almost entirely by <b>migel8022</b>!</li>
   <li><b>Trollishly difficult battles,</b> intended for those who've played <b>UNDERTALE or DELTARUNE</b>!<br><i>(But not as hard as the average Sans fan game...)</i></li> <!--inspired by "Jevilishly difficult hidden bosses" from Steam page of "DELTARUNE"-->
   <li><b>Obligatory puzzles.</b> Lots and lots of obligatory puzzles.</li> <!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
 </ul>
@@ -41,24 +42,25 @@
   <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face danger head-on. They usually stick close to an Armsguy.</li><!--inspired by "[...] to face danger head-on" from "UNDERTALE"-->
   <li><b>Flitcher</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_flitcher/ca904f51-ea94-45e0-8699-841141abe37c.png" height="32" align="top"> , a reptile-like monster who's unaware of its own existence for most of the time. There's not much to say about it.</li>
   <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock_full/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
-  <li><b>And more</b>...? <i>(Only in the upcoming <b>v0.6.0</b>, sadly...)</i></li>
+  <li><b>And more</b>...? <i>(Only in the upcoming <code>v0.6.0</code>...)</i></li>
 </ul>
 <br>
-<h1>Install Instructions</h1>
+<h1>Download</h1>
 <table>
   <tr>
     <th>Version</th>
-    <th>Download</th>
+    <th>File</th>
   </tr>
   <tr>
-    <td>0.5.0</td>
+    <td><code>0.5.0</code> <i>(Latest)</i></td>
     <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.5.0.zip">Dumpgame-v0.5.0.zip</a></td>
   </tr>
 </table>
+<h3>Install Instructions</h1>
 <ol>
-  <li>Download the <code>.zip</code> of the latest version, <code>v0.5.0</code></li>
-  <li>In your Downloads folder, right-click the <code>.zip</code> and extract it</li>
-  <li>In the extracted folder, open the <code>.exe</code></li>
+  <li>Download the <code>.zip</code> file of the latest version by clicking on the provided link</li>
+  <li>In your Downloads folder, right-click the <code>.zip</code> file and extract it</li>
+  <li>In the extracted folder, left-click the <code>.exe</code> file to run the game</li>
 </ol>
 <p>No external files are required.</p>
 <br>
