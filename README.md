@@ -11,7 +11,7 @@
   <a href="https://www.youtube.com/playlist?list=PLRH-EiM3M_xQ" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
 <br>
-<p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way of danger using UNDERTALE's unique battle system.</p> <!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
+<p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way out of danger using UNDERTALE's unique battle system.</p> <!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
 <p>If you still haven't played UNDERTALE, go play it. It's <a href="https://store.steampowered.com/app/391540/Undertale/">steamingly good</a>.</p>
 <br>
 <p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
@@ -32,6 +32,7 @@
   <li><b>An amazing original soundtrack,</b> composed and arranged almost entirely by <b>migel8022</b>!</li>
   <li><b>Trollishly difficult battles,</b> intended for those who've played <b>UNDERTALE or DELTARUNE</b>!<br><i>(But not as hard as the average Sans fan game...)</i></li> <!--inspired by "Jevilishly difficult hidden bosses" from Steam page of "DELTARUNE"-->
   <li><b>Obligatory puzzles.</b> Lots and lots of obligatory puzzles.</li> <!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
+  <li>Também disponível em Português do Brasil...!</li>
 </ul>
 <!--<h3>Story</h3>
 <p>[...]</p>-->
