@@ -8,7 +8,7 @@
   <a href="https://github.com/dsansthedsans/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/GitHub-212830?logo=github&logoColor=f5f5f5" alt="GitHub"></a>
   <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
   <a href="https://gamejolt.com/games/dumpgame/1097311" target="_blank"><img src="https://img.shields.io/badge/Game Jolt-ccff00?logo=gamejolt&logoColor=black" alt="Itch.io"></a>
-  <a href="https://www.youtube.com/watch?v=JlkJjtKZRK0" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
+  <a href="https://www.youtube.com/playlist?list=PLRH-EiM3M_xQ" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
 <br>
 <p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way of danger using UNDERTALE's unique battle system.</p> <!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
@@ -45,8 +45,18 @@
 </ul>
 <br>
 <h1>Install Instructions</h1>
+<table>
+  <tr>
+    <th>Version</th>
+    <th>Download</th>
+  </tr>
+  <tr>
+    <td>0.5.0</td>
+    <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.5.0.zip">Dumpgame-v0.5.0.zip</a></td>
+  </tr>
+</table>
 <ol>
-  <li>Download the <code>.zip</code> of the latest version <a href="https://dsansthedsans.itch.io/dumpgame" target="_blank"><b>here</b></a></li>
+  <li>Download the <code>.zip</code> of the latest version, <code>v0.5.0</code></li>
   <li>In your Downloads folder, right-click the <code>.zip</code> and extract it</li>
   <li>In the extracted folder, open the <code>.exe</code></li>
 </ol>
