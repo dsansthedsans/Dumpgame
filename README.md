@@ -51,10 +51,12 @@
   <tr>
     <th>Version</th>
     <th>File</th>
+    <th>Release Date</th>
   </tr>
   <tr>
     <td><code>0.5.0</code> <i>(Latest)</i></td>
     <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.5.0.zip">Dumpgame-v0.5.0.zip</a></td>
+    <td>October 12, 2026</td>
   </tr>
 </table>
 <h3>Install Instructions</h1>
@@ -116,18 +118,18 @@
 <p align="center"><img src="README-ASSETS/CHARA-EVOLUTION-X4.png" alt="Image showing all versions of the player's sprite" width="399"></p>
 <br>
 <h1>Never Asked Questions</h1>
-<h3>Is Dumpgame still in development?</h3>
-<blockquote>No. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
 <blockquote>Yes, very. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
-<h3>Is Dumpgame still associated with Dumpster Friends?</h3>
-<blockquote>No, not anymore. Any other dump-related game like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
+<h3>Is Dumpgame in development?</h3>
+<blockquote>Yes and no. The full game has been canceled, but new content may be added to the DEMO. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, NOTHING related to Dumpgame is AI-generated, not even this README. The ONLY exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
 <blockquote>Would you trust me if I said no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>VirusTotal</b></a>, reliable security vendors like Google, Microsoft, Bitdefender, Malwarebytes, Kaspersky, Avast, AVG and ESET won't flag the file as malicious.</blockquote>
+<h3>Is Dumpgame associated with Dumpster Friends?</h3>
+<blockquote>No, not anymore. Any other dump-related project like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
 <h3>Why "Dumpgame"?</h3>
-<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
+<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. The name itself I made on the spot when creating the GameMaker project back in 2021. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
 <h3>Why open-source?</h3>
 <blockquote>A shark plushie asked me to. I'm not sure why, though.</blockquote>
 <h3>Why Brazil?</h3>
@@ -164,4 +166,4 @@
   <li>NuggetFrango</li>
   <li>pedrotopdosgames123</li>
 </ul>
-<p align="left"><a href="https://www.youtube.com/watch?v=XpqVHrP_XEs" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/unused_spr_happybirthday_cake/4f9da4cb-90b0-45e4-8fd7-d0ced2ef0c62.png" height="16" alt="If you're reading this, I messed up somehow."></a></p><!--"If you are reading this, I messed up somehow" from "UNDERTALE"-->
+<p align="left"><a href="https://www.youtube.com/watch?v=qrAXRSBv-co" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/unused_spr_happybirthday_cake/4f9da4cb-90b0-45e4-8fd7-d0ced2ef0c62.png" height="16" alt="If you're reading this, I messed up somehow."></a></p><!--"If you are reading this, I messed up somehow" from "UNDERTALE"-->
