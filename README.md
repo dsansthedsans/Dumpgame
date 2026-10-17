@@ -1,26 +1,36 @@
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fan game created in Brazil by dsansthedsans and migel8022</strong></h3>
 <p align="center">
-  <img src="https://img.shields.io/badge/status-in_development-white?labelColor=40ff6d" alt="Status">
-  <img src="https://img.shields.io/badge/version-0.5.0-white?labelColor=40ff6d" alt="Version">
-  <img src="https://img.shields.io/github/license/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="License">
-  <img src="https://img.shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
-  <a href="https://github.com/dsansthedsans/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/GitHub-212830?logo=github&logoColor=f5f5f5" alt="GitHub"></a>
-  <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
-  <a href="https://gamejolt.com/games/dumpgame/1097311" target="_blank"><img src="https://img.shields.io/badge/Game Jolt-ccff00?logo=gamejolt&logoColor=black" alt="Itch.io"></a>
-  <a href="https://www.youtube.com/playlist?list=PLRH-EiM3M_xQ" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
+  <img src="https://shields.io/badge/status-in_development-white?labelColor=40ff6d" alt="Status">
+  <img src="https://shields.io/badge/version-0.5.0-white?labelColor=40ff6d" alt="Version">
+  <img src="https://shields.io/github/license/dsansthedsans/Dumpgame?branch=main&color=white&labelColor=40ff6d" alt="License">
+  <img src="https://shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
+  <a href="https://github.com/dsansthedsans/Dumpgame" target="_blank">
+    <img src="https://shields.io/badge/GitHub-212830?logo=github&logoColor=f5f5f5" alt="GitHub">
+  </a>
+  <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank">
+    <img src="https://shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io">
+  </a>
+  <a href="https://gamejolt.com/games/dumpgame/1097311" target="_blank">
+    <img src="https://shields.io/badge/Game Jolt-ccff00?logo=gamejolt&logoColor=black" alt="Itch.io">
+  </a>
+  <a href="https://www.youtube.com/playlist?list=PLRH-EiM3M_xQ" target="_blank">
+    <img src="https://shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube">
+  </a>
 </p>
 <br>
-<p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way out of danger using UNDERTALE's unique battle system.</p> <!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
+<p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way out of danger using UNDERTALE's unique battle system.</p><!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
 <p>If you still haven't played UNDERTALE, go play it. It's <a href="https://store.steampowered.com/app/391540/Undertale/">steamingly good</a>.</p>
 <br>
-<p align="center"><img src="README-ASSETS/MAIN-BANNER.png" alt=""></p>
+<p align="center">
+  <img src="README-ASSETS/MAIN-BANNER.png" alt="">
+</p>
 <br>
-<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a physical manifestation of a Discord server full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p> <!--inspired by "In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
+<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a physical manifestation of a Discord server full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p><!--inspired by "In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
 <br>
 
 > [!IMPORTANT]  
-> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fan game. All mentions of Discord, MEE6, reCAPTCHA, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented. <!--inspired by "It is purely a fan game" from "Yume 2kki"; inspired by "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE II: Revenge of the Robots"-->
+> Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fan game. All mentions of Discord, MEE6, reCAPTCHA, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented.<!--inspired by "It is purely a fan game" from "Yume 2kki"; inspired by "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE II: Revenge of the Robots"-->
 
 > [!CAUTION]
 > Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
@@ -30,9 +40,8 @@
 <ul>
   <li><b>Original art, story, world and characters,</b> created almost entirely by <b>dsansthedsans</b>!</li>
   <li><b>An amazing original soundtrack,</b> composed and arranged almost entirely by <b>migel8022</b>!</li>
-  <li><b>Trollishly difficult battles,</b> intended for those who've played <b>UNDERTALE or DELTARUNE</b>!<br><i>(But not as hard as the average Sans fan game...)</i></li> <!--inspired by "Jevilishly difficult hidden bosses" from Steam page of "DELTARUNE"-->
-  <li><b>Obligatory puzzles.</b> Lots and lots of obligatory puzzles.</li> <!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
-  <li>Também disponível em Português do Brasil...!</li>
+  <li><b>Trollishly difficult battles,</b> intended for those who've played <b>UNDERTALE or DELTARUNE</b>!<br><i>(But not as hard as the average Sans fan game...)</i></li><!--inspired by "Jevilishly difficult hidden bosses" from Steam page of "DELTARUNE"-->
+  <li><b>Obligatory puzzles.</b> Lots and lots of obligatory puzzles.</li><!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
 </ul>
 <!--<h3>Story</h3>
 <p>[...]</p>-->
@@ -55,7 +64,7 @@
   </tr>
   <tr>
     <td><code>0.5.0</code> <i>(Latest)</i></td>
-    <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.5.0.zip">Dumpgame-v0.5.0.zip</a></td>
+    <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.5.0.zip"><b>Dumpgame-v0.5.0.zip</b></a></td>
     <td>October 12, 2026</td>
   </tr>
 </table>
@@ -66,72 +75,28 @@
   <li>In the extracted folder, left-click the <code>.exe</code> file to run the game</li>
 </ol>
 <p>No external files are required.</p>
-<br>
-<h1>Report a Bug</h1>
+<h3>Report a Bug</h3>
 <p>Noticed anything that clearly wasn't supposed to happen? Fill out <a href="https://forms.gle/ZReHikxZvPCDPcuq9" target="_blank"><b>this Google Form</b></a> to help us make the game a little less broken, please...! You'll win our hearts <3 <i>(or, if you prefer, a place in the Special Thanks.)</i></p>
 <br>
-<h1>Development History</h1>
-<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p><!--references "Long ago, two races ruled over Earth" from "UNDERTALE"-->
-<p>I wanted to make an UNDERTALE fan game that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
-<p>I was 11 years old at the time.</p>
-<br>
-<p align="center"><img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Image of Dumpgame in early development"></p>
-<br>
-<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". At this point, the game was ugly, stiff and it barely worked.</p>
-<br>
-<p align="center"><img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"><img src="README-ASSETS/GEN1-EVENT-INTRO.gif" height="295" alt="Video of Dumpgame in early development showing the opening sequence"></p>
-<p align="center"><img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"><img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295" alt="Image of Dumpgame in early development showing a save point's text box"></p>
-<p align="center"><img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle"></p>
-<br>
-<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until late May of the same year. [...]</p>
-<br>
-<p align="center"><img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
-<p align="center"><img src="README-ASSETS/GEN2-ROOM-CORR1.gif" height="295" alt="Video of Dumpgame in early development showing the first room"><img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"></p>
-<p align="center"><img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Image of Dumpgame in early development showing MEE6's training battle"></p>
-<br>
-<p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
-<p>I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog System" series. Without him, Dumpgame's code would've been significantly worse.</p>
-<br>
-<p align="center"><img src="README-ASSETS/GEN3-WRITER-GUY.gif" height="295" alt="Video of Dumpgame in early development showing a test dialog"><img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu"></p>
-<p align="center"><img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton"></p>
-<br>
-<p>It was only in November 2022 that I went back to making the actual game. The "4th generation" was basically me reprogramming, redrawing, rewriting and redesigning everything over a year until I felt it was good enough. On November 2023, <code>v0.4.0</code> was released.</p>
-<p>At this point, Dumpgame began to look pretty similar to what it is today.</p>
-<br>
-<p align="center"><img src="README-ASSETS/GEN4-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu"></p>
-<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR5B_0.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage"><img src="README-ASSETS/GEN4-ROOM-CORR11.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene"></p>
-<p align="center"><img src="README-ASSETS/GEN4-BATTLE-GROUP8.gif" height="295" alt="Video of Dumpgame in early development showing Trashguy and Armsguy's battle"></p>
-<!--<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR1.png" height="295" alt="Image of Dumpgame in early development showing the first room">-->
-<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR3.png" height="295" alt="Image of Dumpgame in early development showing the Rules Book room"><img src="README-ASSETS/GEN4-ROOM-CORR4.png" height="295" alt="Image of Dumpgame in early development showing the room where trees appear for the first time"></p>
-<!--<p align="center"><img src="README-ASSETS/GEN4-BATTLE-DUMMY.png" height="295" alt="Image of Dumpgame in early development showing Dummy's battle"><img src="README-ASSETS/GEN4-BATTLE-GROUP9.png" height="295" alt="Image of Dumpgame in early development showing a battle against Armsguy and Flitcher"></p>
-<p align="center"><img src="README-ASSETS/GEN4-ROOM-CORR5B_1.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage"><img src="README-ASSETS/GEN4-ROOM-CORR7.png" height="295" alt="Image of Dumpgame in early development showing the bench corridor room"></p>-->
-<p align="center"><img src="README-ASSETS/GEN4-EVENT-BROCK-BATTLE.png" height="295" alt="Image of Dumpgame in early development showing Broken Clock's battle event"><!--<img src="README-ASSETS/GEN4-BATTLE-BROCK.png" height="295" alt="Image of Dumpgame in early development showing Broken Clock's battle">--></p>
-<br>
-<p>Then, on December 14, 2024, one year after releasing <code>v0.4.0</code>, I gave up on Dumpgame. Not only had Dumpster Friends fallen apart, but the development of the game had become unbearable. A year's worth of new content was discarded.</p><!--inspired by "Will now be discarded" from "DELTARUNE: Chapter 1"-->
-<br>
-<p><i>Many years later...</i></p><!--references "Many years later" from "UNDERTALE"-->
-<br>
-<p>[...]</p>
-<br>
-<p>Dumpgame is just another random UNDERTALE fan game. There's nothing special about it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
-<br>
-<p align="center"><img src="README-ASSETS/CHARA-EVOLUTION-X4.png" alt="Image showing all versions of the player's sprite" width="399"></p>
-<br>
 <h1>Never Asked Questions</h1>
+<h3>Is Dumpgame an UNDERTALE GREEN?</h3>
+<blockquote>No, Dumpgame is not about UNDERTALE's green soul Kindness. Dumpgame features an original world, story and characters.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
-<blockquote>Yes, very. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
+<blockquote>Yes, Dumpgame is <b>VERY</b> incomplete. The full game would've been <b><i>at least</i></b> five times longer than the DEMO.</blockquote>
 <h3>Is Dumpgame in development?</h3>
-<blockquote>Yes and no. The full game has been canceled, but new content may be added to the DEMO. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
+<blockquote>Yes and no. The full game has been canceled, but new content may be added to the DEMO. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
-<blockquote>No, NOTHING related to Dumpgame is AI-generated, not even this README. The ONLY exception is GitHub's commit messages.</blockquote>
+<blockquote>No, <b>NOTHING</b> related to Dumpgame is AI-generated, not even this README. The <b>ONLY</b> exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
-<blockquote>Would you trust me if I said no? If you upload the .zip file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank"><b>VirusTotal</b></a>, reliable security vendors like Google, Microsoft, Bitdefender, Malwarebytes, Kaspersky, Avast, AVG and ESET won't flag the file as malicious.</blockquote>
-<h3>Is Dumpgame associated with Dumpster Friends?</h3>
-<blockquote>No, not anymore. Any other dump-related project like <a href="https://github.com/dsansthedsans/Yume-Danpu"><b>Yume Danpu</b></a> only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
+<blockquote>Will you trust me if I say no? If you upload the <code>.zip</code> file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank">VirusTotal</a>, reliable security vendors like Google, Microsoft, Bitdefender, Malwarebytes, Kaspersky, Avast, AVG and ESET won't flag the file as malicious.</blockquote>
+<h3>Is Dumpgame playable on macOS, mobile or console?</h3>
+<blockquote>No, no, and no, Dumpgame only supports Windows and maybe Linux.</blockquote>
+<h3>Is Dumpgame affiliated with Dumpster Friends?</h3>
+<blockquote>No, Dumpgame is not affiliated with Dumpster Friends anymore. Any other dump-related project only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
 <h3>Why "Dumpgame"?</h3>
-<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. The name itself I made on the spot when creating the GameMaker project back in 2021. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history"><b>Development History</b></a>.</blockquote>
+<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
 <h3>Why open-source?</h3>
-<blockquote>A shark plushie asked me to. I'm not sure why, though.</blockquote>
+<blockquote>A swedish shark plushie told me to. I don't know why, though.</blockquote>
 <h3>Why Brazil?</h3>
 <blockquote>I'd also like to know.</blockquote>
 <h3>Why GameMaker?</h3>
@@ -153,17 +118,95 @@
 <ul>
   <li>Toby Fox & Temmie Chang<i> 〜 UNDERTALE & DELTARUNE: Chapter 1-4</i></li>
   <li>Tophat Interactive<i> 〜 UNDERTALE: Bits and Pieces</i></li>
+  <li>Avranik<i> 〜 UNDERTALE: No More Deals</i></li>
   <li>HTTG Team<i> 〜 HorrorTale: Chapter 1</i></li>
-  <li>Mojang Studios<i> 〜 Minecraft: Java Edition</i></li>
-  <li>Facepunch Studios<i> 〜 Garry's Mod</i></li>
-  <li>Arsi "Hakita" Patala<i> 〜 ULTRAKILL</i></li>
-  <li>Playdead<i> 〜 INSIDE</i></li>
-  <li>Anis Belkacem & Brendan Rius<i> 〜 MEE6</i></li>
+  <li>Team UTY<i> 〜 UNDERTALE YELLOW</i></li>
   <li>Carlos Ramirez<i> 〜 Trollface</i></li>
-  <li>Peyton Burnham<i> 〜 How to Make an RPG & Branching Dialog System</i></li>
+  <li>Anis Belkacem & Brendan Rius<i> 〜 MEE6</i></li>
   <li>maxdefolsch & HushBugger<i> 〜 UNDERTALE Text Dump</i></li>
-  <li>sam06tanb</li>
-  <li>NuggetFrango</li>
-  <li>pedrotopdosgames123</li>
+  <li>Peyton Burnham<i> 〜 How to Make an RPG & Branching Dialog System</i></li>
 </ul>
-<p align="left"><a href="https://www.youtube.com/watch?v=qrAXRSBv-co" target="_blank"><img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/unused_spr_happybirthday_cake/4f9da4cb-90b0-45e4-8fd7-d0ced2ef0c62.png" height="16" alt="If you're reading this, I messed up somehow."></a></p><!--"If you are reading this, I messed up somehow" from "UNDERTALE"-->
+<br>
+<h1>Development History</h1>
+<p>Long ago, on November 14, 2021, I opened GameMaker for the first time, created a new project with a name I made up on the spot, and started the three-year long development of <b>"dump game"</b> <i>(as in "dumpster video game")</i>. I had never made a game before, had no programming knowledge whatsoever and hadn't planned literally anything.</p><!--references "Long ago, two races ruled over Earth" from "UNDERTALE"-->
+<p>I wanted to make an UNDERTALE fan game that had <b>me and my friends as either bosses or minibosses</b>, and that took place in <b>Dumpster Friends</b>, our Discord server.</p>
+<p>I was 11 years old at the time.</p>
+<br>
+<p align="center">
+  <img src="README-ASSETS/GEN1-PLACEHOLDER.png" height="355" alt="Image of Dumpgame in early development">
+</p>
+<br>
+<p>Between November 2021 and February 2022, the development of Dumpgame went through what we could call its "1st generation". At this point, the game was ugly, stiff and it barely worked.</p>
+<br>
+<p align="center">
+  <img src="README-ASSETS/GEN1-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu">
+  <img src="README-ASSETS/GEN1-EVENT-INTRO.gif" height="295" alt="Video of Dumpgame in early development showing the opening sequence">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN1-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene">
+  <img src="README-ASSETS/GEN1-WRITER-SAVE.png" height="295" alt="Image of Dumpgame in early development showing a save point's text box">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN1-BATTLE-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's training battle">
+</p>
+<br>
+<p>The "2nd generation" of Dumpgame's development began around late February 2022 and lasted up until late May of the same year. [...]</p>
+<br>
+<p align="center">
+  <img src="README-ASSETS/GEN2-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN2-ROOM-CORR1.gif" height="295" alt="Video of Dumpgame in early development showing the first room">
+  <img src="README-ASSETS/GEN2-EVENT-MEE6.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN2-BATTLE-MEE6.png" height="295" alt="Image of Dumpgame in early development showing MEE6's training battle">
+</p>
+<br>
+<p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
+<p>I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog System" series. Without him, Dumpgame's code would've been significantly worse.</p>
+<br>
+<p align="center">
+  <img src="README-ASSETS/GEN3-WRITER-GUY.gif" height="295" alt="Video of Dumpgame in early development showing a test dialog">
+  <img src="README-ASSETS/GEN3-MENU-CHARA.gif" height="295" alt="Video of Dumpgame in early development showing the inventory menu">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN3-BATTLE-SPAM.gif" height="295" alt="Video of Dumpgame in early development showing a test battle against Spamton">
+</p>
+<br>
+<p>It was only in November 2022 that I went back to making the actual game. The "4th generation" was basically me reprogramming, redrawing, rewriting and redesigning everything over a year until I felt it was good enough. On November 2023, <code>v0.4.0</code> was released.</p>
+<p>At this point, Dumpgame began to look pretty similar to what it is today.</p>
+<br>
+<p align="center">
+  <img src="README-ASSETS/GEN4-MENU-HOME.gif" height="295" alt="Video of Dumpgame in early development showing the main menu">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN4-ROOM-CORR5B_0.png" height="295" alt="Image of Dumpgame in early development showing the second puzzle of CAPTCHA's first stage">
+  <img src="README-ASSETS/GEN4-ROOM-CORR11.gif" height="295" alt="Video of Dumpgame in early development showing MEE6's initial cutscene">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN4-BATTLE-GROUP8.gif" height="295" alt="Video of Dumpgame in early development showing Trashguy and Armsguy's battle">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN4-ROOM-CORR3.png" height="295" alt="Image of Dumpgame in early development showing the Rules Book room">
+  <img src="README-ASSETS/GEN4-ROOM-CORR4.png" height="295" alt="Image of Dumpgame in early development showing the room where trees appear for the first time">
+</p>
+<p align="center">
+  <img src="README-ASSETS/GEN4-EVENT-BROCK-BATTLE.png" height="295" alt="Image of Dumpgame in early development showing Broken Clock's battle event">
+</p>
+<br>
+<p>Then, on December 14, 2024, one year after releasing <code>v0.4.0</code>, I gave up on Dumpgame. Not only had Dumpster Friends fallen apart, but the development of the game had become unbearable. A year's worth of new content was discarded.</p><!--inspired by "Will now be discarded" from "DELTARUNE: Chapter 1"-->
+<br>
+<p><i>Many years later...</i></p><!--references "Many years later" from "UNDERTALE"-->
+<br>
+<p>[...]</p>
+<br>
+<p>Dumpgame is just another random UNDERTALE fan game. There's nothing special about it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
+<p>Something I think I've failed with Dumpgame is that there isn't a profound meaning to the story. It's just a guy who goes to Wonderland and fights some slimes. But, you know, I started making this game when I was 11 years old. I don't think I could've come up with an interesting story anyway.</p>
+<br>
+<br>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=QzcvRDWgRIE" target="_blank">
+    <img src="README-ASSETS/CHARA-EVOLUTION-X4.png" width="320" alt="If you're reading this, I messed up somehow."><!--"If you are reading this, I messed up somehow" from "UNDERTALE"-->
+  </a>
+</p>
