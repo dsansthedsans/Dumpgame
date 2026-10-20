@@ -26,7 +26,7 @@
   <img src="README-ASSETS/MAIN-BANNER.png" alt="">
 </p>
 <br>
-<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a physical manifestation of a Discord server full of monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p><!--inspired by "In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
+<p>In this game, you control a Brazilian boy who falls through a portal to, basically, a physical manifestation of a Discord server full of weird monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p><!--inspired by "In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
 <br>
 
 > [!IMPORTANT]  
@@ -40,7 +40,8 @@
 <ul>
   <li><b>Original art, story, world and characters,</b> created almost entirely by <b>dsansthedsans</b>!</li>
   <li><b>An amazing original soundtrack,</b> composed and arranged almost entirely by <b>migel8022</b>!</li>
-  <li><b>Trollishly difficult battles,</b> intended for those who've played <b>UNDERTALE or DELTARUNE</b>!<br><i>(But not as hard as the average Sans fan game...)</i></li><!--inspired by "Jevilishly difficult hidden bosses" from Steam page of "DELTARUNE"-->
+  <li><b>Trollishly difficult battles,</b> intended for those who've played <b>UNDERTALE</b> or <b>DELTARUNE</b>!<br><i>(But not as hard as the average Sans fan game...)</i></li><!--inspired by "Jevilishly difficult hidden bosses" from Steam page of "DELTARUNE"-->
+  <li><b>Special abilities for all weapons, armor and healing items,</b> such as... summoning lightning bolts on your enemies??</li>
   <li><b>Obligatory puzzles.</b> Lots and lots of obligatory puzzles.</li><!--references "Obligatory puzzles. Lots and lots of obligatory puzzles." from Kickstarter page of "UNDERTALE"-->
 </ul>
 <!--<h3>Story</h3>
@@ -90,7 +91,7 @@
 <h3>Is Dumpgame a virus?</h3>
 <blockquote>Will you trust me if I say no? If you upload the <code>.zip</code> file to <a href="https://www.virustotal.com/gui/home/upload" target="_blank">VirusTotal</a>, reliable security vendors like Google, Microsoft, Bitdefender, Malwarebytes, Kaspersky, Avast, AVG and ESET won't flag the file as malicious.</blockquote>
 <h3>Is Dumpgame playable on macOS, mobile or console?</h3>
-<blockquote>No, no, and no, Dumpgame only supports Windows and maybe Linux.</blockquote>
+<blockquote>No, no, and no, Dumpgame only supports Windows and, if you're brave enough, Linux.</blockquote>
 <h3>Is Dumpgame affiliated with Dumpster Friends?</h3>
 <blockquote>No, Dumpgame is not affiliated with Dumpster Friends anymore. Any other dump-related project only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
 <h3>Why "Dumpgame"?</h3>
@@ -101,30 +102,35 @@
 <blockquote>I'd also like to know.</blockquote>
 <h3>Why GameMaker?</h3>
 <blockquote>I searched for "make a game" on Google and clicked the first link I could find, no questions asked. (Lie)</blockquote>
+<h3>Why cancelled?</h3>
+<blockquote>Many reasons, but it all boils down to not wanting to spend more thousands of hours on just a fan game. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
+<h3>Why did development take so long?</h3>
+<blockquote>Because I didn't know programming, and because I had never drawn pixel art or made a game before. Most of the development wasn't of the game, but of myself. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
 <br>
 <h1>Credits</h1>
 <ul>
-  <li>dsansthedsans<i> 〜 Programmer, Artist, Concept Artist, Animator, Sound Design Assistance, Writer, Localization, Tester</i></li>
-  <li>migel8022<i> 〜 Composer, Sound Design Assistance, Concept Artist for Broken Clock, Tester</i></li>
+  <li><b>dsansthedsans</b><i> 〜 Programmer, Artist, Concept Artist, Animator, Sound Design Assistance, Writer, Localization, Tester</i></li>
+  <li><b>migel8022</b><i> 〜 Composer, Sound Design Assistance, Concept Artist for Broken Clock, Tester</i></li>
 </ul>
 <h3>Contributors & Testers</h3>
 <ul>
-  <li>Mawri<i> 〜 Concept Artist for Armsguy and Trashguy</i></li>
-  <li>☭Comunista☭<i> 〜 Concept Art Assistance for MEE6</i></li>
-  <li>fer10tanb<i> 〜 Composing Assistance, Concept Art Assistance for Broken Clock</i></li>
-  <li>Babakinha<i> 〜 Programming Assistance</i></li>
+  <li><b>Mawri</b><i> 〜 Concept Artist for Armsguy and Trashguy</i></li>
+  <li><b>☭Comunista☭</b><i> 〜 Concept Art Assistance for MEE6</i></li>
+  <li><b>fer10tanb</b><i> 〜 Composing Assistance, Concept Art Assistance for Broken Clock</i></li>
+  <li><b>Babakinha</b><i> 〜 Programming Assistance</i></li>
 </ul>
 <h3>Special Thanks</h3>
 <ul>
-  <li>Toby Fox & Temmie Chang<i> 〜 UNDERTALE & DELTARUNE: Chapter 1-4</i></li>
-  <li>Tophat Interactive<i> 〜 UNDERTALE: Bits and Pieces</i></li>
-  <li>Avranik<i> 〜 UNDERTALE: No More Deals</i></li>
-  <li>HTTG Team<i> 〜 HorrorTale: Chapter 1</i></li>
-  <li>Team UTY<i> 〜 UNDERTALE YELLOW</i></li>
-  <li>Carlos Ramirez<i> 〜 Trollface</i></li>
-  <li>Anis Belkacem & Brendan Rius<i> 〜 MEE6</i></li>
-  <li>maxdefolsch & HushBugger<i> 〜 UNDERTALE Text Dump</i></li>
-  <li>Peyton Burnham<i> 〜 How to Make an RPG & Branching Dialog System</i></li>
+  <li><b>Toby Fox & Temmie Chang</b><i> 〜 UNDERTALE & DELTARUNE: Chapter 1-4</i></li>
+  <li><b>Tophat Interactive</b><i> 〜 UNDERTALE: Bits and Pieces</i></li>
+  <li><b>Mojang Studios</b><i> 〜 Minecraft: Java Edition</i>
+  <li><b>Avranik</b><i> 〜 UNDERTALE: No More Deals</i></li>
+  <li><b>HTTG Team</b><i> 〜 HorrorTale: Chapter 1</i></li>
+  <li><b>Team UTY</b><i> 〜 UNDERTALE YELLOW</i></li>
+  <li><b>Carlos Ramirez</b><i> 〜 Trollface</i></li>
+  <li><b>Anis Belkacem & Brendan Rius</b><i> 〜 MEE6</i></li>
+  <li><b>maxdefolsch & HushBugger</b><i> 〜 UNDERTALE Text Dump</i></li>
+  <li><b>Peyton Burnham</b><i> 〜 How to Make an RPG & Branching Dialog System</i></li>
 </ul>
 <br>
 <h1>Development History</h1>
@@ -164,7 +170,7 @@
 </p>
 <br>
 <p>Then, on June 2022, I had an epiphany. I evolved. I ascended. I, for once, made a smart and logical decision. I contemplated, "What if I focus on learning programming and planning the game instead of making it all up as I go...?". That's when the "3rd generation" started.</p>
-<p>I watched multiple GameMaker tutorials by Peyton Burnham, in particular his "How to Make an RPG" and "Branching Dialog System" series. Without him, Dumpgame's code would've been significantly worse.</p>
+<p>I watched multiple GameMaker tutorials by Peyton Burnham, in particular his <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzySnBUlQLhq2VJXRLi66gFf">"How to Make an RPG"</a> and <a href="https://www.youtube.com/playlist?list=PL14Yj-e2sgzzWFPozdX-HEjJFqjdIXQfF">"Branching Dialog System"</a> series. Without him, Dumpgame's code would've been significantly worse.</p>
 <br>
 <p align="center">
   <img src="README-ASSETS/GEN3-WRITER-GUY.gif" height="295" alt="Video of Dumpgame in early development showing a test dialog">
