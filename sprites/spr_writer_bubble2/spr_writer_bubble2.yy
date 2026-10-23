@@ -3,7 +3,7 @@
   "%Name":"spr_writer_bubble2",
   "bboxMode":0,
   "bbox_bottom":163,
-  "bbox_left":1,
+  "bbox_left":0,
   "bbox_right":161,
   "bbox_top":0,
   "collisionKind":1,

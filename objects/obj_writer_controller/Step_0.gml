@@ -41,7 +41,7 @@ if (text_length < (string_length(msg[page]) - 1)) // skip page
 	writing = 1;
 	
 	// normal skip
-	if (press_shift == 1 && msg_skip[page] == 1 && question_active == 0) || (msg_autoskip[page] == 1)
+	if (press_shift == 1 && msg_skip[page] == 1) || (msg_autoskip[page] == 1)
 		text_length = (string_length(msg[page]) + 1);
 }
 if (text_length >= (string_length(msg[page]) - 1)) // next page

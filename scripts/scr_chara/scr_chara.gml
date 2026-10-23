@@ -1,4 +1,3 @@
-
 function chara_facing(_direction)
 {
 	global.chara_facing = argument0;
@@ -7,25 +6,18 @@ function chara_change(_run, _move, _interact, _cutscene, _open_menu, _pause_game
 {
 	if (argument0 != -1)
 		global.chara_run = argument0;
-	
 	if (argument1 != -1)
 		global.chara_move = argument1;
-	
 	if (argument2 != -1)
 		global.chara_interact = argument2;
-	
 	if (argument3 != -1)
 		global.chara_cutscene = argument3;
-	
 	if (argument4 != -1)
 		global.chara_open_menu = argument4;
-		
 	if (argument5 != -1)
 		global.chara_pause_game = argument5;
-		
 	if (argument6 != -1)
 		global.chara_camera_move = argument6;
-		
 	debug("--- chara_change (run: " + string(global.chara_run) + " | move: " + string(global.chara_move) + " | interact: " + string(global.chara_interact) + " | cutscene: " + string(global.chara_cutscene) + " | open_menu: " + string(global.chara_open_menu) + " | pause_game: " + string(global.chara_pause_game) + " | camera_move: " + string(global.chara_camera_move) + ")");
 }
 function chara_stop()
@@ -41,10 +33,8 @@ function chara_stop()
 		}
 	}
 }
-
 function chara_stats()
 {
-	// level e exp
 	var _oldlvl = global.chara_lvl;
 	if (global.chara_exp < 10)
 	{
@@ -148,11 +138,7 @@ function chara_stats()
 		global.chara_nextexp = 99999;
 	}
 	if (global.chara_lvl != _oldlvl)
-	{
 	    audio_play(snd_jingleLevel, false, VOLUME_SOUND);
-	}
-	
-	// vida, ataque e defesa
 	global.chara_atk = (8 + (global.chara_lvl * 2));
 	global.chara_def = (9 + ceil((global.chara_lvl / 4)));
 	global.chara_maxhp = (16 + (4 * global.chara_lvl));
@@ -166,8 +152,6 @@ function chara_stats()
 		global.chara_maxhp = 99;
 	if (global.item_choco_attackTurns > 0)
 		global.chara_atk *= 2;
-
-	// arma e armadura
 	var _weapon = global.chara_weapon;
 	global.chara_wname = text_get("item_name_none");
 	global.chara_wstrength = item_value(_weapon);
@@ -179,7 +163,6 @@ function chara_stats()
 	if (_armor != -1)
 		global.chara_aname = item_name(_armor, "");
 }
-
 function chara_inwhat()
 {
 	global.ingame = 0;
@@ -187,7 +170,6 @@ function chara_inwhat()
 	global.inintro = 0;
 	global.inbattle = 0;
 	global.ingameover = 0;
-	
 	if (array_get_index(global.room_order, room) > array_get_index(global.room_order, room_over) && array_get_index(global.room_order, room) < array_get_index(global.room_order, room_cat))
 		global.ingame = 1;
 	else if (room == room_menu)
@@ -199,14 +181,12 @@ function chara_inwhat()
 	else if (room == room_over)
 		global.ingameover = 1;
 }
-
 function chara_room()
 {
 	xx = -1;
 	yy = -1;
 	rm = -1;
 	thisblock = 0;
-	
 	if (place_meeting(x, y, obj_room_next) == 1)
 		thisblock = obj_room_next;
 	if (place_meeting(x, y, obj_room_back) == 1)
@@ -215,18 +195,13 @@ function chara_room()
 		thisblock = obj_room_other_A;
 	if (place_meeting(x, y, obj_room_other_B) == 1)
 		thisblock = obj_room_other_B;
-	
 	if (thisblock == obj_room_next)
 	{
-		// default
 		rm = room_next(room);
-		
-		// custom position and/or room
 		if (room == room_corridors_3_5)
 		{
 			xx = 460;
 			yy = 310;
-			global.flag[17] = 1;
 		}
 		if (room == room_corridors_5)
 			rm = room_corridors_6;
@@ -330,7 +305,6 @@ function chara_room()
 	
 	room_go(rm, xx, yy);
 }
-
 function chara_world()
 {
 	var _world = WORLD_CORRIDORS;
@@ -350,8 +324,7 @@ function chara_world_name(_world)
 		break;
 	}
 }
-
-function chara_murder()
+function chara_murder(_returnOnly = true)
 {
 	var _murder = 0;
 	if (_murder == 0 && global.world_curpopulation[WORLD_CORRIDORS] <= (global.world_maxpopulation[WORLD_CORRIDORS] / 2))
@@ -359,10 +332,15 @@ function chara_murder()
 	if (_murder == 1 && global.world_curpopulation[WORLD_CORRIDORS] <= 0 && global.flag[22] == true)
 	{
 		_murder = 2;
-		if (global.flag[40] == false && global.chara_move == true)
+		if (_returnOnly == false)
 		{
-			global.flag[40] = true;
-			audio_play(snd_jingleOminous, false, VOLUME_SOUND);
+			if (global.flag[40] == false && global.chara_move == true)
+			{
+				global.flag[40] = 0.5;
+				audio_play(snd_jingleOminous, false, VOLUME_SOUND);
+			}
+			else if (global.flag[40] == 0.5 && audio_playing(snd_jingleOminous) == false)
+				global.flag[40] = true;
 		}
 	}
 	if (_murder == 2 && global.flag[39] == true)
@@ -370,17 +348,21 @@ function chara_murder()
 		_murder = 3;
 		if (global.flag[38] == false)
 			_murder = 1;
-		if (global.flag[42] == false && global.chara_move == true)
+		if (_returnOnly == false)
 		{
-			if (audio_playing(snd_jingleOminous) == true)
-				audio_stop(snd_jingleOminous);
-			audio_play(((global.flag[38] == true) ? snd_jingleOminous : snd_jingleLuminous), false, VOLUME_SOUND);
-			global.flag[42] = true;
+			if (global.flag[42] == false && global.chara_move == true)
+			{
+				if (audio_playing(snd_jingleOminous) == true)
+					audio_stop(snd_jingleOminous);
+				audio_play(((global.flag[38] == true) ? snd_jingleOminous : snd_jingleLuminous), false, VOLUME_SOUND);
+				global.flag[42] = 0.5;
+			}
+			else if (global.flag[42] == 0.5 && audio_playing(snd_jingleOminous) == false && audio_playing(snd_jingleLuminous) == false)
+				global.flag[42] = true;
 		}
 	}
 	return _murder;
 }
-
 function chara_hp(_amt)
 {
 	global.chara_curhp += _amt;
@@ -390,11 +372,11 @@ function chara_hp(_amt)
 function chara_stepping()
 {
 	stepplay = 0;
-	if (global.world_curpopulation[chara_world()] <= 0 && global.flag[40] == false) || (chara_murder() >= 2)
+	if (global.world_curpopulation[chara_world()] <= 0 && global.flag[40] != true) || (chara_murder() >= 2)
 	|| (room == room_corridors_1_5)
 	|| (room == room_corridors_2)
 	|| (room == room_corridors_11 && global.flag[39] == true && global.flag[41] == false)
-	|| (room == room_corridors_14 && global.flag[50] > 0 && global.flag[50] < 1)
+	|| (room == room_corridors_14 && global.flag[50] > 0 && global.flag[50] < 1 && chara_murder() < 1)
 	|| (room == unused_room_corridors_16_B)
 	|| (room == room_corridors_18)
 	|| (array_get_index(global.room_order, room) >= array_get_index(global.room_order, room_cave_1))
@@ -432,7 +414,6 @@ function chara_damage()
 	if (other.destroy_on_impact == 1)
 		destroy(other);
 }
-
 function chara_invtime()
 {
 	var _invtime = 60;

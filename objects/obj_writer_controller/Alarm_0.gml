@@ -48,15 +48,8 @@ if (text_length <= (string_length(msg[page]) - 1))
 			_playsnd = false;
 			_length += 1;
 		}
-		// Colors
-		else if ((_char == ":" || _char == ";") && _charNext != "\\")
-		{
-			text_length += 2;
-			_playsnd = false;
-			_length += 1;
-		}
-		// Effects
-		else if (_char == "+" && _charNext != "\\")
+		// Colors, Effects, Face change
+		else if ((_char == ":" || _char == ";" || _char == "+" || _char == "~") && _charNext != "\\")
 		{
 			text_length += 2;
 			_playsnd = false;

@@ -28,12 +28,12 @@ if (global.menu_lvl == 5)
 		var _asset_alpha = layer_sprite_get_alpha(_assets[a]);
 		if (_asset_sprite == spr_chara_d && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
 		|| (_asset_sprite == spr_charaFrisk_d && (global.CHARAFRISK_ENABLED == false || string_upper(savefile_name) != "FRISK"))
-		|| (_asset_sprite == spr_chara_genoshadow && savefile_murder < 1)
+		|| (_asset_sprite == spr_chara_genoshadow && savefile_murder < 2)
 		|| (_asset_sprite == spr_chara_genoshadow && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
 		|| (_asset_sprite == spr_mainchara_armor_candybowl && savefile_armor != ITEM_BOWL)
 		|| (_asset_sprite == spr_mainchara_armor_candybowl && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
 			continue;
-		else if (_asset_sprite == spr_chara_genoshadow && savefile_murder >= 1)
+		else if (_asset_sprite == spr_chara_genoshadow && savefile_murder >= 2)
 			_asset_alpha = ((savefile_murder < 2) ? 0.5 : 1);
 		if (savefile_world == WORLD_CORRIDORS)
 		{
@@ -393,7 +393,7 @@ if (global.menu_lvl >= 0)
 			// chave
 			_color = global.c_dump;
 			if (l == 6 && i == 1)
-				_color = c_red;
+				_color = global.c_red;
 			if (l == 6 && controls_changing == 1 && i == option_pos)
 				_color = global.c_yellow;
 		

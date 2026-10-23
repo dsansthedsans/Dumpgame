@@ -61,7 +61,7 @@
         {"$GMRInstance":"v4","%Name":"inst_5D3E44C1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5D3E44C1","objectId":{"name":"obj_npc_room","path":"objects/obj_npc_room/obj_npc_room.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":150.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":23,"SerialiseWidth":16,"TileCompressedData":[
-          -83,0,10,114,136,296,256,0,536871009,156,297,134,136,-6,0,10,156,268435573,276,268435753,98,0,1073741921,
+          -83,0,10,114,136,296,0,0,536871009,156,297,134,136,-6,0,10,156,268435573,268435712,268435753,98,0,1073741921,
           296,98,277,-7,0,8,296,176,805306544,0,0,268435573,0,296,-43,0,-2,177,-15,0,1,268435554,-30,0,1,117,-27,
           0,3,277,297,96,-3,0,4,268435573,0,296,805306602,-6,0,4,296,268435690,136,97,-3,0,3,94,1073742059,268435753,
           -3,0,4,268435553,0,134,136,-6,0,3,114,0,276,-7,0,1,98,-5,0,3,134,1073742059,296,-6,0,9,536871146,268435753,

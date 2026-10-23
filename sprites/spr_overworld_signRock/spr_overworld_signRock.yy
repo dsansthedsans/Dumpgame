@@ -14,9 +14,11 @@
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"045c1bfe-183d-4e98-8ae2-8ceb45e040fb","name":"045c1bfe-183d-4e98-8ae2-8ceb45e040fb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"4a02f7b8-b01c-4c43-9741-0a172696170f","name":"4a02f7b8-b01c-4c43-9741-0a172696170f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"87b2739f-068c-46ff-879f-5916a4dfbd46","name":"87b2739f-068c-46ff-879f-5916a4dfbd46","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"06c59e9e-c5c2-4ed8-bf84-e77926440e4b","name":"06c59e9e-c5c2-4ed8-bf84-e77926440e4b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":20,
-  "gridY":20,
+  "gridX":2,
+  "gridY":2,
   "height":20,
   "HTile":false,
   "layers":[
@@ -50,7 +52,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":4.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -75,6 +77,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4a02f7b8-b01c-4c43-9741-0a172696170f","path":"sprites/spr_overworld_signRock/spr_overworld_signRock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"6f1fa6b2-1fc4-4813-a2e9-5317e3fe3686","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"87b2739f-068c-46ff-879f-5916a4dfbd46","path":"sprites/spr_overworld_signRock/spr_overworld_signRock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"c9946458-38b9-48df-a702-e5cc29e58ea4","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"06c59e9e-c5c2-4ed8-bf84-e77926440e4b","path":"sprites/spr_overworld_signRock/spr_overworld_signRock.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"8a91ac2a-fc14-4cf3-aa8a-a5a51a0695a3","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

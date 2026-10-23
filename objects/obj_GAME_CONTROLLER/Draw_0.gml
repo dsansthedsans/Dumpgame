@@ -1,6 +1,6 @@
 
 // debug
-if (global.indebug == 1)
+if (global.indebug == 1 &&  global.inrecording == false)
 {
 	var _cx = cam_x;
 	var _cy = cam_y;

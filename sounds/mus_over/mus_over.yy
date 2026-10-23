@@ -10,7 +10,7 @@
   "compression":3,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":132.8849,
+  "duration":131.1773,
   "exportDir":"audio",
   "name":"mus_over",
   "parent":{

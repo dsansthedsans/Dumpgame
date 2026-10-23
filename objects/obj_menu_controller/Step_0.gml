@@ -269,16 +269,21 @@ if (move == 1)
 			if (_pos == 4)
 				global.visualeff = !global.visualeff;
 			if (_pos == 8)
-				global.autorun = !global.autorun;
+			{
+				global.vsync = !global.vsync;
+				display_reset(0, global.vsync);
+			}
 			if (_pos == 9)
-				global.showfps = !global.showfps;
+				global.autorun = !global.autorun;
 			if (_pos == 10)
+				global.showfps = !global.showfps;
+			if (_pos == 11)
 				global.showsw = !global.showsw;
-			if (_pos == 11 && global.ACHIEVEMENT_ENABLED == false)
+			if (_pos == 12 && global.ACHIEVEMENT_ENABLED == false)
 				global.hidenotif = !global.hidenotif;
-			if (_pos == 12 - !global.ACHIEVEMENT_ENABLED)
-				global.drpenabled = !global.drpenabled;
 			if (_pos == 13 - !global.ACHIEVEMENT_ENABLED)
+				global.drpenabled = !global.drpenabled;
+			if (_pos == 14 - !global.ACHIEVEMENT_ENABLED)
 				global.fastmenu = !global.fastmenu;
 			event_user(0);
 			settings_write();

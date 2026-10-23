@@ -80,22 +80,34 @@ if (con == 9) // options
 	// selection
 	if (press_enter == 1 && mainopt_pos != 1)
 	{
+		var _room = undefined;
 		var _savefile_stopwatch_time = global.chara_stopwatch.time;
-		savefile_load(global.savefile_selected);
-		global.chara_deaths += 1;
-		global.chara_stopwatch.time = _savefile_stopwatch_time;
-		savefile_write();
-		global.chara_curhp = global.chara_maxhp;
-		chara_change(-1, 1,  1, 0, 1, 1, 1);
-		chara_facing(DOWN);
-		var _room = global.chara_room;
+		if (savefile_read(global.savefile_selected) != -1)
+		{
+			savefile_load(global.savefile_selected);
+			global.chara_deaths += 1;
+			global.chara_stopwatch.time = _savefile_stopwatch_time;
+			savefile_write();
+			global.chara_curhp = global.chara_maxhp;
+			chara_change(-1, 1,  1, 0, 1, 1, 1);
+			chara_facing(DOWN);
+			_room = global.chara_room;
+		}
+		else
+		{
+			var _name = global.chara_name;
+			start_maininfo();
+			global.chara_name = _name;
+			_room = room_corridors_1;
+		}
 		if (mainopt_pos == 2)
 		{
 			_room = room_menu;
 			if (global.fastmenu == 0)
 				global.fastmenu = 0.5;
 		}
-		room_go(_room, -1, -1);
+		if (_room != undefined)
+			room_go(_room, -1, -1);
 		con = 10;
 	}
 }

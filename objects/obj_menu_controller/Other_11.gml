@@ -9,10 +9,11 @@ option_key[2, 6] = string(round(global.volume[VOLUME_MUSIC] * 100)) + "%";
 option_key[2, 7] = string(round(global.volume[VOLUME_SOUND] * 100)) + "%";
 if (option_pos >= 5 && option_pos <= 7)
 	option_key[2, option_pos] = "< " + string(option_key[2, option_pos]) + " >";
-option_key[2, 8] = text_get("menu_key_2_" + string(global.autorun));
-option_key[2, 9] = text_get("menu_key_2_" + string(global.showfps));
-option_key[2, 10] = text_get("menu_key_2_" + string(global.showsw));
-var i = 11;
+option_key[2, 8] = text_get("menu_key_2_" + string(global.vsync));
+option_key[2, 9] = text_get("menu_key_2_" + string(global.autorun));
+option_key[2, 10] = text_get("menu_key_2_" + string(global.showfps));
+option_key[2, 11] = text_get("menu_key_2_" + string(global.showsw));
+var i = 12;
 if (global.ACHIEVEMENT_ENABLED == true)
 	option_key[2, i++] = text_get("menu_key_2_" + string(global.hidenotif));
 option_key[2, i++] = text_get("menu_key_2_" + string(global.drpenabled));

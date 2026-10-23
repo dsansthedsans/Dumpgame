@@ -237,6 +237,7 @@ function TEXT()
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_writerMee6;
 		msg_format[0] = "textbox_top";
+		msg_talker[0] = global.party[0];
 		switch (_text_index)
 		{
 			case 0:
@@ -331,7 +332,10 @@ function TEXT()
 	{
 		for (var i = 0; i < 99; i++)
 		{
-			var _msg = text_get("npc_armsguy1_" + string(global.flag[24]) + "_" + string(i));
+			var _msgIndex = global.flag[24];
+			if (global.flag[24] == 2)
+				_msgIndex -= 1;
+			var _msg = text_get("npc_armsguy1_" + string(_msgIndex) + "_" + string(i));
 			if (_msg == undefined) || (_msg == "Salenis")
 				break;
 			msg[i] = _msg;
@@ -341,6 +345,8 @@ function TEXT()
 			msg[0] = string_replace_all(msg[0], "[name]", $"{global.chara_name}")
 			global.flag[24] = 1;
 		}
+		else if (global.flag[24] == 1)
+			global.flag[24] = 2;
 		msg_sound[0] = snd_writerArmsguy;
 		msg_talker[0] = obj_chara.mycol;
 	}
@@ -412,16 +418,13 @@ function TEXT()
 	}
 	if (text == "room_candybowl")
 	{
-		var _candyamt = global.flag[19];
 		var _lastslot = global.item[global.item_last];
-			
-		// take candy
-		if (_candyamt > 0)
+		if (global.flag[19] > 0)
 		{
 			var _start = text_get("room_candybowl_0_0_0") + text_get("room_candybowl_0_0_1");
 			var _middle = "";
 			var _end = "";	
-			if (_candyamt > 1)
+			if (global.flag[19] > 1)
 			{
 				_middle = text_get("room_candybowl_0_0_3");
 				_end = text_get("room_candybowl_0_0_5");
@@ -431,7 +434,7 @@ function TEXT()
 				_middle = text_get("room_candybowl_0_0_2");
 				_end = text_get("room_candybowl_0_0_4");
 			}
-			msg[0] = string(_start) + string(_middle) + string(_candyamt) + string(_end);
+			msg[0] = string(_start) + string(_middle) + string(global.flag[19]) + string(_end);
 			question[1] = text_get("room_candybowl_0_1");
 			question_option[1] = text_get("room_candybowl_0_1_1");
 			question_option[2] = text_get("room_candybowl_0_1_2");
@@ -440,7 +443,7 @@ function TEXT()
 				if (_lastslot == -1)
 				{
 					msg[2] = text_get("room_candybowl_0_2");
-					if (_candyamt == 3)
+					if (global.flag[19] == 3)
 					{
 						var _start = text_get("room_candybowl_0_3_0");
 						var _firstkey = key_name(global.keybind[10]);
@@ -461,30 +464,25 @@ function TEXT()
 				}
 			}
 		}
-			
-		// take bowl
 		else if (global.flag[20] == false)
 		{
-			for (var i = 0; i < 3; i++)
+			for (var i = 0; i < (3 * (chara_murder() < 1)); i++)
 				msg[i] = text_get("room_candybowl_1_" + string(i));
-			question[3] = text_get("room_candybowl_1_3");
+			question[i] = text_get("room_candybowl_1_3");
 			question_option[1] = text_get("room_candybowl_1_3_1");
 			question_option[2] = text_get("room_candybowl_1_3_2");
-			
-			if (global.flag[21] == 0)
+			if (global.flag[21] == 0 && chara_murder() < 1)
 				msg_skip[0] = 0;
 			global.flag[21] = 1;
-				
-			if (question_result[3] == 1)
+			if (question_result[i] == 1)
 			{
 				if (_lastslot == -1)
 				{
-					msg[4] = text_get("room_candybowl_1_4");
+					msg[i+1] = text_get("room_candybowl_1_4");
 					msg_skip[4] = 1;
 					global.flag[20] = 1;
 					global.item[global.item_last] = ITEM_BOWL;
 					audio_play(snd_stingItem, 0, VOLUME_SOUND);
-						
 					if (global.ACHIEVEMENT_ENABLED == true && global.achievement[ACHIEVEMENT_SBHELMET] == 0)
 					{
 						global.achievement[ACHIEVEMENT_SBHELMET] = 1;
@@ -493,7 +491,7 @@ function TEXT()
 				}
 				else
 				{
-					msg[4] = text_get("item_cantpickup");
+					msg[i+1] = text_get("item_cantpickup");
 					audio_play(snd_option_cantselect, false, VOLUME_SOUND);
 					shakescreen(2, 2);
 				}
@@ -503,6 +501,32 @@ function TEXT()
 		{
 			for (var i = 0; i < (4 - (3 * (chara_murder() >= 1))); i++)
 				msg[i] = text_get($"room_candybowl_2_{i}");
+		}
+	}
+	if (text == "event_m6_bowl")
+	{
+		for (var i = 0; i < 99; i++)
+		{
+			var _msg_postfix = "";
+			if (i >= 4 && chara_murder() >= 2)
+				_msg_postfix = "_geno";
+			var _msg_id = $"event_m6_bowl_{i}{_msg_postfix}";
+			var _msg = text_get(_msg_id);
+			if (_msg == undefined) || (_msg == "Salenis")
+				break;
+			msg[i] = _msg;
+		}
+		msg_face[0] = spr_dialogface_m6_neutral;
+		msg_face[1] = spr_dialogface_m6_thinking;
+		msg_face[3] = spr_dialogface_m6_sassy;
+		msg_sound[0] = snd_writerMee6;
+		msg_format[0] = "textbox_top";
+		msg_talker[0] = global.party[0];
+		if (chara_murder() >= 2)
+		{
+			if (global.flag[72] == false)
+				global.flag[72] = 0.5;
+			msg_face[4] = spr_dialogface_m6_angry;
 		}
 	}
 	// room_corridors_7
@@ -644,6 +668,8 @@ function TEXT()
 		msg[0] = text_get("event_m6_captcha2_0");
 		msg[1] = text_get("event_m6_captcha2_1");
 		msg_face[0] = spr_dialogface_m6_default;
+		if (global.flag[72] == true)
+			msg_face[0] = spr_dialogface_m6_serious;
 		msg_sound[0] = snd_writerMee6;
 		msg_format[0] = "textbox_bottom";
 	}
@@ -667,11 +693,23 @@ function TEXT()
 	}
 	if (text == "event_m6_postcaptcha2")
 	{
-		msg[0] = text_get("event_m6_postcaptcha2_0");
-		msg[1] = text_get("event_m6_postcaptcha2_1");
+		for (var i = 0; i < 99; i++)
+		{
+			var _msg_postfix = "";
+			if (chara_murder() >= 2 && global.flag[72] == true)
+				_msg_postfix = "_geno";
+			var _msg_id = $"event_m6_postcaptcha2_{i}{_msg_postfix}";
+			var _msg = text_get(_msg_id);
+			if (_msg == undefined) || (_msg == "Salenis")
+				break;
+			msg[i] = _msg;
+		}
 		msg_face[0] = spr_dialogface_m6_default;
+		if (chara_murder() >= 2 && global.flag[72] == true)
+			msg_face[0] = spr_dialogface_m6_serious;
 		msg_sound[0] = snd_writerMee6;
 		msg_format[0] = "textbox_bottom";
+		msg_talker[0] = global.party[0];
 	}	
 	// room_corridors_10
 	if (text == "room_chocobowl")
@@ -679,22 +717,23 @@ function TEXT()
 		msg[0] = text_get("room_chocobowl_0");
 		if (global.flag[36] == 0)
 		{
-			msg[1] = text_get("room_chocobowl_1");
-			question[2] = text_get("room_chocobowl_2");
+			for (var i = 0; i < (2 * (chara_murder() < 1)); i++)
+				msg[i] = text_get($"room_chocobowl_{i}");
+			question[i] = text_get("room_chocobowl_2");
 			question_option[1] = text_get("room_chocobowl_2_1");
 			question_option[2] = text_get("room_chocobowl_2_2");
-			if (question_result[2] == 1)
+			if (question_result[i] == 1)
 			{
 				if (global.item[global.item_last] == -1)
 				{
-					msg[3] = text_get("room_chocobowl_3");
+					msg[i+1] = text_get("room_chocobowl_3");
 					global.flag[36] = 1;
 					global.item[global.item_last] = ITEM_CHOCO;
 					audio_play(snd_stingItem, 0, VOLUME_SOUND);
 				}
 				else
 				{
-					msg[3] = text_get("item_cantpickup");
+					msg[i+1] = text_get("item_cantpickup");
 					audio_play(snd_option_cantselect, false, VOLUME_SOUND);
 					shakescreen(2, 2);
 				}
@@ -789,7 +828,7 @@ function TEXT()
 			else 
 			{
 				msg_face[0] = spr_dialogface_m6_default;
-				if (chara_murder() >= 1)
+				if (chara_murder() >= 2)
 				{
 					msg[i] = text_get($"event_brock_battle_4_{i}_1_geno");
 					msg[i+1] = text_get($"event_brock_battle_4_{i+1}_1_geno");
@@ -895,35 +934,48 @@ function TEXT()
 	{
 		for (var i = 0; i < 99; i++)
 		{
-			var _msg_id = $"{text}_{i}";
-			if ((i == 2 || i == 3) && chara_murder() >= 1)
-				_msg_id += "_geno";
+			var _msg_middlefix = "";
+			var _msg_postfix = "";
+			if (global.inrecording == false)
+			{
+				if ((i == 2 || i == 3) && chara_murder() >= 2)
+					_msg_postfix = "_geno";
+			}
+			else
+				_msg_middlefix = "_trailer";
+			var _msg_id = $"{text}{_msg_middlefix}_{i}{_msg_postfix}";
 			var _msg = text_get(_msg_id);
 			if (_msg == undefined) || (_msg == "Salenis")
 				break;
 			msg[i] = _msg;
 		}
-		if (global.flag[72] == false)
+		if (global.inrecording == false)
 		{
-			msg[0] = string_replace_all(msg[0], "{punctuation}", "!");
-			msg_face[0] = spr_dialogface_m6_default;
-			msg_face[1] = spr_dialogface_m6_neutral;
-			msg_face[2] = spr_dialogface_m6_default;
-			if (chara_murder() >= 1)
-				msg_face[3] = spr_dialogface_m6_neutral;
-		}
-		else
-		{
-			msg[0] = string_replace_all(msg[0], "{punctuation}", ".");
-			msg_face[0] = spr_dialogface_m6_serious;
-			if (chara_murder() >= 1)
+			if (global.flag[72] == false)
 			{
-				if (global.flag[38] == true)
-					msg_face[0] = spr_dialogface_m6_neutral;
-				msg_face[3] = spr_dialogface_m6_angry;
+				msg[0] = string_replace_all(msg[0], "{punctuation}", "!");
+				msg_face[0] = spr_dialogface_m6_default;
+				msg_face[1] = spr_dialogface_m6_neutral;
+				msg_face[2] = spr_dialogface_m6_default;
+				if (chara_murder() >= 2)
+					msg_face[3] = spr_dialogface_m6_neutral;
+			}
+			else
+			{
+				msg[0] = string_replace_all(msg[0], "{punctuation}", ".");
+				msg_face[0] = spr_dialogface_m6_serious;
+				if (chara_murder() >= 2)
+				{
+					if (global.flag[38] == true)
+						msg_face[0] = spr_dialogface_m6_neutral;
+					msg_face[3] = spr_dialogface_m6_angry;
+				}
 			}
 		}
+		else
+			msg_face[0] = spr_dialogface_m6_default;
 		msg_sound[0] = snd_writerMee6;
+		msg_talker[0] = global.party[0];
 	}
 	if (text == "room_captcha_mainsign_3")
 	{
@@ -1130,7 +1182,7 @@ function TEXT()
 			msg_face[5] = spr_dialogface_m6_pleased;
 			msg_sound[0] = snd_writerMee6;
 			msg_talker[0] = global.party[0];
-			if (chara_murder() >= 1)
+			if (chara_murder() >= 2)
 			{
 				msg[m] = text_get($"event_gabee_chase.0.{m}_geno");
 				msg[m+1] = text_get($"event_gabee_chase.0.{m+1}_geno");
@@ -1451,9 +1503,7 @@ function TEXT()
 				if (chara_murder() >= 1 && _msg_geno != undefined && _msg_geno != "Salenis")
 					msg[0] = _msg_geno;
 				else
-				{
 					msg[0] = text_get(_msg_id);
-				}
 				if (_group == 6)
 					msg[0] = string_replace_all(msg[0], "{punctuation}", ((chara_murder() < 1) ? "!" : "."));
 			}
@@ -1500,11 +1550,7 @@ function TEXT()
 					if (controller.enemy_type[_enemy1] == 7 && controller.enemy_obj[_enemy1].punched == 1 && controller.enemy_obj[_enemy1].terrorized == 1)
 						_custom = 3;
 					if (controller.enemy_type[_enemy1] == 6 && controller.enemy_obj[_enemy1].convince >= 5)
-					{
 						_custom = 4;
-						if (chara_murder() >= 1)
-							_custom = 5;
-					}
 					msg[0] = $"* ({name[_enemy1]}{text_get("battle_main_sparing_0_" + string(_custom))})";
 					if (_amt == 2)
 						msg[0] = "* " + string(name[_enemy1]) + text_get("battle_main_sparing_1_0") + string(name[_enemy2]) + text_get("battle_main_sparing_1_1");

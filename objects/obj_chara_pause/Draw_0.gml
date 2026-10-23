@@ -4,7 +4,7 @@ var _cy = round(obj_GAME_CONTROLLER.cam_y);
 
 draw_set_alpha(0.75 * alpha);
 draw_set_color(c_black);
-draw_rectangle(_cx, _cy, (_cx + 320), (_cy + 240), 0);
+draw_rectangle(_cx - 20, _cy - 20, (_cx + 20 + 320), (_cy + 20 + 240), 0);
 
 draw_sprite_stretched_ext(spr_writer_textbox, 0, (_cx + bg_x[0]), (_cy + bg_y[0]), bg_w[0], bg_h[0], c_white, alpha);
 

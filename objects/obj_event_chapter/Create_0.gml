@@ -1,6 +1,6 @@
 
 event_inherited();
-
+DEBUG_SKIP = (false * global.indebug * global.inrecording);
 if (room == room_corridors_1 && global.flag[0] == 0) || (room == room_cave_1 && global.flag[62] == 0 && global.flag[2] == false)
 {
 	if (global.chara_armor == ITEM_BOWL)
@@ -18,7 +18,19 @@ if (room == room_corridors_1 && global.flag[0] == 0) || (room == room_cave_1 && 
 	chapter_alpha = 0;
 	chapter_outlineWidth = 0.5;
 	depth = -9999;
-	alarm[3] = (getuptime / 2);
+	if (DEBUG_SKIP == false)
+		alarm[3] = (getuptime / 2);
+	else
+	{
+		if (room == room_corridors_1)
+			global.flag[0] = 0.5;
+		else if (room == room_cave_1)
+			global.flag[62] = 0.5;
+		con = 3;
+		fade_alpha = 0;
+		chapter_alpha = 0;
+		alarm[2] = (getuptime * 2);
+	}
 }
 else
 	destroy(id);

@@ -98,7 +98,8 @@ function textdata()
 	text_set($"menu_{z}_{i++}", "Master Volume", "Volume Geral");
 	text_set($"menu_{z}_{i++}", "Music Volume", "Volume da Música");
 	text_set($"menu_{z}_{i++}", "Sound Volume", "Volume dos Sons");
-	text_set($"menu_{z}_{i++}", "Auto-Run");
+	text_set($"menu_{z}_{i++}", "VSync");
+	text_set($"menu_{z}_{i++}", "Autorun");
 	text_set($"menu_{z}_{i++}", "Show FPS", "Mostrar FPS");
 	text_set($"menu_{z}_{i++}", "Show Stopwatch", "Mostrar Cronômetro");
 	if (global.ACHIEVEMENT_ENABLED == true)
@@ -314,7 +315,6 @@ function textdata()
 	text_set("unused_battle_main_sparing_0_2", " is hypnotized.", " está hipnotizado.");
 	text_set("battle_main_sparing_0_3", " has given up&on killing you.", " desistiu de matar você.");
 	text_set("battle_main_sparing_0_4", " is staring&at the floor in silence.", " está encarando&o chão em silêncio.");
-	text_set("battle_main_sparing_0_5", " is distracted.", " está distraído.");
 	text_set("battle_main_sparing_1_0", " and ", " e ");
 	text_set("battle_main_sparing_1_1", " are :Y[Sparing];D you.", " estão :Y[Poupando];D você.");
 	text_set("battle_fight_0", "MISS", "ERRO");
@@ -455,7 +455,7 @@ function textdata()
 	text_set($"battle_bubble_m6_dummy_0_{i++}", "Hold on a moment.", "Aguarde um instante.");
 		// Armsguy's battle
 	text_set("battle_main_armsguy", "* (Armsguy jumps in your way!)", "* (Armsguy pula em seu caminho!)");
-	text_set("battle_main_armsguy_geno", "* (I step into Armsguy's way.)", "* (Eu entro no&caminho do Armsguy.)");
+	text_set("battle_main_armsguy_geno", "* (You step in Armsguy's way.)", "* (Eu entro no&caminho do Armsguy.)");
 	i = 0;
 	text_set($"battle_main_armsguy_{i++}", "* (Armsguy flexes his arms&too hard and pukes.)", "* (Armsguy flexiona seus braços com muita força e vomita.)");
 	text_set($"battle_main_armsguy_{i++}", "* (Armsguy drinks his own sweat and realizes it isn't sweat.)", "* (Armsguy bebe seu próprio suor e percebe que não é suor.)");
@@ -498,7 +498,7 @@ function textdata()
 	text_set("battle_bubble_armsguy_punch_2", "+F1Congrats,^1 Me Luv It!", "+F1Parabems,^1 Eu Amar Iço!");
 		// Trashguy's battle
 	text_set("battle_main_trashguy", "* (Trashguy rolls into your way!)", "* (Trashguy cai em seu caminho!)");
-	text_set("battle_main_trashguy_geno", "* (I step into Trashguy's way.)", "* (Eu entro no caminho do Trashguy.)");
+	text_set("battle_main_trashguy_geno", "* (You step in Trashguy's way.)", "* (Eu entro no caminho do Trashguy.)");
 	i = 0;
 	text_set($"battle_main_trashguy_{i++}", "* (Trashguy seems to be&eating moldy bread.)", "* (Trashguy parece estar&comendo pão mofado.)");
 	text_set($"battle_main_trashguy_{i++}", "* (Trashguy is cleaning themselves with dirty&toilet paper.)", "* (Trashguy está se limpando&com papel higiênico sujo.)");
@@ -520,22 +520,22 @@ function textdata()
 	text_set($"battle_bubble_trashguy_{i++}", "+F1...i think im gonna fall over...", "+F1...eu acho que eu vo cair...");
 	text_set($"battle_bubble_trashguy_{i++}", "+F1...why do they always put trash in here...?", "+F1...pq eles sempre jogam lixo aqui dentro...?");
 	text_set($"battle_bubble_trashguy_{i++}", "+F1...thx...", "+F1...obg...");
-	text_set($"battle_bubble_trashguy_{i++}", "+F1...youre different...", "+F1...vc e diferente...");
-	text_set($"battle_bubble_trashguy_{i++}", "+F1...why do you like me...?", "+F1...pq vc gosta de mim...?");
-	text_set($"battle_bubble_trashguy_{i++}", "+F1...cant you just leave me alone...?", "+F1...tu n pode so me deixar sozinho...?");
-	text_set($"battle_bubble_trashguy_{i++}", "+F1...why are you like this...?", "+F1...pq voce e assim...?");
-	text_set($"battle_bubble_trashguy_{i++}", "+F1...youre just like them...", "+F1...vc e igual a eles...");
+	text_set($"battle_bubble_trashguy_{i++}", "+F1...ur different...", "+F1...vc e diferente...");
+	text_set($"battle_bubble_trashguy_{i++}", "+F1...why do u like me...?", "+F1...pq vc gosta de mim...?");
+	text_set($"battle_bubble_trashguy_{i++}", "+F1...cant u just leave me alone...?", "+F1...tu n pode so me deixar sozinho...?");
+	text_set($"battle_bubble_trashguy_{i++}", "+F1...why are u like this...?", "+F1...pq voce e assim...?");
+	text_set($"battle_bubble_trashguy_{i++}", "+F1...ur just like them...", "+F1...vc e igual a eles...");
 	i = 0;
 	text_set($"battle_bubble_trashguy_empty_{i++}", "+F1...this is so much better...", "+F1...isso e muito melhor...");
-	text_set($"battle_bubble_trashguy_empty_{i++}", "+F1...you didnt have to...", "+F1...voce n precisava...");
-	text_set($"battle_bubble_trashguy_empty_{i++}", "+F1...why are you being nice to me...?", "+F1...pq vc ta sendo legal comigo...?");
+	text_set($"battle_bubble_trashguy_empty_{i++}", "+F1...u didnt have to...", "+F1...voce n precisava...");
+	text_set($"battle_bubble_trashguy_empty_{i++}", "+F1...why are u being nice to me...?", "+F1...pq vc ta sendo legal comigo...?");
 	i = 0;
 	text_set($"battle_bubble_trashguy_kick_{i++}", "+F1...please,^1 stop...", "+F1...pfv,^1 para...");
 	text_set($"battle_bubble_trashguy_kick_{i++}", "+F1...but why,^1 though...?", "+F1...mas pq...?"); // inspired by "Why, though?" from "Five Nights at Freddy's: Security Breach". I'm slightly embarrassed by this inspiration honestly
-	text_set($"battle_bubble_trashguy_kick_{i++}", "+F1...what did i do to you...?", "+F1...oq eu te fiz...?");
+	text_set($"battle_bubble_trashguy_kick_{i++}", "+F1...what did i do to u...?", "+F1...oq eu te fiz...?");
 		// Flitcher's battle
 	text_set("battle_main_flitcher", "* (Flitcher suddenly&appears in your way!)", "* (Flitcher de repente&aparece em seu caminho!)");
-	text_set("battle_main_flitcher_geno", "* (I step into Flitcher's way.)", "* (Eu entro no caminho do Flitcher.)");
+	text_set("battle_main_flitcher_geno", "* (You step in Flitcher's way.)", "* (Eu entro no caminho do Flitcher.)");
 	i = 0;
 	text_set($"battle_main_flitcher_{i++}", "* (Flitcher stares blankly&to north and south.)", "* (Flitcher olha fixamente&para norte e sul.)");
 	text_set($"battle_main_flitcher_{i++}", "* (Flitcher doesn't seem&to know why it's here.)", "* (Flitcher não parece saber&o porquê de estar aqui.)"); // from "UNDERTALE"
@@ -553,7 +553,7 @@ function textdata()
 	text_set("battle_act_result_flitcher_2_1", "* (It seems happy.)^3 \\&* (Flitcher's :YMERCY;D up :U100%;D!)", "* (Ele parece estar feliz.)^3 \\&* (:YPIEDADE;D de Flitcher&subiu :U100%;D!)");
 		// Eyecrush's battle (Unused)
 	text_set("unused_battle_main_eyecrush", "* (Eyecrush crawls into your way!)");
-	text_set("unused_battle_main_eyecrush_geno", "* (I step into Eyecrush's way.)");
+	text_set("unused_battle_main_eyecrush_geno", "* (You step in Eyecrush's way.)");
 	text_set("unused_battle_main_eyecrush_0", "* (Eyecrush is looking at you.)");
 	text_set("unused_battle_main_eyecrush_1", "* (Eyecrush is focused on your movements.)");
 	text_set("unused_battle_main_eyecrush_2", "* (Eyecrush is happy he has more legs than you.)");
@@ -578,7 +578,7 @@ function textdata()
 	text_set($"battle_main_brock_{i++}", "* (Broken Clock is the proof that time doesn't heal all wounds.)", "* (Broken Clock é a prova de&que o tempo não cura tudo.)"); // "time doesn't heal all wounds" idiom references Broken Clock
 	text_set($"battle_main_brock_{i++}", "* (Broken Clock's movements&are making you dizzy.)", "* (Os movimentos do Broken Clock estão deixando você tonto.)");
 	text_set($"battle_main_brock_{i++}", "* (Even Broken Clock is&right twice a day.)", "* (Até Broken Clock está&certo duas vezes ao dia.)"); // references "even a broken clock is right twice a day" idiom
-	text_set($"battle_main_brock_{i++}", "* (:@@MEE6;D is insulting Broken Clock under his nonexistent breath.)", "* (:@@MEE6;D está insultando Broken&Clock e toda a sua família.)");
+	text_set($"battle_main_brock_{i++}", "* (:@@MEE6;D is insulting&Broken Clock under his&nonexistent breath.)", "* (:@@MEE6;D está insultando Broken&Clock e toda a sua família.)");
 	text_set($"battle_main_brock_{i++}", "* (:@@MEE6;D throws leaves at&Broken Clock and misses&every one of them.)", "* (:@@MEE6;D pega folhas do chão&e joga-as em Broken Clock,^3 \\&errando todas.)");
 	text_set($"battle_main_brock_{i++}", "* (You feel your hair being pulled by static eletricity.)", "* (Você sente seu cabelo voando com a eletricidade estática.)");
 	text_set($"battle_main_brock_{i++}", "* (You feel the power of&1.21 gigawatts coursing&through your nervous system.)", "* (Você sente o poder de 1,21 gigawatts percorrendo o seu sistema nervoso.)"); // "1.21 gigawatts" references "Back to the Future" (1985)
@@ -753,15 +753,15 @@ function textdata()
 	text_set($"battle_bubble_brock_insult_6_{i++}", "+F1+S2HOW COULD'YA POSSIBLY GO FROM SATAN TO FUCKING DING-A-LING??!?!?", "+F1+S2COMO CARALHOS TU CONSEGUIU IR DO DIABO PRA PINTINHO PEQUENINHO??!?!?");
 		// Armsguy, Trashguy, Flitcher & Eyecrush's battles
 	text_set("battle_main_armsguy_armsguy", "* (Armsguys jump in your way!)", "* (Armsguys pulam&em seu caminho!)");
-	text_set("battle_main_armsguy_armsguy_geno", "* (I step into Armsguys' way.)", "* (Eu entro no&caminho dos&Armsguys.)");
+	text_set("battle_main_armsguy_armsguy_geno", "* (You step in Armsguys' way.)", "* (Eu entro no&caminho dos&Armsguys.)");
 	text_set("battle_main_trashguy_armsguy", "* (Trashguy rolls into your way!)^3 \\&* (Armsguy gets jealous and&jumps in to save the day!)", "* (Trashguy cai em seu caminho!)^3 \\&* (Armsguy fica com inveja e aparece para salvar o dia!)");
-	text_set("battle_main_trashguy_armsguy_geno", "* (I step into Trashguy's way.)^3 \\&* (Armsguy jumps in&to protect them.)", "* (Eu entro no&caminho do Trashguy.^3 Armsguy aparece para protegê-lo.)");
+	text_set("battle_main_trashguy_armsguy_geno", "* (You step in Trashguy's way.)^3 \\&* (Armsguy jumps in&to protect them.)", "* (Eu entro no&caminho do Trashguy.^3 Armsguy aparece para protegê-lo.)");
 	text_set("battle_main_armsguy_flitcher", "* (Armsguy jumps in your way!)^3 &* (Flitcher is here,^3 somehow.)\\", "* (Armsguy pula em seu caminho!)^3 \\&* (Flitcher também está&aqui,^3 por algum motivo.)");
-	text_set("battle_main_armsguy_flitcher_geno", "* (I step into Armsguy's way.)^3 &* (Flitcher was caught&in the crossfire.)", "* (Eu entro no&caminho do Armsguy.^3 Flitcher é pegue no fogo cruzado.)");
+	text_set("battle_main_armsguy_flitcher_geno", "* (You step in Armsguy's way.)^3 &* (Flitcher was caught&in the crossfire.)", "* (Eu entro no&caminho do Armsguy.^3 Flitcher é pegue no fogo cruzado.)");
 	text_set("unused_battle_main_eyecrush_armsguy", "* (Eyecrush crawls into your way!)^3 &* (Armsguy jumps in to help them!)");
 	text_set("unused_battle_main_eyecrush_flitcher", "* (Eyecrush crawls into your way!)^3 &* (Also,^3 one big eye isn't enough.)");
 	text_set("battle_main_armsguy_trashguy_flitcher", "* (The whole gang shows up!)", "* (A turma inteira aparece!)");
-	text_set("battle_main_armsguy_trashguy_flitcher_geno", "* (I step into their way.)", "* (Eu entro no caminho deles.)");
+	text_set("battle_main_armsguy_trashguy_flitcher_geno", "* (You step in their way.)", "* (Eu entro no caminho deles.)");
 		// Rhonhey's semi-battle
 	i = 0;
 	text_set($"battle_bubble_m6_rhonhey_0_{i++}", "Hey!^3 Hey!!^3 You!^1 You over there!!", "Ei!^3 Ei!!^3 \\&Você!^1 Você aí!!");
@@ -991,7 +991,7 @@ function textdata()
 	text_set($"unused_event_theguys_meet_1_{i++}", "* Or Is It CowGirl??^1 &* I Can Really Tell!");
 	text_set($"unused_event_theguys_meet_1_{i++}", "* whatever.^1 &* \"cowyou\".^1 &* it doesnt matter.");
 	text_set($"unused_event_theguys_meet_1_{i++}", "* Ya Must Be A New Member!");
-	text_set($"unused_event_theguys_meet_1_{i++}", "* Well.^1 &* Lucky Ya,^1 We Here!");
+	text_set($"unused_event_theguys_meet_1_{i++}", "* Lucky Ya,^1 We Here!");
 	text_set($"unused_event_theguys_meet_1_{i++}", "* Because If It Werent For We...");
 	text_set($"unused_event_theguys_meet_1_{i++}", "+S1* Dat Blue Head Pain In Da Ass Would Talk For Days!!!!");
 	text_set($"unused_event_theguys_meet_1_{i++}", "+S3* you should thank us for kicking that guys face.");
@@ -1103,7 +1103,7 @@ function textdata()
 	text_set("item_name_brick_serious", "");
 	text_set("item_info_brick_0", "* \"Concrete Brick\" :O[+\\0 HP];D^3 \\&* (It's literally just a brick.)", "* \"Tijolo de Concreto\" :O[+0 HP];D^3 \\&* (É literalmente apenas um tijolo.)");
 	i = 0;
-	text_set($"item_use_brick_{i}_0", "* (You shoved :YConcrete Brick;D in&your mouth and swallowed&it whole...)", "* (Você enfiou :YTijolo de Concreto;D dentro da sua boca&e o engoliu por inteiro...)");
+	text_set($"item_use_brick_{i}_0", "* (You shoved :YConcrete Brick;D in&your mouth and swallowed it&whole...)", "* (Você enfiou :YTijolo de Concreto;D dentro da sua boca&e o engoliu por inteiro...)");
 	text_set($"item_use_brick_{i}_1", "* (You forcefully threw :YConcrete Brick;D against the floor.)", "* (Você jogou :YTijolo de Concreto;D contra o chão com muita \\força.)");
 	i += 1;
 	text_set($"item_use_brick_{i}_0", "* (Nothing happened.)", "* (Nada aconteceu.)");
@@ -1129,9 +1129,9 @@ function textdata()
 	z += 1;
 	i = 0;
 	text_set($"npc_armsguy1_{z}_{i++}", "* Lemme Tell Ya Sumthin Bro.", "* Deicha Eu Dizer Vc Augo Man."); // inspired by "Let me tell you something, man" from "The Walking Dead"
-	text_set($"npc_armsguy1_{z}_{i++}", "* Be Cool With Monsters.^1 \\&* They Hurt Ya Because&They Scared Bro!", "* Ser Legau Co Montros.^1 \\&* Eles Atacam Tu Pq&Eles Tão Medo Man!");
+	text_set($"npc_armsguy1_{z}_{i++}", "* Be Cool With Monsters.^1 \\&* They Hurt Ya Because&They Scared Bro!", "* Ser Legau Co Montros.^1 \\&* Eles Atacam Tu Pq&Eles Tao Medo Man!");
 	text_set($"npc_armsguy1_{z}_{i++}", "* If Ya Don Hurt&Em,^1 Ya Cool.", "* Se Tu Nn Bater Eles,^1 Tu Legau.");
-	z += 1;
+	z += 2;
 	i = 0;
 	text_set($"npc_armsguy1_{z}_{i++}", "* Wat I Tell Ya?^3 It Eazy!^1 \\&* Jus Don Hurt Em Bro!", "* Q Eu Dizer Vc?^3 E Facio!^1 \\&* So Nn Bate Eles Man!");
 	// room_corridors_5
@@ -1182,7 +1182,7 @@ function textdata()
 	text_set("room_candybowl_1_3_2", "No", "Não");
 	text_set("room_candybowl_1_4", "* (You took the bowl.)^3 \\&* (You got :YCandy Bowl;D.)", "* (Você pegou a tijela.)^3 \\&* (Você conseguiu&:YTijela de Doces;D.)");
 	text_set("room_candybowl_2_0", "* (It's a small pillar.)", "* (É um pilar pequeno.)");
-	text_set("room_candybowl_2_1", "* (The pillar had a candy bowl on it before you took both the candies and the bowl.)", "* (Tinha uma tijela de doces em cima do pilar antes de você pegar os doces e a tijela.)");
+	text_set("room_candybowl_2_1", "* (The pillar had a candy bowl on it before you took both&the candies and the bowl.)", "* (Tinha uma tijela de doces em cima do pilar antes de você pegar os doces e a tijela.)");
 	text_set("room_candybowl_2_2", "* (By the way,^3 you can take the pillar and use it as...^2 Wait.)^1 \\&* (No,^1 that's wrong.)", "* (Aliás,^3 tu pode pegar o pilar e usá-lo como...^2 Espera.)^1 \\&* (Não,^1 isso tá errado.)");
 	text_set("room_candybowl_2_3", "* (You can't take the pillar.)^1 \\&* (Sorry!)", "* (Você não pode pegar o pilar.)^1 \\&* (Desculpa!)");
 	text_set("item_name_candy",				"Cheap Candy",	"Doce Barato");
@@ -1193,6 +1193,12 @@ function textdata()
 	text_set("item_name_bowl_small",		"",				"TijelaDoce");
 	text_set("item_name_bowl_serious",		"Bowl",			"Tijela");
 	text_set("item_info_bowl_0", "* \"Candy Bowl\" :B[+\\3 DEF];D^3 &* (:U1/7;D chance to fully block damage when hurt.)", "* \"Tigela de Doces\" :B[+\\3 DEF];D^3 &* (:U1/7;D de chance de bloquear dano por completo.)");// "1/7 chance" references the Brazilian candy "7-Belo"
+	i = 0
+	text_set($"event_m6_bowl_{i++}", "* Before we move forward,^1 allow me to share an opinion of my own.", "* Antes de prosseguirmos,^1 permita-me compartilhar uma opinião pessoal.");
+	text_set($"event_m6_bowl_{i++}", "* I apologize if this comes across as rude&or inappropriate, ...", "* Perdoe-me se isso soar rude ou inapropriado, ...");
+	text_set($"event_m6_bowl_{i++}", "* ... but,^2 in my opinion,^2 ~1\\&you should place that candy bowl on your head.", "~1* ... mas você deveria colocar aquela tijela&de doces em sua cabeça.");
+	text_set($"event_m6_bowl_{i++}", "* Trust the process.", "* Vai por mim.");
+	text_set($"event_m6_bowl_{i++}_geno", "* ...^2 Is this a joke?^1 \\&* I was not my intention to \"humiliate\" you.", "* ...^2 Isto foi uma piada?^1 \\&* Não era minha intenção \"humilhá-lo\"."); // inspired by "Is this a joke? Are you braindead? RUN. INTO. THE. BULLETS!!!" from "UNDERTALE"
 	// room_corridors_7
 	text_set("room_relaxsign_0", "* \"Hey!\"^3 \\&* \"Getting tired with all&the walking and reading?\"", "* \"Opa!\"^3 \\&* \"Tá exausto de tanto&precisar ler e andar?\"");
 	text_set("room_relaxsign_1", "* \"Why not take a break?\"^3 \\&* \"Make yourself comfortable!\"", "* \"Por que não dar uma pausa?\"^3 \\&* \"Fique à vontade,^1 \\&de boa na lagoa!\"");
@@ -1211,7 +1217,7 @@ function textdata()
 	text_set("room_rat_geno", "* (It's a rat hole.)", "* (É um buraco de rato.)");
 	text_set("npc_armsguy_lost_0_0_0", "* Yo Bro,^3 :@@{name};D.^3 \\&* Ya A New Member Right?", "* Fala Man,^3 :@@{name};D.^3 \\&* Vc Novo Menbro Ne?");
 	text_set("npc_armsguy_lost_0_0_1", "* Me Buddy Is Dumbass!^1 \\&* He Stuck In Capcha 2.^3 &* He Need Help.", "* Eu Amigo E Buro!^1 \\&* Ele Prezo No Capcha 2.");
-	text_set("npc_armsguy_lost_0_0_2", "* Me Give Ya Gift.^3 &* Very Goo Gift.", "* Eu Dar Augo Vc.^3 \\&* Augo Muto Legau.");
+	text_set("npc_armsguy_lost_0_0_2", "* If Ya Help Me Buddy,^3 \\&Me Give Ya Gift.^3 \\&* Very Goo Gift!", "* Eu Dar Augo Vc.^3 \\&* Augo Muto Legau.");
 	text_set("npc_armsguy_lost_0_0_3", "* (Do you want to help Armsguy?)", "* (Você quer ajudar Armsguy?)");
 	text_set("npc_armsguy_lost_0_0_3_1", "Sure", "Claro");
 	text_set("npc_armsguy_lost_0_0_3_2", "No", "Não");
@@ -1232,28 +1238,29 @@ function textdata()
 	text_set("item_name_trident",			"Enchanted Trident",	"Tridente Encantado");
 	text_set("item_name_trident_small",		"EncTrident",			"TrideEncan");
 	text_set("item_name_trident_serious",	"Trident",				"Tridente");
-	text_set("item_info_trident_0", "* \"Enchanted Trident\" :R[+\\3 ATK];D^3 \\&* (Summons a lightning when :RATTACKing;D at the center mark.)", "* \"Tridente Encantado\" :R[+\\3 ATQ];D^3 \\&* (Invoca um raio ao :RATACAR;D&na linha de centro.)"); // references Minecraft's "Trident" item with "Channeling" enchantment
+	text_set("item_info_trident_0", "* \"Enchanted Trident\" :R[+\\3 ATK];D^3 \\&* (Summons a lightning bolt when :RATTACKing;D at the center mark.)", "* \"Tridente Encantado\" :R[+\\3 ATQ];D^3 \\&* (Invoca um raio ao :RATACAR;D&na linha de centro.)"); // references Minecraft's "Trident" item with "Channeling" enchantment
 	// room_corridors_9
 	/*sketch*/text_set("event_m6_captcha2_0", "* Here comes more extremely difficult puzzles for you.", "* Aproximam-se mais quebra-cabeças impossíveis.");
 	/*sketch*/text_set("event_m6_captcha2_1", "* The quicker we go,^3 &the earlier we exit&the :GCorridors;D.", "* Se prosseguirmos com rapidez,^1 em breve&saímos dos :GCorredores;D.");
 	text_set("room_captcha_mainsign_2_0", "* \"reCAPTCHA\\:  Stage 2/3\"", "* \"reCAPTCHA\\:  Fase 2/3\"");
 	text_set("room_captcha_mainsign_2_1", "* \"Please solve three puzzles&to confirm you are a human.\"", "* \"Por favor resolva os três quebra-cabeças para confirmar que você é humano.\"");
 	text_set("room_captcha_guidesign_2_0", "* \"Push the box to the 'X'&on the white path.\"", "* \"Empurre a caixa para o&'X' no caminho branco.\"");
-	text_set("npc_trashguy_lost1_0", "* ...you solved the puzzle...?", "* ...vc resolveu o puzzle...?");
+	text_set("npc_trashguy_lost1_0", "* ...u solved the puzzle...?", "* ...vc resolveu o puzzle...?");
 	text_set("npc_trashguy_lost1_1", "* ...now i can go back&and meet my friend...", "* ...agr eu posso&ir pro meu amg...");
 	text_set("npc_trashguy_lost1_2", "* ...thx...", "* ...obg...");
 	text_set("event_m6_postcaptcha2_0", "* How are you able to solve them so easily?!", "* Como você é capaz de resolvê-los com tanta facilidade?!");
+	text_set("event_m6_postcaptcha2_0_geno", "* Fantastic.^1 \\&* Well done.", "* Fantástico.^1 \\&* Excelente trabalho.");
 	text_set("event_m6_postcaptcha2_1", "* Regardless,^1 let us proceed with our adventure!", "* Seja como for,^1 nós prosseguimos com&nossa aventura!");
 	// room_corridors_10
 	text_set("room_chocosign", "* \"          for completing&           f reCAPTCHA's&           n.\"", "* \"          or concluir a&           se da verificação&           a do reCAPTCHA.\"");
 	text_set("room_chocosign_geno", "* (The left half of this&sign is missing.)", "* (A metade esquerda desta&placa está faltando.)");
-	text_set("room_chocobowl_0", "* (It's a very damaged&chocolate bowl.)", "* (É uma tijela de chocolate muito quebrada.)");
+	text_set("room_chocobowl_0", "* (It's a damaged&chocolate bowl.)", "* (É uma tijela de&chocolate quebrada.)");
 	text_set("room_chocobowl_1", "* (There's only one chocolate left,^1 lying on the floor...)", "* (Tem apenas um chocolate restante,^1 deitado no chão...)");
 	text_set("room_chocobowl_2", "* (Take the chocolate?)", "* (Pegar o chocolate?)");
 	text_set("room_chocobowl_2_1", "Yes", "Sim");
 	text_set("room_chocobowl_2_2", "No", "Não");
 	text_set("room_chocobowl_3", "* (You took the chocolate.)^3 \\&* (You got :YChocolate Bar;D.)", "* (Você pegou o chocolate.)^3 \\&* (Você conseguiu&:YBarra de Chocolate;D.)");
-	text_set("room_chocobowl_4", "* (You already have a&bowl on your head.)", "* (Você já tem uma tijela&em cima da sua cabeça.)");
+	text_set("room_chocobowl_4", "* (You already have a&bowl on your head...)", "* (Você já tem uma tijela&em cima da sua cabeça...)");
 	text_set("item_name_choco",				"Chocolate Bar",	"Barra de Chocolate");
 	text_set("item_name_choco_small",		"ChocolaBar",		"BarraChoco");
 	text_set("item_name_choco_serious",		"Chocolate");
@@ -1279,7 +1286,7 @@ function textdata()
 	text_set($"event_brock_battle_0_{i++}", "+F0+S1* DID'YA REALLY THINK&I WOULDN'T SEE'YA?!?", "+F0+S1* TU REAL ACHOU QUE&EU NÃO IA TE VER?!?");
 	text_set($"event_brock_battle_0_{i++}", "+F0+S1* EVEN AFTER EVERYTH()", "+F0+S1* MESMO DEPOIS DE TUD()");
 	text_set($"event_brock_battle_0_{i++}", "* You are breaking the server's rules,^3 wild clock creature!", "* Você está infringindo regras do servidor,^3 relógio malévolo!"); // MEE6 attempts to interrupt Broken Clock the same way he successfully interrupted Rhonhey 
-	text_set($"event_brock_battle_0_{i++}", "* You do not have permission to trap us he()", "* Você não tem permissão para nos prender aqu()");
+	text_set($"event_brock_battle_0_{i++}", "* You do not have permission to trap&us he()", "* Você não tem permissão para nos prender aqu()");
 	var i = 0;
 	text_set($"event_brock_battle_1_{i++}", "+F0+S1* SHUT UP!!!!!!!!!!", "+F0+S1* CALA A BOCAAAAAAAAAA!!!!!!!!!!");
 	i = 0;
@@ -1315,12 +1322,13 @@ function textdata()
 	text_set($"event_brock_battle_4_{i++}_1", "* Again,^1 thanks to you,^1 &we slowly approach the exit of :GCorridors;D.", "* Novamente,^1 graças a você,^1 nos aproximamos&à saida dos :GCorredores;D.");
 	text_set($"event_brock_battle_4_{i++}_1_geno", "* ...^2 What did you say?^1 &* I was not skeptical&of your abilities.", "* ...^2 O que você disse?^1 \\&* Eu não estava cético&de suas abilidades.");
 	text_set($"event_brock_battle_4_{i++}_1_geno", "* You are the one who interpreted it incorrectly.", "* É você quem&me interpretou incorretamente.");
+	// "* You have constant need for validation, do you not?" v0.6.0
 	text_set("item_name_pace",			"Temporary Pacemaker",	"Marcapasso Temporário"); // "Temporary" references Broken Clock, but also explains why the player can equip the item without surgery; "Pacemaker" references both Broken Clock and the player's SOUL
 	text_set("item_name_pace_small",	"TempoPacer",			"MarcaTempo");
 	text_set("item_name_pace_serious",	"Pacemaker",			"Marcapasso");
 	text_set("item_info_pace_0", "* \"Temporary Pacemaker\" :B[+\\6 DEF];D^3 \\&* (Increases the duration of :PINVINCIBILITY FRAMES;D by :U50%;D.)", "* \"Marcapasso Temporário\" :B[6 \\DEF];D^3 \\&* (Prolonga a duração dos :PFRAMES DE INVENCIBILIDADE;D em :U50%;D.)");
 	i = 0;
-	text_set($"room_trollwall_{i++}", "* (A thick,^3 oily substance is leaking from between the bricks of this wall...)", "* (Uma grossa,^3 oleosa substância está vazando dos espaços entre os tijolos desta parede...)"); // references TROLLFACE's oil attack
+	text_set($"room_trollwall_{i++}", "* (A thick oily substance is&leaking from between the bricks of this wall...)", "* (Uma grossa oleosa substância está vazando dos espaços entre os tijolos desta parede...)"); // references TROLLFACE's oil attack
 	text_set($"room_trollwall_{i++}", "* (It seems irrelevant for now.)", "* (Isso parece&irrelevante&no momento.)");
 	// room_corridors_11_trollStairs (WORK IN PROGRESS, v0.6.0)
 	z = 0;
@@ -1341,33 +1349,7 @@ function textdata()
 	text_set($"room_trollCell_2_0", "* (It's one more prison cell.)^1 \\&* (It seems to be empt()");
 	z = 0;
 	i = 0;
-		// Like Aaron Undertale? "Come on in, the water's fine ;)" "Nice, my kind of humor ;)" "You'll change your mind ;)" "Just the two of us, huh? ;)"
-		// "It's hot in here. Don't you want to take off your clothes?"; "Be a good boy and [...]"; "Do it for daddy"; "Come closer, I don't bite. Unless you want me to"
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* Hey,^3 hey...^1 \\&* Relax,^1 little boy...^1 \\&* Relax...");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* I'm not going to&hurt you,^1 silly...^2 \\&* Oh,^1 no,^2 I would never do that!");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* No,^1 no...^2 \\&* You're way too&cute for that... ;\\)");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* You know I'd do anything&for you,^1 right,^1 sweetie?");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* So...^2 \\&* That means you can&do something for me.");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* Something very,^2 \\&very important.");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* Something only you&can do for me.^1 \\&* You,^1 only you.");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* But you can't tell&anyone about this!");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* This needs to be our&\"little secret\"!");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* Can you be a good boy and pull that lever for me,^1 sweetheart?");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* You don't want to leave Daddy trapped here,^2 do you...?^2 \\&* Ha,^1 ha...");
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* Pull the lever.");
-	z += 1;
-	i = 0;
-	text_set($"unused_event_troll_{z}_{i++}", "+I1* HEY,^3 CUPCAKE^1 \\&* SEE THAT LEVER&OVER THERE?");
-	text_set($"unused_event_troll_{z}_{i++}", "+I1* PULL IT FOR ME^1 \\&* PULL IT FOR ME SO&I CAN MAKE YOU HAPPY");
-	z += 1;
-	i = 0;
-	text_set($"event_troll_{z}_{i++}", "+I1* Is this a joke?^1 \\&* Are you trolling me?^2 \\&* PULL THE DAMN LEVER"); // inspired by "Is this a joke? Are you braindead? RUN. INTO. THE. BULLETS!!!" from "UNDERTALE"
-	z += 1;
-	i = 0;
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* Ah...^1 Ha,^1 ha...^2 \\&* You did good,^1 sweetie,^1 \\&you did very good...");
-	z += 1;
-	i = 0;
-	text_set($"event_troll_{z}_{i++}", "+S6+I1* YOU'VE^4 BEEN^4 TROLLED");
+	text_set($"event_troll_{z}_{i++}", "");
 	// room_corridors_13
 	z = 0;
 	i = 0;
@@ -1395,6 +1377,9 @@ function textdata()
 	text_set($"event_m6_captcha3_{i}", "* I suggest you read the introductory sign.", "* Eu sugiro que você leia a placa introdutória.");
 	text_set($"event_m6_captcha3_{i}_geno", "* I suggest you&read the,^1 uh...", "* Eu sugiro que&você leia,^1 é...");
 	text_set($"event_m6_captcha3_{++i}_geno", "* ...^2 Why are you&looking at me&like that?", "* ...^2 Por que você está me observando dessa forma?");
+	i = 0;
+	text_set($"event_m6_captcha3_trailer_{i++}", "* I wish I had&eight legs...^2 ()");
+	text_set($"event_m6_captcha3_trailer_{i++}", "* ... so I could wear...^2 ~0\\&* Wait.^1 That's not what I'm supposed to say.");
 	text_set("room_captcha_mainsign_3_0", "* \"reCAPTCHA\\:  Stage 3/3\"", "* \"reCAPTCHA\\:  Fase 3/3\"");
 	text_set("room_captcha_mainsign_3_1", "* \"Please solve three puzzles&to confirm you are a human.\"", "* \"Por favor resolva os três quebra-cabeças para confirmar que você é humano.\"");
 	text_set("room_captcha_mainsign_3_2", "* \"You will have :Rtwo minutes;D&to solve the puzzles.\"", "* \"Você terá :Rdois minutos;D para resolver os quebra-cabeças.\"");
@@ -1434,7 +1419,7 @@ function textdata()
 	text_set("npc_trashguy_exit_fishing_1_0", "* ...i think ill&just give up...", "* ...eu acho q eu&vo so desistir...");
 	text_set("npc_armsguy_exit_fishing_0_0", "* Wat Up.^1 \\&* Me Jus Waitin This Smartass Here Get Thing Back.", "* E Ai.^1 Eu So Esperano Ese Sabichao Aqui Pega Coiza&Dele De Volta.");
 	text_set("npc_armsguy_exit_fishing_0_1", "* Big Waist Of Time!^3 &* How Dat Fall There Anyway?!", "* Gran Perda Tempo!^3 \\&* Como Iço Cair Ai Memo?!");
-	text_set("npc_armsguy_exit_fishing_0_2", "* ...i already told you&i dont know...", "* ...eu ja disse que eu n sei...");
+	text_set("npc_armsguy_exit_fishing_0_2", "* ...i already told u&i dont know...", "* ...eu ja disse que eu n sei...");
 	text_set("npc_armsguy_exit_fishing_1_0", "* This Intorelable!", "* Iço Intorelavel!"); // inspired by "This is intolerable" from "Indiana Jones and the Last Crusade"
 	text_set("npc_armsguy_exit_lifting_0_0", "* Me Don Talk Now.^3 \\&* I Gyming.", "* Eu Nn Falar Agr.^3 \\&* Eu Academiando.");
 	text_set("npc_armsguy_exit_lifting_1_0", "* Me Say Me Don Talk&Now Dumbass!!!", "* Eu Dizer Q Eu Nn&Falar Agr Indiota!!!");
@@ -1444,11 +1429,11 @@ function textdata()
 	text_set("npc_flitcher_exit_0_0", "* (You wave to Flitcher.)^3 &* (It waves back at you.)", "* (Você acena para Flitcher.)^3 \\&* (Ele acena de volta a você.)");
 	text_set("npc_flitcher_exit_0_1", "* (How did it wave back if it doesn't even have hands?)", "* (Como ele acenou de volta&se ele nem mãos tem?)");
 	text_set("npc_flitcher_exit_0_2", "* (This is one of the weirdest mysteries of All Time.)", "* (Este é um dos mistérios&mais esquisitos de&Todos os Tempos.)");
-	text_set("npc_flitcher_exit_1_0", "* Kill me,^4 please", "* Me mata,^4 por favor");
+	text_set("npc_flitcher_exit_1_0", "* Kill me,^2 please...!", "* Por favor,^2 me mata...!");
 	text_set("unused_npc_flitcher_exit_1_0", "* I^4 am^4 deeply disgusted^4 by^4 &your existence.^4 &* Do^4 me a^4 favor^4^4 and^4^4^4^4 die.");
 	text_set("npc_flitcher_exit_geno_0", "* (It's a Flitcher.)", "* (É um Flitcher.)");
 	text_set("room_corridors_17_egg.0", "* (It's an egg.)", "* (É um ovo.)");
-	text_set("room_corridors_17_egg.1", "* (It's unclear why there's&an egg beside the tree.)", "* (Não está claro o&porquê de haver um&ovo ao lado da árvore.)"); // from "DELTARUNE"
+	text_set("room_corridors_17_egg.1", "* (It's unclear why there's&an egg beside the tree...)", "* (Não está claro o&porquê de haver um&ovo ao lado da árvore...)"); // from "DELTARUNE"
 	text_set("item_name_brick2",			"Metal Brick",	"Tijolo de Metal");
 	text_set("item_name_brick2_small",		"MetalBrick",	"TijoMetal");
 	text_set("item_name_brick2_serious",	"");

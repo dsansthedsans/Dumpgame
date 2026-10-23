@@ -1,4 +1,6 @@
 
+if (global.inrecording == true)
+	destroy(id);
 con = 0;
 time = 150;
 delay = 0;

@@ -200,8 +200,8 @@ if (active == 1)
 		}
 		if (enemy.thiswriter != 0 && exists(enemy.thiswriter) == true && global.visualeff == true)
 		{
-			enemy.thiswriter.bubble_x = (x + (sprite_width / 2) + 12);
-			enemy.thiswriter.bubble_y = (y + 6);
+			enemy.thiswriter.bubble_x = (x + (sprite_width / 2) + 11);
+			enemy.thiswriter.bubble_y = (y + 7);
 		}
 		
 		if (movement == 5) // death movement

@@ -158,6 +158,7 @@ if (con == 18)
 	if (global.world_curpopulation[chara_world()] > 0) || (global.world_curpopulation[chara_world()] <= 0 && m6_canEscape == false)
 	{
 		chara_facing(LEFT);
+		chara_stop();
 		m6.facing = -1;
 		m6.sprite_index = spr_m6_u_sit;
 		for (var i = 0; i < 3; i++)

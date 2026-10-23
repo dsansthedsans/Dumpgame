@@ -56,7 +56,10 @@ function settings_write()
 			file_text_write_real(_file, global.keybind[i]);
 			file_text_writeln(_file);
 		}
-	
+		
+		file_text_writeln(_file);
+		file_text_write_real(_file, global.vsync);
+		
 		file_text_close(_file);
 	}
 }
@@ -116,6 +119,9 @@ function settings_read()
 		global.keybind[i] = file_text_read_real(_file);
 		file_text_readln(_file);
 	}
+	
+	file_text_readln(_file);
+	global.vsync = file_text_read_real(_file);
 	
 	file_text_close(_file);
 	}

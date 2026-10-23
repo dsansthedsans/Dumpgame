@@ -5,7 +5,7 @@ if (active == 1)
 	chara_inwhat();
 	chara_world();
 	chara_stats();
-	chara_murder();
+	chara_murder(false);
 
 	// fullscreen
 	if (key("fullscreen") == 1)
@@ -52,8 +52,13 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		if (keyboard_check(vk_backspace) == 1)
 			global.battle_nextgroup = 12;
 		if (keyboard_check(vk_delete) == 1)
-			global.battle_nextgroup = 4;
-		battle();
+			global.battle_nextgroup = 9;
+		if (exists(obj_chara) == true && global.chara_encounter == true)
+		{
+			global.chara_steps = 9999999999999999999;
+		}
+		else
+			battle();
 	}
 	if (keyboard_check_pressed(ord("E")) == true && keyboard_check(vk_end) == true && exists(obj_battle_controller) == true)
 		obj_battle_controller.battle_turntime = 0;
@@ -121,21 +126,25 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 	{
 		if (room == room_corridors_3)
 			global.flag[67] += 1;
-		if (room == room_battle && exists(obj_battle_controller) == true && obj_battle_controller.enemy_type[0] == 6)
-			obj_battle_controller.enemy_obj[0].insultTurns = -2;
+		if (room == room_battle && exists(obj_battle_controller) == true)
+		{
+			obj_battle_controller.battle_flee = true;
+			if (obj_battle_controller.enemy_type[0] == 6)
+				obj_battle_controller.enemy_obj[0].insultTurns = -2;
+		}
 		if (room == room_corridors_14 && global.flag[50] > 0 && global.flag[50] < 1 && exists(obj_captcha3) == true)
 			obj_captcha3.timer.seconds = 0;
 		audio_play(snd_shriekCar, false, VOLUME_SOUND);
 	}
 	if (keyboard_check_pressed(ord("W")) == true)
 	{
-		var _textGroup = "event_troll_0";
+		var _textGroup = "event_troll_1";
 		writer(_textGroup);
 		if (string_starts_with(_textGroup, "event_troll_") == true && _textGroup != "event_troll_4" && floor(global.volume[VOLUME_MUSIC]) == 0)
 		{
 			if (audio_playing(mus_eventTroll) == true)
 				audio_stop(mus_eventTroll);
-			audio_play(mus_eventTroll, true,,,,, 1);
+			audio_play(mus_eventTroll, true,,,,, 0.675);
 		}
 	}
 }

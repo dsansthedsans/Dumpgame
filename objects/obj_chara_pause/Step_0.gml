@@ -57,6 +57,8 @@ if (move == 1)
 						global.fastmenu = 0.5;
 					room_go(room_menu, -1, -1);
 					audio_play(snd_option_select, 0, VOLUME_SOUND);
+					if (audio_playing(snd_creepyReulaspiravech) == true)
+						audio_stop(snd_creepyReulaspiravech);
 				}
 				else if (option_pos == 2)
 					game_end();

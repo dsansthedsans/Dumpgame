@@ -320,6 +320,27 @@ for (var c = 1; c < (text_length + 1); c++)
 	if (string_char_at(msg[page], (c - 1)) == "+" && string_char_at(msg[page], c) != "\\") || (string_char_at(msg[page], (c - 2)) == "+" && string_char_at(msg[page], (c - 1)) != "\\")
 		_candraw = 0;
 	
+	// face change
+	if (string_char_at(msg[page], c) == "~")
+	{
+		if (string_char_at(msg[page], (c + 1)) == "0")
+		{
+			msg_face[page] = spr_dialogface_m6_thinking;
+			_candraw = false;
+		}
+		if (string_char_at(msg[page], (c + 1)) == "1")
+		{
+			msg_face[page] = spr_dialogface_m6_sassy;
+			_candraw = false;
+		}if (string_char_at(msg[page], (c + 1)) == "2")
+		{
+			msg_face[page] = spr_dialogface_m6_angry;
+			_candraw = false;
+		}
+	}
+	if (string_char_at(msg[page], (c - 1)) == "~" && string_char_at(msg[page], c) != "\\")
+		_candraw = false;
+	
 	// remove characters
 	if (string_char_at(msg[page], c) == "^")
 	{

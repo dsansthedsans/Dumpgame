@@ -18,8 +18,8 @@ global.chara_encounter = 1;
 if (room == room_corridors_1)
 || (room == room_corridors_1_5)
 || (room == room_corridors_2)
-|| (room == room_corridors_3 && global.flag[17] == 0)
-|| (room == room_corridors_3_5 && global.flag[17] == 0)
+|| (room == room_corridors_3 && global.flag[18] == 0)
+|| (room == room_corridors_3_5 && global.flag[18] == 0)
 || (room == room_corridors_4 && global.flag[18] == 0)
 //|| (r == room_corridors_5 && global.flag[15] == 1 && global.flag[16] == 0)
 || (room == room_corridors_5_A && global.flag[11] == 0)
@@ -32,6 +32,7 @@ if (room == room_corridors_1)
 || (room == room_corridors_18)
 || (array_get_index(global.room_order, room) >= array_get_index(global.room_order, room_cave_1))
 //|| (global.world_sparedpopulation[global.chara_world] == global.world_maxpopulation[global.chara_world] && global.world_curpopulation[global.chara_world] == global.world_maxpopulation[global.chara_world])
+|| (global.inrecording == true)
 	global.chara_encounter = 0;
 if (global.chara_encounter == 1)
 {
@@ -49,7 +50,9 @@ if (global.chara_encounter == 1)
 			battlecon += 1;
 		}
 		if (battlecon > 0 && battlecon < (1 + 45))
+		{
 			battlecon += 1;
+		}
 		if (battlecon >= (1 + 45))
 		{
 			global.chara_steps = 0;

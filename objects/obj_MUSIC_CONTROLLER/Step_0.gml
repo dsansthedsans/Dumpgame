@@ -49,7 +49,10 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		{
 			music_set(0, mus_eventChapter1, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
 			if (chara_murder() < 2)
+			{
 				music_set(1, snd_ambienceBirds, , ((global.flag[0] == false) ? 4 : 0.5), true, , , 4);
+				global.music_volumetype[1] = VOLUME_SOUND;
+			}
 			else
 				global.music[0] = mus_eventChapter1_geno;
 		}
@@ -67,7 +70,11 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			music_set(0, mus_worldCorridors, , , , (1 - (0.025 * (chara_murder() == 1))));
 			if (chara_murder() >= 2)
 				music_set(0, mus_worldCorridors_geno,,,, (1 + (0.025 * (chara_murder() == 3))))
-			if (global.world_curpopulation[chara_world()] <= 0 && global.flag[40] == false) || (audio_playing(snd_jingleLuminous) == true) || (audio_playing(snd_jingleOminous) == true)
+			if (global.world_curpopulation[chara_world()] <= 0 && global.flag[40] != true)
+			|| (global.flag[42] == 0.5)
+			//|| (audio_playing(snd_jingleLuminous) == true) || (audio_playing(snd_jingleOminous) == true)
+			|| (global.musicOther_id != -1 && audio_playing(global.musicOther_id) == true && audio_sound_get_track_position(global.musicOther_id) < 10)
+			//|| (audio_playing(snd_creepyReulaspiravech) == true && audio_sound_get_track_position(snd_creepyReulaspiravech) < (10 / 0.75))
 				music_paused[0] = true;
 		}
 		// Broken Clock
@@ -87,7 +94,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			}
 		}
 		// CAPTCHA 3
-		if (room == room_corridors_14 && chara_murder() < 2)
+		if (room == room_corridors_14 && chara_murder() < 1)
 		{
 			if (global.flag[50] == 0.25) || (global.flag[50] == 0.75)
 				music_set(0, -1);	
@@ -124,7 +131,10 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		if (room == room_corridors_17)
 		{
 			if (chara_murder() < 2)
+			{
 				music_set(1, snd_ambienceBirds);
+				global.music_volumetype[1] = VOLUME_SOUND;
+			}
 			if (global.flag[44] == 0.5)
 			{
 				music_paused[0] = true;

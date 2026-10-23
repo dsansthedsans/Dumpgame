@@ -7,8 +7,12 @@ function battle()
 	global.chara_lastroom = room;
 	chara_stop();
 	create(0, 0, obj_battle_quicker);
-	if (room == room_corridors_9 && audio_playing(snd_option_movehold) == 1)
+	if (audio_playing(snd_option_movehold) == 1)
 		audio_stop(snd_option_movehold);
+	if (audio_playing(snd_jingleVictory) == true)
+		audio_stop(snd_jingleVictory);
+	if (audio_playing(snd_jingleVictory_wrong) == true)
+		audio_stop(snd_jingleVictory_wrong);
 }
 function battle_getgroup()
 {	
@@ -21,8 +25,8 @@ function battle_getgroup()
 			if (global.world_curpopulation[chara_world()] >= 3 && ((global.world_curpopulation[chara_world()] <= (global.world_maxpopulation[chara_world()] / 2)) || (global.flag[37] == 1 && global.flag[39] == 1)))
 				battle_group = ((irandom_range(1, 5) != 1) ? irandom_range(7, 9) : 12);
 		}
-		if (global.flag[24] == 1)
-			global.flag[24] = 2;
+		if (global.flag[24] == 2)
+			global.flag[24] = 3;
 	}
 	else if (chara_world() == WORLD_CAVERNS) // caverns
 	{
@@ -61,7 +65,9 @@ function battle_setupgroup()
 	if (battle_group == 0) // But nobody came.
 	{
 		if (global.flag[22] == false)
-			audio_play(snd_creepyReulaspiravech, 0, VOLUME_SOUND,,,, 0.75);
+			global.musicOther_id = audio_play(snd_creepyReulaspiravech, 0, VOLUME_SOUND,,,, 0.75);
+		//else
+		//	audio_play(snd_jingleOminous, false, VOLUME_SOUND, 0.5,,, (1 + random(-0.35))); v0.6.0
 		global.flag[22] = true;
 		battle_music = -1;
 		battle_bg = -1;
@@ -394,6 +400,8 @@ function battle_getattack()
 		{
 			if (i == 1 && enemy_type[(i - 1)] == 3 && enemy_attack[(i - 1)] == 1)
 				enemy_attack[i] = 0;
+			if (global.inrecording == true && battle_group == 9)
+				enemy_attack[i] = 0;
 		}
 		if (enemy_type[i] == 4) // Flitcher
 		{
@@ -402,6 +410,8 @@ function battle_getattack()
 				if (i != z && enemy_type[z] != 0 && enemy_type[z] != 4)
 					enemy_attack[i] = choose(2, 2, 2, 0, 1);
 			}
+			if (global.inrecording == true && battle_group == 9 && enemy_type[0] != 0)
+				enemy_attack[i] = 2;
 		}
 		if (enemy_type[i] == 5) // Eyecrush
 		{

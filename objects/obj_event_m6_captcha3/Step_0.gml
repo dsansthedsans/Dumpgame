@@ -43,7 +43,7 @@ if (con == 4)
 }
 if (con == 5)
 {
-	if (exists(thiswriter) == true && chara_murder() >= 1)
+	if (exists(thiswriter) == true && chara_murder() >= 2)
 	{
 		if (thiswriter.page >= 1)
 			chara_facing(RIGHT);

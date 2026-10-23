@@ -1,8 +1,8 @@
 
+window_set_caption("");
 START_GAME();
 CHANGE_GAME();
-window_center();	
-window_set_caption("");
+window_center();
 create(-20, -20, obj_MUSIC_CONTROLLER);
 create(-20, -20, obj_PARTICLE_CONTROLLER);
 create(-20, -20, obj_DRP_CONTROLLER);

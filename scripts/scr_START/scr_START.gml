@@ -1,4 +1,3 @@
-
 function START_GAME()
 {	
 	global.c_dump = #32FF62;
@@ -12,11 +11,10 @@ function START_GAME()
 	global.c_gray = #748CAB; // unavailable option; "Corridors"
 	global.c_mention[0] = #5865F2;
 	global.c_mention[1] = #A8BAFE;
-	
 	randomize();
 	display_set_gui_maximise(2, 2);
 	load_time = 1;
-	global.game_version = "v0.5.0";
+	global.game_version = "v0.5.1";
 	global.game_directory = $"{working_directory}{global.game_version}\\";
 	if (directory_exists(global.game_directory) == false)
 		directory_create(global.game_directory);
@@ -30,18 +28,17 @@ function START_GAME()
 	start_writer();
 	start_settings();
 	start_achievements();
-	
 	global.fnt_mars = font_add_sprite_ext(spr_fnt_mars, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.!:$/%#", false, 0);
 	global.fnt_dmg = font_add_sprite_ext(spr_fnt_dmg, "BCEIKLMOQRSU 0123456789", 1, 0);
 	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcçdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCÇDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- @", 0, 0);
 	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
+	global.inrecording = false;
 	global.debug_hud = false;
 	global.room_order = [room_start, room_menu, room_story, room_battle, room_over, room_corridors_1, room_corridors_1_5, room_corridors_2, room_corridors_3, room_corridors_3_5, room_corridors_4, room_corridors_5, room_corridors_5_A, room_corridors_5_B, room_corridors_6, room_corridors_7, room_corridors_8, room_corridors_9, room_corridors_10, room_corridors_11, room_corridors_13, room_corridors_14, room_corridors_17, room_corridors_18, room_cave_1, room_cave_2, room_cave_3, room_cat];
 	for (var i = 0; i < 10; i++)
 		global.notification[i] = 0;
 }
-
 function start_maininfo()
 {
 	start_chara();
@@ -50,59 +47,46 @@ function start_maininfo()
 	start_flags();
 	global.flagtemp_bossSkip = false;
 	start_worlds();
-	
-	// start settings
-	// load settings
-	
 	global.savefile_selected = -1;
-	
-	// start achievements
-	// load achievements
-	
-	
+	/*for (var s = 0; s < 3; s++)
+	{
+		if (file_exists($"{global.game_directory}savefile{s}.txt") == false && global.game_version == "v0.5.1")
+		{
+			var _otherdirectory = $"{working_directory}v0.5.0\\";
+			if (directory_exists(_otherdirectory) == true)
+			{
+				var _file_name = $"{_otherdirectory}savefile{s}.txt";
+				if (file_exists(_file_name) == true)
+					file_copy(_file_name, $"{global.game_directory}savefile{s}.txt");
+			}
+		}
+	}*/
 }
-
 function start_chara()
 {
 	// informações que tem que salvar
 	global.chara_name = "";
 	global.chara_money = 0;
-	
 	global.chara_lvl = 1;
 	global.chara_exp = 0;
-	
 	global.chara_spares = 0;
 	global.chara_kills = 0;
-	
 	global.chara_heals = 0;
 	global.chara_deaths = 0;
-	
 	global.chara_weapon = ITEM_STICK;
 	global.chara_armor = ITEM_BANDAGE;
-	
 	global.chara_room = 0;
-	
-	global.chara_stopwatch =
-	{
-		time : [0, 0, 0, 0]
-	}
-	
-	
+	global.chara_stopwatch = { time : [0, 0, 0, 0] }
 	// informações que não tem que salvar
 	global.chara_maxhp = 20;
 	global.chara_curhp = 20;
-	
 	global.chara_nextexp = 0;
-	
 	global.chara_atk = 0;
 	global.chara_def = 0;
-	
 	global.chara_wname = "";
 	global.chara_aname = "";
 	global.chara_wstrength = 0;
 	global.chara_astrength = 0;
-	
-	
 	// informações de suporte
 	#macro LEFT 0
 	#macro RIGHT 1
@@ -110,12 +94,8 @@ function start_chara()
 	#macro DOWN 3
 	#macro SIT 4
 	#macro FALLEN 5
-	
 	global.chara_facing = DOWN;
 	global.chara_runtime = 0;
-	
-	
-	// informações de cutscene
 	global.chara_run = 1;
 	global.chara_move = 1;
 	global.chara_interact = 1;
@@ -123,69 +103,12 @@ function start_chara()
 	global.chara_open_menu = 1;
 	global.chara_pause_game = 1;
 	global.chara_camera_move = 1;
-	
 	global.chara_steps = 0;
 	global.chara_encounter = 0;
 	global.battle_nextgroup = 0;
 	global.chara_lastx = 0;
 	global.chara_lasty = 0;
 	global.chara_lastroom = 0;
-
-	/*
-	#macro LEFT 0
-	#macro RIGHT 1
-	#macro UP 2
-	#macro DOWN 3
-	#macro SIT 4
-	#macro FALLEN 5
-	
-	#macro RIGHT_SIT 6
-	#macro UP_SIT 7 // side
-	#macro DOWN_SIT 8
-	
-	global.chara_name = "";
-	global.chara_exp = 0;
-	global.chara_money = 0;
-	global.chara_weapon = ITEM_STICK;
-	global.chara_armor = ITEM_BANDAGE;
-	global.chara_kills = 0;
-	global.chara_spares = 0;
-	global.chara_heals = 0;
-	global.chara_deaths = 0;
-	global.chara_world = WORLD_CORRIDORS;
-	global.chara_saveroom = 0;
-	global.chara_fun = irandom_range(1, 100);
-	
-	global.chara_nextexp = 0;	// set in chara_stats()
-	global.chara_lvl = 1;		// set in chara_stats()
-	global.chara_atk = 8;		// set in chara_stats()
-	global.chara_def = 9;		// set in chara_stats()
-	global.chara_maxhp = 20;	// set in chara_stats()
-	global.chara_curhp = 20;	// set in chara_stats()
-	global.chara_wname = "";	// set in chara_stats()
-	global.chara_aname = "";	// set in chara_stats()
-	global.chara_wstrength = 0;	// set in chara_stats()
-	global.chara_astrength = 0;	// set in chara_stats()
-	global.chara_murder = 0;	// set in chara_getmurder()
-	global.chara_facing = DOWN;
-	
-	global.chara_move = 1;
-	global.chara_interact = 1;
-	global.chara_cutscene = 0;
-	global.chara_openmenu = 1;
-	global.chara_canpause = 1;
-	global.chara_cameramove = 1;
-	global.chara_hpmenu = 0;
-	
-	global.chara_menu = 0;
-	global.chara_pause = 0;
-	global.chara_canrun = 1;
-	global.chara_lastx = 0;
-	global.chara_lasty = 0;
-	global.chara_lastroom = 0;
-	global.chara_encounter = 0;	
-	global.battle_nextgroup = 0;
-	*/
 }
 function start_item()
 {
@@ -237,7 +160,7 @@ function start_flags()
 	global.flag[15] = 0; // completed CAPTCHA.1
 	global.flag[16] = 0; // finished MEE6's post-CAPTCHA.1 event
 	
-	global.flag[17] = 0; // left room_corridors_3_5
+	global.flag[17] = 0;
 	global.flag[18] = 0; // entered in a encounter battle
 	
 	global.flag[19] = 3; // amount of candy in the candy bowl (room_corridors_6)
@@ -315,14 +238,14 @@ function start_flags()
 	global.flag[71] = 0; // TALKED TO cellphone developer
 	global.flag[72] = false; // MEE6 SHOULD STAY NEUTRAL because PLAYER SPARED BROKEN CLOCK or because PLAYER HAS BEEN AN IDIOT WITH MEE6 DURING EVENT DIALOG (e.g. Broken Clock's battle event, reCAPTCHA: Stage 3's event, Gabee's chase event)
 	global.flag[73] = false; // failed CAPTCHA 3
+	global.flag[74] = false; // MEE6 talked to player about taking Candy Bowl
 	
-	for (var i = 74; i <= 99; i++)
+	for (var i = 75; i <= 99; i++)
 		global.flag[i] = undefined;
 }
 function start_music()
 {
 	global.music_length = 5;
-	
 	for (var i = 0; i < global.music_length; i++)
 	{
 		global.music[i] = -1;
@@ -335,6 +258,7 @@ function start_music()
 		global.music_volumetype[i] = VOLUME_MUSIC;
 		global.music_offset[i] = 0;
 	}
+	global.musicOther_id = -1;
 }
 function start_party()
 {
@@ -358,7 +282,6 @@ function start_worlds()
 	global.world_curpopulation[WORLD_CORRIDORS] = 16;
 	global.world_maxpopulation[WORLD_CORRIDORS] = 16;
 	global.world_sparedpopulation[WORLD_CORRIDORS] = 0;
-	
 	#macro WORLD_CAVERNS 1
 	global.world_curpopulation[WORLD_CAVERNS] = 8;
 	global.world_maxpopulation[WORLD_CAVERNS] = 8;
@@ -386,6 +309,7 @@ function start_settings()
 	global.lang = "enUS"; // enUS, ptBR
 	global.fullscreen = 0;
 	global.visualeff = 1;
+	global.vsync = false;
 	global.autorun = 0;
 	global.showfps = 0;
 	global.showsw = 0;
@@ -393,24 +317,31 @@ function start_settings()
 	global.drpenabled = 1;
 	global.fastmenu = 0;
 	global.langChosen = false;
-	
 	#macro VOLUME_MASTER 0
 	#macro VOLUME_MUSIC 1
 	#macro VOLUME_SOUND 2
 	global.volume[VOLUME_MASTER] = 0.5;
 	global.volume[VOLUME_MUSIC] = 1;
 	global.volume[VOLUME_SOUND] = 1;
-	
 	start_controls();
-	
+	if (file_exists($"{global.game_directory}settings.txt") == false && global.game_version == "v0.5.1")
+	{
+		var _otherdirectory = $"{working_directory}v0.5.0\\";
+		if (directory_exists(_otherdirectory) == true)
+		{
+			var _file_name = $"{_otherdirectory}settings.txt";
+			if (file_exists(_file_name) == true)
+				file_copy(_file_name, $"{global.game_directory}settings.txt");
+		}
+	}
 	if (file_exists($"{global.game_directory}settings.txt") == 0)
 		settings_write();
 	else
 		settings_read();
+	display_reset(0, global.vsync);
 }
 function start_achievements()
 {
-	
 	#macro ACHIEVEMENT_M6TOY		0
 	#macro ACHIEVEMENT_SBHELMET		1
 	#macro ACHIEVEMENT_MONSTNINJA	2
@@ -445,29 +376,29 @@ function start_achievements()
 			achievements_read();
 	}
 }
-
 function CHANGE_GAME()
 {
 	var _change = false;
 	if (_change == true)
 	{
-		global.chara_name = "CRAZYCAT";
 		global.indebug = true;
+		global.inrecording = false;
+		global.chara_name = "CrazyCat";
+		if (global.inrecording == true)
+			global.chara_name = "Carlinhos";
 		load_time = 1;
-		var _rm = room_corridors_11;
+		var _rm = room_corridors_3;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;
 			window_set_caption("Dumpgame");
 			global.game_startroom[0] = _rm;
-			
-			// pegar em qual nível que o jogador está
 			var _lvl = 0;
 			if (_rm == room_corridors_1) || (_rm == room_corridors_1_5) || (_rm == room_corridors_2)
 				_lvl = 1;
 			if (_rm == room_corridors_3) || (_rm == room_corridors_3_5)
 				_lvl = 2;
-			if (_rm == room_corridors_4)
+			if (_rm == room_corridors_4) || (_rm == room_corridors_5)
 				_lvl = 3;
 			if (_rm == room_corridors_6)
 				_lvl = 3.5;
@@ -485,8 +416,6 @@ function CHANGE_GAME()
 				_lvl = 9;
 			if (_rm == room_cave_2) || (_rm == room_cave_3)
 				_lvl = 10;
-			
-			// definir flags baseado de onde o jogo vai começar
 			if (_lvl >= 1)
 			{
 				global.flag[0] = true; // finished getting up event
@@ -508,7 +437,6 @@ function CHANGE_GAME()
 				global.flag[4] = 1; // finished MEE6's pre-dummy event
 				global.flag[6] = 1; // started Dummy's battle
 				global.flag[7] = 1; // finished MEE6's post-dummy event
-				global.flag[17] = 1; // left room_corridors_3_5
 				global.achievement[ACHIEVEMENT_M6TOY] = 1;
 			}
 			if (_lvl >= 3.5)

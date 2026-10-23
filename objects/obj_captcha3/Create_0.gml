@@ -84,6 +84,8 @@ timer =
 		alpha_siner : 0,
 	},
 }
+if (global.inrecording == true)
+	timer.secondsTotal = 35;
 // Buttons
 buttons_word = ((global.flag[55] == "") ? string_upper(choose(text_get("captcha3_buttonsWord_0"), text_get("captcha3_buttonsWord_1"), text_get("captcha3_buttonsWord_2"))) : global.flag[55]);
 global.flag[55] = buttons_word;

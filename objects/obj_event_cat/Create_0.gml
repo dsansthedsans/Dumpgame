@@ -5,6 +5,5 @@ cat_speed = 0;
 cat_index = 0;
 cat_singing = 0;
 cat_dancing = 0;
-window_set_caption("Catgame");
 screenpos(0, 0)
 alarm[0] = 60;

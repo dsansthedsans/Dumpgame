@@ -73,6 +73,8 @@ else
 	//	chara_change(-1, 1, -1, -1, -1, -1, -1);
 	//	global.chara_move = 1;
 	//}
+	if (text == "event_m6_postcaptcha2")
+		party_change(0, 0, -1);
 	if (msg_talker[(page - 1)] > -1)
 	{
 		msg_talker[(page - 1)].image_speed = 0;

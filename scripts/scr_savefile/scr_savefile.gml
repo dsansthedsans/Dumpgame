@@ -1,4 +1,3 @@
-
 function savefile_write()
 {
 	var _file_name = "savefile" + string(global.savefile_selected) + ".txt";
