@@ -2,7 +2,7 @@
 <h3 align="center"><strong>An open-source UNDERTALE fan game created in Brazil by dsansthedsans and migel8022</strong></h3>
 <p align="center">
   <img src="https://shields.io/badge/status-in_development-white?labelColor=40ff6d" alt="Status">
-  <img src="https://shields.io/badge/version-0.5.0-white?labelColor=40ff6d" alt="Version">
+  <img src="https://shields.io/badge/version-0.5.1-white?labelColor=40ff6d" alt="Version">
   <img src="https://shields.io/github/license/dsansthedsans/Dumpgame?branch=main&color=white&labelColor=40ff6d" alt="License">
   <img src="https://shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
   <a href="https://github.com/dsansthedsans/Dumpgame" target="_blank">
@@ -60,13 +60,27 @@
 <table>
   <tr>
     <th>Version</th>
-    <th>File</th>
     <th>Release Date</th>
+    <th>File</th>
+    <th>File Size</th>
   </tr>
   <tr>
-    <td><code>0.5.0</code> <i>(Latest)</i></td>
-    <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.5.0.zip"><b>Dumpgame-v0.5.0.zip</b></a></td>
+    <td><code>0.5.1</code> <i>(Latest)</i></td>
+    <td>October 23, 2026</td>
+    <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.1/Dumpgame-v0.5.1.zip"><b>Dumpgame-v0.5.1.zip</b></a></td>
+    <td>45.9 MB</td>
+  </tr>
+  <tr>
+    <td><code>0.5.0</code></td>
     <td>October 12, 2026</td>
+    <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.5.0.zip"><b>Dumpgame-v0.5.0.zip</b></a></td>
+    <td>45.9 MB</td>
+  </tr>
+  <tr>
+    <td><code>0.4.0</code></td>
+    <td>November 30, 2023</td>
+    <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.4.0.zip"><b>Dumpgame-v0.4.0.zip</b></a></td>
+    <td>227 MB</td>
   </tr>
 </table>
 <h3>Install Instructions</h1>
