@@ -71,7 +71,7 @@ function textdata()
 	text_set("unused_room_corridors_16_B", "Subway Entrance");
 	// room_menu
 	text_set("warning_0", "A game by\ndsansthedsans\nand migel8022", "Um jogo por\ndsansthedsans\ne migel8022");
-	text_set("warning_1", "This game is unaffiliated\nwith Toby Fox", "Este jogo não é afiliado\nà Toby Fox");
+	text_set("warning_1", "This game is\nnot affiliated\nwith Toby Fox", "Este jogo não\npossui afiliação\ncom Toby Fox"); 
 	z = 0;
 	i = 0;
 	text_set($"menu_{z}_{i++}", "Play", "Jogar");
@@ -512,7 +512,7 @@ function textdata()
 	text_set("battle_act_result_trashguy_1_0", "* (You reach into Trashguy's trash can and pull some&of the garbage out...)", "* (Você enfia a mão dentro da lata de lixo do Trashguy e&puxa lixo para fora...)");
 	text_set("battle_act_result_trashguy_1_1", "* (Trashguy's :YMERCY;D up :U100%;D!)", "* (:YPIEDADE;D do Trashguy&subiu :U100%;D!)");
 	text_set("battle_act_result_trashguy_2_0", "* (You kick Trashguy's trash can with your full strength...)", "* (Você chuta a lata de lixo&do Trashguy com toda a sua força restante...)");
-	text_set("battle_act_result_trashguy_2_1", "* (Trashguy's :YMERCY;D up :U100%;D...?)", "* (:YPIEDADE;D do Trashguy&subiu :R100%;D...?)");
+	text_set("battle_act_result_trashguy_2_1", "* (Trashguy's :YMERCY;D up :U100%;D...?)", "* (:YPIEDADE;D do Trashguy&subiu :U100%;D...?)");
 	i = 0;
 	text_set($"battle_bubble_trashguy_{i++}", "+F1...i cant handle this smell...", "+F1...eu n aguento esse cheiro...");
 	text_set($"battle_bubble_trashguy_{i++}", "+F1...i just want all this trash to go away...", "+F1...eu so quero que todo esse lixo va embora...");

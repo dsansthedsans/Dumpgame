@@ -11,6 +11,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"[!] audio","folderPath":"folders/[!] audio.yy","name":"[!] audio","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"compressed","folderPath":"folders/[!] audio/compressed.yy","name":"compressed","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"[!] fonts","folderPath":"folders/[!] fonts.yy","name":"[!] fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"[!] misc","folderPath":"folders/[!] misc.yy","name":"[!] misc","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"[!] objects","folderPath":"folders/[!] objects.yy","name":"[!] objects","resourceType":"GMFolder","resourceVersion":"2.0",},
