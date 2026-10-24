@@ -34,6 +34,7 @@
 
 > [!CAUTION]
 > Dumpgame's code is TERRIBLE. It's ridiculously dumb, overcomplicated and disorganized. I learned programming as I made the game and I almost always had no idea of what I was doing. No sane individual would subject themselves to the torture of forking Dumpgame.
+> <h6><i>"the source code for undertale is literally just a bunch of rubber bands and tape stuck to a paper saying 'DETERMINATION'."</i> — Toby Fox</h6>
 
 <br>
 <h1>Features</h1>
@@ -93,6 +94,15 @@
 <h3>Report a Bug</h3>
 <p>Noticed anything that clearly wasn't supposed to happen? Fill out <a href="https://forms.gle/ZReHikxZvPCDPcuq9" target="_blank"><b>this Google Form</b></a> to help us make the game a little less broken, please...! You'll win our hearts <3 <i>(or, if you prefer, a place in the Special Thanks.)</i></p>
 <br>
+<h6><i>(Psst! Hey, you! You have some of those stars left, right? Can you give us one? Just one! With enough stars, we can destroy the barrier!)</i></h6><!--"With enough stars, we can destroy the barrier!" inspired by "With enough souls, we can shatter the barrier forever." and "I'll destroy the barrier." from "UNDERTALE"-->
+<p><a href="https://www.star-history.com/#dsansthedsans/Dumpgame&type=date&legend=top-left" target="_blank">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=dsansthedsans/Dumpgame&type=date&theme=dark&legend=top-left"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=dsansthedsans/Dumpgame&type=date&legend=top-left"/>
+    <img height="350" src="https://api.star-history.com/svg?repos=dsansthedsans/Dumpgame&type=date&legend=top-left" alt="Star History Chart"/>
+  </picture>
+</a></p>
+<br>
 <h1>Never Asked Questions</h1>
 <h3>Is Dumpgame an UNDERTALE GREEN?</h3>
 <blockquote>No, Dumpgame is not about UNDERTALE's green soul Kindness. Dumpgame features an original world, story and characters.</blockquote>
@@ -120,6 +130,8 @@
 <blockquote>Many reasons, but it all boils down to not wanting to spend more thousands of hours on just a fan game. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
 <h3>Why did development take so long?</h3>
 <blockquote>Because I didn't know programming, and because I had never drawn pixel art or made a game before. Most of the development wasn't of the game, but of myself. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
+<h3>Why aren't the versions prior to <code>v0.4.0</code> available?</h3>
+<blockquote>Because... they don't exist...? I mean, they did at some point, I just don't have them anymore. They're basically lost media.</blockquote>
 <br>
 <h1>Credits</h1>
 <ul>
@@ -215,12 +227,14 @@
   <img src="README-ASSETS/GEN4-EVENT-BROCK-BATTLE.png" height="295" alt="Image of Dumpgame in early development showing Broken Clock's battle event">
 </p>
 <br>
-<p>Then, on December 14, 2024, one year after releasing <code>v0.4.0</code>, I gave up on Dumpgame. Not only had Dumpster Friends fallen apart, but the development of the game had become unbearable. A year's worth of new content was discarded.</p><!--inspired by "Will now be discarded" from "DELTARUNE: Chapter 1"-->
+<p>Then, on December 14, 2024, one year after releasing <code>v0.4.0</code>, I gave up on Dumpgame. Not only had Dumpster Friends fallen apart, but the development of the game had become unbearable. Even after thousands and thousands of hours, I wasn't even close to finishing Dumpgame and I had already been in severe burnout for months. It didn't make sense to keep going. A year's worth of new content was discarded.</p><!--"A year's worth of new content was discarded" inspired by "Will now be discarded" from "DELTARUNE: Chapter 1"-->
 <br>
 <p><i>Many years later...</i></p><!--references "Many years later" from "UNDERTALE"-->
 <br>
+<p>On June 14, 2026, I was hit by a lightning bolt. A lightning bolt of knowledge. A lightning bolt of self-awareness. I realized that I had committed a crime, a heinous crime. I had thrown a year's worth of new content right in the trash. How could I? How could I give such an unfulfilling ending to a project I had put so much effort into? It didn't make sense to not keep going. Somehow, Dumpgame returned.</p><!--"Somehow, Dumpgame returned" inspired from "Somehow, Palpatine returned" from "Star Wars: The Rise of Skywalker" (2019)-->
 <p>[...]</p>
 <br>
+<p>... Hm? How do I feel about my creation? Well...</p><!--"How do I feel about my creation?" inspired by "HOW DO YOU FEEL ABOUT YOUR CREATION?" from "DELTARUNE: Chapter 1"-->
 <p>Dumpgame is just another random UNDERTALE fan game. There's nothing special about it. I think the gameplay itself is okay, it's not monologue after monologue, but the story makes absolutely no sense. Wow, a Discord server magically became a real place on a parallel universe. How exciting. To this day I still don't have an excuse for why that happens.</p>
 <p>Something I think I've failed with Dumpgame is that there isn't a profound meaning to the story. It's just a guy who goes to Wonderland and fights some slimes. But, you know, I started making this game when I was 11 years old. I don't think I could've come up with an interesting story anyway.</p>
 <br>
