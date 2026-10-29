@@ -5,18 +5,10 @@
   <img src="https://shields.io/badge/version-0.5.1-white?labelColor=40ff6d" alt="Version">
   <img src="https://shields.io/github/license/dsansthedsans/Dumpgame?branch=main&color=white&labelColor=40ff6d" alt="License">
   <img src="https://shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
-  <a href="https://github.com/dsansthedsans/Dumpgame" target="_blank">
-    <img src="https://shields.io/badge/GitHub-212830?logo=github&logoColor=f5f5f5" alt="GitHub">
-  </a>
-  <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank">
-    <img src="https://shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io">
-  </a>
-  <a href="https://gamejolt.com/games/dumpgame/1097311" target="_blank">
-    <img src="https://shields.io/badge/Game Jolt-ccff00?logo=gamejolt&logoColor=black" alt="Itch.io">
-  </a>
-  <a href="https://www.youtube.com/playlist?list=PLRH-EiM3M_xQ" target="_blank">
-    <img src="https://shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube">
-  </a>
+  <a href="https://github.com/dsansthedsans/Dumpgame" target="_blank"><img src="https://shields.io/badge/GitHub-212830?logo=github&logoColor=f5f5f5" alt="GitHub"></a>
+  <a href="https://dsansthedsans.itch.io/Dumpgame" target="_blank"><img src="https://shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=f5f5f5" alt="Itch.io"></a>
+  <a href="https://gamejolt.com/games/dumpgame/1097311" target="_blank"><img src="https://shields.io/badge/Game Jolt-ccff00?logo=gamejolt&logoColor=black" alt="Itch.io"></a>
+  <a href="https://www.youtube.com/playlist?list=PLRH-EiM3M_xQ" target="_blank"><img src="https://shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
 <br>
 <p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way out of danger using UNDERTALE's unique battle system.</p><!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
@@ -231,7 +223,7 @@
 <br>
 <p><i>Many years later...</i></p><!--references "Many years later" from "UNDERTALE"-->
 <br>
-<p>On June 14, 2026, I was hit by a lightning bolt. A lightning bolt of knowledge. A lightning bolt of self-awareness. I realized that I had committed a crime, a heinous crime. I had thrown a year's worth of new content right in the trash. How could I? How could I give such an unfulfilling ending to a project I had put so much effort into? It didn't make sense to not keep going. Somehow, Dumpgame returned.</p><!--"Somehow, Dumpgame returned" inspired from "Somehow, Palpatine returned" from "Star Wars: The Rise of Skywalker" (2019)-->
+<p>On June 14, 2026, I was hit by a lightning bolt. A lightning bolt of knowledge. A lightning bolt of self-awareness. I realized that I had committed a heinous, heinous crime. I had thrown a year's worth of new content right in the trash. How could I? How could I give such an unfulfilling ending to a project I had put so much effort into? It didn't make sense to not keep going. Somehow, Dumpgame returned.</p><!--"Somehow, Dumpgame returned" inspired from "Somehow, Palpatine returned" from "Star Wars: The Rise of Skywalker" (2019)-->
 <p>[...]</p>
 <br>
 <p>... Hm? How do I feel about my creation? Well...</p><!--"How do I feel about my creation?" inspired by "HOW DO YOU FEEL ABOUT YOUR CREATION?" from "DELTARUNE: Chapter 1"-->
