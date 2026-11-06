@@ -101,7 +101,7 @@
 <h3>Is Dumpgame incomplete?</h3>
 <blockquote>Yes, Dumpgame is <b>VERY</b> incomplete. The full game would've been <b><i>at least</i></b> five times longer than the DEMO.</blockquote>
 <h3>Is Dumpgame in development?</h3>
-<blockquote>Yes and no. The full game has been canceled, but new content may be added to the DEMO. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
+<blockquote>Yes and no. The full game has been canceled, but new content may be added to the DEMO. More details on <a href="https://github.com/dsansthedsans/Dumpgame/wiki/Development-History">Development History</a>.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, <b>NOTHING</b> related to Dumpgame is AI-generated, not even this README. The <b>ONLY</b> exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
@@ -109,9 +109,9 @@
 <h3>Is Dumpgame playable on macOS, mobile or console?</h3>
 <blockquote>No, no, and no, Dumpgame only supports Windows and, if you're brave enough, Linux.</blockquote>
 <h3>Is Dumpgame affiliated with Dumpster Friends?</h3>
-<blockquote>No, Dumpgame is not affiliated with Dumpster Friends anymore. Any other dump-related project only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
+<blockquote>No, Dumpgame is not affiliated with Dumpster Friends anymore. Any other dump-related project only pay homage to Dumpgame, not the Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame/wiki/Development-History">Development History</a>.</blockquote>
 <h3>Why "Dumpgame"?</h3>
-<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
+<blockquote>Dumpgame is named after Dumpster Friends, a Discord server. More details on <a href="https://github.com/dsansthedsans/Dumpgame/wiki/Development-History">Development History</a>.</blockquote>
 <h3>Why open-source?</h3>
 <blockquote>A swedish shark plushie told me to. I don't know why, though.</blockquote>
 <h3>Why Brazil?</h3>
@@ -119,9 +119,9 @@
 <h3>Why GameMaker?</h3>
 <blockquote>I searched for "make a game" on Google and clicked the first link I could find, no questions asked. (Lie)</blockquote>
 <h3>Why cancelled?</h3>
-<blockquote>Many reasons, but it all boils down to not wanting to spend more thousands of hours on just a fan game. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
+<blockquote>Many reasons, but it all boils down to not wanting to spend more thousands of hours on just a fan game. More details on <a href="https://github.com/dsansthedsans/Dumpgame/wiki/Development-History">Development History</a>.</blockquote>
 <h3>Why did development take so long?</h3>
-<blockquote>Because I didn't know programming, and because I had never drawn pixel art or made a game before. Most of the development wasn't of the game, but of myself. More details on <a href="https://github.com/dsansthedsans/Dumpgame#development-history">Development History</a>.</blockquote>
+<blockquote>Because I didn't know programming, and because I had never drawn pixel art or made a game before. Most of the development wasn't of the game, but of myself. More details on <a href="https://github.com/dsansthedsans/Dumpgame/wiki/Development-History">Development History</a>.</blockquote>
 <h3>Why aren't the versions prior to <code>v0.4.0</code> available?</h3>
 <blockquote>Because... they don't exist...? I mean, they did at some point, I just don't have them anymore. They're basically lost media.</blockquote>
 <br>
@@ -145,6 +145,7 @@
   <li><b>Avranik</b><i> 〜 UNDERTALE: No More Deals</i></li>
   <li><b>HTTG Team</b><i> 〜 HorrorTale: Chapter 1</i></li>
   <li><b>Team UTY</b><i> 〜 UNDERTALE YELLOW</i></li>
+  <li><b>Playdead</b><i> 〜 INSIDE</i></li>
   <li><b>Carlos Ramirez</b><i> 〜 Trollface</i></li>
   <li><b>Anis Belkacem & Brendan Rius</b><i> 〜 MEE6</i></li>
   <li><b>maxdefolsch & HushBugger</b><i> 〜 UNDERTALE Text Dump</i></li>
