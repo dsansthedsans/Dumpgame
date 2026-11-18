@@ -140,14 +140,15 @@ level_pos_yfactor = 0;
 level_length = 0;
 level_heard = -1;
 
-level_length[0] = 0;
-level_length[1] = (enemy_length - 1);
-level_length[2] = (enemy_length - 1);
-
 level_curbarcolor[0] = #27CC84;
 level_curbarcolor[1] = global.c_yellow;
 level_maxbarcolor[0] = #DD2929;
 level_maxbarcolor[1] = global.c_yellowDark;
+
+itemdescWriter_destroy = false;
+itemdescArrow_offsetY = 0;
+itemdescArrow_offsetDelay = 0;
+itemdescArrow_offsetDelay_max = 10;
 
 screenpos(0, 0);
 create(-20, -20, obj_battle_fadein);

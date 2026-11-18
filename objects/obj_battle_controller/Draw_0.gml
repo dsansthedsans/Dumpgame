@@ -106,14 +106,38 @@ if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == fal
 	if (battle_group == 1)
 		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "ptBR"))), (_x1 + 75 + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 1, 1, 0, c_white, 1);
 }
-if (battle_lvl == 30)
+if (battle_lvl == 30 && ((exists(global.writer_old) == false) || (exists(global.writer_old) == true && itemdescWriter_destroy == true)))
 {
+    var _arrow_x = round(box_x + (box_w / 2) - box_borderw - sprite_get_width(spr_battle_itemdescArrow) - 4);
+    var _arrow_y = [0, 0];
+    var _arrow_yAdd = ((box_h / 2) - box_borderw - sprite_get_height(spr_battle_itemdescArrow) - 6);
     for (var a = 0; a < 2; a++)
     {
-        var _arrow_y = (box_y - (box_h / 2) + box_borderw + sprite_get_height(spr_battle_itemdescArrow) + 2);
-        if (a == 1)
-            _arrow_y = (box_y + (box_h / 2) - box_borderw - sprite_get_height(spr_battle_itemdescArrow) - 2)
-        draw_sprite_ext(spr_battle_itemdescArrow, 0, round(box_x + (box_w / 2) - box_borderw - sprite_get_width(spr_battle_itemdescArrow) - 2), round(_arrow_y), 2, (2 * ((a == 0) ? 1 : -1)), 0, c_white, 1);
+        _arrow_y[a] = round(box_y + (_arrow_yAdd * ((a == 0) ? -1 : 1)));
+        //if (a == 0 && level_pos == 0) || (a == 1 && level_pos == (level_length - 1))
+            //continue;
+        draw_sprite_ext(spr_battle_itemdescArrow, 0, _arrow_x, (_arrow_y[a] + (itemdescArrow_offsetY * ((a == 0) ? -1 : 1))), 2, (2 * ((a == 0) ? 1 : -1)), 0, c_white, 1);
+    }
+    for (var i = 0; i < global.item_length; i++)
+    {
+        var _item_x = (_arrow_x - 1);
+        var _item_yGap = 15;
+        var _item_y = round(_arrow_y[0] + _item_yGap + (i * ((_arrow_y[1] - _arrow_y[0] - (_item_yGap * 2)) / (global.item_length - 1))));
+        draw_sprite_ext(spr_battle_itemdescArrow, 1, _item_x, _item_y, 2, 2, 0, ((i < level_length) ? c_white : c_dkgray), 1);
+        if (i == level_pos && itemdescWriter_destroy == false)
+        {
+            heart.x = _item_x;
+            heart.y = _item_y;
+        }
+    }
+    if (itemdescArrow_offsetDelay > 0)
+        itemdescArrow_offsetDelay -= 1;
+    else
+    {
+        itemdescArrow_offsetY += 2;
+        if (itemdescArrow_offsetY >= 6)
+            itemdescArrow_offsetY = 0;
+        itemdescArrow_offsetDelay = itemdescArrow_offsetDelay_max;
     }
 }
 

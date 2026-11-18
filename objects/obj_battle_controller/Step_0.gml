@@ -187,9 +187,10 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 	}
 	if (battle_lvl == 30)
     {
+        level_length = item_lengthCurr();
+        itemdescWriter_destroy = false;
 		if (press_u == true) || (press_d == true)
         {
-            level_length = item_lengthCurr();
             var _oldpos = level_pos;
             level_pos += (press_d - press_u);
             if (level_pos < 0)
@@ -198,9 +199,8 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
      			level_pos = 0;
             if (_oldpos != level_pos)
             {
-                if (global.writer != -1 && exists(global.writer) == true)
-                    destroy(global.writer);
                 writer("battle_itemdesc");
+                itemdescWriter_destroy = true;
                 audio_play(snd_option_move, 0, VOLUME_SOUND);
             }
         }
@@ -280,7 +280,7 @@ if (battle_lvl == 3.1) // used item
 		battle_lvl = 10;
 	}
 }
-if (battle_lvl == 3.0 && press_enter == 1) // item (select)
+if ((battle_lvl == 3.0 || battle_lvl == 30) && press_enter == 1) // item (select)
 {
 	writer("battle_useitem", -1, -1);
 	button_select = 0;
