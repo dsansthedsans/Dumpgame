@@ -7,3 +7,7 @@ num = 0;
 delay = 0;
 siner = 0;
 image_alpha = 0;
+
+confetti_active = false;
+confetti_objects = [];
+confetti_time = 180;

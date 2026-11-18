@@ -340,7 +340,7 @@ function chara_murder(_returnOnly = true)
 				audio_play(snd_jingleOminous, false, VOLUME_SOUND);
 			}
 			else if (global.flag[40] == 0.5 && audio_playing(snd_jingleOminous) == false)
-				global.flag[40] = true;
+                global.flag[40] = true;
 		}
 	}
 	if (_murder == 2 && global.flag[39] == true)

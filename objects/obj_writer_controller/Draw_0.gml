@@ -31,7 +31,7 @@ if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg
 	// draw face
 	if (msg_face[page] > -1)
 	{
-		face_index += 0.1 * global.visualeff;
+		face_index += 0.1 * msg_faceTalk[page] * global.visualeff;
 		draw_sprite_ext(msg_face[page], face_index, (_bonusx + 27), (_bonusy + textbox_y + 14), 1, 1, 0, c_white, alpha);
 	}
 	
@@ -332,9 +332,15 @@ for (var c = 1; c < (text_length + 1); c++)
 		{
 			msg_face[page] = spr_dialogface_m6_sassy;
 			_candraw = false;
-		}if (string_char_at(msg[page], (c + 1)) == "2")
+		}
+		if (string_char_at(msg[page], (c + 1)) == "2")
 		{
 			msg_face[page] = spr_dialogface_m6_angry;
+			_candraw = false;
+		}
+		if (string_char_at(msg[page], (c + 1)) == "3")
+		{
+			msg_face[page] = spr_dialogface_m6_neutral;
 			_candraw = false;
 		}
 	}

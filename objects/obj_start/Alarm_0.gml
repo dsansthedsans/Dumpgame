@@ -1,0 +1,1 @@
+room_go(global.game_startroom[0], -1, -1);

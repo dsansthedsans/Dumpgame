@@ -28,7 +28,11 @@ if (con == 4)
 		chara_facing(RIGHT);
 		party_facing(0, RIGHT);
 		if (thiswriter.page >= 3)
+        {
 			chara_facing(DOWN);
+            if (global.flag[75] == 1)
+                global.flag[75] = 0.5;
+        }
 		if (thiswriter.page >= 2 && thiswriter.page != 4)
 			party_facing(0, UP);
 	}
@@ -61,13 +65,14 @@ if (con == 6)
 	if (chara.x >= 810)
 	{
 		chara_stop();
-		alarm[2] = round(60 * 1.5);
+		alarm[2] = round(60 * 2);
 		con = 8;
 	}
 }
 if (con == 9)
 {
 	chara_facing(DOWN);
+    audio_play(snd_step_0, false);
 	alarm[2] = 60;
 	con = 10;
 }
@@ -75,7 +80,8 @@ if (con == 11)
 {	
 	chara_change(-1, -1, -1, -1, -1, -1, false);
 	chara_facing(LEFT);
-	alarm[2] = 60;
+	audio_play(snd_step_1, false);
+    alarm[2] = 60;
 	con = 12;
 }
 if (con == 13)
@@ -87,7 +93,7 @@ if (con == 13)
 		con = 13.25;
 	}
 	else
-		game.cam_x -= 0.5;
+		game.cam_x -= 0.4;
 	screenpos(game.cam_x, game.cam_y);
 }
 if (con == 13.5)

@@ -52,7 +52,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		if (keyboard_check(vk_backspace) == 1)
 			global.battle_nextgroup = 12;
 		if (keyboard_check(vk_delete) == 1)
-			global.battle_nextgroup = 9;
+			global.battle_nextgroup = 2;
 		if (exists(obj_chara) == true && global.chara_encounter == true)
 		{
 			global.chara_steps = 9999999999999999999;
@@ -98,6 +98,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 				global.flag[38] = true;
 				global.flag[39] = true;
 			}
+            global.flag[75] = 1;
 		}
 		
 	}
@@ -122,7 +123,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		global.chara_kills += _amt;
 		global.chara_heals += _amt;
 	}
-	if (keyboard_check_pressed(vk_f10) == true)
+	if (keyboard_check_pressed(vk_f8) == true)
 	{
 		if (room == room_corridors_3)
 			global.flag[67] += 1;

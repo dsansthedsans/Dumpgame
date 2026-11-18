@@ -2,12 +2,10 @@
 window_set_caption("");
 START_GAME();
 CHANGE_GAME();
-window_center();
 create(-20, -20, obj_MUSIC_CONTROLLER);
 create(-20, -20, obj_PARTICLE_CONTROLLER);
 create(-20, -20, obj_DRP_CONTROLLER);
 active = 1;
-room_go(global.game_startroom[0], -1, -1);
 
 fullscreen = 0;
 fullscreen_delay = 0;

@@ -66,9 +66,11 @@ function battle_setupgroup()
 	{
 		if (global.flag[22] == false)
 			global.musicOther_id = audio_play(snd_creepyReulaspiravech, 0, VOLUME_SOUND,,,, 0.75);
-		//else
-		//	audio_play(snd_jingleOminous, false, VOLUME_SOUND, 0.5,,, (1 + random(-0.35))); v0.6.0
+		else
+			audio_play(snd_jingleOminous, false, VOLUME_SOUND, 0.5,,, (1 + random(-0.35)));
 		global.flag[22] = true;
+        if (global.flag[75] == 0)
+            global.flag[75] = 1;
 		battle_music = -1;
 		battle_bg = -1;
 		charainfo_active = false;

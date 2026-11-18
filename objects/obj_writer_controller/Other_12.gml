@@ -13,6 +13,9 @@ for (var i = page; i < 98; i++)
 		
 	if (msg_face[(i + 1)] == -2 && msg_face[i] != -2)
 		msg_face[(i + 1)] = msg_face[i];
+	
+	if (msg_faceTalk[(i + 1)] == -2 && msg_faceTalk[i] != -2)
+		msg_faceTalk[(i + 1)] = msg_faceTalk[i];
 		
 	if (msg_font[(i + 1)] == -2 && msg_font[i] != -2)
 		msg_font[(i + 1)] = msg_font[i];

@@ -365,7 +365,7 @@ if (global.chara_move == 1 && global.chara_interact == 1)
 				{
 					chara_change(-1, 0, 0, -1, 0, 0, -1);
 					chara_stop();
-					mycol = intlist[f][| _intpos];
+					mycol = intlist[f][| _intpos].id;
 					mycol.con = 1;
 					lastcol = mycol;
 					_interacted = true;

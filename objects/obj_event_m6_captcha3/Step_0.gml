@@ -45,6 +45,8 @@ if (con == 5)
 {
 	if (exists(thiswriter) == true && chara_murder() >= 2)
 	{
+        if (global.flag[75] == 1)
+            global.flag[75] = 0.5;
 		if (thiswriter.page >= 1)
 			chara_facing(RIGHT);
 		if (thiswriter.page >= 2)

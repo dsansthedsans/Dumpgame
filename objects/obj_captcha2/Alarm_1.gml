@@ -12,5 +12,5 @@ if (global.flag[34] == true && thiswriter == undefined)
 {
 	writer("event_m6_postcaptcha2", -1, -1);
 	party_change(0, -1, -1);
-	party_facing(0, LEFT);
+	party_facing(0, UP);
 }

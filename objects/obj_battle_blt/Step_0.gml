@@ -56,6 +56,15 @@ if (active == 1)
 		image_angle += (speed * angmult);
 	}
 	// Armsguy
+	if (type == 2.0)
+	{
+		if (image_alpha < 1)
+		{
+			image_alpha = lerp(image_alpha, 1, 0.05);
+			if ((1 - image_alpha) <= 0.05)
+				image_alpha = 1;
+		}
+	}
 	if (type == 2.1)
 	{
 		if (stage == 0)
@@ -97,14 +106,15 @@ if (active == 1)
 		{
 		    for (var i = 0; i < touching_length; ++i)
 		    {
-				if (ds_list_find_index(touched, touching[| i]) == -1 && touching[| i].object_index == obj_battle_blt && touching[| i].active == true && touching[| i].type == 2.0)
+				if (ds_list_find_index(touched, touching[| i].id) == -1 && touching[| i].object_index == obj_battle_blt && touching[| i].active == true && touching[| i].type == 2.0)
 				{
 					if (image_alpha == 1)
 						image_yscale -= 2;
 					image_alpha = 1;
 					can_damage = true;
-					ds_list_add(touched, touching[| i]);
-					destroy(touching[| i]);
+					liquidindex += 1;
+					ds_list_add(touched, touching[| i].id);
+					destroy(touching[| i].id);
 					audio_play(snd_stepWater, 0, VOLUME_SOUND);
 				}
 		    }

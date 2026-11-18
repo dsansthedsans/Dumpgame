@@ -73,6 +73,7 @@ namer_state = 0;
 credits_pos = 0;
 achievement_pos = 0;
 controls_changing = 0;
+controls_canchange = false;
 
 
 // outros

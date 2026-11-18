@@ -193,6 +193,15 @@ function item_info()
 		msg[i] = _text;
 	}
 }
+function item_lengthCurr()
+{
+    for (var i = 0; i < global.item_length; i++)
+    {
+        if (global.item[i] == -1)
+            break;
+    }
+    return clamp((i + 1), 0, global.item_length);
+}
 function itemDropped_add(_item, _x = obj_chara.x, _y = obj_chara.y, _sprite = spr_itemDropped, _image = _item, _image_speed = 0, _depth = -_y)
 {
 	for (var i = 0; i < global.itemDropped_lengthMax; i++)

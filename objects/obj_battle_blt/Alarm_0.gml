@@ -43,10 +43,12 @@ if (type == 1)
 // Armsguy
 if (type == 2.0)
 {
+	depth += 2;
 	gravity_direction = 270;
 	sprite_index = spr_battle_blt_drop;
 	image_xscale = 1;
 	image_yscale = 1;
+	image_alpha = 0.5;
 	gravity = 0.035;
 	if (x < 320)
 		hspeed = random_range(0, 1);
@@ -88,6 +90,7 @@ if (type == 2.2)
 			break;
 		}
 	}
+	liquidindex = 0;
 }
 // Trashguy
 if (type == 3.0)

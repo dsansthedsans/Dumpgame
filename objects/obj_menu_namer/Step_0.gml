@@ -4,7 +4,7 @@ press_r = key("right_press");
 press_u = key("up_press");
 press_d = key("down_press");
 press_enter = key("enter_press");
-if (keyboard_check_pressed(vk_f10) == 1)
+if (keyboard_check_pressed(vk_f8) == 1)
 {
 	keyboard_string = "";
 	typing = !typing;

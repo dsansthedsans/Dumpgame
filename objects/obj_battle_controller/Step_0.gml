@@ -40,7 +40,8 @@ if (enemy_type[0] == 0 && enemy_type[1] == 0 && enemy_type[2] == 0)
 }
 
 // normal
-if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl != 3.1) // fight, act, item and mercy (movement, return, writer setup)
+
+if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl != 3.1) || (battle_lvl == 30) // fight, act, item and mercy (movement, return, writer setup)
 {
 	if (global.writer_old != -1 && exists(global.writer_old) == 1)
 		destroy(global.writer_old);
@@ -184,7 +185,27 @@ if (battle_lvl >= 1.0 && battle_lvl <= 4.0 && battle_lvl != 1.5 && battle_lvl !=
 		if (_oldpos != level_pos)
 			audio_play(snd_option_move, 0, VOLUME_SOUND);
 	}
-	
+	if (battle_lvl == 30)
+    {
+		if (press_u == true) || (press_d == true)
+        {
+            level_length = item_lengthCurr();
+            var _oldpos = level_pos;
+            level_pos += (press_d - press_u);
+            if (level_pos < 0)
+     			level_pos = (level_length - 1);
+     		if (level_pos >= level_length)
+     			level_pos = 0;
+            if (_oldpos != level_pos)
+            {
+                if (global.writer != -1 && exists(global.writer) == true)
+                    destroy(global.writer);
+                writer("battle_itemdesc");
+                audio_play(snd_option_move, 0, VOLUME_SOUND);
+            }
+        }
+    }
+    
 	// return
 	if (press_shift == 1)
 	{	
@@ -345,6 +366,8 @@ if (battle_lvl == 0) // main
 			{
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
 				battle_lvl = (button_pos + 1);
+                if (button_pos == 2)
+                    battle_lvl = 30;
 				level_pos_xfactor = 0;
 				level_pos_yfactor = 0;
 				level_pos = 0;
@@ -365,6 +388,8 @@ if (battle_lvl == 0) // main
 					_text = "battle_itemlist";
 				if (battle_lvl == 4.0)
 					_text = "battle_mercy";
+                if (battle_lvl == 30)
+                    _text = "battle_itemdesc";
 				writer(_text, -1, -1);
 			}
 			else

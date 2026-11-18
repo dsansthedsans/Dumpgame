@@ -5,15 +5,15 @@ if (global.flag[2] == true && control.assist.active == true)
 	touching_length = instance_place_list(x, y, obj_battle_blt, touching, true);
 	if (touching_length > 0)
 	{
-	    for (var i = 0; i < touching_length; ++i)
+	    for (var i = 0; i < touching_length; i++)
 	    {
 			if (touching[| i].object_index == obj_battle_blt && touching[| i].active == true && touching[| i].can_damage == true)
 			{
 				_damage = true;
 				image_alpha = (1 * global.visualeff);
-				if (ds_list_find_index(touched, touching[| i]) == -1)
+				if (ds_list_find_index(touched, touching[| i].id) == -1)
 				{
-					ds_list_add(touched, touching[| i]);
+					ds_list_add(touched, touching[| i].id);
 					with (control)
 						assist.curr = clamp((assist.curr + assist.speed), 0, assist.max);
 					if (audio_playing(snd_battle_graze) == true)
@@ -23,7 +23,7 @@ if (global.flag[2] == true && control.assist.active == true)
 			}
 	    }
 	}
-	else	
+	else if (ds_list_empty(touched) == false)
 		ds_list_clear(touched);
 	ds_list_destroy(touching);
 }

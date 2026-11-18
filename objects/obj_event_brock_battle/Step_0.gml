@@ -292,6 +292,9 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 		{
 			event_user(0);
 			destroy(brock);
+            global.flag[72] = false;
+            if (chara_murder() >= 2)
+                global.flag[75] = 1;
 		}
 		con += 1;
 		alarm[2] = 60;
@@ -371,14 +374,24 @@ else if (global.flag[37] == 1 && global.flag[39] < 1)
 		party_facing(0, RIGHT);
 		con += 1;
 	}
-	else if (con == 8 && exists(thiswriter) == false)
+	else if (con == 8)
 	{
-		con += 1;
-		m6.image_speed = chara.wimgspeed;
-		m6.image_index = 1;
-		movetopoint((chara.x - 20), chara.y, (cam_time / 2), m6);
-		cam_offsetX = (game.cam_charax - game.cam_x);
-		cam_offsetY = (game.cam_charay - game.cam_y);
+        if (exists(thiswriter) == true)
+        {
+            if (thiswriter.page >= 1 && global.flag[75] == 1)
+                global.flag[75] = 0.5;
+            if (thiswriter.page >= 2)
+                global.flag[72] = true;
+        }
+        else
+        {
+        	con += 1;
+      		m6.image_speed = chara.wimgspeed;
+      		m6.image_index = 1;
+      		movetopoint((chara.x - 20), chara.y, (cam_time / 2), m6);
+      		cam_offsetX = (game.cam_charax - game.cam_x);
+      		cam_offsetY = (game.cam_charay - game.cam_y);
+        }
 	}
 	else if (con == 9)
 	{

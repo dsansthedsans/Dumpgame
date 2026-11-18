@@ -76,3 +76,33 @@ if (room == room_battle && exists(_control) == true && global.visualeff == true)
 			array_delete(particle2, i, 1);
 	}
 }
+
+if (confetti_active == true && global.visualeff == true)
+{
+	if (confetti_time > 0)
+	{
+		marker(irandom_range(-10, (room_width + 10)), irandom_range(-5, -35), spr_singlepixel, 1, 2, 2, 0, 0, 0, merge_color(choose(c_red, c_blue, c_lime, global.c_yellow, c_aqua, c_fuchsia, c_green, c_orange), c_white, 0.5), (-room_height + 1));
+		thismarker.vspeed = 1.5;
+		thismarker.siner = 0;
+		thismarker.sinermult = random_range(0.5, 2.5);
+		array_push(confetti_objects, thismarker);
+		confetti_time -= 1;
+	}
+	for (var c = 0; c < array_length(confetti_objects); c++)
+	{
+		var _obj = confetti_objects[c];
+		if (exists(_obj) == true)
+		{
+			_obj.siner += 0.1;
+			_obj.hspeed = (sin(_obj.siner) * _obj.sinermult);
+			if (_obj.y >= room_height)
+			{
+				destroy(_obj);
+				array_delete(confetti_objects, c, 1);
+				if (array_length(confetti_objects) <= 0)
+					confetti_active = false;
+				break;
+			}
+		}
+	}
+}

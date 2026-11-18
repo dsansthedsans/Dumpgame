@@ -454,12 +454,12 @@ function draw_battle_bar(__value_text, __value_current, __value_max, __bar_x, __
 	var _bar_height = round((string_height("SALENIS") * _bar_value_scale) + 4);
 	var _bar_x = round(__bar_x);
 	var _bar_y = round(__bar_y);
-	var _bar_value_x = (_bar_x + round(__bar_widthMax / 2));
-	var _bar_value_y = (_bar_y + round(_bar_height / 2) + 2);
-	/*External border*/draw_rectangle_color((_bar_x - _bar_borderExternal_size), (_bar_y - _bar_borderExternal_size), (_bar_x + __bar_widthMax + _bar_borderExternal_size), (_bar_y + _bar_height + _bar_borderExternal_size + 1), c_white, c_white, c_white, c_white, false);
-	/*Internal border + Max value bar*/draw_rectangle_outline(_bar_x, _bar_y, (_bar_x + __bar_widthMax), (_bar_y + _bar_height + 1), __bar_color_max, _bar_borderInternal_size, c_black);	
+	var _bar_value_x = round(_bar_x + round(__bar_widthMax / 2));
+	var _bar_value_y = round(_bar_y + round(_bar_height / 2) + 2);
+	/*External white border*/draw_rectangle_color(round(_bar_x - _bar_borderExternal_size), round(_bar_y - _bar_borderExternal_size), round(_bar_x + __bar_widthMax + _bar_borderExternal_size - (1 * (os_browser != browser_not_a_browser))), round(_bar_y + _bar_height + _bar_borderExternal_size + (1 * (os_browser == browser_not_a_browser))), c_white, c_white, c_white, c_white, false);
+	/*Internal black border + Max value bar*/draw_rectangle_outline(_bar_x, _bar_y, round(_bar_x + __bar_widthMax), round(_bar_y + _bar_height + 1), __bar_color_max, _bar_borderInternal_size, c_black);	
 	if (_bar_widthCurr > 0)
-		/*Current value bar*/draw_rectangle_color(_bar_x, _bar_y, (_bar_x + _bar_widthCurr), (_bar_y + _bar_height + 1), __bar_color_current, __bar_color_current, __bar_color_current, __bar_color_current, false);
+		/*Current value bar*/draw_rectangle_color(_bar_x, _bar_y, round(_bar_x + _bar_widthCurr - (1 * (os_browser != browser_not_a_browser))), round(_bar_y + _bar_height + (1 * (os_browser == browser_not_a_browser))), __bar_color_current, __bar_color_current, __bar_color_current, __bar_color_current, false);
 	if (__value_text != undefined)
 		/*Value text*/draw_text_outline_transformed(_bar_value_x, _bar_value_y, __value_text, c_white, 2, c_black, _bar_value_scale, _bar_value_scale, 0);
 }

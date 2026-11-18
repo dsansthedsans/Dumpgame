@@ -15,7 +15,7 @@ if (active == 1)
 {
 	var _hud_string = ["", ""];
 	var _hud_scale = 1;
-	if (global.inmenu == 1) || (global.inbattle == 1) || (global.ingameover == 1)
+	if (global.inmenu == 1) || (global.inbattle == 1) || (global.ingameover == 1) || (room == room_start)
 		_hud_scale = 2;
 	// stopwatch
 	var _stopwatch = global.chara_stopwatch;

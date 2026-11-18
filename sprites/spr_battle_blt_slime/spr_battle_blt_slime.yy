@@ -3,7 +3,7 @@
   "%Name":"spr_battle_blt_slime",
   "bboxMode":2,
   "bbox_bottom":9,
-  "bbox_left":3,
+  "bbox_left":2,
   "bbox_right":11,
   "bbox_top":2,
   "collisionKind":0,
@@ -90,5 +90,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":15,
+  "width":20,
 }

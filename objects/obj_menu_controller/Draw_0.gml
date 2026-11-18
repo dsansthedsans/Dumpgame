@@ -11,41 +11,40 @@ if (global.menu_lvl == 5)
 {
 	draw_sprite_stretched_ext(spr_menu_optbg, 0, -10, -10, (10 + room_width + 10), (10 + room_height + 10), c_white, 0.75);
 	
-	savefile_read(play_save);
 	if ((continueback_surface != -1 && surface_exists(continueback_surface) == 1) == false)
 		continueback_surface = surface_create(320, 240);
 	surface_set_target(continueback_surface);
 	draw_clear_alpha(c_black, 0);
-	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile_world}_0"), 0, 0);
-	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile_world}_1"), 0, 0);
-	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile_world}_2"), 0, 0);
-	var _assets = layer_get_all_elements($"Assets_{savefile_world}_0");
+	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile[play_save].world}_0"), 0, 0);
+	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile[play_save].world}_1"), 0, 0);
+	draw_tilemap(layer_tilemap_get_id($"Tiles_{savefile[play_save].world}_2"), 0, 0);
+	var _assets = layer_get_all_elements($"Assets_{savefile[play_save].world}_0");
 	for (var a = 0; a < array_length(_assets); a++)
 	{
 		var _asset_sprite = layer_sprite_get_sprite(_assets[a]);
 		var _asset_x = layer_sprite_get_x(_assets[a]);
 		var _asset_y = layer_sprite_get_y(_assets[a]);
 		var _asset_alpha = layer_sprite_get_alpha(_assets[a]);
-		if (_asset_sprite == spr_chara_d && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
-		|| (_asset_sprite == spr_charaFrisk_d && (global.CHARAFRISK_ENABLED == false || string_upper(savefile_name) != "FRISK"))
-		|| (_asset_sprite == spr_chara_genoshadow && savefile_murder < 2)
-		|| (_asset_sprite == spr_chara_genoshadow && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
-		|| (_asset_sprite == spr_mainchara_armor_candybowl && savefile_armor != ITEM_BOWL)
-		|| (_asset_sprite == spr_mainchara_armor_candybowl && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
+		if (_asset_sprite == spr_chara_d && (global.CHARAFRISK_ENABLED == true && string_upper(savefile[play_save].name) == "FRISK"))
+		|| (_asset_sprite == spr_charaFrisk_d && (global.CHARAFRISK_ENABLED == false || string_upper(savefile[play_save].name) != "FRISK"))
+		|| (_asset_sprite == spr_chara_genoshadow && savefile[play_save].murder < 2)
+		|| (_asset_sprite == spr_chara_genoshadow && (global.CHARAFRISK_ENABLED == true && string_upper(savefile[play_save].name) == "FRISK"))
+		|| (_asset_sprite == spr_mainchara_armor_candybowl && savefile[play_save].armor != ITEM_BOWL)
+		|| (_asset_sprite == spr_mainchara_armor_candybowl && (global.CHARAFRISK_ENABLED == true && string_upper(savefile[play_save].name) == "FRISK"))
 			continue;
-		else if (_asset_sprite == spr_chara_genoshadow && savefile_murder >= 2)
-			_asset_alpha = ((savefile_murder < 2) ? 0.5 : 1);
-		if (savefile_world == WORLD_CORRIDORS)
+		else if (_asset_sprite == spr_chara_genoshadow && savefile[play_save].murder >= 2)
+			_asset_alpha = ((savefile[play_save].murder < 2) ? 0.5 : 1);
+		if (savefile[play_save].world == WORLD_CORRIDORS)
 		{
-			if (_asset_sprite == spr_m6_d_default && savefile_flag[2] == false)
-			|| (_asset_sprite == spr_m6_d_default && savefile_flag[2] == true && savefile_armor == ITEM_BOWL && savefile_murder < 1 && (global.CHARAFRISK_ENABLED == false || string_upper(savefile_name) != "FRISK"))
-			|| (_asset_sprite == spr_m6_d_defaultSit && savefile_flag[2] == false)
-			|| (_asset_sprite == spr_m6_d_defaultSit && savefile_flag[2] == true && savefile_armor != ITEM_BOWL)
-			|| (_asset_sprite == spr_m6_d_defaultSit && savefile_flag[2] == true && savefile_armor == ITEM_BOWL && savefile_murder >= 1)
-			|| (_asset_sprite == spr_m6_d_defaultSit && (global.CHARAFRISK_ENABLED == true && string_upper(savefile_name) == "FRISK"))
-			|| (_asset_sprite == spr_npc_dummy && (savefile_flag[6] == false || savefile_flag[7] == false || savefile_flag[5] == true))
-			|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && (savefile_flag[48] == false || savefile_curpop[WORLD_CORRIDORS] <= 0))
-			|| (_asset_sprite == spr_npc_brock && (savefile_flag[38] == true || savefile_flag[39] == false))
+			if (_asset_sprite == spr_m6_d_default && savefile[play_save].flag[2] == false)
+			|| (_asset_sprite == spr_m6_d_default && savefile[play_save].flag[2] == true && savefile[play_save].armor == ITEM_BOWL && savefile[play_save].murder < 1 && (global.CHARAFRISK_ENABLED == false || string_upper(savefile[play_save].name) != "FRISK"))
+			|| (_asset_sprite == spr_m6_d_defaultSit && savefile[play_save].flag[2] == false)
+			|| (_asset_sprite == spr_m6_d_defaultSit && savefile[play_save].flag[2] == true && savefile[play_save].armor != ITEM_BOWL)
+			|| (_asset_sprite == spr_m6_d_defaultSit && savefile[play_save].flag[2] == true && savefile[play_save].armor == ITEM_BOWL && savefile[play_save].murder >= 1)
+			|| (_asset_sprite == spr_m6_d_defaultSit && (global.CHARAFRISK_ENABLED == true && string_upper(savefile[play_save].name) == "FRISK"))
+			|| (_asset_sprite == spr_npc_dummy && (savefile[play_save].flag[6] == false || savefile[play_save].flag[7] == false || savefile[play_save].flag[5] == true))
+			|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && (savefile[play_save].flag[48] == false || savefile[play_save].curpop[WORLD_CORRIDORS] <= 0))
+			|| (_asset_sprite == spr_npc_brock && (savefile[play_save].flag[38] == true || savefile[play_save].flag[39] == false))
 				continue;
 			if (_asset_sprite == spr_npc_brock)
 			{
@@ -330,11 +329,11 @@ if (global.menu_lvl == 1)
 		var _di = 19;
 		if (file_exists($"{global.game_directory}savefile" + string(i - 1) + ".txt") == 1) // save existe
 		{
-			savefile_read(i - 1);
-			var _name = savefile_name;
-			var _lvl = savefile_lvl;
-			var _world = chara_world_name(savefile_world);
-			var _room = room_name(savefile_room);
+			var f = (i - 1);
+			var _name = savefile[f].name;
+			var _lvl = savefile[f].lvl;
+			var _world = chara_world_name(savefile[f].world);
+			var _room = room_name(savefile[f].room);
 			var _string = $"@{_name} [LVL {_lvl}]\n{_world} - {_room}";
 			var _color = global.c_dump;
 			if (i == option_pos)

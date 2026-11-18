@@ -161,7 +161,7 @@ if (move == 1)
 	}
 	
 	// seleção
-	if (press_enter == 1) || (keyboard_check_pressed(vk_f10) == 1 && global.menu_lvl == 6 && option_pos == 1)
+	if (press_enter == 1) || (keyboard_check_pressed(vk_f8) == 1 && global.menu_lvl == 6 && option_pos == 1)
 	{	
 		// título
 		if (global.menu_lvl == 0)
@@ -172,9 +172,12 @@ if (move == 1)
 				global.menu_lvl = (option_pos + 1);
 				if (option_pos == 2 && global.ACHIEVEMENT_ENABLED == false)
 					global.menu_lvl = 4;
+				if (option_pos == 0)
+					event_user(7);
+				if (option_pos == (2 + global.ACHIEVEMENT_ENABLED))
+					event_user(5);
 				option_pos = 0;
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
-				event_user(5);
 			}
 			
 			// sair do jogo
@@ -216,6 +219,7 @@ if (move == 1)
 					{
 						option_pos = (play_save + 1);
 						global.menu_lvl = 1;
+						event_user(7);
 					}
 					
 					// veio do jogar (continuar jogo)
@@ -327,8 +331,8 @@ if (move == 1)
 			if (option_pos >= 2)
 			{
 				move = 0;
+				controls_canchange = false;
 				controls_changing = 1;
-				keyboard_lastkey = 0;
 				audio_play(snd_option_select, 0, VOLUME_SOUND);
 			}
 		}
@@ -435,11 +439,12 @@ if (move == 1)
 			audio_play(snd_option_move, 0, VOLUME_SOUND);
 	}*/
 	// resetar controles
-	if (controls_changing == 0 && ((global.menu_lvl == 6 && press_enter == 1 && option_pos == 1) || (keyboard_check_pressed(vk_f10) == 1)))
+	if (controls_changing == 0 && ((global.menu_lvl == 6 && press_enter == 1 && option_pos == 1) || (keyboard_check_pressed(vk_f8) == 1)))
 	{
 		start_controls();
 		event_user(1);
 		audio_play(snd_option_keyreset, 0, VOLUME_SOUND);
+		settings_write();
 	}
 }
 namer_state = 0;
@@ -470,29 +475,32 @@ else
 // controles
 if (global.menu_lvl == 6)
 {
-	if (controls_changing == 1 && keyboard_lastkey != 0)
+	if (controls_changing == 1)
 	{
-		var k = keyboard_lastkey;
-		var _pos = option_pos;
-		var _key = -1;
-		if (_pos > 1)
-			_key = (_pos - 2);
-		if (k == 8) || (k == 13) || (k >= 16 && k <= 18) || (k == 27) || (k == 32) || (k >= 37 && k <= 40) || (k >= 48 && k <= 57) || (k >= 65 && k <= 90) || (k >= 112 && k <= 123) || (k >= 160 && k <= 165)
+		if (controls_canchange == false)
+			controls_canchange = true;
+		else if (keyboard_check_pressed(vk_anykey) == true)
 		{
-			global.keybind[_key] = k;
-			move = 1;
-			controls_changing = 0;
-			audio_play(snd_option_select, 0, VOLUME_SOUND);
-			event_user(0);
-			settings_write();
+			var k = keyboard_key;
+			var _pos = option_pos;
+			var _key = -1;
+			if (_pos > 1)
+				_key = (_pos - 2);
+			if (k == 8) || (k == 13) || (k >= 16 && k <= 18) || (k == 27) || (k == 32) || (k >= 37 && k <= 40) || (k >= 48 && k <= 57) || (k >= 65 && k <= 90) || (k >= 112 && k <= 123) || (k >= 160 && k <= 165)
+			{
+				global.keybind[_key] = k;
+				move = 1;
+				controls_changing = 0;
+				audio_play(snd_option_select, 0, VOLUME_SOUND);
+				event_user(1);
+				settings_write();
+			}
 		}
-		else
-			keyboard_lastkey = 0;	
 	}
 	
 	/*
 	// resetar controles
-	if (changingkey == 0 && ((press_enter == 1 && option_pos == 1) || (keyboard_check_pressed(vk_f10) == 1)))
+	if (changingkey == 0 && ((press_enter == 1 && option_pos == 1) || (keyboard_check_pressed(vk_f8) == 1)))
 	{
 		CONTROLS_START();
 		event_user(1);

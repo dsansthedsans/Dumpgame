@@ -60,34 +60,11 @@ else if (con == 10 && exists(thiswriter) == true && thiswriter.page == 2)
 			case 2:
 			con += 1;
 			alarm[2] = round(60 * 2.5);
-			confetti_active = global.visualeff;
+			obj_PARTICLE_CONTROLLER.confetti_active = global.visualeff;
 			audio_play(snd_impactTitle, false, VOLUME_SOUND);
 			audio_play(snd_crowdCheer, false, VOLUME_SOUND);
 			audio_play(snd_crowdApplause, false, VOLUME_SOUND);
 			shakescreen(2, 2);
-			break;
-		}
-	}
-}
-if (confetti_active == true)
-{
-	if (confetti_time > 0)
-	{
-		marker(irandom_range(-10, (room_width + 10)), irandom_range(-5, -35), spr_singlepixel, 1, 2, 2, 0, 0, 0, merge_color(choose(c_red, c_blue, c_lime, global.c_yellow, c_aqua, c_fuchsia, c_green, c_orange), c_white, 0.5), (-room_height + 1));
-		thismarker.vspeed = 1.5;
-		thismarker.siner = 0;
-		thismarker.sinermult = random_range(0.5, 2.5);
-		array_push(confetti_objects, thismarker);
-		confetti_time -= 1;
-	}
-	for (var c = 0; c < array_length(confetti_objects); c++)
-	{
-		if (exists(confetti_objects[c]) == true && confetti_objects[c].y >= room_height)
-		{
-			destroy(confetti_objects[c]);
-			array_delete(confetti_objects, c, 1);
-			if (array_length(confetti_objects) <= 0)
-				confetti_active = false;
 			break;
 		}
 	}

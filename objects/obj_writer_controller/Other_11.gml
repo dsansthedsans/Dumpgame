@@ -12,6 +12,7 @@ if (question_active == 1)
 		msg_skip[i] = -2;
 		msg_next[i] = -2;
 		msg_face[i] = -2;
+		msg_faceTalk[i] = -2;
 		msg_font[i] = -2;
 		msg_sound[i] = -2;
 		msg_talker[i] = -2;
@@ -22,6 +23,7 @@ if (question_active == 1)
 	msg_skip[page] = 1;
 	msg_next[page] = 1;
 	msg_face[page] = -2;
+	msg_faceTalk[page] = true;
 	msg_font[page] = fnt_main;
 	msg_sound[page] = snd_writer_0;
 	msg_talker[page] = -2;

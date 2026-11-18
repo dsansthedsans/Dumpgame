@@ -146,5 +146,5 @@ baseindex = (2 * indexmult);
 image_index = baseindex;
 depth = -bbox_bottom;
 
-if (chara_murder() >= 2)
+if (global.world_curpopulation[chara_world()] <= 0)//(chara_murder() >= 2)
 	destroy(id);

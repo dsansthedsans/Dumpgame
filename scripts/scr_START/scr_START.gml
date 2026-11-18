@@ -14,7 +14,7 @@ function START_GAME()
 	randomize();
 	display_set_gui_maximise(2, 2);
 	load_time = 1;
-	global.game_version = "v0.5.1";
+	global.game_version = "v0.6.0";
 	global.game_directory = $"{working_directory}{global.game_version}\\";
 	if (directory_exists(global.game_directory) == false)
 		directory_create(global.game_directory);
@@ -137,41 +137,30 @@ function start_item()
 function start_flags()
 {
 	global.flag[0] = 0; // finished getting up event
-	
 	global.flag[1] = 0; // finished first MEE6's event
 	global.flag[2] = 0; // has MEE6 as side character
 	global.flag[3] = 0; // 1 == said yes to mee6; 2 == said no to mee6
-	
 	global.flag[4] = 0; // finished MEE6's pre-dummy event
 	global.flag[5] = 0; // KILLED DUMMY !!!!!!!!!!!!!
 	global.flag[6] = 0; // started Dummy's battle
 	global.flag[7] = 0; // finished MEE6's post-dummy event
-	
 	global.flag[8] = 0; // finished MEE6's pre-CAPTCHA.1 event
-	
 	global.flag[9] = ""; // CAPTCHA.1 - puzzle 1 - word
 	global.flag[10] = -1; // CAPTCHA.1 - puzzle 1 - way
 	global.flag[11] = 0; // completed CAPTCHA.1 - puzzle 1
-	
 	global.flag[12] = ""; // CAPTCHA.1 - puzzle 2 - word
 	global.flag[13] = -1; // CAPTCHA.1 - puzzle 2 - way
 	global.flag[14] = 0; // completed CAPTCHA.1 - puzzle 2
-	
 	global.flag[15] = 0; // completed CAPTCHA.1
 	global.flag[16] = 0; // finished MEE6's post-CAPTCHA.1 event
-	
-	global.flag[17] = 0;
-	global.flag[18] = 0; // entered in a encounter battle
-	
+	global.flag[17] = 0; //
+    global.flag[18] = 0; // entered in a encounter battle
 	global.flag[19] = 3; // amount of candy in the candy bowl (room_corridors_6)
 	global.flag[20] = 0; // took the candy bowl
 	global.flag[21] = 0; // interacted with candy bowl
-
 	global.flag[22] = 0; // got Corridors' "but nobody came"
 	global.flag[23] = 0; // ROOM CORRIDORS 17 ARMSGUY FISHING IDIOT
-	
 	global.flag[24] = 0; // talked with Armsguy in room_corridors_8
-	
 	global.flag[25] = 60; // CAPTCHA STAGE 2: first moveable x position
 	global.flag[26] = 720; // CAPTCHA STAGE 2: first moveable y position
 	global.flag[27] = 140; // CAPTCHA STAGE 2: second moveable x position
@@ -183,29 +172,20 @@ function start_flags()
 	global.flag[33] = 0; // completed third puzzle in CAPTCHA.2
 	global.flag[34] = 0; // completed CAPTCHA.2
 	global.flag[35] = 0; // finished MEE6's pre-CAPTCHA.2 event
-	
 	global.flag[36] = 0; // took chocolate from CAPTCHA's STAGE 2 reward
-	
 	global.flag[37] = 0; // started Broken Clock's event
 	global.flag[38] = 0; // killed Broken Clock
 	global.flag[39] = 0; // finished Broken Clock's event
-	
 	global.flag[40] = 0; // got Corridors' "but nobody came" (PLAYED OMINOUS JINGLE SOUND)
-	
 	global.flag[41] = 0; // left room_corridors_12 after Broken Clock's battle
-	
 	global.flag[42] = 0; // finished Broken Clock's event (PLAYED OMINOUS/LUMINOUS JINGLE SOUND)
-	
 	global.flag[43] = 0; // ARMSGUY lifting unused_room_corridors_17
 	global.flag[44] = 0; // FLITCHER unused_room_corridors_17 WEIRD VERY WEIRD
-	
 	global.flag[45] = 0; // talked to armsguy before CAPTCHA 2
 	global.flag[46] = 0; // left room_corridors_9 after talking to trashguy
 	global.flag[47] = 0; // got reward from armsguy
 	global.flag[48] = 0; // talked to trashguy
-	
 	global.flag[49] = 0; // talked to armsguy post-bc
-	
 	global.flag[50] = 0; // finished CAPTCHA 3 / CAPTCHA 3 PUZZLE 3
 	global.flag[51] = 0; // FINISHED PUZZLE 1 CAPTCHA 3
 	global.flag[52] = 0; // finished pre-CAPTCHA.3 event
@@ -213,34 +193,26 @@ function start_flags()
 	global.flag[54] = 0; // FINISHED PUZZLE 2 CAPTCHA 3
 	global.flag[55] = ""; // CAPTCHA.3 - puzzle 1 word
 	global.flag[56] = -1; // CAPTCHA.3 - puzzle 1 way
-	
 	global.flag[57] = 0; // talked to the first exit armsguy
 	global.flag[58] = 0; // talked to the fishing trashguy
-	
 	global.flag[59] = 0; // gabee's chase: saw first part of dialog
 	global.flag[60] = 0; // started gabee's chase
 	global.flag[61] = 0; // finished gabee's chase
-
 	global.flag[62] = 0; // CHAPTER 2 CUTSCENE AAAAAAAAAA
 	global.flag[63] = 0; // left room_cave_2
-	
 	global.flag[64] = 0; // tutorial - interagir
 	global.flag[65] = 0; // tutorial - correr
 	global.flag[66] = 0; // RHONHEY BATTLE MEE6 EVENT #0
-	
 	global.flag[67] = 0; // rules book smiley face amount
-	
 	global.flag[68] = 0; // TALKED ARMSGUY CAVE 3
-	
 	global.flag[69] = 0; // RHONHEY BATTLE MEE6 EVENT #1
-	
 	global.flag[70] = false; // talked to ROOM BORDER
 	global.flag[71] = 0; // TALKED TO cellphone developer
 	global.flag[72] = false; // MEE6 SHOULD STAY NEUTRAL because PLAYER SPARED BROKEN CLOCK or because PLAYER HAS BEEN AN IDIOT WITH MEE6 DURING EVENT DIALOG (e.g. Broken Clock's battle event, reCAPTCHA: Stage 3's event, Gabee's chase event)
 	global.flag[73] = false; // failed CAPTCHA 3
 	global.flag[74] = false; // MEE6 talked to player about taking Candy Bowl
-	
-	for (var i = 75; i <= 99; i++)
+    global.flag[75] = 0; // Carlinhos (genocide) is SMILING FRIENDS
+	for (var i = 76; i <= 99; i++)
 		global.flag[i] = undefined;
 }
 function start_music()
@@ -338,7 +310,9 @@ function start_settings()
 		settings_write();
 	else
 		settings_read();
-	display_reset(0, global.vsync);
+    window_center();
+    window_enable_borderless_fullscreen(true);
+    display_reset(0, global.vsync);
 }
 function start_achievements()
 {
@@ -378,7 +352,7 @@ function start_achievements()
 }
 function CHANGE_GAME()
 {
-	var _change = false;
+	var _change = true;
 	if (_change == true)
 	{
 		global.indebug = true;
@@ -387,7 +361,7 @@ function CHANGE_GAME()
 		if (global.inrecording == true)
 			global.chara_name = "Carlinhos";
 		load_time = 1;
-		var _rm = room_corridors_3;
+		var _rm = room_corridors_11;
 		if (_rm != -1)
 		{
 			global.savefile_selected = 0;
@@ -431,6 +405,13 @@ function CHANGE_GAME()
 			{
 				global.flag[1] = 1; // finished first MEE6's event
 				global.flag[2] = 1; // has MEE6 as side character
+				global.flag[3] = 1;
+				var _idiot = true;
+				if (_idiot == true)
+				{
+					global.flag[3] = 2;
+					global.flag[72] = true;
+				}
 			}
 			if (_lvl >= 3)
 			{
@@ -438,6 +419,12 @@ function CHANGE_GAME()
 				global.flag[6] = 1; // started Dummy's battle
 				global.flag[7] = 1; // finished MEE6's post-dummy event
 				global.achievement[ACHIEVEMENT_M6TOY] = 1;
+				var _tookcandy = false;
+				if (_tookcandy == true)
+				{
+					global.flag[19] = 0;
+					global.flag[20] = true;
+				}
 			}
 			if (_lvl >= 3.5)
 			{

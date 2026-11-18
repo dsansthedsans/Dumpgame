@@ -72,9 +72,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				music_set(0, mus_worldCorridors_geno,,,, (1 + (0.025 * (chara_murder() == 3))))
 			if (global.world_curpopulation[chara_world()] <= 0 && global.flag[40] != true)
 			|| (global.flag[42] == 0.5)
-			//|| (audio_playing(snd_jingleLuminous) == true) || (audio_playing(snd_jingleOminous) == true)
 			|| (global.musicOther_id != -1 && audio_playing(global.musicOther_id) == true && audio_sound_get_track_position(global.musicOther_id) < 10)
-			//|| (audio_playing(snd_creepyReulaspiravech) == true && audio_sound_get_track_position(snd_creepyReulaspiravech) < (10 / 0.75))
 				music_paused[0] = true;
 		}
 		// Broken Clock
@@ -94,7 +92,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 			}
 		}
 		// CAPTCHA 3
-		if (room == room_corridors_14 && chara_murder() < 1)
+		if (room == room_corridors_14 && chara_murder() < 2)
 		{
 			if (global.flag[50] == 0.25) || (global.flag[50] == 0.75)
 				music_set(0, -1);	
@@ -104,7 +102,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 				if (music_old[0] == mus_hurryIntro_0 && audio_playing(mus_hurryIntro_0) == false) || (music_old[0] == mus_hurryLoop_0) || (music_old[0] == mus_hurryLoop_1)
 				{
 					music_set(0, mus_hurryLoop_0, , , , , , 0);
-					if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds < obj_captcha3.timer.fog.secondsMin && chara_murder() < 1)
+					if (exists(obj_captcha3) == true && obj_captcha3.timer.seconds < obj_captcha3.timer.fog.secondsMin)
 					{
 						var _sec = obj_captcha3.timer.seconds;
 						var _secMin = obj_captcha3.timer.fog.secondsMin;
@@ -130,7 +128,7 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		// Flitcher's first words
 		if (room == room_corridors_17)
 		{
-			if (chara_murder() < 2)
+			if (global.world_curpopulation[chara_world()] > 0) //(chara_murder() < 2)
 			{
 				music_set(1, snd_ambienceBirds);
 				global.music_volumetype[1] = VOLUME_SOUND;
@@ -146,15 +144,22 @@ if (room != room_battle && exists(obj_battle_quicker) == false && room != room_o
 		// Gabee's chase
 		if (room == room_corridors_18 && exists(obj_event_gabee_chase) == true)
 		{
-			if (chara_murder() < 2) || (chara_murder() >= 2 && obj_event_gabee_chase.con >= 8)
+			music_fadeouttime_old[0] = 5;
+            music_fadeouttime_old[1] = 5;
+            if (chara_murder() < 2) || (chara_murder() >= 2 && obj_event_gabee_chase.con >= 6)
+            {
 				music_set(0, -1);
-			if (obj_event_gabee_chase.con < 8)
+                if (chara_murder() >= 2 && obj_event_gabee_chase.con >= 6)
+                {
+                    music_fadeouttime_old[0] = 0;
+                    music_fadeouttime_old[1] = 0;
+                }
+			}
+            if (obj_event_gabee_chase.con < 6)
 			{
 				music_set(1, snd_ambienceWind, , 2, true, 0.75, , 2);
 				global.music_volumetype[1] = VOLUME_SOUND;
 			}
-			music_fadeouttime_old[0] = 5;
-			music_fadeouttime_old[1] = 5;
 			if (global.flag[60] == 1 && global.flag[61] == 0)
 			{
 				music_set(0, mus_hurryIntro_1, , , , , false);

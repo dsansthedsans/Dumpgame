@@ -185,8 +185,13 @@ function TEXT()
 	// room_corridors_3
 	if (text == "room_stairssign")
 	{
-		for (var m = 0; m < 3; m++)
-			msg[m] = text_get($"room_stairssign_{m}");
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = text_get($"room_stairssign_{m}{(chara_murder() < 2) ? "" : "_geno"}");
+			if (_msg == undefined) || (_msg == "Salenis")
+				break;
+			msg[m] = _msg;
+		}
 	}
 	if (text == "room_rulesbook")
 	{
@@ -253,13 +258,19 @@ function TEXT()
 			case 1:
 			msg_face[1] = spr_dialogface_m6_sassy;
 			msg_face[2] = spr_dialogface_m6_default;
+			if (global.flag[72] != false)
+				global.flag[72] = false;
 			break;
 			case 2:
 			msg_face[0] = spr_dialogface_m6_sassy;
 			msg_face[1] = spr_dialogface_m6_default;
+			if (global.flag[72] != false)
+				global.flag[72] = false;
 			break;
 			case 3:
 			msg_face[0] = spr_dialogface_m6_angry;
+			if (global.flag[72] == false)
+				global.flag[72] = 0.5;
 			break;
 		}
 	}
@@ -355,9 +366,18 @@ function TEXT()
 	{
 		for (var i = 0; i < 4; i++)
 			msg[i] = text_get("event_m6_captcha1_0_" + string(i));
-		msg_face[0] = spr_dialogface_m6_neutral;
-		msg_face[1] = spr_dialogface_m6_neutralTense;
-		msg_face[2] = spr_dialogface_m6_default;
+		if (global.flag[72] == false)
+		{
+			msg[3] = string_replace(msg[3], "{punctuation}", "!");
+			msg_face[0] = spr_dialogface_m6_neutral;
+            msg_face[1] = spr_dialogface_m6_neutralTense;
+			msg_face[2] = spr_dialogface_m6_default;
+		}
+		else
+		{
+			msg[3] = string_replace(msg[3], "{punctuation}", ".");
+			msg_face[0] = spr_dialogface_m6_serious;
+		}
 		msg_sound[0] = snd_writerMee6;
 		msg_format[0] = "textbox_bottom";
 	}
@@ -368,12 +388,18 @@ function TEXT()
 	}
 	if (text == "event_m6_captcha1_1")
 	{
-		for (var i = 0; i < 4; i++)
-			msg[i] = text_get("event_m6_captcha1_1_" + string(i));
+		for (var i = 0; i < (2 + (2 * (global.flag[72] == false))); i++)
+			msg[i] = text_get("event_m6_captcha1_1_" + string(i) + $"_{global.flag[72] != false}");
 		msg_face[0] = spr_dialogface_m6_default;
 		msg_face[1] = spr_dialogface_m6_pleased;
 		msg_face[2] = spr_dialogface_m6_neutral;
 		msg_face[3] = spr_dialogface_m6_default;
+		if (global.flag[72] != false)
+		{
+			msg_face[0] = spr_dialogface_m6_neutral;
+			msg_face[1] = spr_dialogface_m6_neutralTense;
+			msg_faceTalk[1] = false;
+		}
 		msg_sound[0] = snd_writerMee6;
 		msg_talker[0] = global.party[0];
 		msg_format[0] = "textbox_bottom";
@@ -526,14 +552,21 @@ function TEXT()
 		{
 			if (global.flag[72] == false)
 				global.flag[72] = 0.5;
-			msg_face[4] = spr_dialogface_m6_angry;
+			if (global.flag[75] == 1)
+                global.flag[75] = 0.5;
+            msg_face[4] = spr_dialogface_m6_angry;
 		}
 	}
 	// room_corridors_7
 	if (text == "room_relaxsign")
 	{
-		for (var i = 0; i < 3; i++)
-			msg[i] = text_get("room_relaxsign_" + string(i));
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = text_get($"room_relaxsign_{m}{(chara_murder() < 2) ? "" : "_geno"}");
+			if (_msg == undefined) || (_msg == "Salenis")
+				break;
+			msg[m] = _msg;
+		}
 	}
 	if (text == "room_bench_geno")
 		msg[0] = text_get("room_bench_geno_0");
@@ -696,7 +729,7 @@ function TEXT()
 		for (var i = 0; i < 99; i++)
 		{
 			var _msg_postfix = "";
-			if (chara_murder() >= 2 && global.flag[72] == true)
+			if (global.flag[72] == true)
 				_msg_postfix = "_geno";
 			var _msg_id = $"event_m6_postcaptcha2_{i}{_msg_postfix}";
 			var _msg = text_get(_msg_id);
@@ -705,7 +738,7 @@ function TEXT()
 			msg[i] = _msg;
 		}
 		msg_face[0] = spr_dialogface_m6_default;
-		if (chara_murder() >= 2 && global.flag[72] == true)
+		if (global.flag[72] == true)
 			msg_face[0] = spr_dialogface_m6_serious;
 		msg_sound[0] = snd_writerMee6;
 		msg_format[0] = "textbox_bottom";
@@ -751,8 +784,13 @@ function TEXT()
 	// room_corridors_11
 	if (text == "room_preclocksign")
 	{
-		for (var i = 0; i < 5; i++)
-			msg[i] = text_get("room_preclocksign_" + string(i));
+		for (var m = 0; m < 99; m++)
+		{
+			var _msg = text_get($"room_preclocksign_{m}{(chara_murder() < 2) ? "" : "_geno"}");
+			if (_msg == undefined) || (_msg == "Salenis")
+				break;
+			msg[m] = _msg;
+		}
 	}
 	if (text == "room_trollwall")
 	{
@@ -823,7 +861,8 @@ function TEXT()
 				msg_face[3] = spr_dialogface_m6_angry;
 				msg_sound[3] = snd_writerMee6_angry;
 				msg_talker[3] = global.party[0];
-				global.flag[72] = 0.5;
+				if (global.flag[72] == false)
+					global.flag[72] = 0.5;
 			}
 			else 
 			{
@@ -833,7 +872,6 @@ function TEXT()
 					msg[i] = text_get($"event_brock_battle_4_{i}_1_geno");
 					msg[i+1] = text_get($"event_brock_battle_4_{i+1}_1_geno");
 					msg_face[i] = spr_dialogface_m6_angry;
-					global.flag[72] = 0.5;
 				}
 			}
 			break;
@@ -1158,7 +1196,7 @@ function TEXT()
 	{
 		for (var m = 0; m < 99; m++)
 		{
-			var _msg = text_get($"room_corridors_18_sign.{m}");
+			var _msg = text_get($"room_corridors_18_sign.{m}{(chara_murder() < 2) ? "" : "_geno"}");
 			if (_msg == undefined) || (_msg == "Salenis")
 				break;
 			msg[m] = _msg;
@@ -1715,6 +1753,12 @@ function TEXT()
 			msg_autoskip[0] = 1;
 		}
 		
+        if (text == "battle_itemdesc")
+        {
+      		msg[0] = text_get($"item_info_{item_id(global.item[controller.level_pos])}_0");
+            msg_autoskip[0] = true;
+        }
+        
 		if (text == "battle_useitem")
 		{
 			item_use();
@@ -1929,6 +1973,7 @@ function TEXT()
 							//}
 							//break;
 						}
+						debug(string($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}") + "  " + string(text_get($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}")));
 						var _msg = text_get($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}");
 						if (_msg == undefined) || (_msg == "Salenis")
 							break;
@@ -2051,7 +2096,7 @@ function TEXT()
 									_msg_prefix = "";
 								msg[_page+m] = $"{_msg_prefix}{_msg}";
 								msg_font[_page+m] = fnt_main_big;
-								msg_sound[_page+m] = snd_writer_0;
+								msg_sound[_page+m] = snd_writer_1;
 								msg_format[_page+m] = "battlebox";
 							}
 						}

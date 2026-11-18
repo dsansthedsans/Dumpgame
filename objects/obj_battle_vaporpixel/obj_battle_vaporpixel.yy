@@ -1,13 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_battle_vaporpixel",
+  "%Name":"obj_battle_vaporPixel",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_battle_vaporpixel",
+  "name":"obj_battle_vaporPixel",
   "overriddenProperties":[],
   "parent":{
     "name":"battle",
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_battle_vaporpixel",
-    "path":"sprites/spr_battle_vaporpixel/spr_battle_vaporpixel.yy",
+    "name":"spr_singlepixel",
+    "path":"sprites/spr_singlepixel/spr_singlepixel.yy",
   },
   "spriteMaskId":null,
   "visible":true,

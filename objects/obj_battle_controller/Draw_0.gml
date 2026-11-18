@@ -106,5 +106,15 @@ if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == fal
 	if (battle_group == 1)
 		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "ptBR"))), (_x1 + 75 + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 1, 1, 0, c_white, 1);
 }
+if (battle_lvl == 30)
+{
+    for (var a = 0; a < 2; a++)
+    {
+        var _arrow_y = (box_y - (box_h / 2) + box_borderw + sprite_get_height(spr_battle_itemdescArrow) + 2);
+        if (a == 1)
+            _arrow_y = (box_y + (box_h / 2) - box_borderw - sprite_get_height(spr_battle_itemdescArrow) - 2)
+        draw_sprite_ext(spr_battle_itemdescArrow, 0, round(box_x + (box_w / 2) - box_borderw - sprite_get_width(spr_battle_itemdescArrow) - 2), round(_arrow_y), 2, (2 * ((a == 0) ? 1 : -1)), 0, c_white, 1);
+    }
+}
 
 draw_set_alpha(1);
