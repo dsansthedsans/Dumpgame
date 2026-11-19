@@ -76,9 +76,9 @@ function key_name(_key)
 	return "Undefined";
 }
 
-function create(_x, _y, _instance)
+function create(_x, _y, _instance, _struct = undefined)
 {
-	thisobj = instance_create_layer(argument0, argument1, "Instances", argument2);
+	thisobj = instance_create_layer(_x, _y, "Instances", _instance, _struct);
 	return thisobj;
 }
 function exists(_instance)

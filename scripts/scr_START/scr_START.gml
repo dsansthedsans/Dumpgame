@@ -2,6 +2,7 @@ function START_GAME()
 {	
 	global.c_dump = #32FF62;
 	global.c_dumpDark = #12664E;
+    global.c_dumpalt = #27CC84;
 	global.c_red = merge_color(c_red, c_white, 0.125); // "ATTACK"; negative status
 	global.c_blue = merge_color(c_blue, c_white, 0.25); // "DEFENSE"
 	global.c_yellow = #FFF34B; // "HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]"; "Cheap Candy"
@@ -29,7 +30,7 @@ function START_GAME()
 	start_settings();
 	start_achievements();
 	global.fnt_mars = font_add_sprite_ext(spr_fnt_mars, "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.!:$/%#", false, 0);
-	global.fnt_dmg = font_add_sprite_ext(spr_fnt_dmg, "BCEIKLMOQRSU 0123456789", 1, 0);
+	global.fnt_dmg = font_add_sprite_ext(spr_fnt_dmg, "BCEIKLMOQRSU 0123456789%+-", 1, 0);
 	global.fnt_dotum = font_add_sprite_ext(spr_fnt_dotum, "aáâãbcçdeéêfghiíjklmnoóôpqrstuúvwxyzAÁÂÃBCÇDEÉÊFGHIÍJKLMNOÓÔPQRSTUÚVWXYZ0123456789!?.,'\":()[]&$#*- @", 0, 0);
 	global.fnt_comic = font_add_sprite_ext(spr_fnt_comic, "wZ]`aM.z<*L-STs:\";ç5!9yVhpD0K&Wxm[X7cfl>(éFH49ãIájB8´}6v1oR|NCk^gO{wG2n#E%q=íu?t@~UAYQ/_de3,Jb'\\)r+Pi$ê óô", 0, 1);
 	global.indebug = 0;
@@ -356,7 +357,7 @@ function CHANGE_GAME()
 	if (_change == true)
 	{
 		global.indebug = true;
-		global.inrecording = false;
+		global.inrecording = true;
 		global.chara_name = "CrazyCat";
 		if (global.inrecording == true)
 			global.chara_name = "Carlinhos";

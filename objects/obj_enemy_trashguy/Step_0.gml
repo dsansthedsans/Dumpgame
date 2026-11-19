@@ -98,13 +98,15 @@ if (active == 1)
 		
 			if (controller.level_heard == 1)
 			{
-				controller.enemy_spare[myself] = 100;
+				create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
+                controller.enemy_spare[myself] = 100;
 				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 				kicked = 0;
 				emptied = 1;
 			}
 			else if (controller.level_heard == 2)
 			{
+                create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
 				controller.enemy_spare[myself] = 100;
 				audio_play(snd_jingleFail, false, VOLUME_SOUND);
 				kicked = 1;

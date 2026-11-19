@@ -52,7 +52,7 @@ if (global.indebug == 1 && keyboard_check(vk_alt) == true)
 		if (keyboard_check(vk_backspace) == 1)
 			global.battle_nextgroup = 12;
 		if (keyboard_check(vk_delete) == 1)
-			global.battle_nextgroup = 2;
+			global.battle_nextgroup = 9;
 		if (exists(obj_chara) == true && global.chara_encounter == true)
 		{
 			global.chara_steps = 9999999999999999999;

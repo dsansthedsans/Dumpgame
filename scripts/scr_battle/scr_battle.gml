@@ -402,7 +402,7 @@ function battle_getattack()
 		{
 			if (i == 1 && enemy_type[(i - 1)] == 3 && enemy_attack[(i - 1)] == 1)
 				enemy_attack[i] = 0;
-			if (global.inrecording == true && battle_group == 9)
+			if (global.inrecording == true && battle_group >= 9)
 				enemy_attack[i] = 0;
 		}
 		if (enemy_type[i] == 4) // Flitcher

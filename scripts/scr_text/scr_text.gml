@@ -793,7 +793,7 @@ function textdata()
 	text_set("battle_act_result_rhonhey_3_1_0", "* (Rhonhey is getting miserable around you.)");
 	text_set("battle_act_result_rhonhey_3_1_1", "* (You've made Rhonhey miserable.)");
 	text_set("battle_act_result_rhonhey_3_2_2", "* (But terrorizing Rhonhey won't make him any more miserable.)");
-		// MEE6's genocide-only semi-battle (WORK IN PROGRESS, v0.6.0)
+		// MEE6's genocide-only semi-battle
 	z = 0;
 	i = 0;
 	text_set($"battle_bubble_mee6_{z}_{i++}", "Stop with this already!^1 \\&This isn't funny!"); // inspired by "This isn't funny! You've got a SICK sense of humor!" from "UNDERTALE"
@@ -817,7 +817,7 @@ function textdata()
 	z += 1;
 	i = 0;
 	text_set($"battle_bubble_mee6_{z}_{i++}", ":Y[Spare];D me.");
-		// TROLLFACE's battle (WORK IN PROGRESS, v0.6.0)
+		// TROLLFACE's battle
 	text_set("battle_main_troll", "* (TROLLFACE stands in the way.)");
 	i = 0;
 	text_set($"battle_main_troll_{i++}", "* (TROLLFACE is laughing&at his own jokes.)");
@@ -849,10 +849,10 @@ function textdata()
 	text_set($"battle_act_result_toilet_0_{i++}", "* (The toilet is too big for you to see what is causing the smell.)");
 	i = 0;
 	text_set($"battle_act_result_toilet_1_{i++}", "* (You flushed the toilet.)^1 &* (Suddenly,^1 the smell stops.)");
-	text_set($"battle_act_result_toilet_1_{i++}", "* (Then,^1 you understand.)");
+	text_set($"battle_act_result_toilet_1_{i++}", "* (Then,^1 you understand.)"); // inspired by "Now, you understand." from "UNDERTALE" (2015)
 	text_set($"battle_act_result_toilet_1_{i++}", "* (The toilet^4 is finally^4 free.)");
 	text_set($"battle_act_result_toilet_1_{i++}", "* (It smiles and thanks you.)");
-	text_set($"battle_act_result_toilet_1_{i++}", "* (You feel like a weight has been lifted from your shoulders...)");
+	text_set($"battle_act_result_toilet_1_{i++}", "* (You feel like a weight has been lifted from your shoulders...)"); // inspired by "A weight has been lifted." from "UNDERTALE" (2015)
 	// room_over
 	text_set("over_0", "Try Again", "Continuar");
 	text_set("over_1", "Give Up", "Desistir");
@@ -1341,7 +1341,7 @@ function textdata()
 	i = 0;
 	text_set($"room_trollwall_{i++}", "* (A thick oily substance is&leaking from between the bricks of this wall...)", "* (Uma grossa oleosa substância está vazando dos espaços entre os tijolos desta parede...)"); // references TROLLFACE's oil attack
 	text_set($"room_trollwall_{i++}", "* (It seems irrelevant for now.)", "* (Isso parece&irrelevante&no momento.)");
-	// room_corridors_11_trollStairs (WORK IN PROGRESS, v0.6.0)
+	// room_corridors_11_trollStairs
 	z = 0;
 	i = 0;
 	text_set($"event_trollStairs_{z}_{i++}", "* We do not belong here.^1 \\&* This place is dangerous.");
@@ -1349,15 +1349,16 @@ function textdata()
 	text_set($"event_trollStairs_{z}_{i++}", "* It would be a crime&to not turn around."); // inspired by "turn around, kid. it'd be a crime." from "Stronger Than You (Sans Parody)"
 	z += 1;
 	i = 0;
-	text_set($"event_trollStairs_{z}_{i++}", "* ");
+	text_set($"event_trollStairs_{z}_{i++}", "* You do not understand,^1 do you,^1 human?"); // inspired by "Understand, human?" from "UNDERTALE" (2015)
+	text_set($"event_trollStairs_{z}_{i++}", "* He will traumatize you,^1 forever.");
 	z += 1;
 	i = 0;
 	text_set($"event_trollStairs_{z}_{i++}", "* ... I refuse to feed your insanity,^3 :@@{name};D...!");
 	text_set($"event_trollStairs_{z}_{i++}", "* ... You are&entirely on&your own...!");
-	// room_corridors_11_troll (WORK IN PROGRESS, v0.6.0)
-	text_set($"room_trollCell_0_0", "* (It's a prison cell.)^3 \\&* (It doesn't seem to&have anyone inside.)");
-	text_set($"room_trollCell_1_0", "* (It's another prison cell.)^3 \\&* (It seems to be empty.)");
-	text_set($"room_trollCell_2_0", "* (It's one more prison cell.)^1 \\&* (It seems to be empt()");
+	// room_corridors_11_troll
+	text_set($"room_trollCell_0_0", "* (It's a prison cell.)^3 \\&* (It seems empty.)");
+	text_set($"room_trollCell_1_0", "* (It's another prison cell.)^3 \\&* (It also seems empty.)");
+	text_set($"room_trollCell_2_0", "* (It's another prison cell.)^1 \\&* (It also seems empt()");
 	z = 0;
 	i = 0;
 	text_set($"event_troll_{z}_{i++}", "");

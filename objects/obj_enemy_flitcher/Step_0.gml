@@ -102,11 +102,13 @@ if (active == 1)
 				switch (emotion)
 				{
 					case 1:
-					controller.enemy_spare[myself] = 0;
+					create(-20, -20, obj_battle_dmgwriter, {sparedmg : -100});
+                    controller.enemy_spare[myself] = 0;
 					audio_play(snd_jingleFail, false, VOLUME_SOUND);
 					break;
 					case 2:
-					controller.enemy_spare[myself] = 100;
+                    create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
+                    controller.enemy_spare[myself] = 100;
 					audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 					break;
 				}

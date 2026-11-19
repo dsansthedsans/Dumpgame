@@ -97,13 +97,15 @@ if (active == 1)
 		
 			if (controller.level_heard == 1)
 			{
-				controller.enemy_spare[myself] = 0;
+				create(-20, -20, obj_battle_dmgwriter, {sparedmg : -100});
+                controller.enemy_spare[myself] = 0;
 				audio_play(snd_jingleFail, false, VOLUME_SOUND);
 				punched = 0;
 				tookslime = 1;
 			}
 			else if (controller.level_heard == 2)
 			{
+                create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
 				controller.enemy_spare[myself] = 100;
 				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 				punched = 1;

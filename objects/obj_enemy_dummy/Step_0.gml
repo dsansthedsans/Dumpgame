@@ -86,6 +86,7 @@ if (controller.enemy_type[myself] != 0)
 		{
 			stage = 6;
 			body.stage = 1;
+            create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
 			controller.enemy_spare[myself] = 100;
 			audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 		}

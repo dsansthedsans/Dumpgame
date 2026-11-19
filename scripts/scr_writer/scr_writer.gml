@@ -2082,6 +2082,7 @@ function TEXT()
 							{
 								_bool = true;
 								_bool_sound = snd_jingleSucess;
+                                create(-20, -20, obj_battle_dmgwriter, {sparedmg : 20});
 								controller.enemy_spare[enemy.myself] += 20;
 								enemy.convince += 1;
 								if (enemy.convince >= 5)
