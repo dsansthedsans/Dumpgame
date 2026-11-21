@@ -9,7 +9,8 @@ x = enemy.orig_x;
 y = (enemy.orig_y - (enemy.sprite_height / 2));
 
 depth = controller.battle_depth[2];
-image_blend = 4209120;
+image_speed = 1;
+image_blend = global.c_red //4209120;
 
 // set scale
 targetx = obj_battle_fighttarget.x;

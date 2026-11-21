@@ -38,7 +38,7 @@ else
 {
 	// título
 	draw_set_alpha(alpha);
-	draw_set_color(merge_color(c_red, c_white, 0.2));
+	draw_set_color(global.c_red);
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
 	draw_set_font(fnt_main_spaced);

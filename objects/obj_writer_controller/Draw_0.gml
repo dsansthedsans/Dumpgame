@@ -99,7 +99,9 @@ if (msg_format[page] == "battlebox")
 	}	
 }
 if (msg_format[page] == "bubble")
-	draw_sprite_ext(bubble_spr, 0, bubble_x, bubble_y, 1, 1, 0, c_white, alpha);
+{
+    draw_sprite_ext(bubble_spr, 0, bubble_x, bubble_y, 1, 1, 0, c_white, alpha);
+}
 if (msg_format[page] == "textbox" || msg_format[page] == "textbox_bottom" || msg_format[page] == "textbox_top" || msg_format[page] == "bubble")
 {
 	if (msg_talker[page] > -1)
@@ -272,7 +274,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			}
 			if (string_char_at(msg[page], c + 1) == "6" && _cancheck == 1) // m6
 			{
-				text_color[0] = #4986B7;
+				text_color[0] = global.c_m6;
 				_cancheck = 0;
 			}
 			if (_cancheck == 0)

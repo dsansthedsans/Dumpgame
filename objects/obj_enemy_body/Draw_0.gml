@@ -24,9 +24,10 @@ if (active == 1)
 	}
 	if (type == 6) // Broken Clock
 	{
+        
 		// shock
-		shock_x = x;
-		shock_y = (y - (sprite_height / 2) + 8);
+		shock_x = (x - lengthdir_x((sprite_width / 2), image_angle - 90));
+		shock_y = (y - lengthdir_y((sprite_height / 2), image_angle - 90) + 8);
 		shock_index += (sprite_get_speed(spr_enemy_brock_shock) / 60);
 		shock_alpha = lerp(shock_alpha, shock_alphaTrue * !tense, 0.025);
 		draw_sprite_ext(spr_enemy_brock_shock, (shock_index * global.visualeff), shock_x, shock_y, image_xscale, image_yscale, image_angle, image_blend, shock_alpha);
@@ -356,7 +357,6 @@ if (active == 1)
 					_body_angle = (8 - (4 * (b - 4)));
 				draw_sprite_ext(_body_spr, i, _body_x, _body_y, _body_scale, _body_scale, _body_angle, _body_color, image_alpha)
 			}
-			
 		}
 		/* old body
 		head_index += (sprite_get_speed(body_spr[0]) / 60);
@@ -406,12 +406,12 @@ if (active == 1)
 		var _cheek_y = (_head_y + (25 * _head_scale));
 		cheek_height = lerp(cheek_height, (10 * (enemy.hurt >= 1)), 0.1);
 		var _cheek_height = ((cheek_height * _head_scale) + ((_sin * 4) * _head_scale));
-		draw_sprite_part_ext(_head_spr, head_image, 0, 25, _head_width, 1, _head_x, _cheek_y, _head_scale, _cheek_height, c_white, 1);
+		draw_sprite_part_ext(_head_spr, head_image, 0, 27, _head_width, 1, _head_x, _cheek_y, _head_scale, _cheek_height, c_white, 1);
 		// jaw
 		var _jaw_y =  (_cheek_y + _cheek_height);
-		draw_sprite_part_ext(_head_spr, head_image, 0, 26, _head_width, 17, _head_x, _jaw_y, _head_scale, _head_scale, c_white, 1);
+		draw_sprite_part_ext(_head_spr, head_image, 0, 27, _head_width, 16, _head_x, _jaw_y, _head_scale, _head_scale, c_white, 1);
 		// head
-		draw_sprite_part_ext(_head_spr, head_image, 0, 0, _head_width, 25, _head_x, _head_y, _head_scale, _head_scale, c_white, 1);
+		draw_sprite_part_ext(_head_spr, head_image, 0, 0, _head_width, 26, _head_x, _head_y, _head_scale, _head_scale, c_white, 1);
 	}
 	event_user(1);
 }

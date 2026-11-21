@@ -19,7 +19,7 @@
   "height":57,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"8ab2b6a8-8221-4007-b044-13276d060510","blendMode":0,"displayName":"default","isLocked":false,"name":"8ab2b6a8-8221-4007-b044-13276d060510","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"7172c61f-5ea3-493e-b77b-3682660e96b3","blendMode":0,"displayName":"default","isLocked":false,"name":"7172c61f-5ea3-493e-b77b-3682660e96b3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_enemy_brock_dead",
   "nineSlice":null,

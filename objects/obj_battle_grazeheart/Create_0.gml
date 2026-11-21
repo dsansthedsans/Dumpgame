@@ -1,3 +1,4 @@
+image_speed = 0;
 image_alpha = 0;
 control = obj_battle_controller;
 touching = undefined;

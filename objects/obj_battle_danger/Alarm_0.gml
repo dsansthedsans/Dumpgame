@@ -3,7 +3,7 @@
 active = 1;
 controller = obj_battle_controller;
 
-mycolor[0] = c_red;
+mycolor[0] = global.c_red;
 mycolor[1] = global.c_yellow;
 mycolor[2] = c_black;
 curcolor = 0;
@@ -13,25 +13,3 @@ changetime = 3;
 depth = controller.battle_depth[5];
 alarm[1] = changetime;
 alarm[2] = destroytime;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

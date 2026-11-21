@@ -17,7 +17,7 @@ if (active == 1)
 		draw_set_color(mycolor[curcolor]);
 		draw_rectangle((x1 + _amt), (y1 + _amt), (x2 - _amt), (y2 - _amt), 0);
 		
-		draw_sprite_ext(spr_battle_dangersign, 0, (x1 + ((x2 - x1) / 2)), (y1 + ((y2 - y1) / 2)), 1, 1, 0, mycolor[curcolor], 1);
+		draw_sprite_ext(spr_battle_dangersign, 0, (x1 + ((x2 - x1) / 2)), (y1 + ((y2 - y1) / 2)), 2, 2, 0, mycolor[curcolor], 1);
 	}
 	else if (mytype == 1) // line
 	{

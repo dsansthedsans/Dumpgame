@@ -155,6 +155,8 @@ function item_use()
 			default:
 			global.chara_heals += 1;
 			chara_hp(item_value(_item));
+            if (exists(obj_battle_controller) == true)
+                obj_battle_controller.guicolmerge_chara = 1 * global.visualeff;
 			msg[0] = $"{text_get("item_use_0")} :Y{item_name(_item, "")};D.)^3 \\&" + string((global.chara_curhp < global.chara_maxhp) ? $"{text_get("item_use_1")} :Y{item_value(_item)} HP;D.)" : $"{text_get("item_use_2")}");
 			if (_item == ITEM_CHOCO && room == room_battle)
 			{

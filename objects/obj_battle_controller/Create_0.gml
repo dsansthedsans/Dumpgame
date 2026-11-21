@@ -58,6 +58,8 @@ button_active = true;
 hp_color[0] = #FFDC31;
 hp_color[1] = #DD2929;
 gui_alpha = 1;
+guicolmerge_m6 = 0;
+guicolmerge_chara = 0;
 
 // box
 box_x = (room_width / 2);
@@ -143,7 +145,7 @@ level_heard = -1;
 level_curbarcolor[0] = global.c_dumpalt;
 level_curbarcolor[1] = global.c_yellow;
 level_maxbarcolor[0] = global.c_red; //#DD2929;
-level_maxbarcolor[1] = global.c_yellowDark;
+level_maxbarcolor[1] = global.c_orangeDark;
 
 itemdescWriter_destroy = false;
 itemdescArrow_offsetY = 0;

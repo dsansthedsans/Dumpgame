@@ -5,13 +5,15 @@ function START_GAME()
     global.c_dumpalt = #27CC84;
 	global.c_red = merge_color(c_red, c_white, 0.125); // "ATTACK"; negative status
 	global.c_blue = merge_color(c_blue, c_white, 0.25); // "DEFENSE"
-	global.c_yellow = #FFF34B; // "HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]"; "Cheap Candy"
-	global.c_yellowDark = #B24A00;
-	global.c_orange = #F29948; // "new member"
+    global.c_yellow = #FFF34B; // "HP"; "MERCY"; "Admin Realm"; "[Check]"; "[Battle Together]"; "Cheap Candy"
+    global.c_orange = #F29948; // "new member"
 	global.c_orangeDark = #D86440;
 	global.c_gray = #748CAB; // unavailable option; "Corridors"
 	global.c_mention[0] = #5865F2;
 	global.c_mention[1] = #A8BAFE;
+    global.c_m6 = #4986B7;
+    global.c_m6Dark = #32507F;
+    global.c_m6Darker = merge_color(global.c_m6Dark, c_black, 0.35);
 	randomize();
 	display_set_gui_maximise(2, 2);
 	load_time = 1;
@@ -23,6 +25,7 @@ function START_GAME()
 	global.game_startroom[1] = room_corridors_1 //room_intro;
 	global.ACHIEVEMENT_ENABLED = false;
 	global.CHARAFRISK_ENABLED = false;
+    global.CHARAGENOSLIME_ENABLED = false;
 	textdata();
 	start_maininfo();
 	start_music();
@@ -357,7 +360,7 @@ function CHANGE_GAME()
 	if (_change == true)
 	{
 		global.indebug = true;
-		global.inrecording = true;
+		global.inrecording = false;
 		global.chara_name = "CrazyCat";
 		if (global.inrecording == true)
 			global.chara_name = "Carlinhos";
@@ -407,7 +410,7 @@ function CHANGE_GAME()
 				global.flag[1] = 1; // finished first MEE6's event
 				global.flag[2] = 1; // has MEE6 as side character
 				global.flag[3] = 1;
-				var _idiot = true;
+				var _idiot = false;
 				if (_idiot == true)
 				{
 					global.flag[3] = 2;

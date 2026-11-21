@@ -6,25 +6,3 @@ if (curcolor >= colorlength)
 if (audio_playing(snd_battle_danger) == 0)
 	audio_play(snd_battle_danger, 0, VOLUME_SOUND);
 alarm[1] = changetime;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

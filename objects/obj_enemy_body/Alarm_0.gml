@@ -20,7 +20,7 @@ if (type >= 2 && type <= 5) // Armsguy, Trashguy, Flitcher, Eyecrush
 		sprite_index = spr_enemy_flitcher;
 	else if (type == 5)
 		sprite_index = unused_spr_enemy_eyecrush;
-	image_speed = 1;
+	image_speed = 1 * global.visualeff;
 }
 
 if (type == 6) // Broken Clock

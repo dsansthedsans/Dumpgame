@@ -47,10 +47,16 @@ if (charainfo_active == true)
 	/*chara_icon*/ draw_sprite_part_ext(_chara_icon_spr, 0, 0, 1, _chara_icon_width, 16, _chara_icon_x, _chara_icon_y, 2, 2, c_white, _chara_icon_alpha);
 	if (chara_murder() >= 1)
 		/*chara_icon_geno*/ draw_sprite_part_ext(spr_chara_genoshadow, DOWN, 0, 1, _chara_icon_width, 16, _chara_icon_x, _chara_icon_y, 2, 2, c_white, (_chara_icon_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
-	draw_set_alpha(_chara_icon_alpha);
+	if (chara_murder() >= 2 && global.flag[75] == 1 && global.CHARAGENOSLIME_ENABLED == true)
+        /*chara_icon_genosmile*/ draw_sprite_part_ext(spr_chara_genosmile, DOWN, 0, 1, _chara_icon_width, 16, _chara_icon_x, _chara_icon_y, 2, 2, c_white, _chara_icon_alpha);
+    draw_set_alpha(_chara_icon_alpha);
 	/*chara_name*/ draw_text_outline_transformed(_chara_name_x, _chara_name_y, _chara_name_text, c_white, 2, c_black, _chara_name_scale, _chara_name_scale, 0);
-	/*chara_bar*/ draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(round(global.chara_curhp)) + " / "  + string(round(global.chara_maxhp)), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, _chara_bar_widthMax, /*#FFDC31*/ #F29948, #DD2929, _chara_bar_alpha);
-	if (global.flag[2] == true && assist.active == true && button_active == true)
+	if (guicolmerge_chara > 0.01)
+        guicolmerge_chara = lerp(guicolmerge_chara, 0, 0.1);
+    else
+        guicolmerge_chara = 0;
+    /*chara_bar*/ draw_battle_bar(((global.chara_curhp >= 10) ? "" : "0") + string(round(global.chara_curhp)) + " / "  + string(round(global.chara_maxhp)), global.chara_curhp, global.chara_maxhp, _chara_bar_x, _chara_bar_y, _chara_bar_widthMax, /*#FFDC31*/ merge_color(global.c_orange, c_white, guicolmerge_chara), global.c_red, _chara_bar_alpha);
+    if (global.flag[2] == true && assist.active == true && button_active == true)
 	{
 		draw_set_alpha(gui_alpha);
 		draw_set_valign(fa_middle);
@@ -67,7 +73,11 @@ if (charainfo_active == true)
 		var _m6_bar_x = (_m6_name_x - _m6_bar_widthMax - 16 - (2 + 4) + 1);
 		draw_sprite_part_ext(_m6_icon_spr, 0, 0, 1, sprite_get_width(_m6_icon_spr), 16, _m6_icon_x, (_inbetween - 16 + 2), 2, 2, c_white, gui_alpha);
 		draw_text_outline_transformed(_m6_name_x, (_inbetween + 3), _m6_name_text, c_white, 2, c_black, _m6_name_scale, _m6_name_scale, 0);
-		draw_battle_bar($"{round(assist.curr)}%", assist.curr, assist.max, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, #4986B7, c_black, 1);
+        if (guicolmerge_m6 > 0.01)
+            guicolmerge_m6 = lerp(guicolmerge_m6, 0, 0.1);
+		else
+        	guicolmerge_m6 = 0;
+        draw_battle_bar($"{round(assist.curr)}%", assist.curr, assist.max, _m6_bar_x, _chara_bar_y, _m6_bar_widthMax, merge_color(global.c_m6, c_white, guicolmerge_m6), global.c_m6Darker, 1);
 	}
 }
 

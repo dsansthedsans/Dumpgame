@@ -77,7 +77,7 @@ timer =
 	{
 		active : true,
 		secondsMin : 30,
-		color : c_red,
+		color : global.c_red,
 		alpha : 0,
 		alpha_max : 0.2,
 		alpha_time : (60 * 5),

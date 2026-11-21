@@ -2,6 +2,7 @@
 game = obj_GAME_CONTROLLER;
 hp_surface = -1;
 hp_alpha = 0;
+hp_colmerge = 0;
 image_xscale = 1;
 image_yscale = 1;
 image_alpha = 1;

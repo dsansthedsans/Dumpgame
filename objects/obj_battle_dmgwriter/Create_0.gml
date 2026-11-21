@@ -7,7 +7,7 @@ target = controller.enemy_target;
 myh = 14;
 myx = (controller.enemy_obj[target].orig_x - round(controller.enemy_obj[target].hpwidth / 2));
 if (controller.enemy_type[target] == 6) // Broken Clock
-	myx = (controller.enemy_obj[target].orig_x - controller.enemy_obj[target].hpwidth);
+	myx -= (controller.enemy_obj[target].hpwidth / 4);
 myy = (controller.enemy_obj[target].orig_y - controller.enemy_obj[target].sprite_height - 20 - myh);
 myalpha = 0;
 fade = 0;
@@ -19,28 +19,30 @@ if (dmg != undefined)
     apphp = (controller.enemy_curhp[target] + dmg); // apparent health points
     mycolor_cur = controller.level_curbarcolor[0];
     mycolor_max = controller.level_maxbarcolor[0];
-    mycolor_num = mycolor_max;
+    mycolor_num = [global.c_red, global.c_red];
     if (dmg <= 0)
     {
         dmg = text_get("battle_fight_0");
        	if (controller.enemy_type[target] != 5 && controller.battle_group >= 7) || (controller.enemy_type[target] == 4)
        		myy = 240;
        	drawbar = 0;
-       	mycolor_num = global.c_gray;
+       	mycolor_num = [global.c_gray, global.c_gray];
     }
+    else
+        dmg = $"-{dmg}";
 }
 else if (dmg == undefined)
 {
     var _sign = "";
-    mycolor_num = global.c_gray;
+    mycolor_num = [global.c_gray, global.c_gray];
     if (sparedmg > 0)
     {
-        mycolor_num = global.c_dump;
+        mycolor_num = [global.c_dump, global.c_dump];
         _sign = "+";   
     }
     else if (sparedmg < 0)
     {
-        mycolor_num = global.c_red;
+        mycolor_num = [global.c_red, global.c_red];
         _sign = "-";    
     }
     dmg = $"{_sign}{abs(sparedmg)}%";

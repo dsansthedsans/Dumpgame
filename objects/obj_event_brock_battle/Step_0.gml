@@ -5,7 +5,9 @@ if (global.flag[2] == 1 && global.flag[37] < 1 && global.flag[39] == 0)
 		depth = -room_height;
 		cam_offsetX = (cam_x - game.cam_x);
 		cam_offsetY = (cam_y - game.cam_y);
-		chara_change(-1, 0, 0, 1, 0, 0, 0);
+		if (global.flag[75] == 1)
+            global.flag[75] = 0.5;
+        chara_change(-1, 0, 0, 1, 0, 0, 0);
 		chara_stop();
 		chara_facing(UP);
 		with (chara)

@@ -360,9 +360,13 @@ function draw_sprite_outline(_x, _y, _sprite, _index, _xscale, _yscale, _rot, _c
 	var _out_color = argument10;
 		
 	draw_sprite_ext(_myspr, _myind, (_myx - _out_width), (_myy - _out_width), _myxscale, _myyscale, _myangle, _out_color, _myalpha);
+	draw_sprite_ext(_myspr, _myind, _myx, (_myy - _out_width), _myxscale, _myyscale, _myangle, _out_color, _myalpha);
 	draw_sprite_ext(_myspr, _myind, (_myx + _out_width), (_myy - _out_width), _myxscale, _myyscale, _myangle, _out_color, _myalpha);
+	draw_sprite_ext(_myspr, _myind, (_myx - _out_width), _myy, _myxscale, _myyscale, _myangle, _out_color, _myalpha);
 	draw_sprite_ext(_myspr, _myind, (_myx - _out_width), (_myy + _out_width), _myxscale, _myyscale, _myangle, _out_color, _myalpha);
+	draw_sprite_ext(_myspr, _myind, _myx, (_myy + _out_width), _myxscale, _myyscale, _myangle, _out_color, _myalpha);
 	draw_sprite_ext(_myspr, _myind, (_myx + _out_width), (_myy + _out_width), _myxscale, _myyscale, _myangle, _out_color, _myalpha);
+    draw_sprite_ext(_myspr, _myind, (_myx + _out_width), _myy, _myxscale, _myyscale, _myangle, _out_color, _myalpha);
 	
 	draw_sprite_ext(_myspr, _myind, _myx, _myy, _myxscale, _myyscale, _myangle, _mycolor, _myalpha);
 }
@@ -385,12 +389,12 @@ function draw_rectangle_outline(_x1, _y1, _x2, _y2, _color, _outline_width, _out
 	
 }
 
-function draw_self_border()
+function draw_self_border(_xsc = image_xscale, _ysc = image_yscale, _xx = x, _yy = y)
 {
-	borderl = (controller.box_x - (controller.box_w / 2) - 0.5);
-	borderr = (controller.box_x + (controller.box_w / 2));
-	bordert = (controller.box_y - (controller.box_h / 2) - 0.5);
-	borderb = (controller.box_y + (controller.box_h / 2));
+	borderl = (controller.box_x - (controller.box_w / 2) + 1);
+	borderr = (controller.box_x + (controller.box_w / 2) - 2);
+	bordert = (controller.box_y - (controller.box_h / 2) + 1);
+	borderb = (controller.box_y + (controller.box_h / 2) - 2);
 	l = 0;
 	t = 0;
 	w = sprite_width;
@@ -417,10 +421,8 @@ function draw_self_border()
 	t = round(t);
 	
 	if (w + offx > 0 && h + offy > 0 && l < w && t < h) 
-	{
-		draw_set_alpha(1);
-		draw_sprite_part(sprite_index, image_index, l, t, (w - l + offx), (h - t + offy), (x + l - offx), (y + t - offy));
-	}
+        draw_sprite_part_ext(sprite_index, image_index, l, t, (w - l + offx), (h - t + offy), (_xx + l - offx), (_yy + t - offy), _xsc, _ysc, image_blend, image_alpha);
+    draw_set_alpha(1);
 }
 
 function draw_chapter_name(_alpha, _outlineWidth)
@@ -456,7 +458,8 @@ function draw_battle_bar(__value_text, __value_current, __value_max, __bar_x, __
 	var _bar_y = round(__bar_y);
 	var _bar_value_x = round(_bar_x + round(__bar_widthMax / 2));
 	var _bar_value_y = round(_bar_y + round(_bar_height / 2) + 2);
-	/*External white border*/draw_rectangle_color(round(_bar_x - _bar_borderExternal_size), round(_bar_y - _bar_borderExternal_size), round(_bar_x + __bar_widthMax + _bar_borderExternal_size - (1 * (os_browser != browser_not_a_browser))), round(_bar_y + _bar_height + _bar_borderExternal_size + (1 * (os_browser == browser_not_a_browser))), c_white, c_white, c_white, c_white, false);
+	/*Extra external black border*/draw_rectangle_color(round(_bar_x - (_bar_borderExternal_size * 1.5)), round(_bar_y - (_bar_borderExternal_size * 1.5)), round(_bar_x + __bar_widthMax + (_bar_borderExternal_size * 1.5) - (1 * (os_browser != browser_not_a_browser))), round(_bar_y + _bar_height + (_bar_borderExternal_size * 1.5) + (1 * (os_browser == browser_not_a_browser))), c_black, c_black, c_black, c_black, false);
+    /*External white border*/draw_rectangle_color(round(_bar_x - _bar_borderExternal_size), round(_bar_y - _bar_borderExternal_size), round(_bar_x + __bar_widthMax + _bar_borderExternal_size - (1 * (os_browser != browser_not_a_browser))), round(_bar_y + _bar_height + _bar_borderExternal_size + (1 * (os_browser == browser_not_a_browser))), c_white, c_white, c_white, c_white, false);
 	/*Internal black border + Max value bar*/draw_rectangle_outline(_bar_x, _bar_y, round(_bar_x + __bar_widthMax), round(_bar_y + _bar_height + 1), __bar_color_max, _bar_borderInternal_size, c_black);	
 	if (_bar_widthCurr > 0)
 		/*Current value bar*/draw_rectangle_color(_bar_x, _bar_y, round(_bar_x + _bar_widthCurr - (1 * (os_browser != browser_not_a_browser))), round(_bar_y + _bar_height + (1 * (os_browser == browser_not_a_browser))), __bar_color_current, __bar_color_current, __bar_color_current, __bar_color_current, false);

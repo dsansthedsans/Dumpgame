@@ -1,0 +1,1 @@
+draw_sprite_outline(x, y, sprite_index, image_index, image_xscale, image_yscale, image_angle, image_blend, image_alpha, 2, c_black);

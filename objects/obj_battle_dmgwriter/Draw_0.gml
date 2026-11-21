@@ -4,7 +4,7 @@ if (fade == true && abs(0 + myalpha) <= 0.1)
 // bar
 if (drawbar == 1)
 {
-	apphp = lerp(apphp, curhp, ((global.visualeff == true) ? 0.15 : 1));
+	apphp = lerp(apphp, curhp, ((global.visualeff == true) ? 0.1 : 1));
 	draw_battle_bar($"{clamp(round((apphp / maxhp) * 100), 0, 100)}%", apphp, maxhp, myx, myy, controller.enemy_obj[target].hpwidth, mycolor_cur, mycolor_max, myalpha);
 }
 // dmg
@@ -17,6 +17,6 @@ if (y > ystart)
 draw_set_font(global.fnt_dmg);
 draw_set_valign(fa_bottom);
 draw_set_halign(fa_center);
-draw_text_color((myx + (controller.enemy_obj[target].hpwidth / 2)), (myy - 10 + y), dmg, mycolor_num, mycolor_num, mycolor_num, mycolor_num, myalpha);
+draw_text_color((myx + (controller.enemy_obj[target].hpwidth / 2)), (myy - 10 + y), dmg, mycolor_num[0], mycolor_num[0], mycolor_num[1], mycolor_num[1], myalpha);
 draw_set_alpha(1);
 debug("i want a wife.");

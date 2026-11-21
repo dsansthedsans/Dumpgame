@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_enemy_armsguy_hurt",
   "bboxMode":0,
-  "bbox_bottom":47,
+  "bbox_bottom":49,
   "bbox_left":0,
-  "bbox_right":88,
+  "bbox_right":90,
   "bbox_top":1,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":48,
+  "height":50,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"2a6142a9-6117-4f11-af81-1d0ea093dd2f","blendMode":0,"displayName":"default","isLocked":false,"name":"2a6142a9-6117-4f11-af81-1d0ea093dd2f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":89,
+  "width":91,
 }

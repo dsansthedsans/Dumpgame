@@ -382,7 +382,7 @@ if (global.menu_lvl >= 0)
 			if (i == option_pos && controls_changing == 0)
 				_color = global.c_yellow;
 			if (l == 5 && i == 2 && play_erase > 0)
-				_color = c_red;
+				_color = global.c_red;
 		
 			var _opt_x = option_x[l, i];
 			var _opt_y = (option_y[l, i] + scroll_y);

@@ -70,7 +70,7 @@ if (active == 1)
 		if (stage == 0)
 		{
 			x = lerp(x, targetx, 0.025);	
-			var _y = (controller.box_y + (controller.box_h / 2) - controller.box_borderw - 6);
+			var _y = (controller.box_y + (controller.box_h / 2) - sprite_height + 1);
 			if (y >= _y)
 			{
 				y = _y;
@@ -79,7 +79,12 @@ if (active == 1)
 				image_index = 1;
 				audio_stop(snd_impactBump);
 				audio_play(snd_impactBump, 0, VOLUME_SOUND);
-				delay = 45;
+				if (global.visualeff == true)
+                {
+                    yscl = 0.75;
+                    xscl = 1.5;    
+                }
+                delay = 45;
 				stage = 1;
 			}
 		}
@@ -89,9 +94,15 @@ if (active == 1)
 			vspeed = -3;
 			gravity = basegrav;
 			image_index = 0;
-			audio_stop(snd_jumpSmall);
-			audio_play(snd_jumpSmall, 0, VOLUME_SOUND);
-			targetx = obj_battle_heart.x;
+            if (audio_playing(snd_jumpSmall) == true)
+                audio_stop(snd_jumpSmall);
+			audio_play(snd_jumpSmall, 0, VOLUME_SOUND, , , , (1 + (random(0.125) * choose(-1, 1))));
+            if (global.visualeff == true)
+            {
+                xscl = 0.75;
+                yscl = 1.5;    
+            }
+            targetx = obj_battle_heart.x;
 			delay = 0;
 			stage = 0;
 		}
@@ -320,6 +331,8 @@ if (active == 1)
 		var _insultTurns = controller.enemy_obj[myself].insultTurns;
 		if (stage == 0)
 		{		
+            lastxpos = xpos;
+            lastypos = ypos;
 			// get angle
 			dir = choose(!dir, !dir, dir);
 			var _amt = 90;
@@ -347,17 +360,15 @@ if (active == 1)
 				_time += 5;
 			if (_insultTurns < 0)
 				_time -= 5;
-			dx1 = (x - (sw / 2) + 2);
-			dy1 = (y - (sh / 2) + 2);
-			dx2 = (nextx + (sw / 2) - 2);
-			dy2 = (nexty + (sh / 2) - 2);
-			if (dx2 < dx1) || (dy2 < dy1)
-			{
-				dx1 = (nextx - (sw / 2) + 2);
-				dy1 = (nexty - (sh / 2) + 2);
-				dx2 = (x + (sw / 2) - 2);
-				dy2 = (y + (sh / 2) - 2);
-			}
+            var _ddist = 4;
+            var _x1 = ((lastxpos == 0) ? lastxpos : xpos);
+            var _x2 = ((xpos == 1) ? xpos : lastxpos);
+            var _y1 = ((lastypos == 0) ? lastypos : ypos);
+            var _y2 = ((ypos == 1) ? ypos : lastypos);
+			dx1 = (xx[_x1] - (sw / 2) + _ddist);
+			dx2 = (xx[_x2] + (sw / 2) - _ddist - 1);
+            dy1 = (yy[_y1] - (sh / 2) + _ddist);
+            dy2 = (yy[_y2] + (sw / 2) - _ddist - 1);
 			battle_danger(0, round(dx1), round(dy1), round(dx2), round(dy2), _time);
 			
 			stage = 1;

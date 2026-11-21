@@ -19,7 +19,7 @@ for (var i = 0; i < 3; i++)
 	draw_set_alpha(1);
 	draw_set_valign(fa_middle);
 	draw_set_halign(_halign);
-	draw_text_outline(mainopt_x[i], mainopt_y, string_upper(mainopt[i]), _color, 2, c_black);	
+	draw_text_outline(mainopt_x[i], mainopt_y, (mainopt[i]), _color, 2, c_black);	
 }
 
 // option indicator

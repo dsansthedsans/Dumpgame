@@ -395,11 +395,15 @@ function chara_damage()
 			audio_play(snd_impactHurt, 0, VOLUME_SOUND);
 			var _shake = (2 * (global.inbattle + 1));
 			shakescreen(_shake, _shake);
+            if (exists(obj_chara) == true)
+                obj_chara.hp_colmerge = 1;
+            if (exists(obj_battle_controller) == true)
+                obj_battle_controller.guicolmerge_chara = 1 * global.visualeff;
 		}
 		else
 			audio_play(snd_impactPan, 0, VOLUME_SOUND);
 		global.chara_curhp = clamp((global.chara_curhp - _dmg), 0, global.chara_maxhp);
-		if (global.chara_curhp > 0)
+        if (global.chara_curhp > 0)
 		{
 			image_speed = (0.4 * global.visualeff);
 			image_index = 1;

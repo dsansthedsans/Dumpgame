@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_enemy_flitcher_hurt",
   "bboxMode":0,
-  "bbox_bottom":53,
+  "bbox_bottom":55,
   "bbox_left":0,
-  "bbox_right":52,
+  "bbox_right":54,
   "bbox_top":1,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":54,
+  "height":56,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"a0d084c1-760c-4398-889c-557f14462099","blendMode":0,"displayName":"default","isLocked":false,"name":"a0d084c1-760c-4398-889c-557f14462099","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":53,
+  "width":55,
 }

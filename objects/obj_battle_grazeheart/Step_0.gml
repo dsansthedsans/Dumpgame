@@ -10,12 +10,15 @@ if (global.flag[2] == true && control.assist.active == true)
 			if (touching[| i].object_index == obj_battle_blt && touching[| i].active == true && touching[| i].can_damage == true)
 			{
 				_damage = true;
-				image_alpha = (1 * global.visualeff);
+				image_alpha = (0.5 * global.visualeff);
 				if (ds_list_find_index(touched, touching[| i].id) == -1)
 				{
 					ds_list_add(touched, touching[| i].id);
 					with (control)
-						assist.curr = clamp((assist.curr + assist.speed), 0, assist.max);
+                    {
+                        assist.curr = clamp((assist.curr + assist.speed), 0, assist.max);
+                        guicolmerge_m6 = 1 * global.visualeff;
+                    }
 					if (audio_playing(snd_battle_graze) == true)
 						audio_stop(snd_battle_graze);
 					audio_play(snd_battle_graze, 0, VOLUME_SOUND);
@@ -28,4 +31,4 @@ if (global.flag[2] == true && control.assist.active == true)
 	ds_list_destroy(touching);
 }
 if (_damage == false && image_alpha > 0)
-	image_alpha -= (0.05 + (0.95 * !global.visualeff));
+	image_alpha -= (0.025 + (0.975 * !global.visualeff));

@@ -26,7 +26,7 @@ title_y = (bg_y[1] + (bg_h[1] / 2));
 option_length = 3;
 for (var i = 0; i < option_length; i++)
 {
-	option[i] = string_upper(text_get("charapause_" + string(i)));
+	option[i] = (text_get("charapause_" + string(i)));
 	option_x[i] = round(bg_x[0] + (bg_w[0] / 2));
 	option_y[i] = round(bg_y[0] + (bg_h[0] / 2) - 6 + (20 * i));
 }

@@ -67,6 +67,8 @@ if (type == 2.1)
 	gravity = 0.05;
 	targetx = obj_battle_heart.x;
 	basegrav = gravity;
+    xscl = image_xscale;
+    yscl = image_yscale;
 }
 if (type == 2.2)
 {
@@ -237,7 +239,7 @@ if (type == 6.1)
 	outside_box = 1;
 	depth = controller.battle_depth[2];
 	image_alpha = 0;
-	image_index = irandom(4);
+	image_index = irandom(2);
 	image_angle = irandom(360);
 	sprite_index = spr_battle_blt_brick;
 	vspeed = -choose(3, 5);
@@ -280,10 +282,10 @@ if (type == 6.1)
 }
 if (type == 6.15)
 {
+    depth += 1;
 	sprite_index = spr_battle_blt_brock_video;
-	image_alpha = 0.25;
-	//image_xscale = 1;
-	//image_yscale = 1;
+	image_alpha = 0.5;
+    image_blend = global.c_gray;
 	can_damage = 0;
 	outside_box = 1;
 	destroy_on_impact = 0;
@@ -295,7 +297,7 @@ if (type == 6.3)
 {	
 	sprite_index = spr_enemy_brock_body;
 	image_alpha = 0;
-	image_blend = c_red;
+	image_blend = global.c_red;
 	dmg += 2;
 	outside_box = 1;
 	destroy_on_impact = 0;
@@ -306,14 +308,14 @@ if (type == 6.3)
 	bw = controller.box_w;
 	bh = controller.box_h;
 	
-	sw = (sprite_get_width(sprite_index) * 2);
-	sh = (sprite_get_height(sprite_index) * 2);
+	sw = sprite_width;
+	sh = sprite_height;
 	
 	xx[0] = round(bx - (bw / 2) + (sw / 2)); // left
-	xx[1] = round(bx + (bw / 2) - (sw / 2)); // right
+	xx[1] = round(bx + (bw / 2) - (sw / 2) + 1); // right
 	
 	yy[0] = round(by - (bh / 2) + (sh / 2)); // top
-	yy[1] = round(by + (bh / 2) - (sh / 2)); // bottom
+	yy[1] = round(by + (bh / 2) - (sh / 2) + 1); // bottom
 	
 	xpos = irandom(1);
 	ypos = 0;
@@ -367,8 +369,8 @@ if (type == 6.24)
 	dmg += 2;
 	outside_box = 1;
 	destroy_on_impact = 0;
-	audio_play(snd_explosionLightning, 0, VOLUME_SOUND);
-	shakescreen(5, 5);
+	audio_play(snd_explosionLightning, 0, VOLUME_SOUND, , , , 0.75);
+	shakescreen(6, 6);
 }
 if (type >= 6 && type < 7)
 	dmg -= clamp(controller.enemy_obj[myself].negotiate, 0, 1);

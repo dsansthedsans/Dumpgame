@@ -1699,7 +1699,7 @@ function TEXT()
 				{
 					var _spare = "";
 					if (controller.enemy_spare[i] >= 100)
-						_spare = ";Y";
+						_spare = ":Y";
 					name[i] = "   " + string(_spare) + "* " + string(controller.enemy_name[i]) + ";D";
 				}
 			}
@@ -1771,7 +1771,7 @@ function TEXT()
 			for (var i = 0; i < controller.enemy_length; i++)
 			{
 				if (controller.enemy_type[i] != 0 && controller.enemy_spare[i] >= 100)
-					_spare = ";Y";
+					_spare = ":Y";
 			}
 			
 			var _flee = "";
@@ -1957,23 +1957,9 @@ function TEXT()
 							case 1:
 							_text_postfix = $"_{enemy.negotiate}";
 							break;
-							//case 2:
-							//var _insult_page = 1;
-							//if (m == _insult_page)
-							//{
-							//	for (var i = 0; i < 99; i++)
-							//	{	
-							//		var _text = text_get($"battle_act_result_brock_{_text_index}_{_insult_page}_{i}");
-							//		if (_text == undefined) || (_text == "Salenis")
-							//			break;
-							//	}
-							//	var _insult_index = enemy.insult;
-							//	if (_insult_index > (i - 1))
-							//		_insult_index = irandom(i - 1);
-							//}
-							//break;
 						}
-						debug(string($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}") + "  " + string(text_get($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}")));
+						if (global.indebug == true && global.debug_hud == true)
+                            debug(string($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}") + "  " + string(text_get($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}")));
 						var _msg = text_get($"battle_act_result_brock_{_text_index}_{m}{_text_postfix}");
 						if (_msg == undefined) || (_msg == "Salenis")
 							break;

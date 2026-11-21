@@ -23,7 +23,7 @@ if ((global.CHARAFRISK_ENABLED == true && string_upper(global.chara_name) == "FR
 		if (sprite_index == spr_chara_fallen) || (sprite_index == spr_chara_r_prejump) || (sprite_index == spr_chara_r_jump) || (sprite_index == spr_chara_r_fallhold) || (sprite_index == spr_chara_r_fall)
 			_sprite = [asset_get_index($"{sprite_get_name(sprite_index)}_genoshadow"), asset_get_index($"{sprite_get_name(sprite_index)}_genosmile")];
 		draw_sprite_ext(_sprite[0], global.chara_facing, x, (_chara_y + _extrayfactor), xscale, yscale, image_angle, image_blend, (image_alpha * ((chara_murder() == 1) ? 0.5 : 1)));
-        if (global.flag[75] == true)
+        if (chara_murder() >= 2 && global.flag[75] == 1 && global.CHARAGENOSLIME_ENABLED == true)
             draw_sprite_ext(_sprite[1], global.chara_facing, x, (_chara_y + _extrayfactor), xscale, yscale, image_angle, image_blend, image_alpha);
 	}
 	var _armor = 0;
