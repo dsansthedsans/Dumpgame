@@ -11,7 +11,7 @@
   <a href="https://www.youtube.com/playlist?list=PLRH-EiM3M_xQ" target="_blank"><img src="https://shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=f5f5f5" alt="YouTube"></a>
 </p>
 <br>
-<p>Dumpgame, as an UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way out of danger using UNDERTALE's unique battle system.</p><!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
+<p>Dumpgame, as a pacifist-focused UNDERTALE fan game, is a top-down RPG with turn-based battles where the player must dodge the enemy's "bullet hell" attack patterns. Killing is unnecessary. The player can talk their way out of danger using UNDERTALE's unique battle system.</p><!--inspired by "Killing is unnecessary: negotiate out of danger using the unique battle system." from Steam page of "UNDERTALE"-->
 <p>If you still haven't played UNDERTALE, go play it. It's <a href="https://store.steampowered.com/app/391540/Undertale/">steamingly good</a>.</p>
 <br>
 <p align="center">
@@ -84,7 +84,7 @@
 </ol>
 <p>No external files are required.</p>
 <h3>Report a Bug</h3>
-<p>Noticed anything that clearly wasn't supposed to happen? Fill out <a href="https://forms.gle/ZReHikxZvPCDPcuq9" target="_blank"><b>this Google Form</b></a> to help us make the game a little less broken, please...! You'll win our hearts <3 <i>(or, if you prefer, a place in the Special Thanks.)</i></p>
+<p>Noticed anything that clearly wasn't supposed to happen? Fill out <a href="https://forms.gle/ZReHikxZvPCDPcuq9" target="_blank"><b>this Google Form</b></a> to help us make the game a little less broken, please...! You'll win our hearts <3 <i>(or, if you prefer, a place in <b>Contributors & Testers</b>.)</i></p>
 <br>
 <h6><i>(Psst! Hey, you! You have some of those stars left, right? Can you give us one? Just one! With enough stars, we can destroy the barrier!)</i></h6><!--"With enough stars, we can destroy the barrier!" inspired by "With enough souls, we can shatter the barrier forever." and "I'll destroy the barrier." from "UNDERTALE"-->
 <p><a href="https://www.star-history.com/#dsansthedsans/Dumpgame&type=date&legend=top-left" target="_blank">
@@ -136,12 +136,17 @@
   <li><b>☭Comunista☭</b><i> 〜 Concept Art Assistance for MEE6</i></li>
   <li><b>fer10tanb</b><i> 〜 Composing Assistance, Concept Art Assistance for Broken Clock</i></li>
   <li><b>Babakinha</b><i> 〜 Programming Assistance</i></li>
+  <li><b>Nugget</b><i> 〜 dsans's Bug Report Form</i></li>
+  <li><b>tntaro</b><i> 〜 dsans's Bug Report Form</i></li>
+  <li><b>Mizumk64</b><i> 〜 dsans's Bug Report Form</i></li>
 </ul>
 <h3>Special Thanks</h3>
 <ul>
   <li><b>Toby Fox & Temmie Chang</b><i> 〜 UNDERTALE & DELTARUNE: Chapter 1-4</i></li>
   <li><b>Tophat Interactive</b><i> 〜 UNDERTALE: Bits and Pieces</i></li>
-  <li><b>Mojang Studios</b><i> 〜 Minecraft: Java Edition</i>
+  <li><b>loganvcairns</b><i> 〜 UNDERFELL: One Hell of a Show</i></li>
+  <li><b>JMC & Preem</b><i> 〜 UNDERTALE: Souls Incident</i></li>
+  <li><b>Mojang Studios</b><i> 〜 Minecraft: Java Edition</i></li>
   <li><b>Avranik</b><i> 〜 UNDERTALE: No More Deals</i></li>
   <li><b>HTTG Team</b><i> 〜 HorrorTale: Chapter 1</i></li>
   <li><b>Team UTY</b><i> 〜 UNDERTALE YELLOW</i></li>
