@@ -1,7 +1,7 @@
 <h1 align="center"><img src="README-ASSETS/MAIN-LOGO.png" alt="Dumpgame" height=250></h1>
 <h3 align="center"><strong>An open-source UNDERTALE fan game created in Brazil by dsansthedsans and migel8022</strong></h3>
 <p align="center">
-  <img src="https://shields.io/badge/status-in_development-white?labelColor=40ff6d" alt="Status">
+  <img src="https://shields.io/badge/status-cancelled-white?labelColor=40ff6d" alt="Status">
   <img src="https://shields.io/badge/version-0.5.1-white?labelColor=40ff6d" alt="Version">
   <img src="https://shields.io/github/license/dsansthedsans/Dumpgame?branch=main&color=white&labelColor=40ff6d" alt="License">
   <img src="https://shields.io/github/commit-activity/m/dsansthedsans/Dumpgame?color=white&labelColor=40ff6d" alt="Commit Activity">
@@ -20,6 +20,9 @@
 <br>
 <p>In this game, you control a Brazilian boy who falls through a portal to, basically, a physical manifestation of a Discord server full of weird monsters and oversized children. Are you strong enough to go home while everybody tries to kill you?</p><!--inspired by "In this RPG, you control a [...]" from Steam page of "UNDERTALE"-->
 <br>
+
+> [!NOTE]
+> The latest version is only an hour-long demo and the full game has been canceled. Nonetheless, new content will be added to the demo.
 
 > [!IMPORTANT]  
 > Dumpgame is not in any way, shape, or form affiliated with Toby Fox. It is purely an UNDERTALE fan game. All mentions of Discord, MEE6, reCAPTCHA, Trollface or any other brand/product are done solely for parody's sake. In addition, I am not profiting from this game and would gladly refuse the opportunity to do so if presented.<!--inspired by "It is purely a fan game" from "Yume 2kki"; inspired by "All mentions of [...] is purely done for parody's sake" and "I am not profiting in any way off this game, and I will refuse the opportunity to do so if presented" from "UNDERTALE II: Revenge of the Robots"-->
@@ -42,10 +45,10 @@
 <h3>Characters</h3>
 <ul>
   <li><b>MEE6</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_m6_d_default/ebb7cb05-88c9-4651-bf96-40c399ca001c.png" height="32" align="top"> , a small blue robot created to guide new members like you into the server. That's all in the past, though. Now he needs YOUR help to get out.</li>
-  <li><b>Armsguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_armsguy/b3a84e52-745d-4bc2-9db0-ad11a317eb49.png" height="32" align="top"> , a slime with arms who came to life inside a trash bag. He's too focused on himself to pay attention to you. He's also a masochist...?</li>
-  <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face danger head-on. They usually stick close to an Armsguy.</li><!--inspired by "[...] to face danger head-on" from "UNDERTALE"-->
-  <li><b>Flitcher</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_flitcher/ca904f51-ea94-45e0-8699-841141abe37c.png" height="32" align="top"> , a reptile-like monster who's unaware of its own existence for most of the time. There's not much to say about it.</li>
-  <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock_full/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two selfish teenagers, he pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
+  <li><b>Armsguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_armsguy/b3a84e52-745d-4bc2-9db0-ad11a317eb49.png" height="32" align="top"> , a slime with arms who came to life inside a trash bag. He's obsessed with his own arms and can't accept being weaker than you. He's also a masochist...?</li>
+  <li><b>Trashguy</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_trashguy/ce9761fe-bc79-4d06-b931-2f782c331f05.png" height="32" align="top"> , a mysterious creature who lives inside a trash can for being too scared to face danger head-on. Strangely, they really hate the smell of garbage. They usually stick close to an Armsguy.</li><!--inspired by "[...] to face danger head-on" from "UNDERTALE"-->
+  <li><b>Flitcher</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_flitcher/ca904f51-ea94-45e0-8699-841141abe37c.png" height="32" align="top"> , a reptile-like monster who's unaware of its own existence for most of the time. It avoids eye contact and any social interaction that involves talking. There's not much to say about it.</li>
+  <li><b>Broken Clock</b> <img src="https://raw.githubusercontent.com/dsansthedsans/Dumpgame/refs/heads/main/sprites/spr_npc_brock_full/c8c343a0-0360-4458-bd5a-b2b88fe50b63.png" height="32" align="top"> , a malfunctioning analog clock irreversibly possessed by a ghost. Broken by two humans, he pushes people away and hurts everybody around him. He has nothing to lose besides his life.</li>
   <li><b>And more</b>...? <i>(Only in the upcoming <code>v0.6.0</code>...)</i></li>
 </ul>
 <br>
@@ -56,24 +59,35 @@
     <th>Release Date</th>
     <th>File</th>
     <th>File Size</th>
+    <th>Target Platforms</th>
+  </tr>
+  <tr>
+    <td><code>0.6.0</code> <i>(Upcoming)</i></td>
+    <td>???</td>
+    <td>???</td>
+    <td>???</td>
+    <td>64-bit Windows, HTML5</td>
   </tr>
   <tr>
     <td><code>0.5.1</code> <i>(Latest)</i></td>
     <td>October 23, 2026</td>
     <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.1/Dumpgame-v0.5.1.zip"><b>Dumpgame-v0.5.1.zip</b></a></td>
     <td>45.9 MB</td>
+    <td>64-bit Windows</td>
   </tr>
   <tr>
     <td><code>0.5.0</code></td>
     <td>October 12, 2026</td>
     <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.5.0.zip"><b>Dumpgame-v0.5.0.zip</b></a></td>
     <td>45.9 MB</td>
+    <td>64-bit Windows</td>
   </tr>
   <tr>
     <td><code>0.4.0</code></td>
     <td>November 30, 2023</td>
     <td><a href="https://github.com/dsansthedsans/Dumpgame/releases/download/v0.5.0/Dumpgame-v0.4.0.zip"><b>Dumpgame-v0.4.0.zip</b></a></td>
     <td>227 MB</td>
+    <td>64-bit Windows</td>
   </tr>
 </table>
 <h3>Install Instructions</h1>
@@ -99,9 +113,9 @@
 <h3>Is Dumpgame an UNDERTALE GREEN?</h3>
 <blockquote>No, Dumpgame is not about UNDERTALE's green soul Kindness. Dumpgame features an original world, story and characters.</blockquote>
 <h3>Is Dumpgame incomplete?</h3>
-<blockquote>Yes, Dumpgame is <b>VERY</b> incomplete. The full game would've been <b><i>at least</i></b> five times longer than the DEMO.</blockquote>
+<blockquote>Yes, Dumpgame is <b>VERY</b> incomplete. The full game would've been <b><i>at least</i></b> five times longer than the demo.</blockquote>
 <h3>Is Dumpgame in development?</h3>
-<blockquote>Yes and no. The full game has been canceled, but new content may be added to the DEMO. More details on <a href="https://github.com/dsansthedsans/Dumpgame/wiki/Development-History">Development History</a>.</blockquote>
+<blockquote>Yes and no. The full game has been canceled, but new content may be added to the demo. More details on <a href="https://github.com/dsansthedsans/Dumpgame/wiki/Development-History">Development History</a>.</blockquote>
 <h3>Is Dumpgame AI-generated?</h3>
 <blockquote>No, <b>NOTHING</b> related to Dumpgame is AI-generated, not even this README. The <b>ONLY</b> exception is GitHub's commit messages.</blockquote>
 <h3>Is Dumpgame a virus?</h3>
