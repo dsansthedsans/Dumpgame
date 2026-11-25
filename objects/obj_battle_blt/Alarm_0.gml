@@ -22,15 +22,36 @@ if (type == -1)
 	audio_play(snd_appearSpear, false, VOLUME_SOUND);
 }
 // Dummy
-if (type == 1)
+if (type == 1.0)
 {
 	sprite_index = spr_battle_blt_gear;
-	image_speed = 1;
-	image_alpha = 0;
+    if (irandom_range(1, 100) <= 25)
+    {
+        sprite_index = spr_battle_blt_gearBig;
+        if (irandom_range(1, 100) <= 25)
+            sprite_index = spr_battle_blt_gearBigger;
+    }
 	direction = point_direction(x, y, controller.heart.x, controller.heart.y);
-	dmg = 1;
-	outside_box = 1;
-	target_xscale = ((global.visualeff == true) ? 1 : 2);
+}
+if (type == 1.1)
+{
+    side = 0;
+    if (x > controller.box_x)
+        side = 1;
+    sprite_index = spr_battle_blt_gearBig;
+    if (irandom_range(1, 100) <= 25)
+        sprite_index = spr_battle_blt_gearBigger;
+    direction = point_direction(x, y, irandom_range(controller.box_x - (controller.box_w / 2) + (controller.box_borderw * 2), controller.box_x + (controller.box_w / 2) - (controller.box_borderw * 2)), controller.box_y + (controller.box_h / 2));
+    //direction = point_direction(x, y, (controller.box_x + ((controller.box_w / 2) * ((side == 0) ? -1 : 1))), controller.box_y);
+}
+if (type == 1.2)
+    sprite_index = spr_battle_blt_gear;
+if (type >= 1.0 && type < 2)
+{
+    image_alpha = 0;
+    dmg = 1;
+    outside_box = 1;
+    target_xscale = ((global.visualeff == true) ? 1 : 2);
 	target_yscale = ((global.visualeff == true) ? 3 : 2);
 	scale_x_vel = 0;
 	scale_y_vel = 0;
@@ -38,7 +59,9 @@ if (type == 1)
 	damping = 0.85;
 	angmult = (choose(-1, 1) * global.visualeff);
 	speedadd = random_range(0.01, 0.03);
-	audio_play(snd_splatBubble, false, VOLUME_SOUND,,,, (1.25 + random_range(-0.1, 0.1)));
+    if (type == 1.1) || (type == 1.2)
+        speedadd *= 0.75;
+	audio_play(snd_splatBubble, false, VOLUME_SOUND,,,, (1.25 + random_range(-0.1, 0.1) - (0.5 * (type == 1.1))));
 }
 // Armsguy
 if (type == 2.0)
@@ -145,12 +168,13 @@ if (type == 3.1)
 	outside_box = 1;
 	destroy_on_impact = 0;
 	assist_can_destroy = false;
-
+    gravity_direction = 0;
 	if (myside == 1)
 	{
 		x = (controller.box_x + (controller.box_w / 2) + controller.box_borderw);
 		targetx = (controller.box_x + (controller.box_w / 2) + 30);
 		myspeed = -5;
+        gravity_direction = 180;
 	}	
 }
 // Flitcher
@@ -223,6 +247,7 @@ if (type == 5.15)
 if (type == 6.0)
 {
 	speed = 1;
+    image_speed = 1;
 	direction = point_direction(x, y, obj_battle_heart.x, obj_battle_heart.y);
 	image_angle = (direction + 90);
 	image_xscale = 1;
@@ -370,7 +395,7 @@ if (type == 6.24)
 	outside_box = 1;
 	destroy_on_impact = 0;
 	audio_play(snd_explosionLightning, 0, VOLUME_SOUND, , , , 0.75);
-	shakescreen(6, 6);
+	shakescreen(4, 4);
 }
 if (type >= 6 && type < 7)
 	dmg -= clamp(controller.enemy_obj[myself].negotiate, 0, 1);

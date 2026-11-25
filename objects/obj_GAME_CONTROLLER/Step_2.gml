@@ -31,19 +31,25 @@ var _xx = cam_x;
 var _yy = cam_y;
 if (cam_shake_stage == 1) || (cam_shake_stage == 2)
 {
-	cam_shake_xint = clamp(cam_shake_xint, 0, 8);
-	cam_shake_yint = clamp(cam_shake_yint, 0, 8);
+    var _intmax = 8;
+	var _intsub = 0.2;
+    if (room == room_menu) || (room == room_over) || (room == room_battle)
+    {
+        _intmax *= 2;
+        _intsub *= 2;
+    }
+    cam_shake_xint = clamp(cam_shake_xint, 0, _intmax);
+	cam_shake_yint = clamp(cam_shake_yint, 0, _intmax);
 	_xx += round(cam_shake_xint * choose(1, -1));
 	_yy += round(cam_shake_yint * choose(1, -1));
-	
 	if (cam_shake_xint > 0)
-		cam_shake_xint -= 0.2;
+		cam_shake_xint -= _intsub;
 	else
 		cam_shake_xint = 0;		
 	if (cam_shake_yint > 0)
-		cam_shake_yint -= 0.2;
+		cam_shake_yint -= _intsub;
 	else
-		cam_shake_yint = 0;			
+		cam_shake_yint = 0;	
 	cam_shake_stage = 2;
 	if (cam_shake_xint == 0 && cam_shake_yint == 0)
 		cam_shake_stage = 0;

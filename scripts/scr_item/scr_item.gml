@@ -155,8 +155,6 @@ function item_use()
 			default:
 			global.chara_heals += 1;
 			chara_hp(item_value(_item));
-            if (exists(obj_battle_controller) == true)
-                obj_battle_controller.guicolmerge_chara = 1 * global.visualeff;
 			msg[0] = $"{text_get("item_use_0")} :Y{item_name(_item, "")};D.)^3 \\&" + string((global.chara_curhp < global.chara_maxhp) ? $"{text_get("item_use_1")} :Y{item_value(_item)} HP;D.)" : $"{text_get("item_use_2")}");
 			if (_item == ITEM_CHOCO && room == room_battle)
 			{
@@ -168,7 +166,7 @@ function item_use()
 		}
 		global.item[_pos] = -1;
 	}
-	if (item_type(_item) == ITEM_TYPE_WEAPON) || (item_type(_item) == ITEM_TYPE_ARMOR)
+	else if (item_type(_item) == ITEM_TYPE_WEAPON) || (item_type(_item) == ITEM_TYPE_ARMOR)
 	{
 		if (item_type(_item) == ITEM_TYPE_WEAPON)
 		{
@@ -183,6 +181,12 @@ function item_use()
 		msg[0] = $"{text_get("item_equip")} :Y{item_name(_item, "")};D.)";
 		audio_play(snd_impactEquip, 0, VOLUME_SOUND);
 	}
+    else if (item_type(_item) == ITEM_TYPE_NONE)
+    {
+        msg[0] = string_replace(text_get("item_cantuse"), "{name}", item_name(_item));
+        audio_play(snd_option_cantselect, 0, VOLUME_SOUND);
+        shakescreen(2, 2);
+    }
 }
 function item_info()
 {

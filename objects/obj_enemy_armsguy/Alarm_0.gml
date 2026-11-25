@@ -36,5 +36,11 @@ event_user(0);
 tookslime = 0;
 punched = 0;
 punchtime = 0;
+noreturn = false;
 if (chara_murder() >= 1)
+{
 	tookslime = true;
+    noreturn = true;
+    controller.enemy_statArrow[myself, 1] = 1;
+    controller.enemy_statArrow[myself, 2] = 1;
+}

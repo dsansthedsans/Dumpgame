@@ -85,13 +85,18 @@ if (active == 1)
 	if (controller.enemy_spare[myself] >= 100)
 		controller.enemy_def[myself] = 0;
 	else
+    {
 		controller.enemy_def[myself] = orig_def;
+        if (tookslime == true)
+            controller.enemy_def[myself] = round(controller.enemy_def[myself] * 1.25);
+    }
 
 	if (controller.enemy_type[myself] != 0)
 	{
 		// act used
 		if (controller.battle_usedact == 1 && usedact == 0 && controller.enemy_target == myself)
 		{
+            global.writer_enemy = id;
 			writer("battle_act_armsguy" + string(controller.level_heard), -1, -1);
 			usedact = 1;
 		
@@ -99,14 +104,18 @@ if (active == 1)
 			{
 				create(-20, -20, obj_battle_dmgwriter, {sparedmg : -100});
                 controller.enemy_spare[myself] = 0;
+                controller.enemy_statArrow[myself, 1] = 1;
+                controller.enemy_statArrow[myself, 2] = 1;
 				audio_play(snd_jingleFail, false, VOLUME_SOUND);
 				punched = 0;
 				tookslime = 1;
 			}
-			else if (controller.level_heard == 2)
+			else if (controller.level_heard == 2 && noreturn == false)
 			{
                 create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
 				controller.enemy_spare[myself] = 100;
+                controller.enemy_statArrow[myself, 1] = -1;
+                controller.enemy_statArrow[myself, 2] = -1;
 				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 				punched = 1;
 				punchtime = 60;
@@ -132,7 +141,7 @@ if (active == 1)
 			{
 				if (controller.level_heard == 1)
 					_text = "battle_bubble_armsguy2";
-				else if (controller.level_heard == 2)
+				else if (controller.level_heard == 2 && noreturn == false)
 					_text = "battle_bubble_armsguy3";
 			}
 			if (_text = "battle_bubble_armsguy0")

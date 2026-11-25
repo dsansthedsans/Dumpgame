@@ -23,7 +23,7 @@ if (room == room_corridors_18 && /*global.flag[60] == true &&*/ global.flag[61] 
 		marker((m6.x - (m6.sprite_width / 4) + 2), (m6.y - (m6.sprite_height / 2) - 4), spr_particle_smoke, 1, 1, 1, 0, 0, 0, c_white, (m6.depth + 1));
 		thismarker.speed = choose(0.4, 0.65) * 0.75;
 		thismarker.direction = (90 + irandom_range(-20, 20));
-		particle[num] = thismarker;
+		particle[num] = thismarker.id;
 		num += 1;
 		delay = 18;
 	}
@@ -40,7 +40,7 @@ if (room == room_corridors_18 && /*global.flag[60] == true &&*/ global.flag[61] 
 			particle[i].image_alpha -= 0.01;
 			if (particle[i].image_alpha <= 0) || (particle[i].image_index >= 4)
 			{
-				destroy(particle[i]);
+				destroy(particle[i].id);
 				particle[i] = -1;
 			}
 		}
@@ -49,32 +49,105 @@ if (room == room_corridors_18 && /*global.flag[60] == true &&*/ global.flag[61] 
 var _control = obj_battle_controller;
 if (room == room_battle && exists(_control) == true && global.visualeff == true)
 {
-	if (_control.heart_type == 1 && _control.heart_move == true && delay <= 0)
-	{
-		var _marker = marker((_control.heart.x + irandom_range(-5, 5)), (_control.heart.y + irandom_range(-5, 5)), spr_singlepixel, 1, 2, 2, 0, 0, 0, global.c_yellow, (_control.heart.depth - 1));
-		_marker.hspeed = (_control.heart.press_r - _control.heart.press_l);
-		_marker.gravity = 0.1;
-		array_push(particle2, _marker);
-		delay = choose(15, 30);
-	}
-	else
-		delay -= 1;
-	for (var i = 0; i < array_length(particle2); i++)
-	{
-		if (exists(particle2[i]) == 1)
-		{
-			var _ymax = (_control.box_x + (_control.box_h / 2));
-			if (_control.heart_move == false)
-				_ymax = room_height;
-			if (_control.heart_move == true && (particle2[i].x <= (_control.box_x - (_control.box_w / 2)) || particle2[i].x >= (_control.box_x + (_control.box_w / 2)))) || (particle2[i].y >= _ymax)
-			{
-				destroy(particle2[i]);
-				array_delete(particle2, i, 1);
-			}
-		}
-		else
-			array_delete(particle2, i, 1);
-	}
+    // m6 assist heal bullet particles
+    if (_control.assist.active == true && _control.assist.object != undefined)
+    {
+        if (m6delay <= 0)
+        {
+            var _scale = choose(2, 4);
+            var _marker = marker((_control.assist.object.x), (_control.assist.object.y), spr_singlepixel, 1, _scale, _scale, 0, 0, 0, global.c_dump, (_control.assist.object.depth - 1));
+            _marker.speed = 0.5;
+            _marker.direction = irandom(360);
+            _marker.alphaspd = 0.02;
+            _marker.direcspd = (2 * choose(-1, 1));
+            array_push(m6assist, _marker.id);
+            m6delay = 5;
+        }
+        else
+        	m6delay -= 1;
+    }
+    for (var i = 0; i < array_length(m6assist); i++)
+    {
+        if (exists(m6assist[i].id) == 1)
+        {
+            m6assist[i].direction -= m6assist[i].direcspd;
+            m6assist[i].image_alpha -= m6assist[i].alphaspd;
+            if (m6assist[i].image_alpha <= 0)
+            {
+                destroy(m6assist[i].id);
+                array_delete(m6assist, i, 1);
+            }
+        }
+        else
+            array_delete(m6assist, i, 1);
+    }
+    // dummy bigger gear partticles
+    if (_control.battle_group == 1)
+    {
+        for (var i = 0; i < array_length(dummyRequest); i++)
+        {
+            for (var z= 0; z < 2; z++)
+            {
+                 var _scale = choose(2, 4); 
+                 var _marker = marker(dummyRequest[i, 0] + irandom_range(-20, 20), dummyRequest[i, 1] + irandom_range(-20, 20), spr_singlepixel, 1, _scale, _scale, 0, 0, 0, c_white, (_control.battle_depth[6] - 1));
+                _marker.speed = 0.5;
+                _marker.direction = irandom(360);
+                _marker.alphaspd = 0.02;
+                _marker.direcspd = (2 * choose(-1, 1));
+                array_push(dummy, _marker.id);
+            }
+            array_delete(dummyRequest, i, 1);
+        }
+        for (var i = 0; i < array_length(dummy); i++) 
+        {
+            if (exists(dummy[i].id) == 1)
+            {
+                dummy[i].direction -= dummy[i].direcspd;
+                dummy[i].image_alpha -= dummy[i].alphaspd; 
+                if (dummy[i].image_alpha <= 0)  
+                {
+                   destroy(dummy[i].id);
+                   array_delete(dummy, i, 1);
+               }
+           }
+           else
+               array_delete(m6assist, i, 1);
+       }    
+    }
+    // oily soul partticles
+    if (_control.battle_group == 1000)
+    {
+        if (_control.heart_type == 1 && _control.heart_move == true)
+       {
+           if (delay <= 0)
+         	{
+         		var _marker = marker((_control.heart.x + irandom_range(-5, 5)), (_control.heart.y + irandom_range(-5, 5)), spr_singlepixel, 1, 2, 2, 0, 0, 0, global.c_yellow, (_control.heart.depth - 1));
+         		_marker.hspeed = (_control.heart.press_r - _control.heart.press_l);
+         		_marker.gravity = 0.1;
+         		array_push(particle2, _marker.id);
+         		delay = choose(15, 30);
+         	}
+         	else
+         		delay -= 1;
+         	
+       }
+       for (var i = 0; i < array_length(particle2); i++)
+       {
+           if (exists(particle2[i].id) == 1)
+           {
+               var _ymax = (_control.box_x + (_control.box_h / 2));
+               if (_control.heart_move == false)
+                   _ymax = room_height;
+               if (_control.heart_move == true && (particle2[i].x <= (_control.box_x - (_control.box_w / 2)) || particle2[i].x >= (_control.box_x + (_control.box_w / 2)))) || (particle2[i].y >= _ymax)
+               {
+                   destroy(particle2[i].id);
+                   array_delete(particle2, i, 1);
+               }
+           }
+           else
+               array_delete(particle2, i, 1);
+       }
+    }
 }
 
 if (confetti_active == true && global.visualeff == true)

@@ -110,7 +110,14 @@ function savefile_read(_savefile)
 		for (var i = 0; i < array_length(global.flag); i++)
 		{
 			savefile_flag[i] = file_text_read_string(_file);
-			file_text_readln(_file);
+            if (is_string(savefile_flag[i]) == true && savefile_flag[i] != "")
+            {
+                if (string_letters(savefile_flag[i]) == "")
+                    savefile_flag[i] = real(savefile_flag[i]);
+                if (savefile_flag[i] == "undefined")
+                    savefile_flag[i] = undefined;
+            }
+   			file_text_readln(_file);
 		}
 		for (var w = 0; w < array_length(global.world_curpopulation); w++)
 		{

@@ -145,11 +145,20 @@ if (active == 1)
 			startattack = 0;
 			returnmain = 1;
 			usedact = 0;
-			//if (insultTurns > 0)
-			//	insultTurns -= 1;
-			//if (insultTurns < 0)
-			//	insultTurns += 1;
+            if (insultTurns != 0)
+            {
+                if (insultTurns > 0)
+                {
+    				insultTurns -= 1;
+                    controller.enemy_statArrow[myself, 2] = ((-1 * (negotiate >= 2)) + (-1 * (insultTurns > 0)));
+                }
+    			if (insultTurns < 0)
+                {
+    				insultTurns += 1;
+                    if (insultTurns == 0)
+                        controller.enemy_statArrow[myself, 2] = 0;
+                }
+            }
 		}
 	}
 }
-

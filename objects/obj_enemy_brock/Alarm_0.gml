@@ -41,5 +41,9 @@ if (global.indebug == true && global.debug_hud == true)
 {
 	convince = 4;
 	insult = 6;
+    negotiate = 2;
+    controller.enemy_act_enabled[myself, 1] = false;
 	controller.enemy_spare[myself] = 80;
+    controller.enemy_statArrow[myself, 0] = -1;
+    controller.enemy_statArrow[myself, 2] = -2;
 }

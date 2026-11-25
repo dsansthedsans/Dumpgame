@@ -29,5 +29,11 @@ spared = 0;
 event_user(0);
 
 emotion = 0;
+noreturn = false;
 if (chara_murder() >= 1)
+{
 	emotion = 1;
+    noreturn = true;
+    controller.enemy_statArrow[myself, 1] = 1;
+    controller.enemy_statArrow[myself, 2] = 1;
+}

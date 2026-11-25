@@ -368,6 +368,8 @@ function chara_hp(_amt)
 	global.chara_curhp += _amt;
 	global.chara_curhp = clamp(global.chara_curhp, 0, global.chara_maxhp);
 	audio_play(snd_jingleHeal, 0, VOLUME_SOUND);
+    if (exists(obj_battle_controller) == true)
+        obj_battle_controller.guicolmerge_chara = 1 * global.visualeff;
 }
 function chara_stepping()
 {
@@ -393,8 +395,7 @@ function chara_damage()
 		if (_dmg > 0)
 		{
 			audio_play(snd_impactHurt, 0, VOLUME_SOUND);
-			var _shake = (2 * (global.inbattle + 1));
-			shakescreen(_shake, _shake);
+			shakescreen(2, 2);
             if (exists(obj_chara) == true)
                 obj_chara.hp_colmerge = 1;
             if (exists(obj_battle_controller) == true)

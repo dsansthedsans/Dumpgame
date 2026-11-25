@@ -228,7 +228,7 @@ for (var c = 1; c < (text_length + 1); c++)
 			}
 			if (string_char_at(msg[page], c + 1) == "F" && _cancheck == 1) // pink ("SPEED")
 			{
-				text_color[0] = c_fuchsia;
+				text_color[0] = global.c_pink;
 				_cancheck = 0;
 			}
 			if (string_char_at(msg[page], c + 1) == "P" && _cancheck == 1) // purple ("INVINCIBILITY FRAMES")
@@ -617,10 +617,15 @@ if (question[page] != "%%%" && writing == 0)
 		var _xx = (question_optx[question_pos] - (string_width(question_option[question_pos]) / 2) - _xalign);
 	if (question_pos == 2) || (question_pos == 4)
 		var _xx = (question_optx[question_pos] - _xalign);
-	var _yy = question_opty[question_pos];
-	
-	draw_sprite_ext(spr_battle_heart, 0, _xx, ceil(_yy + 0), (_scale / 2), (_scale / 2), 0, global.c_dump, alpha);
-	
+	var _yy = ceil(question_opty[question_pos]);
+	if (room != room_battle)
+	   draw_sprite_ext(spr_battle_heart, 0, _xx, _yy, (_scale / 2), (_scale / 2), 0, global.c_dump, alpha);
+	else if (exists(obj_battle_heart) == true)
+    {
+        obj_battle_heart.x = _xx;
+        obj_battle_heart.y = _yy;
+    }
+    
 	// select
 	if (question_pos != 0 && press_enter == 1)
 	{

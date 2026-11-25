@@ -199,8 +199,13 @@ function screenpos(_x, _y)
 }
 function shakescreen(_xint, _yint)
 {
-	obj_GAME_CONTROLLER.cam_shake_xint += (argument0 * global.visualeff);
-	obj_GAME_CONTROLLER.cam_shake_yint += (argument1 * global.visualeff);
+    if (room == room_menu) || (room == room_over) || (room == room_battle)
+    {
+        _xint *= 2;
+        _yint *= 2;
+    }
+	obj_GAME_CONTROLLER.cam_shake_xint += (_xint * global.visualeff);
+	obj_GAME_CONTROLLER.cam_shake_yint += (_yint * global.visualeff);
 	obj_GAME_CONTROLLER.cam_shake_stage = 1;
 }
 

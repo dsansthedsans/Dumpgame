@@ -6,7 +6,7 @@ for (var a = 0; a < 3; a++)
 }
 murder_alpha = lerp(murder_alpha, _murder_alpha, 0.05);
 draw_set_alpha(murder_alpha);
-draw_set_color(merge_color(c_white, global.c_red, 0.5));
+draw_set_color(global.c_red);
 draw_rectangle(-20, -20, (20 + room_width + 20), (20 + room_height + 20), false);
 
 if (active == 1)

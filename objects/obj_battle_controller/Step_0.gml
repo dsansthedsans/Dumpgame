@@ -535,7 +535,7 @@ if (assist.active == true)
 {
 	if (assist.curr >= assist.max && is_undefined(assist.object) == true)
 	{
-		assist.object = marker(assist.x, assist.y, spr_battle_blt_gear, 0, 2, 2, 0, 0, 0, global.c_dump, battle_depth[7]);
+		assist.object = marker(assist.x, assist.y, spr_battle_blt_gear, 0, 2, 2, 0, 0, 0, global.c_dump, -10001/*battle_depth[7]*/);
 		assist.object.active = true;
 		assist.curr = 0;
 		if (assist.audio_assets != undefined)

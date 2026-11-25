@@ -36,8 +36,12 @@ event_user(0);
 kicked = 0;
 kicktime = 0;
 emptied = 0;
+noreturn = false;
 if (chara_murder() >= 1)
 {
 	kicked = true;
+    noreturn = true;
 	controller.enemy_spare[myself] = 100;
+    controller.enemy_statArrow[myself, 1] = -1;
+    controller.enemy_statArrow[myself, 2] = 1;
 }

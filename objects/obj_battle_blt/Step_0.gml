@@ -39,7 +39,28 @@ if (active == 1)
 			destroy(id);
 	}
 	// Dummy
-	if (type == 1)
+    if (type == 1.1)
+    {
+        if (y >= controller.box_y + (controller.box_h / 2) - (sprite_height / 2) + 10)
+        {
+            for (var i = 0; i < (2 + (2 * (sprite_index == spr_battle_blt_gearBigger))); i++)
+            {
+                var _posdist = 10;
+                create(x + (_posdist * choose(-1, 1)), y + (_posdist * choose(-1, 1)), obj_battle_blt);
+                thisobj.type = 1.2;
+                thisobj.speed = (speed * 0.25);
+                thisobj.direction = (90 - (direction - 270) + irandom_range(-18, 18));
+                array_push(obj_PARTICLE_CONTROLLER.dummyRequest, [thisobj.x, thisobj.y]);
+            }
+            destroy(id);
+        }
+        //if (side == 0 && x >= (controller.box_x - (controller.box_w / 2) - (sprite_width / 2))) 
+        //|| (side == 1 && x <= (controller.box_x + (controller.box_w / 2) + (sprite_width / 2)))
+        //{
+            //destroy(id);
+        //}
+    }
+	if (type >= 1.0 && type < 2)
 	{
 		if (global.chara_curhp <= ceil(global.chara_maxhp / 10))
 			can_damage = false;
@@ -178,20 +199,29 @@ if (active == 1)
 			y = lerp(y, obj_battle_heart.y, 0.3);
 			mytimer -= 1;
 			if (mytimer <= 0)
-				mystage = 2;
+            {
+                mystage = 2;
+                shaker = undefined;
+                audio_play(snd_impactEquip, false, VOLUME_SOUND, 0.25);
+                shakeobj(id, 2, 2, 0.2);
+            }
 		}
-		else if (mystage == 2)
+		else if (mystage == 2 && ((shaker == undefined) || (shaker != undefined && exists(shaker) == false)))
 		{
-			hspeed = myspeed;
+            gravity = 0.15;
+			//hspeed = myspeed;
 			afterimage();
 			if (myside == 0 && x >= controller.box_x) || (myside == 1 && x <= controller.box_x)
 			{
 				x = controller.box_x;
-				hspeed = 0;
+				gravity = 0;
+                speed = 0;
+                //hspeed = 0;
 				if (myside == 0)
 				{
 					audio_play(snd_impactShake, 0, VOLUME_SOUND);
-					shakescreen(5, 5)
+					audio_play(snd_impactCymbal, 0, VOLUME_SOUND);
+					shakescreen(3, 3)
 				}
 				can_damage = 0;
 				mystage = 0;
@@ -426,7 +456,7 @@ if (active == 1)
 			else
 			{
 				audio_play(snd_impactShake, false, VOLUME_SOUND, 1);
-				shakescreen(4, 4);
+				shakescreen(2, 2);
 			}
 		}
 	}

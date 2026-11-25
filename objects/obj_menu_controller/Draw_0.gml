@@ -29,6 +29,7 @@ if (global.menu_lvl == 5)
 		|| (_asset_sprite == spr_charaFrisk_d && (global.CHARAFRISK_ENABLED == false || string_upper(savefile[play_save].name) != "FRISK"))
 		|| (_asset_sprite == spr_chara_genoshadow && savefile[play_save].murder < 2)
 		|| (_asset_sprite == spr_chara_genoshadow && (global.CHARAFRISK_ENABLED == true && string_upper(savefile[play_save].name) == "FRISK"))
+        || (_asset_sprite == spr_chara_genosmile && (global.CHARAGENOSLIME_ENABLED == false || savefile[play_save].murder < 2 || savefile[play_save].flag[75] != 1))
 		|| (_asset_sprite == spr_mainchara_armor_candybowl && savefile[play_save].armor != ITEM_BOWL)
 		|| (_asset_sprite == spr_mainchara_armor_candybowl && (global.CHARAFRISK_ENABLED == true && string_upper(savefile[play_save].name) == "FRISK"))
 			continue;
@@ -36,11 +37,14 @@ if (global.menu_lvl == 5)
 			_asset_alpha = ((savefile[play_save].murder < 2) ? 0.5 : 1);
 		if (savefile[play_save].world == WORLD_CORRIDORS)
 		{
-			if (_asset_sprite == spr_m6_d_default && savefile[play_save].flag[2] == false)
+			if ((_asset_sprite == spr_m6_d_default || _asset_sprite == spr_m6_d_neutral) && savefile[play_save].flag[2] == false)
 			|| (_asset_sprite == spr_m6_d_default && savefile[play_save].flag[2] == true && savefile[play_save].armor == ITEM_BOWL && savefile[play_save].murder < 1 && (global.CHARAFRISK_ENABLED == false || string_upper(savefile[play_save].name) != "FRISK"))
-			|| (_asset_sprite == spr_m6_d_defaultSit && savefile[play_save].flag[2] == false)
+			|| (_asset_sprite == spr_m6_d_default && savefile[play_save].flag[72] == true)
+            || (_asset_sprite == spr_m6_d_neutral && savefile[play_save].flag[72] == false)
+            || (_asset_sprite == spr_m6_d_defaultSit && savefile[play_save].flag[2] == false)
 			|| (_asset_sprite == spr_m6_d_defaultSit && savefile[play_save].flag[2] == true && savefile[play_save].armor != ITEM_BOWL)
 			|| (_asset_sprite == spr_m6_d_defaultSit && savefile[play_save].flag[2] == true && savefile[play_save].armor == ITEM_BOWL && savefile[play_save].murder >= 1)
+            || (_asset_sprite == spr_m6_d_defaultSit && savefile[play_save].flag[72] == true)
 			|| (_asset_sprite == spr_m6_d_defaultSit && (global.CHARAFRISK_ENABLED == true && string_upper(savefile[play_save].name) == "FRISK"))
 			|| (_asset_sprite == spr_npc_dummy && (savefile[play_save].flag[6] == false || savefile[play_save].flag[7] == false || savefile[play_save].flag[5] == true))
 			|| ((_asset_sprite == spr_npc_armsguy || _asset_sprite == spr_npc_trashguy) && (savefile[play_save].flag[48] == false || savefile[play_save].curpop[WORLD_CORRIDORS] <= 0))
@@ -53,7 +57,15 @@ if (global.menu_lvl == 5)
 			}
 		}
 		draw_sprite_ext(_asset_sprite, layer_sprite_get_index(_assets[a]), _asset_x, _asset_y, layer_sprite_get_xscale(_assets[a]), layer_sprite_get_yscale(_assets[a]), layer_sprite_get_angle(_assets[a]), layer_sprite_get_blend(_assets[a]), _asset_alpha);
-	}
+	   if (_asset_sprite == spr_npc_brock && brockHands_draw == true)
+	   {
+      		for (var h = 0; h < brockHands_length; h++)
+      		{
+      			brockHands_angle[h] += (brockHands_angleSpeed[h] * global.visualeff);
+      			draw_sprite_ext(spr_singlepixel, 0, _asset_x + 0.5, _asset_y + 0.5, layer_sprite_get_xscale(_assets[a]), (brockHands_scaleY[h] * layer_sprite_get_yscale(_assets[a])), brockHands_angle[h], #805EBF, _asset_alpha);
+      		}
+        }
+    }
 	surface_reset_target();
 	draw_surface_ext(continueback_surface, 0, 0, 2, 2, 0, c_white, 1);
 }

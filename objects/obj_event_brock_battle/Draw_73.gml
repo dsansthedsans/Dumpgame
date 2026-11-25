@@ -10,7 +10,7 @@ if (is_undefined(brock) == false && exists(brock) == true)
 		for (var h = 0; h < brockHands_length; h++)
 		{
 			brockHands_angle[h] += (brockHands_angleSpeed[h] * global.visualeff);
-			draw_sprite_ext(spr_singlepixel, 0, brock.x + 0.5, brock.y + 0.5, brock.image_xscale, (brockHands_scaleY[h] * brock.image_yscale), brockHands_angle[h], #7B40B2, brock.image_alpha);
+			draw_sprite_ext(spr_singlepixel, 0, brock.x + 0.5, brock.y + 0.5, brock.image_xscale, (brockHands_scaleY[h] * brock.image_yscale), brockHands_angle[h], #805EBF, brock.image_alpha);
 		}
 	}
 }

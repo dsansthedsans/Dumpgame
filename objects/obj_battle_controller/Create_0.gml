@@ -109,6 +109,9 @@ for (var i = 0; i < enemy_length; i++)
 	}
 	enemy_act[i, 0] = text_get("battle_act_0");
 	
+    enemy_statArrow[i, 0] = 0 /*0 = NONE; 1 = UP; -1 = DOWN*/; // ATTACK
+    enemy_statArrow[i, 1] = 0 /*0 = NONE; 1 = UP; -1 = DOWN*/; // DEFENSE
+    enemy_statArrow[i, 2] = 0 /*0 = NONE; 1 = UP; -1 = DOWN*/; // SPEED
 }
 
 assist =

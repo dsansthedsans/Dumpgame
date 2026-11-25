@@ -87,31 +87,37 @@ if (active == 1)
 	if (controller.enemy_spare[myself] >= 100)
 		controller.enemy_def[myself] = 0;
 	else
+    {
 		controller.enemy_def[myself] = orig_def;
+        if (emotion == 1)
+            controller.enemy_def[myself] = round(controller.enemy_def[myself] * 1.25);
+    }
 
 	if (controller.enemy_type[myself] != 0)
 	{
 		// act used
 		if (controller.battle_usedact == 1 && usedact == 0 && controller.enemy_target == myself)
 		{
+            global.writer_enemy = id;
 			writer("battle_act_flitcher" + string(controller.level_heard), -1, -1);
 			usedact = 1;
-			if (controller.level_heard != 0)
+            if (controller.level_heard == 1)
 			{
-				emotion = controller.level_heard;
-				switch (emotion)
-				{
-					case 1:
-					create(-20, -20, obj_battle_dmgwriter, {sparedmg : -100});
-                    controller.enemy_spare[myself] = 0;
-					audio_play(snd_jingleFail, false, VOLUME_SOUND);
-					break;
-					case 2:
-                    create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
-                    controller.enemy_spare[myself] = 100;
-					audio_play(snd_jingleSucess, false, VOLUME_SOUND);
-					break;
-				}
+				emotion = 1;
+                create(-20, -20, obj_battle_dmgwriter, {sparedmg : -100});
+                controller.enemy_spare[myself] = 0;
+                controller.enemy_statArrow[myself, 1] = 1;
+                controller.enemy_statArrow[myself, 2] = 1;
+                audio_play(snd_jingleFail, false, VOLUME_SOUND);
+			}
+			else if (controller.level_heard == 2 && noreturn == false)
+			{
+                emotion = 2;
+                create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
+                controller.enemy_spare[myself] = 100;
+                controller.enemy_statArrow[myself, 1] = -1;
+                controller.enemy_statArrow[myself, 2] = -1;
+                audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 			}
 			
 		}

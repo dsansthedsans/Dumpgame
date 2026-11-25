@@ -93,7 +93,7 @@ if (con == 13)
 		con = 13.25;
 	}
 	else
-		game.cam_x -= 0.4;
+		game.cam_x -= 0.5;
 	screenpos(game.cam_x, game.cam_y);
 }
 if (con == 13.5)

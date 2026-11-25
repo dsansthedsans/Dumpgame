@@ -107,11 +107,31 @@ if ((battle_lvl == 1.0 || battle_lvl == 2.0) && exists(global.writer_old) == fal
 				_maxamt = 100;
 			}
 			var _amt = ((_curamt / _maxamt) * 100);
-			var _x1 = (box_x - (box_w / 2) + 335 + 40);
+			var _x1 = (box_x - (box_w / 2) + 335 + 40 + 10);
 			var _y1 = (box_y - (box_h / 2) + 23 + (32 * i));
 			var _y2 = (_y1 + 17);
 			draw_battle_bar($"{round(_amt)}%", round(_curamt), round(_maxamt), _x1, _y1, 100, level_curbarcolor[(battle_lvl - 1)], level_maxbarcolor[(battle_lvl - 1)], 1);
-		}
+            for (var a = 0; a < 3; a++)
+            {
+                if (enemy_statArrow[i, a] != 0)
+                {
+                    for (var b = 0; b < abs(enemy_statArrow[i, a]); b++)
+                    {
+                        var _clamp = clamp(enemy_statArrow[i, a], -1, 1);
+                        var _color = global.c_red;
+                         if (a == 1)
+                             _color = global.c_blue;
+                         if (a == 2)
+                             _color = global.c_pink;
+                         var _sprite = spr_enemy_statArrow;
+                         var _x = round(_x1 + 100 + 24 + (16 * a) - sprite_get_width(_sprite));
+                         var _y = round(_y1 + ((_y2 - _y1) / 2) - (sprite_get_height(spr_enemy_statArrow) * _clamp) + (2 * (_clamp == -1)) + (8 * _clamp * b));
+                         for (var o = 0; o < 2; o++)
+                             draw_sprite_outline(_x, _y, _sprite, 0, 2, 2 * _clamp, 0, _color, 1, (4 - (2 * o)), ((o == 0) ? c_white : c_black));
+                    }
+                }
+            }
+        }
 	}
 	if (battle_group == 1)
 		draw_sprite_ext(spr_battle_dummy_arrow, round(battle_lvl - 1 + (2 * (global.lang == "ptBR"))), (_x1 + 75 + (irandom(1) * global.visualeff)), (box_y + 16 + (irandom(1) * global.visualeff)), 1, 1, 0, c_white, 1);

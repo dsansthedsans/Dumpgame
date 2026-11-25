@@ -243,7 +243,7 @@ if (active == 1)
 					gravity = 0;
 					image_alpha = 0;
 					audio_play(snd_explosionEcho, 0, VOLUME_SOUND);
-					shakescreen(6, 6);
+					shakescreen(3, 3);
 					stage = 2;
 				}
 			}

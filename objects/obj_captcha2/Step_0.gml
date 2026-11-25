@@ -40,7 +40,7 @@ for (var i = 0; i < 3; i++)
 			puzzle_complete[i] = 1;
 			if (obj_chara.battlecon >= 0)
 			{
-				shakescreen(2, 2);
+				shakescreen(3, 3);
 				audio_play(snd_impact, 0, VOLUME_SOUND);
 			}
 			if (audio_playing(snd_option_movehold) == true)

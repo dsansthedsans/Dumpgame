@@ -8,3 +8,4 @@ if (drp == 1)
 }
 else
 	debug("--- obj_DRP_CONTROLLER: Failed to activate Discord RPC");
+image_alpha = 0;

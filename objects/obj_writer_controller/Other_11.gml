@@ -30,6 +30,11 @@ if (question_active == 1)
 	msg_format[page] = "textbox";
 	msg_autoskip[page] = 0;
 	TEXT();
+    if (room == room_battle && exists(obj_battle_heart) == true)
+    {
+        obj_battle_heart.x = -20;
+        obj_battle_heart.y = -20;
+    }
 }
 question_active = 0;
 

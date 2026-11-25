@@ -22,3 +22,4 @@ thisold = -1;
 postbattle_audiopos[0] = 0;
 postbattle_audiopos[1] = 0;
 */
+image_alpha = 0;

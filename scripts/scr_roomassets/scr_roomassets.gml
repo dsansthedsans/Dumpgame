@@ -775,8 +775,8 @@ function room_solid()
 			y += 20;
 		}
 	}
-	if (chara_murder() >= 1 && leaf_fall == true)
-		leaf_fall = false;
+	//if (chara_murder() >= 1 && leaf_fall == true)
+		//leaf_fall = false;
 }
 function room_nonsolid()
 {

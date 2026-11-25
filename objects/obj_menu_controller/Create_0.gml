@@ -75,6 +75,14 @@ achievement_pos = 0;
 controls_changing = 0;
 controls_canchange = false;
 
+brockHands_draw = true;
+brockHands_length = 3;
+for (var h = 0; h < brockHands_length; h++)
+{
+    brockHands_scaleY[h] = (8 - h);
+    brockHands_angle[h] = random(360);
+    brockHands_angleSpeed[h] = (random_range(0.125, 0.5) * choose(-1, 1));
+}
 
 // outros
 event_user(5);

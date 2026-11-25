@@ -9,6 +9,7 @@ function START_GAME()
     global.c_orange = #F29948; // "new member"
 	global.c_orangeDark = #D86440;
 	global.c_gray = #748CAB; // unavailable option; "Corridors"
+    global.c_pink = c_fuchsia;
 	global.c_mention[0] = #5865F2;
 	global.c_mention[1] = #A8BAFE;
     global.c_m6 = #4986B7;
@@ -25,7 +26,7 @@ function START_GAME()
 	global.game_startroom[1] = room_corridors_1 //room_intro;
 	global.ACHIEVEMENT_ENABLED = false;
 	global.CHARAFRISK_ENABLED = false;
-    global.CHARAGENOSLIME_ENABLED = false;
+    global.CHARAGENOSLIME_ENABLED = true;
 	textdata();
 	start_maininfo();
 	start_music();

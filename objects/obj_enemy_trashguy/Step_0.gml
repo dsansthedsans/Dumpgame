@@ -86,20 +86,27 @@ if (active == 1)
 	if (controller.enemy_spare[myself] >= 100)
 		controller.enemy_def[myself] = 0;
 	else
+    {
 		controller.enemy_def[myself] = orig_def;
+        if (kicked == true)
+            controller.enemy_def[myself] = round(controller.enemy_def[myself] * 1.25);
+    }
 
 	if (controller.enemy_type[myself] != 0)
 	{
 		// act used
 		if (controller.battle_usedact == 1 && usedact == 0 && controller.enemy_target == myself)
 		{
+            global.writer_enemy = id;
 			writer($"battle_act_trashguy{controller.level_heard}", -1, -1);
 			usedact = 1;
 		
-			if (controller.level_heard == 1)
+			if (controller.level_heard == 1 && noreturn == false)
 			{
 				create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
                 controller.enemy_spare[myself] = 100;
+                controller.enemy_statArrow[myself, 1] = -1;
+                controller.enemy_statArrow[myself, 2] = -1;
 				audio_play(snd_jingleSucess, false, VOLUME_SOUND);
 				kicked = 0;
 				emptied = 1;
@@ -108,6 +115,8 @@ if (active == 1)
 			{
                 create(-20, -20, obj_battle_dmgwriter, {sparedmg : 100});
 				controller.enemy_spare[myself] = 100;
+                controller.enemy_statArrow[myself, 1] = -1;
+                controller.enemy_statArrow[myself, 2] = 1;
 				audio_play(snd_jingleFail, false, VOLUME_SOUND);
 				kicked = 1;
 				kicktime = 60;
@@ -131,15 +140,16 @@ if (active == 1)
 			var _text = "battle_bubble_trashguy0";
 			if (controller.battle_usedact == 1 && controller.enemy_target == myself && controller.level_heard != 0)
 			{
-				if (controller.level_heard == 1)
+				if (controller.level_heard == 1 && noreturn == false)
 					_text = "battle_bubble_trashguy3";
 				else if (controller.level_heard == 2)
 					_text = "battle_bubble_trashguy4";
 			}
-			else if (emptied == 1) || (kicked == 1)
+			if (_text = "battle_bubble_trashguy0")
 			{
-				_text = "battle_bubble_trashguy1";
-				if (kicked == 1)
+                if (emptied == 1)
+				    _text = "battle_bubble_trashguy1";
+				else if (kicked == 1)
 					_text = "battle_bubble_trashguy2";
 			}
 		

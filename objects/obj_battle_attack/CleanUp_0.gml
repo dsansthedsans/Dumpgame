@@ -1,3 +1,5 @@
+if (enemy == 6 && attack == 0 && audio_playing(snd_buildupShock) == true)
+    audio_stop(snd_buildupShock);
 if (enemy == 7 && attack == 0 && stage >= 2)
 {
 	if (ball.rotate.id != undefined && audio_playing(ball.rotate.id) == true)

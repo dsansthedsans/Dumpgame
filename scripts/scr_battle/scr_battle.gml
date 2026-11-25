@@ -359,17 +359,26 @@ function battle_enemy_allAngry()
 				_control.enemy_obj[e].punched = 0;
 				_control.enemy_obj[e].tookslime = 1;
 				_control.enemy_spare[e] = 0;
+                _control.enemy_statArrow[e, 1] = 1;
+                _control.enemy_statArrow[e, 2] = 1;
+                _control.enemy_obj[e].noreturn = true;
 				break;
 				// Trashguy
 				case 3:
 				_control.enemy_obj[e].kicked = 1;
 				_control.enemy_obj[e].emptied = 0;
 				_control.enemy_spare[e] = 100;
-				break;
+				_control.enemy_statArrow[e, 1] = -1;
+                _control.enemy_statArrow[e, 2] = 1;
+                _control.enemy_obj[e].noreturn = true;
+                break;
 				// Flitcher
 				case 4:
 				_control.enemy_obj[e].emotion = 1;
 				_control.enemy_spare[e] = 0;
+                _control.enemy_statArrow[e, 1] = 1;
+                _control.enemy_statArrow[e, 2] = 1;
+                _control.enemy_obj[e].noreturn = true;
 				break;
 			}
 		}
@@ -395,10 +404,12 @@ function battle_getattack()
 		enemy_attack[i]	= irandom(1);
 		if (enemy_type[i] == 1) // Dummy
 		{
-			enemy_attack[i] = button_active;
-			if (global.indebug == true && global.debug_hud == true)
-				enemy_attack[i] = 1;
-			battle_turntime *= enemy_attack[i];
+			enemy_attack[i] = 0;
+            if (button_active == true)
+                enemy_attack[i] = choose(1, 2);
+			battle_turntime *= button_active;
+            if (enemy_attack[i] == 2)
+                battle_turntime = round(battle_turntime * 1.5);
 		}
 		if (enemy_type[i] == 2) // Armsguy
 		{
@@ -552,14 +563,19 @@ function battle_attack()
 				audio_play(snd_bellFlower, false, VOLUME_SOUND);
 			}
 		}
-		if (attack == 1)
+		if (attack == 1) || (attack == 2)
 		{
 			var _x = choose((box_x - box_w), (box_x + box_w));
-			var _y = irandom_range(box_y - (box_h / 2), (box_y + (box_h / 2)));
+            var _y = irandom_range(box_y - (box_h / 2), (box_y + (box_h / 2)));
+            if (attack == 2)
+            {
+                _y = box_y - (box_h / 2) - 40 + irandom_range(-20, 20);
+            }
 			create(_x, _y, obj_battle_blt);
-			thisobj.type = 1;
-		
-			time = (irandom_range(30, 50) - (controller.enemy_obj[0].stage * 3));
+			thisobj.type = 1.0;
+            if (attack == 2)
+                thisobj.type = 1.1;
+			time = (irandom_range(30, 60) - (controller.enemy_obj[0].stage * 3) + (15 * (attack == 2)));
 			time = clamp(time, 1, 60);
 		}
 	}
@@ -735,6 +751,9 @@ function battle_attack()
 				var _delay = 4// - (1 * (controller.battle_round > 0));
 				if (delay >= _delay && amt < 7)
 				{	
+                    if (audio_playing(snd_buildupShock) == true)
+                        audio_stop(snd_buildupShock);
+                    audio_play(snd_buildupShock, false, VOLUME_SOUND, 0.25, , , 0.75)
 					var _x = (_body.x - (_body_w / 4) + irandom(_body_w / 2));
 					var _y = (_body.y - _body_h + 25);
 					create(_x, _y, obj_battle_blt);
@@ -836,7 +855,7 @@ function battle_attack()
 					danger_y2 = (by + (bh / 2));
 				}
 				
-				var _time = 45;
+				var _time = 60;
 				if (controller.battle_round > 2)
 					_time -= 5;
 				if (controller.enemy_obj[myself].negotiate >= 2)
@@ -846,6 +865,7 @@ function battle_attack()
 				if (_insultTurns < 0)
 					_time -= 10;
 				battle_danger(1, danger_x1, danger_y1, danger_x2, danger_y2, _time);
+                audio_play(snd_appearLightning, false, VOLUME_SOUND);
 				
 				time = _time;
 				stage = 2;
@@ -858,7 +878,7 @@ function battle_attack()
 				thisobj.targety = danger_y2;
 				thisobj.myself = myself;
 				
-				time = 60;
+				time = round(60 * 1.5);
 				if (controller.battle_round > 2)
 					time -= 10;
 				if (controller.enemy_obj[myself].negotiate >= 2)
@@ -975,7 +995,7 @@ function battle_attack()
 								other.ball.catch.index = b;
 								other.ball.catch.angle = other.heart.image_angle;
 								audio_play(snd_impactOrchestra, false, VOLUME_SOUND,,,, 1.5);
-								shakescreen(6, 6);
+								shakescreen(3, 3);
 							}
 						}
 					}

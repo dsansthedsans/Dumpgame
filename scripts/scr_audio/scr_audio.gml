@@ -192,7 +192,7 @@ function audio_pitch(_audio, _pitch)
 		case snd_explosionLightning:
 		case snd_explosionEcho:
 		case snd_appearLightning:
-		_pitch += (random(0.125) * choose(-1, 1));
+		_pitch += (random(0.25) * choose(-1, 1));
 		break;
 		case snd_writerTroll_0:
 		case snd_writerTroll_1:

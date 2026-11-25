@@ -1345,7 +1345,7 @@ function TEXT()
 			if (controller.battle_group >= 7)
 				msg_type[0] = 4;
 			msg_sound[0] = snd_writerArmsguy;
-			if (text == "battle_bubble_armsguy0") // Armsguy
+			if (text == "battle_bubble_armsguy0")
 			{
 				var _num = irandom(7);
 				msg[0] = text_get("battle_bubble_armsguy_" + string(_num));
@@ -1374,7 +1374,7 @@ function TEXT()
 			if (controller.battle_group >= 7)
 				msg_type[0] = 4;
 			msg_sound[0] = snd_writerTrashguy;
-			if (text == "battle_bubble_trashguy0") // Armsguy
+			if (text == "battle_bubble_trashguy0")
 			{
 				var _num = irandom(4);
 				msg[0] = text_get("battle_bubble_trashguy_" + string(_num));
@@ -1907,7 +1907,9 @@ function TEXT()
 				for (var m = 0; m < 99; m++)
 				{	
 					var _text_postfix = "";
-					var _msg = text_get($"battle_act_result_armsguy_{_text_index}_{m}");
+                    if (_text_index == 2 && m == 1)
+                        _text_postfix = $"_{enemy.noreturn}";
+					var _msg = text_get($"battle_act_result_armsguy_{_text_index}_{m}{_text_postfix}");
 					if (_msg == undefined) || (_msg == "Salenis")
 						break;
 					msg[m] = _msg;
@@ -1917,13 +1919,34 @@ function TEXT()
 			}
 			if (string_starts_with(text, "battle_act_trashguy") == true) // Trashguy
 			{
-				for (var i = 0; i < 2; i++)
-					msg[i] = text_get($"battle_act_result_trashguy_{string_char_at(text, string_length(text))}_{i}");
+                var _text_index = real(string_char_at(text, string_length(text)));
+				for (var m = 0; m < 99; m++)
+				{	
+					var _text_postfix = "";
+                    if (_text_index == 1 && m == 1)
+                        _text_postfix = $"_{enemy.noreturn}";
+					var _msg = text_get($"battle_act_result_trashguy_{_text_index}_{m}{_text_postfix}");
+					if (_msg == undefined) || (_msg == "Salenis")
+						break;
+					msg[m] = _msg;
+				}
 			}
 			if (string_starts_with(text, "battle_act_flitcher") == true) // Flitcher
 			{
-				for (var i = 0; i < 2; i++)
-					msg[i] = text_get($"battle_act_result_flitcher_{string_char_at(text, string_length(text))}_{i}");
+                var _text_index = real(string_char_at(text, string_length(text)));
+				for (var m = 0; m < 99; m++)
+				{	
+					var _text_postfix = "";
+                    if (_text_index == 2 && m >= 1)
+                        _text_postfix = $"_{enemy.noreturn}";
+					var _msg = text_get($"battle_act_result_flitcher_{_text_index}_{m}{_text_postfix}");
+                    debug($"battle_act_result_flitcher_{_text_index}_{m}{_text_postfix}");
+					if (_msg == undefined) || (_msg == "Salenis")
+						break;
+					msg[m] = _msg;
+				}
+				//for (var i = 0; i < 2; i++)
+					//msg[i] = text_get($"battle_act_result_flitcher_{string_char_at(text, string_length(text))}_{i}");
 			}
 			if (text == "battle_act_eyecrush0") // Eyecrush (UNUSED)
 			{
@@ -1969,6 +1992,10 @@ function TEXT()
 					{
 						// "Negotiate"
 						case 1:
+                        if (enemy.negotiate == 0)
+                            controller.enemy_statArrow[enemy.myself, 0] = -1;
+                        else if (enemy.negotiate == 1)
+                            controller.enemy_statArrow[enemy.myself, 2] = (-1 + (-1 * (enemy.insultTurns > 0)));
 						if (enemy.negotiate < 2)
 							audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
 						enemy.negotiate = clamp((enemy.negotiate + 1), 0, 2);
@@ -2006,12 +2033,14 @@ function TEXT()
 							case 6:
 							_result_type = 1;
 							enemy.insultTurns = -2;
+                            controller.enemy_statArrow[enemy.myself, 2] = 1;
 							audio_play(snd_jingleFail, 0, VOLUME_SOUND);
 							break;
 							default:
 							_result_type = 0;
 							enemy.insultTurns = 2;
-							audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
+                            controller.enemy_statArrow[enemy.myself, 2] = (-1 + (-1 * (enemy.negotiate >= 2)));
+                            audio_play(snd_jingleSucess, 0, VOLUME_SOUND);
 							break;
 						}
 						var _result_pageSkipped = false;
@@ -2072,7 +2101,12 @@ function TEXT()
 								controller.enemy_spare[enemy.myself] += 20;
 								enemy.convince += 1;
 								if (enemy.convince >= 5)
-									controller.enemy_act_enabled[enemy.myself, 3] = false;
+                                {
+									controller.enemy_statArrow[enemy.myself, 0] = 0;
+                                    controller.enemy_statArrow[enemy.myself, 1] = -1;
+                                    controller.enemy_statArrow[enemy.myself, 2] = 0;
+                                    controller.enemy_act_enabled[enemy.myself, 3] = false;
+                                }
 							}
 							audio_play(_bool_sound, 0, VOLUME_SOUND)
 							var _msg = text_get($"battle_act_result_brock_3_2_{_bool}");
@@ -2088,10 +2122,6 @@ function TEXT()
 							}
 						}
 						break;
-					}
-					if (text == "battle_act_brock3")
-					{
-						
 					}
 				}
 				else // convinced
